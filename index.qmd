@@ -1,0 +1,11 @@
+---
+title: "Homepage"
+subtitle: "E21 Fall 2026"
+author: 
+    - "Emad Masroor"
+    - "Matt Zucker"
+date: "08-18-2026"
+format: html
+---
+
+Welcome to the class website of ENGR 21: Computer Engineering Fundamentals at Swarthmore College.
