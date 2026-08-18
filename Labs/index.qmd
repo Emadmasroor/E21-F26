@@ -4,7 +4,14 @@ title: "Labs"
 
 Homepage for labs.
 
+## About the labs
+
+...
+
 ## Lab Schedule
+
+Labs will be held on Mondays and Thursdays.
+
 
 | Lab                   | Topics                              | Starting    |
 | --------------------- | ----------------------------------- | ----------- |
