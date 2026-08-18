@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: build
+  output-dir: site
 
 website:
   title: "E21 Computer Engineering Fundamentals"
