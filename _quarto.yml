@@ -1,0 +1,40 @@
+project:
+  type: website
+  output-dir: docs
+
+resources:
+  - assets
+
+execute:
+  freeze: auto
+
+website:
+  title: "E21 Computer Engineering Fundamentals"
+  navbar:
+    right:
+      - href: "https://moodle.swarthmore.edu/course/view.php?id=30092"
+        text: Moodle
+      - href: ""
+        text: Gradescope
+      - href: ""
+        text: Ed Discussion
+    left:
+      - href: index.qmd
+        text: Homepage
+  search:
+    location: navbar
+    type: overlay
+  sidebar:
+    style: "docked"
+    collapse-level: 1
+    contents:
+
+
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
