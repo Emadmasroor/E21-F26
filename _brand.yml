@@ -1,0 +1,38 @@
+color:
+  palette:
+    # A soft parchment/bone color (similar to Slidecrafting's light mode)
+    parchment: "#FDFCF8" 
+    # A very deep ink-blue or off-black for text (better than pure black)
+    ink: "#1A1A1A"
+    # A sophisticated "Academic Red" or "Deep Plum" for links and headers
+    accent-red: "#8B0000"
+    # A muted gray for secondary info
+    muted-gray: "#666666"
+    # Code block background (subtle contrast against parchment)
+    code-bg: "#F2F0E9"
+    # Some colors for status boxes?
+    alert-orange: "#D97706"  # Deep, visible orange for warnings
+    vibrant-red: "#B91C1C"   # Strong red for errors/danger
+    forest-green: "#15803D"  # For success/hints
+
+  background: parchment
+  foreground: ink
+  primary: accent-red
+  secondary: muted-gray
+
+  # Explicitly map the status colors here
+  warning: alert-orange
+  danger: vibrant-red
+  success: forest-green
+  info: primary
+
+typography:
+  link:
+    color: accent-red
+    decoration: none
+  monospace-inline:
+    color: ink
+    background-color: code-bg
+  monospace-block:
+    background-color: code-bg
+    color: ink

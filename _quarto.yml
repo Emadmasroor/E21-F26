@@ -1,12 +1,6 @@
 project:
   type: website
-  output-dir: docs
-
-resources:
-  - assets
-
-execute:
-  freeze: auto
+  output-dir: build
 
 website:
   title: "E21 Computer Engineering Fundamentals"
@@ -14,9 +8,9 @@ website:
     right:
       - href: "https://moodle.swarthmore.edu/course/view.php?id=30092"
         text: Moodle
-      - href: ""
+      - href: "https://www.gradescope.com/courses/1232975"
         text: Gradescope
-      - href: ""
+      - href: "https://edstem.org/us/courses/94270/discussion"
         text: Ed Discussion
     left:
       - href: index.qmd
@@ -25,16 +19,30 @@ website:
     location: navbar
     type: overlay
   sidebar:
-    style: "docked"
-    collapse-level: 1
+    style: docked
+    collapse-level: 2
     contents:
-
+      - href: syllabus.qmd
+      - href: about.qmd
+      - section: "Academic Support"
+        contents: "AcademicSupport/**"
+      - href: "Labs/index.qmd"
+      - section: "Lecture"
+        contents: "Lectures/**"
+        sort: "order"
+      - section: "Homework"
+        contents: "Homework/**"
+        sort: "order"
 
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    highlight-style: github
+    theme:
+      - brand
     toc: true
-
-
+    format-links:
+      - format: revealjs
+        text: "Slideshow"
+      - format: pdf
+        text: "PDF"
