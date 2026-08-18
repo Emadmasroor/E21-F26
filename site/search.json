@@ -1,0 +1,75 @@
+[
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course is called Computer Engineering Fundamentals, and its goal is to teach you how to make a computer do things that engineers need to do. As part of the core curriculum at Swarthmore Engineering, E21 is not just restricted to computer engineers, but is a broad introduction to the fundamentals of engineering with computers. This course will teach you skills that are applicable to a broad variety of tasks encountered by engineers of all kinds, including mechanical, electrical, civil, computer, chemical, aerospace, biomedical, etc.\nE21 is not a course about how computers work; we don’t take computers apart and we don’t learn how to make computers.\nThere are three major thrusts of this course: an engineering-oriented introduction to programming, an introduction to microcontrollers and embedded systems, and an introduction to numerical methods.\n\n\nBy the time you take this course, we expect that you will already have seen code in the form of MATLAB for E6. However, we will start fresh using a new, high-level, open-source programming language: Python. This language is industry-standard and extremely versatile, and you don’t need to buy anything to use it. Coupled with the extensive ecosystem of packages that you’ll dip your toes in, you’ll find that Python is a very useful tool in your engineering toolbox.\n\n\n\nEmbedded systems are small-scale computers — also called microcontrollers — embedded on a physical device that allow you to embed logic into physical devices. In this course, we’ll make use of the Circuit Playground Express to learn how to write programs for embedded systems.\n\n\n\nThis course will also introduce you to numerical methods for engineering. Given an equation or a system of equations, how do you teach a computer to find the solution to those equations? You will learn how to write algorithms for solving equations that often arise in an engineering context using Python’s numpy package.\n\n\n\nE21 was first taught in the fall of 2024, and it has been taught every year since then. As a core course, it combines two previously-taught courses: E15, Fundmanetals of Digital and Embedded Systems, and E19, Numerical Methods for Engineering Applications. Students should take this course in sophomore year, or latest by junior year.",
+    "crumbs": [
+      "Homepage",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#what-is-e21-about",
+    "href": "syllabus.html#what-is-e21-about",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course is called Computer Engineering Fundamentals, and its goal is to teach you how to make a computer do things that engineers need to do. As part of the core curriculum at Swarthmore Engineering, E21 is not just restricted to computer engineers, but is a broad introduction to the fundamentals of engineering with computers. This course will teach you skills that are applicable to a broad variety of tasks encountered by engineers of all kinds, including mechanical, electrical, civil, computer, chemical, aerospace, biomedical, etc.\nE21 is not a course about how computers work; we don’t take computers apart and we don’t learn how to make computers.\nThere are three major thrusts of this course: an engineering-oriented introduction to programming, an introduction to microcontrollers and embedded systems, and an introduction to numerical methods.\n\n\nBy the time you take this course, we expect that you will already have seen code in the form of MATLAB for E6. However, we will start fresh using a new, high-level, open-source programming language: Python. This language is industry-standard and extremely versatile, and you don’t need to buy anything to use it. Coupled with the extensive ecosystem of packages that you’ll dip your toes in, you’ll find that Python is a very useful tool in your engineering toolbox.\n\n\n\nEmbedded systems are small-scale computers — also called microcontrollers — embedded on a physical device that allow you to embed logic into physical devices. In this course, we’ll make use of the Circuit Playground Express to learn how to write programs for embedded systems.\n\n\n\nThis course will also introduce you to numerical methods for engineering. Given an equation or a system of equations, how do you teach a computer to find the solution to those equations? You will learn how to write algorithms for solving equations that often arise in an engineering context using Python’s numpy package.\n\n\n\nE21 was first taught in the fall of 2024, and it has been taught every year since then. As a core course, it combines two previously-taught courses: E15, Fundmanetals of Digital and Embedded Systems, and E19, Numerical Methods for Engineering Applications. Students should take this course in sophomore year, or latest by junior year.",
+    "crumbs": [
+      "Homepage",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#how-will-e21-be-run",
+    "href": "syllabus.html#how-will-e21-be-run",
+    "title": "Syllabus",
+    "section": "How will E21 be run?",
+    "text": "How will E21 be run?\n\nSummary\nComponents\n\nTwo lectures each week. Attendance at these lectures is required.\napproximately one homework assignment each week, due on Thursdays at midnight. This will sometimes consist of two parts: a written part and a coding-based part.\nSix laboratory assignments during the semester, approximately once every two weeks\nSix tests, held approximately every two weeks. No midterm or final exams.\nA final project.\n\nSupport\n\nEngineering Wizard Session on Wednesday evenings.\nProf. Masroor will be available for office hours by appointment on Mondays and Wednesdays at most times between 9 AM and 5 PM and on Thursdays before 2 PM. Book an appointment here.\nOpen office hours by Prof. Masroor will be from 9 to 10:30 AM on Wednesdays.\nOffice hours by Prof. Zucker will be from …\n\n\n\nLectures\nThis course will be conducted in the form of in-person lectures during the regularly-scheduled meeting time. Lectures will not be recorded and remote participation is not possible. Students are expected to attend every lecture, and to take their own notes. Although the instructor will post lecture slides from class to the website, these do not replace the need for students to actively engage with the material, ideally by taking their own notes.\nThere are at least three different ‘modes’ of learning that you will spend your classroom time in. These are:\n\nActively listening to a lecture, ideally while taking your own notes\nDiscussing classroom questions with your peers, TAs, or the instructor\nUsing a personal laptop to execute code provided to you by the instructor, or to write your own code during an in-class activity.\n\nBe prepared to switch between these modes of learning as the situation requires it.\n\n\nOffice Hours\nIt is my practice to maintain an ‘open door policy’. You are welcome to come talk to the instructor individually at any time you see the door to Singer 112 open. In addition, you can book an appointment for office hours on Mondays, Wednesdays and Thursdays at various times between 9 AM and 5 PM. Book an appointment here.\nTraditional office hours for E21 will be from 9 to 10:30 AM on Wednesdays. It is not possible to book an appointment during this time.\n\n\nHomework\n\n\nTests\n\n\nLabs",
+    "crumbs": [
+      "Homepage",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#course-at-a-glance",
+    "href": "syllabus.html#course-at-a-glance",
+    "title": "Syllabus",
+    "section": "Course at a glance",
+    "text": "Course at a glance",
+    "crumbs": [
+      "Homepage",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "Labs/index.html",
+    "href": "Labs/index.html",
+    "title": "Labs",
+    "section": "",
+    "text": "Homepage for labs.",
+    "crumbs": [
+      "Homepage",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "Labs/index.html#lab-schedule",
+    "href": "Labs/index.html#lab-schedule",
+    "title": "Labs",
+    "section": "Lab Schedule",
+    "text": "Lab Schedule\n\n\n\nLab\nTopics\nStarting\n\n\n\n\nLab 1\nCapacitive touch passcode\nThu, Sep 10\n\n\nLab 2\nJoystick, loops, and functions\nThu, Sep 24\n\n\nLab 3\nPPen plotter, IK, and linear motion\nThu, Oct 8\n\n\nLab 4\nCubic Spline Interpolation\nThu, Oct 29\n\n\nLab 5\nFourier Series and Superposition\nThu, Nov 12\n\n\nLab 6\nFinal Project",
+    "crumbs": [
+      "Homepage",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "E21 Computer Engineering Fundamentals",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  }
+]
