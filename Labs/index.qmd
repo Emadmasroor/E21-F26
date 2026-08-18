@@ -1,0 +1,17 @@
+---
+title: "Labs"
+---
+
+Homepage for labs.
+
+## Lab Schedule
+
+| Lab                   | Topics                              | Starting    |
+| --------------------- | ----------------------------------- | ----------- |
+| [Lab 1](lab1.html)    | Capacitive touch passcode           | Thu, Sep 10 |
+| [Lab 2](lab2.html)    | Joystick, loops, and functions      | Thu, Sep 24 |
+| [Lab 3](lab3.html)    | PPen plotter, IK, and linear motion | Thu, Oct 8  |
+| [Lab 4](lab4.html)    | Cubic Spline Interpolation          | Thu, Oct 29 |
+| [Lab 5](lab5.html)    | Fourier Series and Superposition    | Thu, Nov 12 |
+| [Lab 6](project.html) | Final Project                       |             |
+
