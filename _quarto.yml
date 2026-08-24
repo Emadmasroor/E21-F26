@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - "Labs"
+    - "markdeep"
 
 website:
   title: "E21 Computer Engineering Fundamentals"
@@ -26,7 +29,7 @@ website:
       - href: about.qmd
       - section: "Academic Support"
         contents: "AcademicSupport/**"
-      - href: "Labs/index.qmd"
+      - href: labs.qmd
       - section: "Lecture"
         contents: "Lectures/**"
         sort: "order"

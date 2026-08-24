@@ -44,8 +44,8 @@
     ]
   },
   {
-    "objectID": "Labs/index.html",
-    "href": "Labs/index.html",
+    "objectID": "labs.html",
+    "href": "labs.html",
     "title": "Labs",
     "section": "",
     "text": "Homepage for labs.",
@@ -55,8 +55,8 @@
     ]
   },
   {
-    "objectID": "Labs/index.html#about-the-labs",
-    "href": "Labs/index.html#about-the-labs",
+    "objectID": "labs.html#about-the-labs",
+    "href": "labs.html#about-the-labs",
     "title": "Labs",
     "section": "About the labs",
     "text": "About the labs\n…",
@@ -66,11 +66,11 @@
     ]
   },
   {
-    "objectID": "Labs/index.html#lab-schedule",
-    "href": "Labs/index.html#lab-schedule",
+    "objectID": "labs.html#lab-schedule",
+    "href": "labs.html#lab-schedule",
     "title": "Labs",
     "section": "Lab Schedule",
-    "text": "Lab Schedule\nLabs will be held on Mondays and Thursdays.\n\n\n\nLab\nTopics\nStarting\n\n\n\n\nLab 1\nCapacitive touch passcode\nThu, Sep 10\n\n\nLab 2\nJoystick, loops, and functions\nThu, Sep 24\n\n\nLab 3\nPPen plotter, IK, and linear motion\nThu, Oct 8\n\n\nLab 4\nCubic Spline Interpolation\nThu, Oct 29\n\n\nLab 5\nFourier Series and Superposition\nThu, Nov 12\n\n\nLab 6\nFinal Project",
+    "text": "Lab Schedule\nLabs will be held on Mondays and Thursdays.\n\n\n\nLab\nTopics\nStarting\n\n\n\n\nLab 1\nCapacitive touch passcode\nThu, Sep 10\n\n\nLab 2\nJoystick, loops, and functions\nThu, Sep 24\n\n\nLab 3\nPPen plotter, IK, and linear motion\nThu, Oct 8\n\n\nLab 4\nCubic Spline Interpolation\nThu, Oct 29\n\n\nLab 5\nFourier Series and Superposition\nThu, Nov 12\n\n\n\nFinal Project",
     "crumbs": [
       "Homepage",
       "Labs"
