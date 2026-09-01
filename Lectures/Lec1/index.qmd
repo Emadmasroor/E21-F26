@@ -136,13 +136,24 @@ Bring to lecture **and** lab!
 
 ### Installation Instructions
 
- - You do **not** need to download Python to your computer yet.
+ - Don't download Python yet!
  - Install [Thonny Code Editor](https://thonny.org/) on your computer
  - Download and install `Circuit Python` on your [Circuit Playground Express]{.underline} using instructions [here](https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython).
+
+::: {style="font-size: 50%;"}
   1. Download `.UF2` file for CPX
   2. Double-tap RESET button while CPX is plugged in
   3. Drag and drop `.UF2` file onto `CPLAYBOOT` drive
   4. If you now see `CIRCUITPY` as an external drive instead of `CPLAYBOOT`, you are done!
+:::
+
+
+::: {layout="[40, 60]"}
+![](instructions.png)
+
+![](thonny.png)
+:::
+
 
 ### Integrated Development Environment (IDE)
 
