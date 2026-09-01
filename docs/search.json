@@ -4,7 +4,7 @@
     "href": "Lectures/Lec1/index.html",
     "title": "Lecture 01",
     "section": "",
-    "text": "Introductions - Prof. Masroor\n\nProf. Emad Masroor\n\nB.S. Mechanical Engineering, Cornell University 2017\nPh.D. Engineering Mechanics, Virginia Tech 2023\n\nThesis: Vortex Dynamics in the Laminar Wakes of Bluff Bodies\n\nVisiting Assistant Professor at Swarthmore College since Fall 2023\nResearch interests broadly in Fluid Dynamics:\n\ntheoretical studies of vortex dynamics\nexperimental studies of wind-induced vibrations\nnumerical studies of fish locomotion\n\n\n\n\n\nIntroductions - Prof. Masroor\n\n\nOutside of work, I …\n\nlive in Philadelphia\nread about philosophy, history, science + enjoy literature\ntake piano lessons\ntravel (32/50 states) and take photographs\nhike & backpack, esp. Appalachian Trail\n\n\n\n\n\n\nIntroductions - Students\n\n\nName, major, year\nHometown\nWhat are your impressions of / expectations from E21?\nWhat is a topic/event/idea/person that you know a lot about?\n\n\n\n\nTeaching Team\n\n\n\n\nName\nRole\n\n\n\n\nEmad Masroor\nLec. Instructor\n\n\nMatt Zucker\nLab. Instructor\n\n\nVisnuk Rith\nWizard\n\n\nSamchan Lee\nWizard\n\n\nUneeb Hyder\nWizard\n\n\nHiba Aby\nGrader\n\n\nHuyen Nguyen\nGrader\n\n\nEllie Fermo\nGrader\n\n\nKevin Sisk\nGrader\n\n\n\n\n\n\nWhat is E21 about?\n\n\n\n\n\n\n\n\n\n\n\n\nOutside Swarthmore, ‘Computer Engineering’ is a part of ‘Electrical Engineering’\nA better definition for us: Engineering with computers\n\nRelevant for all types of engineers\n\nMake stuff do stuff\n\n\n\n\nWhat is E21 about?\n\n\n\nLogistics\nSee the website: https://emadmasroor.github.io/E21-F26\n\nLectures Tue / Thu SCI 101, may be moved to SCI 199\nLabs Mon / Thu Singer 221\nNo midterms, no final exam\nSix tests, ~ every two weeks starting week 4\nFinal Project\n\n\n\n\n\n\nUse this for …\n\n\n\n\nMoodle\nSubmit HW, view scores\n\n\nGradescope\nManage and submit HW\n\n\nEd Discussion\nAsk + Answer questions\n\n\nWebsite\nAll Course Content\n\n\n\n\n\n\nCircuit Playground Express\n\n\n\n• A versatile microcontroller for E21.  • The device is called ‘Circuit Playground Express’ (CPX)  • The software it runs is called Circuit Python\n\n\n\n\n\n\nBring to lecture and lab!\n\n\nInstallation Instructions\n\nYou do not need to download Python to your computer yet.\nInstall Thonny Code Editor on your computer\nDownload and install Circuit Python on your Circuit Playground Express using instructions here.\n\n\nDownload .UF2 file for CPX\nDouble-tap RESET button while CPX is plugged in\nDrag and drop .UF2 file onto CPLAYBOOT drive\nIf you now see CIRCUITPY as an external drive instead of CPLAYBOOT, you are done!\n\n\n\nIntegrated Development Environment (IDE)\n\nA ‘development environment’ is the program (or programs) you use to write code.\nIt’s possible to simply use Notepad as your Development Environment, but that’s kinda lame\nSome options\n\nVS Code (v. popular among Swat students)\nA simple text editor with syntax highlighting (e.g. Sublime Text)\nThonny, Mu, other ‘lightweight IDEs’\nIDLE (official Python IDE)\n\n\n\n\nTwo ways to run code on your board\n\n\n\n\n\n\nEditing code.py on board the file\n\n\n\n\n\n\n\nClick ‘Stop’ and code interactively\n\n\n\n\n\n\n\n\n\nOnce you’re sure what you want to code\nThoughtful, long-form coding\nRuns if and when you save code.py\nPersistent\n\n\n\n\nTrying things out\nInstant feedback if works\nRuns when you hit enter\nNo memory",
+    "text": "Introductions - Prof. Masroor\n\nProf. Emad Masroor\n\nB.S. Mechanical Engineering, Cornell University 2017\nPh.D. Engineering Mechanics, Virginia Tech 2023\n\nThesis: Vortex Dynamics in the Laminar Wakes of Bluff Bodies\n\nVisiting Assistant Professor at Swarthmore College since Fall 2023\nResearch interests broadly in Fluid Dynamics:\n\ntheoretical studies of vortex dynamics\nexperimental studies of wind-induced vibrations\nnumerical studies of fish locomotion\n\n\n\n\n\nIntroductions - Prof. Masroor\n\n\nOutside of work, I …\n\nlive in Philadelphia\nread about philosophy, history, science + enjoy literature\ntake piano lessons\ntravel (32/50 states) and take photographs\nhike & backpack, esp. Appalachian Trail\n\n\n\n\n\n\nIntroductions - Students\n\n\nName, major, year\nHometown\nWhat are your impressions of / expectations from E21?\nWhat is a topic/event/idea/person that you know a lot about?\n\n\n\n\nTeaching Team\n\n\n\n\nName\nRole\n\n\n\n\nEmad Masroor\nLec. Instructor\n\n\nMatt Zucker\nLab. Instructor\n\n\nVisnuk Rith\nWizard\n\n\nSamchan Lee\nWizard\n\n\nUneeb Hyder\nWizard\n\n\nHiba Aby\nGrader\n\n\nHuyen Nguyen\nGrader\n\n\nEllie Fermo\nGrader\n\n\nKevin Sisk\nGrader\n\n\n\n\n\n\nWhat is E21 about?\n\n\n\n\n\n\n\n\n\n\n\n\nOutside Swarthmore, ‘Computer Engineering’ is a part of ‘Electrical Engineering’\nA better definition for us: Engineering with computers\n\nRelevant for all types of engineers\n\nMake stuff do stuff\n\n\n\n\nWhat is E21 about?\n\n\n\nLogistics\nSee the website: https://emadmasroor.github.io/E21-F26\n\nLectures Tue / Thu SCI 101, may be moved to SCI 199\nLabs Mon / Thu Singer 221\nNo midterms, no final exam\nSix tests, ~ every two weeks starting week 4\nFinal Project\n\n\n\n\n\n\nUse this for …\n\n\n\n\nMoodle\nSubmit HW, view scores\n\n\nGradescope\nManage and submit HW\n\n\nEd Discussion\nAsk + Answer questions\n\n\nWebsite\nAll Course Content\n\n\n\n\n\n\nCircuit Playground Express\n\n\n\n• A versatile microcontroller for E21.  • The device is called ‘Circuit Playground Express’ (CPX)  • The software it runs is called Circuit Python\n\n\n\n\n\n\nBring to lecture and lab!\n\n\nInstallation Instructions\n\nDon’t download Python yet!\nInstall Thonny Code Editor on your computer\nDownload and install Circuit Python on your Circuit Playground Express using instructions here.\n\n\n\nDownload .UF2 file for CPX\nDouble-tap RESET button while CPX is plugged in\nDrag and drop .UF2 file onto CPLAYBOOT drive\nIf you now see CIRCUITPY as an external drive instead of CPLAYBOOT, you are done!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntegrated Development Environment (IDE)\n\nA ‘development environment’ is the program (or programs) you use to write code.\nIt’s possible to simply use Notepad as your Development Environment, but that’s kinda lame\nSome options\n\nVS Code (v. popular among Swat students)\nA simple text editor with syntax highlighting (e.g. Sublime Text)\nThonny, Mu, other ‘lightweight IDEs’\nIDLE (official Python IDE)\n\n\n\n\nTwo ways to run code on your board\n\n\n\n\n\n\nEditing code.py on board the file\n\n\n\n\n\n\n\nClick ‘Stop’ and code interactively\n\n\n\n\n\n\n\n\n\nOnce you’re sure what you want to code\nThoughtful, long-form coding\nRuns if and when you save code.py\nPersistent\n\n\n\n\nTrying things out\nInstant feedback if works\nRuns when you hit enter\nNo memory",
     "crumbs": [
       "Homepage",
       "Lectures",
@@ -16,175 +16,275 @@
     "href": "PastProjects/index.html",
     "title": "Past E21 Projects",
     "section": "",
-    "text": "A collection of final projects from Fall 2025 ENGR 21."
+    "text": "A collection of final projects from Fall 2025 ENGR 21.",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#image-morphing-and-transformation-using-python",
     "href": "PastProjects/index.html#image-morphing-and-transformation-using-python",
     "title": "Past E21 Projects",
     "section": "Image Morphing and Transformation using Python",
-    "text": "Image Morphing and Transformation using Python"
+    "text": "Image Morphing and Transformation using Python",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#d-metal-detecting-robot",
     "href": "PastProjects/index.html#d-metal-detecting-robot",
     "title": "Past E21 Projects",
     "section": "1D Metal Detecting Robot",
-    "text": "1D Metal Detecting Robot"
+    "text": "1D Metal Detecting Robot",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#electronic-plastic-sorter",
     "href": "PastProjects/index.html#electronic-plastic-sorter",
     "title": "Past E21 Projects",
     "section": "Electronic Plastic Sorter",
-    "text": "Electronic Plastic Sorter"
+    "text": "Electronic Plastic Sorter",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#course-selection-optimization",
     "href": "PastProjects/index.html#course-selection-optimization",
     "title": "Past E21 Projects",
     "section": "Course Selection Optimization",
-    "text": "Course Selection Optimization"
+    "text": "Course Selection Optimization",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#automated-plant-care-system",
     "href": "PastProjects/index.html#automated-plant-care-system",
     "title": "Past E21 Projects",
     "section": "Automated Plant Care System",
-    "text": "Automated Plant Care System"
+    "text": "Automated Plant Care System",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#simon-says-an-embedded-systems-memory-game",
     "href": "PastProjects/index.html#simon-says-an-embedded-systems-memory-game",
     "title": "Past E21 Projects",
     "section": "Simon Says: An Embedded Systems Memory Game",
-    "text": "Simon Says: An Embedded Systems Memory Game"
+    "text": "Simon Says: An Embedded Systems Memory Game",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#color-sensor",
     "href": "PastProjects/index.html#color-sensor",
     "title": "Past E21 Projects",
     "section": "Color Sensor",
-    "text": "Color Sensor"
+    "text": "Color Sensor",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#sound-responsive-catapult-with-led-digit-panel",
     "href": "PastProjects/index.html#sound-responsive-catapult-with-led-digit-panel",
     "title": "Past E21 Projects",
     "section": "Sound-Responsive Catapult with LED Digit Panel",
-    "text": "Sound-Responsive Catapult with LED Digit Panel"
+    "text": "Sound-Responsive Catapult with LED Digit Panel",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#output-maximizing-solar-panel",
     "href": "PastProjects/index.html#output-maximizing-solar-panel",
     "title": "Past E21 Projects",
     "section": "Output Maximizing Solar PAnel",
-    "text": "Output Maximizing Solar PAnel"
+    "text": "Output Maximizing Solar PAnel",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#a-3-dof-robotic-hand-with-tendon-based-finger-mechanics-and-servo-driven-control",
     "href": "PastProjects/index.html#a-3-dof-robotic-hand-with-tendon-based-finger-mechanics-and-servo-driven-control",
     "title": "Past E21 Projects",
     "section": "A 3 DOF Robotic Hand with Tendon-based finger mechanics and servo-driven control",
-    "text": "A 3 DOF Robotic Hand with Tendon-based finger mechanics and servo-driven control"
+    "text": "A 3 DOF Robotic Hand with Tendon-based finger mechanics and servo-driven control",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#screwing-no-hands",
     "href": "PastProjects/index.html#screwing-no-hands",
     "title": "Past E21 Projects",
     "section": "Screwing, No Hands",
-    "text": "Screwing, No Hands"
+    "text": "Screwing, No Hands",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#baby-boombox-a-mp3-music-player",
     "href": "PastProjects/index.html#baby-boombox-a-mp3-music-player",
     "title": "Past E21 Projects",
     "section": "Baby Boombox: A MP3 Music Player",
-    "text": "Baby Boombox: A MP3 Music Player"
+    "text": "Baby Boombox: A MP3 Music Player",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#progress-toward-a-weatable-grip-assistance-device",
     "href": "PastProjects/index.html#progress-toward-a-weatable-grip-assistance-device",
     "title": "Past E21 Projects",
     "section": "Progress Toward a Weatable Grip-Assistance Device",
-    "text": "Progress Toward a Weatable Grip-Assistance Device"
+    "text": "Progress Toward a Weatable Grip-Assistance Device",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#whiteboard-erasing-robot",
     "href": "PastProjects/index.html#whiteboard-erasing-robot",
     "title": "Past E21 Projects",
     "section": "Whiteboard-Erasing Robot",
-    "text": "Whiteboard-Erasing Robot"
+    "text": "Whiteboard-Erasing Robot",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#modeling-the-transmission-of-the-monkeypox-virus-infection-with-vaccination-and-other-intervention-measures",
     "href": "PastProjects/index.html#modeling-the-transmission-of-the-monkeypox-virus-infection-with-vaccination-and-other-intervention-measures",
     "title": "Past E21 Projects",
     "section": "Modeling the Transmission of the Monkeypox Virus Infection with Vaccination and other intervention measures",
-    "text": "Modeling the Transmission of the Monkeypox Virus Infection with Vaccination and other intervention measures"
+    "text": "Modeling the Transmission of the Monkeypox Virus Infection with Vaccination and other intervention measures",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#joystick-controlled-dual-axis-rotation-system",
     "href": "PastProjects/index.html#joystick-controlled-dual-axis-rotation-system",
     "title": "Past E21 Projects",
     "section": "Joystick-controlled Dual-Axis Rotation System",
-    "text": "Joystick-controlled Dual-Axis Rotation System"
+    "text": "Joystick-controlled Dual-Axis Rotation System",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#simulating-particle-dynamics-collisions-wall-interactions-and-multi-particle-systems",
     "href": "PastProjects/index.html#simulating-particle-dynamics-collisions-wall-interactions-and-multi-particle-systems",
     "title": "Past E21 Projects",
     "section": "Simulating Particle Dynamics: Collisions, Wall interactions, and multi-particle systems",
-    "text": "Simulating Particle Dynamics: Collisions, Wall interactions, and multi-particle systems"
+    "text": "Simulating Particle Dynamics: Collisions, Wall interactions, and multi-particle systems",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#magic-piano-irl",
     "href": "PastProjects/index.html#magic-piano-irl",
     "title": "Past E21 Projects",
     "section": "Magic Piano IRL",
-    "text": "Magic Piano IRL"
+    "text": "Magic Piano IRL",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#manually-targeted-tactical-flywheel-based-projectile-launch-system",
     "href": "PastProjects/index.html#manually-targeted-tactical-flywheel-based-projectile-launch-system",
     "title": "Past E21 Projects",
     "section": "Manually Targeted Tactical Flywheel-Based Projectile Launch System",
-    "text": "Manually Targeted Tactical Flywheel-Based Projectile Launch System"
+    "text": "Manually Targeted Tactical Flywheel-Based Projectile Launch System",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#grayscale-camera-with-circuitplayground-and-a-photoresistor",
     "href": "PastProjects/index.html#grayscale-camera-with-circuitplayground-and-a-photoresistor",
     "title": "Past E21 Projects",
     "section": "Grayscale Camera with CircuitPlayground and a Photoresistor",
-    "text": "Grayscale Camera with CircuitPlayground and a Photoresistor"
+    "text": "Grayscale Camera with CircuitPlayground and a Photoresistor",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#polaris-a-wireless-charging-speaker-with-interactive-sensing",
     "href": "PastProjects/index.html#polaris-a-wireless-charging-speaker-with-interactive-sensing",
     "title": "Past E21 Projects",
     "section": "POLARIS: A Wireless-Charging Speaker with Interactive Sensing",
-    "text": "POLARIS: A Wireless-Charging Speaker with Interactive Sensing"
+    "text": "POLARIS: A Wireless-Charging Speaker with Interactive Sensing",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#color-based-marble-sorting-system",
     "href": "PastProjects/index.html#color-based-marble-sorting-system",
     "title": "Past E21 Projects",
     "section": "Color-Based Marble Sorting System",
-    "text": "Color-Based Marble Sorting System"
+    "text": "Color-Based Marble Sorting System",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#isa-injection-system-automation",
     "href": "PastProjects/index.html#isa-injection-system-automation",
     "title": "Past E21 Projects",
     "section": "ISA: Injection System Automation",
-    "text": "ISA: Injection System Automation"
+    "text": "ISA: Injection System Automation",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/index.html#how-close-are-you-to-your-nearest-bus-stop",
     "href": "PastProjects/index.html#how-close-are-you-to-your-nearest-bus-stop",
     "title": "Past E21 Projects",
     "section": "How close are you to your nearest bus stop?",
-    "text": "How close are you to your nearest bus stop?"
+    "text": "How close are you to your nearest bus stop?",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
   },
   {
     "objectID": "PastProjects/past-projects-slides.html#image-morphing-and-transformation-using-python",

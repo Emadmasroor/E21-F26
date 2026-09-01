@@ -26,7 +26,6 @@ website:
     collapse-level: 1
     contents:
       - href: syllabus.qmd
-      - href: about.qmd
       - section: "Academic Support"
         contents: "AcademicSupport/**"
       - href: labs.qmd
@@ -36,6 +35,7 @@ website:
       - section: "Homework"
         contents: "Homework/**"
         sort: "order"
+      - href: PastProjects/index.qmd
 
 
 format:
