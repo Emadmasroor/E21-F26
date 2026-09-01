@@ -1,7 +1,7 @@
 color:
   palette:
     # A soft parchment/bone color (similar to Slidecrafting's light mode)
-    parchment: "#FDFCF8" 
+    parchment: "#F5F3EB" 
     # A very deep ink-blue or off-black for text (better than pure black)
     ink: "#1A1A1A"
     # A sophisticated "Academic Red" or "Deep Plum" for links and headers

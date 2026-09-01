@@ -23,14 +23,14 @@ website:
     type: overlay
   sidebar:
     style: docked
-    collapse-level: 2
+    collapse-level: 1
     contents:
       - href: syllabus.qmd
       - href: about.qmd
       - section: "Academic Support"
         contents: "AcademicSupport/**"
       - href: labs.qmd
-      - section: "Lecture"
+      - section: "Lectures"
         contents: "Lectures/**"
         sort: "order"
       - section: "Homework"
@@ -44,8 +44,3 @@ format:
     theme:
       - brand
     toc: true
-    format-links:
-      - format: revealjs
-        text: "Slideshow"
-      - format: pdf
-        text: "PDF"

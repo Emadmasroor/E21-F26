@@ -1,0 +1,118 @@
+---
+title: "Past E21 Projects"
+subtitle: "from Fall 2025"
+authors:
+  - "Emad Masroor"
+  - "Will Johnson"
+toc: false
+format:
+  html: default
+  revealjs:
+    toc-depth: 2
+    output-file: past-projects-slides.html
+    footer: |
+      <a href="index.html"> ↩ </a>
+---
+
+A collection of final projects from Fall 2025 ENGR 21.
+
+## Image Morphing and Transformation using Python
+
+![](YiMei-1.png)
+
+## 1D Metal Detecting Robot
+
+![](Isabella-1.png)
+
+## Electronic Plastic Sorter
+
+![](Abdoul-1.png)
+
+## Course Selection Optimization
+
+![](CourseOptimization-1.png)
+
+## Automated Plant Care System
+
+![](Duva-1.png)
+
+## Simon Says: An Embedded Systems Memory Game
+
+![](Fink-1.png)
+
+## Color Sensor
+
+![](Hannah-1.png)
+
+## Sound-Responsive Catapult with LED Digit Panel
+
+![](IverJiang-1.png)
+
+## Output Maximizing Solar PAnel
+
+![](Jaiden-1.png)
+
+## A 3 DOF Robotic Hand with Tendon-based finger mechanics and servo-driven control
+
+![](Juan-1.png)
+
+## Screwing, No Hands
+
+![](Lehr-1.png)
+
+## Baby Boombox: A MP3 Music Player
+
+![](Lie-1.png)
+
+## Progress Toward a Weatable Grip-Assistance Device
+
+![](Mahurkar-1.png)
+
+## Whiteboard-Erasing Robot
+
+![](Pang-1.png)
+
+## Modeling the Transmission of the Monkeypox Virus Infection with Vaccination and other intervention measures
+
+![](Rith-1.png)
+
+## Joystick-controlled Dual-Axis Rotation System
+
+![](Sai-1.png)
+
+## Simulating Particle Dynamics: Collisions, Wall interactions, and multi-particle systems
+
+![](Samchan-1.png)
+
+## Magic Piano IRL
+
+![](Sanchez-1.png)
+
+## Manually Targeted Tactical Flywheel-Based Projectile Launch System
+
+![](Sarmiento-1.png)
+
+## Grayscale Camera with CircuitPlayground and a Photoresistor
+
+![](Schuetz-1.png)
+
+## POLARIS: A Wireless-Charging Speaker with Interactive Sensing
+
+![](Shiran-1.png)
+
+## Color-Based Marble Sorting System
+
+![](Sisk-1.png)
+
+## ISA: Injection System Automation
+
+![](Suarez-1.png)
+
+## How close are you to your nearest bus stop?
+
+![](Wang-1.png)
+
+
+
+
+

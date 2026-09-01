@@ -1,0 +1,16 @@
+---
+title: "Instructor Support"
+subtitle: "E21 Fall 2026"
+format:
+    html: default
+---
+
+- Regular office hours are Wednesdays 9 to 10:30 AM.
+- Walk-ins are always welcome when I am in my office. 
+- The Instructor-led Problem Session is on Mondays 4:30 --- 6:00 PM in Singer 221
+
+In addition, you can schedule appointments on my calendar in 30-minute increments below.
+
+<!-- Google Calendar Appointment Scheduling begin -->
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0ITeSu6RlpXvJTCxVe9kYp548yMBnusWNIelsTCZC1sgsQfQklI16_u9DZOJ8zHrXqUWnJCNNt?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+<!-- end Google Calendar Appointment Scheduling -->

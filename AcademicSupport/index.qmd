@@ -1,0 +1,8 @@
+---
+title: "Academic Support"
+subtitle: "E21 Fall 2026"
+format:
+    html: default
+---
+
+Navigate using the sidebar to the left.

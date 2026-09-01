@@ -1,0 +1,21 @@
+---
+title: "Homework"
+format:
+  html: default
+---
+
+Homework assignments will be due on Thursdays at midnight. Submit them on Gradescope at this link.
+
+## List of Assignments
+
+| Number            | Due Date    | Submit link                                                             |
+| ----------------- | ----------- | ----------------------------------------------------------------------- |
+
+
+## Extensions
+
+Refer to the [homework submission policies in the syllabus](../syllabus.html) for the kinds of extensions available.
+
+Request an extension on a HW assignment using the [form](https://forms.gle/z17LdM8se4ycbMTEA) below. You must be logged in to your Swarthmore Google account to see it.
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSffuhYRJHTaTTKLd09oAHdi7OAnB88DoNBjEbBhVHK5GF5VCg/viewform?embedded=true" width="640" height="640" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>

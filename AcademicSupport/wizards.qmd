@@ -1,0 +1,14 @@
+---
+title: "Wizard Office Hours"
+subtitle: "E21 Fall 2026"
+format:
+    html: default
+---
+
+Wizard sessions are on Tuesday nights from 7 to 9 PM in Singer 221
+
+All Wizard office hours are in Singer 228.
+
+| Name                 | Date and Time              |
+| -------------------- | -------------------------- |
+| Name | Time |
