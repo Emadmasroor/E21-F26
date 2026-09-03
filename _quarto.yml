@@ -13,7 +13,7 @@ website:
         text: Moodle
       - href: "https://www.gradescope.com/courses/1232975"
         text: Gradescope
-      - href: "https://edstem.org/us/courses/94270/discussion"
+      - href: "https://edstem.org/us/courses/104911/discussion"
         text: Ed Discussion
     left:
       - href: index.qmd
