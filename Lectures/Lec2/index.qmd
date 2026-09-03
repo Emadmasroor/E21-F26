@@ -6,7 +6,7 @@ topic: "Python and CPX Preliminaries"
 order: 2
 date: 09-03-2026
 date-format: long
-uncover: true
+uncover: false
 footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
 resources: none
 code-line-numbers: false
