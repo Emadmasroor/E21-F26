@@ -8,8 +8,10 @@ Homework assignments will be due on Thursdays at midnight. Submit them on Grades
 
 ## List of Assignments
 
-| Number            | Due Date    | Submit link                                                             |
-| ----------------- | ----------- | ----------------------------------------------------------------------- |
+| Number | Due Date    | Submit link                                                            |
+| ------ | ----------- | ---------------------------------------------------------------------- |
+| [HW 1](HW1)   | Thu, Sep 10 | [Gradescope](https://moodle.swarthmore.edu/mod/lti/view.php?id=828548) |
+
 
 
 ## Extensions

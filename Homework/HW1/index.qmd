@@ -3,8 +3,404 @@ title: "HW 1"
 order: 10
 subtitle: "ENGR 21, Fall 2026."
 solutions: false
+format:
+  html:
+    number-sections: true
+  pdf:
+    number-sections: true
+    geometry:
+      - margin=1in
+    include-in-header: 
+      text: |
+        \usepackage{scrlayer-scrpage}
+        \setlength{\footskip}{30pt}   % default is ~20pt
+        \setlength{\headheight}{30pt}   % default is ~20pt
+        \lohead{Homework 1}
+        \rohead{E21 Computer Engineering Fundamentals}
+        \rofoot{Fall 2026}
+        \lofoot{Swarthmore College}
+        \setheadsepline{1pt}   % line below header
+        \setfootsepline{1pt}   % line above footer
 ---
 
-Coming soon.
+::: {.content-hidden unless-meta="solutions"}
+# Solutions {.unnumbered}
+
+:::
+
+::: {.content-hidden when-meta="solutions"}
+| | |
+| --- | --------- |
+| Due Date       | Thu, Sep 10 |
+| Turn in link   | [Gradescope](https://moodle.swarthmore.edu/mod/lti/view.php?id=828548) |
+| URL | `emadmasroor.github.io/E21-F26/Homework/HW1`      |
+
+[What to turn in]{.underline}
+
+For this assignment, turn in a single PDF file, even though you will be writing code for some parts. Make sure your code is legible, indented, and syntax-highlighted; a screenshot of code is usually a bad idea, but OK for this homework. 
+
+You may use the text editor in Thonny Code Editor and then go to File > Print. If you use this option to make a printed copy of code for submission, please increase the font size using the 'scale' option when printing.
+
+:::
+
+# Writing simple programs for the Circuit Playground Express
+
+Using only the features of Python that have been discussed so far,
+
+1. Write a program for the Circuit Playground Express that plays a tone of 440 Hz for one-second intervals repeatedly until a cell phone light is shined on it, at which point the program should terminate.
+
+::: {.content-hidden unless-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+
+```{.python}
+while cpx.light < 100:
+    cpx.play_tone(440,1)
+```
+:::
+:::
+
+2. Write a program for the Circuit Playground Express that plays a tone of 440 Hz for one-second intervals repeatedly. When it is brought close to a warm object (warmer than room temperature), it stops playing this tone and instead plays a high-frequency tone of 880 Hz for a half second. After this, the program should terminate.
+
+::: {.content-hidden unless-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+
+```{.python}
+while cpx.temperature < 31:
+    cpx.play_tone(440,1)
+cpx.play_tone(880,0.5)
+```
+
+:::
+:::
+
+# Truth Tables
+
+We have seen that the truth table for the `and` and `or` operators was as given in [lecture](../../Lectures/Lec2/#truth-tables-for-binary-logical-operators). 
+
+::: {.callout-note}
+It is possible to use logic to determine the truth tables for more complicated operators than `and` and `or`, but here you should simply check all possibilities using Python.
+:::
+
+## For a binary operator
+
+Use this info to [construct a truth table]{.underline} for the following binary operator. 
+
+```{.python}
+(a and b) or a
+```
+
+::: {.content-visible unless-meta="solutions"}
+::: {.callout-note}
+To do this, make a table with the following entries.
+
+| Variable `a` | Variable `b` | Result of `(a and b) or a` |
+| ------------ | ------------ | -------------------------- |
+| `True`       | `True`       |                            |
+| `True`       | `False`      |                            |
+| `False`      | `True`       |                            |
+| `False`      | `False`      |                            |
+:::
+:::
+
+::: {.content-hidden unless-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+
+| Variable `a` | Variable `b` | Result of `(a and b) or a` |
+| ------------ | ------------ | -------------------------- |
+| `True`       | `True`       | `True`                       |
+| `True`       | `False`      | `True`                       |
+| `False`      | `True`       | `False`                      |
+| `False`      | `False`      | `False`                      |
+
+:::
+:::
+
+## For an operator with three inputs
+
+Construct a truth table for the following operator.
+
+```{.python}
+(a or b) and c
+```
+
+::: {.content-visible unless-meta="solutions"}
+::: {.callout-note}
+One row has been filled out for you.
+
+| `a`    | `b`    | `c`     | `(a or b) and c` |
+| ------ | ------ | ------- | -------------- |
+| `True` | `True` | `False` | `False`        |
+:::
+:::
 
 
+::: {.content-visible unless-meta="solutions"}
+::: {.callout-note}
+## How many rows do you need?
+
+The rows of a truth table should cover every possible combination of True and False values. If binary operators required 4 rows, how many rows do you need for a logical operator with three inputs, such as `(a or b) and c`?
+:::
+:::
+
+::: {.content-hidden unless-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+
+There are $2^3 = 8$ rows.
+
+| `a`     | `b`     | `c`     | (a or b) and c |
+| ------- | ------- | ------- | -------------- |
+| `True`  | `True`  | `True`  | `True`         |
+| `True`  | `True`  | `False` | `False`        |
+| `True`  | `False` | `True`  | `True`         |
+| `True`  | `False` | `False` | `False`        |
+| `False` | `True`  | `True`  | `True`         |
+| `False` | `True`  | `False` | `False`        |
+| `False` | `False` | `True`  | `False`        |
+| `False` | `False` | `False` | `False`        |
+
+
+:::
+:::
+
+
+
+
+# While loops
+
+Determine the behavior of the Circuit Playground Express when the following code is run on it. Give your answer in words.
+
+## No inputs
+
+1. 
+    ```{.python}
+    while True:
+      cpx.play_tone(440,1)
+    cpx.play_tone(880,0.5)
+    ```
+::: {.content-visible when-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+This will play 440 Hz and will never play 880 Hz.
+:::
+:::
+
+2. 
+    ```{.python}
+    while True:
+      cpx.play_tone(880,0.5)
+    cpx.play_tone(440,1)
+    ```
+::: {.content-visible when-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+This will play 880 Hz and will never play 440 Hz.
+:::
+:::
+
+
+3. 
+    ```{.python}
+    while True:
+      cpx.play_tone(880,0.5)
+      cpx.play_tone(440,1)
+    ```
+::: {.content-visible when-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+This will play 880 Hz for half second, followed by 440 Hz for one second, followed by 880 Hz for half second, and will continue alternating between the two for ever.
+:::
+:::
+
+4. 
+    ```{.python}
+    while True:
+      cpx.play_tone(440,1)
+      cpx.play_tone(880,0.5)
+    ```
+::: {.content-visible when-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+This will play 440 Hz for one second, followed by 880 Hz for half second, followed by 440 Hz for one second, and will continue alternating between the two for ever.
+:::
+:::
+
+5. 
+    ```{.python}
+    cpx.play_tone(440,1)
+    while True:
+      cpx.play_tone(880,0.5)
+    ```
+::: {.content-visible when-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+This will play 440 Hz for one second, followed by infinitely-repeating 880 Hz notes for half second intervals. 440 Hz will only play once.
+:::
+:::
+
+6. 
+    ```{.python}
+    cpx.play_tone(440,1)
+    while False:
+      cpx.play_tone(880,0.5)
+    ```
+::: {.content-visible when-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+This will play 440 Hz for one second, and then nothing more will happen.
+:::
+:::
+
+7. 
+    ```{.python}
+    cpx.play_tone(440,1)
+    while False:
+      cpx.play_tone(880,0.5)
+    cpx.play_tone(440,1)
+    ```
+::: {.content-visible when-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+This will play 440 Hz for one second, followed by another 1-second note at 440 Hz. 880 Hz will never play.
+:::
+:::
+
+## With inputs
+
+For the following questions, determine what the board will do under the different relevant possibilities. For example, 
+
+- if a flashlight is shining on it vs. not
+- if the temperature sensor is above/below a threshold
+- if a certain pin is touched or not touched.
+
+
+1. 
+    ```{.python}
+    while not (cpx.touch_A1 and cpx.touch_A5):
+      cpx.play_tone(440,1)
+    cpx.play_tone(880,0.5)
+    ```
+::: {.content-visible when-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+This will play 440 Hz for one second intervals repeatedly. If only pin A1 is touched, nothing will happen, and if only pin A5 is touched, nothing will happen. But if both of these pins are touched simultaenously, the 440 Hz notes will terminate, the board will make one half-second note at 880 Hz, and then the program will terminate.
+:::
+:::
+
+2. 
+    ```{.python}
+    while not (cpx.touch_A1 and cpx.temperature > 30):
+      cpx.play_tone(440,1)
+    cpx.play_tone(880,0.5)
+    ```
+::: {.content-visible when-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+This will play 440 Hz for one second intervals repeatedly. If only pin A1 is touched, nothing will happen as long as the temperature sensor reads less than 30 degrees Celsius. If the temperature sensor is brought near something warm while pin A1 is being touched, the 440 Hz note will cease and the board will make one half-second note at 880 Hz, and then the program will terminate.
+:::
+:::
+
+3. 
+    ```{.python}
+    while not (cpx.touch_A1 or cpx.temperature > 30):
+      cpx.play_tone(440,1)
+    cpx.play_tone(880,0.5)
+    ```
+::: {.content-visible when-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+This will play 440 Hz for one second intervals repeatedly. It will stop doing so if one of two conditions is met: **Either** pin A1 is touched, **or** the temperature is raised above 30 degrees Celsius, then the 440 Hz note will cease and the board will make one half-second note at 880 Hz, and then the program will terminate.
+:::
+:::
+
+4.
+    ```{.python}
+    cpx.play_tone(440,1)
+    while cpx.light < 100:
+      cpx.play_tone(880,0.5)
+    cpx.play_tone(440,1)
+    ```
+::: {.content-visible when-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+This will play 440 Hz for one second. After that, the program will continue to beep at 880 Hz for half-second intervals repeatedly if it is in low light conditions. If a flashlight is shined on it, the board will produce one second-long note at 440 Hz, after which the program will terminate.
+:::
+:::
+
+
+# Nested while loops
+
+1.  Explain the difference between the following programs.
+
+    ```{.python}
+    while True:
+        cpx.play_tone(880,0.5)
+        while True:
+            cpx.play_tone(440,1)
+
+
+    ```
+
+    ```{.python}
+    while True:
+        cpx.play_tone(880,0.5)
+    while True:
+        cpx.play_tone(440,1)
+
+
+    ```
+::: {.content-visible when-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+With the first program, the Circuit Playground Express will play a note of 880 Hz once, and then will subsequently keep repeating a note of 440 Hz for all eternity.
+With the second program, the Circuit Playground Express will repeat 880 Hz notes for all eternity. It will never play a 440 Hz note.
+:::
+:::
+
+2. For each of the following parts, assume that the Circuit Playground Express has been running the following code for a few seconds before you carry out your intervention. (i.e., a, b, c and d are **not** applied sequentially.)
+
+   ```{.python}
+   while not cpx.touch_A7:
+    cpx.play_tone(880,0.5)
+    while not cpx.touch_A5:
+        cpx.play_tone(440,1)
+   ```
+
+a. What happens if pin A5 is tapped ?
+b. What happens if pin A5 is touched for ten seconds ? Then, when you release it, what happens?
+c. What happens if pin A7 is touched while the speaker is beeping at 440 Hz ?
+d. What happens if both pin A5 and A7 are pressed for a few seconds?
+
+::: {.content-visible when-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+
+If left for a long time, the Circuit Playground Express will be playing notes of 440 Hz repeatedly. 
+
+a. If pin A5 is tapped, the program will exit the inner loop and go back to the outer loop, playing a note of 880 Hz once. Then, it will go back to playing notes of 440 Hz repeatedly.
+b. If pin A5 is touchd for ten seconds, the program will exit the inner loop and play notes of 880 Hz repeatedly, since the condition `not cpx.touch_A5` will be `False`, so the inner loop won't run, but the condition `not cpx.touch_A7` will be `True`, so the outer loop will keep running.
+c. Nothing happens if pin A7 is touched while the speaker is beeping at 440 Hz.
+d. The program will terminate if both pins are pressed for a few seconds.
+
+:::
+:::
+
+3. If the Circuit Playground Express has been running the following code for a few seconds, what happens if pin A5 is touched?
+
+   ```{.python}
+   while not cpx.touch_A7:
+      cpx.play_tone(880,0.5)
+      while not cpx.touch_A5:
+          cpx.play_tone(440,1)
+      while True:
+          cpx.play_tone(220,1)
+   ```
+::: {.content-visible when-meta="solutions"}
+::: {.callout-tip}
+## Solution 
+After a few seconds when no pin is touched, the Circuit Playground Express will be playing a note of 440 Hz repeatedly. If pin A5 is touched, the program will enter into an infinite loop of playing 220 Hz tones for ever.
+:::
+:::

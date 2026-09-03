@@ -26,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -224,8 +259,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#writing-simple-programs-for-the-circuit-playground-express" id="toc-writing-simple-programs-for-the-circuit-playground-express" class="nav-link active" data-scroll-target="#writing-simple-programs-for-the-circuit-playground-express"><span class="header-section-number">1</span> Writing simple programs for the Circuit Playground Express</a></li>
+  <li><a href="#truth-tables" id="toc-truth-tables" class="nav-link" data-scroll-target="#truth-tables"><span class="header-section-number">2</span> Truth Tables</a>
+  <ul class="collapse">
+  <li><a href="#for-a-binary-operator" id="toc-for-a-binary-operator" class="nav-link" data-scroll-target="#for-a-binary-operator"><span class="header-section-number">2.1</span> For a binary operator</a></li>
+  <li><a href="#for-an-operator-with-three-inputs" id="toc-for-an-operator-with-three-inputs" class="nav-link" data-scroll-target="#for-an-operator-with-three-inputs"><span class="header-section-number">2.2</span> For an operator with three inputs</a></li>
+  </ul></li>
+  <li><a href="#while-loops" id="toc-while-loops" class="nav-link" data-scroll-target="#while-loops"><span class="header-section-number">3</span> While loops</a>
+  <ul class="collapse">
+  <li><a href="#no-inputs" id="toc-no-inputs" class="nav-link" data-scroll-target="#no-inputs"><span class="header-section-number">3.1</span> No inputs</a></li>
+  <li><a href="#with-inputs" id="toc-with-inputs" class="nav-link" data-scroll-target="#with-inputs"><span class="header-section-number">3.2</span> With inputs</a></li>
+  </ul></li>
+  <li><a href="#nested-while-loops" id="toc-nested-while-loops" class="nav-link" data-scroll-target="#nested-while-loops"><span class="header-section-number">4</span> Nested while loops</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -250,9 +302,243 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Coming soon.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>Due Date</td>
+<td>Thu, Sep 10</td>
+</tr>
+<tr class="even">
+<td>Turn in link</td>
+<td><a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=828548">Gradescope</a></td>
+</tr>
+<tr class="odd">
+<td>URL</td>
+<td><code>emadmasroor.github.io/E21-F26/Homework/HW1</code></td>
+</tr>
+</tbody>
+</table>
+<p><u>What to turn in</u></p>
+<p>For this assignment, turn in a single PDF file, even though you will be writing code for some parts. Make sure your code is legible, indented, and syntax-highlighted; a screenshot of code is usually a bad idea, but OK for this homework.</p>
+<p>You may use the text editor in Thonny Code Editor and then go to File &gt; Print. If you use this option to make a printed copy of code for submission, please increase the font size using the ‘scale’ option when printing.</p>
+<section id="writing-simple-programs-for-the-circuit-playground-express" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Writing simple programs for the Circuit Playground Express</h1>
+<p>Using only the features of Python that have been discussed so far,</p>
+<ol type="1">
+<li>Write a program for the Circuit Playground Express that plays a tone of 440 Hz for one-second intervals repeatedly until a cell phone light is shined on it, at which point the program should terminate.</li>
+</ol>
+<ol start="2" type="1">
+<li>Write a program for the Circuit Playground Express that plays a tone of 440 Hz for one-second intervals repeatedly. When it is brought close to a warm object (warmer than room temperature), it stops playing this tone and instead plays a high-frequency tone of 880 Hz for a half second. After this, the program should terminate.</li>
+</ol>
+</section>
+<section id="truth-tables" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Truth Tables</h1>
+<p>We have seen that the truth table for the <code>and</code> and <code>or</code> operators was as given in <a href="../../Lectures/Lec2/#truth-tables-for-binary-logical-operators">lecture</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is possible to use logic to determine the truth tables for more complicated operators than <code>and</code> and <code>or</code>, but here you should simply check all possibilities using Python.</p>
+</div>
+</div>
+<section id="for-a-binary-operator" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="for-a-binary-operator"><span class="header-section-number">2.1</span> For a binary operator</h2>
+<p>Use this info to <u>construct a truth table</u> for the following binary operator.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(a <span class="kw">and</span> b) <span class="kw">or</span> a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To do this, make a table with the following entries.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable <code>a</code></th>
+<th>Variable <code>b</code></th>
+<th>Result of <code>(a and b) or a</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>True</code></td>
+<td><code>True</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>True</code></td>
+<td><code>False</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>False</code></td>
+<td><code>True</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>False</code></td>
+<td><code>False</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="for-an-operator-with-three-inputs" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="for-an-operator-with-three-inputs"><span class="header-section-number">2.2</span> For an operator with three inputs</h2>
+<p>Construct a truth table for the following operator.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(a <span class="kw">or</span> b) <span class="kw">and</span> c</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One row has been filled out for you.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><code>a</code></th>
+<th><code>b</code></th>
+<th><code>c</code></th>
+<th><code>(a or b) and c</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>True</code></td>
+<td><code>True</code></td>
+<td><code>False</code></td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>How many rows do you need?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The rows of a truth table should cover every possible combination of True and False values. If binary operators required 4 rows, how many rows do you need for a logical operator with three inputs, such as <code>(a or b) and c</code>?</p>
+</div>
+</div>
+</section>
+</section>
+<section id="while-loops" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> While loops</h1>
+<p>Determine the behavior of the Circuit Playground Express when the following code is run on it. Give your answer in words.</p>
+<section id="no-inputs" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="no-inputs"><span class="header-section-number">3.1</span> No inputs</h2>
+<ol type="1">
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">False</span>:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">False</span>:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
+</section>
+<section id="with-inputs" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="with-inputs"><span class="header-section-number">3.2</span> With inputs</h2>
+<p>For the following questions, determine what the board will do under the different relevant possibilities. For example,</p>
+<ul>
+<li>if a flashlight is shining on it vs.&nbsp;not</li>
+<li>if the temperature sensor is above/below a threshold</li>
+<li>if a certain pin is touched or not touched.</li>
+</ul>
+<ol type="1">
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> (cpx.touch_A1 <span class="kw">and</span> cpx.touch_A5):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> (cpx.touch_A1 <span class="kw">and</span> cpx.temperature <span class="op">&gt;</span> <span class="dv">30</span>):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> (cpx.touch_A1 <span class="kw">or</span> cpx.temperature <span class="op">&gt;</span> <span class="dv">30</span>):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> cpx.light <span class="op">&lt;</span> <span class="dv">100</span>:</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
+</section>
+</section>
+<section id="nested-while-loops" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Nested while loops</h1>
+<ol type="1">
+<li><p>Explain the difference between the following programs.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>For each of the following parts, assume that the Circuit Playground Express has been running the following code for a few seconds before you carry out your intervention. (i.e., a, b, c and d are <strong>not</strong> applied sequentially.)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> cpx.touch_A7:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a> cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a> <span class="cf">while</span> <span class="kw">not</span> cpx.touch_A5:</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>     cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
+<ol type="a">
+<li>What happens if pin A5 is tapped ?</li>
+<li>What happens if pin A5 is touched for ten seconds ? Then, when you release it, what happens?</li>
+<li>What happens if pin A7 is touched while the speaker is beeping at 440 Hz ?</li>
+<li>What happens if both pin A5 and A7 are pressed for a few seconds?</li>
+</ol>
+<ol start="3" type="1">
+<li><p>If the Circuit Playground Express has been running the following code for a few seconds, what happens if pin A5 is touched?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> cpx.touch_A7:</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>   cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>   <span class="cf">while</span> <span class="kw">not</span> cpx.touch_A5:</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>       cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>   <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>       cpx.play_tone(<span class="dv">220</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

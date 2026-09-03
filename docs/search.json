@@ -115,7 +115,55 @@
     "href": "Homework/HW1/index.html",
     "title": "HW 1",
     "section": "",
-    "text": "Coming soon.",
+    "text": "Due Date\nThu, Sep 10\n\n\nTurn in link\nGradescope\n\n\nURL\nemadmasroor.github.io/E21-F26/Homework/HW1\nWhat to turn in\nFor this assignment, turn in a single PDF file, even though you will be writing code for some parts. Make sure your code is legible, indented, and syntax-highlighted; a screenshot of code is usually a bad idea, but OK for this homework.\nYou may use the text editor in Thonny Code Editor and then go to File &gt; Print. If you use this option to make a printed copy of code for submission, please increase the font size using the ‘scale’ option when printing.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "Homework/HW1/index.html#for-a-binary-operator",
+    "href": "Homework/HW1/index.html#for-a-binary-operator",
+    "title": "HW 1",
+    "section": "2.1 For a binary operator",
+    "text": "2.1 For a binary operator\nUse this info to construct a truth table for the following binary operator.\n(a and b) or a\n\n\n\n\n\n\nNote\n\n\n\nTo do this, make a table with the following entries.\n\n\n\nVariable a\nVariable b\nResult of (a and b) or a\n\n\n\n\nTrue\nTrue\n\n\n\nTrue\nFalse\n\n\n\nFalse\nTrue\n\n\n\nFalse\nFalse",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "Homework/HW1/index.html#for-an-operator-with-three-inputs",
+    "href": "Homework/HW1/index.html#for-an-operator-with-three-inputs",
+    "title": "HW 1",
+    "section": "2.2 For an operator with three inputs",
+    "text": "2.2 For an operator with three inputs\nConstruct a truth table for the following operator.\n(a or b) and c\n\n\n\n\n\n\nNote\n\n\n\nOne row has been filled out for you.\n\n\n\na\nb\nc\n(a or b) and c\n\n\n\n\nTrue\nTrue\nFalse\nFalse\n\n\n\n\n\n\n\n\n\n\n\nNoteHow many rows do you need?\n\n\n\nThe rows of a truth table should cover every possible combination of True and False values. If binary operators required 4 rows, how many rows do you need for a logical operator with three inputs, such as (a or b) and c?",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "Homework/HW1/index.html#no-inputs",
+    "href": "Homework/HW1/index.html#no-inputs",
+    "title": "HW 1",
+    "section": "3.1 No inputs",
+    "text": "3.1 No inputs\n\nwhile True:\n  cpx.play_tone(440,1)\ncpx.play_tone(880,0.5)\nwhile True:\n  cpx.play_tone(880,0.5)\ncpx.play_tone(440,1)\nwhile True:\n  cpx.play_tone(880,0.5)\n  cpx.play_tone(440,1)\nwhile True:\n  cpx.play_tone(440,1)\n  cpx.play_tone(880,0.5)\ncpx.play_tone(440,1)\nwhile True:\n  cpx.play_tone(880,0.5)\ncpx.play_tone(440,1)\nwhile False:\n  cpx.play_tone(880,0.5)\ncpx.play_tone(440,1)\nwhile False:\n  cpx.play_tone(880,0.5)\ncpx.play_tone(440,1)",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "Homework/HW1/index.html#with-inputs",
+    "href": "Homework/HW1/index.html#with-inputs",
+    "title": "HW 1",
+    "section": "3.2 With inputs",
+    "text": "3.2 With inputs\nFor the following questions, determine what the board will do under the different relevant possibilities. For example,\n\nif a flashlight is shining on it vs. not\nif the temperature sensor is above/below a threshold\nif a certain pin is touched or not touched.\n\n\nwhile not (cpx.touch_A1 and cpx.touch_A5):\n  cpx.play_tone(440,1)\ncpx.play_tone(880,0.5)\nwhile not (cpx.touch_A1 and cpx.temperature &gt; 30):\n  cpx.play_tone(440,1)\ncpx.play_tone(880,0.5)\nwhile not (cpx.touch_A1 or cpx.temperature &gt; 30):\n  cpx.play_tone(440,1)\ncpx.play_tone(880,0.5)\ncpx.play_tone(440,1)\nwhile cpx.light &lt; 100:\n  cpx.play_tone(880,0.5)\ncpx.play_tone(440,1)",
     "crumbs": [
       "Homepage",
       "Homework",
@@ -213,7 +261,7 @@
     "href": "Homework/index.html#list-of-assignments",
     "title": "Homework",
     "section": "List of Assignments",
-    "text": "List of Assignments\n\n\n\n\n\n\n\n\nNumber\nDue Date\nSubmit link",
+    "text": "List of Assignments\n\n\n\nNumber\nDue Date\nSubmit link\n\n\n\n\nHW 1\nThu, Sep 10\nGradescope",
     "crumbs": [
       "Homepage",
       "Homework"
