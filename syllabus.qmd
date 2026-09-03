@@ -138,7 +138,7 @@ Instead of an exam, E21 will conclude with a final project. This will be an oppo
 > This course will introduce students to foundational topics in computer engineering. Key topics include digital representation of data, gates and truth table, and basics of computer organization. Students will gain proficiency coding in Python in both the embedded and traditional computing contexts. Students will also gain exposure to key methods for computational modeling of engineered systems and numerical solution of problems in engineering.
 
 
-## Schedule of topics, HW and tests
+## Schedule
 
 ::: {.content-hidden when-format="pdf"}
 <style type="text/css">

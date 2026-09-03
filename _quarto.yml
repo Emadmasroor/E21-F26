@@ -36,6 +36,8 @@ website:
         contents: "Homework/**"
         sort: "order"
       - href: PastProjects/index.qmd
+      - href: syllabus.html/#schedule
+        text: "Schedule"
 
 
 format:

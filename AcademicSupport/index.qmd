@@ -6,3 +6,11 @@ format:
 ---
 
 Navigate using the sidebar to the left.
+
+| Event                       | Monday                              | Tuesday                 | Wednesday                        | Thursday                    |
+| --------------------------- | ----------------------------------- | ----------------------- | -------------------------------- | --------------------------- |
+| **Wizard Office Hours**     |                                     |                         | Samchan Lee 4:30 to 5:30 PM      | Visnuk Rith 1 to 2 PM |
+|                            |                                     |                         | Uneeb Hyder 3:15 to 4:15 PM      |                             |
+| **Instructor Office Hours** |                                     |                         | 9-10:30 AM SH 112  |                             |
+| **Wizard Session**          |                                     | 7 to 9 PM SH 222 |                                  |                             |
+| **Problem Session**         | 4 to 6 PM SH 221 |                         |                                  |                             |
