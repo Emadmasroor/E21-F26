@@ -179,7 +179,7 @@ Instead of an exam, E21 will conclude with a final project. This will be an oppo
     <td class="tg-0pky"></td>
     <td class="tg-0pky">2</td>
     <td class="tg-0pky">Thu,Sep 3</td>
-    <td class="tg-0pky">HW 0</td>
+    <td class="tg-0pky">   </td>
     <td class="tg-61xu">Programming + Circuit Python Express</td>
     <td class="tg-0pky"></td>
     <td class="tg-0pky"></td>
