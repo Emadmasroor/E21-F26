@@ -510,7 +510,11 @@ Tip
 <h3 class="anchored" data-anchor-id="output-with-the-cpx">Output with the CPX</h3>
 <div class="nonincremental">
 <ol type="1">
-<li>Play a tone at x Hertz for y seconds: <code>cpx.play_tone(x,y)</code></li>
+<li><p>Play a tone at x Hertz for y seconds: <code>cpx.play_tone(x,y)</code></p></li>
+<li><p>Light up pixel number N with a light made up of Red, Green, and Blue elements:</p>
+<p><code>cpx.pixels[4] = (30,100,20)</code></p>
+<p>This will produce light on pixel number 4 with the following components:</p>
+<p>Red: 30, Green: 100, Blue: 20</p></li>
 </ol>
 </div>
 </section>
@@ -901,18 +905,32 @@ Tip
 </ul>
 <div class="fragment">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This program makes the Circuit Playground Express </span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># play middle A (440 Hz) until you touch pin A4.</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> cpx.touch_A4:</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># play middle A (440 Hz) and then a higher note (880 Hz)</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># until you touch pin A4. Then, it plays a low note once.</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> cpx.touch_A4:</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">220</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Some things to notice about <strong>while</strong> loops:
 <ul>
 <li>What happens when the condition is not true?</li>
-<li>Indentation</li>
-<li>Colon symbol</li>
+<li>Indentation and colon symbol</li>
 </ul></li>
 </ul>
+<div style="font-size: 70%">
+<ol type="1">
+<li>Check if the condition is true. If yes:</li>
+<li>Execute <code>cpx.play_tone(440,1)</code></li>
+<li>Execute <code>px.play_tone(880,0.5)</code></li>
+<li>Check if the condition is (still) true:
+<ul>
+<li>If yes: return to step 2.</li>
+<li>If no: <strong>exit the loop</strong></li>
+</ul></li>
+</ol>
+</div>
 </section>
 <section id="you-can-indent-as-much-as-you-want" class="level3">
 <h3 class="anchored" data-anchor-id="you-can-indent-as-much-as-you-want">You can indent as much as you want</h3>
@@ -932,11 +950,16 @@ Tip
 </section>
 <section id="you-can-nest-one-while-loop-inside-the-other" class="level3">
 <h3 class="anchored" data-anchor-id="you-can-nest-one-while-loop-inside-the-other">You can <u>nest</u> one while loop inside the other</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">220</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><u>Nested Loops</u></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> cpx.touch_A4:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">220</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Two loops at the same indentation level are <strong>not</strong> nested:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> cpx.touch_A4:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">220</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>

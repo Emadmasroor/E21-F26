@@ -160,6 +160,13 @@ Keep this snippet of code handy if you're slow to type; you'll have to copy-and-
 
 ::: {.nonincremental}
 1. Play a tone at x Hertz for y seconds: `cpx.play_tone(x,y)`
+2. Light up pixel number N with a light made up of Red, Green, and Blue elements:
+   
+   `cpx.pixels[4] = (30,100,20)`
+   
+   This will produce light on pixel number 4 with the following components:
+   
+   Red: 30, Green: 100, Blue: 20
 :::
 
 ### Python preliminaries
@@ -422,16 +429,29 @@ Refers to a range of **whole numbers**. <br> You can access different elements o
 ::: {.fragment}
 ```{.python}
 # This program makes the Circuit Playground Express 
-# play middle A (440 Hz) until you touch pin A4.
+# play middle A (440 Hz) and then a higher note (880 Hz)
+# until you touch pin A4. Then, it plays a low note once.
 while not cpx.touch_A4:
     cpx.play_tone(440,1)
+    cpx.play_tone(880,0.5)
+cpx.play_tone(220,1)
 ```
 :::
 
 - Some things to notice about **while** loops:
   - What happens when the condition is not true?
-  - Indentation
-  - Colon symbol
+  - Indentation and colon symbol
+
+::: {style="font-size: 70%"}
+1. Check if the condition is true. If yes:
+2. Execute `cpx.play_tone(440,1)`
+3. Execute `px.play_tone(880,0.5)`
+4. Check if the condition is (still) true:
+   - If yes: return to step 2.
+   - If no: **exit the loop**
+:::
+
+
 
 ### You can indent as much as you want
 
@@ -455,14 +475,25 @@ while True:
 
 ### You can [nest]{.underline} one while loop inside the other
 
+[Nested Loops]{.underline}
 
 ```{.python}
-
-while True:
+while not cpx.touch_A4:
   cpx.play_tone(440,1)
   while True:
     cpx.play_tone(220,1)
 ```
+
+Two loops at the same indentation level are **not** nested:
+
+```{.python}
+while not cpx.touch_A4:
+  cpx.play_tone(440,1)
+while True:
+    cpx.play_tone(220,1)
+```
+
+
 
 
 
