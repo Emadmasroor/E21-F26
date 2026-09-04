@@ -69,7 +69,6 @@ def initialize_touch():
     cp.touch_A4
     cp.touch_A5
     cp.touch_A6
-    cp.touch_A7
 
 ######################################################################
 # Run this function to complete exercise 1.
