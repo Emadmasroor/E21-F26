@@ -6,7 +6,7 @@ project:
     - "markdeep"
 
 website:
-  title: "ENGR21 Computer Engineering Fundamentals"
+  title: "ENGR 21 Computer Engineering Fundamentals"
   navbar:
     right:
       - href: "https://moodle.swarthmore.edu/course/view.php?id=30092"

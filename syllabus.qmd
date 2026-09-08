@@ -1,6 +1,6 @@
 ---
 title: "Syllabus"
-subtitle: "E21 Fall 2026, Swarthmore College"
+subtitle: "ENGR 21 Fall 2026, Swarthmore College"
 author: "Emad Masroor"
 toc-depth: 4
 format:
