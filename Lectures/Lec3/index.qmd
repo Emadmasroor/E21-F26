@@ -7,7 +7,7 @@ order: 2
 date: 09-08-2026
 date-format: long
 css: ../../styles.css
-uncover: false
+uncover: true
 footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
 resources: none
 code-line-numbers: false
@@ -38,6 +38,19 @@ format:
 See [Google Sheet](https://docs.google.com/spreadsheets/d/1HvjXx8n-77pGVphuhDs-Ih6Q8M8EpT8X141fMiJJnDc/edit?gid=0#gid=0) sent out by Prof. Zucker!
 
 Labs start Thursday
+
+### Announcements
+
+::: {.nonincremental}
+
+- Homework due Thursday
+- Wizard Session tonight 7 to 9 PM Singer 222
+- Wizard Office Hours Announced (all in Singer 228)
+  - Samchan Lee   4:30 — 5:30 PM, Wednesdays
+  - Visnuk Rith   1:00 — 2:00 PM, Thursdays
+  - Uneeb Hyder   3:15 — 4:15 PM, Thursdays
+
+:::
 
 ### Numbers with Base N
 
@@ -100,6 +113,8 @@ These features apply to [all]{.underline} place-value systems, not just base-ten
 
 ### Binary Number System
 
+![](Page1.png){.absolute top=200 left=200 width="70%"}
+
 The only symbols are 0 and 1
 
 1. `00001`
@@ -132,6 +147,8 @@ The only symbols are 0 and 1
 1. `11110`
 2. `1001001001`
 3. `111111`
+
+![](Page2.png){width="70%"}
 
 ### Converting from Decimal to Binary
 
@@ -245,6 +262,10 @@ so `0x3D` is equal to the number sixty-one.
 [Now interpret the hexadecimal number `1D4`]{.inclass}
 :::
 
+::: {.fragment}
+![](Page3.png){width="70%"}
+:::
+
 ### Converting from Decimal to Hexadecimal
 
 [How would you convert the number three hundred and seventeen to hexadecimal?]{.inclass}
@@ -338,8 +359,5 @@ On the toolbar, go to **View** > **Plotter**.
 :::
 
 :::
-
-
-
 
 

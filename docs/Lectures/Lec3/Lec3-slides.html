@@ -221,6 +221,19 @@ Emad Masroor
 <p>See <a href="https://docs.google.com/spreadsheets/d/1HvjXx8n-77pGVphuhDs-Ih6Q8M8EpT8X141fMiJJnDc/edit?gid=0#gid=0">Google Sheet</a> sent out by Prof.&nbsp;Zucker!</p>
 <p>Labs start Thursday</p>
 </section>
+<section id="announcements" class="slide level3">
+<h3>Announcements</h3>
+<ul>
+<li>Homework due Thursday</li>
+<li>Wizard Session tonight 7 to 9 PM Singer 222</li>
+<li>Wizard Office Hours Announced (all in Singer 228)
+<ul>
+<li>Samchan Lee 4:30 — 5:30 PM, Wednesdays</li>
+<li>Visnuk Rith 1:00 — 2:00 PM, Thursdays</li>
+<li>Uneeb Hyder 3:15 — 4:15 PM, Thursdays</li>
+</ul></li>
+</ul>
+</section>
 <section id="numbers-with-base-n" class="slide level3">
 <h3>Numbers with Base N</h3>
 <h4 id="for-decimal-numbers-n-10">For Decimal numbers, <span class="math inline">\(N = 10\)</span></h4>
@@ -349,6 +362,7 @@ Emad Masroor
 </section>
 <section id="binary-number-system" class="slide level3">
 <h3>Binary Number System</h3>
+<p><img data-src="Page1.png" class="absolute" style="top: 200px; left: 200px; width: 70%; "></p>
 <p>The only symbols are 0 and 1</p>
 <ol type="1">
 <li class="fragment"><code>00001</code></li>
@@ -366,7 +380,7 @@ Emad Masroor
 <div class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
 <ul>
 <li class="fragment">35: <code>0000100011</code></li>
-<li class="fragment"></li>
+<li class="fragment"><span data-when-meta="uncover"><span class="math inline">\(2^0 + 2^1 + 2^5 = 35\)</span></span></li>
 </ul>
 </div>
 <div class="fragment quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
@@ -415,10 +429,27 @@ Emad Masroor
 <li class="fragment"><code>1001001001</code></li>
 <li class="fragment"><code>111111</code></li>
 </ol>
+<p><img data-src="Page2.png" style="width:70.0%"></p>
 </section>
 <section id="converting-from-decimal-to-binary" class="slide level3">
 <h3>Converting from Decimal to Binary</h3>
 <p><span class="inclass">How would you convert the number thirteen to binary?</span></p>
+<p><strong>One approach</strong>:</p>
+<ul>
+<li class="fragment">Look for closest power of 2.
+<ul>
+<li class="fragment">13 lies between <span class="math inline">\(2^3\)</span> and <span class="math inline">\(2^4\)</span></li>
+<li class="fragment">The number will have 4 digits</li>
+</ul></li>
+<li class="fragment">Successively divide by 2 using <strong>integer division</strong>
+<ul>
+<li class="fragment"><span class="math inline">\(13 \div 2 = 6 \text{ remainder } 1\)</span></li>
+<li class="fragment"><span class="math inline">\(6  \div 2 = 3 \text{ rem. } 0\)</span></li>
+<li class="fragment"><span class="math inline">\(3  \div 2 = 1 \text{ rem. } 1\)</span></li>
+<li class="fragment"><span class="math inline">\(1  \div 2 = 0 \text{ rem. } 1\)</span></li>
+</ul></li>
+<li class="fragment">Binary representation of thirteen is <code>1101</code></li>
+</ul>
 <ul>
 <li class="fragment"><span class="inclass">Convert the number 54 to binary.</span></li>
 </ul>
@@ -502,13 +533,13 @@ Emad Masroor
 </tr>
 <tr class="even">
 <td>Value</td>
-<td></td>
-<td></td>
+<td><span class="math inline">\(3 \times 16^{1}\)</span></td>
+<td><span class="math inline">\(13 \times 16^{0}\)</span></td>
 </tr>
 <tr class="odd">
 <td>Total</td>
-<td></td>
-<td></td>
+<td><span class="math inline">\(48\)</span></td>
+<td><span class="math inline">\(13\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -517,10 +548,28 @@ Emad Masroor
 <div class="fragment">
 <p><span class="inclass">Now interpret the hexadecimal number <code>1D4</code></span></p>
 </div>
+<div class="fragment">
+<p><img data-src="Page3.png" style="width:70.0%"></p>
+</div>
 </section>
 <section id="converting-from-decimal-to-hexadecimal" class="slide level3">
 <h3>Converting from Decimal to Hexadecimal</h3>
 <p><span class="inclass">How would you convert the number three hundred and seventeen to hexadecimal?</span></p>
+<p><strong>One approach</strong>:</p>
+<ul>
+<li class="fragment">Look for closest power of 16.
+<ul>
+<li class="fragment">317 lies between <span class="math inline">\(16^2\)</span> and <span class="math inline">\(16^3\)</span></li>
+<li class="fragment">The number will have 3 digits</li>
+</ul></li>
+<li class="fragment">Successively divide by 16 using <strong>integer division</strong>
+<ul>
+<li class="fragment"><span class="math inline">\(317 \div 16 = 19 \text{ remainder } 13\)</span>, which has symbol <code>D</code></li>
+<li class="fragment"><span class="math inline">\(19  \div 16 = 1 \text{ rem. } 3\)</span></li>
+<li class="fragment"><span class="math inline">\(1  \div 16 = 0 \text{ rem. } 1\)</span></li>
+</ul></li>
+<li class="fragment">Hex representation of three hundred and seventeen is <code>13D</code></li>
+</ul>
 <ul>
 <li class="fragment"><span class="inclass">Convert the number 417 to hex.</span></li>
 </ul>

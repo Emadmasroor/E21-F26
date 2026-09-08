@@ -309,6 +309,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#lab-section-assignments" id="toc-lab-section-assignments" class="nav-link active" data-scroll-target="#lab-section-assignments">Lab Section Assignments</a></li>
+  <li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a></li>
   <li><a href="#numbers-with-base-n" id="toc-numbers-with-base-n" class="nav-link" data-scroll-target="#numbers-with-base-n">Numbers with Base N</a></li>
   <li><a href="#base-systems" id="toc-base-systems" class="nav-link" data-scroll-target="#base-systems">Base Systems</a></li>
   <li><a href="#how-decimal-numbers-work" id="toc-how-decimal-numbers-work" class="nav-link" data-scroll-target="#how-decimal-numbers-work">How (decimal) numbers work</a></li>
@@ -364,6 +365,21 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="lab-section-assignments">Lab Section Assignments</h3>
 <p>See <a href="https://docs.google.com/spreadsheets/d/1HvjXx8n-77pGVphuhDs-Ih6Q8M8EpT8X141fMiJJnDc/edit?gid=0#gid=0">Google Sheet</a> sent out by Prof.&nbsp;Zucker!</p>
 <p>Labs start Thursday</p>
+</section>
+<section id="announcements" class="level3">
+<h3 class="anchored" data-anchor-id="announcements">Announcements</h3>
+<div class="nonincremental">
+<ul>
+<li>Homework due Thursday</li>
+<li>Wizard Session tonight 7 to 9 PM Singer 222</li>
+<li>Wizard Office Hours Announced (all in Singer 228)
+<ul>
+<li>Samchan Lee 4:30 — 5:30 PM, Wednesdays</li>
+<li>Visnuk Rith 1:00 — 2:00 PM, Thursdays</li>
+<li>Uneeb Hyder 3:15 — 4:15 PM, Thursdays</li>
+</ul></li>
+</ul>
+</div>
 </section>
 <section id="numbers-with-base-n" class="level3">
 <h3 class="anchored" data-anchor-id="numbers-with-base-n">Numbers with Base N</h3>
@@ -499,6 +515,7 @@ window.Quarto = {
 </section>
 <section id="binary-number-system" class="level3">
 <h3 class="anchored" data-anchor-id="binary-number-system">Binary Number System</h3>
+<p><img src="Page1.png" class="absolute img-fluid" style="width:70.0%" data-top="200" data-left="200"></p>
 <p>The only symbols are 0 and 1</p>
 <ol type="1">
 <li><code>00001</code></li>
@@ -516,7 +533,7 @@ window.Quarto = {
 <div class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
 <ul>
 <li>35: <code>0000100011</code></li>
-<li></li>
+<li><span data-when-meta="uncover"><span class="math inline">\(2^0 + 2^1 + 2^5 = 35\)</span></span></li>
 </ul>
 </div>
 <div class="fragment quarto-layout-cell" style="flex-basis: 65.0%;justify-content: center;">
@@ -565,10 +582,27 @@ window.Quarto = {
 <li><code>1001001001</code></li>
 <li><code>111111</code></li>
 </ol>
+<p><img src="Page2.png" class="img-fluid" style="width:70.0%"></p>
 </section>
 <section id="converting-from-decimal-to-binary" class="level3">
 <h3 class="anchored" data-anchor-id="converting-from-decimal-to-binary">Converting from Decimal to Binary</h3>
 <p><span class="inclass">How would you convert the number thirteen to binary?</span></p>
+<p><strong>One approach</strong>:</p>
+<ul>
+<li>Look for closest power of 2.
+<ul>
+<li>13 lies between <span class="math inline">\(2^3\)</span> and <span class="math inline">\(2^4\)</span></li>
+<li>The number will have 4 digits</li>
+</ul></li>
+<li>Successively divide by 2 using <strong>integer division</strong>
+<ul>
+<li><span class="math inline">\(13 \div 2 = 6 \text{ remainder } 1\)</span></li>
+<li><span class="math inline">\(6  \div 2 = 3 \text{ rem. } 0\)</span></li>
+<li><span class="math inline">\(3  \div 2 = 1 \text{ rem. } 1\)</span></li>
+<li><span class="math inline">\(1  \div 2 = 0 \text{ rem. } 1\)</span></li>
+</ul></li>
+<li>Binary representation of thirteen is <code>1101</code></li>
+</ul>
 <ul>
 <li><span class="inclass">Convert the number 54 to binary.</span></li>
 </ul>
@@ -653,13 +687,13 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td>Value</td>
-<td></td>
-<td></td>
+<td><span class="math inline">\(3 \times 16^{1}\)</span></td>
+<td><span class="math inline">\(13 \times 16^{0}\)</span></td>
 </tr>
 <tr class="odd">
 <td>Total</td>
-<td></td>
-<td></td>
+<td><span class="math inline">\(48\)</span></td>
+<td><span class="math inline">\(13\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -668,10 +702,28 @@ window.Quarto = {
 <div class="fragment">
 <p><span class="inclass">Now interpret the hexadecimal number <code>1D4</code></span></p>
 </div>
+<div class="fragment">
+<p><img src="Page3.png" class="img-fluid" style="width:70.0%"></p>
+</div>
 </section>
 <section id="converting-from-decimal-to-hexadecimal" class="level3">
 <h3 class="anchored" data-anchor-id="converting-from-decimal-to-hexadecimal">Converting from Decimal to Hexadecimal</h3>
 <p><span class="inclass">How would you convert the number three hundred and seventeen to hexadecimal?</span></p>
+<p><strong>One approach</strong>:</p>
+<ul>
+<li>Look for closest power of 16.
+<ul>
+<li>317 lies between <span class="math inline">\(16^2\)</span> and <span class="math inline">\(16^3\)</span></li>
+<li>The number will have 3 digits</li>
+</ul></li>
+<li>Successively divide by 16 using <strong>integer division</strong>
+<ul>
+<li><span class="math inline">\(317 \div 16 = 19 \text{ remainder } 13\)</span>, which has symbol <code>D</code></li>
+<li><span class="math inline">\(19  \div 16 = 1 \text{ rem. } 3\)</span></li>
+<li><span class="math inline">\(1  \div 16 = 0 \text{ rem. } 1\)</span></li>
+</ul></li>
+<li>Hex representation of three hundred and seventeen is <code>13D</code></li>
+</ul>
 <ul>
 <li><span class="inclass">Convert the number 417 to hex.</span></li>
 </ul>
