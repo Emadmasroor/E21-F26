@@ -10,7 +10,7 @@
 * Investigate capacitive touch sensing.
 
 * Use conditionals (**`if`** statements) to respond to pin inputs on the
-  Circuit Playground Bluefruit (CPB).
+  Circuit Playground Express (CPX).
   
 !!! Warning
     You may be familiar with more advanced Python language
@@ -25,7 +25,7 @@
 # Lab Overview
 
 This week in lab, you will apply what you have learned in class about
-programming in CircuitPython on the Circuit Playground Bluefruit to
+programming in CircuitPython on the Circuit Playground Express to
 several tasks of increasing complexity, building up a system that
 lights up when the correct sequence of capacitive touch inputs is
 entered.
@@ -58,11 +58,11 @@ progress as you complete each exercise during lab.
 
 ## Capacitive touch
 
-![Figure [cpins]: Capacative touch pins on CPB. Image courtesy of Adafruit.](images/circuitpython_cpb_capacitive_touch_pads.jpg width="75%" alt="A close-up image of an Adafruit Circuit Playground Bluefruit.  Pins A1 to A6 and TX are circled in red.")
+![Figure [cpins]: Capacative touch pins on CPX. Image courtesy of Adafruit.](images/circuitpython_cpx_capacitive_touch_pads.jpg width="75%" alt="A close-up image of an Adafruit Circuit Playground Express.  Pins A1 to A6 and TX are circled in red.")
 
-The CPB has seven pins capable of serving as capacitive touch inputs,
+The CPX has seven pins capable of serving as capacitive touch inputs,
 as described on [this Adafruit
-article](https://learn.adafruit.com/adafruit-circuit-playground-bluefruit/circuitpython-cap-touch),
+article](https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-cap-touch),
 which also gives an overview of how access them in CircuitPython.
 
 The basic idea of capacitive touch is that when you connect a
@@ -209,12 +209,12 @@ that you will call, and in some cases modify.
 # Lab Exercises
 
 Before you begin, download this [`code.py`](lab1/code.py) file and
-copy it over to the root directory of your CPB.
+copy it over to the root directory of your CPX.
 
 !!! Warning
-   **If you already have a `code.py` file on your CPB with valuable
+   **If you already have a `code.py` file on your CPX with valuable
    code in it, beware of overwriting it!** Consider renaming the one
-   on your CPB or backing it up to your computer before copying over
+   on your CPX or backing it up to your computer before copying over
    the starter code.
 
 When moving from exercise to exercise, you will comment and un-comment
@@ -233,7 +233,7 @@ the function calls at the very bottom of Lab 1's `code.py`.
 ## Exercise 1: Raw touch input 
 
 When you run the code, open the Serial and Plotter windows, and
-observe the effects of touching the **`A1`** pad on the CPB.  (There
+observe the effects of touching the **`A1`** pad on the CPX.  (There
 should be nothing electrically connected to the pad.) You should see
 the graph change significantly depending whether you are touching the
 pad or not.
@@ -254,7 +254,8 @@ tinsel balls provided in lab. You should now have twelve readings per group memb
     **For this and all future E21 labs, please make sure to write up
     your answers to the questions in each exercise before you move on
     to the next task.** The questions are designed to help you complete the
-    labs efficiently!
+    labs efficiently! Don't forget to use the [provided lab report template](https://docs.google.com/document/d/1zX4XIjqBkH3_dSBM4zfjCBaGEOoiZbpREtcKvYVq8Ss/copy).
+
 
   * **Q1)** Compile a table of all of the readings you collected. The
     columns should include *object*, *person*, *before*, *during*, and *after*.
@@ -281,7 +282,7 @@ Edit the lines at the bottom of `code.py` to comment out
 Run the program with no objects clipped to any capacitive touch input pads, 
 and look at the results in the Serial window as you touch the pads.
 
-(###) How capacitive touch works on the CPB
+(###) How capacitive touch works on the CPX
 
 As you saw in Exercise 1, a capacative touch input produces a
 continously varying value, but in order to be used as a button, that
@@ -498,7 +499,7 @@ the implementation of your **`lab1_ex4()`** function into
 Choose one of these activities to further develop and exhibit your coding skills:
 
   * **Make a cooler "ending" to the program.** Instead of just filling
-    the NeoPixels with white, make them animate, have the CPB play a
+    the NeoPixels with white, make them animate, have the CPX play a
     sound, or do some other behavior that is more dramatic or
     entertaining than the original specification. You can always refer
     to the
@@ -520,7 +521,7 @@ In your writeup, please answer the following:
 
     * **Q8)** What "Going further" activity did you choose? Briefly
       describe how you went about completing this exercise. If the
-      behavior of the CPB is different from exercise 4, please shoot
+      behavior of the CPX is different from exercise 4, please shoot
       another video, share it with me (no notifications please) and
       include the video URL in your answer.
     
