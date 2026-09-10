@@ -503,7 +503,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-13"><a href="#cb10-13" aria-label="13"></a>    <span class="co"># if no, light is not less than 200:</span></span>
 <span id="cb10-14"><a href="#cb10-14" aria-label="14"></a>    cpx.play_tone(<span class="dv">440</span>,<span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul></li>
-<li></li>
+<li><p><span data-unless-meta="uncover">In this example, <em>lines 5-8</em> <u>will never execute</u>.</span></p></li>
 </ul>
 </section>
 <section id="printing-text" class="level3">
@@ -534,7 +534,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the light sensor reads </span><span class="sc">{</span>cpx<span class="sc">.</span>light<span class="sc">}</span><span class="ss"> in some unknown units"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>When using f-strings, the precision of numerical variables can be specified using the notation <code>:.nf</code> where <code>n</code> is the number of significant figures after the decimal point.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the light sensor reads </span><span class="sc">{</span>cpx<span class="sc">.</span>light<span class="sc">:.1f}</span><span class="ss"> in some unknown units"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li></li>
+<li><p><span class="inclass" data-unless-meta="uncover">Write a program that prints the temperature to 2 decimal places at 1 second intervals</span></p></li>
 </ul>
 </section>
 <section id="loops-and-counter-variables" class="level3">
@@ -637,8 +637,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-14"><a href="#cb21-14" aria-label="14"></a>            <span class="cf">if</span> cpx.touch_A2:</span>
 <span id="cb21-15"><a href="#cb21-15" aria-label="15"></a>                <span class="bu">print</span>(<span class="st">"skip this iteration"</span>)</span>
 <span id="cb21-16"><a href="#cb21-16" aria-label="16"></a>                <span class="cf">continue</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li></li>
-<li></li>
+<li><p><span data-when-meta="uncover">In Option A, the inner loop is terminated upon touching A2 <strong>before</strong> the print statement, so line 16 <strong>is not</strong> executed if A2 is touched.</span></p></li>
+<li><p><span data-when-meta="uncover">In Option B, the inner loop is terminated upon touching A2 <strong>after</strong> the print statement, so line 13 <strong>is</strong> executed even if A2 is touched.</span></p></li>
 </ul>
 </section>
 <section id="the-pass-keyword" class="level3">
