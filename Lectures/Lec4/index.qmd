@@ -277,7 +277,7 @@ We often want to embed variables into a Python string, before printing it.
             print("breaking")
             break
     ```
-- When using nested for loops, `break` terminates the innermost loop only.
+- When using nested loops, `break` terminates the innermost loop only.
   ```{.python}
   from adafruit_circuitplayground.express import cpx
   import time
