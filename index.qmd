@@ -1,5 +1,5 @@
 ---
-title: "E21 Computer Engineering Fundamentals"
+title: "ENGR 21 Computer Engineering Fundamentals"
 subtitle: "Fall 2026"
 date: last-modified
 authors:
@@ -7,6 +7,6 @@ authors:
   - "Matt Zucker"
 ---
 
-This is a Quarto website. Hello, world.
+This is a Quarto website. To navigate, use the sidebar to the left.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

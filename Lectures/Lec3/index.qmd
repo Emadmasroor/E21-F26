@@ -3,7 +3,7 @@ title: "Lecture 03"
 subtitle: "E21 Computer Engineering Fundamentals"
 author: "Emad Masroor"
 topic: "Base Systems"
-order: 2
+order: 3
 date: 09-08-2026
 date-format: long
 css: ../../styles.css
@@ -29,7 +29,7 @@ format:
     width: 1024
     height: 1024
     chalkboard: true
-    output-file: Lec3-slides.html
+    output-file: slides.html
     auto-stretch: false
 ---
 

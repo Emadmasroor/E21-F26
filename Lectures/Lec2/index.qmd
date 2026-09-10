@@ -28,7 +28,7 @@ format:
     width: 1024
     height: 1024
     chalkboard: true
-    output-file: Lec2-slides.html
+    output-file: slides.html
     auto-stretch: false
 ---
 

@@ -1,0 +1,414 @@
+---
+title: "Lecture 04"
+subtitle: "E21 Computer Engineering Fundamentals"
+author: "Emad Masroor"
+topic: "Programming Basics"
+order: 4
+date: 09-10-2026
+date-format: long
+css: ../../styles.css
+uncover: false
+footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
+resources: none
+code-line-numbers: false
+format: 
+  html:
+    code-annotations: hover
+    code-fold: true
+    highlight-style: github
+  revealjs:
+    slide-number: c
+    slide-level: 3
+    code-annotations: none
+    highlight-style: github
+    incremental: true
+    code-fold: true
+    smaller: false
+    theme: white
+    center: false
+    width: 1024
+    height: 1024
+    chalkboard: true
+    output-file: "slides.html"
+    auto-stretch: false
+---
+
+### Running code on your Circuit Playground Express
+
+- The code that's saved in the special file `code.py` on your `CIRCUITPY` drive is automatically run whenever the board is powered on with a USB cable or battery.
+- If the board is in **interactive mode**, automatic execution of `code.py` is paused unless you click ![](play.png){height="20pt"}
+- Enter interactive mode using ![](stop.png){height="20pt"}
+- The code inside `code.py` runs **once** whenever the board is reset. You can reset by:
+  - pressing the physical reset button
+  - unplugging and replugging the USB cable
+
+### Importing the `time` package
+
+Python comes with several [packages]{.emph} that need to be `import`ed into programs. These packages can be:
+
+- Part of the so-called _[standard library](https://docs.python.org/3/library/index.html)_. Standard library packages must be imported.
+  These include packages such as `random`, `math`, `calendar` and `time`.
+- Available for download from the [Python package index](https://pypi.org/).  These must be downloaded at least once on a computer, and can subsequently be `import`ed.
+  These include packages such as `numpy`, for numerical computing, or `matplotlib`, for plotting.
+
+::: {.fragment}
+```{.python}
+import time
+while True:
+  print("one iteration")
+  time.sleep(2.5) # sleep for 2.5 seconds
+```
+:::
+
+[It is good practice to insert a `time.sleep()` command into every `while True:` loop to prevent the program from getting out of hand.]{.emph .fragment}
+
+### Objects in Python
+
+- The line `from adafruit_circuitplayground.express import cpx` imports the _class_ 'Express' which is known as `cpx`.
+- A _class_ is an object associated with certain attributes and methods.
+  - **Methods** are functions. e.g. the `cpx` class posssess the function `cpx.play_tone(440,1)`
+  - **Attributes** are variables that are 'part of' the class. e.g., the `cpx` class possess the following attributes
+    - `touched` --- this attribute is set internally based on which pins are being touched.
+      ```{.python}
+      >>> cpx.touched
+      [board.A2, board.A1, board.A3]
+      ```
+    - `cpx.red_led` --- this attribute can be set by the user
+      ```{.python}
+      >>> cpx.red_led
+      False
+      ```
+
+
+### `if` statements
+
+- In Python, `if` statements are followed by indented blocks of code, similar to `while`.
+  ```{.python code-line-numbers="2,4"}
+  from adafruit_circuiytplayground.express import cpx
+  if cpx.light < 100:
+      cpx.play_tone(440,2)
+  elif cpx.light < 200:
+      cpx.play_tone(660,1)
+  else:
+      cpx.play_tone(880,0.5)
+  ```
+- No `end` is needed.
+- `elif` stands for "else, if"
+- The code following an `if` or `elif` statement [must be a conditional]{.emph}
+  - [Recall]{.underline}: Conditionals are either `True` or `False`.
+  - e.g., if it's dark in the room, `cpx.light < 100` will be `True`.
+
+### `if` `else` and `elif`
+
+The following code is equivalent:
+
+- Using `else` followed by `if`:
+  ```{.python code-line-numbers="3-5"}
+  if cpx.light < 100:
+      cpx.play_tone(440,2)
+  else:
+      if cpx.light < 200:
+          cpx.play_tone(660,1)
+      else:
+          cpx.play_tone(880,0.5)
+  ```
+- Using `elif`
+  ```{.python code-line-numbers="3-4"}
+  if cpx.light < 100:
+      cpx.play_tone(440,2)
+  elif cpx.light < 200:
+      cpx.play_tone(660,1)
+  else:
+      cpx.play_tone(880,0.5)
+  ```
+
+### Multiple `elif`s in one block
+
+- Inside the same 'block' of code, you can have:
+  - One `if:` 
+  - As many `elif:`s as you want
+  - One `else:`
+  ```{.python .fragment}
+  if cpx.light < 100:
+      cpx.play_tone(440,2)
+  elif cpx.light < 200:
+      cpx.play_tone(660,1)
+  elif cpx.light < 400:
+      cpx.play_tone(770,0.75)
+  else:
+      cpx.play_tone(880,0.5)
+  ```
+
+### Nesting `if` statements {.scrollable}
+
+- If statements can be nested indefinitely:
+  ```{.python}
+  if cpx.light < 200:
+    cpx.play_tone(440,1)
+    if cpx.light < 150:
+        if cpx.light < 100:
+            cpx.play_tone(330,1)
+            if cpx.light < 50:
+                cpx.play_tone(220,1)
+  ```
+- It's up to you to check if your nested `if` statements make logical sense. For example, [run and compare the following programs]{.inclass}
+  - **Option A**: 
+    ```{.python }
+    # First, check if light < 200
+    if cpx.light < 200:
+        # If yes, then ...
+        cpx.play_tone(440,1)
+        # check if light < 150
+        if cpx.light < 150:
+            # if light is less than 150:
+            cpx.play_tone(330,1)
+        else:
+            # if light is not less than 150:
+            cpx.play_tone(330,2)
+    else:
+        # if no, light is not less than 200:
+        cpx.play_tone(440,2)
+    ```
+  - **Option B**: 
+    ```{.python code-line-numbers="5-8"}
+    # First, check if light < 200
+    if cpx.light < 200:
+        # If yes, then ...
+        cpx.play_tone(440,1)
+        # check if light > 350
+        if cpx.light > 350:
+            # if light is more than 150:
+            cpx.play_tone(330,1)
+        else:
+            # if light is not less than 150:
+            cpx.play_tone(330,2)
+    else:
+        # if no, light is not less than 200:
+        cpx.play_tone(440,2)
+    ```
+- [In this example, _lines 5-8_ [will never execute]{.underline}.]{.content-hidden unless-meta="uncover"}
+
+
+### Printing Text
+
+- Print statements are commonly used in programs, especially for debugging purposes.
+- The `print()` function takes as argument a string.
+- In Python, strings are enclosed in single quotes or double quotes.
+  - `"This is a string"`
+  - `'This is also a string'`
+- Try out this code and shine a flashlight:
+  ```{.python}
+  while True:
+    if cpx.light < 200:
+      print("Light is less than 200")
+    else:
+      print("Light is more than 200")
+  ```
+
+### Strings embedded with variables
+
+We often want to embed variables into a Python string, before printing it.
+
+- Variables can be directly printed
+  ```{.python}
+  print("the light sensor reads ",cpx.light," in some unknown units")
+  ```
+- Variables can be embedded into a string by enclosing in `{}` and preceding the string with the letter `f` like so:
+  ```{.python}
+  print(f"the light sensor reads {cpx.light} in some unknown units")
+  ```
+- When using f-strings, the precision of numerical variables can be specified using the notation `:.nf` where `n` is the number of significant figures after the decimal point.
+  ```{.python}
+  print(f"the light sensor reads {cpx.light:.1f} in some unknown units")
+  ```
+
+### Loops and counter variables
+
+[Counter variables]{.emph} are used inside a loop to increment each time the loop is run.
+
+- A simple counter variable
+  ```{.python}
+  k = 0
+  while True:
+      print(f"The value of k is {k}")
+      k = k + 1
+  ```
+- In this example, `k` is a counter variable.
+- Counter variables can be conditional:
+  ```{.python .fragment}
+  k = 0
+  while True:
+    if cpx.light > 200:
+      k = k + 1
+    print(f"The value of k is {k}")
+  ```
+
+### The `break` keyword terminates a loop {.scrollable}
+
+- The `break` keyword terminates the lowest-level loop in which it is found, immediately.
+- [Compare the following]{.inclass}
+  - Option A
+    ```{.python}
+    k = 0
+    while True:
+        k += 1
+        print(f"iteration {k}")
+        if k == 9:
+            break
+            print("breaking")
+    ```
+  - Option B
+    ```{.python}
+    k = 0
+    while True:
+        k += 1
+        print(f"iteration {k}")
+        if k == 9:
+            print("breaking")
+            break
+    ```
+- When using nested for loops, `break` terminates the innermost loop only.
+  ```{.python}
+  from adafruit_circuitplayground.express import cpx
+  import time
+  k = 0
+  while True:
+      time.sleep(1)
+      k += 1
+      print(f"Outer iteration {k}")
+      if k % 3 == 0: # k ÷ 3 has remainder 0
+          m = 0
+          while True:
+              time.sleep(1)
+              m += 1
+              print(f"Outer iteration {k}, inner iteration {m} ")
+              if cpx.touch_A2:
+                  print("terminating")
+                  break
+  ```
+  [Modify this so that if pin A5 is touched, the outer loop terminates]{.inclass}
+
+### The `continue` keyword {.scrollable}
+
+The `continue` keyword immediately exits the current iteration of a loop and moves on to the next one.
+
+- [Run and compare the following code]{.inclass}
+
+- Option A
+  ```{.python code-line-numbers="16"}
+  from adafruit_circuitplayground.express import cpx
+  import time
+  k = 0
+  while True:
+      time.sleep(1)
+      k += 1
+      print(f"Outer iteration {k}")
+      if k % 3 == 0: # k ÷ 3 has remainder 0
+          m = 0
+          while True:
+              time.sleep(1)
+              if cpx.touch_A2:
+                  print("skip this iteration")
+                  continue
+              m += 1
+              print(f"Outer iteration {k}, inner iteration {m} ")
+  ```
+- Option B
+  ```{.python code-line-numbers="13"}
+  from adafruit_circuitplayground.express import cpx
+  import time
+  k = 0
+  while True:
+      time.sleep(1)
+      k += 1
+      print(f"Outer iteration {k}")
+      if k % 3 == 0: # k ÷ 3 has remainder 0
+          m = 0
+          while True:
+              time.sleep(1)
+              m += 1
+              print(f"Outer iteration {k}, inner iteration {m} ")
+              if cpx.touch_A2:
+                  print("skip this iteration")
+                  continue
+  ```
+- [In Option A, the inner loop is terminated upon touching A2 **before** the print statement, so line 16 **is not** executed if A2 is touched.]{.content-visible when-meta="uncover"}
+- [In Option B, the inner loop is terminated upon touching A2 **after** the print statement, so line 13 **is** executed even if A2 is touched.]{.content-visible when-meta="uncover"}
+
+### The `pass` keyword
+
+`pass` is used inside a loop (`if`, `while`, `for`, etc.) as a placeholder that **doesn't do anything**.
+
+```{.python}
+while True:
+  pass
+```
+
+
+### The `for` loop
+
+- A `for` loop runs for a specified number of times.
+  ```{.python}
+  for i in range(5):
+      print("Run once")
+  ```
+- A `for` loop iterates over an [iterable object]{.underline}. These include:
+  - List
+    ```{.python}
+    for i in [2,99,3.5,"hello"]:
+        print(i)
+    ```
+  - Tuple
+    ```{.python}
+    for i in (2,99,3.5,"hello"):
+        print(i)
+    ```
+  - Range
+    ```{.python}
+    for i in range(2,15,3):
+        print(i)
+    ```
+  - String
+    ```{.python}
+    for i in "hello":
+        print(i)
+    ```
+- Nested `for` loops over a grid.
+  ```{.python}
+    for i in range(3):
+        for j in range(5):
+            print(f"i = {i} and j = {j}")
+  ```
+
+
+
+### More features of the Circuit Playground Express
+
+- Switches and buttons:
+  - Button A `cpx.button_a`
+  - Button B `cpx.button_b`
+  - Sliding switch `cpx.switch`
+- Start and stop tone: 
+  - `cpx.start_tone(440)` starts playing the tone 440 Hz. 
+  - `cpx.stop_tone()` terminates whichever tone is being played.
+- The function `cpx.pixels.fill()` takes as argument a 3-element tuple and **fills** all pixels with that color. 
+  - You can use this with `cpx.pixels.fill((0,0,0))` to switch off all neopixels.
+- See the [documentation for the Adafruit CircuitPlayground Library](https://docs.circuitpython.org/projects/circuitplayground/en/2.1.0/api.html) to see examples of how to use all of its features.
+
+### Conditional LEDs program
+
+[Write a program and save to `code.py`. Your program should:]{.inclass .fragment}
+
+- Light up a blue pixel for as long as button A is pressed.
+- Light up a yellow pixel for as long as button B is pressed.
+- If a button is not being pressed, the corresponding light should be **off**
+- Print a statement about which button is currently pressed every `x` seconds, where `x` is a small number less than one.
+
+
+
+
+
+
+
+
+
