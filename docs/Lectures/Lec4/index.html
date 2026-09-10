@@ -285,7 +285,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#running-code-on-your-circuit-playground-express" id="toc-running-code-on-your-circuit-playground-express" class="nav-link active" data-scroll-target="#running-code-on-your-circuit-playground-express">Running code on your Circuit Playground Express</a></li>
+  <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
+  <li><a href="#running-code-on-your-circuit-playground-express" id="toc-running-code-on-your-circuit-playground-express" class="nav-link" data-scroll-target="#running-code-on-your-circuit-playground-express">Running code on your Circuit Playground Express</a></li>
   <li><a href="#importing-the-time-package" id="toc-importing-the-time-package" class="nav-link" data-scroll-target="#importing-the-time-package">Importing the <code>time</code> package</a></li>
   <li><a href="#objects-in-python" id="toc-objects-in-python" class="nav-link" data-scroll-target="#objects-in-python">Objects in Python</a></li>
   <li><a href="#if-statements" id="toc-if-statements" class="nav-link" data-scroll-target="#if-statements"><code>if</code> statements</a></li>
@@ -339,6 +340,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="announcements" class="level3">
+<h3 class="anchored" data-anchor-id="announcements">Announcements</h3>
+<div class="nonincremental">
+<ul>
+<li>Please complete survey available on Moodle or <a href="https://moodle.swarthmore.edu/mod/url/view.php?id=829590">here</a>.</li>
+<li>Homework 1 due at midnight tonight</li>
+<li>Homework 2 to be released today</li>
+<li>Labs start today</li>
+</ul>
+</div>
+</section>
 <section id="running-code-on-your-circuit-playground-express" class="level3">
 <h3 class="anchored" data-anchor-id="running-code-on-your-circuit-playground-express">Running code on your Circuit Playground Express</h3>
 <ul>
@@ -355,10 +367,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="importing-the-time-package" class="level3">
 <h3 class="anchored" data-anchor-id="importing-the-time-package">Importing the <code>time</code> package</h3>
 <p>Python comes with several <span class="emph">packages</span> that need to be <code>import</code>ed into programs. These packages can be:</p>
-<ul>
-<li>Part of the so-called <em><a href="https://docs.python.org/3/library/index.html">standard library</a></em>. Standard library packages must be imported. These include packages such as <code>random</code>, <code>math</code>, <code>calendar</code> and <code>time</code>.</li>
-<li>Available for download from the <a href="https://pypi.org/">Python package index</a>. These must be downloaded at least once on a computer, and can subsequently be <code>import</code>ed. These include packages such as <code>numpy</code>, for numerical computing, or <code>matplotlib</code>, for plotting.</li>
-</ul>
+<ol type="1">
+<li>Part of the so-called <em><a href="https://docs.python.org/3/library/index.html">standard library</a></em>. Standard library packages must be imported. <span class="smaller">These include packages such as <code>random</code>, <code>math</code>, <code>calendar</code> and <code>time</code>.</span></li>
+<li>Available for download from the <a href="https://pypi.org/">Python package index</a>. These include packages such as <code>numpy</code>, for numerical computing, or <code>matplotlib</code>, for plotting.</li>
+<li>Local, unregistered packages</li>
+</ol>
 <div class="fragment">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
@@ -521,6 +534,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the light sensor reads </span><span class="sc">{</span>cpx<span class="sc">.</span>light<span class="sc">}</span><span class="ss"> in some unknown units"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>When using f-strings, the precision of numerical variables can be specified using the notation <code>:.nf</code> where <code>n</code> is the number of significant figures after the decimal point.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the light sensor reads </span><span class="sc">{</span>cpx<span class="sc">.</span>light<span class="sc">:.1f}</span><span class="ss"> in some unknown units"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li></li>
 </ul>
 </section>
 <section id="loops-and-counter-variables" class="level3">
@@ -633,31 +647,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="the-for-loop" class="level3">
-<h3 class="anchored" data-anchor-id="the-for-loop">The <code>for</code> loop</h3>
+<section id="the-for-loop" class="level3 scrollable">
+<h3 class="scrollable anchored" data-anchor-id="the-for-loop">The <code>for</code> loop</h3>
 <ul>
-<li><p>A <code>for</code> loop runs for a specified number of times.</p>
+<li><p>A <code>for</code> loop runs a specified number of times.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Run once"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>The <strong>iterating variable</strong> in a <code>for</code> loop has a different value each time the loop is run — like a built-in counter variable that <u>you don’t need to increment</u>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Run once. This time, the value of i is </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>A <code>for</code> loop iterates over an <u>iterable object</u>. These include:</p>
 <ul>
 <li><p>List</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> [<span class="dv">2</span>,<span class="dv">99</span>,<span class="fl">3.5</span>,<span class="st">"hello"</span>]:</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Tuple</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> (<span class="dv">2</span>,<span class="dv">99</span>,<span class="fl">3.5</span>,<span class="st">"hello"</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> [<span class="dv">2</span>,<span class="dv">99</span>,<span class="fl">3.5</span>,<span class="st">"hello"</span>]:</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Range</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="dv">15</span>,<span class="dv">3</span>):</span>
+<li><p>Tuple</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> (<span class="dv">2</span>,<span class="dv">99</span>,<span class="fl">3.5</span>,<span class="st">"hello"</span>):</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>String</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="st">"hello"</span>:</span>
+<li><p>Range</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="dv">15</span>,<span class="dv">3</span>):</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>String</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="st">"hello"</span>:</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul></li>
-<li><p>Nested <code>for</code> loops over a grid.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>          <span class="bu">print</span>(<span class="ss">f"i = </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> and j = </span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Like any other block of code, you can <em>nest</em> a <code>for</code> loop inside another <code>for</code> loop.</p>
+<ul>
+<li><p>A common use of nested loops in engineering is a ‘grid’ of variables</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>          <span class="bu">print</span>(<span class="ss">f"i = </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> and j = </span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul></li>
 </ul>
 </section>
 <section id="more-features-of-the-circuit-playground-express" class="level3">

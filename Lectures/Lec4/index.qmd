@@ -33,6 +33,15 @@ format:
     auto-stretch: false
 ---
 
+### Announcements
+
+::: {.nonincremental}
+- Please complete survey available on Moodle or [here](https://moodle.swarthmore.edu/mod/url/view.php?id=829590).
+- Homework 1 due at midnight tonight
+- Homework 2 to be released today
+- Labs start today
+:::
+
 ### Running code on your Circuit Playground Express
 
 - The code that's saved in the special file `code.py` on your `CIRCUITPY` drive is automatically run whenever the board is powered on with a USB cable or battery.
@@ -46,10 +55,10 @@ format:
 
 Python comes with several [packages]{.emph} that need to be `import`ed into programs. These packages can be:
 
-- Part of the so-called _[standard library](https://docs.python.org/3/library/index.html)_. Standard library packages must be imported.
-  These include packages such as `random`, `math`, `calendar` and `time`.
-- Available for download from the [Python package index](https://pypi.org/).  These must be downloaded at least once on a computer, and can subsequently be `import`ed.
-  These include packages such as `numpy`, for numerical computing, or `matplotlib`, for plotting.
+1. Part of the so-called _[standard library](https://docs.python.org/3/library/index.html)_. Standard library packages must be imported.
+   [These include packages such as `random`, `math`, `calendar` and `time`.]{.smaller}
+2. Available for download from the [Python package index](https://pypi.org/). These include packages such as `numpy`, for numerical computing, or `matplotlib`, for plotting.
+3. Local, unregistered packages
 
 ::: {.fragment}
 ```{.python}
@@ -221,6 +230,7 @@ We often want to embed variables into a Python string, before printing it.
   ```{.python}
   print(f"the light sensor reads {cpx.light:.1f} in some unknown units")
   ```
+- [Write a program that prints the temperature to 2 decimal places at 1 second intervals]{.inclass .content-hidden unless-meta="uncover"}
 
 ### Loops and counter variables
 
@@ -345,12 +355,17 @@ while True:
 ```
 
 
-### The `for` loop
+### The `for` loop {.scrollable}
 
-- A `for` loop runs for a specified number of times.
+- A `for` loop runs a specified number of times.
   ```{.python}
   for i in range(5):
       print("Run once")
+  ```
+- The **iterating variable** in a `for` loop has a different value each time the loop is run --- like a built-in counter variable that [you don't need to increment]{.underline}.
+  ```{.python}
+  for i in range(5):
+      print(f"Run once. This time, the value of i is {i}")
   ```
 - A `for` loop iterates over an [iterable object]{.underline}. These include:
   - List
@@ -373,12 +388,13 @@ while True:
     for i in "hello":
         print(i)
     ```
-- Nested `for` loops over a grid.
-  ```{.python}
-    for i in range(3):
-        for j in range(5):
-            print(f"i = {i} and j = {j}")
-  ```
+- Like any other block of code, you can _nest_ a `for` loop inside another `for` loop.
+  - A common use of nested loops in engineering is a 'grid' of variables
+    ```{.python}
+      for i in range(3):
+          for j in range(5):
+              print(f"i = {i} and j = {j}")
+    ```
 
 
 
