@@ -183,21 +183,183 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "ENGR 21 Computer Engineering Fundamentals",
+    "objectID": "Homework/HW2/index.html",
+    "href": "Homework/HW2/index.html",
+    "title": "HW 2",
     "section": "",
-    "text": "This is a Quarto website. To navigate, use the sidebar to the left.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
-  },
-  {
-    "objectID": "AcademicSupport/index.html",
-    "href": "AcademicSupport/index.html",
-    "title": "Academic Support",
-    "section": "",
-    "text": "Navigate using the sidebar to the left.\n\n\n\n\n\n\n\n\n\n\nEvent\nMonday\nTuesday\nWednesday\nThursday\n\n\n\n\nWizard Office Hours\n\n\nSamchan Lee 4:30 to 5:30 PM\nVisnuk Rith 1 to 2 PM\n\n\n\n\n\nUneeb Hyder 3:15 to 4:15 PM\n\n\n\nInstructor Office Hours\n\n\n9-10:30 AM SH 112\n\n\n\nWizard Session\n\n7 to 9 PM SH 222\n\n\n\n\nProblem Session\n4 to 6 PM SH 221",
+    "text": "Due Date\nThu, Sep 17\n\n\nTurn in link\nGradescope code and PDF\n\n\nURL\nemadmasroor.github.io/E21-F26/Homework/HW2\nWhat to turn in\nFor this assignment, you will turn in a combined PDF file as well as multiple code files.",
     "crumbs": [
       "Homepage",
-      "Academic Support"
+      "Homework",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/index.html#from-decimal-to-binary",
+    "href": "Homework/HW2/index.html#from-decimal-to-binary",
+    "title": "HW 2",
+    "section": "1.1 from Decimal to Binary",
+    "text": "1.1 from Decimal to Binary\n\n100\n1029\n476\n\\(1.4 \\times 10^{3}\\)",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/index.html#from-binary-to-decimal",
+    "href": "Homework/HW2/index.html#from-binary-to-decimal",
+    "title": "HW 2",
+    "section": "1.2 from Binary to Decimal",
+    "text": "1.2 from Binary to Decimal\n\n0b1011011\n0b110010101\n0b1000000001\n0b10111",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/index.html#from-decimal-to-hexadecimal",
+    "href": "Homework/HW2/index.html#from-decimal-to-hexadecimal",
+    "title": "HW 2",
+    "section": "1.3 from Decimal to Hexadecimal",
+    "text": "1.3 from Decimal to Hexadecimal\n\n1000\n176\n42678\n81",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/index.html#from-hexadecimal-to-decimal",
+    "href": "Homework/HW2/index.html#from-hexadecimal-to-decimal",
+    "title": "HW 2",
+    "section": "1.4 from Hexadecimal to Decimal",
+    "text": "1.4 from Hexadecimal to Decimal\n\n0x14E3\n0xA10B\n0x1000\n0x1010",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/index.html#a-new-base-7",
+    "href": "Homework/HW2/index.html#a-new-base-7",
+    "title": "HW 2",
+    "section": "2.1 A new base: 7",
+    "text": "2.1 A new base: 7\n\nWrite down all numbers from 1 to 16 in base 7.\nIn base 7, what is the meaning of the symbol 66 ? Explain.\nWhat is the largest possible four-‘digit’ number in base 7? Write the number in words, in decimal form, and in base-7 form.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/index.html#addition-of-binary-and-hexadecimal-numbers",
+    "href": "Homework/HW2/index.html#addition-of-binary-and-hexadecimal-numbers",
+    "title": "HW 2",
+    "section": "2.2 Addition of binary and hexadecimal numbers",
+    "text": "2.2 Addition of binary and hexadecimal numbers\nIn grade school, you learned how to add two multi-digit numbers by hand. In case, you’ve forgotten, here’s a video explaining this to elementary school students.\nYour task in this problem is to carry out multi-‘digit’ addition, by hand, to binary and hexadecimal numbers. In the process, you will see the concept of ‘carrying over’ a digit (perhaps you learned the term ‘regrouping’) applies to numbers other than base ten.\nAs an example, the following sums have been computed for you below.\n\n0b110001 + 0b11011\n0xAFC + 0x115",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/index.html#hex",
+    "href": "Homework/HW2/index.html#hex",
+    "title": "HW 2",
+    "section": "2.3 Hex",
+    "text": "2.3 Hex\n\n0xE5A + 0x85A\n0xEE + 0x99\n0x100 + 0x20\n0xB0 + 0xB",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/index.html#binary",
+    "href": "Homework/HW2/index.html#binary",
+    "title": "HW 2",
+    "section": "2.4 Binary",
+    "text": "2.4 Binary\n\n0b1011011 + 0b11011001\n0b10011 + 0b100110001\n0b10000000000 + 0b1011111\n0b11010001001 + 0b110110110",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/index.html#counter-variables",
+    "href": "Homework/HW2/index.html#counter-variables",
+    "title": "HW 2",
+    "section": "3.1 Counter variables",
+    "text": "3.1 Counter variables\nConsider the following program, which counts the number of times pin A7 has been tapped and assigns color1 to pixel number k, where k is the number of times pin A7 has been tapped. The code crashes if pin A7 is touched more than 10 times.\nfrom adafruit_circuitplayground.express import cpx\nimport time\noff = (0,0,0)\ncolor1 = (10,30,10)\ncolor2 = (30,10,10)\ncpx.pixels.fill(off)\nk = -1\nwhile True:\n    time.sleep(0.2)\n    if cpx.touch_A7:\n        k += 1\n        cpx.pixels[k] = color1\n        cpx.pixels[k-1] = off\nModify this code so that it has the same behavior for up to 10 taps, but for taps 11 through 20, a different color is assigned to the pth pixel, where p is k-10. Your code will still fail after the 21st tap is detected; that’s fine.\n\n\nVideo\nExpected behavior of Circuit Playground Express",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/index.html#the-continue-keyword",
+    "href": "Homework/HW2/index.html#the-continue-keyword",
+    "title": "HW 2",
+    "section": "3.2 The continue keyword",
+    "text": "3.2 The continue keyword\nThe following progam was written with the intention of printing all numbers except for 9. However, the program currently fails at doing this. What one change will ensure that printing ‘9’ is skipped? Turn in the new code.\nimport time\nk = 0\nwhile True:\n    time.sleep(0.5)\n    k += 1\n    print(k)\n    if k == 9:\n        continue",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/index.html#the-break-keyword",
+    "href": "Homework/HW2/index.html#the-break-keyword",
+    "title": "HW 2",
+    "section": "3.3 The break keyword",
+    "text": "3.3 The break keyword\nIn class, we saw that the following code allows us to terminate the inner while loop by touching pin A2.\nfrom adafruit_circuitplayground.express import cpx\nimport time\nk = 0\nwhile True:\n    time.sleep(1)\n    k += 1\n    print(f\"Outer iteration {k}\")\n    if k % 3 == 0: # k ÷ 3 has remainder 0\n        m = 0\n        while True:\n            time.sleep(1)\n            m += 1\n            print(f\"Outer iteration {k}, inner iteration {m} \")\n            if cpx.touch_A2:\n                print(\"terminating\")\n                break\nChange the code above so that it meets the following requirements:\n\nTouching A2 while in the inner loop should terminate inner loop.\nTouching A2 while in the outer loop should not do anything.\nTouching A7 alone while in the inner loop should now also terminate inner loop.\nTouching A7 while pressing button B while in the outer loop should terminate the outer loop.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/index.html#the-time-functions",
+    "href": "Homework/HW2/index.html#the-time-functions",
+    "title": "HW 2",
+    "section": "3.4 The time functions",
+    "text": "3.4 The time functions\nThe function time.monotonic() can be used to measure intervals of time. For example, the following code measures how long after the red LED comes on the user presses button B.\nfrom adafruit_circuitplayground.express import cpx\nimport time\ncpx.red_led = True\nstart_time = time.monotonic()\nwhile True:\n    time.sleep(0.01)\n    if cpx.button_b:\n        end_time = time.monotonic()\n        interval = end_time - start_time\n        break\nprint(f\"Interval was {interval} seconds\")\nRewrite the code above so that it executes the same functionality without using break or if.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "AcademicSupport/Masroor.html",
+    "href": "AcademicSupport/Masroor.html",
+    "title": "Instructor Support",
+    "section": "",
+    "text": "Regular office hours are Wednesdays 9 to 10:30 AM.\nWalk-ins are always welcome when I am in my office.\nThe Instructor-led Problem Session is on Mondays 4:30 — 6:00 PM in Singer 221\n\nIn addition, you can schedule appointments on my calendar in 30-minute increments below.",
+    "crumbs": [
+      "Homepage",
+      "Academic Support",
+      "Instructor Support"
+    ]
+  },
+  {
+    "objectID": "AcademicSupport/wizards.html",
+    "href": "AcademicSupport/wizards.html",
+    "title": "Wizard Office Hours",
+    "section": "",
+    "text": "Wizard sessions are on Tuesday nights from 7 to 9 PM in Singer 221\nAll Wizard office hours are in Singer 228.\n\n\n\nName\nDate and Time\n\n\n\n\nName\nTime\n\n\nSamchan Lee\n4:30 — 5:30 PM, Wednesdays\n\n\nVisnuk Rith\n1:00 — 2:00 PM, Thursdays\n\n\nUneeb Hyder\n3:15 — 4:15 PM, Thursdays",
+    "crumbs": [
+      "Homepage",
+      "Academic Support",
+      "Wizard Office Hours"
     ]
   },
   {
@@ -234,28 +396,22 @@
     ]
   },
   {
-    "objectID": "AcademicSupport/wizards.html",
-    "href": "AcademicSupport/wizards.html",
-    "title": "Wizard Office Hours",
+    "objectID": "AcademicSupport/index.html",
+    "href": "AcademicSupport/index.html",
+    "title": "Academic Support",
     "section": "",
-    "text": "Wizard sessions are on Tuesday nights from 7 to 9 PM in Singer 221\nAll Wizard office hours are in Singer 228.\n\n\n\nName\nDate and Time\n\n\n\n\nName\nTime\n\n\nSamchan Lee\n4:30 — 5:30 PM, Wednesdays\n\n\nVisnuk Rith\n1:00 — 2:00 PM, Thursdays\n\n\nUneeb Hyder\n3:15 — 4:15 PM, Thursdays",
+    "text": "Navigate using the sidebar to the left.\n\n\n\n\n\n\n\n\n\n\nEvent\nMonday\nTuesday\nWednesday\nThursday\n\n\n\n\nWizard Office Hours\n\n\nSamchan Lee 4:30 to 5:30 PM\nVisnuk Rith 1 to 2 PM\n\n\n\n\n\nUneeb Hyder 3:15 to 4:15 PM\n\n\n\nInstructor Office Hours\n\n\n9-10:30 AM SH 112\n\n\n\nWizard Session\n\n7 to 9 PM SH 222\n\n\n\n\nProblem Session\n4 to 6 PM SH 221",
     "crumbs": [
       "Homepage",
-      "Academic Support",
-      "Wizard Office Hours"
+      "Academic Support"
     ]
   },
   {
-    "objectID": "AcademicSupport/Masroor.html",
-    "href": "AcademicSupport/Masroor.html",
-    "title": "Instructor Support",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ENGR 21 Computer Engineering Fundamentals",
     "section": "",
-    "text": "Regular office hours are Wednesdays 9 to 10:30 AM.\nWalk-ins are always welcome when I am in my office.\nThe Instructor-led Problem Session is on Mondays 4:30 — 6:00 PM in Singer 221\n\nIn addition, you can schedule appointments on my calendar in 30-minute increments below.",
-    "crumbs": [
-      "Homepage",
-      "Academic Support",
-      "Instructor Support"
-    ]
+    "text": "This is a Quarto website. To navigate, use the sidebar to the left.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
     "objectID": "Homework/index.html",
@@ -273,7 +429,7 @@
     "href": "Homework/index.html#list-of-assignments",
     "title": "Homework",
     "section": "List of Assignments",
-    "text": "List of Assignments\n\n\n\nNumber\nDue Date\nSubmit link\n\n\n\n\nHW 1\nThu, Sep 10\nGradescope",
+    "text": "List of Assignments\n\n\n\nNumber\nDue Date\nSubmit link\n\n\n\n\nHW 1\nThu, Sep 10\nGradescope\n\n\nHW 2\nThu, Sep 17\nGradescope code and PDF",
     "crumbs": [
       "Homepage",
       "Homework"
@@ -289,174 +445,6 @@
       "Homepage",
       "Homework"
     ]
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#image-morphing-and-transformation-using-python",
-    "href": "PastProjects/past-projects-slides.html#image-morphing-and-transformation-using-python",
-    "title": "Past E21 Projects",
-    "section": "Image Morphing and Transformation using Python",
-    "text": "Image Morphing and Transformation using Python"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#d-metal-detecting-robot",
-    "href": "PastProjects/past-projects-slides.html#d-metal-detecting-robot",
-    "title": "Past E21 Projects",
-    "section": "1D Metal Detecting Robot",
-    "text": "1D Metal Detecting Robot"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#electronic-plastic-sorter",
-    "href": "PastProjects/past-projects-slides.html#electronic-plastic-sorter",
-    "title": "Past E21 Projects",
-    "section": "Electronic Plastic Sorter",
-    "text": "Electronic Plastic Sorter"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#course-selection-optimization",
-    "href": "PastProjects/past-projects-slides.html#course-selection-optimization",
-    "title": "Past E21 Projects",
-    "section": "Course Selection Optimization",
-    "text": "Course Selection Optimization"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#automated-plant-care-system",
-    "href": "PastProjects/past-projects-slides.html#automated-plant-care-system",
-    "title": "Past E21 Projects",
-    "section": "Automated Plant Care System",
-    "text": "Automated Plant Care System"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#simon-says-an-embedded-systems-memory-game",
-    "href": "PastProjects/past-projects-slides.html#simon-says-an-embedded-systems-memory-game",
-    "title": "Past E21 Projects",
-    "section": "Simon Says: An Embedded Systems Memory Game",
-    "text": "Simon Says: An Embedded Systems Memory Game"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#color-sensor",
-    "href": "PastProjects/past-projects-slides.html#color-sensor",
-    "title": "Past E21 Projects",
-    "section": "Color Sensor",
-    "text": "Color Sensor"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#sound-responsive-catapult-with-led-digit-panel",
-    "href": "PastProjects/past-projects-slides.html#sound-responsive-catapult-with-led-digit-panel",
-    "title": "Past E21 Projects",
-    "section": "Sound-Responsive Catapult with LED Digit Panel",
-    "text": "Sound-Responsive Catapult with LED Digit Panel"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#output-maximizing-solar-panel",
-    "href": "PastProjects/past-projects-slides.html#output-maximizing-solar-panel",
-    "title": "Past E21 Projects",
-    "section": "Output Maximizing Solar PAnel",
-    "text": "Output Maximizing Solar PAnel"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#a-3-dof-robotic-hand-with-tendon-based-finger-mechanics-and-servo-driven-control",
-    "href": "PastProjects/past-projects-slides.html#a-3-dof-robotic-hand-with-tendon-based-finger-mechanics-and-servo-driven-control",
-    "title": "Past E21 Projects",
-    "section": "A 3 DOF Robotic Hand with Tendon-based finger mechanics and servo-driven control",
-    "text": "A 3 DOF Robotic Hand with Tendon-based finger mechanics and servo-driven control"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#screwing-no-hands",
-    "href": "PastProjects/past-projects-slides.html#screwing-no-hands",
-    "title": "Past E21 Projects",
-    "section": "Screwing, No Hands",
-    "text": "Screwing, No Hands"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#baby-boombox-a-mp3-music-player",
-    "href": "PastProjects/past-projects-slides.html#baby-boombox-a-mp3-music-player",
-    "title": "Past E21 Projects",
-    "section": "Baby Boombox: A MP3 Music Player",
-    "text": "Baby Boombox: A MP3 Music Player"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#progress-toward-a-weatable-grip-assistance-device",
-    "href": "PastProjects/past-projects-slides.html#progress-toward-a-weatable-grip-assistance-device",
-    "title": "Past E21 Projects",
-    "section": "Progress Toward a Weatable Grip-Assistance Device",
-    "text": "Progress Toward a Weatable Grip-Assistance Device"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#whiteboard-erasing-robot",
-    "href": "PastProjects/past-projects-slides.html#whiteboard-erasing-robot",
-    "title": "Past E21 Projects",
-    "section": "Whiteboard-Erasing Robot",
-    "text": "Whiteboard-Erasing Robot"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#modeling-the-transmission-of-the-monkeypox-virus-infection-with-vaccination-and-other-intervention-measures",
-    "href": "PastProjects/past-projects-slides.html#modeling-the-transmission-of-the-monkeypox-virus-infection-with-vaccination-and-other-intervention-measures",
-    "title": "Past E21 Projects",
-    "section": "Modeling the Transmission of the Monkeypox Virus Infection with Vaccination and other intervention measures",
-    "text": "Modeling the Transmission of the Monkeypox Virus Infection with Vaccination and other intervention measures"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#joystick-controlled-dual-axis-rotation-system",
-    "href": "PastProjects/past-projects-slides.html#joystick-controlled-dual-axis-rotation-system",
-    "title": "Past E21 Projects",
-    "section": "Joystick-controlled Dual-Axis Rotation System",
-    "text": "Joystick-controlled Dual-Axis Rotation System"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#simulating-particle-dynamics-collisions-wall-interactions-and-multi-particle-systems",
-    "href": "PastProjects/past-projects-slides.html#simulating-particle-dynamics-collisions-wall-interactions-and-multi-particle-systems",
-    "title": "Past E21 Projects",
-    "section": "Simulating Particle Dynamics: Collisions, Wall interactions, and multi-particle systems",
-    "text": "Simulating Particle Dynamics: Collisions, Wall interactions, and multi-particle systems"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#magic-piano-irl",
-    "href": "PastProjects/past-projects-slides.html#magic-piano-irl",
-    "title": "Past E21 Projects",
-    "section": "Magic Piano IRL",
-    "text": "Magic Piano IRL"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#manually-targeted-tactical-flywheel-based-projectile-launch-system",
-    "href": "PastProjects/past-projects-slides.html#manually-targeted-tactical-flywheel-based-projectile-launch-system",
-    "title": "Past E21 Projects",
-    "section": "Manually Targeted Tactical Flywheel-Based Projectile Launch System",
-    "text": "Manually Targeted Tactical Flywheel-Based Projectile Launch System"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#grayscale-camera-with-circuitplayground-and-a-photoresistor",
-    "href": "PastProjects/past-projects-slides.html#grayscale-camera-with-circuitplayground-and-a-photoresistor",
-    "title": "Past E21 Projects",
-    "section": "Grayscale Camera with CircuitPlayground and a Photoresistor",
-    "text": "Grayscale Camera with CircuitPlayground and a Photoresistor"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#polaris-a-wireless-charging-speaker-with-interactive-sensing",
-    "href": "PastProjects/past-projects-slides.html#polaris-a-wireless-charging-speaker-with-interactive-sensing",
-    "title": "Past E21 Projects",
-    "section": "POLARIS: A Wireless-Charging Speaker with Interactive Sensing",
-    "text": "POLARIS: A Wireless-Charging Speaker with Interactive Sensing"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#color-based-marble-sorting-system",
-    "href": "PastProjects/past-projects-slides.html#color-based-marble-sorting-system",
-    "title": "Past E21 Projects",
-    "section": "Color-Based Marble Sorting System",
-    "text": "Color-Based Marble Sorting System"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#isa-injection-system-automation",
-    "href": "PastProjects/past-projects-slides.html#isa-injection-system-automation",
-    "title": "Past E21 Projects",
-    "section": "ISA: Injection System Automation",
-    "text": "ISA: Injection System Automation"
-  },
-  {
-    "objectID": "PastProjects/past-projects-slides.html#how-close-are-you-to-your-nearest-bus-stop",
-    "href": "PastProjects/past-projects-slides.html#how-close-are-you-to-your-nearest-bus-stop",
-    "title": "Past E21 Projects",
-    "section": "How close are you to your nearest bus stop?",
-    "text": "How close are you to your nearest bus stop?"
   },
   {
     "objectID": "PastProjects/index.html",
