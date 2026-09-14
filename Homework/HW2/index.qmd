@@ -610,7 +610,9 @@ It is important that you avoid unlocking any options other than the ones explici
      Drone harvests for ever, never does a flip.
      :::
      :::
-5. ☞ Write code that executes a flip if a harvest isn't available, and harvests if possible.
+
+5. Unlock speed (1/5 only)
+6. ☞ Write code that executes a flip if a harvest isn't available, and harvests if possible.
 
    ::: {.content-hidden unless-meta="solutions"}
    ::: {.callout-tip}
@@ -625,7 +627,6 @@ It is important that you avoid unlocking any options other than the ones explici
    :::
    :::
 
-6. Unlock speed (1/5 only)
 7. ☞ Explain why, after unlocking speed, the following code no longer works.
    ```{.python}
    while True:
