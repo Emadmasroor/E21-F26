@@ -85,7 +85,7 @@ In Python, a **`while True`** loop repeats all of the statements
 inside of the loop over and over, forever.
 
 To illustrate this, enter REPL mode (you may need to open the Serial
-window in Mu Editor and press `Ctrl + C` if a program is running) and
+window in Thonny and press `Ctrl + C` if a program is running) and
 paste in the following commands:
 
 ~~~ Python
@@ -226,10 +226,7 @@ the function calls at the very bottom of Lab 1's `code.py`.
     comment a line of code, add a single **`#`** to the start of the
     line (after indentation). To uncomment, 
     simply delete the **`#`**.
-
-    In the Mu editor, the keyboard shortcut for commenting an entire line
-    is ctrl + K (Windows) or Command + K (Mac).
-
+    
 ## Exercise 1: Raw touch input 
 
 When you run the code, open the Serial and Plotter windows, and
@@ -248,7 +245,7 @@ the **`A1`** pad and repeat the process of recording readings
 *before*, *during*, and after *touching*, this time when touching the
 object clipped to the pad instead of the pad itself. Do this for at least three
 objects total, including some of those you brought, as well as one of the
-tinsel balls provided in lab. You should now have twelve readings per group member (three for the pad with nothing clipped to it, plus three each for three different objects).
+tinsel balls provided in lab. You should now have twelve triplets of before/during/after readings per group member (three triplets for the pad with nothing clipped to it, plus three triplets each for three different objects).
 
 !!! Warning
     **For this and all future E21 labs, please make sure to write up
@@ -334,7 +331,7 @@ used in Exercise 1 to the touch inputs. Then restart your code.
     want different $r_0$ readings.
     
     You can restart the program by clicking the ***Save*** button in
-    Mu Editor, or by using the Serial window and pressing `Ctrl + C`
+    Thonny, or by using the Serial window and pressing `Ctrl + C`
     then `Ctrl + D` on your keyboard to exit the program and then 
     reload it.
 
@@ -384,6 +381,9 @@ NeoPixels with white if it was. If any other input is touched the
 NeoPixels should stay dim.
 
 !!! Tip
+    Your **`if`** statement should involve a equality comparison 
+    of the **`pins`** variable.
+
     If you are stuck figuring this out, try dropping into REPL mode
     (press `Ctrl + C` in the Serial window if a program is running)
     and pasting in the following lines of code. Pay close attention to
@@ -464,6 +464,12 @@ following specification:
     
   * When a button is pressed, the NeoPixels should return to 
     black and the combination can be attempted again.
+    
+!!! Tip
+    Your final code will include multiple instances of the line
+    **``pins = wait_for_touch(50)`**. Do not call **`time.sleep()`**
+    in your code for this exercise -- all of the timing should be 
+    handled by `wait_for_touch()` and `wait_for_button()`.
     
 Here is a video of a successful solution to this exercise:
 
