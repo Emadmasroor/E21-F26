@@ -225,6 +225,27 @@ Emad Masroor
 <li class="fragment">If a button is not being pressed, the corresponding light should be <strong>off</strong></li>
 <li class="fragment">Print a statement about which button is currently pressed every <code>x</code> seconds, where <code>x</code> is a small number less than one.</li>
 </ul>
+<h4 id="solution">Solution</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">0.2</span></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>    time.sleep(x)</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># This part checks for button A</span></span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> cpx.button_a:</span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">4</span>] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">50</span>)</span>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Button A pressed"</span>)</span>
+<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">4</span>] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb1-14"><a aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># This part checks for button B</span></span>
+<span id="cb1-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> cpx.button_b:</span>
+<span id="cb1-17"><a aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">8</span>] <span class="op">=</span> (<span class="dv">50</span>,<span class="dv">50</span>,<span class="dv">0</span>)</span>
+<span id="cb1-18"><a aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Button B pressed"</span>)</span>
+<span id="cb1-19"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-20"><a aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">8</span>] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="more-about-delays-inside-loops" class="slide level3 scrollable">
 <h3>More about delays inside loops</h3>
@@ -232,36 +253,36 @@ Emad Masroor
 <li class="fragment"><p>So far, we have used <strong>the same</strong> delay for the print statement and for the logic that checks the buttons</p></li>
 <li class="fragment"><p>It is possible to use a different delay for both parts of the code</p></li>
 <li class="fragment"><p><span class="inclass">Run the following code</span>, which will be part of HW 3.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>print_freq <span class="op">=</span> <span class="dv">3</span> <span class="co"># printing should occur once every &lt;-- secs</span></span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>loop_interval <span class="op">=</span> <span class="fl">0.1</span> <span class="co"># while loop should run once every &lt;-- secs</span></span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.monotonic()</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>    time.sleep(loop_interval)</span>
-<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>    now_time <span class="op">=</span> time.monotonic()<span class="op">-</span>start_time</span>
-<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># This part checks for button A</span></span>
-<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> cpx.button_a:</span>
-<span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">4</span>] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">50</span>)</span>
-<span id="cb1-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb1-15"><a aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">4</span>] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
-<span id="cb1-16"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># This part checks for button B</span></span>
-<span id="cb1-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> cpx.button_b:</span>
-<span id="cb1-19"><a aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">8</span>] <span class="op">=</span> (<span class="dv">50</span>,<span class="dv">50</span>,<span class="dv">0</span>)</span>
-<span id="cb1-20"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb1-21"><a aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">8</span>] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
-<span id="cb1-22"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">abs</span>((now_time <span class="op">%</span> print_freq) <span class="op">-</span> print_freq) <span class="op">&lt;</span> loop_interval:</span>
-<span id="cb1-24"><a aria-hidden="true" tabindex="-1"></a>        <span class="co"># now, print or not.</span></span>
-<span id="cb1-25"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> cpx.button_a:</span>
-<span id="cb1-26"><a aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button A is pressed"</span>)</span>
-<span id="cb1-27"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> cpx.button_b:</span>
-<span id="cb1-28"><a aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button B is pressed"</span>)</span>
-<span id="cb1-29"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> cpx.button_a <span class="kw">and</span> <span class="kw">not</span> cpx.button_b:</span>
-<span id="cb1-30"><a aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"No button pressed"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>print_freq <span class="op">=</span> <span class="dv">3</span> <span class="co"># printing should occur once every &lt;-- secs</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>loop_interval <span class="op">=</span> <span class="fl">0.1</span> <span class="co"># while loop should run once every &lt;-- secs</span></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.monotonic()</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>    time.sleep(loop_interval)</span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>    now_time <span class="op">=</span> time.monotonic()<span class="op">-</span>start_time</span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># This part checks for button A</span></span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> cpx.button_a:</span>
+<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">4</span>] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">50</span>)</span>
+<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">4</span>] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># This part checks for button B</span></span>
+<span id="cb2-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> cpx.button_b:</span>
+<span id="cb2-19"><a aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">8</span>] <span class="op">=</span> (<span class="dv">50</span>,<span class="dv">50</span>,<span class="dv">0</span>)</span>
+<span id="cb2-20"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-21"><a aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">8</span>] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb2-22"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">abs</span>((now_time <span class="op">%</span> print_freq) <span class="op">-</span> print_freq) <span class="op">&lt;</span> loop_interval:</span>
+<span id="cb2-24"><a aria-hidden="true" tabindex="-1"></a>        <span class="co"># now, print or not.</span></span>
+<span id="cb2-25"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> cpx.button_a:</span>
+<span id="cb2-26"><a aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button A is pressed"</span>)</span>
+<span id="cb2-27"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> cpx.button_b:</span>
+<span id="cb2-28"><a aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button B is pressed"</span>)</span>
+<span id="cb2-29"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> cpx.button_a <span class="kw">and</span> <span class="kw">not</span> cpx.button_b:</span>
+<span id="cb2-30"><a aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"No button pressed"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 </section>
 <section id="precision-and-accuracy-of-measurements" class="slide level3">
@@ -304,37 +325,37 @@ Emad Masroor
 <li class="fragment"><p>The inputs to a function are called its <em>arguments</em></p></li>
 <li class="fragment"><p>The output of a function is said to be <em>returned</em> by the function.</p></li>
 <li class="fragment"><p>A function with just one input:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(a):</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  b <span class="op">=</span> a<span class="op">*</span>a</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(a):</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>  b <span class="op">=</span> a<span class="op">*</span>a</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p>A function with no inputs:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> approx_pi():</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="fl">3.14</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> approx_pi():</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="fl">3.14</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p>A function with two inputs:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> power(a,b):</span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a<span class="op">**</span>b <span class="co"># Python notation for 'power'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> power(a,b):</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a<span class="op">**</span>b <span class="co"># Python notation for 'power'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 </section>
 <section id="where-to-place-functions" class="slide level3">
 <h3>Where to place functions</h3>
 <h4 id="in-the-same-file">In the same file</h4>
 <p>In Python, functions can be placed in the same <code>.py</code> file as the rest of your code.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(c,d):</span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>  reutrn c <span class="op">+</span> d</span>
-<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(add(<span class="dv">4</span>,<span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(c,d):</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>  reutrn c <span class="op">+</span> d</span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(add(<span class="dv">4</span>,<span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <h4 id="in-a-different-file">In a different file</h4>
 <p>Another option is to create a separate file to store all of your functions.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">emasroo1@DXFMY22D36</span> CIRCUITPY % tree</span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
-<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> boot_out.txt</span>
-<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> code.py</span>
-<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> myfuncs.py</span>
-<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a><span class="ex">1</span> directory, 3 files</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">emasroo1@DXFMY22D36</span> CIRCUITPY % tree</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> boot_out.txt</span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> code.py</span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> myfuncs.py</span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a><span class="ex">1</span> directory, 3 files</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Then, you can <strong>import</strong> functions using <code>from &lt;file name without .py&gt; import &lt;function name&gt;</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> myfuncs <span class="im">import</span> add</span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(add(<span class="dv">4</span>,<span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> myfuncs <span class="im">import</span> add</span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(add(<span class="dv">4</span>,<span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="functions-and-interactive-mode-repl" class="slide level3">
 <h3>Functions and interactive mode (REPL)</h3>
@@ -351,17 +372,17 @@ Emad Masroor
 <li class="fragment"><p>Official Python documentation</p></li>
 <li class="fragment"><p>Official Circuit Python documentation</p></li>
 <li class="fragment"><p>The <code>help</code> command</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">help</span>(<span class="bu">max</span>)</span>
-<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>Help on built<span class="op">-</span><span class="kw">in</span> function <span class="bu">max</span> <span class="kw">in</span> module builtins:</span>
-<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>(...)</span>
-<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">max</span>(iterable, <span class="op">*</span>[, default<span class="op">=</span>obj, key<span class="op">=</span>func]) <span class="op">-&gt;</span> value</span>
-<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">max</span>(arg1, arg2, <span class="op">*</span>args, <span class="op">*</span>[, key<span class="op">=</span>func]) <span class="op">-&gt;</span> value</span>
-<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a aria-hidden="true" tabindex="-1"></a>    With a single iterable argument, <span class="cf">return</span> its biggest item. The</span>
-<span id="cb8-9"><a aria-hidden="true" tabindex="-1"></a>    default keyword<span class="op">-</span>only argument specifies an <span class="bu">object</span> to <span class="cf">return</span> <span class="cf">if</span></span>
-<span id="cb8-10"><a aria-hidden="true" tabindex="-1"></a>    the provided iterable <span class="kw">is</span> empty.</span>
-<span id="cb8-11"><a aria-hidden="true" tabindex="-1"></a>    With two <span class="kw">or</span> more positional arguments, <span class="cf">return</span> the largest argument.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">help</span>(<span class="bu">max</span>)</span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>Help on built<span class="op">-</span><span class="kw">in</span> function <span class="bu">max</span> <span class="kw">in</span> module builtins:</span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>(...)</span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">max</span>(iterable, <span class="op">*</span>[, default<span class="op">=</span>obj, key<span class="op">=</span>func]) <span class="op">-&gt;</span> value</span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">max</span>(arg1, arg2, <span class="op">*</span>args, <span class="op">*</span>[, key<span class="op">=</span>func]) <span class="op">-&gt;</span> value</span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a>    With a single iterable argument, <span class="cf">return</span> its biggest item. The</span>
+<span id="cb9-9"><a aria-hidden="true" tabindex="-1"></a>    default keyword<span class="op">-</span>only argument specifies an <span class="bu">object</span> to <span class="cf">return</span> <span class="cf">if</span></span>
+<span id="cb9-10"><a aria-hidden="true" tabindex="-1"></a>    the provided iterable <span class="kw">is</span> empty.</span>
+<span id="cb9-11"><a aria-hidden="true" tabindex="-1"></a>    With two <span class="kw">or</span> more positional arguments, <span class="cf">return</span> the largest argument.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li class="fragment"><p>Note that you may need to switch to ‘Local Python’ because Circuit Python saves space by having smaller documentation files.</p>
 <p><img data-src="thonny.png" style="width:60.0%"></p></li>
@@ -379,29 +400,65 @@ Emad Masroor
 <li class="fragment">‘Hardcode’ the first two elements of the sequence.</li>
 <li class="fragment">The last element of a list is accessed by <code>name_of_list[-1]</code>.</li>
 </ul>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fib(n):</span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>    listn <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">1</span>]</span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,n):</span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a>        new_num <span class="op">=</span> listn[i<span class="op">-</span><span class="dv">1</span>]<span class="op">+</span>listn[i<span class="op">-</span><span class="dv">2</span>]</span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a>        listn.append(new_num)</span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> listn[<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="measuring-g-using-the-circuit-playground-express" class="slide level3 scrollable">
 <h3>Measuring <span class="math inline">\(g\)</span> using the Circuit Playground Express</h3>
 <p><span class="inclass">Write a program for the Circuit Playground Express</span> that prints the value of <span class="math inline">\(g\)</span> to the screen, using (1) the z-component of acceleration <span class="math inline">\(a_z\)</span>, and (2) the magnitude of acceleration <span class="math inline">\(\sqrt{a_x^2 + a_y^2 + a_z^2}\)</span>.</p>
 <ul>
 <li class="fragment"><p>A function that calculates <span class="math inline">\(\sqrt{a^2 + b^2 + c^2}\)</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> magnitude(a,b,c):</span>
-<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (a<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> c<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> magnitude(a,b,c):</span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (a<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> c<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p>Initialize an empty list</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>readings <span class="op">=</span> []</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>readings <span class="op">=</span> []</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p>Decide on the frequency of data collection</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>delay <span class="op">=</span> <span class="fl">0.1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>delay <span class="op">=</span> <span class="fl">0.1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p>Start collecting data on button press</p></li>
 <li class="fragment"><p>Use a <code>while</code> or <code>for</code> loop to keep collecting data until another button press</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Wait for button A to be pressed to start:</span></span>
-<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> cpx.button_a:</span>
-<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
-<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Collect data</span></span>
-<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># Code to collect data</span></span>
-<span id="cb12-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> cpx.button_b:</span>
-<span id="cb12-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Wait for button A to be pressed to start:</span></span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> cpx.button_a:</span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Collect data</span></span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="co"># Code to collect data</span></span>
+<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> cpx.button_b:</span>
+<span id="cb14-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
+<h4 id="solution-1">Solution</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> magnitude(a,b,c):</span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (a<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> c<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Create an empty list that will store the readings</span></span>
+<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a>readings_z <span class="op">=</span> []</span>
+<span id="cb15-10"><a aria-hidden="true" tabindex="-1"></a>readings <span class="op">=</span> []</span>
+<span id="cb15-11"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Time delay between measurements</span></span>
+<span id="cb15-13"><a aria-hidden="true" tabindex="-1"></a>delay <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb15-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> cpx.button_a:</span>
+<span id="cb15-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb15-17"><a aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-18"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Collect data</span></span>
+<span id="cb15-19"><a aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb15-20"><a aria-hidden="true" tabindex="-1"></a>    accel_z <span class="op">=</span> cpx.acceleration.z</span>
+<span id="cb15-21"><a aria-hidden="true" tabindex="-1"></a>    accel   <span class="op">=</span> magnitude(cpx.acceleration.x, cpx.acceleration.y,cpx.acceleration.z)</span>
+<span id="cb15-22"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(accel_z,accel)</span>
+<span id="cb15-23"><a aria-hidden="true" tabindex="-1"></a>    readings.append(accel)</span>
+<span id="cb15-24"><a aria-hidden="true" tabindex="-1"></a>    readings_z.append(accel)</span>
+<span id="cb15-25"><a aria-hidden="true" tabindex="-1"></a>    time.sleep(delay)</span>
+<span id="cb15-26"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> cpx.button_b:</span>
+<span id="cb15-27"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="precision-accuracy-of-accelerometer" class="slide level3">
 <h3>Precision + Accuracy of Accelerometer</h3>
