@@ -2,7 +2,7 @@
 title: "Lecture 05"
 subtitle: "E21 Computer Engineering Fundamentals"
 author: "Emad Masroor"
-topic: "Programming Basics"
+topic: "Loops, Functions, Precision+Accuracy"
 order: 5
 date: 09-15-2026
 date-format: long
@@ -33,9 +33,7 @@ format:
     auto-stretch: false
 ---
 
-### In-class coding activity
-
-#### Conditional LEDs program
+### Loops and Delays 
 
 [Write a program and save to `code.py`. Your program should:]{.inclass .fragment}
 
@@ -43,6 +41,70 @@ format:
 - Light up a yellow pixel for as long as button B is pressed.
 - If a button is not being pressed, the corresponding light should be **off**
 - Print a statement about which button is currently pressed every `x` seconds, where `x` is a small number less than one.
+
+::: {.content-hidden unless-meta="uncover"}
+#### Solution
+```{.python}
+from adafruit_circuitplayground.express import cpx
+import time
+
+x = 0.2
+
+while True:
+    time.sleep(x)
+    # This part checks for button A
+    if cpx.button_a:
+        cpx.pixels[4] = (0,0,50)
+        print("Button A pressed")
+    else:
+        cpx.pixels[4] = (0,0,0)
+    
+    # This part checks for button B
+    if cpx.button_b:
+        cpx.pixels[8] = (50,50,0)
+        print("Button B pressed")
+    else:
+        cpx.pixels[8] = (0,0,0)
+```
+:::
+
+### More about delays inside loops {.scrollable}
+
+- So far, we have used **the same** delay for the print statement and for the logic that checks the buttons
+- It is possible to use a different delay for both parts of the code
+- [Run the following code]{.inclass}, which will be part of HW 3.
+  ```{.python}
+  from adafruit_circuitplayground.express import cpx
+  import time
+
+  print_freq = 3 # printing should occur once every <-- secs
+  loop_interval = 0.1 # while loop should run once every <-- secs
+
+  start_time = time.monotonic()
+  while True:
+      time.sleep(loop_interval)
+      now_time = time.monotonic()-start_time
+      # This part checks for button A
+      if cpx.button_a:
+          cpx.pixels[4] = (0,0,50)
+      else:
+          cpx.pixels[4] = (0,0,0)
+      
+      # This part checks for button B
+      if cpx.button_b:
+          cpx.pixels[8] = (50,50,0)
+      else:
+          cpx.pixels[8] = (0,0,0)
+      
+      if abs((now_time % print_freq) - print_freq) < loop_interval:
+          # now, print or not.
+          if cpx.button_a:
+              print("Button A is pressed")
+          if cpx.button_b:
+              print("Button B is pressed")
+          if not cpx.button_a and not cpx.button_b:
+              print("No button pressed")
+  ```
 
 ### Precision and Accuracy of measurements
 

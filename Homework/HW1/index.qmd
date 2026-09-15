@@ -1,6 +1,8 @@
 ---
 title: "HW 1"
 order: 10
+date: 09-10-2026
+topic: "Conditionals, While loops, truth tbales, CPX"
 subtitle: "ENGR 21, Fall 2026."
 solutions: false
 format:

@@ -38,6 +38,7 @@ website:
       - href: PastProjects/index.qmd
       - href: syllabus.html#schedule
         text: "Schedule"
+      - href: tests.qmd
 
 
 format:

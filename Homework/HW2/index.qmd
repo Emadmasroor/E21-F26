@@ -1,6 +1,8 @@
 ---
 title: "HW 2"
 order: 20
+date: 09-17-2026
+topic: "Base systems, Conditionals, Loops, CPX"
 subtitle: "ENGR 21, Fall 2026."
 solutions: false
 format:
