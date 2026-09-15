@@ -1,5 +1,5 @@
 ---
-title: "HW 1"
+title: "HW 1 Solutions"
 order: 10
 subtitle: "ENGR 21, Fall 2026."
 solutions: true
