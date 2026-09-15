@@ -322,3 +322,41 @@ Look up the correct value of $g$ at the website of the [National Institute of St
   - the following functions might help: `max`, `min`, `sum`
 - Add print statements to report to user.
 
+```{.python}
+from adafruit_circuitplayground.express import cpx
+import time
+
+def magnitude(a,b,c):
+    return (a**2 + b**2 + c**2)**(1/2)
+
+
+# Create an empty list that will store the readings
+readings_z = []
+readings = []
+
+# Time delay between measurements
+delay = 0.1
+
+while not cpx.button_a:
+    pass
+    
+# Collect data
+while True:
+    accel_z = cpx.acceleration.z
+    accel   = magnitude(cpx.acceleration.x, cpx.acceleration.y,cpx.acceleration.z)
+    print(cpx.acceleration.x,cpx.acceleration.y,accel_z,accel)
+    readings.append(accel)
+    readings_z.append(accel)
+    time.sleep(delay)
+    if cpx.button_b:
+        break
+
+# Do some calculations on 'readings'
+g_true = 9.806
+g_mean = sum(readings)/len(readings)
+
+relative_error = abs(g_mean - g_true)/g_true * 100
+spread = (max(readings)-min(readings))/g_mean * 100
+print(f"The accelerometer measured {g_mean}, which is {relative_error:.2f} percent off from the true value")
+print(f"The spread is {spread} percent")
+```
