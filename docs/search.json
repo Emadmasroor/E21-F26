@@ -24,102 +24,290 @@
     ]
   },
   {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
+    "objectID": "Lectures/Lec5/index.html",
+    "href": "Lectures/Lec5/index.html",
+    "title": "Lecture 05",
     "section": "",
-    "text": "This course is called Computer Engineering Fundamentals, and its goal is to teach you how to use a computer to do things that engineers need to do. As part of the core Engineering curriculum at Swarthmore, E21 is not just for computer engineers, but is a broad introduction to the fundamentals of engineering with computers. This course will teach you skills that are applicable to a broad variety of tasks encountered by engineers of all kinds, including mechanical, electrical, civil, computer, chemical, aerospace, biomedical, etc.\nE21 is not a course about how computers work; we don’t take computers apart and we don’t learn how to make computers.\nThere are three major thrusts of this course: an engineering-oriented introduction to programming, an introduction to microcontrollers and embedded systems, and an introduction to numerical methods.\n\n\nBy the time you take this course, we expect that you will already have used MATLAB in E6. However, we will start fresh using a new, high-level, open-source programming language: Python. This language is industry-standard and extremely versatile, and you don’t need to buy anything to use it. Coupled with the extensive ecosystem of packages that you’ll dip your toes in, you’ll find that Python is a very useful tool in your engineering toolbox.\n\n\n\nEmbedded systems are small-scale computers — also called microcontrollers — embedded on a physical device that allow you to embed logic into physical devices. In this course, we’ll make use of the Circuit Playground Express to learn how to write programs for embedded systems.\n\n\n\nThis course will also introduce you to numerical methods for engineering. Given an equation or a system of equations, how do you teach a computer to find the solution to those equations? You will learn how to write algorithms for solving equations that often arise in an engineering context using Python’s numpy package.\n\n\n\nE21 is a core course for the ENGR major at Swarthmore, and serves as a gateway course for several computer engineering courses, including Mobile Robotics, Computer Vision, and Embedded Systems.\nE21 was first taught in the fall of 2024, and it has been taught every fall since then. As a core course, it combines two previously-taught courses: E15, Fundmanetals of Digital and Embedded Systems, and E19, Numerical Methods for Engineering Applications. Students should take this course in sophomore year, or latest by junior year.",
+    "text": "In-class coding activity\n\nConditional LEDs program\nWrite a program and save to code.py. Your program should:\n\nLight up a blue pixel for as long as button A is pressed.\nLight up a yellow pixel for as long as button B is pressed.\nIf a button is not being pressed, the corresponding light should be off\nPrint a statement about which button is currently pressed every x seconds, where x is a small number less than one.\n\n\n\n\nPrecision and Accuracy of measurements\n\nAccuracy refers to how close a measurement is to the true value\nA measurement can be precise without necessarily being accurate.\n\n\n\n\n\n\n\n\nQuantifying error\n\nWhen the true value is known:\n\n\\(\\text{Absolute error} = \\left|{\\text{Measured value }- \\text{True Value}} \\right|\\)\n\\(\\text{Relative error} = \\left| \\frac{\\text{Measured Value }- \\text{True Value}}{\\text{True value}} \\right|\\)\n\nThese quantify the accuracy, not the precision\nWhen the true value is not known a priori:\n\nAccuracy cannot be known, but precision can be\nQuantify the ‘spread’ of the data to determine how precise measurements are\n\nStandard deviation\nRange (max minus min)\nPercent spread \\(\\frac{\\text{max value }-\\text{ min value} }{\\text{mean value}} \\times 100 \\%\\)\n\n\n\n\n\nFunctions in Python\n\nIn Python, a function is a piece of code that is packaged into a single command, and can be ‘called’ — i.e., the code inside the function can be run using the name of the function.\nThe inputs to a function are called its arguments\nThe output of a function is said to be returned by the function.\nA function with just one input:\ndef square(a):\n  b = a*a\n  return b\nA function with no inputs:\ndef approx_pi():\n  return 3.14\nA function with two inputs:\ndef power(a,b):\n  return a**b # Python notation for 'power'\n\n\n\nWhere to place functions\n\nIn the same file\nIn Python, functions can be placed in the same .py file as the rest of your code.\ndef add(c,d):\n  reutrn c + d\n\nprint(add(4,5))\n\n\nIn a different file\nAnother option is to create a separate file to store all of your functions.\nemasroo1@DXFMY22D36 CIRCUITPY % tree\n.\n├── boot_out.txt\n├── code.py\n└── myfuncs.py\n\n1 directory, 3 files\nThen, you can import functions using from &lt;file name without .py&gt; import &lt;function name&gt;\nfrom myfuncs import add\nprint(add(4,5))\n\n\n\nFunctions and interactive mode (REPL)\n\nFunctions must be defined before they can be used\nIn interactive mode, you must define your functions after every restart\nThis is tedious, so you’re encouraged to put your functions in a file if you need to use functions in interactive mode.\n\n\n\nBuilt-in functions and how to use them\nYou should look up functions in:\n\nOfficial Python documentation\nOfficial Circuit Python documentation\nThe help command\n&gt;&gt;&gt; help(max)\nHelp on built-in function max in module builtins:\n\nmax(...)\n    max(iterable, *[, default=obj, key=func]) -&gt; value\n    max(arg1, arg2, *args, *[, key=func]) -&gt; value\n\n    With a single iterable argument, return its biggest item. The\n    default keyword-only argument specifies an object to return if\n    the provided iterable is empty.\n    With two or more positional arguments, return the largest argument.\n\nNote that you may need to switch to ‘Local Python’ because Circuit Python saves space by having smaller documentation files.\n\n\n\n\n\nPractice writing functions\nWrite a function that determines the nth Fibonacci sequence number\nRecall that the Fibonacci sequence is \\[\\{ 1, 1, 2, 3, 5, 8, 13, 21, ... \\}\\] where every number is the sum of the two preceding numbers in the sequence.\nHints:\n\nThe append function adds on an element to the end of a list\nAccess the nth element of a list using name_of_list[n]\n‘Hardcode’ the first two elements of the sequence.\nThe last element of a list is accessed by name_of_list[-1].\n\n\n\nMeasuring \\(g\\) using the Circuit Playground Express\nWrite a program for the Circuit Playground Express that prints the value of \\(g\\) to the screen, using (1) the z-component of acceleration \\(a_z\\), and (2) the magnitude of acceleration \\(\\sqrt{a_x^2 + a_y^2 + a_z^2}\\).\n\nA function that calculates \\(\\sqrt{a^2 + b^2 + c^2}\\)\ndef magnitude(a,b,c):\n    return (a**2 + b**2 + c**2)**(1/2)\nInitialize an empty list\nreadings = []\nDecide on the frequency of data collection\ndelay = 0.1\nStart collecting data on button press\nUse a while or for loop to keep collecting data until another button press\n# Wait for button A to be pressed to start:\nwhile not cpx.button_a:\n    pass\n# Collect data\nwhile True:\n  # Code to collect data\n  if cpx.button_b:\n    break\n\n\n\nPrecision + Accuracy of Accelerometer\nCharacterize the precision and accuracy of the on-board accelerometer\nLook up the correct value of \\(g\\) at the website of the National Institute of Standards and Technology.\n\nUse Python to calculate relative error — this tells us the accuracy.\nAlso determine the precision of your measurement, using\n\ndifference between the largest and smallest values of \\(g\\), as a proportion of the mean value\nthe following functions might help: max, min, sum\n\nAdd print statements to report to user.",
     "crumbs": [
       "Homepage",
-      "Syllabus"
+      "Lectures",
+      "Lecture 05"
     ]
   },
   {
-    "objectID": "syllabus.html#what-is-e21-about",
-    "href": "syllabus.html#what-is-e21-about",
-    "title": "Syllabus",
+    "objectID": "PastProjects/index.html",
+    "href": "PastProjects/index.html",
+    "title": "Past E21 Projects",
     "section": "",
-    "text": "This course is called Computer Engineering Fundamentals, and its goal is to teach you how to use a computer to do things that engineers need to do. As part of the core Engineering curriculum at Swarthmore, E21 is not just for computer engineers, but is a broad introduction to the fundamentals of engineering with computers. This course will teach you skills that are applicable to a broad variety of tasks encountered by engineers of all kinds, including mechanical, electrical, civil, computer, chemical, aerospace, biomedical, etc.\nE21 is not a course about how computers work; we don’t take computers apart and we don’t learn how to make computers.\nThere are three major thrusts of this course: an engineering-oriented introduction to programming, an introduction to microcontrollers and embedded systems, and an introduction to numerical methods.\n\n\nBy the time you take this course, we expect that you will already have used MATLAB in E6. However, we will start fresh using a new, high-level, open-source programming language: Python. This language is industry-standard and extremely versatile, and you don’t need to buy anything to use it. Coupled with the extensive ecosystem of packages that you’ll dip your toes in, you’ll find that Python is a very useful tool in your engineering toolbox.\n\n\n\nEmbedded systems are small-scale computers — also called microcontrollers — embedded on a physical device that allow you to embed logic into physical devices. In this course, we’ll make use of the Circuit Playground Express to learn how to write programs for embedded systems.\n\n\n\nThis course will also introduce you to numerical methods for engineering. Given an equation or a system of equations, how do you teach a computer to find the solution to those equations? You will learn how to write algorithms for solving equations that often arise in an engineering context using Python’s numpy package.\n\n\n\nE21 is a core course for the ENGR major at Swarthmore, and serves as a gateway course for several computer engineering courses, including Mobile Robotics, Computer Vision, and Embedded Systems.\nE21 was first taught in the fall of 2024, and it has been taught every fall since then. As a core course, it combines two previously-taught courses: E15, Fundmanetals of Digital and Embedded Systems, and E19, Numerical Methods for Engineering Applications. Students should take this course in sophomore year, or latest by junior year.",
+    "text": "A collection of final projects from Fall 2025 ENGR 21.",
     "crumbs": [
       "Homepage",
-      "Syllabus"
+      "Past E21 Projects"
     ]
   },
   {
-    "objectID": "syllabus.html#how-will-e21-be-run",
-    "href": "syllabus.html#how-will-e21-be-run",
-    "title": "Syllabus",
-    "section": "How will E21 be run?",
-    "text": "How will E21 be run?\n\nSummary\nComponents\n\nTwo lectures each week. Attendance at these lectures is required.\nA homework assignment each week, due on Thursdays at midnight. This will sometimes consist of two parts: a written part and a coding-based part.\nFive/six laboratory assignments during the semester, approximately once every two weeks\nSix tests, held approximately every two weeks. No midterm or final exams.\nA final project.\n\nSupport\n\nWizard Sessions on Tuesday evenings, 7:00 to 9:00 PM in Singer 221.\nInstructor-led Problem Sessions Monday 4:30 to 6:30 PM in Singer 221.\nAppointments with Prof. Masroor on Mondays, Tuesdays and Thursdays.\nOpen office hours by Prof. Masroor 9 — 10:30 AM on Wednesdays.\n\n\n\nLectures\nThis course will be conducted in the form of in-person lectures during the regularly-scheduled meeting time. Lectures will not be recorded and remote participation is not possible. Students are expected to attend every lecture, and to take their own notes. Although the instructor will post lecture slides from class to the website, these do not replace the need for students to actively engage with the material, ideally by taking their own notes.\nThere are at least three different modes of learning that you will spend your classroom time in. These are:\n\nActively listening to a lecture, ideally while taking notes;\nDiscussing in-class questions with your peers, TAs, or the instructor;\nUsing a personal laptop or other computing device to write and execute code during an in-class activity.\n\nBe prepared to switch between these modes of learning as the situation requires it.\n\n\nOffice Hours\nYou are welcome to come talk to the instructor individually at any time you see the door to Singer 112 open. In addition, you can book an appointment for office hours on Mondays, Tuesdays and Thursdays at various times. Book an appointment here.\nOffice Hours are Wednesdays 9 to 10:30 and are open, no appointments.\n\n\nHomework\nHomework assignments are an integral part of this course, as with all engineering courses. They will include both programming (in which case you submit code files) and written work (in which case you submit PDF files of typed or handwritten text). All submissions will be electronic. The instructor has designed the homework problems to complement and expand what is covered in lecture. Since this is primarily a course about using computers, there’s only so much that can be taught in a classroom setting. Much of the learning in E21 happens by doing, whether on your own or while working with others.\nCollaboration with your peers is encouraged, but everything you submit must be your own work. A reasonable expectation for the amount of time that you should expect homework to take is ~ 6 hours per week.\nHomework will be assigned approximately every week, and will typically be due by midnight on the Thursday following the week in which it was assigned. You can generally expect HW n to cover the material from week n, and to be due in week n+1.\nHomework will be submitted on Moodle using Gradescope.\n\n\nTests\nThere will be six tests in this class. There are no midterms or final exams.\nThe purpose of holding six tests instead of one or two midterms is so that you have low-stakes opportunities to demonstrate your mastery of the course material at regular intervals. In general, you can expect these tests to be independent of each other, as opposed to being cumulative.\nThese tests will be held on Tuesdays during the first half of class time (typically for 25-30 minutes), and will be closed-book, closed-notes and closed-computer. The tests will usually be incremental rather than cumulative, and will only cover the material from approximately two weeks prior to each test. Typically, Test n will cover the material from week 2n and week 2n-1, and will be held on week 2n+2; for example, test 1 will cover weeks 1 and 2 and will be held on the Tuesday of week 4; test 2 will cover weeks 3 and 4 and will be held on the Thursday of week 6, etc.\n\n\nLabs\nLabs will be held on alternate weeks.\n\n\nFinal Project\nInstead of an exam, E21 will conclude with a final project. This will be an opportunity to use what you’ve learned in the class to design and build a system that uses Computer Engineering Fundamentals in creative ways. See a list of past projects here",
+    "objectID": "PastProjects/index.html#image-morphing-and-transformation-using-python",
+    "href": "PastProjects/index.html#image-morphing-and-transformation-using-python",
+    "title": "Past E21 Projects",
+    "section": "Image Morphing and Transformation using Python",
+    "text": "Image Morphing and Transformation using Python",
     "crumbs": [
       "Homepage",
-      "Syllabus"
+      "Past E21 Projects"
     ]
   },
   {
-    "objectID": "syllabus.html#course-at-a-glance",
-    "href": "syllabus.html#course-at-a-glance",
-    "title": "Syllabus",
-    "section": "Course at a glance",
-    "text": "Course at a glance\n\n\n\n\n\n\n\nField\nInfo\n\n\n\n\nCourse Number\nENGR 021\n\n\nCourse title\nComputer Engineering Fundamentals Analysis\n\n\nType\nCore ENGR course\n\n\nLab\nMeets biweekly\n\n\nEnrollment\n60+\n\n\nCommunication\nMoodle, this website, Gradescope, EdStem\n\n\nPrerequisites\nENGR 006, MATH 025, ENGR 017\n\n\nLecture Instructor\nEmad Masroor\n\n\nLab Instructor\nMatt Zucker\n\n\nLectures\nTR 8:30 to 9:45 SCI 101\n\n\nProblem Session\nMonday 4:30 to 6:30 PM Singer 221\n\n\nWizard Session\nTue 7:00 to 9:00 PM Singer 221\n\n\nMidterm Exam\nNone\n\n\nFinal Exam\nNone\n\n\nTests\nSix Tests\n\n\nOptional Textbook\nProgramming with MicroPython, Tollervey, Nicholas H.\n\n\nOptional Textbook\nNumerical Methods In Engineering with Python 3, Kiusalaas, Jaan",
+    "objectID": "PastProjects/index.html#d-metal-detecting-robot",
+    "href": "PastProjects/index.html#d-metal-detecting-robot",
+    "title": "Past E21 Projects",
+    "section": "1D Metal Detecting Robot",
+    "text": "1D Metal Detecting Robot",
     "crumbs": [
       "Homepage",
-      "Syllabus"
+      "Past E21 Projects"
     ]
   },
   {
-    "objectID": "syllabus.html#catalog-description",
-    "href": "syllabus.html#catalog-description",
-    "title": "Syllabus",
-    "section": "Catalog Description",
-    "text": "Catalog Description\n\nThis course will introduce students to foundational topics in computer engineering. Key topics include digital representation of data, gates and truth table, and basics of computer organization. Students will gain proficiency coding in Python in both the embedded and traditional computing contexts. Students will also gain exposure to key methods for computational modeling of engineered systems and numerical solution of problems in engineering.",
+    "objectID": "PastProjects/index.html#electronic-plastic-sorter",
+    "href": "PastProjects/index.html#electronic-plastic-sorter",
+    "title": "Past E21 Projects",
+    "section": "Electronic Plastic Sorter",
+    "text": "Electronic Plastic Sorter",
     "crumbs": [
       "Homepage",
-      "Syllabus"
+      "Past E21 Projects"
     ]
   },
   {
-    "objectID": "syllabus.html#schedule",
-    "href": "syllabus.html#schedule",
-    "title": "Syllabus",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\nWeek\n\n\nClass\n\n\n\n\nHW Due\n\n\nTopic\n\n\nTest\n\n\nLab\n\n\n\n\n\n\n1\n\n\n1\n\n\nTue,Sep 1\n\n\n\n\nIntro to E21 & Python\n\n\n\n\n\n\n\n\n\n\n2\n\n\nThu,Sep 3\n\n\n\n\nProgramming + Circuit Python Express\n\n\n\n\n\n\n\n\n2\n\n\n3\n\n\nTue,Sep 8\n\n\n\n\nBase systems; Analog/Digital data\n\n\n\n\n\n\n\n\n\n\n4\n\n\nThu,Sep 10\n\n\nHW 1\n\n\nMore on programming basics\n\n\n\n\nLab 1 starts\n\n\n\n\n3\n\n\n5\n\n\nTue,Sep 15\n\n\n\n\nQuantifying errors\n\n\n\n\n\n\n\n\n\n\n6\n\n\nThu,Sep 17\n\n\nHW 2\n\n\nErrors, Precision & Accuracy\n\n\n\n\n\n\n\n\n4\n\n\n7\n\n\nTue,Sep 22\n\n\n\n\nFloating Point\n\n\nTest 1 on HW 1 & 2\n\n\n\n\n\n\n\n\n8\n\n\nThu,Sep 24\n\n\nHW 3\n\n\nFloating Point\n\n\n\n\nLab 2 starts\n\n\n\n\n5\n\n\n9\n\n\nTue,Sep 29\n\n\n\n\nIntro to numpy; writing data to CPX\n\n\n\n\n\n\n\n\n\n\n10\n\n\nThu,Oct 1\n\n\nHW 4\n\n\nData visualization\n\n\n\n\n\n\n\n\n6\n\n\n11\n\n\nTue,Oct 6\n\n\n\n\nState Machines\n\n\nTest 2 on HW 3 & 4\n\n\n\n\n\n\n\n\n12\n\n\nThu,Oct 8\n\n\nHW 5\n\n\nState Machines\n\n\n\n\nLab 3 starts\n\n\n\n\n\n\n\n\nFall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFall Break\n\n\n\n\n\n\n\n\n\n\n\n\n7\n\n\n13\n\n\nTue,Oct 20\n\n\n\n\nRoot-finding\n\n\n\n\n\n\n\n\n\n\n14\n\n\nThu,Oct 22\n\n\nHW 6\n\n\nRoot-finding\n\n\n\n\n\n\n\n\n8\n\n\n15\n\n\nTue,Oct 27\n\n\n\n\nLinear systems\n\n\nTest 3 on HW 5 & 6\n\n\n\n\n\n\n\n\n16\n\n\nThu,Oct 29\n\n\nHW 7\n\n\nLinear systems\n\n\n\n\nLab 4 starts\n\n\n\n\n9\n\n\n17\n\n\nTue,Nov 3\n\n\n\n\nLinear systems\n\n\n\n\n\n\n\n\n\n\n18\n\n\nThu,Nov 5\n\n\nHW 8\n\n\nLinear systems\n\n\n\n\n\n\n\n\n10\n\n\n19\n\n\nTue,Nov 10\n\n\n\n\nOptimization / Initial Value Problems\n\n\nTest 4 on HW 7 & 8\n\n\nIntro Project\n\n\n\n\n\n\n20\n\n\nThu,Nov 12\n\n\nHW 9\n\n\nOptimization / Initial Value Problems\n\n\n\n\nLab 5 starts\n\n\n\n\n11\n\n\n21\n\n\nTue,Nov 17\n\n\n\n\nOptimization / Initial Value Problems\n\n\n\n\n\n\n\n\n\n\n22\n\n\nThu,Nov 19\n\n\nHW 10\n\n\nOptimization / Initial Value Problems\n\n\n\n\n\n\n\n\n12\n\n\n23\n\n\nTue,Nov 24*\n\n\n\n\nCurve-fitting & interpolation\n\n\nTest 5 on HW 9 & 10\n\n\n\n\n\n\n\n\n0\n\n\nThanksgiving\n\n\nHW 11\n\n\n\n\n\n\nProject\n\n\n\n\n13\n\n\n24\n\n\nTue,Dec 1\n\n\n\n\nCurve-fitting & interpolation\n\n\n\n\n\n\n\n\n\n\n25\n\n\nThu,Dec 3\n\n\nHW 12†\n\n\nWork on final project\n\n\n\n\n\n\n\n\n14\n\n\n26\n\n\nTue,Dec 8\n\n\n\n\nWork on final project\n\n\nTest 6 on HW 11 & 12\n\n\n\n\n\n\nNotes\n\n* Prof. Masroor will be away for a conference  † Content of HW 12 will be announced later",
+    "objectID": "PastProjects/index.html#course-selection-optimization",
+    "href": "PastProjects/index.html#course-selection-optimization",
+    "title": "Past E21 Projects",
+    "section": "Course Selection Optimization",
+    "text": "Course Selection Optimization",
     "crumbs": [
       "Homepage",
-      "Syllabus"
+      "Past E21 Projects"
     ]
   },
   {
-    "objectID": "syllabus.html#teaching-team",
-    "href": "syllabus.html#teaching-team",
-    "title": "Syllabus",
-    "section": "Teaching Team",
-    "text": "Teaching Team\n\n\n\n\n\n\n\n\n\nName\nRole\nOffice Hours\n\n\n\n\nEmad Masroor\nLecture Instructor\nWed 9 to 10:30 & by appt.\n\n\nMatt Zucker\nLab Instructor\n\n\n\nVisnuk Rith\nCourse Wizard\n\n\n\nSamchan Lee\nCourse Wizard\n\n\n\nUneeb Hyder\nCourse Wizard\n\n\n\nHiba Aby\nGrader\n\n\n\nHuyen Nguyen\nGrader\n\n\n\nEllie Fermo\nGrader\n\n\n\nKevin Sisk\nGrader",
+    "objectID": "PastProjects/index.html#automated-plant-care-system",
+    "href": "PastProjects/index.html#automated-plant-care-system",
+    "title": "Past E21 Projects",
+    "section": "Automated Plant Care System",
+    "text": "Automated Plant Care System",
     "crumbs": [
       "Homepage",
-      "Syllabus"
+      "Past E21 Projects"
     ]
   },
   {
-    "objectID": "syllabus.html#grades",
-    "href": "syllabus.html#grades",
-    "title": "Syllabus",
-    "section": "Grades",
-    "text": "Grades\nIn this course, it is possible for you to calculate your overall numerical score by using the following table of weights. Your final score in the course is a weighted average of the components. Each homework assignment will be weighted equally.\n\nComponents of Grade\n\n\n\n\nComponent\nGrade\n\n\n\n\nParticipation\n5%\n\n\nHomework\n20%\n\n\nTests\n45%\n\n\nLabs\n15%\n\n\nFinal Project\n15%\n\n\n\n\n\n\nGrade Thresholds\nThis class uses an absolute threshold for grades. Your grade in E21 is not based on a comparison with your peers’ performance, but is instead based on an absolute standard set by the instructor. Numerical threhsolds will be used to convert numeric scores to letter grades according to the Swarthmore College grade definitions.\n\n\n\n\n\n\nTipDefinitions of Letter Grades\n\n\n\nFrom the Swarthmore College catalog: A means excellent work; B, good work; C, satisfactory work; D, passing but below the average required for graduation; and NC (no credit), uncompleted or unsatisfactory work.\n\n\nThe instructor will assign +/- qualifiers to the letter grades, approximately equally spaced across the corresponding letter grades, i.e., 83 is the minimum for a B and 87 the minimum for a B+.\n\n\n\n\n\n\nTipAdjustment of thresholds\n\n\n\nOne or more of the numeric thresholds set out in this document may be adjusted downward in your favor (i.e., by making it easier to get a certain letter grade) and will not be adjusted upward. Such changes are made to bring letter grades in alignment with the College’s definitions.\n\n\n\n\n\nLetter\nNumerical score\n\n\n\n\nA range\n90-100\n\n\nB range\n80-90\n\n\nC range\n70-80\n\n\nD range\n60-70\n\n\nNC\nBelow 60",
+    "objectID": "PastProjects/index.html#simon-says-an-embedded-systems-memory-game",
+    "href": "PastProjects/index.html#simon-says-an-embedded-systems-memory-game",
+    "title": "Past E21 Projects",
+    "section": "Simon Says: An Embedded Systems Memory Game",
+    "text": "Simon Says: An Embedded Systems Memory Game",
     "crumbs": [
       "Homepage",
-      "Syllabus"
+      "Past E21 Projects"
     ]
   },
   {
-    "objectID": "syllabus.html#policies",
-    "href": "syllabus.html#policies",
-    "title": "Syllabus",
-    "section": "Policies",
-    "text": "Policies\n\nAI Policy\nThis is a course for humans by humans. This means that\n\nAI will not be used by the instructor to create lecture slides, write homework assignments, or set tests. It will not be used to grade any student work.\nStudents are likewise expected to complete the course requirements without using AI.\n\n\nStatement of Instructor’s Guiding Principles\nThe following comments were given by the instructor to the Swarthmore Phoenix in November 2025.\n\nI believe that the wide availability of generative “artificial intelligence” is an impediment to student learning. This is not to say that AI tools are not useful, but simply to say that, on balance, they are harmful in an educational context and likely to lead to a serious deterioration of students’ ability to write well, think critically, and read deeply. By short-circuiting the difficult process of learning, these AI tools give us the illusion of knowledge while in actuality being a simulacrum of the real thing. After all, if you only know how to do something with the help of a chat bot, do you really know how to do it? And, perhaps more relevant for students entering the job market, why would anyone employ you for a “skill” that anyone else with an internet connection could just as well claim to have?\nThe path from ignorance to knowledge is not an easy one. It is challenging, and struggling against that challenge is, pretty much, the entire point of the educational enterprise. Forgive me for having a luddite opinion here, but I think it is quite possible that some technology is actually bad for society, and that innovation can be regressive instead of progressive. A mass plagiarism machine that can do students’ homework for them without their having to lift a finger, compose their essays, write their code, make their presentations, summarize their readings, and even answer interview questions in real-time is, in fact, just as bad as it sounds.\nWhile it is true that these tools are proliferating in many professions — leading some to contend that colleges must “prepare their students for the AI age” — I believe that faculty at a liberal arts college should exercise discernment in their desire to keep abreast of this latest fad. To students, I would say that no matter how much the AI maximalists would like to tell you otherwise, there will never be any substitute for thinking, reading, and writing. These three activities are essential to the formation of young people and have been the bedrock of education in civilized societies for thousands of years. To the extent that a new tool promises to alleviate the burden of having to think, to read, or to write, that tool offers us only a devil’s bargain that will leave us poorer of mind and spirit and will rob our students of a true education.\n\n\n\nProhibited use of AI\n\nYou are not entirely prohibited from asking Large Language Models questions (in your own words) related to this course. However:\n\nMany of the assignments in this class require you to complete a task by writing code that accomplishes this task. The following are some ways in which you could complete the task:\n\nYou could copy a friend’s code and turn it in.\nYou could copy a solution you found on the internet.\nYou could Google “How do I x”, read the approach suggested by the first search result, and then implement the approach in your own words.\nYou could ask a LLM “How do I x”, and then implement the approach suggested by ChatGPT/Claude/Gemini.\n\nThe common thread between these four approaches is that by adopting them you bypass the most important element of taking an Engineering class: thinking about the assigned problems and coming up with your own solutions to them.\nAll four options above are unacceptable for this class. You should be able to complete all assignments in an AI-free and even internet-free environment.\n\nYou may not upload assignment instructions, lecture slides, or other course material to an AI service.\nYou are prohibited from using Large Language Models to produce anything (text, code, diagrams, etc) that you turn in.\n\nViolations of this policy will be treated as cases of academic misconduct.\n\n\nIsn’t most code written by AI now ?\nE21 is a programming-heavy course. You may be aware of news reports that claim that ‘75% of all code is now written by AI’, or some other large number. By some accounts, enormous quantities of code are now being generated at speeds faster than humans can review it, and you may be wondering why the AI policy in this course is seemingly out of step with these developments in industry.\n\nThe prohibition on AI in E21 is akin to the calculator-free classrooms of elementary school mathematics. It is important to learn programming, especially if you go on to write programs for a living with or without AI assistance.\nA successfully completed college course requires you to produce a body of work that represents your own intellectual output. The result of a prompt given to an AI tool is not your intellectual work.\n\n\n\n\nAttendance at Lecture\n\nis required.\nPlease be respectful of everyone else’s time by being punctual.\nCell phone use is not permitted in class. If you have an urgent matter to attend to that requires you to use your phone, you may leave the room discreetly and return when you are able to.\nYou are encouraged to bring a personal (laptop) computer to class. However, these should be used during in-class programming activities and should be put away (i.e., screen closed) otherwise.\n\n\n\nHomework Policies\n\nLate work will not be accepted for grading.\nExceptions to the above may be granted for extenuating circumstances, such as sickness, family emergencies, and other circumstances beyond one’s control. These exceptions will be at the discretion of the instructor.\nEach student can get one ‘free’ extension during the semester, of one week’s duration, with no penalty. This is a no-questions-asked extension and will be deemed automatically granted when you request before the deadline.\nBoth types of extensions must be requested via Google Forms here.\n\n\n\nTest Policies\n\nA test can be rescheduled in extraordinary circumstances for reasons of medical emergency, family illness, etc. Rescheduled tests will typically occur in the form of an oral exam in person.\nA test missed without prior notice will result in a score of zero.\nGrades on tests can be disputed, but only within one week after graded tests are returned.\n\n\n\nLab Policies\n\nAttendance at lab is required for the full duration (1:15-4:00 PM).\nPlease be respectful of everyone else’s time by being punctual.",
+    "objectID": "PastProjects/index.html#color-sensor",
+    "href": "PastProjects/index.html#color-sensor",
+    "title": "Past E21 Projects",
+    "section": "Color Sensor",
+    "text": "Color Sensor",
     "crumbs": [
       "Homepage",
-      "Syllabus"
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#sound-responsive-catapult-with-led-digit-panel",
+    "href": "PastProjects/index.html#sound-responsive-catapult-with-led-digit-panel",
+    "title": "Past E21 Projects",
+    "section": "Sound-Responsive Catapult with LED Digit Panel",
+    "text": "Sound-Responsive Catapult with LED Digit Panel",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#output-maximizing-solar-panel",
+    "href": "PastProjects/index.html#output-maximizing-solar-panel",
+    "title": "Past E21 Projects",
+    "section": "Output Maximizing Solar PAnel",
+    "text": "Output Maximizing Solar PAnel",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#a-3-dof-robotic-hand-with-tendon-based-finger-mechanics-and-servo-driven-control",
+    "href": "PastProjects/index.html#a-3-dof-robotic-hand-with-tendon-based-finger-mechanics-and-servo-driven-control",
+    "title": "Past E21 Projects",
+    "section": "A 3 DOF Robotic Hand with Tendon-based finger mechanics and servo-driven control",
+    "text": "A 3 DOF Robotic Hand with Tendon-based finger mechanics and servo-driven control",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#screwing-no-hands",
+    "href": "PastProjects/index.html#screwing-no-hands",
+    "title": "Past E21 Projects",
+    "section": "Screwing, No Hands",
+    "text": "Screwing, No Hands",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#baby-boombox-a-mp3-music-player",
+    "href": "PastProjects/index.html#baby-boombox-a-mp3-music-player",
+    "title": "Past E21 Projects",
+    "section": "Baby Boombox: A MP3 Music Player",
+    "text": "Baby Boombox: A MP3 Music Player",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#progress-toward-a-weatable-grip-assistance-device",
+    "href": "PastProjects/index.html#progress-toward-a-weatable-grip-assistance-device",
+    "title": "Past E21 Projects",
+    "section": "Progress Toward a Weatable Grip-Assistance Device",
+    "text": "Progress Toward a Weatable Grip-Assistance Device",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#whiteboard-erasing-robot",
+    "href": "PastProjects/index.html#whiteboard-erasing-robot",
+    "title": "Past E21 Projects",
+    "section": "Whiteboard-Erasing Robot",
+    "text": "Whiteboard-Erasing Robot",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#modeling-the-transmission-of-the-monkeypox-virus-infection-with-vaccination-and-other-intervention-measures",
+    "href": "PastProjects/index.html#modeling-the-transmission-of-the-monkeypox-virus-infection-with-vaccination-and-other-intervention-measures",
+    "title": "Past E21 Projects",
+    "section": "Modeling the Transmission of the Monkeypox Virus Infection with Vaccination and other intervention measures",
+    "text": "Modeling the Transmission of the Monkeypox Virus Infection with Vaccination and other intervention measures",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#joystick-controlled-dual-axis-rotation-system",
+    "href": "PastProjects/index.html#joystick-controlled-dual-axis-rotation-system",
+    "title": "Past E21 Projects",
+    "section": "Joystick-controlled Dual-Axis Rotation System",
+    "text": "Joystick-controlled Dual-Axis Rotation System",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#simulating-particle-dynamics-collisions-wall-interactions-and-multi-particle-systems",
+    "href": "PastProjects/index.html#simulating-particle-dynamics-collisions-wall-interactions-and-multi-particle-systems",
+    "title": "Past E21 Projects",
+    "section": "Simulating Particle Dynamics: Collisions, Wall interactions, and multi-particle systems",
+    "text": "Simulating Particle Dynamics: Collisions, Wall interactions, and multi-particle systems",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#magic-piano-irl",
+    "href": "PastProjects/index.html#magic-piano-irl",
+    "title": "Past E21 Projects",
+    "section": "Magic Piano IRL",
+    "text": "Magic Piano IRL",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#manually-targeted-tactical-flywheel-based-projectile-launch-system",
+    "href": "PastProjects/index.html#manually-targeted-tactical-flywheel-based-projectile-launch-system",
+    "title": "Past E21 Projects",
+    "section": "Manually Targeted Tactical Flywheel-Based Projectile Launch System",
+    "text": "Manually Targeted Tactical Flywheel-Based Projectile Launch System",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#grayscale-camera-with-circuitplayground-and-a-photoresistor",
+    "href": "PastProjects/index.html#grayscale-camera-with-circuitplayground-and-a-photoresistor",
+    "title": "Past E21 Projects",
+    "section": "Grayscale Camera with CircuitPlayground and a Photoresistor",
+    "text": "Grayscale Camera with CircuitPlayground and a Photoresistor",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#polaris-a-wireless-charging-speaker-with-interactive-sensing",
+    "href": "PastProjects/index.html#polaris-a-wireless-charging-speaker-with-interactive-sensing",
+    "title": "Past E21 Projects",
+    "section": "POLARIS: A Wireless-Charging Speaker with Interactive Sensing",
+    "text": "POLARIS: A Wireless-Charging Speaker with Interactive Sensing",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#color-based-marble-sorting-system",
+    "href": "PastProjects/index.html#color-based-marble-sorting-system",
+    "title": "Past E21 Projects",
+    "section": "Color-Based Marble Sorting System",
+    "text": "Color-Based Marble Sorting System",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#isa-injection-system-automation",
+    "href": "PastProjects/index.html#isa-injection-system-automation",
+    "title": "Past E21 Projects",
+    "section": "ISA: Injection System Automation",
+    "text": "ISA: Injection System Automation",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "PastProjects/index.html#how-close-are-you-to-your-nearest-bus-stop",
+    "href": "PastProjects/index.html#how-close-are-you-to-your-nearest-bus-stop",
+    "title": "Past E21 Projects",
+    "section": "How close are you to your nearest bus stop?",
+    "text": "How close are you to your nearest bus stop?",
+    "crumbs": [
+      "Homepage",
+      "Past E21 Projects"
     ]
   },
   {
@@ -447,278 +635,154 @@
     ]
   },
   {
-    "objectID": "PastProjects/index.html",
-    "href": "PastProjects/index.html",
-    "title": "Past E21 Projects",
+    "objectID": "Homework/HW1/solutions.html#for-a-binary-operator",
+    "href": "Homework/HW1/solutions.html#for-a-binary-operator",
+    "title": "HW 1",
+    "section": "2.1 For a binary operator",
+    "text": "2.1 For a binary operator\nUse this info to construct a truth table for the following binary operator.\n(a and b) or a\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\nVariable a\nVariable b\nResult of (a and b) or a\n\n\n\n\nTrue\nTrue\nTrue\n\n\nTrue\nFalse\nTrue\n\n\nFalse\nTrue\nFalse\n\n\nFalse\nFalse\nFalse",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 1",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "Homework/HW1/solutions.html#for-an-operator-with-three-inputs",
+    "href": "Homework/HW1/solutions.html#for-an-operator-with-three-inputs",
+    "title": "HW 1",
+    "section": "2.2 For an operator with three inputs",
+    "text": "2.2 For an operator with three inputs\nConstruct a truth table for the following operator.\n(a or b) and c\n\n\n\n\n\n\nTipSolution\n\n\n\nThere are \\(2^3 = 8\\) rows.\n\n\n\na\nb\nc\n(a or b) and c\n\n\n\n\nTrue\nTrue\nTrue\nTrue\n\n\nTrue\nTrue\nFalse\nFalse\n\n\nTrue\nFalse\nTrue\nTrue\n\n\nTrue\nFalse\nFalse\nFalse\n\n\nFalse\nTrue\nTrue\nTrue\n\n\nFalse\nTrue\nFalse\nFalse\n\n\nFalse\nFalse\nTrue\nFalse\n\n\nFalse\nFalse\nFalse\nFalse",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 1",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "Homework/HW1/solutions.html#no-inputs",
+    "href": "Homework/HW1/solutions.html#no-inputs",
+    "title": "HW 1",
+    "section": "3.1 No inputs",
+    "text": "3.1 No inputs\n\nwhile True:\n  cpx.play_tone(440,1)\ncpx.play_tone(880,0.5)\n\n\n\n\n\n\nTipSolution\n\n\n\nThis will play 440 Hz and will never play 880 Hz.\n\n\nwhile True:\n  cpx.play_tone(880,0.5)\ncpx.play_tone(440,1)\n\n\n\n\n\n\nTipSolution\n\n\n\nThis will play 880 Hz and will never play 440 Hz.\n\n\nwhile True:\n  cpx.play_tone(880,0.5)\n  cpx.play_tone(440,1)\n\n\n\n\n\n\nTipSolution\n\n\n\nThis will play 880 Hz for half second, followed by 440 Hz for one second, followed by 880 Hz for half second, and will continue alternating between the two for ever.\n\n\nwhile True:\n  cpx.play_tone(440,1)\n  cpx.play_tone(880,0.5)\n\n\n\n\n\n\nTipSolution\n\n\n\nThis will play 440 Hz for one second, followed by 880 Hz for half second, followed by 440 Hz for one second, and will continue alternating between the two for ever.\n\n\ncpx.play_tone(440,1)\nwhile True:\n  cpx.play_tone(880,0.5)\n\n\n\n\n\n\nTipSolution\n\n\n\nThis will play 440 Hz for one second, followed by infinitely-repeating 880 Hz notes for half second intervals. 440 Hz will only play once.\n\n\ncpx.play_tone(440,1)\nwhile False:\n  cpx.play_tone(880,0.5)\n\n\n\n\n\n\nTipSolution\n\n\n\nThis will play 440 Hz for one second, and then nothing more will happen.\n\n\ncpx.play_tone(440,1)\nwhile False:\n  cpx.play_tone(880,0.5)\ncpx.play_tone(440,1)\n\n\n\n\n\n\nTipSolution\n\n\n\nThis will play 440 Hz for one second, followed by another 1-second note at 440 Hz. 880 Hz will never play.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 1",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "Homework/HW1/solutions.html#with-inputs",
+    "href": "Homework/HW1/solutions.html#with-inputs",
+    "title": "HW 1",
+    "section": "3.2 With inputs",
+    "text": "3.2 With inputs\nFor the following questions, determine what the board will do under the different relevant possibilities. For example,\n\nif a flashlight is shining on it vs. not\nif the temperature sensor is above/below a threshold\nif a certain pin is touched or not touched.\n\n\nwhile not (cpx.touch_A1 and cpx.touch_A5):\n  cpx.play_tone(440,1)\ncpx.play_tone(880,0.5)\n\n\n\n\n\n\nTipSolution\n\n\n\nThis will play 440 Hz for one second intervals repeatedly. If only pin A1 is touched, nothing will happen, and if only pin A5 is touched, nothing will happen. But if both of these pins are touched simultaenously, the 440 Hz notes will terminate, the board will make one half-second note at 880 Hz, and then the program will terminate.\n\n\nwhile not (cpx.touch_A1 and cpx.temperature &gt; 30):\n  cpx.play_tone(440,1)\ncpx.play_tone(880,0.5)\n\n\n\n\n\n\nTipSolution\n\n\n\nThis will play 440 Hz for one second intervals repeatedly. If only pin A1 is touched, nothing will happen as long as the temperature sensor reads less than 30 degrees Celsius. If the temperature sensor is brought near something warm while pin A1 is being touched, the 440 Hz note will cease and the board will make one half-second note at 880 Hz, and then the program will terminate.\n\n\nwhile not (cpx.touch_A1 or cpx.temperature &gt; 30):\n  cpx.play_tone(440,1)\ncpx.play_tone(880,0.5)\n\n\n\n\n\n\nTipSolution\n\n\n\nThis will play 440 Hz for one second intervals repeatedly. It will stop doing so if one of two conditions is met: Either pin A1 is touched, or the temperature is raised above 30 degrees Celsius, then the 440 Hz note will cease and the board will make one half-second note at 880 Hz, and then the program will terminate.\n\n\ncpx.play_tone(440,1)\nwhile cpx.light &lt; 100:\n  cpx.play_tone(880,0.5)\ncpx.play_tone(440,1)\n\n\n\n\n\n\nTipSolution\n\n\n\nThis will play 440 Hz for one second. After that, the program will continue to beep at 880 Hz for half-second intervals repeatedly if it is in low light conditions. If a flashlight is shined on it, the board will produce one second-long note at 440 Hz, after which the program will terminate.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 1",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
     "section": "",
-    "text": "A collection of final projects from Fall 2025 ENGR 21.",
+    "text": "This course is called Computer Engineering Fundamentals, and its goal is to teach you how to use a computer to do things that engineers need to do. As part of the core Engineering curriculum at Swarthmore, E21 is not just for computer engineers, but is a broad introduction to the fundamentals of engineering with computers. This course will teach you skills that are applicable to a broad variety of tasks encountered by engineers of all kinds, including mechanical, electrical, civil, computer, chemical, aerospace, biomedical, etc.\nE21 is not a course about how computers work; we don’t take computers apart and we don’t learn how to make computers.\nThere are three major thrusts of this course: an engineering-oriented introduction to programming, an introduction to microcontrollers and embedded systems, and an introduction to numerical methods.\n\n\nBy the time you take this course, we expect that you will already have used MATLAB in E6. However, we will start fresh using a new, high-level, open-source programming language: Python. This language is industry-standard and extremely versatile, and you don’t need to buy anything to use it. Coupled with the extensive ecosystem of packages that you’ll dip your toes in, you’ll find that Python is a very useful tool in your engineering toolbox.\n\n\n\nEmbedded systems are small-scale computers — also called microcontrollers — embedded on a physical device that allow you to embed logic into physical devices. In this course, we’ll make use of the Circuit Playground Express to learn how to write programs for embedded systems.\n\n\n\nThis course will also introduce you to numerical methods for engineering. Given an equation or a system of equations, how do you teach a computer to find the solution to those equations? You will learn how to write algorithms for solving equations that often arise in an engineering context using Python’s numpy package.\n\n\n\nE21 is a core course for the ENGR major at Swarthmore, and serves as a gateway course for several computer engineering courses, including Mobile Robotics, Computer Vision, and Embedded Systems.\nE21 was first taught in the fall of 2024, and it has been taught every fall since then. As a core course, it combines two previously-taught courses: E15, Fundmanetals of Digital and Embedded Systems, and E19, Numerical Methods for Engineering Applications. Students should take this course in sophomore year, or latest by junior year.",
     "crumbs": [
       "Homepage",
-      "Past E21 Projects"
+      "Syllabus"
     ]
   },
   {
-    "objectID": "PastProjects/index.html#image-morphing-and-transformation-using-python",
-    "href": "PastProjects/index.html#image-morphing-and-transformation-using-python",
-    "title": "Past E21 Projects",
-    "section": "Image Morphing and Transformation using Python",
-    "text": "Image Morphing and Transformation using Python",
+    "objectID": "syllabus.html#what-is-e21-about",
+    "href": "syllabus.html#what-is-e21-about",
+    "title": "Syllabus",
+    "section": "",
+    "text": "This course is called Computer Engineering Fundamentals, and its goal is to teach you how to use a computer to do things that engineers need to do. As part of the core Engineering curriculum at Swarthmore, E21 is not just for computer engineers, but is a broad introduction to the fundamentals of engineering with computers. This course will teach you skills that are applicable to a broad variety of tasks encountered by engineers of all kinds, including mechanical, electrical, civil, computer, chemical, aerospace, biomedical, etc.\nE21 is not a course about how computers work; we don’t take computers apart and we don’t learn how to make computers.\nThere are three major thrusts of this course: an engineering-oriented introduction to programming, an introduction to microcontrollers and embedded systems, and an introduction to numerical methods.\n\n\nBy the time you take this course, we expect that you will already have used MATLAB in E6. However, we will start fresh using a new, high-level, open-source programming language: Python. This language is industry-standard and extremely versatile, and you don’t need to buy anything to use it. Coupled with the extensive ecosystem of packages that you’ll dip your toes in, you’ll find that Python is a very useful tool in your engineering toolbox.\n\n\n\nEmbedded systems are small-scale computers — also called microcontrollers — embedded on a physical device that allow you to embed logic into physical devices. In this course, we’ll make use of the Circuit Playground Express to learn how to write programs for embedded systems.\n\n\n\nThis course will also introduce you to numerical methods for engineering. Given an equation or a system of equations, how do you teach a computer to find the solution to those equations? You will learn how to write algorithms for solving equations that often arise in an engineering context using Python’s numpy package.\n\n\n\nE21 is a core course for the ENGR major at Swarthmore, and serves as a gateway course for several computer engineering courses, including Mobile Robotics, Computer Vision, and Embedded Systems.\nE21 was first taught in the fall of 2024, and it has been taught every fall since then. As a core course, it combines two previously-taught courses: E15, Fundmanetals of Digital and Embedded Systems, and E19, Numerical Methods for Engineering Applications. Students should take this course in sophomore year, or latest by junior year.",
     "crumbs": [
       "Homepage",
-      "Past E21 Projects"
+      "Syllabus"
     ]
   },
   {
-    "objectID": "PastProjects/index.html#d-metal-detecting-robot",
-    "href": "PastProjects/index.html#d-metal-detecting-robot",
-    "title": "Past E21 Projects",
-    "section": "1D Metal Detecting Robot",
-    "text": "1D Metal Detecting Robot",
+    "objectID": "syllabus.html#how-will-e21-be-run",
+    "href": "syllabus.html#how-will-e21-be-run",
+    "title": "Syllabus",
+    "section": "How will E21 be run?",
+    "text": "How will E21 be run?\n\nSummary\nComponents\n\nTwo lectures each week. Attendance at these lectures is required.\nA homework assignment each week, due on Thursdays at midnight. This will sometimes consist of two parts: a written part and a coding-based part.\nFive/six laboratory assignments during the semester, approximately once every two weeks\nSix tests, held approximately every two weeks. No midterm or final exams.\nA final project.\n\nSupport\n\nWizard Sessions on Tuesday evenings, 7:00 to 9:00 PM in Singer 221.\nInstructor-led Problem Sessions Monday 4:30 to 6:30 PM in Singer 221.\nAppointments with Prof. Masroor on Mondays, Tuesdays and Thursdays.\nOpen office hours by Prof. Masroor 9 — 10:30 AM on Wednesdays.\n\n\n\nLectures\nThis course will be conducted in the form of in-person lectures during the regularly-scheduled meeting time. Lectures will not be recorded and remote participation is not possible. Students are expected to attend every lecture, and to take their own notes. Although the instructor will post lecture slides from class to the website, these do not replace the need for students to actively engage with the material, ideally by taking their own notes.\nThere are at least three different modes of learning that you will spend your classroom time in. These are:\n\nActively listening to a lecture, ideally while taking notes;\nDiscussing in-class questions with your peers, TAs, or the instructor;\nUsing a personal laptop or other computing device to write and execute code during an in-class activity.\n\nBe prepared to switch between these modes of learning as the situation requires it.\n\n\nOffice Hours\nYou are welcome to come talk to the instructor individually at any time you see the door to Singer 112 open. In addition, you can book an appointment for office hours on Mondays, Tuesdays and Thursdays at various times. Book an appointment here.\nOffice Hours are Wednesdays 9 to 10:30 and are open, no appointments.\n\n\nHomework\nHomework assignments are an integral part of this course, as with all engineering courses. They will include both programming (in which case you submit code files) and written work (in which case you submit PDF files of typed or handwritten text). All submissions will be electronic. The instructor has designed the homework problems to complement and expand what is covered in lecture. Since this is primarily a course about using computers, there’s only so much that can be taught in a classroom setting. Much of the learning in E21 happens by doing, whether on your own or while working with others.\nCollaboration with your peers is encouraged, but everything you submit must be your own work. A reasonable expectation for the amount of time that you should expect homework to take is ~ 6 hours per week.\nHomework will be assigned approximately every week, and will typically be due by midnight on the Thursday following the week in which it was assigned. You can generally expect HW n to cover the material from week n, and to be due in week n+1.\nHomework will be submitted on Moodle using Gradescope.\n\n\nTests\nThere will be six tests in this class. There are no midterms or final exams.\nThe purpose of holding six tests instead of one or two midterms is so that you have low-stakes opportunities to demonstrate your mastery of the course material at regular intervals. In general, you can expect these tests to be independent of each other, as opposed to being cumulative.\nThese tests will be held on Tuesdays during the first half of class time (typically for 25-30 minutes), and will be closed-book, closed-notes and closed-computer. The tests will usually be incremental rather than cumulative, and will only cover the material from approximately two weeks prior to each test. Typically, Test n will cover the material from week 2n and week 2n-1, and will be held on week 2n+2; for example, test 1 will cover weeks 1 and 2 and will be held on the Tuesday of week 4; test 2 will cover weeks 3 and 4 and will be held on the Thursday of week 6, etc.\n\n\nLabs\nLabs will be held on alternate weeks.\n\n\nFinal Project\nInstead of an exam, E21 will conclude with a final project. This will be an opportunity to use what you’ve learned in the class to design and build a system that uses Computer Engineering Fundamentals in creative ways. See a list of past projects here",
     "crumbs": [
       "Homepage",
-      "Past E21 Projects"
+      "Syllabus"
     ]
   },
   {
-    "objectID": "PastProjects/index.html#electronic-plastic-sorter",
-    "href": "PastProjects/index.html#electronic-plastic-sorter",
-    "title": "Past E21 Projects",
-    "section": "Electronic Plastic Sorter",
-    "text": "Electronic Plastic Sorter",
+    "objectID": "syllabus.html#course-at-a-glance",
+    "href": "syllabus.html#course-at-a-glance",
+    "title": "Syllabus",
+    "section": "Course at a glance",
+    "text": "Course at a glance\n\n\n\n\n\n\n\nField\nInfo\n\n\n\n\nCourse Number\nENGR 021\n\n\nCourse title\nComputer Engineering Fundamentals Analysis\n\n\nType\nCore ENGR course\n\n\nLab\nMeets biweekly\n\n\nEnrollment\n60+\n\n\nCommunication\nMoodle, this website, Gradescope, EdStem\n\n\nPrerequisites\nENGR 006, MATH 025, ENGR 017\n\n\nLecture Instructor\nEmad Masroor\n\n\nLab Instructor\nMatt Zucker\n\n\nLectures\nTR 8:30 to 9:45 SCI 101\n\n\nProblem Session\nMonday 4:30 to 6:30 PM Singer 221\n\n\nWizard Session\nTue 7:00 to 9:00 PM Singer 221\n\n\nMidterm Exam\nNone\n\n\nFinal Exam\nNone\n\n\nTests\nSix Tests\n\n\nOptional Textbook\nProgramming with MicroPython, Tollervey, Nicholas H.\n\n\nOptional Textbook\nNumerical Methods In Engineering with Python 3, Kiusalaas, Jaan",
     "crumbs": [
       "Homepage",
-      "Past E21 Projects"
+      "Syllabus"
     ]
   },
   {
-    "objectID": "PastProjects/index.html#course-selection-optimization",
-    "href": "PastProjects/index.html#course-selection-optimization",
-    "title": "Past E21 Projects",
-    "section": "Course Selection Optimization",
-    "text": "Course Selection Optimization",
+    "objectID": "syllabus.html#catalog-description",
+    "href": "syllabus.html#catalog-description",
+    "title": "Syllabus",
+    "section": "Catalog Description",
+    "text": "Catalog Description\n\nThis course will introduce students to foundational topics in computer engineering. Key topics include digital representation of data, gates and truth table, and basics of computer organization. Students will gain proficiency coding in Python in both the embedded and traditional computing contexts. Students will also gain exposure to key methods for computational modeling of engineered systems and numerical solution of problems in engineering.",
     "crumbs": [
       "Homepage",
-      "Past E21 Projects"
+      "Syllabus"
     ]
   },
   {
-    "objectID": "PastProjects/index.html#automated-plant-care-system",
-    "href": "PastProjects/index.html#automated-plant-care-system",
-    "title": "Past E21 Projects",
-    "section": "Automated Plant Care System",
-    "text": "Automated Plant Care System",
+    "objectID": "syllabus.html#schedule",
+    "href": "syllabus.html#schedule",
+    "title": "Syllabus",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\nWeek\n\n\nClass\n\n\n\n\nHW Due\n\n\nTopic\n\n\nTest\n\n\nLab\n\n\n\n\n\n\n1\n\n\n1\n\n\nTue,Sep 1\n\n\n\n\nIntro to E21 & Python\n\n\n\n\n\n\n\n\n\n\n2\n\n\nThu,Sep 3\n\n\n\n\nProgramming + Circuit Python Express\n\n\n\n\n\n\n\n\n2\n\n\n3\n\n\nTue,Sep 8\n\n\n\n\nBase systems; Analog/Digital data\n\n\n\n\n\n\n\n\n\n\n4\n\n\nThu,Sep 10\n\n\nHW 1\n\n\nMore on programming basics\n\n\n\n\nLab 1 starts\n\n\n\n\n3\n\n\n5\n\n\nTue,Sep 15\n\n\n\n\nQuantifying errors\n\n\n\n\n\n\n\n\n\n\n6\n\n\nThu,Sep 17\n\n\nHW 2\n\n\nErrors, Precision & Accuracy\n\n\n\n\n\n\n\n\n4\n\n\n7\n\n\nTue,Sep 22\n\n\n\n\nFloating Point\n\n\nTest 1 on HW 1 & 2\n\n\n\n\n\n\n\n\n8\n\n\nThu,Sep 24\n\n\nHW 3\n\n\nFloating Point\n\n\n\n\nLab 2 starts\n\n\n\n\n5\n\n\n9\n\n\nTue,Sep 29\n\n\n\n\nIntro to numpy; writing data to CPX\n\n\n\n\n\n\n\n\n\n\n10\n\n\nThu,Oct 1\n\n\nHW 4\n\n\nData visualization\n\n\n\n\n\n\n\n\n6\n\n\n11\n\n\nTue,Oct 6\n\n\n\n\nState Machines\n\n\nTest 2 on HW 3 & 4\n\n\n\n\n\n\n\n\n12\n\n\nThu,Oct 8\n\n\nHW 5\n\n\nState Machines\n\n\n\n\nLab 3 starts\n\n\n\n\n\n\n\n\nFall Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFall Break\n\n\n\n\n\n\n\n\n\n\n\n\n7\n\n\n13\n\n\nTue,Oct 20\n\n\n\n\nRoot-finding\n\n\n\n\n\n\n\n\n\n\n14\n\n\nThu,Oct 22\n\n\nHW 6\n\n\nRoot-finding\n\n\n\n\n\n\n\n\n8\n\n\n15\n\n\nTue,Oct 27\n\n\n\n\nLinear systems\n\n\nTest 3 on HW 5 & 6\n\n\n\n\n\n\n\n\n16\n\n\nThu,Oct 29\n\n\nHW 7\n\n\nLinear systems\n\n\n\n\nLab 4 starts\n\n\n\n\n9\n\n\n17\n\n\nTue,Nov 3\n\n\n\n\nLinear systems\n\n\n\n\n\n\n\n\n\n\n18\n\n\nThu,Nov 5\n\n\nHW 8\n\n\nLinear systems\n\n\n\n\n\n\n\n\n10\n\n\n19\n\n\nTue,Nov 10\n\n\n\n\nOptimization / Initial Value Problems\n\n\nTest 4 on HW 7 & 8\n\n\nIntro Project\n\n\n\n\n\n\n20\n\n\nThu,Nov 12\n\n\nHW 9\n\n\nOptimization / Initial Value Problems\n\n\n\n\nLab 5 starts\n\n\n\n\n11\n\n\n21\n\n\nTue,Nov 17\n\n\n\n\nOptimization / Initial Value Problems\n\n\n\n\n\n\n\n\n\n\n22\n\n\nThu,Nov 19\n\n\nHW 10\n\n\nOptimization / Initial Value Problems\n\n\n\n\n\n\n\n\n12\n\n\n23\n\n\nTue,Nov 24*\n\n\n\n\nCurve-fitting & interpolation\n\n\nTest 5 on HW 9 & 10\n\n\n\n\n\n\n\n\n0\n\n\nThanksgiving\n\n\nHW 11\n\n\n\n\n\n\nProject\n\n\n\n\n13\n\n\n24\n\n\nTue,Dec 1\n\n\n\n\nCurve-fitting & interpolation\n\n\n\n\n\n\n\n\n\n\n25\n\n\nThu,Dec 3\n\n\nHW 12†\n\n\nWork on final project\n\n\n\n\n\n\n\n\n14\n\n\n26\n\n\nTue,Dec 8\n\n\n\n\nWork on final project\n\n\nTest 6 on HW 11 & 12\n\n\n\n\n\n\nNotes\n\n* Prof. Masroor will be away for a conference  † Content of HW 12 will be announced later",
     "crumbs": [
       "Homepage",
-      "Past E21 Projects"
+      "Syllabus"
     ]
   },
   {
-    "objectID": "PastProjects/index.html#simon-says-an-embedded-systems-memory-game",
-    "href": "PastProjects/index.html#simon-says-an-embedded-systems-memory-game",
-    "title": "Past E21 Projects",
-    "section": "Simon Says: An Embedded Systems Memory Game",
-    "text": "Simon Says: An Embedded Systems Memory Game",
+    "objectID": "syllabus.html#teaching-team",
+    "href": "syllabus.html#teaching-team",
+    "title": "Syllabus",
+    "section": "Teaching Team",
+    "text": "Teaching Team\n\n\n\n\n\n\n\n\n\nName\nRole\nOffice Hours\n\n\n\n\nEmad Masroor\nLecture Instructor\nWed 9 to 10:30 & by appt.\n\n\nMatt Zucker\nLab Instructor\n\n\n\nVisnuk Rith\nCourse Wizard\n\n\n\nSamchan Lee\nCourse Wizard\n\n\n\nUneeb Hyder\nCourse Wizard\n\n\n\nHiba Aby\nGrader\n\n\n\nHuyen Nguyen\nGrader\n\n\n\nEllie Fermo\nGrader\n\n\n\nKevin Sisk\nGrader",
     "crumbs": [
       "Homepage",
-      "Past E21 Projects"
+      "Syllabus"
     ]
   },
   {
-    "objectID": "PastProjects/index.html#color-sensor",
-    "href": "PastProjects/index.html#color-sensor",
-    "title": "Past E21 Projects",
-    "section": "Color Sensor",
-    "text": "Color Sensor",
+    "objectID": "syllabus.html#grades",
+    "href": "syllabus.html#grades",
+    "title": "Syllabus",
+    "section": "Grades",
+    "text": "Grades\nIn this course, it is possible for you to calculate your overall numerical score by using the following table of weights. Your final score in the course is a weighted average of the components. Each homework assignment will be weighted equally.\n\nComponents of Grade\n\n\n\n\nComponent\nGrade\n\n\n\n\nParticipation\n5%\n\n\nHomework\n20%\n\n\nTests\n45%\n\n\nLabs\n15%\n\n\nFinal Project\n15%\n\n\n\n\n\n\nGrade Thresholds\nThis class uses an absolute threshold for grades. Your grade in E21 is not based on a comparison with your peers’ performance, but is instead based on an absolute standard set by the instructor. Numerical threhsolds will be used to convert numeric scores to letter grades according to the Swarthmore College grade definitions.\n\n\n\n\n\n\nTipDefinitions of Letter Grades\n\n\n\nFrom the Swarthmore College catalog: A means excellent work; B, good work; C, satisfactory work; D, passing but below the average required for graduation; and NC (no credit), uncompleted or unsatisfactory work.\n\n\nThe instructor will assign +/- qualifiers to the letter grades, approximately equally spaced across the corresponding letter grades, i.e., 83 is the minimum for a B and 87 the minimum for a B+.\n\n\n\n\n\n\nTipAdjustment of thresholds\n\n\n\nOne or more of the numeric thresholds set out in this document may be adjusted downward in your favor (i.e., by making it easier to get a certain letter grade) and will not be adjusted upward. Such changes are made to bring letter grades in alignment with the College’s definitions.\n\n\n\n\n\nLetter\nNumerical score\n\n\n\n\nA range\n90-100\n\n\nB range\n80-90\n\n\nC range\n70-80\n\n\nD range\n60-70\n\n\nNC\nBelow 60",
     "crumbs": [
       "Homepage",
-      "Past E21 Projects"
+      "Syllabus"
     ]
   },
   {
-    "objectID": "PastProjects/index.html#sound-responsive-catapult-with-led-digit-panel",
-    "href": "PastProjects/index.html#sound-responsive-catapult-with-led-digit-panel",
-    "title": "Past E21 Projects",
-    "section": "Sound-Responsive Catapult with LED Digit Panel",
-    "text": "Sound-Responsive Catapult with LED Digit Panel",
+    "objectID": "syllabus.html#policies",
+    "href": "syllabus.html#policies",
+    "title": "Syllabus",
+    "section": "Policies",
+    "text": "Policies\n\nAI Policy\nThis is a course for humans by humans. This means that\n\nAI will not be used by the instructor to create lecture slides, write homework assignments, or set tests. It will not be used to grade any student work.\nStudents are likewise expected to complete the course requirements without using AI.\n\n\nStatement of Instructor’s Guiding Principles\nThe following comments were given by the instructor to the Swarthmore Phoenix in November 2025.\n\nI believe that the wide availability of generative “artificial intelligence” is an impediment to student learning. This is not to say that AI tools are not useful, but simply to say that, on balance, they are harmful in an educational context and likely to lead to a serious deterioration of students’ ability to write well, think critically, and read deeply. By short-circuiting the difficult process of learning, these AI tools give us the illusion of knowledge while in actuality being a simulacrum of the real thing. After all, if you only know how to do something with the help of a chat bot, do you really know how to do it? And, perhaps more relevant for students entering the job market, why would anyone employ you for a “skill” that anyone else with an internet connection could just as well claim to have?\nThe path from ignorance to knowledge is not an easy one. It is challenging, and struggling against that challenge is, pretty much, the entire point of the educational enterprise. Forgive me for having a luddite opinion here, but I think it is quite possible that some technology is actually bad for society, and that innovation can be regressive instead of progressive. A mass plagiarism machine that can do students’ homework for them without their having to lift a finger, compose their essays, write their code, make their presentations, summarize their readings, and even answer interview questions in real-time is, in fact, just as bad as it sounds.\nWhile it is true that these tools are proliferating in many professions — leading some to contend that colleges must “prepare their students for the AI age” — I believe that faculty at a liberal arts college should exercise discernment in their desire to keep abreast of this latest fad. To students, I would say that no matter how much the AI maximalists would like to tell you otherwise, there will never be any substitute for thinking, reading, and writing. These three activities are essential to the formation of young people and have been the bedrock of education in civilized societies for thousands of years. To the extent that a new tool promises to alleviate the burden of having to think, to read, or to write, that tool offers us only a devil’s bargain that will leave us poorer of mind and spirit and will rob our students of a true education.\n\n\n\nProhibited use of AI\n\nYou are not entirely prohibited from asking Large Language Models questions (in your own words) related to this course. However:\n\nMany of the assignments in this class require you to complete a task by writing code that accomplishes this task. The following are some ways in which you could complete the task:\n\nYou could copy a friend’s code and turn it in.\nYou could copy a solution you found on the internet.\nYou could Google “How do I x”, read the approach suggested by the first search result, and then implement the approach in your own words.\nYou could ask a LLM “How do I x”, and then implement the approach suggested by ChatGPT/Claude/Gemini.\n\nThe common thread between these four approaches is that by adopting them you bypass the most important element of taking an Engineering class: thinking about the assigned problems and coming up with your own solutions to them.\nAll four options above are unacceptable for this class. You should be able to complete all assignments in an AI-free and even internet-free environment.\n\nYou may not upload assignment instructions, lecture slides, or other course material to an AI service.\nYou are prohibited from using Large Language Models to produce anything (text, code, diagrams, etc) that you turn in.\n\nViolations of this policy will be treated as cases of academic misconduct.\n\n\nIsn’t most code written by AI now ?\nE21 is a programming-heavy course. You may be aware of news reports that claim that ‘75% of all code is now written by AI’, or some other large number. By some accounts, enormous quantities of code are now being generated at speeds faster than humans can review it, and you may be wondering why the AI policy in this course is seemingly out of step with these developments in industry.\n\nThe prohibition on AI in E21 is akin to the calculator-free classrooms of elementary school mathematics. It is important to learn programming, especially if you go on to write programs for a living with or without AI assistance.\nA successfully completed college course requires you to produce a body of work that represents your own intellectual output. The result of a prompt given to an AI tool is not your intellectual work.\n\n\n\n\nAttendance at Lecture\n\nis required.\nPlease be respectful of everyone else’s time by being punctual.\nCell phone use is not permitted in class. If you have an urgent matter to attend to that requires you to use your phone, you may leave the room discreetly and return when you are able to.\nYou are encouraged to bring a personal (laptop) computer to class. However, these should be used during in-class programming activities and should be put away (i.e., screen closed) otherwise.\n\n\n\nHomework Policies\n\nLate work will not be accepted for grading.\nExceptions to the above may be granted for extenuating circumstances, such as sickness, family emergencies, and other circumstances beyond one’s control. These exceptions will be at the discretion of the instructor.\nEach student can get one ‘free’ extension during the semester, of one week’s duration, with no penalty. This is a no-questions-asked extension and will be deemed automatically granted when you request before the deadline.\nBoth types of extensions must be requested via Google Forms here.\n\n\n\nTest Policies\n\nA test can be rescheduled in extraordinary circumstances for reasons of medical emergency, family illness, etc. Rescheduled tests will typically occur in the form of an oral exam in person.\nA test missed without prior notice will result in a score of zero.\nGrades on tests can be disputed, but only within one week after graded tests are returned.\n\n\n\nLab Policies\n\nAttendance at lab is required for the full duration (1:15-4:00 PM).\nPlease be respectful of everyone else’s time by being punctual.",
     "crumbs": [
       "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#output-maximizing-solar-panel",
-    "href": "PastProjects/index.html#output-maximizing-solar-panel",
-    "title": "Past E21 Projects",
-    "section": "Output Maximizing Solar PAnel",
-    "text": "Output Maximizing Solar PAnel",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#a-3-dof-robotic-hand-with-tendon-based-finger-mechanics-and-servo-driven-control",
-    "href": "PastProjects/index.html#a-3-dof-robotic-hand-with-tendon-based-finger-mechanics-and-servo-driven-control",
-    "title": "Past E21 Projects",
-    "section": "A 3 DOF Robotic Hand with Tendon-based finger mechanics and servo-driven control",
-    "text": "A 3 DOF Robotic Hand with Tendon-based finger mechanics and servo-driven control",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#screwing-no-hands",
-    "href": "PastProjects/index.html#screwing-no-hands",
-    "title": "Past E21 Projects",
-    "section": "Screwing, No Hands",
-    "text": "Screwing, No Hands",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#baby-boombox-a-mp3-music-player",
-    "href": "PastProjects/index.html#baby-boombox-a-mp3-music-player",
-    "title": "Past E21 Projects",
-    "section": "Baby Boombox: A MP3 Music Player",
-    "text": "Baby Boombox: A MP3 Music Player",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#progress-toward-a-weatable-grip-assistance-device",
-    "href": "PastProjects/index.html#progress-toward-a-weatable-grip-assistance-device",
-    "title": "Past E21 Projects",
-    "section": "Progress Toward a Weatable Grip-Assistance Device",
-    "text": "Progress Toward a Weatable Grip-Assistance Device",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#whiteboard-erasing-robot",
-    "href": "PastProjects/index.html#whiteboard-erasing-robot",
-    "title": "Past E21 Projects",
-    "section": "Whiteboard-Erasing Robot",
-    "text": "Whiteboard-Erasing Robot",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#modeling-the-transmission-of-the-monkeypox-virus-infection-with-vaccination-and-other-intervention-measures",
-    "href": "PastProjects/index.html#modeling-the-transmission-of-the-monkeypox-virus-infection-with-vaccination-and-other-intervention-measures",
-    "title": "Past E21 Projects",
-    "section": "Modeling the Transmission of the Monkeypox Virus Infection with Vaccination and other intervention measures",
-    "text": "Modeling the Transmission of the Monkeypox Virus Infection with Vaccination and other intervention measures",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#joystick-controlled-dual-axis-rotation-system",
-    "href": "PastProjects/index.html#joystick-controlled-dual-axis-rotation-system",
-    "title": "Past E21 Projects",
-    "section": "Joystick-controlled Dual-Axis Rotation System",
-    "text": "Joystick-controlled Dual-Axis Rotation System",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#simulating-particle-dynamics-collisions-wall-interactions-and-multi-particle-systems",
-    "href": "PastProjects/index.html#simulating-particle-dynamics-collisions-wall-interactions-and-multi-particle-systems",
-    "title": "Past E21 Projects",
-    "section": "Simulating Particle Dynamics: Collisions, Wall interactions, and multi-particle systems",
-    "text": "Simulating Particle Dynamics: Collisions, Wall interactions, and multi-particle systems",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#magic-piano-irl",
-    "href": "PastProjects/index.html#magic-piano-irl",
-    "title": "Past E21 Projects",
-    "section": "Magic Piano IRL",
-    "text": "Magic Piano IRL",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#manually-targeted-tactical-flywheel-based-projectile-launch-system",
-    "href": "PastProjects/index.html#manually-targeted-tactical-flywheel-based-projectile-launch-system",
-    "title": "Past E21 Projects",
-    "section": "Manually Targeted Tactical Flywheel-Based Projectile Launch System",
-    "text": "Manually Targeted Tactical Flywheel-Based Projectile Launch System",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#grayscale-camera-with-circuitplayground-and-a-photoresistor",
-    "href": "PastProjects/index.html#grayscale-camera-with-circuitplayground-and-a-photoresistor",
-    "title": "Past E21 Projects",
-    "section": "Grayscale Camera with CircuitPlayground and a Photoresistor",
-    "text": "Grayscale Camera with CircuitPlayground and a Photoresistor",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#polaris-a-wireless-charging-speaker-with-interactive-sensing",
-    "href": "PastProjects/index.html#polaris-a-wireless-charging-speaker-with-interactive-sensing",
-    "title": "Past E21 Projects",
-    "section": "POLARIS: A Wireless-Charging Speaker with Interactive Sensing",
-    "text": "POLARIS: A Wireless-Charging Speaker with Interactive Sensing",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#color-based-marble-sorting-system",
-    "href": "PastProjects/index.html#color-based-marble-sorting-system",
-    "title": "Past E21 Projects",
-    "section": "Color-Based Marble Sorting System",
-    "text": "Color-Based Marble Sorting System",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#isa-injection-system-automation",
-    "href": "PastProjects/index.html#isa-injection-system-automation",
-    "title": "Past E21 Projects",
-    "section": "ISA: Injection System Automation",
-    "text": "ISA: Injection System Automation",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
-    ]
-  },
-  {
-    "objectID": "PastProjects/index.html#how-close-are-you-to-your-nearest-bus-stop",
-    "href": "PastProjects/index.html#how-close-are-you-to-your-nearest-bus-stop",
-    "title": "Past E21 Projects",
-    "section": "How close are you to your nearest bus stop?",
-    "text": "How close are you to your nearest bus stop?",
-    "crumbs": [
-      "Homepage",
-      "Past E21 Projects"
+      "Syllabus"
     ]
   },
   {

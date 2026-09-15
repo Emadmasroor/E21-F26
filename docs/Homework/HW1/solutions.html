@@ -112,6 +112,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -161,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../Homework/HW1/index.html">HW 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../Homework/HW1/index.html">HW 1</a></li><li class="breadcrumb-item"><a href="../../Homework/HW1/solutions.html">HW 1</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -260,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../Homework/HW1/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../Homework/HW1/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 1</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -269,7 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Homework/HW1/solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Homework/HW1/solutions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">HW 1</span></a>
   </div>
 </li>
@@ -305,7 +334,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#writing-simple-programs-for-the-circuit-playground-express" id="toc-writing-simple-programs-for-the-circuit-playground-express" class="nav-link active" data-scroll-target="#writing-simple-programs-for-the-circuit-playground-express"><span class="header-section-number">1</span> Writing simple programs for the Circuit Playground Express</a></li>
+  <li><a href="#solutions" id="toc-solutions" class="nav-link active" data-scroll-target="#solutions">Solutions</a></li>
+  <li><a href="#writing-simple-programs-for-the-circuit-playground-express" id="toc-writing-simple-programs-for-the-circuit-playground-express" class="nav-link" data-scroll-target="#writing-simple-programs-for-the-circuit-playground-express"><span class="header-section-number">1</span> Writing simple programs for the Circuit Playground Express</a></li>
   <li><a href="#truth-tables" id="toc-truth-tables" class="nav-link" data-scroll-target="#truth-tables"><span class="header-section-number">2</span> Truth Tables</a>
   <ul class="collapse">
   <li><a href="#for-a-binary-operator" id="toc-for-a-binary-operator" class="nav-link" data-scroll-target="#for-a-binary-operator"><span class="header-section-number">2.1</span> For a binary operator</a></li>
@@ -318,12 +348,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#nested-while-loops" id="toc-nested-while-loops" class="nav-link" data-scroll-target="#nested-while-loops"><span class="header-section-number">4</span> Nested while loops</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="solutions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../Homework/HW1/index.html">HW 1</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../Homework/HW1/index.html">HW 1</a></li><li class="breadcrumb-item"><a href="../../Homework/HW1/solutions.html">HW 1</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">HW 1</h1>
 <p class="subtitle lead">ENGR 21, Fall 2026.</p>
@@ -343,34 +373,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td>Due Date</td>
-<td>Thu, Sep 10</td>
-</tr>
-<tr class="even">
-<td>Turn in link</td>
-<td><a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=828548">Gradescope</a></td>
-</tr>
-<tr class="odd">
-<td>URL</td>
-<td><code>emadmasroor.github.io/E21-F26/Homework/HW1</code></td>
-</tr>
-</tbody>
-</table>
-<p><u>What to turn in</u></p>
-<p>For this assignment, turn in a single PDF file, even though you will be writing code for some parts. Make sure your code is legible, indented, and syntax-highlighted; a screenshot of code is usually a bad idea, but OK for this homework.</p>
-<p>You may use the text editor in Thonny Code Editor and then go to File &gt; Print. If you use this option to make a printed copy of code for submission, please increase the font size using the ‘scale’ option when printing.</p>
+<section id="solutions" class="level1 unnumbered">
+<h1 class="unnumbered">Solutions</h1>
+</section>
 <section id="writing-simple-programs-for-the-circuit-playground-express" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Writing simple programs for the Circuit Playground Express</h1>
 <p>Using only the features of Python that have been discussed so far,</p>
 <ol type="1">
 <li>Write a program for the Circuit Playground Express that plays a tone of 440 Hz for one-second intervals repeatedly until a cell phone light is shined on it, at which point the program should terminate.</li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> cpx.light <span class="op">&lt;</span> <span class="dv">100</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
 <ol start="2" type="1">
 <li>Write a program for the Circuit Playground Express that plays a tone of 440 Hz for one-second intervals repeatedly. When it is brought close to a warm object (warmer than room temperature), it stops playing this tone and instead plays a high-frequency tone of 880 Hz for a half second. After this, the program should terminate.</li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> cpx.temperature <span class="op">&lt;</span> <span class="dv">31</span>:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
 </section>
 <section id="truth-tables" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Truth Tables</h1>
@@ -391,18 +434,17 @@ Note
 <section id="for-a-binary-operator" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="for-a-binary-operator"><span class="header-section-number">2.1</span> For a binary operator</h2>
 <p>Use this info to <u>construct a truth table</u> for the following binary operator.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(a <span class="kw">and</span> b) <span class="kw">or</span> a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(a <span class="kw">and</span> b) <span class="kw">or</span> a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To do this, make a table with the following entries.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -415,22 +457,22 @@ Note
 <tr class="odd">
 <td><code>True</code></td>
 <td><code>True</code></td>
-<td></td>
+<td><code>True</code></td>
 </tr>
 <tr class="even">
 <td><code>True</code></td>
 <td><code>False</code></td>
-<td></td>
+<td><code>True</code></td>
 </tr>
 <tr class="odd">
 <td><code>False</code></td>
 <td><code>True</code></td>
-<td></td>
+<td><code>False</code></td>
 </tr>
 <tr class="even">
 <td><code>False</code></td>
 <td><code>False</code></td>
-<td></td>
+<td><code>False</code></td>
 </tr>
 </tbody>
 </table>
@@ -440,49 +482,78 @@ Note
 <section id="for-an-operator-with-three-inputs" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="for-an-operator-with-three-inputs"><span class="header-section-number">2.2</span> For an operator with three inputs</h2>
 <p>Construct a truth table for the following operator.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(a <span class="kw">or</span> b) <span class="kw">and</span> c</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(a <span class="kw">or</span> b) <span class="kw">and</span> c</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>One row has been filled out for you.</p>
+<p>There are <span class="math inline">\(2^3 = 8\)</span> rows.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th><code>a</code></th>
 <th><code>b</code></th>
 <th><code>c</code></th>
-<th><code>(a or b) and c</code></th>
+<th>(a or b) and c</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><code>True</code></td>
 <td><code>True</code></td>
+<td><code>True</code></td>
+<td><code>True</code></td>
+</tr>
+<tr class="even">
+<td><code>True</code></td>
+<td><code>True</code></td>
+<td><code>False</code></td>
+<td><code>False</code></td>
+</tr>
+<tr class="odd">
+<td><code>True</code></td>
+<td><code>False</code></td>
+<td><code>True</code></td>
+<td><code>True</code></td>
+</tr>
+<tr class="even">
+<td><code>True</code></td>
+<td><code>False</code></td>
+<td><code>False</code></td>
+<td><code>False</code></td>
+</tr>
+<tr class="odd">
+<td><code>False</code></td>
+<td><code>True</code></td>
+<td><code>True</code></td>
+<td><code>True</code></td>
+</tr>
+<tr class="even">
+<td><code>False</code></td>
+<td><code>True</code></td>
+<td><code>False</code></td>
+<td><code>False</code></td>
+</tr>
+<tr class="odd">
+<td><code>False</code></td>
+<td><code>False</code></td>
+<td><code>True</code></td>
+<td><code>False</code></td>
+</tr>
+<tr class="even">
+<td><code>False</code></td>
+<td><code>False</code></td>
 <td><code>False</code></td>
 <td><code>False</code></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>How many rows do you need?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The rows of a truth table should cover every possible combination of True and False values. If binary operators required 4 rows, how many rows do you need for a logical operator with three inputs, such as <code>(a or b) and c</code>?</p>
 </div>
 </div>
 </section>
@@ -493,28 +564,119 @@ Note
 <section id="no-inputs" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="no-inputs"><span class="header-section-number">3.1</span> No inputs</h2>
 <ol type="1">
-<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will play 440 Hz and will never play 880 Hz.</p>
+</div>
+</div></li>
 <li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">False</span>:</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will play 880 Hz and will never play 440 Hz.</p>
+</div>
+</div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will play 880 Hz for half second, followed by 440 Hz for one second, followed by 880 Hz for half second, and will continue alternating between the two for ever.</p>
+</div>
+</div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will play 440 Hz for one second, followed by 880 Hz for half second, followed by 440 Hz for one second, and will continue alternating between the two for ever.</p>
+</div>
+</div></li>
 <li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">False</span>:</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will play 440 Hz for one second, followed by infinitely-repeating 880 Hz notes for half second intervals. 440 Hz will only play once.</p>
+</div>
+</div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">False</span>:</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will play 440 Hz for one second, and then nothing more will happen.</p>
+</div>
+</div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">False</span>:</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will play 440 Hz for one second, followed by another 1-second note at 440 Hz. 880 Hz will never play.</p>
+</div>
+</div></li>
 </ol>
 </section>
 <section id="with-inputs" class="level2" data-number="3.2">
@@ -526,19 +688,71 @@ Note
 <li>if a certain pin is touched or not touched.</li>
 </ul>
 <ol type="1">
-<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> (cpx.touch_A1 <span class="kw">and</span> cpx.touch_A5):</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> (cpx.touch_A1 <span class="kw">and</span> cpx.temperature <span class="op">&gt;</span> <span class="dv">30</span>):</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> (cpx.touch_A1 <span class="kw">or</span> cpx.temperature <span class="op">&gt;</span> <span class="dv">30</span>):</span>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> (cpx.touch_A1 <span class="kw">and</span> cpx.touch_A5):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> cpx.light <span class="op">&lt;</span> <span class="dv">100</span>:</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will play 440 Hz for one second intervals repeatedly. If only pin A1 is touched, nothing will happen, and if only pin A5 is touched, nothing will happen. But if both of these pins are touched simultaenously, the 440 Hz notes will terminate, the board will make one half-second note at 880 Hz, and then the program will terminate.</p>
+</div>
+</div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> (cpx.touch_A1 <span class="kw">and</span> cpx.temperature <span class="op">&gt;</span> <span class="dv">30</span>):</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will play 440 Hz for one second intervals repeatedly. If only pin A1 is touched, nothing will happen as long as the temperature sensor reads less than 30 degrees Celsius. If the temperature sensor is brought near something warm while pin A1 is being touched, the 440 Hz note will cease and the board will make one half-second note at 880 Hz, and then the program will terminate.</p>
+</div>
+</div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> (cpx.touch_A1 <span class="kw">or</span> cpx.temperature <span class="op">&gt;</span> <span class="dv">30</span>):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will play 440 Hz for one second intervals repeatedly. It will stop doing so if one of two conditions is met: <strong>Either</strong> pin A1 is touched, <strong>or</strong> the temperature is raised above 30 degrees Celsius, then the 440 Hz note will cease and the board will make one half-second note at 880 Hz, and then the program will terminate.</p>
+</div>
+</div></li>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> cpx.light <span class="op">&lt;</span> <span class="dv">100</span>:</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This will play 440 Hz for one second. After that, the program will continue to beep at 880 Hz for half-second intervals repeatedly if it is in low light conditions. If a flashlight is shined on it, the board will produce one second-long note at 440 Hz, after which the program will terminate.</p>
+</div>
+</div></li>
 </ol>
 </section>
 </section>
@@ -546,21 +760,34 @@ Note
 <h1 data-number="4"><span class="header-section-number">4</span> Nested while loops</h1>
 <ol type="1">
 <li><p>Explain the difference between the following programs.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>        cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>With the first program, the Circuit Playground Express will play a note of 880 Hz once, and then will subsequently keep repeating a note of 440 Hz for all eternity. With the second program, the Circuit Playground Express will repeat 880 Hz notes for all eternity. It will never play a 440 Hz note.</p>
+</div>
+</div></li>
 <li><p>For each of the following parts, assume that the Circuit Playground Express has been running the following code for a few seconds before you carry out your intervention. (i.e., a, b, c and d are <strong>not</strong> applied sequentially.)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> cpx.touch_A7:</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a> cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a> <span class="cf">while</span> <span class="kw">not</span> cpx.touch_A5:</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>     cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> cpx.touch_A7:</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a> cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a> <span class="cf">while</span> <span class="kw">not</span> cpx.touch_A5:</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>     cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ol>
 <ol type="a">
 <li>What happens if pin A5 is tapped ?</li>
@@ -568,14 +795,46 @@ Note
 <li>What happens if pin A7 is touched while the speaker is beeping at 440 Hz ?</li>
 <li>What happens if both pin A5 and A7 are pressed for a few seconds?</li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If left for a long time, the Circuit Playground Express will be playing notes of 440 Hz repeatedly.</p>
+<ol type="a">
+<li>If pin A5 is tapped, the program will exit the inner loop and go back to the outer loop, playing a note of 880 Hz once. Then, it will go back to playing notes of 440 Hz repeatedly.</li>
+<li>If pin A5 is touchd for ten seconds, the program will exit the inner loop and play notes of 880 Hz repeatedly, since the condition <code>not cpx.touch_A5</code> will be <code>False</code>, so the inner loop won’t run, but the condition <code>not cpx.touch_A7</code> will be <code>True</code>, so the outer loop will keep running.</li>
+<li>Nothing happens if pin A7 is touched while the speaker is beeping at 440 Hz.</li>
+<li>The program will terminate if both pins are pressed for a few seconds.</li>
+</ol>
+</div>
+</div>
 <ol start="3" type="1">
 <li><p>If the Circuit Playground Express has been running the following code for a few seconds, what happens if pin A5 is touched?</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> cpx.touch_A7:</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>   cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>   <span class="cf">while</span> <span class="kw">not</span> cpx.touch_A5:</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>       cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>   <span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>       cpx.play_tone(<span class="dv">220</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="kw">not</span> cpx.touch_A7:</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>   cpx.play_tone(<span class="dv">880</span>,<span class="fl">0.5</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>   <span class="cf">while</span> <span class="kw">not</span> cpx.touch_A5:</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>       cpx.play_tone(<span class="dv">440</span>,<span class="dv">1</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>   <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>       cpx.play_tone(<span class="dv">220</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After a few seconds when no pin is touched, the Circuit Playground Express will be playing a note of 440 Hz repeatedly. If pin A5 is touched, the program will enter into an infinite loop of playing 220 Hz tones for ever.</p>
+</div>
+</div></li>
 </ol>
 
 
