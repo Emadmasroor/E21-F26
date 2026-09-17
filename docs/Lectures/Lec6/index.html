@@ -359,6 +359,7 @@ window.Quarto = {
   <li><a href="#reviewing-lists-vs-tuples" id="toc-reviewing-lists-vs-tuples" class="nav-link" data-scroll-target="#reviewing-lists-vs-tuples">Reviewing lists vs tuples</a></li>
   <li><a href="#the-nested-for-loop-over-a-list-of-lists" id="toc-the-nested-for-loop-over-a-list-of-lists" class="nav-link" data-scroll-target="#the-nested-for-loop-over-a-list-of-lists">The Nested <code>for</code> loop over a list<span class="math inline">\(^*\)</span> of lists<span class="math inline">\(^*\)</span></a></li>
   <li><a href="#nested-for-loops-using-indices" id="toc-nested-for-loops-using-indices" class="nav-link" data-scroll-target="#nested-for-loops-using-indices">Nested <code>for</code> loops using <strong>indices</strong></a></li>
+  <li><a href="#two-level-loops-for-raster-scanning-in-tfwr" id="toc-two-level-loops-for-raster-scanning-in-tfwr" class="nav-link" data-scroll-target="#two-level-loops-for-raster-scanning-in-tfwr">Two-level loops for raster scanning in TFWR</a></li>
   <li><a href="#two-level-loops-for-the-circuit-playground" id="toc-two-level-loops-for-the-circuit-playground" class="nav-link" data-scroll-target="#two-level-loops-for-the-circuit-playground">Two-level loops for the Circuit Playground</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -401,10 +402,12 @@ window.Quarto = {
 <section id="announcements" class="level3">
 <h3 class="anchored" data-anchor-id="announcements">Announcements</h3>
 <ul>
-<li>Test 1 is on Tuesday, Sep 22 8:30 — 8:55 AM in SCI 199</li>
+<li>Test 1 is on Tuesday, Sep 22 8:30 — 8:55 AM in SCI 199
+<ul>
 <li>Based on Lectures 1 through 4 and HW 1 and 2</li>
 <li>Handwritten, closed-book, closed-notes</li>
-<li>No calculators allowed</li>
+<li>No calculators allowed (future tests might allow them)</li>
+</ul></li>
 </ul>
 </section>
 <section id="precision-accuracy-of-accelerometer" class="level3">
@@ -572,6 +575,23 @@ Note
 <li></li>
 <li><p>Print every element inside every element in <code>a</code> <strong>without using indices</strong>, i.e.&nbsp;no <code>[]</code> notation.</p></li>
 <li></li>
+</ul>
+</section>
+<section id="two-level-loops-for-raster-scanning-in-tfwr" class="level3">
+<h3 class="anchored" data-anchor-id="two-level-loops-for-raster-scanning-in-tfwr">Two-level loops for raster scanning in TFWR</h3>
+<ul>
+<li><p>‘Raster scan’ refers to a systematic ‘sweeping’ of a two-dimensional rectangular area.</p></li>
+<li><p><span class="inclass">Harvest grass with your drone</span> using East-then-North raster scanning in three different ways:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tfwr1.png" class="fragment img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
+</figure>
+</div>
+<ol type="1">
+<li>Without loops</li>
+<li>Using one <code>for</code> loop</li>
+<li>Using two <code>for</code> loops</li>
+</ol></li>
 </ul>
 </section>
 <section id="two-level-loops-for-the-circuit-playground" class="level3 scrollable">

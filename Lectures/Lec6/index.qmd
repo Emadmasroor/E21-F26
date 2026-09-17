@@ -36,9 +36,9 @@ format:
 ### Announcements
 
 - Test 1 is on Tuesday, Sep 22 8:30 --- 8:55 AM in SCI 199
-- Based on Lectures 1 through 4 and HW 1 and 2
-- Handwritten, closed-book, closed-notes
-- No calculators allowed
+  - Based on Lectures 1 through 4 and HW 1 and 2
+  - Handwritten, closed-book, closed-notes
+  - No calculators allowed (future tests might allow them)
 
 ### Precision + Accuracy of Accelerometer
 
@@ -299,6 +299,18 @@ We can print every element in `a` using
   ```
   :::
   :::
+
+### Two-level loops for raster scanning in TFWR
+
+- 'Raster scan' refers to a systematic 'sweeping' of a two-dimensional rectangular area.
+- [Harvest grass with your drone]{.inclass} using East-then-North raster scanning in three different ways:
+  
+  ![](tfwr1.png){.fragment width="45%" fig-align="center"}
+
+  1. Without loops
+  2. Using one `for` loop
+  3. Using two `for` loops
+
 
 ### Two-level loops for the Circuit Playground {.scrollable}
 
