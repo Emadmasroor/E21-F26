@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Prof.&nbsp;Emad Masroor">
-<meta name="dcterms.date" content="2026-09-01">
+<meta name="author" content="Emad Masroor">
+<meta name="dcterms.date" content="2026-09-17">
 
-<title>Lecture 01 – ENGR 21 Computer Engineering Fundamentals</title>
+<title>Lecture 06 – ENGR 21 Computer Engineering Fundamentals</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,6 +27,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -79,7 +114,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -128,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lecture 01</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec6/index.html">Lecture 06</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -186,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Lectures/Lec1/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../Lectures/Lec1/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 01</span></a>
   </div>
 </li>
@@ -216,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Lectures/Lec6/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec6/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lecture 06</span></a>
   </div>
 </li>
@@ -284,26 +349,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introductions---prof.-masroor" id="toc-introductions---prof.-masroor" class="nav-link active" data-scroll-target="#introductions---prof.-masroor">Introductions - Prof.&nbsp;Masroor</a></li>
-  <li><a href="#introductions---prof.-masroor-1" id="toc-introductions---prof.-masroor-1" class="nav-link" data-scroll-target="#introductions---prof.-masroor-1">Introductions - Prof.&nbsp;Masroor</a></li>
-  <li><a href="#introductions---students" id="toc-introductions---students" class="nav-link" data-scroll-target="#introductions---students">Introductions - Students</a></li>
-  <li><a href="#teaching-team" id="toc-teaching-team" class="nav-link" data-scroll-target="#teaching-team">Teaching Team</a></li>
-  <li><a href="#what-is-e21-about" id="toc-what-is-e21-about" class="nav-link" data-scroll-target="#what-is-e21-about">What is E21 about?</a></li>
-  <li><a href="#what-is-e21-about-1" id="toc-what-is-e21-about-1" class="nav-link" data-scroll-target="#what-is-e21-about-1">What is E21 about?</a></li>
-  <li><a href="#logistics" id="toc-logistics" class="nav-link" data-scroll-target="#logistics">Logistics</a></li>
-  <li><a href="#circuit-playground-express" id="toc-circuit-playground-express" class="nav-link" data-scroll-target="#circuit-playground-express">Circuit Playground Express</a></li>
-  <li><a href="#installation-instructions" id="toc-installation-instructions" class="nav-link" data-scroll-target="#installation-instructions">Installation Instructions</a></li>
-  <li><a href="#integrated-development-environment-ide" id="toc-integrated-development-environment-ide" class="nav-link" data-scroll-target="#integrated-development-environment-ide">Integrated Development Environment (IDE)</a></li>
-  <li><a href="#two-ways-to-run-code-on-your-board" id="toc-two-ways-to-run-code-on-your-board" class="nav-link" data-scroll-target="#two-ways-to-run-code-on-your-board">Two ways to run code on your board</a></li>
+  <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
+  <li><a href="#precision-accuracy-of-accelerometer" id="toc-precision-accuracy-of-accelerometer" class="nav-link" data-scroll-target="#precision-accuracy-of-accelerometer">Precision + Accuracy of Accelerometer</a></li>
+  <li><a href="#dictionaries-in-python" id="toc-dictionaries-in-python" class="nav-link" data-scroll-target="#dictionaries-in-python">Dictionaries in Python</a></li>
+  <li><a href="#constructing-dictionaries" id="toc-constructing-dictionaries" class="nav-link" data-scroll-target="#constructing-dictionaries">Constructing dictionaries</a></li>
+  <li><a href="#writing-a-function-to-control-neopixels" id="toc-writing-a-function-to-control-neopixels" class="nav-link" data-scroll-target="#writing-a-function-to-control-neopixels">Writing a function to control NeoPixels</a></li>
+  <li><a href="#debugging-code-using-thonny-code-editor" id="toc-debugging-code-using-thonny-code-editor" class="nav-link" data-scroll-target="#debugging-code-using-thonny-code-editor">Debugging code using Thonny Code Editor</a></li>
+  <li><a href="#more-about-python-lists-tuples" id="toc-more-about-python-lists-tuples" class="nav-link" data-scroll-target="#more-about-python-lists-tuples">More about Python lists + tuples</a></li>
+  <li><a href="#reviewing-lists-vs-tuples" id="toc-reviewing-lists-vs-tuples" class="nav-link" data-scroll-target="#reviewing-lists-vs-tuples">Reviewing lists vs tuples</a></li>
+  <li><a href="#the-nested-for-loop-over-a-list-of-lists" id="toc-the-nested-for-loop-over-a-list-of-lists" class="nav-link" data-scroll-target="#the-nested-for-loop-over-a-list-of-lists">The Nested <code>for</code> loop over a list<span class="math inline">\(^*\)</span> of lists<span class="math inline">\(^*\)</span></a></li>
+  <li><a href="#nested-for-loops-using-indices" id="toc-nested-for-loops-using-indices" class="nav-link" data-scroll-target="#nested-for-loops-using-indices">Nested <code>for</code> loops using <strong>indices</strong></a></li>
+  <li><a href="#two-level-loops-for-the-circuit-playground" id="toc-two-level-loops-for-the-circuit-playground" class="nav-link" data-scroll-target="#two-level-loops-for-the-circuit-playground">Two-level loops for the Circuit Playground</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lecture 01</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec6/index.html">Lecture 06</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lecture 01</h1>
+<h1 class="title">Lecture 06</h1>
 <p class="subtitle lead">E21 Computer Engineering Fundamentals</p>
 </div>
 
@@ -314,14 +379,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Prof.&nbsp;Emad Masroor </p>
+             <p>Emad Masroor </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 1, 2026</p>
+      <p class="date">September 17, 2026</p>
     </div>
   </div>
   
@@ -333,266 +398,199 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introductions---prof.-masroor" class="level3">
-<h3 class="anchored" data-anchor-id="introductions---prof.-masroor">Introductions - Prof.&nbsp;Masroor</h3>
+<section id="announcements" class="level3">
+<h3 class="anchored" data-anchor-id="announcements">Announcements</h3>
 <ul>
-<li>Prof.&nbsp;Emad Masroor
-<ul>
-<li>B.S. Mechanical Engineering, Cornell University 2017</li>
-<li>Ph.D.&nbsp;Engineering Mechanics, Virginia Tech 2023
-<ul>
-<li>Thesis: <em>Vortex Dynamics in the Laminar Wakes of Bluff Bodies</em></li>
-</ul></li>
-<li>Visiting Assistant Professor at Swarthmore College since Fall 2023</li>
-<li>Research interests broadly in Fluid Dynamics:
-<ul>
-<li>theoretical studies of vortex dynamics</li>
-<li>experimental studies of wind-induced vibrations</li>
-<li>numerical studies of fish locomotion</li>
-</ul></li>
-</ul></li>
+<li>Test 1 is on Tuesday, Sep 22 8:30 — 8:55 AM in SCI 199</li>
+<li>Based on Lectures 1 through 4 and HW 1 and 2</li>
+<li>Handwritten, closed-book, closed-notes</li>
+<li>No calculators allowed</li>
 </ul>
 </section>
-<section id="introductions---prof.-masroor-1" class="level3">
-<h3 class="anchored" data-anchor-id="introductions---prof.-masroor-1">Introductions - Prof.&nbsp;Masroor</h3>
-<div class="nonincremental">
+<section id="precision-accuracy-of-accelerometer" class="level3">
+<h3 class="anchored" data-anchor-id="precision-accuracy-of-accelerometer">Precision + Accuracy of Accelerometer</h3>
+<p><span class="inclass">Characterize the precision and accuracy of the on-board accelerometer.</span> Find true value <a href="https://physics.nist.gov/cuu/Constants/index.html">here</a>.</p>
+<p>Download <a href="statisticalfunctions.py">statisticalfunctions.py</a> and store on <code>CIRCUITPY</code>.</p>
 <ul>
-<li>Outside of work, I …
-<ul>
-<li>live in Philadelphia</li>
-<li>read about philosophy, history, science + enjoy literature</li>
-<li>take piano lessons</li>
-<li>travel (32/50 states) and take photographs</li>
-<li>hike &amp; backpack, esp.&nbsp;Appalachian Trail</li>
-</ul></li>
+<li><p>Use the following skeleton code</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statisticalfunctions <span class="im">import</span> stdev</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> magnitude(a,b,c):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (a<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> c<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an empty list that will store the readings</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>readings <span class="op">=</span> []</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Time delay between measurements</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>delay <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Collect data until button b is pressed</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Your code here</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>true_value <span class="op">=</span> <span class="fl">9.806</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
-<p><img src="washington.png" class="img-fluid" style="width:75.0%" data-center="true"></p>
-</div>
+<p>Your program should print, for example:</p>
+<pre><code>After 99 readings, the accelerometer reports 9.417 m/s^2 with standard deviation 0.254 and a spread of 17.4%</code></pre>
 </section>
-<section id="introductions---students" class="level3">
-<h3 class="anchored" data-anchor-id="introductions---students">Introductions - Students</h3>
-<div class="nonincremental">
+<section id="dictionaries-in-python" class="level3">
+<h3 class="anchored" data-anchor-id="dictionaries-in-python">Dictionaries in Python</h3>
 <ul>
-<li>Name, major, year</li>
-<li>Hometown</li>
-<li>What are your impressions of / expectations from E21?</li>
-<li>What is a topic/event/idea/person that you know a lot about?</li>
+<li><p>A dictionary is a collection of key-value pairs.</p></li>
+<li><p>For example, we can define a dictionary with RGB values for common colors.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"red"</span>: (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"green"</span>: (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"blue"</span>: (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">50</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>To use this dictionary, <img src="dict.png" class="img-fluid"></p></li>
 </ul>
-</div>
 </section>
-<section id="teaching-team" class="level3">
-<h3 class="anchored" data-anchor-id="teaching-team">Teaching Team</h3>
-<div class="table-wrapper" style="width:90%;">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Role</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Emad Masroor</td>
-<td>Lec. Instructor</td>
-</tr>
-<tr class="even">
-<td>Matt Zucker</td>
-<td>Lab. Instructor</td>
-</tr>
-<tr class="odd">
-<td>Visnuk Rith</td>
-<td>Wizard</td>
-</tr>
-<tr class="even">
-<td>Samchan Lee</td>
-<td>Wizard</td>
-</tr>
-<tr class="odd">
-<td>Uneeb Hyder</td>
-<td>Wizard</td>
-</tr>
-<tr class="even">
-<td>Hiba Aby</td>
-<td>Grader</td>
-</tr>
-<tr class="odd">
-<td>Huyen Nguyen</td>
-<td>Grader</td>
-</tr>
-<tr class="even">
-<td>Ellie Fermo</td>
-<td>Grader</td>
-</tr>
-<tr class="odd">
-<td>Kevin Sisk</td>
-<td>Grader</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="what-is-e21-about" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-e21-about">What is E21 about?</h3>
-<div class="fragment">
-<div class="quarto-layout-panel" data-layout="[60, 40]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
-<p><img src="meme1.jpg" class="img-fluid"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
-<p><img src="trump.gif" class="img-fluid"></p>
-</div>
-</div>
-</div>
-<ul>
-<li>Outside Swarthmore, ‘Computer Engineering’ is a part of ‘Electrical Engineering’</li>
-<li>A better definition for us: Engineering with computers
-<ul>
-<li>Relevant for all types of engineers</li>
-</ul></li>
-<li>Make stuff do stuff</li>
-</ul>
-</div>
-</section>
-<section id="what-is-e21-about-1" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-e21-about-1">What is E21 about?</h3>
-<p><img src="meme2.png" class="img-fluid"></p>
-</section>
-<section id="logistics" class="level3">
-<h3 class="anchored" data-anchor-id="logistics">Logistics</h3>
-<p><strong>See the website</strong>: <a href="https://emadmasroor.github.io/E21-F26">https://emadmasroor.github.io/E21-F26</a></p>
-<ul>
-<li>Lectures Tue / Thu SCI 101, may be moved to SCI 199</li>
-<li>Labs Mon / Thu Singer 221</li>
-<li>No midterms, no final exam</li>
-<li>Six tests, ~ every two weeks starting week 4</li>
-<li>Final Project</li>
-</ul>
-<div class="fragment">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th>Use this for …</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Moodle</td>
-<td>Submit HW, view scores</td>
-</tr>
-<tr class="even">
-<td>Gradescope</td>
-<td>Manage and submit HW</td>
-</tr>
-<tr class="odd">
-<td>Ed Discussion</td>
-<td>Ask + Answer questions</td>
-</tr>
-<tr class="even">
-<td>Website</td>
-<td><strong>All Course Content</strong></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="circuit-playground-express" class="level3">
-<h3 class="anchored" data-anchor-id="circuit-playground-express">Circuit Playground Express</h3>
-<div class="quarto-layout-panel" data-layout="[60, 40]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: flex-start;">
-<p>• A versatile microcontroller for E21. <br> • The device is called ‘Circuit Playground Express’ (CPX) <br> • The software it runs is called Circuit Python</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
-<p><img src="cpx.jpg" class="img-fluid"></p>
-</div>
-</div>
-</div>
-<p>Bring to lecture <strong>and</strong> lab!</p>
-</section>
-<section id="installation-instructions" class="level3">
-<h3 class="anchored" data-anchor-id="installation-instructions">Installation Instructions</h3>
-<ul>
-<li>Don’t download Python yet!</li>
-<li>Install <a href="https://thonny.org/">Thonny Code Editor</a> on your computer</li>
-<li>Download and install <code>Circuit Python</code> on your <u>Circuit Playground Express</u> using instructions <a href="https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython">here</a>.</li>
-</ul>
-<div style="font-size: 50%;">
+<section id="constructing-dictionaries" class="level3">
+<h3 class="anchored" data-anchor-id="constructing-dictionaries">Constructing dictionaries</h3>
+<p>There are two equivalent approaches:</p>
 <ol type="1">
-<li>Download <code>.UF2</code> file for CPX</li>
-<li>Double-tap RESET button while CPX is plugged in</li>
-<li>Drag and drop <code>.UF2</code> file onto <code>CPLAYBOOT</code> drive</li>
-<li>If you now see <code>CIRCUITPY</code> as an external drive instead of <code>CPLAYBOOT</code>, you are done!</li>
+<li><p>Curly braces followed by <code>key: value</code> pairs separated by commas:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> {<span class="st">"red"</span>: (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="st">"green"</span>: (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>),<span class="st">"blue"</span>: (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">50</span>)}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>The <code>dict</code> function</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> <span class="bu">dict</span>([(<span class="st">'red'</span>, (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>)), (<span class="st">'green'</span>, (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)), (<span class="st">'blue'</span>, (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">50</span>))])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ol>
+<div class="fragment">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="quarto-layout-panel" data-layout="[40, 60]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
-<p><img src="instructions.png" class="img-fluid"></p>
+<div class="callout-title-container flex-fill">
+Note
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
-<p><img src="thonny.png" class="img-fluid"></p>
+</div>
+<div class="callout-body-container callout-body">
+<p>Python allows optional new lines to make code more readable:</p>
+<ul>
+<li><p>Code all in one line:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> <span class="bu">dict</span>([(<span class="st">'red'</span>, (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>)), (<span class="st">'green'</span>, (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)), (<span class="st">'blue'</span>, (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">50</span>))])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Code separated by new lines</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> <span class="bu">dict</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    [</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'red'</span>, (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>)),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'green'</span>, (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'blue'</span>, (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">50</span>))</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    ])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul>
 </div>
 </div>
 </div>
 </section>
-<section id="integrated-development-environment-ide" class="level3">
-<h3 class="anchored" data-anchor-id="integrated-development-environment-ide">Integrated Development Environment (IDE)</h3>
+<section id="writing-a-function-to-control-neopixels" class="level3">
+<h3 class="anchored" data-anchor-id="writing-a-function-to-control-neopixels">Writing a function to control NeoPixels</h3>
+<p><span class="inclass">Write a <strong>function</strong> for the Circuit Playground Express that</span>:</p>
 <ul>
-<li>A ‘development environment’ is the program (or programs) you use to write code.</li>
-<li>It’s possible to simply use Notepad as your Development Environment, but that’s kinda lame</li>
-<li>Some options
+<li>takes three arguments:
 <ul>
-<li>VS Code (v. popular among Swat students)</li>
-<li>A simple text editor with syntax highlighting (e.g.&nbsp;Sublime Text)</li>
-<li><strong>Thonny</strong>, Mu, other ‘lightweight IDEs’</li>
-<li>IDLE (official Python IDE)</li>
+<li><p>a string denoting the color (choose 5 colors from <a href="https://rgbcolorpicker.com/"><code>https://rgbcolorpicker.com/</code></a>)</p></li>
+<li><p>a number from 0 to 9 denoting which pixel to switch on.</p></li>
+<li><p>a number from 0 to 1 denoting the brightness</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cpx.pixels.brightness <span class="op">=</span> <span class="fl">0.5</span> <span class="co"># sets the brightness to half</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul></li>
+<li>makes use of a dictionary</li>
 </ul>
 </section>
-<section id="two-ways-to-run-code-on-your-board" class="level3">
-<h3 class="anchored" data-anchor-id="two-ways-to-run-code-on-your-board">Two ways to run code on your board</h3>
-<div class="quarto-layout-panel" data-layout="[50, 50]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="file.png" class="img-fluid figure-img"></p>
-<figcaption>Editing <code>code.py</code> on board the file</figcaption>
-</figure>
+<section id="debugging-code-using-thonny-code-editor" class="level3">
+<h3 class="anchored" data-anchor-id="debugging-code-using-thonny-code-editor">Debugging code using Thonny Code Editor</h3>
+<p>By pressing the <img src="debug.png" class="img-fluid"> button, Thonny enters debugging mode</p>
+<div class="fragment">
+<p><img src="debugger.png" class="img-fluid"></p>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="terminal.png" class="img-fluid figure-img"></p>
-<figcaption>Click ‘Stop’ and code interactively</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div class="quarto-layout-panel" data-layout="[50, 50]">
-<div class="quarto-layout-row">
-<div class="nonincremental quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+</section>
+<section id="more-about-python-lists-tuples" class="level3">
+<h3 class="anchored" data-anchor-id="more-about-python-lists-tuples">More about Python lists + tuples</h3>
 <ul>
-<li>Once you’re sure what you want to code</li>
-<li>Thoughtful, long-form coding</li>
-<li>Runs if and when you save <code>code.py</code></li>
-<li>Persistent</li>
+<li>A Python iterable, such as a list or tuple, can contain another iterable</li>
+<li>Python allows lists of lists, etc; MATLAB does not.</li>
 </ul>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img src="matlab1.png" class="img-fluid"></p>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<p><img src="python1.png" class="img-fluid"></p>
 </div>
-<div class="nonincremental quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+</div>
+</div>
 <ul>
-<li>Trying things out</li>
-<li>Instant feedback if works</li>
-<li>Runs when you hit enter</li>
-<li>No memory</li>
+<li>Python allows chaining multiple <code>[]</code> commands:</li>
 </ul>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>[(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels[<span class="dv">4</span>] <span class="op">=</span> (<span class="dv">45</span>,<span class="dv">50</span>,<span class="dv">2</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>[(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">2</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)]</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels[<span class="dv">4</span>][<span class="dv">1</span>]</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="dv">50</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div>
-</div>
+</section>
+<section id="reviewing-lists-vs-tuples" class="level3">
+<h3 class="anchored" data-anchor-id="reviewing-lists-vs-tuples">Reviewing lists vs tuples</h3>
+<p>Why does this work:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cpx.pixels[<span class="dv">6</span>] <span class="op">=</span> (<span class="dv">40</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>But this does not?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cpx.pixels[<span class="dv">6</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="dv">40</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="the-nested-for-loop-over-a-list-of-lists" class="level3">
+<h3 class="anchored" data-anchor-id="the-nested-for-loop-over-a-list-of-lists">The Nested <code>for</code> loop over a list<span class="math inline">\(^*\)</span> of lists<span class="math inline">\(^*\)</span></h3>
+<p><span class="math inline">\(^*\)</span> or any iterables (list, range, tuple)</p>
+<ul>
+<li><p>Consider the list of lists:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [[<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>],</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">9</span>],</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">3</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><span class="inclass">Write a <code>for</code> loop</span> that prints every element in <code>a</code></p></li>
+<li></li>
+<li><p><span class="inclass">Write a pair of nested <code>for</code> loops</span> that print every element inside every element in <code>a</code> with the order: 5, 6, 7, …</p></li>
+<li></li>
+</ul>
+</section>
+<section id="nested-for-loops-using-indices" class="level3">
+<h3 class="anchored" data-anchor-id="nested-for-loops-using-indices">Nested <code>for</code> loops using <strong>indices</strong></h3>
+<p>We can print every element in <code>a</code> using</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> j <span class="kw">in</span> a:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(j)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><p>Another approach is to use the <strong>index</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(a[k])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Use the indices to <span class="inclass">print every element inside every element in <code>a</code></span>:</p></li>
+<li></li>
+<li><p>Print every element inside every element in <code>a</code> <strong>without using indices</strong>, i.e.&nbsp;no <code>[]</code> notation.</p></li>
+<li></li>
+</ul>
+</section>
+<section id="two-level-loops-for-the-circuit-playground" class="level3 scrollable">
+<h3 class="scrollable anchored" data-anchor-id="two-level-loops-for-the-circuit-playground">Two-level loops for the Circuit Playground</h3>
+<ul>
+<li><p><span class="inclass">Download</span> the file <a href="pixelpatterns.py"><code>pixelpatterns.py</code></a> and save it on the <code>CIRCUITPY</code> drive</p></li>
+<li><p><span class="inclass">Enter the following command</span> on the Circuit Playground:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pixelpatterns <span class="im">import</span> <span class="op">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>You now have access to three functions: <code>pattern1()</code>, <code>pattern2()</code> and <code>pattern_random()</code>. <span class="inclass">Try them out!</span></p></li>
+<li><p><span class="inclass">Write a program for the CPX</span> that prints the R, G, and B value of every pixel on a new line. The output of your program should look like this:</p>
+<pre><code>Pixel number 0, index number 0 has value 76
+Pixel number 0, index number 1 has value 5
+...
+Pixel number 3, index number 2 has value 21
+Pixel number 4, index number 0 has value 73
+...
+Pixel number 9, index number 1 has value 2
+Pixel number 9, index number 2 has value 14</code></pre></li>
+</ul>
 
 
 </section>
