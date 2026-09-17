@@ -2,12 +2,12 @@
 title: "Lecture 06"
 subtitle: "E21 Computer Engineering Fundamentals"
 author: "Emad Masroor"
-topic: ""
+topic: "Dictionaries, nested for loops, accuracy/precision"
 order: 6
 date: 09-17-2026
 date-format: long
 css: ../../styles.css
-uncover: false
+uncover: true
 footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
 resources: none
 code-line-numbers: false
@@ -310,51 +310,6 @@ We can print every element in `a` using
   1. Without loops
   2. Using one `for` loop
   3. Using two `for` loops
-
-
-### Two-level loops for the Circuit Playground {.scrollable}
-
-- [Download]{.inclass} the file [`pixelpatterns.py`](pixelpatterns.py) and save it on the `CIRCUITPY` drive
-
-- [Enter the following command]{.inclass} on the Circuit Playground:
-  ```{.python}
-  from pixelpatterns import *
-  ```
-
-- You now have access to three functions: `pattern1()`, `pattern2()` and `pattern_random()`. [Try them out!]{.inclass}
-
-- [Write a program for the CPX]{.inclass} that prints the R, G, and B value of every pixel on a new line. The output of your program should look like this:
-  ```
-  Pixel number 0, index number 0 has value 76
-  Pixel number 0, index number 1 has value 5
-  ...
-  Pixel number 3, index number 2 has value 21
-  Pixel number 4, index number 0 has value 73
-  ...
-  Pixel number 9, index number 1 has value 2
-  Pixel number 9, index number 2 has value 14
-  ```
-
-::: {.content-hidden unless-meta="uncover"}
-::: {.fragment}
-#### Solution
-
-```{.python}
-from adafruit_circuitplayground.express import cpx
-from pixelpatterns import *
-pattern_random() # sets a random pattern
-# Read the RGB value for each pixel
-for pixel_num in [0,1,2,3,4,5,6,7,8,9]:
-    # The variable `pixel_num` is now equal to
-    # an integer between 0 and 9 inclusive
-    for index in [0,1,2]:
-        # The variable `index` is now equal to
-        # an integer 0, 1 or 2
-        print(f"Pixel number {pixel_num}, index number {index} has value {cpx.pixels[pixel_num][index]}")
-```
-:::
-:::
-
 
 
 

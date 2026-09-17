@@ -318,6 +318,25 @@ Emad Masroor
 </ul></li>
 <li class="fragment">makes use of a dictionary</li>
 </ul>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Color definitions</span></span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>mycolors <span class="op">=</span> {</span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"red"</span>:    (<span class="dv">255</span>,<span class="dv">0</span>,<span class="dv">0</span>),</span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"green"</span>:  (<span class="dv">0</span>,<span class="dv">255</span>,<span class="dv">0</span>),</span>
+<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"blue"</span>:   (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">255</span>),</span>
+<span id="cb9-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"orange"</span>: (<span class="dv">255</span>,<span class="dv">160</span>,<span class="dv">0</span>),</span>
+<span id="cb9-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"teal"</span>:   (<span class="dv">0</span>,<span class="dv">255</span>,<span class="dv">236</span>)</span>
+<span id="cb9-11"><a aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lightup(colorname,pixelnum,b):</span>
+<span id="cb9-14"><a aria-hidden="true" tabindex="-1"></a>    color_tuple <span class="op">=</span> mycolors[colorname]</span>
+<span id="cb9-15"><a aria-hidden="true" tabindex="-1"></a>    cpx.pixels[pixelnum] <span class="op">=</span> color_tuple</span>
+<span id="cb9-16"><a aria-hidden="true" tabindex="-1"></a>    cpx.pixels.brightness<span class="op">=</span>b</span>
+<span id="cb9-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">None</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="debugging-code-using-thonny-code-editor" class="slide level3">
 <h3>Debugging code using Thonny Code Editor</h3>
@@ -346,51 +365,72 @@ Emad Masroor
 <li class="fragment">Python allows chaining multiple <code>[]</code> commands:</li>
 </ul>
 <div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
-<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels</span>
-<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>[(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)]</span>
-<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels[<span class="dv">4</span>] <span class="op">=</span> (<span class="dv">45</span>,<span class="dv">50</span>,<span class="dv">2</span>)</span>
-<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels</span>
-<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>[(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">2</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)]</span>
-<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels[<span class="dv">4</span>][<span class="dv">1</span>]</span>
-<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a><span class="dv">50</span></span>
-<span id="cb9-9"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels</span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a>[(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)]</span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels[<span class="dv">4</span>] <span class="op">=</span> (<span class="dv">45</span>,<span class="dv">50</span>,<span class="dv">2</span>)</span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels</span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a>[(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">2</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)]</span>
+<span id="cb10-7"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels[<span class="dv">4</span>][<span class="dv">1</span>]</span>
+<span id="cb10-8"><a aria-hidden="true" tabindex="-1"></a><span class="dv">50</span></span>
+<span id="cb10-9"><a aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="reviewing-lists-vs-tuples" class="slide level3">
 <h3>Reviewing lists vs tuples</h3>
 <p>Why does this work:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>cpx.pixels[<span class="dv">6</span>] <span class="op">=</span> (<span class="dv">40</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>cpx.pixels[<span class="dv">6</span>] <span class="op">=</span> (<span class="dv">40</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>But this does not?</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>cpx.pixels[<span class="dv">6</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="dv">40</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>cpx.pixels[<span class="dv">6</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="dv">40</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="the-nested-for-loop-over-a-list-of-lists" class="slide level3">
 <h3>The Nested <code>for</code> loop over a list<span class="math inline">\(^*\)</span> of lists<span class="math inline">\(^*\)</span></h3>
 <p><span class="math inline">\(^*\)</span> or any iterables (list, range, tuple)</p>
 <ul>
 <li class="fragment"><p>Consider the list of lists:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [[<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>],</span>
-<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>     [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">9</span>],</span>
-<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a>     [<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">3</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [[<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>],</span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>     [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">9</span>],</span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>     [<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">3</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p><span class="inclass">Write a <code>for</code> loop</span> that prints every element in <code>a</code></p></li>
-<li class="fragment"></li>
+<li class="fragment"><p><span data-unless-meta="uncover">Solution</span></p>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> j <span class="kw">in</span> a:</span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(j)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></li>
 <li class="fragment"><p><span class="inclass">Write a pair of nested <code>for</code> loops</span> that print every element inside every element in <code>a</code> with the order: 5, 6, 7, …</p></li>
-<li class="fragment"></li>
+<li class="fragment"><p><span data-unless-meta="uncover">Solution</span></p>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> thing <span class="kw">in</span> a:</span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> thing2 <span class="kw">in</span> thing:</span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(thing2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></li>
 </ul>
 </section>
 <section id="nested-for-loops-using-indices" class="slide level3">
 <h3>Nested <code>for</code> loops using <strong>indices</strong></h3>
 <p>We can print every element in <code>a</code> using</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> j <span class="kw">in</span> a:</span>
-<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(j)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> j <span class="kw">in</span> a:</span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(j)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li class="fragment"><p>Another approach is to use the <strong>index</strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
-<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(a[k])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(a[k])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li class="fragment"><p>Use the indices to <span class="inclass">print every element inside every element in <code>a</code></span>:</p></li>
-<li class="fragment"></li>
+<li class="fragment"><p><span data-unless-meta="uncover">Solution</span></p>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>    element <span class="op">=</span> a[k]</span>
+<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> m <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(element)):</span>
+<span id="cb18-4"><a aria-hidden="true" tabindex="-1"></a>        entry <span class="op">=</span> element[m]</span>
+<span id="cb18-5"><a aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(entry)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></li>
 <li class="fragment"><p>Print every element inside every element in <code>a</code> <strong>without using indices</strong>, i.e.&nbsp;no <code>[]</code> notation.</p></li>
-<li class="fragment"></li>
+<li class="fragment"><p><span data-unless-meta="uncover">Solution</span></p>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> thing <span class="kw">in</span> a:</span>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> entry <span class="kw">in</span> thing:</span>
+<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(entry)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></li>
 </ul>
 </section>
 <section id="two-level-loops-for-raster-scanning-in-tfwr" class="slide level3">
@@ -408,24 +448,6 @@ Emad Masroor
 <li class="fragment">Using one <code>for</code> loop</li>
 <li class="fragment">Using two <code>for</code> loops</li>
 </ol></li>
-</ul>
-</section>
-<section id="two-level-loops-for-the-circuit-playground" class="slide level3 scrollable">
-<h3>Two-level loops for the Circuit Playground</h3>
-<ul>
-<li class="fragment"><p><span class="inclass">Download</span> the file <a href="pixelpatterns.py"><code>pixelpatterns.py</code></a> and save it on the <code>CIRCUITPY</code> drive</p></li>
-<li class="fragment"><p><span class="inclass">Enter the following command</span> on the Circuit Playground:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pixelpatterns <span class="im">import</span> <span class="op">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li class="fragment"><p>You now have access to three functions: <code>pattern1()</code>, <code>pattern2()</code> and <code>pattern_random()</code>. <span class="inclass">Try them out!</span></p></li>
-<li class="fragment"><p><span class="inclass">Write a program for the CPX</span> that prints the R, G, and B value of every pixel on a new line. The output of your program should look like this:</p>
-<pre><code>Pixel number 0, index number 0 has value 76
-Pixel number 0, index number 1 has value 5
-...
-Pixel number 3, index number 2 has value 21
-Pixel number 4, index number 0 has value 73
-...
-Pixel number 9, index number 1 has value 2
-Pixel number 9, index number 2 has value 14</code></pre></li>
 </ul>
 
 
