@@ -220,103 +220,6 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "ENGR 21 Computer Engineering Fundamentals",
-    "section": "",
-    "text": "This is a Quarto website. To navigate, use the sidebar to the left.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
-  },
-  {
-    "objectID": "AcademicSupport/index.html",
-    "href": "AcademicSupport/index.html",
-    "title": "Academic Support",
-    "section": "",
-    "text": "Navigate using the sidebar to the left.\n\n\n\n\n\n\n\n\n\n\nEvent\nMonday\nTuesday\nWednesday\nThursday\n\n\n\n\nWizard Office Hours\n\n\nSamchan Lee 4:30 to 5:30 PM\nVisnuk Rith 1 to 2 PM\n\n\n\n\n\n\nUneeb Hyder 3:15 to 4:15 PM\n\n\nInstructor Office Hours\n\n\n9-10:30 AM SH 112\n\n\n\nWizard Session\n\n7 to 9 PM SH 222\n\n\n\n\nProblem Session\n4 to 6 PM SH 221",
-    "crumbs": [
-      "Homepage",
-      "Academic Support"
-    ]
-  },
-  {
-    "objectID": "labs.html",
-    "href": "labs.html",
-    "title": "Labs",
-    "section": "",
-    "text": "Homepage for labs.",
-    "crumbs": [
-      "Homepage",
-      "Labs"
-    ]
-  },
-  {
-    "objectID": "labs.html#about-the-labs",
-    "href": "labs.html#about-the-labs",
-    "title": "Labs",
-    "section": "About the labs",
-    "text": "About the labs\n…",
-    "crumbs": [
-      "Homepage",
-      "Labs"
-    ]
-  },
-  {
-    "objectID": "labs.html#lab-schedule",
-    "href": "labs.html#lab-schedule",
-    "title": "Labs",
-    "section": "Lab Schedule",
-    "text": "Lab Schedule\nLabs will be held on Mondays and Thursdays.\n\n\n\nLab\nTopics\nStarting\n\n\n\n\nLab 1\nCapacitive touch passcode\nThu, Sep 10\n\n\nLab 2\nJoystick, loops, and functions\nThu, Sep 24\n\n\nLab 3\nPPen plotter, IK, and linear motion\nThu, Oct 8\n\n\nLab 4\nCubic Spline Interpolation\nThu, Oct 29\n\n\nLab 5\nFourier Series and Superposition\nThu, Nov 12\n\n\n\nFinal Project",
-    "crumbs": [
-      "Homepage",
-      "Labs"
-    ]
-  },
-  {
-    "objectID": "tests.html",
-    "href": "tests.html",
-    "title": "Tests",
-    "section": "",
-    "text": "Sep 1, 2026\n\n\n\n\n\n\ntopic\n\n\nIntroduction to E21 & Circuit Playground Express\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 3, 2026\n\n\n\n\n\n\ntopic\n\n\nPython and CPX Preliminaries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n\n\n\n\ntopic\n\n\nBase Systems\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nProgramming Basics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nConditionals, While loops, truth tbales, CPX\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2026\n\n\n\n\n\n\ntopic\n\n\nBase systems, Conditionals, Loops, CPX\n\n\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Homepage",
-      "Tests"
-    ]
-  },
-  {
-    "objectID": "tests.html#test-1",
-    "href": "tests.html#test-1",
-    "title": "Tests",
-    "section": "",
-    "text": "Sep 1, 2026\n\n\n\n\n\n\ntopic\n\n\nIntroduction to E21 & Circuit Playground Express\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 3, 2026\n\n\n\n\n\n\ntopic\n\n\nPython and CPX Preliminaries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n\n\n\n\ntopic\n\n\nBase Systems\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nProgramming Basics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nConditionals, While loops, truth tbales, CPX\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2026\n\n\n\n\n\n\ntopic\n\n\nBase systems, Conditionals, Loops, CPX\n\n\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Homepage",
-      "Tests"
-    ]
-  },
-  {
-    "objectID": "AcademicSupport/wizards.html",
-    "href": "AcademicSupport/wizards.html",
-    "title": "Wizard Office Hours",
-    "section": "",
-    "text": "Wizard sessions are on Tuesday nights from 7 to 9 PM in Singer 221\nAll Wizard office hours are in Singer 228.\n\n\n\nName\nDate and Time\n\n\n\n\nName\nTime\n\n\nSamchan Lee\n4:30 — 5:30 PM, Wednesdays\n\n\nVisnuk Rith\n1:00 — 2:00 PM, Thursdays\n\n\nUneeb Hyder\n3:15 — 4:15 PM, Thursdays",
-    "crumbs": [
-      "Homepage",
-      "Academic Support",
-      "Wizard Office Hours"
-    ]
-  },
-  {
-    "objectID": "AcademicSupport/Masroor.html",
-    "href": "AcademicSupport/Masroor.html",
-    "title": "Instructor Support",
-    "section": "",
-    "text": "Regular office hours are Wednesdays 9 to 10:30 AM.\nWalk-ins are always welcome when I am in my office.\nThe Instructor-led Problem Session is on Mondays 4:30 — 6:00 PM in Singer 221\n\nIn addition, you can schedule appointments on my calendar in 30-minute increments below.",
-    "crumbs": [
-      "Homepage",
-      "Academic Support",
-      "Instructor Support"
-    ]
-  },
-  {
     "objectID": "Homework/HW2/index.html",
     "href": "Homework/HW2/index.html",
     "title": "HW 2",
@@ -470,6 +373,187 @@
       "Homepage",
       "Homework",
       "HW 2"
+    ]
+  },
+  {
+    "objectID": "AcademicSupport/Masroor.html",
+    "href": "AcademicSupport/Masroor.html",
+    "title": "Instructor Support",
+    "section": "",
+    "text": "Regular office hours are Wednesdays 9 to 10:30 AM.\nWalk-ins are always welcome when I am in my office.\nThe Instructor-led Problem Session is on Mondays 4:30 — 6:00 PM in Singer 221\n\nIn addition, you can schedule appointments on my calendar in 30-minute increments below.",
+    "crumbs": [
+      "Homepage",
+      "Academic Support",
+      "Instructor Support"
+    ]
+  },
+  {
+    "objectID": "AcademicSupport/wizards.html",
+    "href": "AcademicSupport/wizards.html",
+    "title": "Wizard Office Hours",
+    "section": "",
+    "text": "Wizard sessions are on Tuesday nights from 7 to 9 PM in Singer 221\nAll Wizard office hours are in Singer 228.\n\n\n\nName\nDate and Time\n\n\n\n\nName\nTime\n\n\nSamchan Lee\n4:30 — 5:30 PM, Wednesdays\n\n\nVisnuk Rith\n1:00 — 2:00 PM, Thursdays\n\n\nUneeb Hyder\n3:15 — 4:15 PM, Thursdays",
+    "crumbs": [
+      "Homepage",
+      "Academic Support",
+      "Wizard Office Hours"
+    ]
+  },
+  {
+    "objectID": "tests.html",
+    "href": "tests.html",
+    "title": "Tests",
+    "section": "",
+    "text": "Sep 1, 2026\n\n\n\n\n\n\ntopic\n\n\nIntroduction to E21 & Circuit Playground Express\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 3, 2026\n\n\n\n\n\n\ntopic\n\n\nPython and CPX Preliminaries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n\n\n\n\ntopic\n\n\nBase Systems\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nProgramming Basics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nConditionals, While loops, truth tbales, CPX\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2026\n\n\n\n\n\n\ntopic\n\n\nBase systems, Conditionals, Loops, CPX\n\n\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Homepage",
+      "Tests"
+    ]
+  },
+  {
+    "objectID": "tests.html#test-1",
+    "href": "tests.html#test-1",
+    "title": "Tests",
+    "section": "",
+    "text": "Sep 1, 2026\n\n\n\n\n\n\ntopic\n\n\nIntroduction to E21 & Circuit Playground Express\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 3, 2026\n\n\n\n\n\n\ntopic\n\n\nPython and CPX Preliminaries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n\n\n\n\ntopic\n\n\nBase Systems\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nProgramming Basics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nConditionals, While loops, truth tbales, CPX\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2026\n\n\n\n\n\n\ntopic\n\n\nBase systems, Conditionals, Loops, CPX\n\n\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Homepage",
+      "Tests"
+    ]
+  },
+  {
+    "objectID": "labs.html",
+    "href": "labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "Homepage for labs.",
+    "crumbs": [
+      "Homepage",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "labs.html#about-the-labs",
+    "href": "labs.html#about-the-labs",
+    "title": "Labs",
+    "section": "About the labs",
+    "text": "About the labs\n…",
+    "crumbs": [
+      "Homepage",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "labs.html#lab-schedule",
+    "href": "labs.html#lab-schedule",
+    "title": "Labs",
+    "section": "Lab Schedule",
+    "text": "Lab Schedule\nLabs will be held on Mondays and Thursdays.\n\n\n\nLab\nTopics\nStarting\n\n\n\n\nLab 1\nCapacitive touch passcode\nThu, Sep 10\n\n\nLab 2\nJoystick, loops, and functions\nThu, Sep 24\n\n\nLab 3\nPPen plotter, IK, and linear motion\nThu, Oct 8\n\n\nLab 4\nCubic Spline Interpolation\nThu, Oct 29\n\n\nLab 5\nFourier Series and Superposition\nThu, Nov 12\n\n\n\nFinal Project",
+    "crumbs": [
+      "Homepage",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "AcademicSupport/index.html",
+    "href": "AcademicSupport/index.html",
+    "title": "Academic Support",
+    "section": "",
+    "text": "Navigate using the sidebar to the left.\n\n\n\n\n\n\n\n\n\n\nEvent\nMonday\nTuesday\nWednesday\nThursday\n\n\n\n\nWizard Office Hours\n\n\nSamchan Lee 4:30 to 5:30 PM\nVisnuk Rith 1 to 2 PM\n\n\n\n\n\n\nUneeb Hyder 3:15 to 4:15 PM\n\n\nInstructor Office Hours\n\n\n9-10:30 AM SH 112\n\n\n\nWizard Session\n\n7 to 9 PM SH 222\n\n\n\n\nProblem Session\n4 to 6 PM SH 221",
+    "crumbs": [
+      "Homepage",
+      "Academic Support"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ENGR 21 Computer Engineering Fundamentals",
+    "section": "",
+    "text": "This is a Quarto website. To navigate, use the sidebar to the left.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "Homework/HW3/index.html",
+    "href": "Homework/HW3/index.html",
+    "title": "HW 3",
+    "section": "",
+    "text": "Due Date\nThu, Sep 24\n\n\nTurn in link\nGradescope code and PDF\n\n\nURL\nemadmasroor.github.io/E21-F26/Homework/HW3\nWhat to turn in\nFor this assignment, you will turn in a PDF file as well as multiple code files. Each entry in the following table should be its own .py file.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 3"
+    ]
+  },
+  {
+    "objectID": "Homework/HW3/index.html#executing-an-action-once-every-n-steps",
+    "href": "Homework/HW3/index.html#executing-an-action-once-every-n-steps",
+    "title": "HW 3",
+    "section": "3.1 Executing an action once every n steps",
+    "text": "3.1 Executing an action once every n steps\nUse the Circuit Playground Express to play each note from 220 Hz to 440 Hz in increments of 10 Hz (i.e., play 220, 230, 240 ,…), holding each note for 0.2 seconds.\nYou may wish to consult the code provided below, which repeatedly plays 440 Hz 3 times for 0.5 seconds each.\nfrom adafruit_circuitplayground.express import cpx\nimport time\ndelay = 0.2 # seconds\nfor i in range(3):\n    cpx.start_tone(440)\n    time.sleep(delay)\n    cpx.stop_tone()\nWrite four independent programs that accomplish this objective using the following three approaches. Combine your code into a single .py file. Running your file should therefore repeat the same sound pattern four times.\n\nBy looping over a range() object (see documentation here) for which you specify a step size other than the default of 1. Do not use indices in this approach, i.e., you should never need to use square brackets.\nBy looping over an iterable of the form range(N), where N is the number of notes you need to play. You should use indices in this approach.\nUsing a while loop and not using any for loops.\nUsing a for loop over the iterable range(441).\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not use lists anywhere in this problem.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 3"
+    ]
+  },
+  {
+    "objectID": "Homework/HW3/index.html#nested-for-loops",
+    "href": "Homework/HW3/index.html#nested-for-loops",
+    "title": "HW 3",
+    "section": "3.2 Nested for loops",
+    "text": "3.2 Nested for loops\nDownload the file pixelpatterns.py and save it on the CIRCUITPY drive. To use this file, enter the following command on the Circuit Playground:\nfrom pixelpatterns import *\nYou now have access to three functions: pattern1(), pattern2() and pattern_random(). You should try running these functions in the REPL so that you are aware of what they do.\nWrite a program for the Circuit Playground Express that prints the R, G, and B value of every pixel on a new line. You should run this program after running pattern_random() so that your program will output the correct R, G and B values for each pixel when a random pattern is used.\n\n\n\n\n\n\nNote\n\n\n\nYou can test your program by running it after calling pattern1(). This way, you know that the expected values are:\nPixel number 0, index number 0 has value 29\nPixel number 0, index number 1 has value 23\nPixel number 0, index number 2 has value 49\nPixel number 1, index number 0 has value 11\n...\n\n\nThe output of your program should look like this, covering all 30 values:\nPixel number 0, index number 0 has value 76\nPixel number 0, index number 1 has value 5\n...\nPixel number 3, index number 2 has value 21\nPixel number 4, index number 0 has value 73\n...\nPixel number 9, index number 1 has value 2\nPixel number 9, index number 2 has value 14",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 3"
+    ]
+  },
+  {
+    "objectID": "Homework/HW3/index.html#a-while-loop-for-decimal-to-binary-conversion",
+    "href": "Homework/HW3/index.html#a-while-loop-for-decimal-to-binary-conversion",
+    "title": "HW 3",
+    "section": "3.3 A while loop for decimal-to-binary conversion",
+    "text": "3.3 A while loop for decimal-to-binary conversion\nWrite a Python function that takes as input a string representing a decimal number and returns as output a string representing a binary number. The expected behavior of the required function is as follows:\n&gt;&gt;&gt; decimal_to_binary(\"1\")\n'1'\n&gt;&gt;&gt; decimal_to_binary(\"2\")\n'10'\n&gt;&gt;&gt; decimal_to_binary(\"3\")\n'11'\n&gt;&gt;&gt; decimal_to_binary(\"15\")\n'1111'\n&gt;&gt;&gt; decimal_to_binary(\"33\")\n'100001'\nPut your code in a .py file and name your function decimal_to_binary. Your code should only define the function; you do not need to call it.\n\n\n\n\n\n\nNoteHints\n\n\n\n\nFor decimal numbers, an object of type str (i.e., string) can be easily converted to an object of type int (i.e. integer) and vice versa.\n&gt;&gt;&gt; type(\"3\")\n&lt;class 'str'&gt;\n&gt;&gt;&gt; type(3)\n&lt;class 'int'&gt;\n&gt;&gt;&gt; int(\"3\")\n3\n&gt;&gt;&gt; str(3)\n'3' \nUsing the + operator on two strings concatenates them.\n&gt;&gt;&gt; '3' + '4'\n'34'\n&gt;&gt;&gt; 3 + 4\n7\nIt is possible to reverse a list in Python. One way to do this is the following.\n&gt;&gt;&gt; a = [1,2,3,4]\n  &gt;&gt;&gt; b = list(reversed(a))\n  &gt;&gt;&gt; b\n  [4, 3, 2, 1]",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 3"
+    ]
+  },
+  {
+    "objectID": "Homework/HW3/index.html#sec-lists",
+    "href": "Homework/HW3/index.html#sec-lists",
+    "title": "HW 3",
+    "section": "4.1 Planting by pattern on 3 x 3",
+    "text": "4.1 Planting by pattern on 3 x 3\nWrite a function called plant_pattern() that accepts as argument a list such as the following:\npattern1 = [[Entities.Bush,Entities.Tree,Entities.Grass],\n            [Entities.Tree,Entities.Tree,Entities.Bush],\n            [Entities.Grass,Entities.Bush,Entities.Tree]]\nand uses it to plant the following pattern:\n\n\n\n\n\nThe following script illustrates the function in action.\ndef plant_pattern(pattern):\n    # your code goes here.\n    # no need to write a Return statement.\n\n# An example pattern\npattern1 = [[Entities.Bush,Entities.Tree,Entities.Grass],\n            [Entities.Tree,Entities.Tree,Entities.Bush],\n            [Entities.Grass,Entities.Bush,Entities.Tree]]\n\n# Start fresh\nclear()\n\n# Plant the pattern\nplant_pattern(pattern1)\nTurn in a .py file containing only the function definition. It will be tested on a different pattern during grading.\n\n\n\n\n\n\nNote\n\n\n\n\nYou must unlock the following for this assignment:\n\nFunctions\nLists\nTrees\n\nYou should only have a 3 x 3 world for this assignment. If you accidentally unlocked more than this, please re-start the game and get back to a world size of 3 x 3.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 3"
+    ]
+  },
+  {
+    "objectID": "Homework/HW3/index.html#planting-by-pattern-on-4-x-4",
+    "href": "Homework/HW3/index.html#planting-by-pattern-on-4-x-4",
+    "title": "HW 3",
+    "section": "4.2 Planting by pattern on 4 x 4",
+    "text": "4.2 Planting by pattern on 4 x 4\nWrite a script that plants crops (once — you don’t need a while True loop) on a 4x4 field using a pair of nested for loops, according to a list of locations for each plant. Each location has been given a number, and your script should check which plant goes in which location (use the in operator) before planting.\nThe numbers refer to locations on the 4x4 farm as follows:\n\n\n\n\n\nStart from the following script.\n# The following lists specify which crops are to be planted where.\n# You may change these lists, but do not rename them. \n# Note: Do **not** put any number in more than one list.\n\ncarrots = [1,14,3,10]\nbushes = [5,11,7]\ngrass = [9,4,6,12]\ntrees = [13,2,15,0,8]\n\n# Your script should clear the farm before starting.\nclear()\n# Your code here\nFor example, if the lists were changed to:\ncarrots = [1,14,3,12,10]\nbushes = [5,11,4,7]\ngrass = [9,6]\ntrees = [13,2,15,0,8]\nthen your script should plant the pattern in Figure 1.\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nNoteUnlocks\n\n\n\n\nUnlock anything that turns out to be necessary to complete this assignment.\n\n\n\nTo successfully complete this assignment, you should check your script by modifying the lists at the top and ensuring that the correct plants are planted at the correct locations even when changes are made to the lists.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 3"
+    ]
+  },
+  {
+    "objectID": "Homework/HW3/index.html#dictionaries-in-tfwr",
+    "href": "Homework/HW3/index.html#dictionaries-in-tfwr",
+    "title": "HW 3",
+    "section": "4.3 Dictionaries in TFWR",
+    "text": "4.3 Dictionaries in TFWR\n\n\n\n\n\n\nNote\n\n\n\nFor this problem, please download this zip file. Unzip it and place the resulting folder Save-for-HW3 in the folder that opens when you go to Load &gt; Open Folder within TFWR, under the directory ‘Saves’. This will allow you to start the game from a point where the features needed for this assignment have been unlocked.\nYou should see Save-for-HW3 as one of the saves that can be loaded from within the game.\n\n\nIn Section 4.1, we used a rather cumbersome kind of list to decide what to plant where.\nFor this problem, use a dictionary that will allow you to write a function that accepts as argument a simpler list of one-character ‘codes’ for each plant. Here, ‘p’ stands for pumpkin, ‘t’ for tree, ‘b’ for bush and ‘g’ for grass.\npattern2 = [[\"p\", \"p\", \"t\", \"g\"],\n            [\"p\", \"p\", \"g\", \"t\"],\n            [\"t\", \"g\", \"p\", \"p\"],\n            [\"g\", \"t\", \"p\", \"p\"]]\nCalling your function with pattern2 as the argument should plant the crops as shown in Figure 2. Note that the entire soil is tilled; you should incorporate this into your function.\n\n\n\n\n\n\nFigure 2\n\n\n\nTurn in code with an example pattern, a dictionary definition, a function definition, and a call to your function using the example pattern, all in one *.py file.\n# Your example pattern\npattern3 = [[\"p\", \"p\", \"t\", \"g\"],\n            [\"p\", \"p\", \"g\", \"t\"],\n            [\"t\", \"g\", \"p\", \"p\"],\n            [\"g\", \"t\", \"p\", \"p\"]]\n\n# Your dictionary definition\n\n# Your function definition\ndef plant_pattern(pat):\n    # Your code here\n\n# Call your function\nplant_pattern(pattern3)",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 3"
     ]
   },
   {
