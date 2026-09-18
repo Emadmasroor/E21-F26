@@ -220,6 +220,259 @@
     ]
   },
   {
+    "objectID": "Homework/HW2/solutions.html#from-decimal-to-binary",
+    "href": "Homework/HW2/solutions.html#from-decimal-to-binary",
+    "title": "HW 2 Solutions",
+    "section": "1.1 from Decimal to Binary",
+    "text": "1.1 from Decimal to Binary\n\n100\n\n\n\n\n\n\nTipAnswer\n\n\n\n0b1100100\n\n\n1029\n\n\n\n\n\n\nTipAnswer\n\n\n\n0b10000000101\n\n\n476\n\n\n\n\n\n\nTipAnswer\n\n\n\n0b111011100\n\n\n\\(1.4 \\times 10^{3}\\)\n\n\n\n\n\n\nTipAnswer\n\n\n\n0b10101111000",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2",
+      "HW 2 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/solutions.html#from-binary-to-decimal",
+    "href": "Homework/HW2/solutions.html#from-binary-to-decimal",
+    "title": "HW 2 Solutions",
+    "section": "1.2 from Binary to Decimal",
+    "text": "1.2 from Binary to Decimal\n\n0b1011011\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(91\\)\n\n\n0b110010101\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(405\\)\n\n\n0b1000000001\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(513\\)\n\n\n0b10111\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(23\\)",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2",
+      "HW 2 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/solutions.html#from-decimal-to-hexadecimal",
+    "href": "Homework/HW2/solutions.html#from-decimal-to-hexadecimal",
+    "title": "HW 2 Solutions",
+    "section": "1.3 from Decimal to Hexadecimal",
+    "text": "1.3 from Decimal to Hexadecimal\n\n1000\n\n\n\n\n\n\nTipAnswer\n\n\n\n0x3E8\n\n\n176\n\n\n\n\n\n\nTipAnswer\n\n\n\n0xB0\n\n\n42678\n\n\n\n\n\n\nTipAnswer\n\n\n\n0xA6B6\n\n\n81\n\n\n\n\n\n\nTipAnswer\n\n\n\n0x51",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2",
+      "HW 2 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/solutions.html#from-hexadecimal-to-decimal",
+    "href": "Homework/HW2/solutions.html#from-hexadecimal-to-decimal",
+    "title": "HW 2 Solutions",
+    "section": "1.4 from Hexadecimal to Decimal",
+    "text": "1.4 from Hexadecimal to Decimal\n\n0x14E3\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(5,347\\)\n\n\n0xA10B\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(41,227\\)\n\n\n0x1000\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(4,096\\)\n\n\n0x1010\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(4,112\\)",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2",
+      "HW 2 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/solutions.html#a-new-base-7",
+    "href": "Homework/HW2/solutions.html#a-new-base-7",
+    "title": "HW 2 Solutions",
+    "section": "2.1 A new base: 7",
+    "text": "2.1 A new base: 7\n\nWrite down all numbers from 1 to 16 in base 7.\n\n\n\n\n\n\nTipSolution\n\n\n\nThe numbers from one to sixteen in base 7 will be: \\(\\{1,2,3,4,5,6,\\}\\) followed by the number \\(10\\), which equals seven, and then \\(11\\), which equals eight, and so on. In base 7, the sequence would be \\[\\{1,2,3,4,5,6,10,11,12,13,14,15,16,20,21,22\\}\\]\n\n\nIn base 7, what is the meaning of the symbol 66 ? Explain.\n\n\n\n\n\n\nTipSolution\n\n\n\nIn base 7, this would need to be interpreted as follows. \\[6 \\times 7^0 + 6 \\times 7^1 = 6_{10} + 42_{10} = 48_{10}\\] Therefore, the symbol 66 in base 7 corresponds to the number forty-eight.\n\n\nWhat is the largest possible four-‘digit’ number in base 7? Write the number in words, in decimal form, and in base-7 form.\n\n\n\n\n\n\nTipSolution\n\n\n\nThe largest possible four-‘digit’ number in base 7 is \\(6666_7\\). In decimal form, this would be \\[6 \\times 7^0 + 6 \\times 7^1 + 6 \\times 7^2 + 6 \\times 7^3 = 6_{10} + 42_{10} + 294_{10} + 2058_{10} = 2400_{10}.\\] In words, it is the number two thousand four hundred.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2",
+      "HW 2 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/solutions.html#addition-of-binary-and-hexadecimal-numbers",
+    "href": "Homework/HW2/solutions.html#addition-of-binary-and-hexadecimal-numbers",
+    "title": "HW 2 Solutions",
+    "section": "2.2 Addition of binary and hexadecimal numbers",
+    "text": "2.2 Addition of binary and hexadecimal numbers\nIn grade school, you learned how to add two multi-digit numbers by hand. In case, you’ve forgotten, here’s a video explaining this to elementary school students.\nYour task in this problem is to carry out multi-‘digit’ addition, by hand, to binary and hexadecimal numbers. In the process, you will see the concept of ‘carrying over’ a digit (perhaps you learned the term ‘regrouping’) applies to numbers other than base ten.\nAs an example, the following sums have been computed for you below.\n\n0b110001 + 0b11011\n0xAFC + 0x115",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2",
+      "HW 2 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/solutions.html#hex",
+    "href": "Homework/HW2/solutions.html#hex",
+    "title": "HW 2 Solutions",
+    "section": "2.3 Hex",
+    "text": "2.3 Hex\n\n0xE5A + 0x85A\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(5812\\) in decimal form and 0x16B4 in hexadecimal form\n\n\n0xEE + 0x99\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(391\\) in decimal form and 0x187 in hexadecimal form\n\n\n0x100 + 0x20\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(288\\) in decimal form and 0x120 in hexadecimal form\n\n\n0xB0 + 0xB\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(187\\) in decimal form and 0xBB in hexadecimal form",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2",
+      "HW 2 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/solutions.html#binary",
+    "href": "Homework/HW2/solutions.html#binary",
+    "title": "HW 2 Solutions",
+    "section": "2.4 Binary",
+    "text": "2.4 Binary\n\n0b1011011 + 0b11011001\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(308\\) in decimal form and 0b100110100 in hexadecimal form\n\n\n0b10011 + 0b100110001\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(324\\) in decimal form and 0b101000100 in hexadecimal form\n\n\n0b10000000000 + 0b1011111\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(1119\\) in decimal form and 0b10001011111 in hexadecimal form\n\n\n0b11010001001 + 0b110110110\n\n\n\n\n\n\nTipAnswer\n\n\n\n\\(2111\\) in decimal form and 0b100000111111 in hexadecimal form",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2",
+      "HW 2 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/solutions.html#counter-variables",
+    "href": "Homework/HW2/solutions.html#counter-variables",
+    "title": "HW 2 Solutions",
+    "section": "3.1 Counter variables",
+    "text": "3.1 Counter variables\nConsider the following program, which counts the number of times pin A7 has been tapped and assigns color1 to pixel number k, where k is the number of times pin A7 has been tapped. The code crashes if pin A7 is touched more than 10 times.\nfrom adafruit_circuitplayground.express import cpx\nimport time\noff = (0,0,0)\ncolor1 = (10,30,10)\ncolor2 = (30,10,10)\ncpx.pixels.fill(off)\nk = -1\nwhile True:\n    time.sleep(0.2)\n    if cpx.touch_A7:\n        k += 1\n        cpx.pixels[k] = color1\n        cpx.pixels[k-1] = off\nModify this code so that it has the same behavior for up to 10 taps, but for taps 11 through 20, a different color is assigned to the pth pixel, where p is k-10. Your code will still fail after the 21st tap is detected; that’s fine.\n\n\nVideo\nExpected behavior of Circuit Playground Express\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\nfrom adafruit_circuitplayground.express import cpx\nimport time\noff = (0,0,0)\ncolor1 = (10,30,10)\ncolor2 = (30,10,10)\ncpx.pixels.fill(off)\nk = -1\nwhile True:\n    time.sleep(0.2)\n    if cpx.touch_A7:\n        k += 1\n        if k &lt; 10:\n            cpx.pixels[k] = color1\n            cpx.pixels[k-1] = off\n        elif k &lt; 20:\n            cpx.pixels[k % 10] = color2\n            cpx.pixels[(k % 10)-1] = off",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2",
+      "HW 2 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/solutions.html#the-continue-keyword",
+    "href": "Homework/HW2/solutions.html#the-continue-keyword",
+    "title": "HW 2 Solutions",
+    "section": "3.2 The continue keyword",
+    "text": "3.2 The continue keyword\nThe following progam was written with the intention of printing all numbers except for 9. However, the program currently fails at doing this. What one change will ensure that printing ‘9’ is skipped? Turn in the new code.\nimport time\nk = 0\nwhile True:\n    time.sleep(0.5)\n    k += 1\n    print(k)\n    if k == 9:\n        continue\n\n\n\n\n\n\nTipSolution\n\n\n\nimport time\nk = 0\nwhile True:\n    time.sleep(0.5)\n    k += 1\n    if k == 9:\n        continue\n    print(k)",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2",
+      "HW 2 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/solutions.html#the-break-keyword",
+    "href": "Homework/HW2/solutions.html#the-break-keyword",
+    "title": "HW 2 Solutions",
+    "section": "3.3 The break keyword",
+    "text": "3.3 The break keyword\nIn class, we saw that the following code allows us to terminate the inner while loop by touching pin A2.\nfrom adafruit_circuitplayground.express import cpx\nimport time\nk = 0\nwhile True:\n    time.sleep(1)\n    k += 1\n    print(f\"Outer iteration {k}\")\n    if k % 3 == 0: # k ÷ 3 has remainder 0\n        m = 0\n        while True:\n            time.sleep(1)\n            m += 1\n            print(f\"Outer iteration {k}, inner iteration {m} \")\n            if cpx.touch_A2:\n                print(\"terminating\")\n                break\nChange the code above so that it meets the following requirements:\n\nTouching A2 while in the inner loop should terminate inner loop.\nTouching A2 while in the outer loop should not do anything.\nTouching A7 alone while in the inner loop should now also terminate inner loop.\nTouching A7 while pressing button B while in the outer loop should terminate the outer loop.\n\n\n\n\n\n\n\nTipSolution\n\n\n\nfrom adafruit_circuitplayground.express import cpx\nimport time\ncounter1 = 0\nwhile True:\n    time.sleep(1)\n    counter1 += 1\n    print(f\"Outer iteration {counter1}\")\n    if counter1 % 3 == 0: # k ÷ 3 has remainder 0\n        counter2 = 0\n        while True:\n            time.sleep(1)\n            counter2 += 1\n            print(f\"Outer iteration {counter1}, inner iteration {counter2}\")\n            if cpx.touch_A2:\n                print(\"terminating inner loop\")\n                break\n            elif cpx.touch_A7 and cpx.button_b:\n                print(\"terminating inner loop\")\n                break\n            elif cpx.touch_A7:\n                print(\"terminating inner loop\")\n                break\n        if cpx.touch_A7 and cpx.button_b:\n            print(\"terminating outer loop\")\n            break",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2",
+      "HW 2 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW2/solutions.html#the-time-functions",
+    "href": "Homework/HW2/solutions.html#the-time-functions",
+    "title": "HW 2 Solutions",
+    "section": "3.4 The time functions",
+    "text": "3.4 The time functions\nThe function time.monotonic() can be used to measure intervals of time. For example, the following code measures how long after the red LED comes on the user presses button B.\nfrom adafruit_circuitplayground.express import cpx\nimport time\ncpx.red_led = True\nstart_time = time.monotonic()\nwhile True:\n    time.sleep(0.01)\n    if cpx.button_b:\n        end_time = time.monotonic()\n        interval = end_time - start_time\n        break\nprint(f\"Interval was {interval} seconds\")\nRewrite the code above so that it executes the same functionality without using break or if.\n\n\n\n\n\n\nTipSolution\n\n\n\nfrom adafruit_circuitplayground.express import cpx\nimport time\ncpx.red_led = True\nstart_time = time.monotonic()\nwhile not cpx.button_b:\n    time.sleep(0.01)\nend_time = time.monotonic()\ninterval = end_time - start_time\nprint(f\"Interval was {interval} seconds\")",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 2",
+      "HW 2 Solutions"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ENGR 21 Computer Engineering Fundamentals",
+    "section": "",
+    "text": "This is a Quarto website. To navigate, use the sidebar to the left.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "AcademicSupport/index.html",
+    "href": "AcademicSupport/index.html",
+    "title": "Academic Support",
+    "section": "",
+    "text": "Navigate using the sidebar to the left.\n\n\n\n\n\n\n\n\n\n\nEvent\nMonday\nTuesday\nWednesday\nThursday\n\n\n\n\nWizard Office Hours\n\n\nSamchan Lee 4:30 to 5:30 PM\nVisnuk Rith 1 to 2 PM\n\n\n\n\n\n\nUneeb Hyder 3:15 to 4:15 PM\n\n\nInstructor Office Hours\n\n\n9-10:30 AM SH 112\n\n\n\nWizard Session\n\n7 to 9 PM SH 222\n\n\n\n\nProblem Session\n4 to 6 PM SH 221",
+    "crumbs": [
+      "Homepage",
+      "Academic Support"
+    ]
+  },
+  {
+    "objectID": "labs.html",
+    "href": "labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "Homepage for labs.",
+    "crumbs": [
+      "Homepage",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "labs.html#about-the-labs",
+    "href": "labs.html#about-the-labs",
+    "title": "Labs",
+    "section": "About the labs",
+    "text": "About the labs\n…",
+    "crumbs": [
+      "Homepage",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "labs.html#lab-schedule",
+    "href": "labs.html#lab-schedule",
+    "title": "Labs",
+    "section": "Lab Schedule",
+    "text": "Lab Schedule\nLabs will be held on Mondays and Thursdays.\n\n\n\nLab\nTopics\nStarting\n\n\n\n\nLab 1\nCapacitive touch passcode\nThu, Sep 10\n\n\nLab 2\nJoystick, loops, and functions\nThu, Sep 24\n\n\nLab 3\nPPen plotter, IK, and linear motion\nThu, Oct 8\n\n\nLab 4\nCubic Spline Interpolation\nThu, Oct 29\n\n\nLab 5\nFourier Series and Superposition\nThu, Nov 12\n\n\n\nFinal Project",
+    "crumbs": [
+      "Homepage",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "tests.html",
+    "href": "tests.html",
+    "title": "Tests",
+    "section": "",
+    "text": "Sep 1, 2026\n\n\n\n\n\n\ntopic\n\n\nIntroduction to E21 & Circuit Playground Express\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 3, 2026\n\n\n\n\n\n\ntopic\n\n\nPython and CPX Preliminaries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n\n\n\n\ntopic\n\n\nBase Systems\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nProgramming Basics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nConditionals, While loops, truth tbales, CPX\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2026\n\n\n\n\n\n\ntopic\n\n\nBase systems, Conditionals, Loops, CPX\n\n\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Homepage",
+      "Tests"
+    ]
+  },
+  {
+    "objectID": "tests.html#test-1",
+    "href": "tests.html#test-1",
+    "title": "Tests",
+    "section": "",
+    "text": "Sep 1, 2026\n\n\n\n\n\n\ntopic\n\n\nIntroduction to E21 & Circuit Playground Express\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 3, 2026\n\n\n\n\n\n\ntopic\n\n\nPython and CPX Preliminaries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n\n\n\n\ntopic\n\n\nBase Systems\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nProgramming Basics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nConditionals, While loops, truth tbales, CPX\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2026\n\n\n\n\n\n\ntopic\n\n\nBase systems, Conditionals, Loops, CPX\n\n\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Homepage",
+      "Tests"
+    ]
+  },
+  {
+    "objectID": "AcademicSupport/wizards.html",
+    "href": "AcademicSupport/wizards.html",
+    "title": "Wizard Office Hours",
+    "section": "",
+    "text": "Wizard sessions are on Tuesday nights from 7 to 9 PM in Singer 221\nAll Wizard office hours are in Singer 228.\n\n\n\nName\nDate and Time\n\n\n\n\nName\nTime\n\n\nSamchan Lee\n4:30 — 5:30 PM, Wednesdays\n\n\nVisnuk Rith\n1:00 — 2:00 PM, Thursdays\n\n\nUneeb Hyder\n3:15 — 4:15 PM, Thursdays",
+    "crumbs": [
+      "Homepage",
+      "Academic Support",
+      "Wizard Office Hours"
+    ]
+  },
+  {
+    "objectID": "AcademicSupport/Masroor.html",
+    "href": "AcademicSupport/Masroor.html",
+    "title": "Instructor Support",
+    "section": "",
+    "text": "Regular office hours are Wednesdays 9 to 10:30 AM.\nWalk-ins are always welcome when I am in my office.\nThe Instructor-led Problem Session is on Mondays 4:30 — 6:00 PM in Singer 221\n\nIn addition, you can schedule appointments on my calendar in 30-minute increments below.",
+    "crumbs": [
+      "Homepage",
+      "Academic Support",
+      "Instructor Support"
+    ]
+  },
+  {
     "objectID": "Homework/HW2/index.html",
     "href": "Homework/HW2/index.html",
     "title": "HW 2",
@@ -374,103 +627,6 @@
       "Homework",
       "HW 2"
     ]
-  },
-  {
-    "objectID": "AcademicSupport/Masroor.html",
-    "href": "AcademicSupport/Masroor.html",
-    "title": "Instructor Support",
-    "section": "",
-    "text": "Regular office hours are Wednesdays 9 to 10:30 AM.\nWalk-ins are always welcome when I am in my office.\nThe Instructor-led Problem Session is on Mondays 4:30 — 6:00 PM in Singer 221\n\nIn addition, you can schedule appointments on my calendar in 30-minute increments below.",
-    "crumbs": [
-      "Homepage",
-      "Academic Support",
-      "Instructor Support"
-    ]
-  },
-  {
-    "objectID": "AcademicSupport/wizards.html",
-    "href": "AcademicSupport/wizards.html",
-    "title": "Wizard Office Hours",
-    "section": "",
-    "text": "Wizard sessions are on Tuesday nights from 7 to 9 PM in Singer 221\nAll Wizard office hours are in Singer 228.\n\n\n\nName\nDate and Time\n\n\n\n\nName\nTime\n\n\nSamchan Lee\n4:30 — 5:30 PM, Wednesdays\n\n\nVisnuk Rith\n1:00 — 2:00 PM, Thursdays\n\n\nUneeb Hyder\n3:15 — 4:15 PM, Thursdays",
-    "crumbs": [
-      "Homepage",
-      "Academic Support",
-      "Wizard Office Hours"
-    ]
-  },
-  {
-    "objectID": "tests.html",
-    "href": "tests.html",
-    "title": "Tests",
-    "section": "",
-    "text": "Sep 1, 2026\n\n\n\n\n\n\ntopic\n\n\nIntroduction to E21 & Circuit Playground Express\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 3, 2026\n\n\n\n\n\n\ntopic\n\n\nPython and CPX Preliminaries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n\n\n\n\ntopic\n\n\nBase Systems\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nProgramming Basics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nConditionals, While loops, truth tbales, CPX\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2026\n\n\n\n\n\n\ntopic\n\n\nBase systems, Conditionals, Loops, CPX\n\n\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Homepage",
-      "Tests"
-    ]
-  },
-  {
-    "objectID": "tests.html#test-1",
-    "href": "tests.html#test-1",
-    "title": "Tests",
-    "section": "",
-    "text": "Sep 1, 2026\n\n\n\n\n\n\ntopic\n\n\nIntroduction to E21 & Circuit Playground Express\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 3, 2026\n\n\n\n\n\n\ntopic\n\n\nPython and CPX Preliminaries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n\n\n\n\ntopic\n\n\nBase Systems\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nProgramming Basics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2026\n\n\n\n\n\n\ntopic\n\n\nConditionals, While loops, truth tbales, CPX\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSep 17, 2026\n\n\n\n\n\n\ntopic\n\n\nBase systems, Conditionals, Loops, CPX\n\n\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Homepage",
-      "Tests"
-    ]
-  },
-  {
-    "objectID": "labs.html",
-    "href": "labs.html",
-    "title": "Labs",
-    "section": "",
-    "text": "Homepage for labs.",
-    "crumbs": [
-      "Homepage",
-      "Labs"
-    ]
-  },
-  {
-    "objectID": "labs.html#about-the-labs",
-    "href": "labs.html#about-the-labs",
-    "title": "Labs",
-    "section": "About the labs",
-    "text": "About the labs\n…",
-    "crumbs": [
-      "Homepage",
-      "Labs"
-    ]
-  },
-  {
-    "objectID": "labs.html#lab-schedule",
-    "href": "labs.html#lab-schedule",
-    "title": "Labs",
-    "section": "Lab Schedule",
-    "text": "Lab Schedule\nLabs will be held on Mondays and Thursdays.\n\n\n\nLab\nTopics\nStarting\n\n\n\n\nLab 1\nCapacitive touch passcode\nThu, Sep 10\n\n\nLab 2\nJoystick, loops, and functions\nThu, Sep 24\n\n\nLab 3\nPPen plotter, IK, and linear motion\nThu, Oct 8\n\n\nLab 4\nCubic Spline Interpolation\nThu, Oct 29\n\n\nLab 5\nFourier Series and Superposition\nThu, Nov 12\n\n\n\nFinal Project",
-    "crumbs": [
-      "Homepage",
-      "Labs"
-    ]
-  },
-  {
-    "objectID": "AcademicSupport/index.html",
-    "href": "AcademicSupport/index.html",
-    "title": "Academic Support",
-    "section": "",
-    "text": "Navigate using the sidebar to the left.\n\n\n\n\n\n\n\n\n\n\nEvent\nMonday\nTuesday\nWednesday\nThursday\n\n\n\n\nWizard Office Hours\n\n\nSamchan Lee 4:30 to 5:30 PM\nVisnuk Rith 1 to 2 PM\n\n\n\n\n\n\nUneeb Hyder 3:15 to 4:15 PM\n\n\nInstructor Office Hours\n\n\n9-10:30 AM SH 112\n\n\n\nWizard Session\n\n7 to 9 PM SH 222\n\n\n\n\nProblem Session\n4 to 6 PM SH 221",
-    "crumbs": [
-      "Homepage",
-      "Academic Support"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "ENGR 21 Computer Engineering Fundamentals",
-    "section": "",
-    "text": "This is a Quarto website. To navigate, use the sidebar to the left.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
     "objectID": "Homework/HW3/index.html",
