@@ -733,10 +733,10 @@ In @sec-lists, we used a rather cumbersome kind of list to decide what to plant 
 For this problem, use a dictionary that will allow you to write a function that accepts as argument a simpler list of one-character 'codes' for each plant. Here, 'p' stands for pumpkin, 't' for tree, 'b' for bush and 'g' for grass.
 
 ```{.python}
-pattern2 = [["p", "p", "t", "g"],
-            ["p", "p", "g", "t"],
-            ["t", "g", "p", "p"],
-            ["g", "t", "p", "p"]]
+pattern2 = [["c", "t", "t", "c"],
+			["t", "p", "p", "t"],
+			["t", "p", "p", "g"],
+			["c", "t", "g", "c"]]
 ```
 
 Calling your function with `pattern2` as the argument should plant the crops as shown in @fig-pattern3. Note that the entire soil is tilled; you should incorporate this into your function.
