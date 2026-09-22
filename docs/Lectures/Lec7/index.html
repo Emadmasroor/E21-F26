@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Prof.&nbsp;Emad Masroor">
-<meta name="dcterms.date" content="2026-09-01">
+<meta name="author" content="Emad Masroor">
+<meta name="dcterms.date" content="2026-09-22">
 
-<title>Lecture 01 – ENGR 21 Computer Engineering Fundamentals</title>
+<title>Lecture 07 – ENGR 21 Computer Engineering Fundamentals</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,7 +79,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -128,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lecture 01</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec7/index.html">Lecture 07</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -186,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Lectures/Lec1/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../Lectures/Lec1/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 01</span></a>
   </div>
 </li>
@@ -222,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Lectures/Lec7/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec7/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lecture 07</span></a>
   </div>
 </li>
@@ -307,26 +337,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introductions---prof.-masroor" id="toc-introductions---prof.-masroor" class="nav-link active" data-scroll-target="#introductions---prof.-masroor">Introductions - Prof.&nbsp;Masroor</a></li>
-  <li><a href="#introductions---prof.-masroor-1" id="toc-introductions---prof.-masroor-1" class="nav-link" data-scroll-target="#introductions---prof.-masroor-1">Introductions - Prof.&nbsp;Masroor</a></li>
-  <li><a href="#introductions---students" id="toc-introductions---students" class="nav-link" data-scroll-target="#introductions---students">Introductions - Students</a></li>
-  <li><a href="#teaching-team" id="toc-teaching-team" class="nav-link" data-scroll-target="#teaching-team">Teaching Team</a></li>
-  <li><a href="#what-is-e21-about" id="toc-what-is-e21-about" class="nav-link" data-scroll-target="#what-is-e21-about">What is E21 about?</a></li>
-  <li><a href="#what-is-e21-about-1" id="toc-what-is-e21-about-1" class="nav-link" data-scroll-target="#what-is-e21-about-1">What is E21 about?</a></li>
-  <li><a href="#logistics" id="toc-logistics" class="nav-link" data-scroll-target="#logistics">Logistics</a></li>
-  <li><a href="#circuit-playground-express" id="toc-circuit-playground-express" class="nav-link" data-scroll-target="#circuit-playground-express">Circuit Playground Express</a></li>
-  <li><a href="#installation-instructions" id="toc-installation-instructions" class="nav-link" data-scroll-target="#installation-instructions">Installation Instructions</a></li>
-  <li><a href="#integrated-development-environment-ide" id="toc-integrated-development-environment-ide" class="nav-link" data-scroll-target="#integrated-development-environment-ide">Integrated Development Environment (IDE)</a></li>
-  <li><a href="#two-ways-to-run-code-on-your-board" id="toc-two-ways-to-run-code-on-your-board" class="nav-link" data-scroll-target="#two-ways-to-run-code-on-your-board">Two ways to run code on your board</a></li>
+  <li><a href="#how-many-digits-are-needed-to-store-a-large-number" id="toc-how-many-digits-are-needed-to-store-a-large-number" class="nav-link active" data-scroll-target="#how-many-digits-are-needed-to-store-a-large-number">How many ‘digits’ are needed to store a large number?</a></li>
+  <li><a href="#range-of-positive-negative-numbers" id="toc-range-of-positive-negative-numbers" class="nav-link" data-scroll-target="#range-of-positive-negative-numbers">Range of positive / negative numbers</a></li>
+  <li><a href="#the-sign-magnitude-representation" id="toc-the-sign-magnitude-representation" class="nav-link" data-scroll-target="#the-sign-magnitude-representation">The Sign-Magnitude Representation</a></li>
+  <li><a href="#fixed-point-representation-of-numbers" id="toc-fixed-point-representation-of-numbers" class="nav-link" data-scroll-target="#fixed-point-representation-of-numbers">Fixed Point Representation of numbers</a></li>
+  <li><a href="#a-rudimentary-floating-point-number-system" id="toc-a-rudimentary-floating-point-number-system" class="nav-link" data-scroll-target="#a-rudimentary-floating-point-number-system">A rudimentary ‘floating point’ number system</a></li>
+  <li><a href="#a-6-digit-decimal-floating-point-representation-needs-to-tell-you" id="toc-a-6-digit-decimal-floating-point-representation-needs-to-tell-you" class="nav-link" data-scroll-target="#a-6-digit-decimal-floating-point-representation-needs-to-tell-you">A 6-digit decimal floating-point representation needs to tell you …</a></li>
+  <li><a href="#instead-use-scientific-notation" id="toc-instead-use-scientific-notation" class="nav-link" data-scroll-target="#instead-use-scientific-notation">Instead … use ‘Scientific Notation’</a></li>
+  <li><a href="#standard-ieee-format-for-16-bit-floating-point-binary-numbers" id="toc-standard-ieee-format-for-16-bit-floating-point-binary-numbers" class="nav-link" data-scroll-target="#standard-ieee-format-for-16-bit-floating-point-binary-numbers">Standard (IEEE) Format for 16-bit floating-point binary numbers</a></li>
+  <li><a href="#place-value-notation-for-numbers-smaller-than-1" id="toc-place-value-notation-for-numbers-smaller-than-1" class="nav-link" data-scroll-target="#place-value-notation-for-numbers-smaller-than-1">Place Value Notation for numbers smaller than 1</a></li>
+  <li><a href="#interpreting-a-16-bit-binary-float" id="toc-interpreting-a-16-bit-binary-float" class="nav-link" data-scroll-target="#interpreting-a-16-bit-binary-float">Interpreting a 16-bit binary float</a></li>
+  <li><a href="#hex-short-form" id="toc-hex-short-form" class="nav-link" data-scroll-target="#hex-short-form">Hex short-form</a></li>
+  <li><a href="#practice-with-16-bit-binary-floats" id="toc-practice-with-16-bit-binary-floats" class="nav-link" data-scroll-target="#practice-with-16-bit-binary-floats">Practice with 16-bit binary floats</a></li>
+  <li><a href="#the-ieee-standard-for-floating-point-numbers" id="toc-the-ieee-standard-for-floating-point-numbers" class="nav-link" data-scroll-target="#the-ieee-standard-for-floating-point-numbers">The IEEE Standard for floating-point numbers</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lecture 01</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec7/index.html">Lecture 07</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lecture 01</h1>
+<h1 class="title">Lecture 07</h1>
 <p class="subtitle lead">E21 Computer Engineering Fundamentals</p>
 </div>
 
@@ -337,14 +369,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Prof.&nbsp;Emad Masroor </p>
+             <p>Emad Masroor </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 1, 2026</p>
+      <p class="date">September 22, 2026</p>
     </div>
   </div>
   
@@ -356,266 +388,438 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introductions---prof.-masroor" class="level3">
-<h3 class="anchored" data-anchor-id="introductions---prof.-masroor">Introductions - Prof.&nbsp;Masroor</h3>
-<ul>
-<li>Prof.&nbsp;Emad Masroor
-<ul>
-<li>B.S. Mechanical Engineering, Cornell University 2017</li>
-<li>Ph.D.&nbsp;Engineering Mechanics, Virginia Tech 2023
-<ul>
-<li>Thesis: <em>Vortex Dynamics in the Laminar Wakes of Bluff Bodies</em></li>
-</ul></li>
-<li>Visiting Assistant Professor at Swarthmore College since Fall 2023</li>
-<li>Research interests broadly in Fluid Dynamics:
-<ul>
-<li>theoretical studies of vortex dynamics</li>
-<li>experimental studies of wind-induced vibrations</li>
-<li>numerical studies of fish locomotion</li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-<section id="introductions---prof.-masroor-1" class="level3">
-<h3 class="anchored" data-anchor-id="introductions---prof.-masroor-1">Introductions - Prof.&nbsp;Masroor</h3>
-<div class="nonincremental">
-<ul>
-<li>Outside of work, I …
-<ul>
-<li>live in Philadelphia</li>
-<li>read about philosophy, history, science + enjoy literature</li>
-<li>take piano lessons</li>
-<li>travel (32/50 states) and take photographs</li>
-<li>hike &amp; backpack, esp.&nbsp;Appalachian Trail</li>
-</ul></li>
-</ul>
-<p><img src="washington.png" class="img-fluid" style="width:75.0%" data-center="true"></p>
-</div>
-</section>
-<section id="introductions---students" class="level3">
-<h3 class="anchored" data-anchor-id="introductions---students">Introductions - Students</h3>
-<div class="nonincremental">
-<ul>
-<li>Name, major, year</li>
-<li>Hometown</li>
-<li>What are your impressions of / expectations from E21?</li>
-<li>What is a topic/event/idea/person that you know a lot about?</li>
-</ul>
-</div>
-</section>
-<section id="teaching-team" class="level3">
-<h3 class="anchored" data-anchor-id="teaching-team">Teaching Team</h3>
-<div class="table-wrapper" style="width:90%;">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Role</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Emad Masroor</td>
-<td>Lec. Instructor</td>
-</tr>
-<tr class="even">
-<td>Matt Zucker</td>
-<td>Lab. Instructor</td>
-</tr>
-<tr class="odd">
-<td>Visnuk Rith</td>
-<td>Wizard</td>
-</tr>
-<tr class="even">
-<td>Samchan Lee</td>
-<td>Wizard</td>
-</tr>
-<tr class="odd">
-<td>Uneeb Hyder</td>
-<td>Wizard</td>
-</tr>
-<tr class="even">
-<td>Hiba Aby</td>
-<td>Grader</td>
-</tr>
-<tr class="odd">
-<td>Huyen Nguyen</td>
-<td>Grader</td>
-</tr>
-<tr class="even">
-<td>Ellie Fermo</td>
-<td>Grader</td>
-</tr>
-<tr class="odd">
-<td>Kevin Sisk</td>
-<td>Grader</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="what-is-e21-about" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-e21-about">What is E21 about?</h3>
-<div class="fragment">
-<div class="quarto-layout-panel" data-layout="[60, 40]">
+<section id="how-many-digits-are-needed-to-store-a-large-number" class="level3">
+<h3 class="anchored" data-anchor-id="how-many-digits-are-needed-to-store-a-large-number">How many ‘digits’ are needed to store a large number?</h3>
+<p><span class="inclass">Determine how many ‘digits’/bits you need</span> to represent the number one billion in:</p>
+<div class="quarto-layout-panel" data-layout="[0.2, 0.5, 0.3]">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
-<p><img src="meme1.jpg" class="img-fluid"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
-<p><img src="trump.gif" class="img-fluid"></p>
-</div>
-</div>
-</div>
-<ul>
-<li>Outside Swarthmore, ‘Computer Engineering’ is a part of ‘Electrical Engineering’</li>
-<li>A better definition for us: Engineering with computers
-<ul>
-<li>Relevant for all types of engineers</li>
-</ul></li>
-<li>Make stuff do stuff</li>
-</ul>
-</div>
-</section>
-<section id="what-is-e21-about-1" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-e21-about-1">What is E21 about?</h3>
-<p><img src="meme2.png" class="img-fluid"></p>
-</section>
-<section id="logistics" class="level3">
-<h3 class="anchored" data-anchor-id="logistics">Logistics</h3>
-<p><strong>See the website</strong>: <a href="https://emadmasroor.github.io/E21-F26">https://emadmasroor.github.io/E21-F26</a></p>
-<ul>
-<li>Lectures Tue / Thu SCI 101, may be moved to SCI 199</li>
-<li>Labs Mon / Thu Singer 221</li>
-<li>No midterms, no final exam</li>
-<li>Six tests, ~ every two weeks starting week 4</li>
-<li>Final Project</li>
-</ul>
+<div class="{#} quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<p>Decimal</p>
 <div class="fragment">
+<p><strong>Answer</strong>:</p>
+<p><code>1000000000</code></p>
+<p>10 digits</p>
+</div>
+</div>
+<div class="{#} quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Binary</p>
+<div class="fragment">
+<p><strong>Answer</strong>:</p>
+<p><code>0b111011100110101100101000000000</code></p>
+<p>30 bits.</p>
+</div>
+</div>
+<div class="{#} quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
+<p>Hexadecimal</p>
+<div class="fragment">
+<p><strong>Answer</strong>:</p>
+<p><code>0x3B9ACA00</code></p>
+<p>8 bits.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="range-of-positive-negative-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="range-of-positive-negative-numbers">Range of positive / negative numbers</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="bits.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<ul>
+<li>With 8 bits, how many binary integers can be stored? <span class="fragment"><span class="emph">256</span></span></li>
+<li>Which 256 numbers should we choose?
+<ul>
+<li>If we only care about positive numbers, we could choose
+<ul>
+<li><code>0</code>, <code>1</code>, <code>2</code>, …, <code>255</code></li>
+<li><code>1000</code>, <code>1001</code>, <code>1002</code>, …, <code>1255</code></li>
+</ul></li>
+<li>If we care about positive and negative numbers:
+<ul>
+<li><code>-1</code>, <code>0</code>, <code>1</code>, <code>2</code>, … <code>254</code></li>
+<li><code>-2</code>, <code>-1</code>, <code>0</code>, <code>1</code>, <code>2</code>, … <code>253</code></li>
+<li><code>-10</code>, <code>-9</code>, <code>-8</code>, <code>-7</code>, <code>-6</code>, … <code>245</code></li>
+<li><code>-128</code>, <code>-127</code>, <code>-126</code>, … <code>0</code> … <code>126</code>, <code>127</code></li>
+</ul></li>
+<li>Makes sense to evenly distribute your numbers around zero</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-sign-magnitude-representation" class="level3">
+<h3 class="anchored" data-anchor-id="the-sign-magnitude-representation">The Sign-Magnitude Representation</h3>
+<p><span class="fragment">The sign-magnitude representation is one way to represent integers in binary.</span></p>
+<p><span class="fragment">The first bit is reserved for the sign. <code>1</code> <span class="math inline">\(\implies\)</span> negative.</span></p>
+<div class="fragment">
+<p>The number <span class="math inline">\(9\)</span></p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
 <thead>
 <tr class="header">
+<th>Sign</th>
+<th><span class="math inline">\(2^7\)</span></th>
+<th><span class="math inline">\(2^6\)</span></th>
+<th><span class="math inline">\(2^5\)</span></th>
+<th><span class="math inline">\(2^4\)</span></th>
+<th><span class="math inline">\(2^3\)</span></th>
+<th><span class="math inline">\(2^2\)</span></th>
+<th><span class="math inline">\(2^1\)</span></th>
+<th><span class="math inline">\(2^0\)</span></th>
 <th></th>
-<th>Use this for …</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Moodle</td>
-<td>Submit HW, view scores</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+<td></td>
 </tr>
-<tr class="even">
-<td>Gradescope</td>
-<td>Manage and submit HW</td>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p>The number <span class="math inline">\(-56\)</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sign</th>
+<th><span class="math inline">\(2^7\)</span></th>
+<th><span class="math inline">\(2^6\)</span></th>
+<th><span class="math inline">\(2^5\)</span></th>
+<th><span class="math inline">\(2^4\)</span></th>
+<th><span class="math inline">\(2^3\)</span></th>
+<th><span class="math inline">\(2^2\)</span></th>
+<th><span class="math inline">\(2^1\)</span></th>
+<th><span class="math inline">\(2^0\)</span></th>
+<th></th>
 </tr>
+</thead>
+<tbody>
 <tr class="odd">
-<td>Ed Discussion</td>
-<td>Ask + Answer questions</td>
-</tr>
-<tr class="even">
-<td>Website</td>
-<td><strong>All Course Content</strong></td>
+<td><code>1</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="circuit-playground-express" class="level3">
-<h3 class="anchored" data-anchor-id="circuit-playground-express">Circuit Playground Express</h3>
-<div class="quarto-layout-panel" data-layout="[60, 40]">
+<section id="fixed-point-representation-of-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="fixed-point-representation-of-numbers">Fixed Point Representation of numbers</h3>
+<p>A <strong>fixed point</strong> number has a ‘decimal point’ located at a fixed position in the place-value scheme.</p>
+<p>Consider two different fixed point decimal representations of the number one hundred, both with 6 decimal digits.</p>
+<div class="quarto-layout-panel" data-layout="[0.5, 0.5]">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: flex-start;">
-<p>• A versatile microcontroller for E21. <br> • The device is called ‘Circuit Playground Express’ (CPX) <br> • The software it runs is called Circuit Python</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
-<p><img src="cpx.jpg" class="img-fluid"></p>
-</div>
-</div>
-</div>
-<p>Bring to lecture <strong>and</strong> lab!</p>
-</section>
-<section id="installation-instructions" class="level3">
-<h3 class="anchored" data-anchor-id="installation-instructions">Installation Instructions</h3>
-<ul>
-<li>Don’t download Python yet!</li>
-<li>Install <a href="https://thonny.org/">Thonny Code Editor</a> on your computer</li>
-<li>Download and install <code>Circuit Python</code> on your <u>Circuit Playground Express</u> using instructions <a href="https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython">here</a>.</li>
-</ul>
-<div style="font-size: 50%;">
-<ol type="1">
-<li>Download <code>.UF2</code> file for CPX</li>
-<li>Double-tap RESET button while CPX is plugged in</li>
-<li>Drag and drop <code>.UF2</code> file onto <code>CPLAYBOOT</code> drive</li>
-<li>If you now see <code>CIRCUITPY</code> as an external drive instead of <code>CPLAYBOOT</code>, you are done!</li>
+<div class="{#} quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ol type="A">
+<li>Decimal point fixed at position 3</li>
 </ol>
+<p><span class="fragment"><code>100.000</code></span></p>
 </div>
-<div class="quarto-layout-panel" data-layout="[40, 60]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
-<p><img src="instructions.png" class="img-fluid"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
-<p><img src="thonny.png" class="img-fluid"></p>
+<div class="{#} quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ol start="2" type="A">
+<li>Decimal point fixed at position 2</li>
+</ol>
+<p><span class="fragment"><code>0100.00</code></span></p>
 </div>
 </div>
+</div>
+<p><span class="inclass">Questions to consider:</span></p>
+<ol type="1">
+<li>What is the largest (+) number that can be shown using A and B ?</li>
+<li>What is the smallest difference between two numbers that can be represented using A and B ?</li>
+</ol>
+</section>
+<section id="a-rudimentary-floating-point-number-system" class="level3">
+<h3 class="anchored" data-anchor-id="a-rudimentary-floating-point-number-system">A rudimentary ‘floating point’ number system</h3>
+<ul>
+<li>With 6 digits and decimal point <strong>fixed</strong> in middle:</li>
+</ul>
+<div class="fragment">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Quantity</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Largest + Number</td>
+<td><code>999.999</code></td>
+</tr>
+<tr class="even">
+<td>Smallest + Number</td>
+<td><code>000.001</code></td>
+</tr>
+<tr class="odd">
+<td>Increment</td>
+<td><code>000.000</code></td>
+</tr>
+<tr class="even">
+<td>Pieces of info to store</td>
+<td>six</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>With 6 digits and decimal point can <strong>float</strong> anywhere:</li>
+</ul>
+<div class="fragment">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Quantity</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Largest + Number</td>
+<td><code>999999.</code></td>
+</tr>
+<tr class="even">
+<td>Smallest + Number</td>
+<td><code>.000001</code></td>
+</tr>
+<tr class="odd">
+<td>Increment</td>
+<td>depends</td>
+</tr>
+<tr class="even">
+<td>Pieces of info to store</td>
+<td>six + one</td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
-<section id="integrated-development-environment-ide" class="level3">
-<h3 class="anchored" data-anchor-id="integrated-development-environment-ide">Integrated Development Environment (IDE)</h3>
+<section id="a-6-digit-decimal-floating-point-representation-needs-to-tell-you" class="level3">
+<h3 class="anchored" data-anchor-id="a-6-digit-decimal-floating-point-representation-needs-to-tell-you">A 6-digit decimal floating-point representation needs to tell you …</h3>
+<ol type="1">
+<li>What each of the 8 digits are.
 <ul>
-<li>A ‘development environment’ is the program (or programs) you use to write code.</li>
-<li>It’s possible to simply use Notepad as your Development Environment, but that’s kinda lame</li>
-<li>Some options
-<ul>
-<li>VS Code (v. popular among Swat students)</li>
-<li>A simple text editor with syntax highlighting (e.g.&nbsp;Sublime Text)</li>
-<li><strong>Thonny</strong>, Mu, other ‘lightweight IDEs’</li>
-<li>IDLE (official Python IDE)</li>
+<li>Possibilities: 0 to 9</li>
 </ul></li>
+<li>Where the decimal point is:
+<ul>
+<li>7 options
+<ul>
+<li><code>000000.</code></li>
+<li><code>00000.0</code></li>
+<li><code>0000.00</code></li>
+<li><code>000.000</code></li>
+<li><code>00.0000</code></li>
+<li><code>0.00000</code></li>
+<li><code>.000000</code></li>
+</ul></li>
+</ul></li>
+</ol>
+</section>
+<section id="instead-use-scientific-notation" class="level3">
+<h3 class="anchored" data-anchor-id="instead-use-scientific-notation">Instead … use ‘Scientific Notation’</h3>
+<p>Recall the scientific notation of numbers: <span class="math display">\[-2.34 \times 10^5\]</span></p>
+<ul>
+<li>This conveys three pieces of information:
+<ul>
+<li>The sign</li>
+<li>3 digits for the number</li>
+<li>1 digit for the exponent</li>
+</ul></li>
+<li>Note that the <span class="math inline">\(a \times 10^{b}\)</span> structure is <strong>assumed</strong> and does not need to be stored every time the computer stores a number.</li>
 </ul>
 </section>
-<section id="two-ways-to-run-code-on-your-board" class="level3">
-<h3 class="anchored" data-anchor-id="two-ways-to-run-code-on-your-board">Two ways to run code on your board</h3>
-<div class="quarto-layout-panel" data-layout="[50, 50]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<section id="standard-ieee-format-for-16-bit-floating-point-binary-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="standard-ieee-format-for-16-bit-floating-point-binary-numbers">Standard (IEEE) Format for 16-bit floating-point binary numbers</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="file.png" class="img-fluid figure-img"></p>
-<figcaption>Editing <code>code.py</code> on board the file</figcaption>
+<p><img src="16bits.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="terminal.png" class="img-fluid figure-img"></p>
-<figcaption>Click ‘Stop’ and code interactively</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div class="quarto-layout-panel" data-layout="[50, 50]">
-<div class="quarto-layout-row">
-<div class="nonincremental quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <ul>
-<li>Once you’re sure what you want to code</li>
-<li>Thoughtful, long-form coding</li>
-<li>Runs if and when you save <code>code.py</code></li>
-<li>Persistent</li>
-</ul>
-</div>
-<div class="nonincremental quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<li>1 bit stores the sign</li>
+<li>10 bits store the number, known as the <em>significand</em>. <span class="math inline">\(1\)</span> is assumed to be the 11th bit, but it is <strong>not stored</strong>.</li>
+<li>5 bits store the exponent.
 <ul>
-<li>Trying things out</li>
-<li>Instant feedback if works</li>
-<li>Runs when you hit enter</li>
-<li>No memory</li>
+<li>Smallest 5-bit binary number <code>00000</code><span class="math inline">\(= 0\)</span> and largest 5-bit binary number <code>11111</code><span class="math inline">\(=\)</span> 31</li>
+<li>To get <strong>negative exponents</strong>, we assume a <span class="emph">bias</span> in the exponent bits.</li>
+<li>Subtract fifteen from the exponent.</li>
+</ul></li>
+<li>The <em>structure</em> of the number is assumed; only the 16-bit <em>content</em> is stored in computer’s memory.</li>
+<li>Need 16 bits of memory to store this number.</li>
 </ul>
+</section>
+<section id="place-value-notation-for-numbers-smaller-than-1" class="level3">
+<h3 class="anchored" data-anchor-id="place-value-notation-for-numbers-smaller-than-1">Place Value Notation for numbers smaller than 1</h3>
+<ul>
+<li>1 is a special number in the place value system.</li>
+<li>A ‘decimal point’ — a more ecumenical name would be ‘fractional point’ — is needed to show any numbers smaller than 1.</li>
+<li>To interpret the number <code>003.0025</code>,</li>
+</ul>
+<div class="fragment">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 9%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 4%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Place</th>
+<th><span class="math inline">\(10^2\)</span></th>
+<th><span class="math inline">\(10^{1}\)</span></th>
+<th><span class="math inline">\(10^{0}\)</span></th>
+<th><span class="math inline">\(.\)</span></th>
+<th><span class="math inline">\(10^{-1}\)</span></th>
+<th><span class="math inline">\(10^{-2}\)</span></th>
+<th><span class="math inline">\(10^{-3}\)</span></th>
+<th><span class="math inline">\(10^{-4}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Value</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>3</code></td>
+<td><code>.</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>2</code></td>
+<td><code>5</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><span class="math inline">\(3\times 10^{0}\)</span></td>
+<td></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><span class="math inline">\(2 \times 10^{-3}\)</span></td>
+<td><span class="math inline">\(5 \times 10^{-4}\)</span></td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
-</div>
+</section>
+<section id="interpreting-a-16-bit-binary-float" class="level3 scrollable">
+<h3 class="scrollable anchored" data-anchor-id="interpreting-a-16-bit-binary-float">Interpreting a 16-bit binary float</h3>
+<p><a href="https://evanw.github.io/float-toy/" class="fragment">Float Toy</a></p>
+<p><span class="fragment">With the IEEE format, the 16 bits</span></p>
+<p><img src="p2.png" class="fragment img-fluid"></p>
+<p><span class="fragment">represent the number</span></p>
+<p><img src="p3.png" class="fragment img-fluid"></p>
+<p><span class="fragment">which, in binary form, should be intepreted as <span class="math display">\[-1.0001000100_2 \times 2^{(10001_2 \text{ minus fifteen})}\]</span></span></p>
+<p><span class="fragment">The exponent is <code>0b10001</code> minus fifteen, i.e., <span class="math inline">\(17 - 15 = 2\)</span></span></p>
+<p><span class="fragment">The significand is <span class="math display">\[- \left( 1 \times 2^{0} + 1 \times 2^{-4} + 1 \times 2^{-8} \right) \]</span></span></p>
+<p><span class="fragment"><span class="math display">\[ = - \left( 1 + \frac{1}{16} + \frac{1}{256} \right)\]</span></span></p>
+<p><span class="fragment"><span class="math display">\[ = - \left( \frac{256}{256} + \frac{16}{256} + \frac{1}{256} \right) = - \frac{273}{256} = -1.066406250\]</span></span></p>
+<p><span class="fragment">So the number is <span class="math inline">\(-1.066406250 \times 2^{4} = \fbox{4.265625}\)</span></span></p>
+</section>
+<section id="hex-short-form" class="level3">
+<h3 class="anchored" data-anchor-id="hex-short-form">Hex short-form</h3>
+<ul>
+<li>Binary numbers are very long</li>
+<li>Hexadecimal is often used as a short form.</li>
+<li>A 16-bit binary number is a 4-bit hexadecimal number</li>
+</ul>
+<p><img src="binhex.png" class="fragment img-fluid"></p>
+<ul>
+<li>So the number <code>0b1100010001000100</code> is often written as <code>0xC444</code>.</li>
+</ul>
+</section>
+<section id="practice-with-16-bit-binary-floats" class="level3">
+<h3 class="anchored" data-anchor-id="practice-with-16-bit-binary-floats">Practice with 16-bit binary floats</h3>
+<ul>
+<li><span class="fragment">Find the binary representation of <code>0x5248</code> and convert it to decimal form using the IEEE standard.</span></li>
+</ul>
+</section>
+<section id="the-ieee-standard-for-floating-point-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="the-ieee-standard-for-floating-point-numbers">The IEEE Standard for floating-point numbers</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Size</th>
+<th>Sign</th>
+<th>Significand</th>
+<th>Exponent</th>
+<th>Bias</th>
+<th>Colloquial</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>16-bit</td>
+<td>1</td>
+<td>10</td>
+<td>5</td>
+<td>15</td>
+<td>Half precision</td>
+</tr>
+<tr class="even">
+<td>32-bit</td>
+<td>1</td>
+<td>23</td>
+<td>8</td>
+<td>127</td>
+<td>Half precision</td>
+</tr>
+<tr class="odd">
+<td>64-bit</td>
+<td>1</td>
+<td>52</td>
+<td>11</td>
+<td>1023</td>
+<td>Half precision</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
