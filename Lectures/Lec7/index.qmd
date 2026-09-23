@@ -33,6 +33,10 @@ format:
     auto-stretch: false
 ---
 
+### Test 1 8:30 --- 8:55
+
+- If you are done early you may leave and return by 9:00
+
 ### How many 'digits' are needed to store a large number?
 
 [Determine how many 'digits'/bits you need]{.inclass} to represent the number one billion in:
@@ -107,7 +111,7 @@ Hexadecimal
 
 [The sign-magnitude representation is one way to represent integers in binary.]{.fragment}
 
-[The first bit is reserved for the sign. `1` $\implies$ negative.]{.fragment}
+[The most significant bit is reserved for the sign. `1` $\implies$ negative.]{.fragment}
 
 
 ::: {.fragment}
@@ -154,8 +158,8 @@ B) Decimal point fixed at position 2
 
 [Questions to consider:]{.inclass}
 
-1. What is the largest (+) number that can be shown using A and B ?
-2. What is the smallest difference between two numbers that can be represented using A and B ?
+1. What is the largest (+) number that can be shown using A and B ? A: `999.999` B: `9999.99`
+2. What is the smallest difference between two numbers that can be represented using A and B ? A: `0.001` B: `0.01`
 
 
 ### A rudimentary 'floating point' number system
@@ -168,7 +172,7 @@ B) Decimal point fixed at position 2
 | ----------------------- | --------- |
 | Largest + Number        | `999.999` |
 | Smallest + Number       | `000.001` |
-| Increment               | `000.000` |
+| Increment               | `000.001` |
 | Pieces of info to store | six       |
 
 
@@ -190,7 +194,7 @@ B) Decimal point fixed at position 2
 
 ### A 6-digit decimal floating-point representation needs to tell you ...
 
-1. What each of the 8 digits are. 
+1. What each of the 6 digits are. 
    - Possibilities: 0 to 9
 
 2. Where the decimal point is:
@@ -263,7 +267,7 @@ Recall the scientific notation of numbers: $$-2.34 \times 10^5$$
 
 [$$ = - \left( \frac{256}{256} + \frac{16}{256} + \frac{1}{256} \right) = - \frac{273}{256} = -1.066406250$$]{.fragment}
 
-[So the number is $-1.066406250 \times 2^{4} = \fbox{4.265625}$]{.fragment}
+[So the number is $-1.066406250 \times 2^{2} = \fbox{-4.265625}$]{.fragment}
 
 ### Hex short-form
 
@@ -278,6 +282,28 @@ Recall the scientific notation of numbers: $$-2.34 \times 10^5$$
 ### Practice with 16-bit binary floats
 
 - [Find the binary representation of `0x5248` and convert it to decimal form using the IEEE standard.]{.fragment}
+
+In binary, this number is: 
+
+- `5`: `0101`
+- `2`: `0010`
+- `4`: `0100`
+- `8`: `1000`
+- `0x5248` = `0b0101001001001000`
+
+![](binhex2.png)
+
+Interpreting it using the IEEE standard, we get
+
+![](g24.png)
+
+which is $$+1.1001001000_2 \times 2^{5}$$
+
+$$= 1 \times 2^{0} + 1 \times 2^{-1} + 1 \times 2^{-4} + 1 \times 2^{-7} = 1 + \frac{1}{2} + \frac{1}{16} + \frac{1}{128}$$
+
+$$= \frac{128}{128} + \frac{64}{128} + \frac{8}{128} + \frac{1}{128}$$
+
+$$ = \frac{201}{128} = 1.5703125$$
 
 ### The IEEE Standard for floating-point numbers
 

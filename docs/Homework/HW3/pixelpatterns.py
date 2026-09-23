@@ -27,5 +27,5 @@ def pattern2():
 
 def pattern_random():
     from random import random
-    for pixel_num in range(9):
+    for pixel_num in range(10):
         cpx.pixels[pixel_num] = (random()*50,random()*50,random()*50)

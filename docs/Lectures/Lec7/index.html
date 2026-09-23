@@ -337,7 +337,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-many-digits-are-needed-to-store-a-large-number" id="toc-how-many-digits-are-needed-to-store-a-large-number" class="nav-link active" data-scroll-target="#how-many-digits-are-needed-to-store-a-large-number">How many ‘digits’ are needed to store a large number?</a></li>
+  <li><a href="#test-1-830-855" id="toc-test-1-830-855" class="nav-link active" data-scroll-target="#test-1-830-855">Test 1 8:30 — 8:55</a></li>
+  <li><a href="#how-many-digits-are-needed-to-store-a-large-number" id="toc-how-many-digits-are-needed-to-store-a-large-number" class="nav-link" data-scroll-target="#how-many-digits-are-needed-to-store-a-large-number">How many ‘digits’ are needed to store a large number?</a></li>
   <li><a href="#range-of-positive-negative-numbers" id="toc-range-of-positive-negative-numbers" class="nav-link" data-scroll-target="#range-of-positive-negative-numbers">Range of positive / negative numbers</a></li>
   <li><a href="#the-sign-magnitude-representation" id="toc-the-sign-magnitude-representation" class="nav-link" data-scroll-target="#the-sign-magnitude-representation">The Sign-Magnitude Representation</a></li>
   <li><a href="#fixed-point-representation-of-numbers" id="toc-fixed-point-representation-of-numbers" class="nav-link" data-scroll-target="#fixed-point-representation-of-numbers">Fixed Point Representation of numbers</a></li>
@@ -388,6 +389,12 @@ window.Quarto = {
 </header>
 
 
+<section id="test-1-830-855" class="level3">
+<h3 class="anchored" data-anchor-id="test-1-830-855">Test 1 8:30 — 8:55</h3>
+<ul>
+<li>If you are done early you may leave and return by 9:00</li>
+</ul>
+</section>
 <section id="how-many-digits-are-needed-to-store-a-large-number" class="level3">
 <h3 class="anchored" data-anchor-id="how-many-digits-are-needed-to-store-a-large-number">How many ‘digits’ are needed to store a large number?</h3>
 <p><span class="inclass">Determine how many ‘digits’/bits you need</span> to represent the number one billion in:</p>
@@ -450,7 +457,7 @@ window.Quarto = {
 <section id="the-sign-magnitude-representation" class="level3">
 <h3 class="anchored" data-anchor-id="the-sign-magnitude-representation">The Sign-Magnitude Representation</h3>
 <p><span class="fragment">The sign-magnitude representation is one way to represent integers in binary.</span></p>
-<p><span class="fragment">The first bit is reserved for the sign. <code>1</code> <span class="math inline">\(\implies\)</span> negative.</span></p>
+<p><span class="fragment">The most significant bit is reserved for the sign. <code>1</code> <span class="math inline">\(\implies\)</span> negative.</span></p>
 <div class="fragment">
 <p>The number <span class="math inline">\(9\)</span></p>
 <table class="caption-top table">
@@ -564,8 +571,8 @@ window.Quarto = {
 </div>
 <p><span class="inclass">Questions to consider:</span></p>
 <ol type="1">
-<li>What is the largest (+) number that can be shown using A and B ?</li>
-<li>What is the smallest difference between two numbers that can be represented using A and B ?</li>
+<li>What is the largest (+) number that can be shown using A and B ? A: <code>999.999</code> B: <code>9999.99</code></li>
+<li>What is the smallest difference between two numbers that can be represented using A and B ? A: <code>0.001</code> B: <code>0.01</code></li>
 </ol>
 </section>
 <section id="a-rudimentary-floating-point-number-system" class="level3">
@@ -592,7 +599,7 @@ window.Quarto = {
 </tr>
 <tr class="odd">
 <td>Increment</td>
-<td><code>000.000</code></td>
+<td><code>000.001</code></td>
 </tr>
 <tr class="even">
 <td>Pieces of info to store</td>
@@ -636,7 +643,7 @@ window.Quarto = {
 <section id="a-6-digit-decimal-floating-point-representation-needs-to-tell-you" class="level3">
 <h3 class="anchored" data-anchor-id="a-6-digit-decimal-floating-point-representation-needs-to-tell-you">A 6-digit decimal floating-point representation needs to tell you …</h3>
 <ol type="1">
-<li>What each of the 8 digits are.
+<li>What each of the 6 digits are.
 <ul>
 <li>Possibilities: 0 to 9</li>
 </ul></li>
@@ -760,7 +767,7 @@ window.Quarto = {
 <p><span class="fragment">The significand is <span class="math display">\[- \left( 1 \times 2^{0} + 1 \times 2^{-4} + 1 \times 2^{-8} \right) \]</span></span></p>
 <p><span class="fragment"><span class="math display">\[ = - \left( 1 + \frac{1}{16} + \frac{1}{256} \right)\]</span></span></p>
 <p><span class="fragment"><span class="math display">\[ = - \left( \frac{256}{256} + \frac{16}{256} + \frac{1}{256} \right) = - \frac{273}{256} = -1.066406250\]</span></span></p>
-<p><span class="fragment">So the number is <span class="math inline">\(-1.066406250 \times 2^{4} = \fbox{4.265625}\)</span></span></p>
+<p><span class="fragment">So the number is <span class="math inline">\(-1.066406250 \times 2^{2} = \fbox{-4.265625}\)</span></span></p>
 </section>
 <section id="hex-short-form" class="level3">
 <h3 class="anchored" data-anchor-id="hex-short-form">Hex short-form</h3>
@@ -779,6 +786,21 @@ window.Quarto = {
 <ul>
 <li><span class="fragment">Find the binary representation of <code>0x5248</code> and convert it to decimal form using the IEEE standard.</span></li>
 </ul>
+<p>In binary, this number is:</p>
+<ul>
+<li><code>5</code>: <code>0101</code></li>
+<li><code>2</code>: <code>0010</code></li>
+<li><code>4</code>: <code>0100</code></li>
+<li><code>8</code>: <code>1000</code></li>
+<li><code>0x5248</code> = <code>0b0101001001001000</code></li>
+</ul>
+<p><img src="binhex2.png" class="img-fluid"></p>
+<p>Interpreting it using the IEEE standard, we get</p>
+<p><img src="g24.png" class="img-fluid"></p>
+<p>which is <span class="math display">\[+1.1001001000_2 \times 2^{5}\]</span></p>
+<p><span class="math display">\[= 1 \times 2^{0} + 1 \times 2^{-1} + 1 \times 2^{-4} + 1 \times 2^{-7} = 1 + \frac{1}{2} + \frac{1}{16} + \frac{1}{128}\]</span></p>
+<p><span class="math display">\[= \frac{128}{128} + \frac{64}{128} + \frac{8}{128} + \frac{1}{128}\]</span></p>
+<p><span class="math display">\[ = \frac{201}{128} = 1.5703125\]</span></p>
 </section>
 <section id="the-ieee-standard-for-floating-point-numbers" class="level3">
 <h3 class="anchored" data-anchor-id="the-ieee-standard-for-floating-point-numbers">The IEEE Standard for floating-point numbers</h3>

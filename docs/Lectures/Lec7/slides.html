@@ -150,6 +150,12 @@ Emad Masroor
 
   <p class="date">September 22, 2026</p>
 </section>
+<section id="test-1-830-855" class="slide level3">
+<h3>Test 1 8:30 — 8:55</h3>
+<ul>
+<li class="fragment">If you are done early you may leave and return by 9:00</li>
+</ul>
+</section>
 <section id="how-many-digits-are-needed-to-store-a-large-number" class="slide level3">
 <h3>How many ‘digits’ are needed to store a large number?</h3>
 <p><span class="inclass">Determine how many ‘digits’/bits you need</span> to represent the number one billion in:</p>
@@ -212,7 +218,7 @@ Emad Masroor
 <section id="the-sign-magnitude-representation" class="slide level3">
 <h3>The Sign-Magnitude Representation</h3>
 <p><span class="fragment">The sign-magnitude representation is one way to represent integers in binary.</span></p>
-<p><span class="fragment">The first bit is reserved for the sign. <code>1</code> <span class="math inline">\(\implies\)</span> negative.</span></p>
+<p><span class="fragment">The most significant bit is reserved for the sign. <code>1</code> <span class="math inline">\(\implies\)</span> negative.</span></p>
 <div class="fragment">
 <p>The number <span class="math inline">\(9\)</span></p>
 <table class="caption-top" style="width:100%;">
@@ -326,8 +332,8 @@ Emad Masroor
 </div>
 <p><span class="inclass">Questions to consider:</span></p>
 <ol type="1">
-<li class="fragment">What is the largest (+) number that can be shown using A and B ?</li>
-<li class="fragment">What is the smallest difference between two numbers that can be represented using A and B ?</li>
+<li class="fragment">What is the largest (+) number that can be shown using A and B ? A: <code>999.999</code> B: <code>9999.99</code></li>
+<li class="fragment">What is the smallest difference between two numbers that can be represented using A and B ? A: <code>0.001</code> B: <code>0.01</code></li>
 </ol>
 </section>
 <section id="a-rudimentary-floating-point-number-system" class="slide level3">
@@ -354,7 +360,7 @@ Emad Masroor
 </tr>
 <tr class="odd">
 <td>Increment</td>
-<td><code>000.000</code></td>
+<td><code>000.001</code></td>
 </tr>
 <tr class="even">
 <td>Pieces of info to store</td>
@@ -398,7 +404,7 @@ Emad Masroor
 <section id="a-6-digit-decimal-floating-point-representation-needs-to-tell-you" class="slide level3">
 <h3>A 6-digit decimal floating-point representation needs to tell you …</h3>
 <ol type="1">
-<li class="fragment">What each of the 8 digits are.
+<li class="fragment">What each of the 6 digits are.
 <ul>
 <li class="fragment">Possibilities: 0 to 9</li>
 </ul></li>
@@ -522,7 +528,7 @@ Emad Masroor
 <p><span class="fragment">The significand is <span class="math display">\[- \left( 1 \times 2^{0} + 1 \times 2^{-4} + 1 \times 2^{-8} \right) \]</span></span></p>
 <p><span class="fragment"><span class="math display">\[ = - \left( 1 + \frac{1}{16} + \frac{1}{256} \right)\]</span></span></p>
 <p><span class="fragment"><span class="math display">\[ = - \left( \frac{256}{256} + \frac{16}{256} + \frac{1}{256} \right) = - \frac{273}{256} = -1.066406250\]</span></span></p>
-<p><span class="fragment">So the number is <span class="math inline">\(-1.066406250 \times 2^{4} = \fbox{4.265625}\)</span></span></p>
+<p><span class="fragment">So the number is <span class="math inline">\(-1.066406250 \times 2^{2} = \fbox{-4.265625}\)</span></span></p>
 </section>
 <section id="hex-short-form" class="slide level3">
 <h3>Hex short-form</h3>
@@ -541,6 +547,21 @@ Emad Masroor
 <ul>
 <li class="fragment"><span class="fragment">Find the binary representation of <code>0x5248</code> and convert it to decimal form using the IEEE standard.</span></li>
 </ul>
+<p>In binary, this number is:</p>
+<ul>
+<li class="fragment"><code>5</code>: <code>0101</code></li>
+<li class="fragment"><code>2</code>: <code>0010</code></li>
+<li class="fragment"><code>4</code>: <code>0100</code></li>
+<li class="fragment"><code>8</code>: <code>1000</code></li>
+<li class="fragment"><code>0x5248</code> = <code>0b0101001001001000</code></li>
+</ul>
+<p><img data-src="binhex2.png"></p>
+<p>Interpreting it using the IEEE standard, we get</p>
+<p><img data-src="g24.png"></p>
+<p>which is <span class="math display">\[+1.1001001000_2 \times 2^{5}\]</span></p>
+<p><span class="math display">\[= 1 \times 2^{0} + 1 \times 2^{-1} + 1 \times 2^{-4} + 1 \times 2^{-7} = 1 + \frac{1}{2} + \frac{1}{16} + \frac{1}{128}\]</span></p>
+<p><span class="math display">\[= \frac{128}{128} + \frac{64}{128} + \frac{8}{128} + \frac{1}{128}\]</span></p>
+<p><span class="math display">\[ = \frac{201}{128} = 1.5703125\]</span></p>
 </section>
 <section id="the-ieee-standard-for-floating-point-numbers" class="slide level3">
 <h3>The IEEE Standard for floating-point numbers</h3>

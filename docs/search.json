@@ -4,7 +4,7 @@
     "href": "Lectures/Lec7/index.html",
     "title": "Lecture 07",
     "section": "",
-    "text": "How many ‘digits’ are needed to store a large number?\nDetermine how many ‘digits’/bits you need to represent the number one billion in:\n\n\n\nDecimal\n\nAnswer:\n1000000000\n10 digits\n\n\n\nBinary\n\nAnswer:\n0b111011100110101100101000000000\n30 bits.\n\n\n\nHexadecimal\n\nAnswer:\n0x3B9ACA00\n8 bits.\n\n\n\n\n\n\nRange of positive / negative numbers\n\n\n\n\n\n\nWith 8 bits, how many binary integers can be stored? 256\nWhich 256 numbers should we choose?\n\nIf we only care about positive numbers, we could choose\n\n0, 1, 2, …, 255\n1000, 1001, 1002, …, 1255\n\nIf we care about positive and negative numbers:\n\n-1, 0, 1, 2, … 254\n-2, -1, 0, 1, 2, … 253\n-10, -9, -8, -7, -6, … 245\n-128, -127, -126, … 0 … 126, 127\n\nMakes sense to evenly distribute your numbers around zero\n\n\n\n\nThe Sign-Magnitude Representation\nThe sign-magnitude representation is one way to represent integers in binary.\nThe first bit is reserved for the sign. 1 \\(\\implies\\) negative.\n\nThe number \\(9\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSign\n\\(2^7\\)\n\\(2^6\\)\n\\(2^5\\)\n\\(2^4\\)\n\\(2^3\\)\n\\(2^2\\)\n\\(2^1\\)\n\\(2^0\\)\n\n\n\n\n\n0\n0\n0\n0\n0\n1\n0\n0\n1\n\n\n\n\n\n\nThe number \\(-56\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSign\n\\(2^7\\)\n\\(2^6\\)\n\\(2^5\\)\n\\(2^4\\)\n\\(2^3\\)\n\\(2^2\\)\n\\(2^1\\)\n\\(2^0\\)\n\n\n\n\n\n1\n0\n0\n1\n1\n1\n0\n0\n0\n\n\n\n\n\n\n\nFixed Point Representation of numbers\nA fixed point number has a ‘decimal point’ located at a fixed position in the place-value scheme.\nConsider two different fixed point decimal representations of the number one hundred, both with 6 decimal digits.\n\n\n\n\nDecimal point fixed at position 3\n\n100.000\n\n\n\nDecimal point fixed at position 2\n\n0100.00\n\n\n\nQuestions to consider:\n\nWhat is the largest (+) number that can be shown using A and B ?\nWhat is the smallest difference between two numbers that can be represented using A and B ?\n\n\n\nA rudimentary ‘floating point’ number system\n\nWith 6 digits and decimal point fixed in middle:\n\n\n\n\n\nQuantity\nValue\n\n\n\n\nLargest + Number\n999.999\n\n\nSmallest + Number\n000.001\n\n\nIncrement\n000.000\n\n\nPieces of info to store\nsix\n\n\n\n\n\nWith 6 digits and decimal point can float anywhere:\n\n\n\n\n\nQuantity\nValue\n\n\n\n\nLargest + Number\n999999.\n\n\nSmallest + Number\n.000001\n\n\nIncrement\ndepends\n\n\nPieces of info to store\nsix + one\n\n\n\n\n\n\nA 6-digit decimal floating-point representation needs to tell you …\n\nWhat each of the 8 digits are.\n\nPossibilities: 0 to 9\n\nWhere the decimal point is:\n\n7 options\n\n000000.\n00000.0\n0000.00\n000.000\n00.0000\n0.00000\n.000000\n\n\n\n\n\nInstead … use ‘Scientific Notation’\nRecall the scientific notation of numbers: \\[-2.34 \\times 10^5\\]\n\nThis conveys three pieces of information:\n\nThe sign\n3 digits for the number\n1 digit for the exponent\n\nNote that the \\(a \\times 10^{b}\\) structure is assumed and does not need to be stored every time the computer stores a number.\n\n\n\nStandard (IEEE) Format for 16-bit floating-point binary numbers\n\n\n\n\n\n\n1 bit stores the sign\n10 bits store the number, known as the significand. \\(1\\) is assumed to be the 11th bit, but it is not stored.\n5 bits store the exponent.\n\nSmallest 5-bit binary number 00000\\(= 0\\) and largest 5-bit binary number 11111\\(=\\) 31\nTo get negative exponents, we assume a bias in the exponent bits.\nSubtract fifteen from the exponent.\n\nThe structure of the number is assumed; only the 16-bit content is stored in computer’s memory.\nNeed 16 bits of memory to store this number.\n\n\n\nPlace Value Notation for numbers smaller than 1\n\n1 is a special number in the place value system.\nA ‘decimal point’ — a more ecumenical name would be ‘fractional point’ — is needed to show any numbers smaller than 1.\nTo interpret the number 003.0025,\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlace\n\\(10^2\\)\n\\(10^{1}\\)\n\\(10^{0}\\)\n\\(.\\)\n\\(10^{-1}\\)\n\\(10^{-2}\\)\n\\(10^{-3}\\)\n\\(10^{-4}\\)\n\n\n\n\nValue\n0\n0\n3\n.\n0\n0\n2\n5\n\n\n\n0\n0\n\\(3\\times 10^{0}\\)\n\n0\n0\n\\(2 \\times 10^{-3}\\)\n\\(5 \\times 10^{-4}\\)\n\n\n\n\n\n\nInterpreting a 16-bit binary float\nFloat Toy\nWith the IEEE format, the 16 bits\n\nrepresent the number\n\nwhich, in binary form, should be intepreted as \\[-1.0001000100_2 \\times 2^{(10001_2 \\text{ minus fifteen})}\\]\nThe exponent is 0b10001 minus fifteen, i.e., \\(17 - 15 = 2\\)\nThe significand is \\[- \\left( 1 \\times 2^{0} + 1 \\times 2^{-4} + 1 \\times 2^{-8} \\right) \\]\n\\[ = - \\left( 1 + \\frac{1}{16} + \\frac{1}{256} \\right)\\]\n\\[ = - \\left( \\frac{256}{256} + \\frac{16}{256} + \\frac{1}{256} \\right) = - \\frac{273}{256} = -1.066406250\\]\nSo the number is \\(-1.066406250 \\times 2^{4} = \\fbox{4.265625}\\)\n\n\nHex short-form\n\nBinary numbers are very long\nHexadecimal is often used as a short form.\nA 16-bit binary number is a 4-bit hexadecimal number\n\n\n\nSo the number 0b1100010001000100 is often written as 0xC444.\n\n\n\nPractice with 16-bit binary floats\n\nFind the binary representation of 0x5248 and convert it to decimal form using the IEEE standard.\n\n\n\nThe IEEE Standard for floating-point numbers\n\n\n\nSize\nSign\nSignificand\nExponent\nBias\nColloquial\n\n\n\n\n16-bit\n1\n10\n5\n15\nHalf precision\n\n\n32-bit\n1\n23\n8\n127\nHalf precision\n\n\n64-bit\n1\n52\n11\n1023\nHalf precision",
+    "text": "Test 1 8:30 — 8:55\n\nIf you are done early you may leave and return by 9:00\n\n\n\nHow many ‘digits’ are needed to store a large number?\nDetermine how many ‘digits’/bits you need to represent the number one billion in:\n\n\n\nDecimal\n\nAnswer:\n1000000000\n10 digits\n\n\n\nBinary\n\nAnswer:\n0b111011100110101100101000000000\n30 bits.\n\n\n\nHexadecimal\n\nAnswer:\n0x3B9ACA00\n8 bits.\n\n\n\n\n\n\nRange of positive / negative numbers\n\n\n\n\n\n\nWith 8 bits, how many binary integers can be stored? 256\nWhich 256 numbers should we choose?\n\nIf we only care about positive numbers, we could choose\n\n0, 1, 2, …, 255\n1000, 1001, 1002, …, 1255\n\nIf we care about positive and negative numbers:\n\n-1, 0, 1, 2, … 254\n-2, -1, 0, 1, 2, … 253\n-10, -9, -8, -7, -6, … 245\n-128, -127, -126, … 0 … 126, 127\n\nMakes sense to evenly distribute your numbers around zero\n\n\n\n\nThe Sign-Magnitude Representation\nThe sign-magnitude representation is one way to represent integers in binary.\nThe most significant bit is reserved for the sign. 1 \\(\\implies\\) negative.\n\nThe number \\(9\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSign\n\\(2^7\\)\n\\(2^6\\)\n\\(2^5\\)\n\\(2^4\\)\n\\(2^3\\)\n\\(2^2\\)\n\\(2^1\\)\n\\(2^0\\)\n\n\n\n\n\n0\n0\n0\n0\n0\n1\n0\n0\n1\n\n\n\n\n\n\nThe number \\(-56\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSign\n\\(2^7\\)\n\\(2^6\\)\n\\(2^5\\)\n\\(2^4\\)\n\\(2^3\\)\n\\(2^2\\)\n\\(2^1\\)\n\\(2^0\\)\n\n\n\n\n\n1\n0\n0\n1\n1\n1\n0\n0\n0\n\n\n\n\n\n\n\nFixed Point Representation of numbers\nA fixed point number has a ‘decimal point’ located at a fixed position in the place-value scheme.\nConsider two different fixed point decimal representations of the number one hundred, both with 6 decimal digits.\n\n\n\n\nDecimal point fixed at position 3\n\n100.000\n\n\n\nDecimal point fixed at position 2\n\n0100.00\n\n\n\nQuestions to consider:\n\nWhat is the largest (+) number that can be shown using A and B ? A: 999.999 B: 9999.99\nWhat is the smallest difference between two numbers that can be represented using A and B ? A: 0.001 B: 0.01\n\n\n\nA rudimentary ‘floating point’ number system\n\nWith 6 digits and decimal point fixed in middle:\n\n\n\n\n\nQuantity\nValue\n\n\n\n\nLargest + Number\n999.999\n\n\nSmallest + Number\n000.001\n\n\nIncrement\n000.001\n\n\nPieces of info to store\nsix\n\n\n\n\n\nWith 6 digits and decimal point can float anywhere:\n\n\n\n\n\nQuantity\nValue\n\n\n\n\nLargest + Number\n999999.\n\n\nSmallest + Number\n.000001\n\n\nIncrement\ndepends\n\n\nPieces of info to store\nsix + one\n\n\n\n\n\n\nA 6-digit decimal floating-point representation needs to tell you …\n\nWhat each of the 6 digits are.\n\nPossibilities: 0 to 9\n\nWhere the decimal point is:\n\n7 options\n\n000000.\n00000.0\n0000.00\n000.000\n00.0000\n0.00000\n.000000\n\n\n\n\n\nInstead … use ‘Scientific Notation’\nRecall the scientific notation of numbers: \\[-2.34 \\times 10^5\\]\n\nThis conveys three pieces of information:\n\nThe sign\n3 digits for the number\n1 digit for the exponent\n\nNote that the \\(a \\times 10^{b}\\) structure is assumed and does not need to be stored every time the computer stores a number.\n\n\n\nStandard (IEEE) Format for 16-bit floating-point binary numbers\n\n\n\n\n\n\n1 bit stores the sign\n10 bits store the number, known as the significand. \\(1\\) is assumed to be the 11th bit, but it is not stored.\n5 bits store the exponent.\n\nSmallest 5-bit binary number 00000\\(= 0\\) and largest 5-bit binary number 11111\\(=\\) 31\nTo get negative exponents, we assume a bias in the exponent bits.\nSubtract fifteen from the exponent.\n\nThe structure of the number is assumed; only the 16-bit content is stored in computer’s memory.\nNeed 16 bits of memory to store this number.\n\n\n\nPlace Value Notation for numbers smaller than 1\n\n1 is a special number in the place value system.\nA ‘decimal point’ — a more ecumenical name would be ‘fractional point’ — is needed to show any numbers smaller than 1.\nTo interpret the number 003.0025,\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlace\n\\(10^2\\)\n\\(10^{1}\\)\n\\(10^{0}\\)\n\\(.\\)\n\\(10^{-1}\\)\n\\(10^{-2}\\)\n\\(10^{-3}\\)\n\\(10^{-4}\\)\n\n\n\n\nValue\n0\n0\n3\n.\n0\n0\n2\n5\n\n\n\n0\n0\n\\(3\\times 10^{0}\\)\n\n0\n0\n\\(2 \\times 10^{-3}\\)\n\\(5 \\times 10^{-4}\\)\n\n\n\n\n\n\nInterpreting a 16-bit binary float\nFloat Toy\nWith the IEEE format, the 16 bits\n\nrepresent the number\n\nwhich, in binary form, should be intepreted as \\[-1.0001000100_2 \\times 2^{(10001_2 \\text{ minus fifteen})}\\]\nThe exponent is 0b10001 minus fifteen, i.e., \\(17 - 15 = 2\\)\nThe significand is \\[- \\left( 1 \\times 2^{0} + 1 \\times 2^{-4} + 1 \\times 2^{-8} \\right) \\]\n\\[ = - \\left( 1 + \\frac{1}{16} + \\frac{1}{256} \\right)\\]\n\\[ = - \\left( \\frac{256}{256} + \\frac{16}{256} + \\frac{1}{256} \\right) = - \\frac{273}{256} = -1.066406250\\]\nSo the number is \\(-1.066406250 \\times 2^{2} = \\fbox{-4.265625}\\)\n\n\nHex short-form\n\nBinary numbers are very long\nHexadecimal is often used as a short form.\nA 16-bit binary number is a 4-bit hexadecimal number\n\n\n\nSo the number 0b1100010001000100 is often written as 0xC444.\n\n\n\nPractice with 16-bit binary floats\n\nFind the binary representation of 0x5248 and convert it to decimal form using the IEEE standard.\n\nIn binary, this number is:\n\n5: 0101\n2: 0010\n4: 0100\n8: 1000\n0x5248 = 0b0101001001001000\n\n\nInterpreting it using the IEEE standard, we get\n\nwhich is \\[+1.1001001000_2 \\times 2^{5}\\]\n\\[= 1 \\times 2^{0} + 1 \\times 2^{-1} + 1 \\times 2^{-4} + 1 \\times 2^{-7} = 1 + \\frac{1}{2} + \\frac{1}{16} + \\frac{1}{128}\\]\n\\[= \\frac{128}{128} + \\frac{64}{128} + \\frac{8}{128} + \\frac{1}{128}\\]\n\\[ = \\frac{201}{128} = 1.5703125\\]\n\n\nThe IEEE Standard for floating-point numbers\n\n\n\nSize\nSign\nSignificand\nExponent\nBias\nColloquial\n\n\n\n\n16-bit\n1\n10\n5\n15\nHalf precision\n\n\n32-bit\n1\n23\n8\n127\nHalf precision\n\n\n64-bit\n1\n52\n11\n1023\nHalf precision",
     "crumbs": [
       "Homepage",
       "Lectures",
@@ -321,6 +321,174 @@
       "Homepage",
       "Past E21 Projects"
     ]
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#image-morphing-and-transformation-using-python",
+    "href": "PastProjects/past-projects-slides.html#image-morphing-and-transformation-using-python",
+    "title": "Past E21 Projects",
+    "section": "Image Morphing and Transformation using Python",
+    "text": "Image Morphing and Transformation using Python"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#d-metal-detecting-robot",
+    "href": "PastProjects/past-projects-slides.html#d-metal-detecting-robot",
+    "title": "Past E21 Projects",
+    "section": "1D Metal Detecting Robot",
+    "text": "1D Metal Detecting Robot"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#electronic-plastic-sorter",
+    "href": "PastProjects/past-projects-slides.html#electronic-plastic-sorter",
+    "title": "Past E21 Projects",
+    "section": "Electronic Plastic Sorter",
+    "text": "Electronic Plastic Sorter"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#course-selection-optimization",
+    "href": "PastProjects/past-projects-slides.html#course-selection-optimization",
+    "title": "Past E21 Projects",
+    "section": "Course Selection Optimization",
+    "text": "Course Selection Optimization"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#automated-plant-care-system",
+    "href": "PastProjects/past-projects-slides.html#automated-plant-care-system",
+    "title": "Past E21 Projects",
+    "section": "Automated Plant Care System",
+    "text": "Automated Plant Care System"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#simon-says-an-embedded-systems-memory-game",
+    "href": "PastProjects/past-projects-slides.html#simon-says-an-embedded-systems-memory-game",
+    "title": "Past E21 Projects",
+    "section": "Simon Says: An Embedded Systems Memory Game",
+    "text": "Simon Says: An Embedded Systems Memory Game"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#color-sensor",
+    "href": "PastProjects/past-projects-slides.html#color-sensor",
+    "title": "Past E21 Projects",
+    "section": "Color Sensor",
+    "text": "Color Sensor"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#sound-responsive-catapult-with-led-digit-panel",
+    "href": "PastProjects/past-projects-slides.html#sound-responsive-catapult-with-led-digit-panel",
+    "title": "Past E21 Projects",
+    "section": "Sound-Responsive Catapult with LED Digit Panel",
+    "text": "Sound-Responsive Catapult with LED Digit Panel"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#output-maximizing-solar-panel",
+    "href": "PastProjects/past-projects-slides.html#output-maximizing-solar-panel",
+    "title": "Past E21 Projects",
+    "section": "Output Maximizing Solar PAnel",
+    "text": "Output Maximizing Solar PAnel"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#a-3-dof-robotic-hand-with-tendon-based-finger-mechanics-and-servo-driven-control",
+    "href": "PastProjects/past-projects-slides.html#a-3-dof-robotic-hand-with-tendon-based-finger-mechanics-and-servo-driven-control",
+    "title": "Past E21 Projects",
+    "section": "A 3 DOF Robotic Hand with Tendon-based finger mechanics and servo-driven control",
+    "text": "A 3 DOF Robotic Hand with Tendon-based finger mechanics and servo-driven control"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#screwing-no-hands",
+    "href": "PastProjects/past-projects-slides.html#screwing-no-hands",
+    "title": "Past E21 Projects",
+    "section": "Screwing, No Hands",
+    "text": "Screwing, No Hands"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#baby-boombox-a-mp3-music-player",
+    "href": "PastProjects/past-projects-slides.html#baby-boombox-a-mp3-music-player",
+    "title": "Past E21 Projects",
+    "section": "Baby Boombox: A MP3 Music Player",
+    "text": "Baby Boombox: A MP3 Music Player"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#progress-toward-a-weatable-grip-assistance-device",
+    "href": "PastProjects/past-projects-slides.html#progress-toward-a-weatable-grip-assistance-device",
+    "title": "Past E21 Projects",
+    "section": "Progress Toward a Weatable Grip-Assistance Device",
+    "text": "Progress Toward a Weatable Grip-Assistance Device"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#whiteboard-erasing-robot",
+    "href": "PastProjects/past-projects-slides.html#whiteboard-erasing-robot",
+    "title": "Past E21 Projects",
+    "section": "Whiteboard-Erasing Robot",
+    "text": "Whiteboard-Erasing Robot"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#modeling-the-transmission-of-the-monkeypox-virus-infection-with-vaccination-and-other-intervention-measures",
+    "href": "PastProjects/past-projects-slides.html#modeling-the-transmission-of-the-monkeypox-virus-infection-with-vaccination-and-other-intervention-measures",
+    "title": "Past E21 Projects",
+    "section": "Modeling the Transmission of the Monkeypox Virus Infection with Vaccination and other intervention measures",
+    "text": "Modeling the Transmission of the Monkeypox Virus Infection with Vaccination and other intervention measures"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#joystick-controlled-dual-axis-rotation-system",
+    "href": "PastProjects/past-projects-slides.html#joystick-controlled-dual-axis-rotation-system",
+    "title": "Past E21 Projects",
+    "section": "Joystick-controlled Dual-Axis Rotation System",
+    "text": "Joystick-controlled Dual-Axis Rotation System"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#simulating-particle-dynamics-collisions-wall-interactions-and-multi-particle-systems",
+    "href": "PastProjects/past-projects-slides.html#simulating-particle-dynamics-collisions-wall-interactions-and-multi-particle-systems",
+    "title": "Past E21 Projects",
+    "section": "Simulating Particle Dynamics: Collisions, Wall interactions, and multi-particle systems",
+    "text": "Simulating Particle Dynamics: Collisions, Wall interactions, and multi-particle systems"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#magic-piano-irl",
+    "href": "PastProjects/past-projects-slides.html#magic-piano-irl",
+    "title": "Past E21 Projects",
+    "section": "Magic Piano IRL",
+    "text": "Magic Piano IRL"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#manually-targeted-tactical-flywheel-based-projectile-launch-system",
+    "href": "PastProjects/past-projects-slides.html#manually-targeted-tactical-flywheel-based-projectile-launch-system",
+    "title": "Past E21 Projects",
+    "section": "Manually Targeted Tactical Flywheel-Based Projectile Launch System",
+    "text": "Manually Targeted Tactical Flywheel-Based Projectile Launch System"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#grayscale-camera-with-circuitplayground-and-a-photoresistor",
+    "href": "PastProjects/past-projects-slides.html#grayscale-camera-with-circuitplayground-and-a-photoresistor",
+    "title": "Past E21 Projects",
+    "section": "Grayscale Camera with CircuitPlayground and a Photoresistor",
+    "text": "Grayscale Camera with CircuitPlayground and a Photoresistor"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#polaris-a-wireless-charging-speaker-with-interactive-sensing",
+    "href": "PastProjects/past-projects-slides.html#polaris-a-wireless-charging-speaker-with-interactive-sensing",
+    "title": "Past E21 Projects",
+    "section": "POLARIS: A Wireless-Charging Speaker with Interactive Sensing",
+    "text": "POLARIS: A Wireless-Charging Speaker with Interactive Sensing"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#color-based-marble-sorting-system",
+    "href": "PastProjects/past-projects-slides.html#color-based-marble-sorting-system",
+    "title": "Past E21 Projects",
+    "section": "Color-Based Marble Sorting System",
+    "text": "Color-Based Marble Sorting System"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#isa-injection-system-automation",
+    "href": "PastProjects/past-projects-slides.html#isa-injection-system-automation",
+    "title": "Past E21 Projects",
+    "section": "ISA: Injection System Automation",
+    "text": "ISA: Injection System Automation"
+  },
+  {
+    "objectID": "PastProjects/past-projects-slides.html#how-close-are-you-to-your-nearest-bus-stop",
+    "href": "PastProjects/past-projects-slides.html#how-close-are-you-to-your-nearest-bus-stop",
+    "title": "Past E21 Projects",
+    "section": "How close are you to your nearest bus stop?",
+    "text": "How close are you to your nearest bus stop?"
   },
   {
     "objectID": "Homework/HW1/index.html",
