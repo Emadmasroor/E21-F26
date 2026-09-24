@@ -396,6 +396,17 @@ window.Quarto = {
 <section id="practice-with-16-bit-binary-floats" class="level3 scrollable">
 <h3 class="scrollable anchored" data-anchor-id="practice-with-16-bit-binary-floats">Practice with 16-bit binary floats</h3>
 <p><span class="fragment"><span class="inclass">Find the binary representation</span> of <code>0x5248</code> and convert it to decimal form using the IEEE standard.</span></p>
+<p><span class="fragment">In binary, this number is:</span></p>
+<p><span class="fragment"><code>5</code>: <code>0101</code> —</span> <span class="fragment"><code>2</code>: <code>0010</code> —</span> <span class="fragment"><code>4</code>: <code>0100</code> —</span> <span class="fragment"><code>8</code>: <code>1000</code></span></p>
+<p><span class="fragment"><code>0x5248</code> = <code>0b0101001001001000</code></span></p>
+<p><img src="binhex2.png" class="fragment img-fluid"></p>
+<p><span class="fragment">Interpreting it using the IEEE standard, we get</span></p>
+<p><img src="g24.png" class="fragment img-fluid"></p>
+<p><span class="fragment">which is <span class="math display">\[+1.1001001000_2 \times 2^{5}\]</span></span></p>
+<p><span class="fragment"><span class="math display">\[= 2^5 \times \left( 1 \times 2^{0} + 1 \times 2^{-1} + 1 \times 2^{-4} + 1 \times 2^{-7} \right)\]</span></span></p>
+<p><span class="fragment"><span class="math display">\[= 32 \times \left(1 + \frac{1}{2} + \frac{1}{16} + \frac{1}{128} \right)\]</span></span></p>
+<p><span class="fragment"><span class="math display">\[= 32 \times \left( \frac{128}{128} + \frac{64}{128} + \frac{8}{128} + \frac{1}{128} \right) \]</span></span></p>
+<p><span class="fragment"><span class="math display">\[ = 32 \times \frac{201}{128} = \frac{201}{4} =  50.25\]</span></span></p>
 </section>
 <section id="and-64--bit-floating-point-numbers" class="level3 smaller">
 <h3 class="smaller anchored" data-anchor-id="and-64--bit-floating-point-numbers">8-, 16-, 32- and 64- bit floating point numbers</h3>
@@ -497,8 +508,9 @@ window.Quarto = {
 <ul>
 <li>There are 1,024 ‘16-bit floats’ between 4 and 8. Seems enough to cover any quantity we would need (?)
 <ul>
-<li><p>The number 4 is: <img src="num4.png" class="img-fluid"> </p></li>
-<li><p>The next-biggest number is: <img src="num41.png" class="img-fluid"> </p></li>
+<li><p>The number 4 is: <img src="num4.png" class="img-fluid"> <span data-when-meta="uncover"><span class="math inline">\(1.00...00 \times 2^{17-15} = 4\)</span></span></p></li>
+<li><p>The next-biggest number is: <img src="num41.png" class="img-fluid"> <span data-when-meta="uncover"><span class="math inline">\(1.00...01_2 \times 2^{17-15} = \left( 1 + \frac{1}{2^{10}}\right) \times 2^2\)</span></span></p>
+<p><span data-when-meta="uncover"><span class="math inline">\(= \frac{1025}{1024} \times 4 = \frac{1025}{256} \approx 4.0039\)</span></span></p></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -530,7 +542,9 @@ window.Quarto = {
 <div class="column" style="width:50%;">
 <p><img src="num82.png" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
-
+<p><span class="math inline">\(1.00...010_2 \times 2^{18-15}\)</span></p>
+<p><span class="math inline">\(= \left(1 + \frac{1}{2^{9}} \right) \times 2^{3}\)</span></p>
+<p><span class="math inline">\(= \frac{513}{512} \times 8 = \frac{513}{64} \approx 8.0156\)</span></p>
 </div>
 </div></li>
 <li><p>Increment between successive numbers: <span class="math display">\[ 8 \rightarrow 8.0078 \rightarrow 8.0156 \rightarrow \dots \]</span></p></li>
@@ -548,7 +562,8 @@ window.Quarto = {
 <li>There are 1,024 ‘16-bit floats’ between 2048 and 4096. Seems enough to cover any quantity we would need (????)
 <ul>
 <li><p>The number 2048 is: <img src="num2048.png" class="img-fluid"> <span class="math inline">\(1.00...00 \times 2^{26-15} = 2048\)</span></p></li>
-<li><p>The next-biggest number is: <img src="num2050.png" class="img-fluid"> </p></li>
+<li><p>The next-biggest number is: <img src="num2050.png" class="img-fluid"> <span data-when-meta="uncover"><span class="math inline">\(1.00...01_2 \times 2^{27-15} = \left( 1 + \frac{1}{2^{10}}\right) \times 2^12\)</span></span></p>
+<p><span data-when-meta="uncover"><span class="math inline">\(= \frac{1025}{1024} \times 2048 = 2050\)</span></span></p></li>
 </ul></li>
 <li>The increment between <span class="math inline">\(2^{11}\)</span> and <span class="math inline">\(2^{12}\)</span> appears to be … <span class="math inline">\(2\)</span></li>
 </ul>

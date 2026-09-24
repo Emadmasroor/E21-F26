@@ -153,6 +153,17 @@ Emad Masroor
 <section id="practice-with-16-bit-binary-floats" class="slide level3 scrollable">
 <h3>Practice with 16-bit binary floats</h3>
 <p><span class="fragment"><span class="inclass">Find the binary representation</span> of <code>0x5248</code> and convert it to decimal form using the IEEE standard.</span></p>
+<p><span class="fragment">In binary, this number is:</span></p>
+<p><span class="fragment"><code>5</code>: <code>0101</code> —</span> <span class="fragment"><code>2</code>: <code>0010</code> —</span> <span class="fragment"><code>4</code>: <code>0100</code> —</span> <span class="fragment"><code>8</code>: <code>1000</code></span></p>
+<p><span class="fragment"><code>0x5248</code> = <code>0b0101001001001000</code></span></p>
+<p><img data-src="binhex2.png" class="fragment"></p>
+<p><span class="fragment">Interpreting it using the IEEE standard, we get</span></p>
+<p><img data-src="g24.png" class="fragment"></p>
+<p><span class="fragment">which is <span class="math display">\[+1.1001001000_2 \times 2^{5}\]</span></span></p>
+<p><span class="fragment"><span class="math display">\[= 2^5 \times \left( 1 \times 2^{0} + 1 \times 2^{-1} + 1 \times 2^{-4} + 1 \times 2^{-7} \right)\]</span></span></p>
+<p><span class="fragment"><span class="math display">\[= 32 \times \left(1 + \frac{1}{2} + \frac{1}{16} + \frac{1}{128} \right)\]</span></span></p>
+<p><span class="fragment"><span class="math display">\[= 32 \times \left( \frac{128}{128} + \frac{64}{128} + \frac{8}{128} + \frac{1}{128} \right) \]</span></span></p>
+<p><span class="fragment"><span class="math display">\[ = 32 \times \frac{201}{128} = \frac{201}{4} =  50.25\]</span></span></p>
 </section>
 <section id="and-64--bit-floating-point-numbers" class="slide level3 smaller">
 <h3>8-, 16-, 32- and 64- bit floating point numbers</h3>
@@ -252,8 +263,9 @@ Emad Masroor
 <ul>
 <li class="fragment">There are 1,024 ‘16-bit floats’ between 4 and 8. Seems enough to cover any quantity we would need (?)
 <ul>
-<li class="fragment"><p>The number 4 is: <img data-src="num4.png"> </p></li>
-<li class="fragment"><p>The next-biggest number is: <img data-src="num41.png"> </p></li>
+<li class="fragment"><p>The number 4 is: <img data-src="num4.png"> <span data-when-meta="uncover"><span class="math inline">\(1.00...00 \times 2^{17-15} = 4\)</span></span></p></li>
+<li class="fragment"><p>The next-biggest number is: <img data-src="num41.png"> <span data-when-meta="uncover"><span class="math inline">\(1.00...01_2 \times 2^{17-15} = \left( 1 + \frac{1}{2^{10}}\right) \times 2^2\)</span></span></p>
+<p><span data-when-meta="uncover"><span class="math inline">\(= \frac{1025}{1024} \times 4 = \frac{1025}{256} \approx 4.0039\)</span></span></p></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -283,7 +295,9 @@ Emad Masroor
 <div class="column" style="width:50%;">
 <p><img data-src="num82.png"></p>
 </div><div class="column" style="width:50%;">
-
+<p><span class="math inline">\(1.00...010_2 \times 2^{18-15}\)</span></p>
+<p><span class="math inline">\(= \left(1 + \frac{1}{2^{9}} \right) \times 2^{3}\)</span></p>
+<p><span class="math inline">\(= \frac{513}{512} \times 8 = \frac{513}{64} \approx 8.0156\)</span></p>
 </div></div></li>
 <li class="fragment"><p>Increment between successive numbers: <span class="math display">\[ 8 \rightarrow 8.0078 \rightarrow 8.0156 \rightarrow \dots \]</span></p></li>
 <li class="fragment"><p>Putting this into fractions <span class="math display">\[ 8 \rightarrow \frac{1025}{128} \rightarrow \frac{513}{64} \rightarrow \dots \]</span></p></li>
@@ -300,7 +314,8 @@ Emad Masroor
 <li class="fragment">There are 1,024 ‘16-bit floats’ between 2048 and 4096. Seems enough to cover any quantity we would need (????)
 <ul>
 <li class="fragment"><p>The number 2048 is: <img data-src="num2048.png"> <span class="math inline">\(1.00...00 \times 2^{26-15} = 2048\)</span></p></li>
-<li class="fragment"><p>The next-biggest number is: <img data-src="num2050.png"> </p></li>
+<li class="fragment"><p>The next-biggest number is: <img data-src="num2050.png"> <span data-when-meta="uncover"><span class="math inline">\(1.00...01_2 \times 2^{27-15} = \left( 1 + \frac{1}{2^{10}}\right) \times 2^12\)</span></span></p>
+<p><span data-when-meta="uncover"><span class="math inline">\(= \frac{1025}{1024} \times 2048 = 2050\)</span></span></p></li>
 </ul></li>
 <li class="fragment">The increment between <span class="math inline">\(2^{11}\)</span> and <span class="math inline">\(2^{12}\)</span> appears to be … <span class="math inline">\(2\)</span></li>
 </ul>
