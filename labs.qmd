@@ -13,12 +13,12 @@ Homepage for labs.
 Labs will be held on Mondays and Thursdays.
 
 
-| Lab                   | Topics                              | Starting    |
-| --------------------- | ----------------------------------- | ----------- |
-| [Lab 1](Labs/lab1.html)    | Capacitive touch passcode           | Thu, Sep 10 |
-| Lab 2                 | Joystick, loops, and functions      | Thu, Sep 24 |
-| Lab 3                 | PPen plotter, IK, and linear motion | Thu, Oct 8  |
-| Lab 4                 | Cubic Spline Interpolation          | Thu, Oct 29 |
-| Lab 5                 | Fourier Series and Superposition    | Thu, Nov 12 |
-|                       | Final Project                       |             |
+| Lab                     | Topics                              | Starting    |
+| ----------------------- | ----------------------------------- | ----------- |
+| [Lab 1](Labs/lab1.html) | Capacitive touch passcode           | Thu, Sep 10 |
+| [Lab 2](Labs/lab2.html) | Joystick, loops, and functions      | Thu, Sep 24 |
+| Lab 3                   | PPen plotter, IK, and linear motion | Thu, Oct 8  |
+| Lab 4                   | Cubic Spline Interpolation          | Thu, Oct 29 |
+| Lab 5                   | Fourier Series and Superposition    | Thu, Nov 12 |
+|                         | Final Project                       |             |
 
