@@ -256,7 +256,7 @@ Let's look at three consecutive floating point numbers.
 
 - `NaN` stands for 'Not A Number'. For example, the result of dividing by zero.
   - The largest exponent (`11111` for 16-bit numbers) is reserved for `NaN`.
-  - [Determine the largest possible 16-bit floating-point number]{.inclass}
+  - [Find the largest possible 16-bit floating-point number]{.inclass}
 - The smallest exponent (`00000` for 16-bit numbers) is treated specially.
   - Normally, we would expect to interpret them as $2^{0-15} \times 1.0001000101_2$ etc.
   - Instead, the smallest exponent (`00000`) is assumed to represent $2^{-14}$, the same as `00001`. To get smaller numbers, the _significand_ is changed from, e.g., $1.0001000101_2$ to $0.0001000101_2$
