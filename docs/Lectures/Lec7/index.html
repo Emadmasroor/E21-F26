@@ -256,6 +256,12 @@ window.Quarto = {
  <span class="menu-text">Lecture 07</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec8/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 08</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -349,8 +355,6 @@ window.Quarto = {
   <li><a href="#place-value-notation-for-numbers-smaller-than-1" id="toc-place-value-notation-for-numbers-smaller-than-1" class="nav-link" data-scroll-target="#place-value-notation-for-numbers-smaller-than-1">Place Value Notation for numbers smaller than 1</a></li>
   <li><a href="#interpreting-a-16-bit-binary-float" id="toc-interpreting-a-16-bit-binary-float" class="nav-link" data-scroll-target="#interpreting-a-16-bit-binary-float">Interpreting a 16-bit binary float</a></li>
   <li><a href="#hex-short-form" id="toc-hex-short-form" class="nav-link" data-scroll-target="#hex-short-form">Hex short-form</a></li>
-  <li><a href="#practice-with-16-bit-binary-floats" id="toc-practice-with-16-bit-binary-floats" class="nav-link" data-scroll-target="#practice-with-16-bit-binary-floats">Practice with 16-bit binary floats</a></li>
-  <li><a href="#the-ieee-standard-for-floating-point-numbers" id="toc-the-ieee-standard-for-floating-point-numbers" class="nav-link" data-scroll-target="#the-ieee-standard-for-floating-point-numbers">The IEEE Standard for floating-point numbers</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
@@ -780,68 +784,6 @@ window.Quarto = {
 <ul>
 <li>So the number <code>0b1100010001000100</code> is often written as <code>0xC444</code>.</li>
 </ul>
-</section>
-<section id="practice-with-16-bit-binary-floats" class="level3">
-<h3 class="anchored" data-anchor-id="practice-with-16-bit-binary-floats">Practice with 16-bit binary floats</h3>
-<ul>
-<li><span class="fragment">Find the binary representation of <code>0x5248</code> and convert it to decimal form using the IEEE standard.</span></li>
-</ul>
-<p>In binary, this number is:</p>
-<ul>
-<li><code>5</code>: <code>0101</code></li>
-<li><code>2</code>: <code>0010</code></li>
-<li><code>4</code>: <code>0100</code></li>
-<li><code>8</code>: <code>1000</code></li>
-<li><code>0x5248</code> = <code>0b0101001001001000</code></li>
-</ul>
-<p><img src="binhex2.png" class="img-fluid"></p>
-<p>Interpreting it using the IEEE standard, we get</p>
-<p><img src="g24.png" class="img-fluid"></p>
-<p>which is <span class="math display">\[+1.1001001000_2 \times 2^{5}\]</span></p>
-<p><span class="math display">\[= 1 \times 2^{0} + 1 \times 2^{-1} + 1 \times 2^{-4} + 1 \times 2^{-7} = 1 + \frac{1}{2} + \frac{1}{16} + \frac{1}{128}\]</span></p>
-<p><span class="math display">\[= \frac{128}{128} + \frac{64}{128} + \frac{8}{128} + \frac{1}{128}\]</span></p>
-<p><span class="math display">\[ = \frac{201}{128} = 1.5703125\]</span></p>
-</section>
-<section id="the-ieee-standard-for-floating-point-numbers" class="level3">
-<h3 class="anchored" data-anchor-id="the-ieee-standard-for-floating-point-numbers">The IEEE Standard for floating-point numbers</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Size</th>
-<th>Sign</th>
-<th>Significand</th>
-<th>Exponent</th>
-<th>Bias</th>
-<th>Colloquial</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>16-bit</td>
-<td>1</td>
-<td>10</td>
-<td>5</td>
-<td>15</td>
-<td>Half precision</td>
-</tr>
-<tr class="even">
-<td>32-bit</td>
-<td>1</td>
-<td>23</td>
-<td>8</td>
-<td>127</td>
-<td>Half precision</td>
-</tr>
-<tr class="odd">
-<td>64-bit</td>
-<td>1</td>
-<td>52</td>
-<td>11</td>
-<td>1023</td>
-<td>Half precision</td>
-</tr>
-</tbody>
-</table>
 
 
 </section>

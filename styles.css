@@ -3,3 +3,17 @@
   color: green;
   text-decoration: underline;
 }
+/* Minimal soft highlight for Quarto HTML & RevealJS */
+.emph {
+  background-color: rgba(217, 119, 6, 0.2); /* Soft tint based on your alert-orange */
+  color: inherit;
+  padding: 0.01em 0.1em;
+  border-radius: 0.2em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Prevents overflow*/
+.reveal ul {
+  max-width: 100%;
+}
