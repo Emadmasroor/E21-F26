@@ -1106,5 +1106,179 @@
       "Lectures",
       "Lecture 08"
     ]
+  },
+  {
+    "objectID": "Homework/HW3/solutions.html#executing-an-action-once-every-n-steps",
+    "href": "Homework/HW3/solutions.html#executing-an-action-once-every-n-steps",
+    "title": "HW 3 Solutions",
+    "section": "3.1 Executing an action once every n steps",
+    "text": "3.1 Executing an action once every n steps\nUse the Circuit Playground Express to play each note from 220 Hz to 440 Hz in increments of 10 Hz (i.e., play 220, 230, 240 ,…), holding each note for 0.2 seconds.\nYou may wish to consult the code provided below, which repeatedly plays 440 Hz 3 times for 0.5 seconds each.\nfrom adafruit_circuitplayground.express import cpx\nimport time\ndelay = 0.2 # seconds\nfor i in range(3):\n    cpx.start_tone(440)\n    time.sleep(delay)\n    cpx.stop_tone()\nWrite four independent programs that accomplish this objective using the following three approaches. Combine your code into a single .py file. Running your file should therefore repeat the same sound pattern four times.\n\nBy looping over a range() object (see documentation here) for which you specify a step size other than the default of 1. Do not use indices in this approach, i.e., you should never need to use square brackets.\nBy looping over an iterable of the form range(N), where N is the number of notes you need to play. You should use indices in this approach.\nUsing a while loop and not using any for loops.\nUsing a for loop over the iterable range(441).\n\n\n\n\n\n\n\nWarning\n\n\n\nDo not use lists anywhere in this problem.\n\n\n\n\n\n\n\n\nNoteSolution\n\n\n\nfrom adafruit_circuitplayground.express import cpx\nimport time\n\nnotes = range(220,450,10)\ndelay = 0.2 # seconds\n\n# Approach 1 - without using indices\nfor note in range(220,450,10):\n    print(note)\n    cpx.start_tone(note)\n    time.sleep(delay)\n    cpx.stop_tone()\n    \n# Approach 2\nfor i in range(len(notes)):\n    print(notes[i])\n    cpx.start_tone(notes[i])\n    time.sleep(delay)\n    cpx.stop_tone()\n\n# Approach 3\nc = 0\nwhile c &lt; 23:\n    print(notes[c])\n    cpx.start_tone(notes[c])\n    time.sleep(delay)\n    cpx.stop_tone()\n    c += 1\n\n# Approach 4\nnotes = range(441)\nfor note in notes:\n    if note &gt;= 220 and (note % 10 == 0):\n        print(note)\n        cpx.start_tone(note)\n        time.sleep(delay)\n        cpx.stop_tone()",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 3",
+      "HW 3 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW3/solutions.html#nested-for-loops",
+    "href": "Homework/HW3/solutions.html#nested-for-loops",
+    "title": "HW 3 Solutions",
+    "section": "3.2 Nested for loops",
+    "text": "3.2 Nested for loops\nDownload the file pixelpatterns.py and save it on the CIRCUITPY drive. To use this file, enter the following command on the Circuit Playground:\nfrom pixelpatterns import *\nYou now have access to three functions: pattern1(), pattern2() and pattern_random(). You should try running these functions in the REPL so that you are aware of what they do.\nWrite a program for the Circuit Playground Express that prints the R, G, and B value of every pixel on a new line. You should run this program after running pattern_random() so that your program will output the correct R, G and B values for each pixel when a random pattern is used.\n\n\n\n\n\n\nNote\n\n\n\nYou can test your program by running it after calling pattern1(). This way, you know that the expected values are:\nPixel number 0, index number 0 has value 29\nPixel number 0, index number 1 has value 23\nPixel number 0, index number 2 has value 49\nPixel number 1, index number 0 has value 11\n...\n\n\nThe output of your program should look like this, covering all 30 values:\nPixel number 0, index number 0 has value 76\nPixel number 0, index number 1 has value 5\n...\nPixel number 3, index number 2 has value 21\nPixel number 4, index number 0 has value 73\n...\nPixel number 9, index number 1 has value 2\nPixel number 9, index number 2 has value 14\n\n\n\n\n\n\nNoteSolution\n\n\n\nfrom adafruit_circuitplayground.express import cpx\nfrom pixelpatterns import *\npattern_random() # sets a random pattern\n# Read the RGB value for each pixel\nfor pixel_num in [0,1,2,3,4,5,6,7,8,9]:\n    # The variable `pixel_num` is now equal to\n    # an integer between 0 and 9 inclusive\n    for index in [0,1,2]:\n        # The variable `index` is now equal to\n        # an integer 0, 1 or 2\n        print(f\"Pixel number {pixel_num}, index number {index} has value {cpx.pixels[pixel_num][index]}\")",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 3",
+      "HW 3 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW3/solutions.html#a-while-loop-for-decimal-to-binary-conversion",
+    "href": "Homework/HW3/solutions.html#a-while-loop-for-decimal-to-binary-conversion",
+    "title": "HW 3 Solutions",
+    "section": "3.3 A while loop for decimal-to-binary conversion",
+    "text": "3.3 A while loop for decimal-to-binary conversion\nWrite a Python function that takes as input a string representing a decimal number and returns as output a string representing a binary number. The expected behavior of the required function is as follows:\n&gt;&gt;&gt; decimal_to_binary(\"1\")\n'1'\n&gt;&gt;&gt; decimal_to_binary(\"2\")\n'10'\n&gt;&gt;&gt; decimal_to_binary(\"3\")\n'11'\n&gt;&gt;&gt; decimal_to_binary(\"15\")\n'1111'\n&gt;&gt;&gt; decimal_to_binary(\"33\")\n'100001'\nPut your code in a .py file and name your function decimal_to_binary. Your code should only define the function; you do not need to call it.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 3",
+      "HW 3 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW3/solutions.html#sec-lists",
+    "href": "Homework/HW3/solutions.html#sec-lists",
+    "title": "HW 3 Solutions",
+    "section": "4.1 Planting by pattern on 3 x 3",
+    "text": "4.1 Planting by pattern on 3 x 3\nWrite a function called plant_pattern() that accepts as argument a list such as the following:\npattern1 = [[Entities.Bush,Entities.Tree,Entities.Grass],\n            [Entities.Tree,Entities.Tree,Entities.Bush],\n            [Entities.Grass,Entities.Bush,Entities.Tree]]\nand uses it to plant the following pattern:\n\n\n\n\n\nThe following script illustrates the function in action.\ndef plant_pattern(pattern):\n    # your code goes here.\n    # no need to write a Return statement.\n\n# An example pattern\npattern1 = [[Entities.Bush,Entities.Tree,Entities.Grass],\n            [Entities.Tree,Entities.Tree,Entities.Bush],\n            [Entities.Grass,Entities.Bush,Entities.Tree]]\n\n# Start fresh\nclear()\n\n# Plant the pattern\nplant_pattern(pattern1)\nTurn in a .py file containing only the function definition. It will be tested on a different pattern during grading.\n\n\n\n\n\n\nNote\n\n\n\n\nYou must unlock the following for this assignment:\n\nFunctions\nLists\nTrees\n\nYou should only have a 3 x 3 world for this assignment. If you accidentally unlocked more than this, please re-start the game and get back to a world size of 3 x 3.\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\nThe following code is a satisfactory solution.\ndef plant_pattern(pattern):\n    for i in range(len(pattern)):\n        for j in range(len(pattern[i])):\n            plant(pattern[i][j])\n            move(East)\n        move(North)\n\n# An example pattern\npattern1 = [[Entities.Bush,Entities.Tree,Entities.Grass],\n            [Entities.Tree,Entities.Tree,Entities.Bush],\n            [Entities.Grass,Entities.Bush,Entities.Tree]]\n\n# Start fresh\nclear()\n\n# Plant the pattern\nplant_pattern(pattern1)",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 3",
+      "HW 3 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW3/solutions.html#planting-by-pattern-on-4-x-4",
+    "href": "Homework/HW3/solutions.html#planting-by-pattern-on-4-x-4",
+    "title": "HW 3 Solutions",
+    "section": "4.2 Planting by pattern on 4 x 4",
+    "text": "4.2 Planting by pattern on 4 x 4\nWrite a script that plants crops (once — you don’t need a while True loop) on a 4x4 field using a pair of nested for loops, according to a list of locations for each plant. Each location has been given a number, and your script should check which plant goes in which location (use the in operator) before planting.\nThe numbers refer to locations on the 4x4 farm as follows:\n\n\n\n\n\nStart from the following script.\n# The following lists specify which crops are to be planted where.\n# You may change these lists, but do not rename them. \n# Note: Do **not** put any number in more than one list.\n\ncarrots = [1,14,3,10]\nbushes = [5,11,7]\ngrass = [9,4,6,12]\ntrees = [13,2,15,0,8]\n\n# Your script should clear the farm before starting.\nclear()\n# Your code here\nFor example, if the lists were changed to:\ncarrots = [1,14,3,12,10]\nbushes = [5,11,4,7]\ngrass = [9,6]\ntrees = [13,2,15,0,8]\nthen your script should plant the pattern in Figure 1.\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nNoteUnlocks\n\n\n\n\nUnlock anything that turns out to be necessary to complete this assignment.\n\n\n\nTo successfully complete this assignment, you should check your script by modifying the lists at the top and ensuring that the correct plants are planted at the correct locations even when changes are made to the lists.\n\n\n\n\n\n\nTipSolution\n\n\n\nThe following script is a satisfactory solution to this problem.\ncarrots = [1,14,3,12,10]\nbushes = [5,11,4,7]\ngrass = [9,6]\ntrees = [13,2,15,0,8]\n\ncounter = 0\nclear()\nfor i in range(get_world_size()):\n    for j in range(get_world_size()):\n        # Harvest \n        if can_harvest(): \n            harvest()\n        # Plant\n        if counter in bushes:\n            plant(Entities.Bush)\n        elif counter in trees:\n            plant(Entities.Tree)\n        elif counter in grass:\n            plant(Entities.Grass)\n        elif counter in carrots:\n            if get_ground_type() == Grounds.Grassland:\n                till()\n            plant(Entities.Carrot)\n        counter += 1\n        move(East)\n    move(North)",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 3",
+      "HW 3 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW3/solutions.html#dictionaries-in-tfwr",
+    "href": "Homework/HW3/solutions.html#dictionaries-in-tfwr",
+    "title": "HW 3 Solutions",
+    "section": "4.3 Dictionaries in TFWR",
+    "text": "4.3 Dictionaries in TFWR\nIn Section 4.1, we used a rather cumbersome kind of list to decide what to plant where.\nFor this problem, use a dictionary that will allow you to write a function that accepts as argument a simpler list of one-character ‘codes’ for each plant. Here, ‘p’ stands for pumpkin, ‘t’ for tree, ‘b’ for bush and ‘g’ for grass.\npattern2 = [[\"c\", \"t\", \"t\", \"c\"],\n            [\"t\", \"p\", \"p\", \"t\"],\n            [\"t\", \"p\", \"p\", \"g\"],\n            [\"c\", \"t\", \"g\", \"c\"]]\nCalling your function with pattern2 as the argument should plant the crops as shown in Figure 2. Note that the entire soil is tilled; you should incorporate this into your function.\n\n\n\n\n\n\nFigure 2\n\n\n\nTurn in code with an example pattern, a dictionary definition, a function definition, and a call to your function using the example pattern, all in one *.py file.\n# Your example pattern\npattern3 = [[\"p\", \"p\", \"t\", \"g\"],\n            [\"p\", \"p\", \"g\", \"t\"],\n            [\"t\", \"g\", \"p\", \"p\"],\n            [\"g\", \"t\", \"p\", \"p\"]]\n\n# Your dictionary definition\n\n# Your function definition\ndef plant_pattern(pat):\n    # Your code here\n\n# Call your function\nplant_pattern(pattern3)\n\n\n\n\n\n\nTipSolution\n\n\n\n# An example pattern\npattern3 = [[\"c\", \"t\", \"t\", \"c\"],\n            [\"t\", \"p\", \"p\", \"t\"],\n            [\"t\", \"p\", \"p\", \"g\"],\n            [\"c\", \"t\", \"g\", \"c\"]]\n\n# The dictionary definition\ncrops = {\n    \"p\": Entities.Pumpkin,\n    \"t\": Entities.Tree,\n    \"g\": Entities.Grass,\n    \"c\": Entities.Carrot\n}\n\n# Your function definition\ndef plant_pattern(pat):\n    for i in range(get_world_size()):\n        for j in range(get_world_size()):\n            if get_ground_type() == Grounds.Grassland:\n                till()\n            if can_harvest():\n                harvest()\n            plant(crops[pattern3[j][i]])\n            move(East)\n        move(North)\n\n# Call your function\nclear()\nwhile True:\n    plant_pattern(pattern3)",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 3",
+      "HW 3 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/index.html",
+    "href": "Homework/HW4/index.html",
+    "title": "HW 4",
+    "section": "",
+    "text": "Due Date\nThu, Oct 01\n\n\nTurn in link\nGradescope code and PDF\n\n\nURL\nemadmasroor.github.io/E21-F26/Homework/HW4\nWhat to turn in\nFor this assignment, you will turn in a PDF file as well as multiple code files. Each entry in the following table should be its own .py file.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/index.html#conversion-to-fractional-form",
+    "href": "Homework/HW4/index.html#conversion-to-fractional-form",
+    "title": "HW 4",
+    "section": "2.1 Conversion to fractional form",
+    "text": "2.1 Conversion to fractional form\n\n\n\n\n\n\nNote\n\n\n\nShow all your work for full credit\n\n\nInterpret the following 16-bit floating-point numbers as irreducable fractions. Also write an approximate decimal representation of your fractions.\n\n0b1001110000101110, a.k.a. 0x1C2E\n0b0100110001101010, a.k.a. 0x4C6A",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/index.html#large-and-small-numbers",
+    "href": "Homework/HW4/index.html#large-and-small-numbers",
+    "title": "HW 4",
+    "section": "2.2 Large and small Numbers",
+    "text": "2.2 Large and small Numbers\nUse the web app Float Toy to fill the following table. All numbers should be positive, and should be given in scientific notation in decimal form up to the number of significant figures given by the web app or up to 3 significant figures after the decimal point, whichever is smaller.\n\n\n\n\n\n\n\n\n\nNumber\n16-bit\n32-bit\n64-bit\n\n\n\n\nSmallest subnormal non-zero number\n\n\n\n\n\nSecond smallest subnormal non-zero number\n\n\n\n\n\nSmallest normal\\(^*\\) non-zero number\n\n\n\n\n\nSecond smallest normal\\(^*\\) non-zero number\n\n\n\n\n\nLargest non-NaN number\n\n\n\n\n\nSecond largest non-NaN number\n\n\n\n\n\n\n\\(^*\\) i.e., not subnormal.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/index.html#gaps-between-16-bit-floating-point-binary-numbers",
+    "href": "Homework/HW4/index.html#gaps-between-16-bit-floating-point-binary-numbers",
+    "title": "HW 4",
+    "section": "3.1 Gaps between 16-bit floating-point binary numbers",
+    "text": "3.1 Gaps between 16-bit floating-point binary numbers\nWe would like to tabulate the ‘gap size’, which can also be called the increment size, between floating-point numbers. Two of the values in this table have been filled from the relevant sections of Lecture 8 here and here.\n\n\n\nBetween\nand\nthe gap is\nor equivalently\n\n\n\n\n\\(2^{-14}\\)\n\\(2^{-13}\\)\n…\n\n\n\n\\(2^{-13}\\)\n\\(2^{-12}\\)\n…\n\n\n\n\\(2^{-12}\\)\n\\(2^{-11}\\)\n…\n\n\n\n\\(2^{-11}\\)\n\\(2^{-10}\\)\n…\n\n\n\n\\(2^{-10}\\)\n\\(2^{-9}\\)\n…\n\n\n\n\\(2^{-9}\\)\n\\(2^{-8}\\)\n…\n\n\n\n\\(2^{-8}\\)\n\\(2^{-7}\\)\n…\n\n\n\n\\(2^{-7}\\)\n\\(2^{-6}\\)\n…\n\n\n\n\\(2^{-6}\\)\n\\(2^{-5}\\)\n…\n\n\n\n\\(2^{-5}\\)\n\\(2^{-4}\\)\n…\n\n\n\n\\(2^{-4}\\)\n\\(2^{-3}\\)\n…\n\n\n\n\\(2^{-3}\\)\n\\(2^{-2}\\)\n…\n\n\n\n\\(2^{-2}\\)\n\\(2^{-1}\\)\n…\n\n\n\n\\(2^{-1}\\)\n\\(2^{0}\\)\n…\n\n\n\n\\(2^{0}\\)\n\\(2^{1}\\)\n…\n\n\n\n\\(2^{1}\\)\n\\(2^{2}\\)\n…\n\n\n\n\\(2^{2}\\)\n\\(2^{3}\\)\n…\n\n\n\n\\(2^{3}\\)\n\\(2^{4}\\)\n\\(2^{-7}\\)\n\\(7.812 \\times 10^{-3}\\)\n\n\n\\(2^{4}\\)\n\\(2^{5}\\)\n…\n\n\n\n\\(2^{5}\\)\n\\(2^{6}\\)\n…\n\n\n\n\\(2^{6}\\)\n\\(2^{7}\\)\n…\n\n\n\n\\(2^{7}\\)\n\\(2^{8}\\)\n…\n\n\n\n\\(2^{8}\\)\n\\(2^{9}\\)\n…\n\n\n\n\\(2^{9}\\)\n\\(2^{10}\\)\n…\n\n\n\n\\(2^{10}\\)\n\\(2^{11}\\)\n…\n\n\n\n\\(2^{11}\\)\n\\(2^{12}\\)\n\\(2^{1}\\)\n\\(2\\)\n\n\n\\(2^{12}\\)\n\\(2^{13}\\)\n…\n\n\n\n\\(2^{13}\\)\n\\(2^{14}\\)\n…\n\n\n\n\\(2^{14}\\)\n\\(2^{15}\\)\n…\n\n\n\n\\(2^{15}\\)\n\\(2^{16}\\)\n…\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nFor the final column, use up to 3 places after the decimal point. If a number requires more precision than this, truncate the remaining figures (don’t round).",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/index.html#precision-for-floats",
+    "href": "Homework/HW4/index.html#precision-for-floats",
+    "title": "HW 4",
+    "section": "3.2 Precision for floats",
+    "text": "3.2 Precision for floats\nThe \\(\\pm\\) symbol is often used to indicate the precision of a known quantity. For floating point numbers, it is appropriate to use \\(x \\pm y\\) to represent a number, where \\(y\\) is half of the gap size in that part of the number line.\nFor example, we saw in lecture 8 that between 8 and 16, 16-bit floating point numbers have a gap size of \\(1/128\\) or \\(0.0078125\\). Half of this number is \\(0.00390625\\). If we now consider the 16-bit floating point number given by 0100100000001100, its value can be found to be equal to \\(259/32 = 8.09375\\). However, it would not be correct to write this number in decimal form with 5 significant figures after the decimal point. To see why, let us write it in \\(\\pm\\) notation as follows.\n\\[8.09375 \\pm 0.00390625\\]\nThus, the 16-bit float 0100100000001100 would be used by a computer to represent any number in the range from \\(8.09375-0.00390625\\) to \\(8.09375+0.00390625\\) shown above. For example,\n\n8.09672\n8.09585\n8.09175\n8.09079\n\nare all within the range shown above. These numbers agree in the first two digits after the decimal point, but in subsequent places, they disagree. Therefore, when representing the floating-point number 0100100000001100 in decimal form, it would not be appropriate to write more significant figures after the second one after the decimal point. Thus, the correct way to express it in decimal form would be \\(\\boxed{8.09}\\), not \\(8.09375\\).\nUsing the discussion above as a template, write the following floating-point numbers in fractional form and then in decimal form using the appropriate number of significant figures after the decimal point.\n\nThe 16-bit float given by 0b0001110000010000\n\n\nThe 16-bit float given by 0x3C10",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/index.html#zero-location",
+    "href": "Homework/HW4/index.html#zero-location",
+    "title": "HW 4",
+    "section": "4.1 Zero location",
+    "text": "4.1 Zero location\nWrite a function called zeroloc() that takes the drone back to the bottom-left corner.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/index.html#random-plants",
+    "href": "Homework/HW4/index.html#random-plants",
+    "title": "HW 4",
+    "section": "4.2 Random plants",
+    "text": "4.2 Random plants\nWrite a script that plants a random plant (out of five options: Grass, Tree, Bush, Carrot, and Pumpkin) on each spot of the 6x6 farm. It should only do this once, without repeating.\nYour script should import your zeroloc function from a different file, i.e., the first line of your script should be something like from &lt;file name&gt; import zeroloc.\nThe second line of your script should call the zeroloc function.\n\n\n\n\n\n\nTip\n\n\n\n\nYou may wish to make use of the random() function, which has been unlocked for you.\nIn the game, dividing a given number (say, 4.2) by 1 like this: 4.2 // 1 returns the largest integer less than the given number.\nIt is recommended that you till the entire farm for this task. All five crops can be planted on tilled soil.\nDictionaries and/or Lists should come in handy here.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/index.html#waiting-for-crops-to-grow",
+    "href": "Homework/HW4/index.html#waiting-for-crops-to-grow",
+    "title": "HW 4",
+    "section": "4.3 Waiting for crops to grow",
+    "text": "4.3 Waiting for crops to grow\nWrite a function called plant_and_wait that takes as argument a plant ‘object’, such as Entities.Carrot.\nWhen this function is called with argument Entities.Tree, its behavior should be as shown in the gif below, i.e., it should plant a tree and do flips until the tree has fully grown, and then harvest it.\n\nWhen this function is used to plant pumpkins, its behavior needs to be different. It should wait to check if the pumpkin grows up to be rotten, and if so, it should start over. As an illustration of this behavior, the following gif shows what your drone should do if you run the following code:\nwhile True:\n  plant_and_wait(Entites.Pumpkin)\n\n\n\n\n\n\n\nWarning\n\n\n\nThis function should not move the drone. It should till the soil if it is grassland (remember that tilling grass turns it into soil, but tilling soil turns it back into grass!)",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4"
+    ]
   }
 ]
