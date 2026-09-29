@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Emad Masroor">
-<meta name="dcterms.date" content="2026-09-24">
+<meta name="dcterms.date" content="2026-09-29">
 
-<title>Lecture 08 – ENGR 21 Computer Engineering Fundamentals</title>
+<title>Lecture 09 – ENGR 21 Computer Engineering Fundamentals</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,6 +27,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -79,35 +114,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -158,7 +164,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec8/index.html">Lecture 08</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec9/index.html">Lecture 09</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -258,13 +264,13 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Lectures/Lec8/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../Lectures/Lec8/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 08</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Lectures/Lec9/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec9/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lecture 09</span></a>
   </div>
 </li>
@@ -366,27 +372,26 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#practice-with-16-bit-binary-floats" id="toc-practice-with-16-bit-binary-floats" class="nav-link active" data-scroll-target="#practice-with-16-bit-binary-floats">Practice with 16-bit binary floats</a></li>
-  <li><a href="#and-64--bit-floating-point-numbers" id="toc-and-64--bit-floating-point-numbers" class="nav-link" data-scroll-target="#and-64--bit-floating-point-numbers">8-, 16-, 32- and 64- bit floating point numbers</a></li>
-  <li><a href="#procedure-for-interpreting-ieee-floats" id="toc-procedure-for-interpreting-ieee-floats" class="nav-link" data-scroll-target="#procedure-for-interpreting-ieee-floats">Procedure for interpreting IEEE Floats</a></li>
-  <li><a href="#the-need-for-floating-point-numbers" id="toc-the-need-for-floating-point-numbers" class="nav-link" data-scroll-target="#the-need-for-floating-point-numbers">The need for floating-point numbers</a></li>
-  <li><a href="#floating-point-numbers-on-the-number-line" id="toc-floating-point-numbers-on-the-number-line" class="nav-link" data-scroll-target="#floating-point-numbers-on-the-number-line">Floating Point numbers on the number line</a></li>
-  <li><a href="#increments-of-floating-point-numbers" id="toc-increments-of-floating-point-numbers" class="nav-link" data-scroll-target="#increments-of-floating-point-numbers">Increments of Floating Point Numbers</a></li>
-  <li><a href="#floating-point-numbers-on-the-number-line-1" id="toc-floating-point-numbers-on-the-number-line-1" class="nav-link" data-scroll-target="#floating-point-numbers-on-the-number-line-1">Floating Point numbers on the number line</a></li>
-  <li><a href="#loss-of-precision-in-floating-point-numbers" id="toc-loss-of-precision-in-floating-point-numbers" class="nav-link" data-scroll-target="#loss-of-precision-in-floating-point-numbers">Loss of precision in Floating Point Numbers</a></li>
-  <li><a href="#note-floating-point-numbers-can-be-positive-or-negative" id="toc-note-floating-point-numbers-can-be-positive-or-negative" class="nav-link" data-scroll-target="#note-floating-point-numbers-can-be-positive-or-negative">Note: Floating Point numbers can be positive or negative</a></li>
-  <li><a href="#floating-point-numbers-on-a-linear-scale-number-line" id="toc-floating-point-numbers-on-a-linear-scale-number-line" class="nav-link" data-scroll-target="#floating-point-numbers-on-a-linear-scale-number-line">Floating point numbers on a linear-scale number line</a></li>
-  <li><a href="#machine-epsilon" id="toc-machine-epsilon" class="nav-link" data-scroll-target="#machine-epsilon">Machine Epsilon</a></li>
-  <li><a href="#subnormal-numbers-and-nans" id="toc-subnormal-numbers-and-nans" class="nav-link" data-scroll-target="#subnormal-numbers-and-nans">Subnormal numbers and <code>NaN</code>s</a></li>
+  <li><a href="#test-1" id="toc-test-1" class="nav-link active" data-scroll-target="#test-1">Test 1</a></li>
+  <li><a href="#installing-numpy-with-thonny-code-editor" id="toc-installing-numpy-with-thonny-code-editor" class="nav-link" data-scroll-target="#installing-numpy-with-thonny-code-editor">Installing <code>numpy</code> with Thonny Code Editor</a></li>
+  <li><a href="#numpy-arrays" id="toc-numpy-arrays" class="nav-link" data-scroll-target="#numpy-arrays"><code>numpy</code> arrays</a></li>
+  <li><a href="#importing-the-package" id="toc-importing-the-package" class="nav-link" data-scroll-target="#importing-the-package">Importing the package</a></li>
+  <li><a href="#numpy-arrays-are-inherently-n-dimensional" id="toc-numpy-arrays-are-inherently-n-dimensional" class="nav-link" data-scroll-target="#numpy-arrays-are-inherently-n-dimensional"><code>numpy</code> arrays are inherently n-dimensional</a></li>
+  <li><a href="#numpy-arrays-support-vectorized-operations" id="toc-numpy-arrays-support-vectorized-operations" class="nav-link" data-scroll-target="#numpy-arrays-support-vectorized-operations"><code>numpy</code> arrays support vectorized operations</a></li>
+  <li><a href="#more-about-n-dimensional-arrays" id="toc-more-about-n-dimensional-arrays" class="nav-link" data-scroll-target="#more-about-n-dimensional-arrays">More about n-dimensional arrays</a></li>
+  <li><a href="#numpy-and-floating-point-binary-numbers" id="toc-numpy-and-floating-point-binary-numbers" class="nav-link" data-scroll-target="#numpy-and-floating-point-binary-numbers"><code>numpy</code> and floating-point binary numbers</a></li>
+  <li><a href="#one-dimensional-arrays-vs.-two-dimensional-arrays" id="toc-one-dimensional-arrays-vs.-two-dimensional-arrays" class="nav-link" data-scroll-target="#one-dimensional-arrays-vs.-two-dimensional-arrays">One-dimensional arrays vs.&nbsp;Two-dimensional arrays</a></li>
+  <li><a href="#manipulating-data-in-numpy" id="toc-manipulating-data-in-numpy" class="nav-link" data-scroll-target="#manipulating-data-in-numpy">Manipulating Data in <code>numpy</code></a></li>
+  <li><a href="#exploring-floating-point-numbers-with-numpy" id="toc-exploring-floating-point-numbers-with-numpy" class="nav-link" data-scroll-target="#exploring-floating-point-numbers-with-numpy">Exploring floating-point numbers with <code>numpy</code></a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec8/index.html">Lecture 08</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec9/index.html">Lecture 09</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lecture 08</h1>
+<h1 class="title">Lecture 09</h1>
 <p class="subtitle lead">E21 Computer Engineering Fundamentals</p>
 </div>
 
@@ -404,7 +409,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 24, 2026</p>
+      <p class="date">September 29, 2026</p>
     </div>
   </div>
   
@@ -416,278 +421,263 @@ window.Quarto = {
 </header>
 
 
-<section id="practice-with-16-bit-binary-floats" class="level3 scrollable">
-<h3 class="scrollable anchored" data-anchor-id="practice-with-16-bit-binary-floats">Practice with 16-bit binary floats</h3>
-<p><span class="fragment"><span class="inclass">Find the binary representation</span> of <code>0x5248</code> and convert it to decimal form using the IEEE standard.</span></p>
-<p><span class="fragment">In binary, this number is:</span></p>
-<p><span class="fragment"><code>5</code>: <code>0101</code> —</span> <span class="fragment"><code>2</code>: <code>0010</code> —</span> <span class="fragment"><code>4</code>: <code>0100</code> —</span> <span class="fragment"><code>8</code>: <code>1000</code></span></p>
-<p><span class="fragment"><code>0x5248</code> = <code>0b0101001001001000</code></span></p>
-<p><img src="binhex2.png" class="fragment img-fluid"></p>
-<p><span class="fragment">Interpreting it using the IEEE standard, we get</span></p>
-<p><img src="g24.png" class="fragment img-fluid"></p>
-<p><span class="fragment">which is <span class="math display">\[+1.1001001000_2 \times 2^{5}\]</span></span></p>
-<p><span class="fragment"><span class="math display">\[= 2^5 \times \left( 1 \times 2^{0} + 1 \times 2^{-1} + 1 \times 2^{-4} + 1 \times 2^{-7} \right)\]</span></span></p>
-<p><span class="fragment"><span class="math display">\[= 32 \times \left(1 + \frac{1}{2} + \frac{1}{16} + \frac{1}{128} \right)\]</span></span></p>
-<p><span class="fragment"><span class="math display">\[= 32 \times \left( \frac{128}{128} + \frac{64}{128} + \frac{8}{128} + \frac{1}{128} \right) \]</span></span></p>
-<p><span class="fragment"><span class="math display">\[ = 32 \times \frac{201}{128} = \frac{201}{4} =  50.25\]</span></span></p>
+<section id="test-1" class="level3">
+<h3 class="anchored" data-anchor-id="test-1">Test 1</h3>
 </section>
-<section id="and-64--bit-floating-point-numbers" class="level3 smaller">
-<h3 class="smaller anchored" data-anchor-id="and-64--bit-floating-point-numbers">8-, 16-, 32- and 64- bit floating point numbers</h3>
+<section id="installing-numpy-with-thonny-code-editor" class="level3">
+<h3 class="anchored" data-anchor-id="installing-numpy-with-thonny-code-editor">Installing <code>numpy</code> with Thonny Code Editor</h3>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="numpy1.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="numpy2.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="numpy-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-arrays"><code>numpy</code> arrays</h3>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <ul>
-<li><p>16-bit floating point binary numbers are limited in their range and precision.</p></li>
-<li><p>Early computers used to use 8-bit numbers</p></li>
-<li><p>Modern computations are usually done in 64-bit. (That’s why MATLAB calls numbers <code>double</code>)</p>
-<p><img src="double.png" class="img-fluid" style="width:25.0%"></p></li>
+<li><p><code>numpy</code> arrays are objects of type <code>numpy.ndarray</code></p></li>
+<li><p>The <code>numpy.array()</code> function creates <code>numpy.ndarray</code> objects</p></li>
 </ul>
-<div class="fragment">
-<section id="the-ieee-754-standard" class="level4">
-<h4 class="anchored" data-anchor-id="the-ieee-754-standard">The <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754</a> Standard</h4>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Size</th>
-<th>Sign</th>
-<th>Significand</th>
-<th>Exponent</th>
-<th>Bias</th>
-<th>Colloquial</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>8-bit</td>
-<td>1</td>
-<td>3</td>
-<td>4</td>
-<td>7</td>
-<td>Minifloat</td>
-</tr>
-<tr class="even">
-<td>16-bit</td>
-<td>1</td>
-<td>10</td>
-<td>5</td>
-<td>15</td>
-<td>Half precision</td>
-</tr>
-<tr class="odd">
-<td>32-bit</td>
-<td>1</td>
-<td>23</td>
-<td>8</td>
-<td>127</td>
-<td>Single precision</td>
-</tr>
-<tr class="even">
-<td>64-bit</td>
-<td>1</td>
-<td>52</td>
-<td>11</td>
-<td>1023</td>
-<td>Double precision</td>
-</tr>
-</tbody>
-</table>
-</section>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> numpy.array([<span class="fl">0.4</span>, <span class="dv">6</span>, <span class="op">-</span><span class="fl">0.9</span>])</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>array([ <span class="fl">0.4</span>,  <span class="fl">6.</span> , <span class="op">-</span><span class="fl">0.9</span>])</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span><span class="kw">class</span> <span class="st">'numpy.ndarray'</span><span class="op">&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
 </div>
 <ul>
-<li><span class="inclass">Use <a href="https://evanw.github.io/float-toy/">Float Toy</a> to find the largest possible number of each kind.</span></li>
+<li>Arrays in <code>numpy</code> are similar to lists.
+<ul>
+<li>They can be indexed</li>
+<li>Their elements are mutable</li>
+<li>They are iterable — can be used with <code>for</code> loops</li>
+</ul></li>
+<li>Arrays also have some differences compared to lists
+<ul>
+<li>Unlike lists, one array can have only one type of element</li>
+<li>Appending is <a href="https://numpy.org/doc/stable/reference/generated/numpy.append.html#numpy-append">possible</a> but discouraged — pre-allocate!</li>
+</ul></li>
 </ul>
 </section>
-<section id="procedure-for-interpreting-ieee-floats" class="level3">
-<h3 class="anchored" data-anchor-id="procedure-for-interpreting-ieee-floats">Procedure for interpreting IEEE Floats</h3>
+<section id="importing-the-package" class="level3">
+<h3 class="anchored" data-anchor-id="importing-the-package">Importing the package</h3>
+<ul>
+<li><p>After installing <code>numpy</code> for your version of Python, you need to <strong>import</strong> <code>numpy</code> in any code you write.</p></li>
+<li><p>A common approach is:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="fl">2.5</span>,<span class="dv">3</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This shortens <code>numpy.&lt;function name&gt;</code> to <code>np.&lt;function name&gt;</code> and has no other function.</p></li>
+<li><p>Other approaches that work:</p>
+<ul>
+<li><p>Import using full name</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> numpy.array([<span class="dv">1</span>,<span class="fl">2.5</span>,<span class="dv">3</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Import specific functions only</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy <span class="im">import</span> array</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> array([<span class="dv">1</span>,<span class="fl">2.5</span>,<span class="dv">3</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul></li>
+</ul>
+</section>
+<section id="numpy-arrays-are-inherently-n-dimensional" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-arrays-are-inherently-n-dimensional"><code>numpy</code> arrays are inherently n-dimensional</h3>
+<ul>
+<li>In Python lists, we used the concept of a <em>list of lists</em> to encode two-dimensional information.</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="fragment quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<section id="native-python-approach" class="level4">
+<h4 class="anchored" data-anchor-id="native-python-approach">Native Python Approach</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pattern3 <span class="op">=</span> [[<span class="st">"p"</span>, <span class="st">"p"</span>, <span class="st">"t"</span>, <span class="st">"g"</span>],</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>            [<span class="st">"p"</span>, <span class="st">"p"</span>, <span class="st">"g"</span>, <span class="st">"t"</span>],</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            [<span class="st">"t"</span>, <span class="st">"g"</span>, <span class="st">"p"</span>, <span class="st">"p"</span>],</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            [<span class="st">"g"</span>, <span class="st">"t"</span>, <span class="st">"p"</span>, <span class="st">"p"</span>]]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pattern3[<span class="dv">1</span>][<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<section id="numpy-approach" class="level4">
+<h4 class="anchored" data-anchor-id="numpy-approach"><code>numpy</code> Approach</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>p<span class="op">=</span> np.array([[<span class="st">"p"</span>, <span class="st">"p"</span>, <span class="st">"t"</span>, <span class="st">"g"</span>],</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>            [<span class="st">"p"</span>, <span class="st">"p"</span>, <span class="st">"g"</span>, <span class="st">"t"</span>],</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            [<span class="st">"t"</span>, <span class="st">"g"</span>, <span class="st">"p"</span>, <span class="st">"p"</span>],</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>            [<span class="st">"g"</span>, <span class="st">"t"</span>, <span class="st">"p"</span>, <span class="st">"p"</span>]])</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p[<span class="dv">1</span>,<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</div>
+</div>
+</div>
+<ul>
+<li>Looks similar, but now you should think <strong>matrix</strong></li>
+<li>Access multi-dimensional arrays using the <code>[row,column]</code> syntax</li>
+<li>For example, <code>p[1,2]</code> will give the string<code>"g"</code></li>
+</ul>
+</section>
+<section id="numpy-arrays-support-vectorized-operations" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-arrays-support-vectorized-operations"><code>numpy</code> arrays support vectorized operations</h3>
+<ul>
+<li>In regular Python, lists aren’t very useful for manipulating many numbers.</li>
+<li>By default, the mathematical/boolean operators work element by element.</li>
+</ul>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="fragment quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<section id="native-python-approach-1" class="level4">
+<h4 class="anchored" data-anchor-id="native-python-approach-1">Native Python Approach</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> f1 <span class="op">=</span> [[<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.6</span>],</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>          [<span class="fl">0.2</span>, <span class="op">-</span><span class="fl">0.3</span>, <span class="fl">0.7</span>]]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> f1 <span class="op">+</span> <span class="dv">100</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>Traceback (most recent call last):</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  File <span class="st">"&lt;stdin&gt;"</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="pp">TypeError</span>: can only concatenate <span class="bu">list</span> ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</div>
+<div class="fragment quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<section id="numpy-approach-1" class="level4">
+<h4 class="anchored" data-anchor-id="numpy-approach-1"><code>numpy</code> Approach</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> f <span class="op">=</span> np.array([[<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.6</span>],</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                  [<span class="fl">0.2</span>,<span class="op">-</span><span class="fl">0.3</span>, <span class="fl">0.7</span>]])</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> f <span class="op">+</span> <span class="dv">100</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>array([[<span class="fl">100.3</span>, <span class="fl">100.5</span>, <span class="fl">100.6</span>],</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>       [<span class="fl">100.2</span>,  <span class="fl">99.7</span>, <span class="fl">100.7</span>]])</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> f <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>array([[<span class="fl">0.09</span>, <span class="fl">0.25</span>, <span class="fl">0.36</span>],</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>       [<span class="fl">0.04</span>, <span class="fl">0.09</span>, <span class="fl">0.49</span>]])</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> f <span class="op">=</span> np.array([[<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.6</span>],</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>                  [<span class="fl">0.2</span>,<span class="op">-</span><span class="fl">0.3</span>, <span class="fl">0.7</span>]])</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> g <span class="op">=</span> np.array([[<span class="fl">0.2</span>, <span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.6</span>],[<span class="fl">0.2</span>,<span class="op">-</span><span class="fl">0.3</span>,<span class="fl">1.9</span>]])</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> f <span class="op">==</span> g</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>array([[<span class="va">False</span>,  <span class="va">True</span>, <span class="va">False</span>],</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>       [ <span class="va">True</span>,  <span class="va">True</span>, <span class="va">False</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="more-about-n-dimensional-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="more-about-n-dimensional-arrays">More about n-dimensional arrays</h3>
+<p><img src="ndarray.png" class="img-fluid"></p>
+<p>Numpy arrays have a property <strong>shape</strong></p>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> f <span class="op">=</span> np.array([[<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.6</span>],</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                  [<span class="fl">0.2</span>,<span class="op">-</span><span class="fl">0.3</span>, <span class="fl">0.7</span>]])</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> f.shape</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> np.shape(f)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>The <strong>shape</strong> tells you how many rows and columns an array has.</li>
+<li>If there are more than two dimensions, there is no name for the third and higher ‘rows/columns’.</li>
+</ul>
+</section>
+<section id="numpy-and-floating-point-binary-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-and-floating-point-binary-numbers"><code>numpy</code> and floating-point binary numbers</h3>
+<ul>
+<li><p>By default, all numbers in <code>numpy</code> are 64-bit floating point binary numbers.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> np.array([<span class="fl">0.3</span>])</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span><span class="kw">class</span> <span class="st">'numpy.ndarray'</span><span class="op">&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a[<span class="dv">0</span>])</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span><span class="kw">class</span> <span class="st">'numpy.float64'</span><span class="op">&gt;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>You can choose numbers with a different precision.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> np.float16(<span class="fl">3.2</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>a2 <span class="op">=</span> np.float32(<span class="fl">4.2</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>a3 <span class="op">=</span> np.float64(<span class="fl">5.2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul>
+</section>
+<section id="one-dimensional-arrays-vs.-two-dimensional-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="one-dimensional-arrays-vs.-two-dimensional-arrays">One-dimensional arrays vs.&nbsp;Two-dimensional arrays</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.random <span class="im">import</span> random</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<section id="a-5-element-1-dimensional-array" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="a-5-element-1-dimensional-array">A 5-element 1-dimensional array</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> random(<span class="dv">5</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>array([<span class="fl">0.57549695</span>, </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>       <span class="fl">0.81646336</span>, </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>       <span class="fl">0.80189814</span>, </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>       <span class="fl">0.11415026</span>, </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>       <span class="fl">0.62458897</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="a-5x1-element-2-dimensional-array" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="a-5x1-element-2-dimensional-array">A 5x1-element 2-dimensional array</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> b <span class="op">=</span> random((<span class="dv">5</span>,<span class="dv">1</span>))</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> b</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>array([[<span class="fl">0.32551251</span>],</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>       [<span class="fl">0.54539388</span>],</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>       [<span class="fl">0.97696562</span>],</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>       [<span class="fl">0.53288049</span>],</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>       [<span class="fl">0.13886612</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</div>
+</div>
+</section>
+<section id="manipulating-data-in-numpy" class="level3">
+<h3 class="anchored" data-anchor-id="manipulating-data-in-numpy">Manipulating Data in <code>numpy</code></h3>
+<p><span class="inclass">Download the data file <a href="Temp_data.txt">here</a></span> and look at the official documentation <a href="https://numpy.org/doc/">here</a></p>
+<p>Consists of 3 days of temperature data recorded at half-hour intervals.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <ol type="1">
-<li>Interpret exponent bits as an integer</li>
-<li>Subtract bias from this integer to get the exponent, or power of 2.</li>
-<li>Interpret significand as the binary digits in the number <span class="math inline">\(1.xxxxxxxxxx\)</span> (unless it’s a subnormal number)</li>
-<li>Multiply significand with <span class="math inline">\(2^{\text{exponent}}\)</span></li>
-<li>Interpret sign bit as negative if <code>1</code>, positive if <code>0</code>.</li>
+<li>Reformat the data in the form of an N rows, 2 column <code>numpy</code> array.</li>
+<li>Save the data as <code>csv</code> files for the three days separately.</li>
 </ol>
-</section>
-<section id="the-need-for-floating-point-numbers" class="level3">
-<h3 class="anchored" data-anchor-id="the-need-for-floating-point-numbers">The need for floating-point numbers</h3>
-<ul>
-<li><span class="emph">Real numbers</span> <span class="math inline">\(\mathbb{R}\)</span> are an uncountably infinite set.</li>
-<li><span class="emph">Rational numbers</span> <span class="math inline">\(\mathbb{Q}\)</span> form a dense subset of <span class="math inline">\(\mathbb{R}\)</span>
-<ul>
-<li>You can squeeze an infinite number of rational numbers between any two given real numbers <img src="zoom.png" class="img-fluid" style="width:50.0%" alt="From onlinemath4all.com"></li>
-</ul></li>
-<li>All <span class="emph">integers</span> <span class="math inline">\(\mathbb{Z}\)</span> are also rational numbers.</li>
-</ul>
-<div class="fragment">
-<p><img src="numbersystems2.png" class="absolute img-fluid" style="width:40.0%" data-bottom="300" data-right="0"></p>
 </div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <ul>
-<li>Floating point numbers are rational numbers !!!!!</li>
+<li><code>array()</code></li>
+<li><code>zeros()</code></li>
+<li><code>reshape</code></li>
+<li><code>append</code></li>
+<li><code>flatten</code></li>
+<li><code>transpose</code></li>
+<li><code>savetxt</code></li>
+<li><code>loadtxt</code></li>
 </ul>
-</section>
-<section id="floating-point-numbers-on-the-number-line" class="level3">
-<h3 class="anchored" data-anchor-id="floating-point-numbers-on-the-number-line">Floating Point numbers on the number line</h3>
-<div class="fragment">
-<p><img src="numberline3.png" class="img-fluid"></p>
 </div>
-<ul>
-<li>Between <span class="math inline">\(2^{-14}\)</span> and <span class="math inline">\(2^{+16}\)</span>, there are <span class="math inline">\(2^{10} = 1,024\)</span> <strong>16-bit floats</strong> between <strong>each</strong> successive power of 2.
-<ul>
-<li>There are 1,024 ‘16-bit floats’ between 4 and 8. Seems enough to cover any quantity we would need (?)
-<ul>
-<li><p>The number 4 is: <img src="num4.png" class="img-fluid"> <span data-when-meta="uncover"><span class="math inline">\(1.00...00 \times 2^{17-15} = 4\)</span></span></p></li>
-<li><p>The next-biggest number is: <img src="num41.png" class="img-fluid"> <span data-when-meta="uncover"><span class="math inline">\(1.00...01_2 \times 2^{17-15} = \left( 1 + \frac{1}{2^{10}}\right) \times 2^2\)</span></span></p>
-<p><span data-when-meta="uncover"><span class="math inline">\(= \frac{1025}{1024} \times 4 = \frac{1025}{256} \approx 4.0039\)</span></span></p></li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-<section id="increments-of-floating-point-numbers" class="level3 scrollable">
-<h3 class="scrollable anchored" data-anchor-id="increments-of-floating-point-numbers">Increments of Floating Point Numbers</h3>
-<p>Let’s look at three consecutive floating point numbers.</p>
-<ul>
-<li><p>The number 8:</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img src="num8.png" class="img-fluid"></p>
-</div><div class="column" style="width:50%;">
-<p><span class="math inline">\(1.00...00 \times 2^{18-15} = 8\)</span></p>
 </div>
-</div></li>
-<li><p>The next-bigger 16-bit float:</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img src="num81.png" class="img-fluid"></p>
-</div><div class="column" style="width:50%;">
-<p><span class="math inline">\(1.00...01_2 \times 2^{18-15}\)</span></p>
-<p><span class="math inline">\(= \left(1 + \frac{1}{2^{10}} \right) \times 2^{3}\)</span></p>
-<p><span class="math inline">\(= \frac{1025}{1024} \times 8 = \frac{1025}{128} \approx 8.0078\)</span></p>
 </div>
-</div></li>
-<li><p>The next-bigger 16-bit float:</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img src="num82.png" class="img-fluid"></p>
-</div><div class="column" style="width:50%;">
-<p><span class="math inline">\(1.00...010_2 \times 2^{18-15}\)</span></p>
-<p><span class="math inline">\(= \left(1 + \frac{1}{2^{9}} \right) \times 2^{3}\)</span></p>
-<p><span class="math inline">\(= \frac{513}{512} \times 8 = \frac{513}{64} \approx 8.0156\)</span></p>
+</section>
+<section id="exploring-floating-point-numbers-with-numpy" class="level3">
+<h3 class="anchored" data-anchor-id="exploring-floating-point-numbers-with-numpy">Exploring floating-point numbers with <code>numpy</code></h3>
+<p><span class="inclass">Try out the following code and explain the behavior</span>. Make sure you use <code>immport numpy as np</code> first.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>z  <span class="op">=</span> np.float16(<span class="dv">128</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>z1 <span class="op">=</span> np.float16(<span class="fl">0.2</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(z <span class="op">+</span> z1 <span class="op">+</span> z1 <span class="op">+</span> z1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div></li>
-<li><p>Increment between successive numbers: <span class="math display">\[ 8 \rightarrow 8.0078 \rightarrow 8.0156 \rightarrow \dots \]</span></p></li>
-<li><p>Putting this into fractions <span class="math display">\[ 8 \rightarrow \frac{1025}{128} \rightarrow \frac{513}{64} \rightarrow \dots \]</span></p></li>
-<li><p>or, even better: <span class="math display">\[ \frac{1024}{128} \rightarrow \frac{1025}{128} \rightarrow \frac{1026}{128} \rightarrow \dots \]</span></p></li>
-<li><p><span class="emph">Increment between <span class="math inline">\(2^3\)</span> and below <span class="math inline">\(2^4\)</span> is <span class="math inline">\(\frac{1}{128} = 2^{-7} = 0.0078125\)</span></span></p></li>
-</ul>
-</section>
-<section id="floating-point-numbers-on-the-number-line-1" class="level3">
-<h3 class="anchored" data-anchor-id="floating-point-numbers-on-the-number-line-1">Floating Point numbers on the number line</h3>
-<div class="fragment">
-<p><img src="numberline3.png" class="img-fluid"></p>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>y  <span class="op">=</span> np.float16(<span class="dv">16</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>y1 <span class="op">=</span> np.float16(<span class="fl">0.2</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y <span class="op">+</span> y1 <span class="op">+</span> y1 <span class="op">+</span> y1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<ul>
-<li>There are 1,024 ‘16-bit floats’ between 2048 and 4096. Seems enough to cover any quantity we would need (????)
-<ul>
-<li><p>The number 2048 is: <img src="num2048.png" class="img-fluid"> <span class="math inline">\(1.00...00 \times 2^{26-15} = 2048\)</span></p></li>
-<li><p>The next-biggest number is: <img src="num2050.png" class="img-fluid"> <span data-when-meta="uncover"><span class="math inline">\(1.00...01_2 \times 2^{27-15} = \left( 1 + \frac{1}{2^{10}}\right) \times 2^12\)</span></span></p>
-<p><span data-when-meta="uncover"><span class="math inline">\(= \frac{1025}{1024} \times 2048 = 2050\)</span></span></p></li>
-</ul></li>
-<li>The increment between <span class="math inline">\(2^{11}\)</span> and <span class="math inline">\(2^{12}\)</span> appears to be … <span class="math inline">\(2\)</span></li>
-</ul>
-</section>
-<section id="loss-of-precision-in-floating-point-numbers" class="level3">
-<h3 class="anchored" data-anchor-id="loss-of-precision-in-floating-point-numbers">Loss of precision in Floating Point Numbers</h3>
-<ul>
-<li>IEEE Floating point numbers are the most precise near 1.0
-<ul>
-<li><p>e.g., near <span class="math inline">\(1.0\)</span>, the 16- bit floating point numbers are:</p>
-<p><span class="fragment"><span class="math inline">\(\displaystyle \left( 1, 1 + \frac{1}{1024}, 1 + \frac{1}{512}, 1 + \frac{1}{512} + \frac{1}{1024} \right)\)</span></span></p>
-<p><span class="fragment"><span class="math inline">\(\displaystyle = \left( \frac{1024}{1024}, \frac{1025}{1024}, \frac{1026}{1024}, \frac{1027}{1024}\right)\)</span></span></p>
-<p><span class="fragment"><span class="math inline">\(\approx \left(1, 1.001, 1.002, 1.003, ... \right)\)</span></span></p></li>
-<li><p>For large values, they start losing precision. Near 2048:</p>
-<p><span class="fragment"><span class="math inline">\(\left( 2048, 2050, 2052, ...\right)\)</span></span></p></li>
-</ul></li>
-<li>All floats lose precision the further away you get from 1</li>
-<li>Solution: Use more bits!</li>
-</ul>
-</section>
-<section id="note-floating-point-numbers-can-be-positive-or-negative" class="level3">
-<h3 class="anchored" data-anchor-id="note-floating-point-numbers-can-be-positive-or-negative">Note: Floating Point numbers can be positive or negative</h3>
-<ul>
-<li>The sign bit ensures that for every positive number there is a corresponding negative number</li>
-<li>Floats are arranged symmetrically about zero.</li>
-<li>There is a ‘negative zero’ and a ‘positive zero’</li>
-<li><code>NaN</code>s show up on both positive and negative sides of the number line</li>
-</ul>
-</section>
-<section id="floating-point-numbers-on-a-linear-scale-number-line" class="level3">
-<h3 class="anchored" data-anchor-id="floating-point-numbers-on-a-linear-scale-number-line">Floating point numbers on a linear-scale number line</h3>
-<p><strong>(Instead of using a log scale like before)</strong></p>
-<ul>
-<li><p>For illustrative purposes, let’s use 8-bit floats:</p>
-<p><img src="8bit1.png" class="img-fluid"></p>
-<ul>
-<li>8-bit floats have 4 exponent bits (bias 7), 1 sign bit, and 3 significand bits.</li>
-</ul></li>
-</ul>
-<p><img src="numberline5.png" class="fragment img-fluid"></p>
-</section>
-<section id="machine-epsilon" class="level3">
-<h3 class="anchored" data-anchor-id="machine-epsilon">Machine Epsilon</h3>
-<ul>
-<li>Machine Epsilon (<span class="math inline">\(\varepsilon\)</span>) is a measure of how precise a floating-point number system is.</li>
-<li>The smaller the <span class="math inline">\(\varepsilon\)</span>, the more precise your number system is.</li>
-<li>Machine Epsilon for a floating point number system is defined as <span class="emph">the difference between 1 and the next-bigger number</span> in that system.</li>
-</ul>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Number System</th>
-<th>Machine Epsilon</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Minifloat (8 bit)</td>
-<td><span class="math inline">\(2^{-3} = 1.25 \times 10^{-1}\)</span></td>
-</tr>
-<tr class="even">
-<td>Half Precision (16 bit)</td>
-<td><span class="math inline">\(2^{-10} \approx 9.77 \times 10^{-4}\)</span></td>
-</tr>
-<tr class="odd">
-<td>Single Precision (32 bit)</td>
-<td><span class="math inline">\(2^{-23} \approx 1.19 \times 10^{-7}\)</span></td>
-</tr>
-<tr class="even">
-<td>Double Precision (64 bit)</td>
-<td><span class="math inline">\(2^{-52} \approx 2.22 \times 10^{-16}\)</span></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="subnormal-numbers-and-nans" class="level3">
-<h3 class="anchored" data-anchor-id="subnormal-numbers-and-nans">Subnormal numbers and <code>NaN</code>s</h3>
-<ul>
-<li><code>NaN</code> stands for ‘Not A Number’. For example, the result of dividing by zero.
-<ul>
-<li>The largest exponent (<code>11111</code> for 16-bit numbers) is reserved for <code>NaN</code>.</li>
-<li><span class="inclass">Find the largest possible 16-bit floating-point number</span></li>
-</ul></li>
-<li>The smallest exponent (<code>00000</code> for 16-bit numbers) is treated specially.
-<ul>
-<li>Normally, we would expect to interpret them as <span class="math inline">\(2^{0-15} \times 1.0001000101_2\)</span> etc.</li>
-<li>Instead, the smallest exponent (<code>00000</code>) is assumed to represent <span class="math inline">\(2^{-14}\)</span>, the same as <code>00001</code>. To get smaller numbers, the <em>significand</em> is changed from, e.g., <span class="math inline">\(1.0001000101_2\)</span> to <span class="math inline">\(0.0001000101_2\)</span></li>
-</ul></li>
-</ul>
-<div class="fragment">
-<div class="columns">
-<div class="column" style="width:50%;">
-<section id="regular-16-bit-floats" class="level4">
-<h4 class="anchored" data-anchor-id="regular-16-bit-floats">Regular 16-bit floats</h4>
-<p><img src="regular.png" class="img-fluid"></p>
-</section>
-</div><div class="column" style="width:50%;">
-<section id="subnormal-16-bit-floats" class="level4">
-<h4 class="anchored" data-anchor-id="subnormal-16-bit-floats">Subnormal 16-bit floats</h4>
-<p><img src="subnormal.png" class="img-fluid"></p>
-</section>
+</div>
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>v  <span class="op">=</span> np.float32(<span class="dv">1048576</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>v1 <span class="op">=</span> np.float32(<span class="fl">0.2</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>v2 <span class="op">=</span> v <span class="op">+</span> v1 <span class="op">+</span> v1 <span class="op">+</span> v1</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>v2<span class="sc">:9.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
