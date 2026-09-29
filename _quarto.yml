@@ -9,6 +9,8 @@ website:
   title: "ENGR 21 Computer Engineering Fundamentals"
   navbar:
     right:
+      - href: "https://forms.gle/MFhkMcsvSU9Uq7Q5A"
+        text: "Mid-semester Feedback"
       - href: "https://moodle.swarthmore.edu/course/view.php?id=30092"
         text: Moodle
       - href: "https://www.gradescope.com/courses/1380463"

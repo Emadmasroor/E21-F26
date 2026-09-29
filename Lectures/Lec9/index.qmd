@@ -33,11 +33,13 @@ format:
     auto-stretch: false
 ---
 
-### Test 1
+### Test 1 + Survey
 
 ::: {.content-hidden unless-meta="uncover"}
 ![](test1.png){width="50%" fig-align="center"}
 :::
+
+[Mid-semester survey](https://forms.gle/MFhkMcsvSU9Uq7Q5A)
 
 ### Installing `numpy` with Thonny Code Editor
 
