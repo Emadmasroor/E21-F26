@@ -339,7 +339,16 @@ plot takes on the maximum value of either axis (otherwise it is zero).
  * **Q5)** Is SEL active high, or active low? That is, does pushing
    the joystick in cause the SEL pin to have a non-zero voltage
    (active high), or a voltage close to zero (active low)? How can you
-   tell?
+   tell? 
+   
+   ***Hint:*** it would be helpful to consider whether A1 is configured
+   to use either a [pull-up or pull-down resistor](https://en.wikipedia.org/wiki/Pull-up_resistor).
+   How can you tell how this particular input is configured? Which one 
+   corresponds to active high or active low?
+   
+   ![Figure [pupd]: Pull-up and pull-down resistor configurations](images/pullup-pulldown.png width=50%)
+   
+   
 
 ## Exercise 2: Implementing **`lerp`**, **`unlerp`**, and **`remap`**
 
