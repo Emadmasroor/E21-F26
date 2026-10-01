@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Emad Masroor">
+<meta name="dcterms.date" content="2026-10-01">
+
+<title>Lecture 10 – ENGR 21 Computer Engineering Fundamentals</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5a1953863e1f72ef3b996ef827f01ca7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-add7254ae97fa153f8b1a26e02c65245.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-32e3d36c25272d6ff5376a1b833ae0db.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-add7254ae97fa153f8b1a26e02c65245.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ENGR 21 Computer Engineering Fundamentals</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Homepage</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://forms.gle/MFhkMcsvSU9Uq7Q5A"> 
+<span class="menu-text">Mid-semester Feedback</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://moodle.swarthmore.edu/course/view.php?id=30092"> 
+<span class="menu-text">Moodle</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.gradescope.com/courses/1380463"> 
+<span class="menu-text">Gradescope</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://edstem.org/us/courses/104911/discussion"> 
+<span class="menu-text">Ed Discussion</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec10/index.html">Lecture 10</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../AcademicSupport/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Academic Support</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../AcademicSupport/Masroor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../AcademicSupport/wizards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wizard Office Hours</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lectures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec1/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec2/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 02</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec3/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 03</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec4/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 04</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec5/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 05</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec6/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 06</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec7/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 07</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec8/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 08</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec9/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 09</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec10/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 10</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW1/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW1/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 1 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW2/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW2/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 2 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW3/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW3/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 3 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW4/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../PastProjects/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Past E21 Projects</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../syllabus.html#schedule" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tests</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#manipulating-data-in-numpy" id="toc-manipulating-data-in-numpy" class="nav-link active" data-scroll-target="#manipulating-data-in-numpy">Manipulating Data in <code>numpy</code></a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
+  <li><a href="#initializing-multi-dimensional-arrays" id="toc-initializing-multi-dimensional-arrays" class="nav-link" data-scroll-target="#initializing-multi-dimensional-arrays">Initializing multi-dimensional arrays</a></li>
+  <li><a href="#random-number-generation" id="toc-random-number-generation" class="nav-link" data-scroll-target="#random-number-generation">Random number generation</a></li>
+  <li><a href="#slice-notation-in-numpy-arrays" id="toc-slice-notation-in-numpy-arrays" class="nav-link" data-scroll-target="#slice-notation-in-numpy-arrays">Slice notation in <code>numpy</code> arrays</a></li>
+  <li><a href="#slicing-from-ends" id="toc-slicing-from-ends" class="nav-link" data-scroll-target="#slicing-from-ends">Slicing from ends</a></li>
+  <li><a href="#cherry-picking-an-array" id="toc-cherry-picking-an-array" class="nav-link" data-scroll-target="#cherry-picking-an-array">Cherry-picking an array</a></li>
+  <li><a href="#practice-with-slicing-arrays" id="toc-practice-with-slicing-arrays" class="nav-link" data-scroll-target="#practice-with-slicing-arrays">Practice with slicing arrays</a></li>
+  <li><a href="#logical-indexing" id="toc-logical-indexing" class="nav-link" data-scroll-target="#logical-indexing">Logical indexing</a></li>
+  <li><a href="#a-closer-look-at-logical-indexing" id="toc-a-closer-look-at-logical-indexing" class="nav-link" data-scroll-target="#a-closer-look-at-logical-indexing">A closer look at logical indexing</a></li>
+  <li><a href="#chaining-together-multiple-boolean-operations" id="toc-chaining-together-multiple-boolean-operations" class="nav-link" data-scroll-target="#chaining-together-multiple-boolean-operations">Chaining together multiple boolean operations</a></li>
+  <li><a href="#logical-indices-can-be-used-for-other-arrays" id="toc-logical-indices-can-be-used-for-other-arrays" class="nav-link" data-scroll-target="#logical-indices-can-be-used-for-other-arrays">Logical Indices can be used for other arrays</a></li>
+  <li><a href="#flip-reshape-transpose" id="toc-flip-reshape-transpose" class="nav-link" data-scroll-target="#flip-reshape-transpose">Flip, Reshape, Transpose</a></li>
+  <li><a href="#concatenating-i.e.-stacking-numpy-arrays" id="toc-concatenating-i.e.-stacking-numpy-arrays" class="nav-link" data-scroll-target="#concatenating-i.e.-stacking-numpy-arrays">Concatenating, i.e., stacking <code>numpy</code> arrays</a></li>
+  <li><a href="#when-stacking-works-and-when-it-doesnt" id="toc-when-stacking-works-and-when-it-doesnt" class="nav-link" data-scroll-target="#when-stacking-works-and-when-it-doesnt">When stacking works and when it doesn’t</a></li>
+  <li><a href="#equally-spaced-arrays-in-numpy" id="toc-equally-spaced-arrays-in-numpy" class="nav-link" data-scroll-target="#equally-spaced-arrays-in-numpy">Equally-spaced arrays in <code>numpy</code></a></li>
+  <li><a href="#collective-operators" id="toc-collective-operators" class="nav-link" data-scroll-target="#collective-operators">Collective operators</a></li>
+  <li><a href="#project-euler-programming-practice" id="toc-project-euler-programming-practice" class="nav-link" data-scroll-target="#project-euler-programming-practice">Project Euler: Programming Practice</a></li>
+  <li><a href="#plotting-in-python-matplotlib" id="toc-plotting-in-python-matplotlib" class="nav-link" data-scroll-target="#plotting-in-python-matplotlib">Plotting in Python: <code>matplotlib</code></a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec10/index.html">Lecture 10</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Lecture 10</h1>
+<p class="subtitle lead">E21 Computer Engineering Fundamentals</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Emad Masroor </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 1, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="manipulating-data-in-numpy" class="level3">
+<h3 class="anchored" data-anchor-id="manipulating-data-in-numpy">Manipulating Data in <code>numpy</code></h3>
+<p><span class="inclass">Download the data file <a href="Temp_data.txt">here</a></span> and look at the official documentation <a href="https://numpy.org/doc/">here</a></p>
+<p>Consists of 3 days of temperature data recorded at half-hour intervals. First time (hours), then temperature in F.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ol type="1">
+<li>Reformat the data in the form of an N rows, 2 column <code>numpy</code> array.</li>
+<li>Save the data as <code>csv</code> files for the three days separately.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="solution" class="level3">
+<h3 class="anchored" data-anchor-id="solution">Solution</h3>
+<ul>
+<li><p>Obtain shape of dataset</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.loadtxt(<span class="st">"Temp_data.txt"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>np.shape(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>We find that the dataset is 290 entries long.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">290</span>,)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Reshape it into 2 x 145 set.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data2 <span class="op">=</span> np.reshape(data,(<span class="dv">2</span>,<span class="dv">145</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Transpose it to have 145 rows and 2 columns</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data3 <span class="op">=</span> np.transpose(data2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul>
+</section>
+<section id="initializing-multi-dimensional-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="initializing-multi-dimensional-arrays">Initializing multi-dimensional arrays</h3>
+<p>Arrays in <code>numpy</code> can be initialized using:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p><code>ones</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>np.ones((<span class="dv">3</span>,<span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>array([[<span class="fl">1.</span>, <span class="fl">1.</span>, <span class="fl">1.</span>, <span class="fl">1.</span>],</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       [<span class="fl">1.</span>, <span class="fl">1.</span>, <span class="fl">1.</span>, <span class="fl">1.</span>],</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>       [<span class="fl">1.</span>, <span class="fl">1.</span>, <span class="fl">1.</span>, <span class="fl">1.</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><code>zeros</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>np.zeros((<span class="dv">5</span>,<span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>array([[<span class="fl">0.</span>, <span class="fl">0.</span>],</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       [<span class="fl">0.</span>, <span class="fl">0.</span>],</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>       [<span class="fl">0.</span>, <span class="fl">0.</span>],</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       [<span class="fl">0.</span>, <span class="fl">0.</span>],</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>       [<span class="fl">0.</span>, <span class="fl">0.</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Random numbers</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>np.random.random((<span class="dv">3</span>,<span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>array([[<span class="fl">0.73</span>, <span class="fl">0.91</span>],</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>     [<span class="fl">0.47</span>, <span class="fl">0.32</span>],</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>     [<span class="fl">0.89</span>, <span class="fl">0.07</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>type</strong> of an array can be changed using functions such as <code>numpy.float64</code>, <code>numpy.int64</code>, <code>np.bool()</code> etc.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="random-number-generation" class="level3">
+<h3 class="anchored" data-anchor-id="random-number-generation">Random number generation</h3>
+<p>It is often useful to generate random numbers.</p>
+<ul>
+<li>A single random number between 0 and 1: <code>numpy.random.random()</code></li>
+<li>An array of 3 random numbers: <code>numpy.random.random(3)</code></li>
+<li>Three rows and two columns of random numbers: <code>numpy.random.random((3,2))</code></li>
+<li>A single random integer between 0 and <code>n</code>, not inclusive of <code>n</code>: <code>numpy.random.randint(n)</code></li>
+<li>A single random integer between <code>m</code> and <code>n</code>, not inclusive of <code>n</code>: <code>numpy.random.randint(m,n)</code></li>
+</ul>
+</section>
+<section id="slice-notation-in-numpy-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="slice-notation-in-numpy-arrays">Slice notation in <code>numpy</code> arrays</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="fl">0.95</span>, <span class="fl">0.3</span> , <span class="fl">0.53</span>, <span class="fl">0.55</span>, <span class="fl">0.73</span>],</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>           [<span class="fl">0.12</span>, <span class="fl">0.17</span>, <span class="fl">0.03</span>, <span class="fl">0.83</span>, <span class="fl">0.34</span>],</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>           [<span class="fl">0.27</span>, <span class="fl">0.9</span> , <span class="fl">0.26</span>, <span class="fl">0.94</span>, <span class="fl">0.55</span>],</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>           [<span class="fl">0.88</span>, <span class="fl">0.26</span>, <span class="fl">0.5</span> , <span class="fl">0.5</span> , <span class="fl">0.05</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Rows and columns can be selected using ‘slices’ of a <code>numpy</code> array</li>
+</ul>
+<div style="position: relative; width: fit-content; margin-left: auto; margin-right: auto;">
+<div class="grid-table">
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>0.07</td>
+<td>0.14</td>
+<td>0.23</td>
+<td>9.42</td>
+<td>7.73</td>
+</tr>
+<tr class="even">
+<td>4.56</td>
+<td>6.88</td>
+<td>0.99</td>
+<td>5.32</td>
+<td>6.36</td>
+</tr>
+<tr class="odd">
+<td>9.34</td>
+<td>6.38</td>
+<td>7.48</td>
+<td>8.05</td>
+<td>6.01</td>
+</tr>
+<tr class="even">
+<td>4.00</td>
+<td>4.35</td>
+<td>1.43</td>
+<td>9.01</td>
+<td>3.93</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="position: absolute; left: 0%; top: 50%; width: 100%; height: 25%; border: 3px solid red; pointer-events: none;">
+
+</div>
+<div style="position: absolute; left: 60%; top: 0%; width: 20%; height: 100%; border: 3px solid orange; pointer-events: none;">
+
+</div>
+</div>
+<ul>
+<li><p>To select the <span style="color: red;">third row</span>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">2</span>,:]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>‘Row number 2, All columns’</p></li>
+<li><p>To select the <span style="color: orange;">fourth column</span>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>a[:,<span class="dv">3</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>‘All rows, column number 3’</p></li>
+</ul>
+</section>
+<section id="slicing-from-ends" class="level3">
+<h3 class="anchored" data-anchor-id="slicing-from-ends">Slicing from ends</h3>
+<p><img src="np_indexing.png" class="img-fluid"></p>
+<ul>
+<li>This follows Python’s usual conventions:
+<ul>
+<li>Indexing starts from zero</li>
+<li>The last element is not included
+<ul>
+<li>The array <code>example[0:5]</code> is a subset of <code>example</code> with 5 elements starting from index <code>0</code>.</li>
+<li>The array <code>example[2:4]</code> is a subset of <code>example</code> with 2 elements starting from index <code>2</code>.</li>
+</ul></li>
+</ul></li>
+<li>Slicing from ends can work in multiple dimensions.</li>
+<li>Negative numbers count from the end</li>
+</ul>
+</section>
+<section id="cherry-picking-an-array" class="level3">
+<h3 class="anchored" data-anchor-id="cherry-picking-an-array">Cherry-picking an array</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>example <span class="op">=</span> np.array([<span class="fl">1.81</span>, <span class="fl">8.17</span>, <span class="fl">6.93</span>, <span class="fl">1.54</span>, <span class="fl">0.39</span>, <span class="fl">4.96</span>, <span class="fl">2.66</span>, <span class="fl">6.03</span>, <span class="fl">4.85</span>, <span class="fl">6.43</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Create an array containing only the second, fourth, and seventh element of this array.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>example[[<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">6</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>[A list of integers can be used to access the <code>n</code>th elements of a <code>numpy</code> array.]</p>
+</section>
+<section id="practice-with-slicing-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="practice-with-slicing-arrays">Practice with slicing arrays</h3>
+<p>Obtain the following subsets by <strong>slicing</strong> the given array (no cherry-picking)</p>
+<div style="position: relative; width: fit-content; margin-left: auto; margin-right: auto;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ex <span class="op">=</span> np.array([[<span class="dv">70</span>, <span class="dv">96</span>, <span class="dv">77</span>, <span class="dv">89</span>, <span class="dv">66</span>, <span class="dv">78</span>, <span class="dv">37</span>,  <span class="dv">4</span>],</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>               [<span class="dv">36</span>, <span class="dv">46</span>, <span class="dv">84</span>, <span class="dv">19</span>, <span class="dv">73</span>, <span class="dv">24</span>, <span class="dv">29</span>, <span class="dv">25</span>],</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>               [<span class="dv">75</span>, <span class="dv">66</span>,  <span class="dv">0</span>, <span class="dv">67</span>, <span class="dv">84</span>, <span class="dv">16</span>, <span class="dv">83</span>, <span class="dv">21</span>],</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>               [<span class="dv">81</span>, <span class="dv">35</span>, <span class="dv">62</span>,  <span class="dv">5</span>, <span class="dv">94</span>, <span class="dv">75</span>, <span class="dv">25</span>, <span class="dv">76</span>],</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>               [<span class="dv">57</span>, <span class="dv">31</span>, <span class="dv">79</span>, <span class="dv">86</span>, <span class="dv">83</span>, <span class="dv">54</span>, <span class="dv">24</span>,  <span class="dv">5</span>],</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>               [<span class="dv">75</span>, <span class="dv">71</span>, <span class="dv">57</span>, <span class="dv">58</span>, <span class="dv">36</span>, <span class="dv">89</span>, <span class="dv">31</span>, <span class="dv">17</span>],</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>               [<span class="dv">83</span>, <span class="dv">94</span>,  <span class="dv">8</span>, <span class="dv">22</span>, <span class="dv">49</span>, <span class="dv">74</span>, <span class="dv">89</span>, <span class="dv">79</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div style="position: absolute; left: 55%; top: 55%; width: 30%; height: 15%; border: 3px solid red; pointer-events: none;">
+
+</div>
+<div style="position: absolute; left: 71%; top: 70%; width: 22%; height: 12%; border: 3px solid blue; pointer-events: none;">
+
+</div>
+<div style="position: absolute; left: 63%; top: 5%; width: 15%; height: 40%; border: 3px solid orange; pointer-events: none;">
+
+</div>
+</div>
+</section>
+<section id="logical-indexing" class="level3">
+<h3 class="anchored" data-anchor-id="logical-indexing">Logical indexing</h3>
+<p>Logical indexing is a powerful feature of <code>numpy</code> (and MATLAB). In this approach, we index an array using <strong>booleans</strong>.</p>
+<p><strong>Example:</strong> Create an array containing only the values of <code>example</code> that are greater than 5.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>example <span class="op">=</span> np.array([<span class="fl">1.81</span>, <span class="fl">8.17</span>, <span class="fl">6.93</span>, <span class="fl">1.54</span>, <span class="fl">0.39</span>, <span class="fl">4.96</span>, <span class="fl">2.66</span>, <span class="fl">6.03</span>, <span class="fl">4.85</span>, <span class="fl">6.43</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><p>Without logical indexing:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>example[[<span class="dv">1</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>Manually pick out the second, third, last, and third-last elements.</p>
+</div></li>
+<li><p>With logical indexing:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>example[example <span class="op">&gt;</span> <span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Let Python select for you based on an array of <strong>boolean</strong> values.</p></li>
+</ul>
+</section>
+<section id="a-closer-look-at-logical-indexing" class="level3">
+<h3 class="anchored" data-anchor-id="a-closer-look-at-logical-indexing">A closer look at logical indexing</h3>
+<p>To understand logical indexing, let’s look at <code>example&gt;5</code> when <code>example</code> is a <code>numpy</code> array.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>example <span class="op">=</span> np.array([<span class="fl">1.81</span>, <span class="fl">8.17</span>, <span class="fl">6.93</span>, <span class="fl">1.54</span>, <span class="fl">0.39</span>, <span class="fl">4.96</span>, <span class="fl">2.66</span>, <span class="fl">6.03</span>, <span class="fl">4.85</span>, <span class="fl">6.43</span>])</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> example <span class="op">&gt;</span> <span class="dv">5</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>array([<span class="va">False</span>,  <span class="va">True</span>,  <span class="va">True</span>, <span class="va">False</span>, <span class="va">False</span>, <span class="va">False</span>, <span class="va">False</span>,  <span class="va">True</span>, <span class="va">False</span>,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">True</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="grid-table" style="position: relative; width: fit-content; margin-left: auto; margin-right: auto;">
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>1.81</td>
+<td>False</td>
+<td>Exclude</td>
+</tr>
+<tr class="even">
+<td>8.17</td>
+<td><strong>True</strong></td>
+<td>Include</td>
+</tr>
+<tr class="odd">
+<td>6.93</td>
+<td><strong>True</strong></td>
+<td>Include</td>
+</tr>
+<tr class="even">
+<td>1.54</td>
+<td>False</td>
+<td>Exclude</td>
+</tr>
+<tr class="odd">
+<td>0.39</td>
+<td>False</td>
+<td>Exclude</td>
+</tr>
+<tr class="even">
+<td>4.96</td>
+<td>False</td>
+<td>Exclude</td>
+</tr>
+<tr class="odd">
+<td>2.66</td>
+<td>False</td>
+<td>Exclude</td>
+</tr>
+<tr class="even">
+<td>6.03</td>
+<td><strong>True</strong></td>
+<td>Include</td>
+</tr>
+<tr class="odd">
+<td>4.85</td>
+<td>False</td>
+<td>Exclude</td>
+</tr>
+<tr class="even">
+<td>6.43</td>
+<td><strong>True</strong></td>
+<td>Include</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="chaining-together-multiple-boolean-operations" class="level3">
+<h3 class="anchored" data-anchor-id="chaining-together-multiple-boolean-operations">Chaining together multiple boolean operations</h3>
+<p>Create an array whose elements contain all the elements of <code>example</code> that are smaller than 5 and whose units place is an even number.</p>
+<ul>
+<li>To chain two logical indexing commands together, need:
+<ul>
+<li><code>&amp;</code> for ‘and’: <strong>both</strong> of the two onditions apply</li>
+<li><code>|</code> for ‘or’: <strong>any</strong> of the two conditions apply</li>
+</ul></li>
+</ul>
+</section>
+<section id="logical-indices-can-be-used-for-other-arrays" class="level3 scrollable">
+<h3 class="scrollable anchored" data-anchor-id="logical-indices-can-be-used-for-other-arrays">Logical Indices can be used for other arrays</h3>
+<ul>
+<li>Once an array of booleans has been created, it is <em>independent</em> of the array that was used to create it</li>
+<li>So you can use it to index <strong>other</strong> arrays if you want.</li>
+</ul>
+<p><span class="fragment"><strong>Example</strong></span></p>
+<ul>
+<li>Select the rows of <code>c</code> for which the difference between <code>a</code> and <code>b</code> is less than 2.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>np.set_printoptions(precision<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="fl">4.58</span>, <span class="fl">7.17</span>, <span class="fl">8.89</span>, <span class="fl">6.79</span>, <span class="fl">1.58</span>, <span class="fl">1.84</span>, <span class="fl">6.85</span>, <span class="fl">1.06</span>, <span class="fl">6.37</span>, <span class="fl">5.28</span>])</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="fl">4.72</span>, <span class="fl">6.83</span>, <span class="fl">3.01</span>, <span class="fl">4.76</span>, <span class="fl">0.23</span>, <span class="fl">7.88</span>, <span class="fl">3.04</span>, <span class="fl">0.78</span>, <span class="fl">7.99</span>, <span class="fl">7.69</span>])</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> np.array([<span class="dv">49</span>, <span class="dv">99</span>, <span class="dv">34</span>, <span class="dv">13</span>, <span class="dv">33</span>,  <span class="dv">1</span>, <span class="dv">56</span>, <span class="dv">39</span>, <span class="dv">83</span>, <span class="dv">77</span>])</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(b)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">abs</span>(b[i] <span class="op">-</span> a[i]) <span class="op">&lt;</span> <span class="dv">2</span>:</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"The </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">th elements of a and b are within 3 of each other"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This is incomplete and <strong>does not use</strong> logical indexing. <span class="inclass">Use logical indexing</span> to accomplish this task.</p>
+</div>
+</div><div class="column" style="width:05%;">
+
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><code>a</code></th>
+<th><code>b</code></th>
+<th><code>c</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4.58</td>
+<td>4.72</td>
+<td>49.00</td>
+</tr>
+<tr class="even">
+<td>7.17</td>
+<td>6.83</td>
+<td>99.00</td>
+</tr>
+<tr class="odd">
+<td>8.89</td>
+<td>3.01</td>
+<td>34.00</td>
+</tr>
+<tr class="even">
+<td>6.79</td>
+<td>4.76</td>
+<td>13.00</td>
+</tr>
+<tr class="odd">
+<td>1.58</td>
+<td>0.23</td>
+<td>33.00</td>
+</tr>
+<tr class="even">
+<td>1.84</td>
+<td>7.88</td>
+<td>1.00</td>
+</tr>
+<tr class="odd">
+<td>6.85</td>
+<td>3.04</td>
+<td>56.00</td>
+</tr>
+<tr class="even">
+<td>1.06</td>
+<td>0.78</td>
+<td>39.00</td>
+</tr>
+<tr class="odd">
+<td>6.37</td>
+<td>7.99</td>
+<td>83.00</td>
+</tr>
+<tr class="even">
+<td>5.28</td>
+<td>7.69</td>
+<td>77.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="flip-reshape-transpose" class="level3">
+<h3 class="anchored" data-anchor-id="flip-reshape-transpose">Flip, Reshape, Transpose</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="fl">0.34</span>, <span class="fl">0.56</span>, <span class="fl">0.90</span>])</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([[<span class="fl">0.95</span>, <span class="fl">0.3</span> , <span class="fl">0.53</span>, <span class="fl">0.55</span>, <span class="fl">0.73</span>],</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>           [<span class="fl">0.12</span>, <span class="fl">0.17</span>, <span class="fl">0.03</span>, <span class="fl">0.83</span>, <span class="fl">0.34</span>],</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>           [<span class="fl">0.27</span>, <span class="fl">0.9</span> , <span class="fl">0.26</span>, <span class="fl">0.94</span>, <span class="fl">0.55</span>],</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>           [<span class="fl">0.88</span>, <span class="fl">0.26</span>, <span class="fl">0.5</span> , <span class="fl">0.5</span> , <span class="fl">0.05</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><p>The <code>numpy.flip()</code> command reverses an array</p>
+<ul>
+<li><p>Optional argument: <code>numpy.flip(example, axis=1)</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>np.flip(a)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>np.flip(b,axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>np.flip(b,axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul></li>
+<li><p>The <code>reshape()</code> command re-arranges data in an array:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>np.reshape(b,(<span class="dv">10</span>,<span class="dv">2</span>)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Rearranges <code>b</code> into a matrix with 10 rows, 2 columns</p></li>
+<li><p>The <code>transpose</code> command reverses the rows and columns of a 2-D matrix</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>np.transpose(b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul>
+</section>
+<section id="concatenating-i.e.-stacking-numpy-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="concatenating-i.e.-stacking-numpy-arrays">Concatenating, i.e., stacking <code>numpy</code> arrays</h3>
+<p>Arrays can be <em>stacked</em> vertically or horizontally.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">1</span>],</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>               [<span class="dv">2</span>, <span class="dv">2</span>]])</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>a2 <span class="op">=</span> np.array([[<span class="dv">3</span>, <span class="dv">3</span>],</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>               [<span class="dv">4</span>, <span class="dv">4</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="columns">
+<div class="column" style="width:30%;">
+<ul>
+<li><p>Vertically:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>np.vstack((a1, a2))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>array([[1, 1],
+      [2, 2],
+      [3, 3],
+      [4, 4]])</code></pre></li>
+<li><p>Horizontally:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>np.hstack((a1, a2))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>array([[1, 1, 3, 3],
+       [2, 2, 4, 4]])</code></pre></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:65%;">
+<div class="fragment">
+<p><span class="inclass">Task: What pairs of the following arrays can be <code>hstack</code>’ed and what pairs cannot be <code>hstack</code>ed ? Do the same for <code>vstack</code></span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="fl">0.87</span>, <span class="fl">0.47</span>, <span class="fl">0.49</span>],</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>              [<span class="fl">0.12</span>, <span class="fl">0.3</span> , <span class="fl">0.42</span>],</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>              [<span class="fl">0.78</span>, <span class="fl">0.03</span>, <span class="fl">0.75</span>],</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>              [<span class="fl">0.08</span>, <span class="fl">0.33</span>, <span class="fl">0.61</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([[<span class="fl">0.55</span>, <span class="fl">0.78</span>],</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>              [<span class="fl">0.09</span>, <span class="fl">0.46</span>],</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>              [<span class="fl">0.03</span>, <span class="fl">0.66</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> np.array([[<span class="fl">0.65</span>, <span class="fl">0.65</span>, <span class="fl">0.1</span> , <span class="fl">0.64</span>],</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>              [<span class="fl">0.06</span>, <span class="fl">0.5</span> , <span class="fl">0.68</span>, <span class="fl">0.69</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="when-stacking-works-and-when-it-doesnt" class="level3">
+<h3 class="anchored" data-anchor-id="when-stacking-works-and-when-it-doesnt">When stacking works and when it doesn’t</h3>
+<p><span class="inclass">Write a function</span> that takes as input two <code>numpy</code> arrays (assumed to be 2-dimensional).</p>
+<p>Your function should return a tuple of Booleans indicating:</p>
+<ol type="1">
+<li>Whether the two arrays can be <code>hstack</code>’ed</li>
+<li>Whether the two arrays can be <code>vstack</code>’ed</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> check_stacking(array1, array2):</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (<span class="va">False</span>, <span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Hint: use <code>numpy.shape()</code></p>
+</section>
+<section id="equally-spaced-arrays-in-numpy" class="level3 scrollable">
+<h3 class="scrollable anchored" data-anchor-id="equally-spaced-arrays-in-numpy">Equally-spaced arrays in <code>numpy</code></h3>
+<ul>
+<li><code>arange</code> — works like <code>range</code> but returns an array.
+<ul>
+<li><code>arange(stop)</code></li>
+<li><code>arange(start,stop)</code></li>
+<li><code>arange(start,stop,step)</code></li>
+<li>Like <code>range</code>, does not include the last element!</li>
+</ul></li>
+<li><code>linspace</code> — works like MATLAB’s <code>linspace</code>.
+<ul>
+<li><code>linspace(1,5)</code> generates 50 numbers between 1 and 5 <strong>both inclusive</strong>.</li>
+<li><code>linspace(1,5,9)</code> generates 9 numbers betwen 1 and 5 both inclusive.</li>
+<li>By default, the last value <strong>is</strong> included (just like MATLAB’s <code>linspace</code>)
+<ul>
+<li>If you want to mimic the behavior of <code>arange</code>, <code>range</code>, etc. and remove the endpoint, you can pass as an optional argument <code>linspace(1,5,9,endpoint=False</code></li>
+</ul></li>
+</ul></li>
+<li><code>logspace</code> — like <code>linspace</code> but on a log-log scale.</li>
+</ul>
+</section>
+<section id="collective-operators" class="level3">
+<h3 class="anchored" data-anchor-id="collective-operators">Collective operators</h3>
+<p><code>numpy</code> provides the functions <code>max</code>, <code>min</code>, <code>mean</code>, <code>std</code>, and <code>sum</code>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Some of these have the same name as built-in Python functions. e.g., <code>numpy.max()</code> is different from <code>max()</code>.</p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span>np.array([[<span class="dv">3</span>, <span class="dv">9</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">2</span>],</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>             [<span class="dv">0</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">6</span>, <span class="dv">0</span>],</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>             [<span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>],</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>             [<span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">9</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Use the documentation of these functions <a href="https://numpy.org/doc/stable/user/absolute_beginners.html#more-useful-array-operations">here</a> and use <code>numpy</code> to:</p>
+<ol type="1">
+<li><span class="inclass">Find</span> the mean of each row</li>
+<li><span class="inclass">Find</span> the sum of each coolumn</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These and many other <code>numpy</code> functions can be called <strong>either</strong> using the syntax <code>a.mean()</code> <strong>or</strong> using the syntax <code>numpy.mean(a)</code></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="project-euler-programming-practice" class="level3">
+<h3 class="anchored" data-anchor-id="project-euler-programming-practice">Project Euler: Programming Practice</h3>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul>
+<li><a href="https://projecteuler.net/archives">Project Euler</a> is an open set of programming challenges that has been running since 2001.</li>
+<li>Try problems 1, 6, or 7 depending on your level of programming profficiency</li>
+<li><code>numpy</code> <strong>may</strong> come in handy</li>
+</ul>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="euler.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="plotting-in-python-matplotlib" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-in-python-matplotlib">Plotting in Python: <code>matplotlib</code></h3>
+<ul>
+<li>Download the <code>matplotlib</code> library from Thonny’s Tools &gt; Manage Packages menu</li>
+<li>See the <a href="https://matplotlib.org/stable/index.html">official documentation</a></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>mport numpy <span class="im">as</span> np</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>xvals <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">2</span><span class="op">*</span>np.pi,<span class="dv">200</span>)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>yvals <span class="op">=</span> np.sin(xvals)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>plt.plot(xvals,yvals)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+        for (let i=0; i<annoteTargets.length; i++) {
+          const annoteTarget = annoteTargets[i];
+          const targetCell = annoteTarget.getAttribute("data-target-cell");
+          const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+          const contentFn = () => {
+            const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+            if (content) {
+              const tipContent = content.cloneNode(true);
+              tipContent.classList.add("code-annotation-tip-content");
+              return tipContent.outerHTML;
+            }
+          }
+          const config = {
+            allowHTML: true,
+            content: contentFn,
+            onShow: (instance) => {
+              selectCodeLines(instance.reference);
+              instance.reference.classList.add('code-annotation-active');
+              window.tippy.hideAll();
+            },
+            onHide: (instance) => {
+              unselectCodeLines();
+              instance.reference.classList.remove('code-annotation-active');
+            },
+            maxWidth: 300,
+            delay: [50, 0],
+            duration: [200, 0],
+            offset: [5, 10],
+            arrow: true,
+            appendTo: function(el) {
+              return el.parentElement.parentElement.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'quarto',
+            placement: 'right',
+            popperOptions: {
+              modifiers: [
+              {
+                name: 'flip',
+                options: {
+                  flipVariations: false, // true by default
+                  allowedAutoPlacements: ['right'],
+                  fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+                },
+              },
+              {
+                name: 'preventOverflow',
+                options: {
+                  mainAxis: false,
+                  altAxis: false
+                }
+              }
+              ]        
+            }      
+          };
+          window.tippy(annoteTarget, config); 
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
