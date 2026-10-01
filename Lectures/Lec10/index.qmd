@@ -7,7 +7,7 @@ order: 10
 date: 10-01-2026
 date-format: long
 css: ../../styles.css
-uncover: false
+uncover: true
 footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
 resources: none
 code-line-numbers: false
@@ -41,8 +41,7 @@ format:
 Consists of 3 days of temperature data recorded at half-hour intervals. First time (hours), then temperature in F.
 
 ::: {layout-ncol=2}
-1. Reformat the data in the form of an N rows, 2 column `numpy` array.
-2. Save the data as `csv` files for the three days separately.
+Reformat the data in the form of an N rows, 2 column `numpy` array.
 
 
 :::
