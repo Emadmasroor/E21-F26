@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2026-10-01">
 
-<title>HW 4 – ENGR 21 Computer Engineering Fundamentals</title>
+<title>HW 4 Solutions – ENGR 21 Computer Engineering Fundamentals</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -195,7 +195,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../Homework/HW4/index.html">HW 4</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../Homework/HW4/index.html">HW 4</a></li><li class="breadcrumb-item"><a href="../../Homework/HW4/solutions.html">HW 4 Solutions</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -375,7 +375,7 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../Homework/HW4/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../Homework/HW4/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 4</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -384,7 +384,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Homework/HW4/solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Homework/HW4/solutions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">HW 4 Solutions</span></a>
   </div>
 </li>
@@ -426,7 +426,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#python-function-to-read-ieee-floats" id="toc-python-function-to-read-ieee-floats" class="nav-link active" data-scroll-target="#python-function-to-read-ieee-floats"><span class="header-section-number">1</span> Python function to read IEEE floats</a></li>
+  <li><a href="#solutions" id="toc-solutions" class="nav-link active" data-scroll-target="#solutions">Solutions</a></li>
+  <li><a href="#python-function-to-read-ieee-floats" id="toc-python-function-to-read-ieee-floats" class="nav-link" data-scroll-target="#python-function-to-read-ieee-floats"><span class="header-section-number">1</span> Python function to read IEEE floats</a></li>
   <li><a href="#floating-point-numbers" id="toc-floating-point-numbers" class="nav-link" data-scroll-target="#floating-point-numbers"><span class="header-section-number">2</span> Floating-point numbers</a>
   <ul class="collapse">
   <li><a href="#conversion-to-fractional-form" id="toc-conversion-to-fractional-form" class="nav-link" data-scroll-target="#conversion-to-fractional-form"><span class="header-section-number">2.1</span> Conversion to fractional form</a></li>
@@ -444,14 +445,14 @@ window.Quarto = {
   <li><a href="#waiting-for-crops-to-grow" id="toc-waiting-for-crops-to-grow" class="nav-link" data-scroll-target="#waiting-for-crops-to-grow"><span class="header-section-number">4.3</span> Waiting for crops to grow</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="solutions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../Homework/HW4/index.html">HW 4</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../Homework/HW4/index.html">HW 4</a></li><li class="breadcrumb-item"><a href="../../Homework/HW4/solutions.html">HW 4 Solutions</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">HW 4</h1>
+<h1 class="title">HW 4 Solutions</h1>
 <p class="subtitle lead">ENGR 21, Fall 2026.</p>
 </div>
 
@@ -475,54 +476,9 @@ window.Quarto = {
 </header>
 
 
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td>Due Date</td>
-<td>Thu, Oct 01</td>
-</tr>
-<tr class="even">
-<td>Turn in link</td>
-<td>Gradescope <a href="">code</a> and <a href="">PDF</a></td>
-</tr>
-<tr class="odd">
-<td>URL</td>
-<td><code>emadmasroor.github.io/E21-F26/Homework/HW4</code></td>
-</tr>
-</tbody>
-</table>
-<p><u>What to turn in</u></p>
-<p>For this assignment, you will turn in a PDF file as well as multiple code files. Each entry in the following table should be its own <code>.py</code> file.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 80%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Problem</th>
-<th>Format</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Code: One <code>.py</code> file with <strong>all three</strong> function definitions.</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>PDF</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>PDF</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Code: Three <code>.py</code> file, one for each of 4.1, 4.2 and 4.3</td>
-</tr>
-</tbody>
-</table>
+<section id="solutions" class="level1 unnumbered">
+<h1 class="unnumbered">Solutions</h1>
+</section>
 <section id="python-function-to-read-ieee-floats" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Python function to read IEEE floats</h1>
 <p>Computers store numbers in memory using a series of zeros and ones. These zeros and ones are then interpreted as floating-point numbers according to the standard scheme that we learned about in class.</p>
@@ -540,80 +496,137 @@ Tip
 <p>Name your function <code>readIEEEfloat</code>. It should take a single argument in the form of a string and should return the value as a number.</p>
 </div>
 </div>
-<div class="callout-hint">
-<p>You can access a subset of a list in Python using the square bracket <code>[]</code> notation.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> list1 <span class="op">=</span> [<span class="dv">56</span>,<span class="dv">78</span>,<span class="dv">34</span>,<span class="op">-</span><span class="dv">21</span>,<span class="dv">3</span>,<span class="dv">90</span>,<span class="dv">67</span>,<span class="dv">24</span>]</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> list1[<span class="dv">2</span>:<span class="dv">5</span>]</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">34</span>, <span class="op">-</span><span class="dv">21</span>, <span class="dv">3</span>]</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> list1[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dv">24</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> list1[<span class="op">-</span><span class="dv">2</span>]</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dv">67</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>In writing your function, you may wish to make use of the following functions as building blocks.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bin_to_dec_int(num):</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> <span class="co"># Converts binary integer to decimal integer</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> <span class="co"># num is a string, interpreted as a binary integer.</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> s <span class="op">=</span> <span class="bu">len</span>(num)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a> total_value <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a> <span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(s):</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  power <span class="op">=</span> s<span class="op">-</span>index<span class="op">-</span><span class="dv">1</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  digit <span class="op">=</span> <span class="bu">int</span>(num[index])</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  value <span class="op">=</span> (<span class="dv">2</span> <span class="op">**</span> power) <span class="op">*</span> digit</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  total_value <span class="op">+=</span> value</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a> <span class="cf">return</span> total_value</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bin_to_dec_frac(num):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Converts binary fraction to decimal fraction.</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># num is a string of 0's and 1's. </span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If num = 1010, this function interprets it as</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1 * (1/2)^1 + 0 * (1/2)^2 + 1 * (1/2)^3 + 0 * (1/2)^4.</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The first bit multiplies (1/2). The second bit multiplies (1/4). The third bit multiplies (1/8), and so on.</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># for example, in the IEEE format, a 16-bit number could have the significand</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1.0011010101</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This function can be used to read the string of bits AFTER the "decimal point" and</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># returns the value of the resulting fraction in decimal form as a 'float'.</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The returned value must always be less than 1.</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  s <span class="op">=</span> <span class="bu">len</span>(num)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  total_value <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(s):</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    power <span class="op">=</span> <span class="op">-</span>index <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    digit <span class="op">=</span> <span class="bu">int</span>(num[index])</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    value <span class="op">=</span> (<span class="dv">2</span> <span class="op">**</span> power) <span class="op">*</span> digit</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    total_value <span class="op">+=</span> value</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> total_value</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="floating-point-numbers" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Floating-point numbers</h1>
-<section id="conversion-to-fractional-form" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="conversion-to-fractional-form"><span class="header-section-number">2.1</span> Conversion to fractional form</h2>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Show all your work for full credit</p>
+<p><strong>Convert binary integer to decimal integer</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bin_to_dec_int(num):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> <span class="co"># Converts binary integer to decimal integer</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> <span class="co"># num is a string, interpreted as a binary integer.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> s <span class="op">=</span> <span class="bu">len</span>(num)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a> total_value <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a> <span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(s):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  power <span class="op">=</span> s<span class="op">-</span>index<span class="op">-</span><span class="dv">1</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  digit <span class="op">=</span> <span class="bu">int</span>(num[index])</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  value <span class="op">=</span> (<span class="dv">2</span> <span class="op">**</span> power) <span class="op">*</span> digit</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  total_value <span class="op">+=</span> value</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a> <span class="cf">return</span> total_value</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Convert binary fraction to decimal fraction</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bin_to_dec_frac(num):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Converts binary fraction to decimal fraction.</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># num is a string of 0's and 1's. </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If num = 1010, this function interprets it as</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1 * (1/2)^1 + 0 * (1/2)^2 + 1 * (1/2)^3 + 0 * (1/2)^4.</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The first bit multiplies (1/2). The second bit multiplies (1/4). The third bit multiplies (1/8), and so on.</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># for example, in the IEEE format, a 16-bit number could have the significand</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1.0011010101</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This function can be used to read the string of bits AFTER the "decimal point" and</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># returns the value of the resulting fraction in decimal form as a 'float'.</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The returned value must always be less than 1.</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  s <span class="op">=</span> <span class="bu">len</span>(num)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  total_value <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(s):</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    power <span class="op">=</span> <span class="op">-</span>index <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    digit <span class="op">=</span> <span class="bu">int</span>(num[index])</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    value <span class="op">=</span> (<span class="dv">2</span> <span class="op">**</span> power) <span class="op">*</span> digit</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    total_value <span class="op">+=</span> value</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> total_value</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Combine</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> readIEEEfloat(num):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Interpret num, type string, as a 16-bit, 32-bit or 64-bit binary number stored</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># in IEEE format. Return the answer as an object of type float.</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="bu">len</span>(num) <span class="op">==</span> <span class="dv">16</span> <span class="kw">or</span> <span class="bu">len</span>(num) <span class="op">==</span> <span class="dv">32</span> <span class="kw">or</span> <span class="bu">len</span>(num) <span class="op">==</span> <span class="dv">64</span>:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># First, take out the sign bit</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    signbit       <span class="op">=</span> <span class="bu">int</span>(num[<span class="dv">0</span>])</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    sign          <span class="op">=</span> <span class="op">-</span><span class="dv">1</span> <span class="cf">if</span> signbit <span class="op">==</span> <span class="dv">1</span> <span class="cf">else</span> <span class="dv">1</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Then, take out the exponent and significand bits</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(num) <span class="op">==</span> <span class="dv">16</span>:</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>      exponent      <span class="op">=</span> bin_to_dec_int(num[<span class="dv">1</span>:<span class="dv">6</span>])</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      significand   <span class="op">=</span> bin_to_dec_frac(num[<span class="dv">6</span>:])</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      bias <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="bu">len</span>(num) <span class="op">==</span> <span class="dv">32</span>:</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>      exponent      <span class="op">=</span> bin_to_dec_int(num[<span class="dv">1</span>:<span class="dv">9</span>])</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>      significand   <span class="op">=</span> bin_to_dec_frac(num[<span class="dv">9</span>:])</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>      bias <span class="op">=</span> <span class="dv">127</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="bu">len</span>(num) <span class="op">==</span> <span class="dv">64</span>:</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>      exponent      <span class="op">=</span> bin_to_dec_int(num[<span class="dv">1</span>:<span class="dv">12</span>])</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>      significand   <span class="op">=</span> bin_to_dec_frac(num[<span class="dv">12</span>:])</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>      bias <span class="op">=</span> <span class="dv">1023</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Then put it together.</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sign <span class="op">*</span> (<span class="dv">1</span><span class="op">+</span>significand) <span class="op">*</span> <span class="dv">2</span> <span class="op">**</span> (exponent <span class="op">-</span> bias)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Input must be a string of length 16, 32 or 64"</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">None</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
+</section>
+<section id="floating-point-numbers" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Floating-point numbers</h1>
+<section id="conversion-to-fractional-form" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="conversion-to-fractional-form"><span class="header-section-number">2.1</span> Conversion to fractional form</h2>
 <p>Interpret the following 16-bit floating-point numbers as irreducable fractions. Also write an approximate decimal representation of your fractions.</p>
 <ol type="1">
 <li><code>0b1001110000101110</code>, a.k.a. <code>0x1C2E</code></li>
 <li><code>0b0100110001101010</code>, a.k.a. <code>0x4C6A</code></li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solutions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>We first divide up the 16 bits of <code>0b1001110000101110</code> into:</p>
+<ul>
+<li>Sign bit: <code>1</code> — this number is negative</li>
+<li>Exponent bits: <code>00111</code> — in decimal form, this is 7.</li>
+<li>Significand bits: <code>0000101110</code></li>
+</ul>
+<p>Using this information, we can write this number in the following way: <span class="math display">\[-1.0000101110_2 \times 2^{7-15}\]</span> which is equal to <span class="math display">\[- \left( 1 + 2^{-5} + 2^{-7} + 2^{-8} + 2^{-9} \right) \times 2^{-8}\]</span> We can now write it out as fractions: <span class="math display">\[- \left( 1 + \frac{1}{32} + \frac{1}{128} + \frac{1}{256} + \frac{1}{512} \right) \times \frac{1}{256}\]</span> <span class="math display">\[= - \left( \frac{512}{512} + \frac{16}{512} + \frac{4}{512} + \frac{2}{512} + \frac{1}{512} \right) \times \frac{1}{256}\]</span> <span class="math display">\[= - \left( \frac{535}{512} \right) \times \frac{1}{256} = \boxed{- \frac{535}{131072}} \approx -0.00408\]</span></p></li>
+<li><p>We first divide up the 16 bits of <code>0b0100110001101010</code> into:</p>
+<ul>
+<li>Sign bit: <code>0</code> — this number is positive</li>
+<li>Exponent bits: <code>10011</code> — in decimal form, this is 19.</li>
+<li>Significand bits: <code>0001101010</code></li>
+</ul>
+<p>Using this information, we can write this number in the following way: <span class="math display">\[+1.0001101010_2 \times 2^{19-15}\]</span> which is equal to <span class="math display">\[\left( 1 + 2^{-4} + 2^{-5} + 2^{-7} + 2^{-9} \right) \times 2^{4}\]</span> We can now write it out as fractions: <span class="math display">\[\left( 1 + \frac{1}{16} + \frac{1}{32} + \frac{1}{128} + \frac{1}{512} \right) \times 16\]</span> <span class="math display">\[= \left( \frac{512}{512} + \frac{32}{512} + \frac{16}{512} + \frac{4}{512} + \frac{1}{512} \right) \times 16\]</span> <span class="math display">\[= \left( \frac{565}{512} \right) \times 16 = \boxed{\frac{565}{32}} \approx 17.656\]</span></p></li>
+</ol>
+</div>
+</div>
 </section>
 <section id="large-and-small-numbers" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="large-and-small-numbers"><span class="header-section-number">2.2</span> Large and small Numbers</h2>
 <p>Use the web app <a href="https://evanw.github.io/float-toy/">Float Toy</a> to fill the following table. All numbers should be positive, and should be given in scientific notation in decimal form up to the number of significant figures given by the web app or up to 3 significant figures after the decimal point, whichever is smaller.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solutions
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 70%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
+<col style="width: 37%">
+<col style="width: 19%">
+<col style="width: 20%">
+<col style="width: 21%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -626,43 +639,45 @@ Note
 <tbody>
 <tr class="odd">
 <td>Smallest subnormal non-zero number</td>
-<td></td>
-<td></td>
-<td></td>
+<td><span class="math inline">\(5.97 \times 10^{-8}\)</span></td>
+<td><span class="math inline">\(1 \times 10^{-45}\)</span></td>
+<td><span class="math inline">\(5 \times 10^{-324}\)</span></td>
 </tr>
 <tr class="even">
 <td>Second smallest subnormal non-zero number</td>
-<td></td>
-<td></td>
-<td></td>
+<td><span class="math inline">\(1.2 \times 10^{-7}\)</span></td>
+<td><span class="math inline">\(2.8 \times 10^{-45}\)</span></td>
+<td><span class="math inline">\(1 \times 10^{-323}\)</span></td>
 </tr>
 <tr class="odd">
 <td>Smallest normal<span class="math inline">\(^*\)</span> non-zero number</td>
-<td></td>
-<td></td>
-<td></td>
+<td><span class="math inline">\(6.104 \times 10^{-5}\)</span></td>
+<td><span class="math inline">\(1.175 \times 10^{-38}\)</span></td>
+<td><span class="math inline">\(2.225 \times 10^{-308}\)</span></td>
 </tr>
 <tr class="even">
 <td>Second smallest normal<span class="math inline">\(^*\)</span> non-zero number</td>
-<td></td>
-<td></td>
-<td></td>
+<td><span class="math inline">\(6.11 \times 10^{-5}\)</span></td>
+<td><span class="math inline">\(1.175 \times 10^{-38}\)</span></td>
+<td><span class="math inline">\(2.225 \times 10^{-308}\)</span></td>
 </tr>
 <tr class="odd">
 <td>Largest non-<code>NaN</code> number</td>
-<td></td>
-<td></td>
-<td></td>
+<td><span class="math inline">\(6.550 \times10^{4}\)</span></td>
+<td><span class="math inline">\(3.376 \times10^{38}\)</span></td>
+<td><span class="math inline">\(1.797 \times 10^{308}\)</span></td>
 </tr>
 <tr class="even">
 <td>Second largest non-<code>NaN</code> number</td>
-<td></td>
-<td></td>
-<td></td>
+<td><span class="math inline">\(6.547 \times10^{4}\)</span></td>
+<td><span class="math inline">\(3.376 \times10^{38}\)</span></td>
+<td><span class="math inline">\(1.797 \times 10^{308}\)</span></td>
 </tr>
 </tbody>
 </table>
 <p><span class="math inline">\(^*\)</span> i.e., not subnormal.</p>
+</div>
+</div>
 <div style="page-break-after: always;"></div>
 </section>
 </section>
@@ -863,17 +878,209 @@ Note
 </tr>
 </tbody>
 </table>
+<div style="page-break-after: always;"></div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Tip</span>Solutions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For the final column, use up to 3 places after the decimal point. If a number requires more precision than this, <strong>truncate</strong> the remaining figures (don’t round).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Between</th>
+<th>and</th>
+<th>the gap is</th>
+<th>or equivalently</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(2^{-14}\)</span></td>
+<td><span class="math inline">\(2^{-13}\)</span></td>
+<td><span class="math inline">\(2^{-24}\)</span></td>
+<td><span class="math inline">\(3.051 \times 10^{-5}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{-13}\)</span></td>
+<td><span class="math inline">\(2^{-12}\)</span></td>
+<td><span class="math inline">\(2^{-23}\)</span></td>
+<td><span class="math inline">\(1.192 \times 10^{-7}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^{-12}\)</span></td>
+<td><span class="math inline">\(2^{-11}\)</span></td>
+<td><span class="math inline">\(2^{-22}\)</span></td>
+<td><span class="math inline">\(2.384 \times 10^{-7}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{-11}\)</span></td>
+<td><span class="math inline">\(2^{-10}\)</span></td>
+<td><span class="math inline">\(2^{-21}\)</span></td>
+<td><span class="math inline">\(4.768 \times 10^{-7}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^{-10}\)</span></td>
+<td><span class="math inline">\(2^{-9}\)</span></td>
+<td><span class="math inline">\(2^{-20}\)</span></td>
+<td><span class="math inline">\(9.536 \times 10^{-7}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{-9}\)</span></td>
+<td><span class="math inline">\(2^{-8}\)</span></td>
+<td><span class="math inline">\(2^{-19}\)</span></td>
+<td><span class="math inline">\(1.907 \times 10^{-6}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^{-8}\)</span></td>
+<td><span class="math inline">\(2^{-7}\)</span></td>
+<td><span class="math inline">\(2^{-18}\)</span></td>
+<td><span class="math inline">\(3.814 \times 10^{-6}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{-7}\)</span></td>
+<td><span class="math inline">\(2^{-6}\)</span></td>
+<td><span class="math inline">\(2^{-17}\)</span></td>
+<td><span class="math inline">\(7.629 \times 10^{-6}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^{-6}\)</span></td>
+<td><span class="math inline">\(2^{-5}\)</span></td>
+<td><span class="math inline">\(2^{-16}\)</span></td>
+<td><span class="math inline">\(1.525 \times 10^{-5}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{-5}\)</span></td>
+<td><span class="math inline">\(2^{-4}\)</span></td>
+<td><span class="math inline">\(2^{-15}\)</span></td>
+<td><span class="math inline">\(3.051 \times 10^{-5}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^{-4}\)</span></td>
+<td><span class="math inline">\(2^{-3}\)</span></td>
+<td><span class="math inline">\(2^{-14}\)</span></td>
+<td><span class="math inline">\(6.103 \times 10^{-5}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{-3}\)</span></td>
+<td><span class="math inline">\(2^{-2}\)</span></td>
+<td><span class="math inline">\(2^{-13}\)</span></td>
+<td><span class="math inline">\(1.220 \times 10^{-4}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^{-2}\)</span></td>
+<td><span class="math inline">\(2^{-1}\)</span></td>
+<td><span class="math inline">\(2^{-12}\)</span></td>
+<td><span class="math inline">\(2.441 \times 10^{-4}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{-1}\)</span></td>
+<td><span class="math inline">\(2^{0}\)</span></td>
+<td><span class="math inline">\(2^{-11}\)</span></td>
+<td><span class="math inline">\(4.882 \times 10^{-4}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^{0}\)</span></td>
+<td><span class="math inline">\(2^{1}\)</span></td>
+<td><span class="math inline">\(2^{-10}\)</span></td>
+<td><span class="math inline">\(9.765 \times 10^{-4}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{1}\)</span></td>
+<td><span class="math inline">\(2^{2}\)</span></td>
+<td><span class="math inline">\(2^{-9}\)</span></td>
+<td><span class="math inline">\(1.953 \times 10^{-3}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^{2}\)</span></td>
+<td><span class="math inline">\(2^{3}\)</span></td>
+<td><span class="math inline">\(2^{-8}\)</span></td>
+<td><span class="math inline">\(3.906 \times 10^{-3}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{3}\)</span></td>
+<td><span class="math inline">\(2^{4}\)</span></td>
+<td><span class="math inline">\(2^{-7}\)</span></td>
+<td><span class="math inline">\(7.812 \times 10^{-3}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^{4}\)</span></td>
+<td><span class="math inline">\(2^{5}\)</span></td>
+<td><span class="math inline">\(2^{-6}\)</span></td>
+<td><span class="math inline">\(1.562 \times 10^{-2}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{5}\)</span></td>
+<td><span class="math inline">\(2^{6}\)</span></td>
+<td><span class="math inline">\(2^{-5}\)</span></td>
+<td><span class="math inline">\(3.125 \times 10^{-2}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^{6}\)</span></td>
+<td><span class="math inline">\(2^{7}\)</span></td>
+<td><span class="math inline">\(2^{-4}\)</span></td>
+<td><span class="math inline">\(6.250 \times 10^{-2}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{7}\)</span></td>
+<td><span class="math inline">\(2^{8}\)</span></td>
+<td><span class="math inline">\(2^{-3}\)</span></td>
+<td><span class="math inline">\(0.125\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^{8}\)</span></td>
+<td><span class="math inline">\(2^{9}\)</span></td>
+<td><span class="math inline">\(2^{-2}\)</span></td>
+<td><span class="math inline">\(0.25\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{9}\)</span></td>
+<td><span class="math inline">\(2^{10}\)</span></td>
+<td><span class="math inline">\(2^{-1}\)</span></td>
+<td><span class="math inline">\(0.5\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^{10}\)</span></td>
+<td><span class="math inline">\(2^{11}\)</span></td>
+<td><span class="math inline">\(2^{0}\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{11}\)</span></td>
+<td><span class="math inline">\(2^{12}\)</span></td>
+<td><span class="math inline">\(2^{1}\)</span></td>
+<td><span class="math inline">\(2\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^{12}\)</span></td>
+<td><span class="math inline">\(2^{13}\)</span></td>
+<td><span class="math inline">\(2^{2}\)</span></td>
+<td><span class="math inline">\(4\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{13}\)</span></td>
+<td><span class="math inline">\(2^{14}\)</span></td>
+<td><span class="math inline">\(2^{3}\)</span></td>
+<td><span class="math inline">\(8\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2^{14}\)</span></td>
+<td><span class="math inline">\(2^{15}\)</span></td>
+<td><span class="math inline">\(2^{4}\)</span></td>
+<td><span class="math inline">\(16\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(2^{15}\)</span></td>
+<td><span class="math inline">\(2^{16}\)</span></td>
+<td><span class="math inline">\(2^{5}\)</span></td>
+<td><span class="math inline">\(32\)</span></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </section>
@@ -894,9 +1101,46 @@ Tip
 <ol type="1">
 <li>The 16-bit float given by <code>0b0001110000010000</code></li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Interpreting this number, we find that it is</p>
+<p><span class="math display">\[1.0000010000_2 \times 2^{7-15} = \left( 1 + \frac{1}{2^6} \right) \times 2^{-8}\]</span></p>
+<p><span class="math display">\[\frac{65}{64} \times \frac{1}{256} = \frac{65}{16384}\]</span></p>
+<p>In decimal form, this can be written as <code>0.00396728515625000</code>. The gap size in this part of the number line, for 16-bit floats, is <span class="math inline">\(2^{-18} \approx 0.000003814697\)</span>. Half of this number would be <span class="math inline">\(0.00000190734\)</span>.</p>
+<p>We now compare the top and bottom of the range of possible values that this floating-point number is supposed to represent. These are: <span class="math inline">\(0.00396919249\)</span> and <span class="math inline">\(0.00396537781\)</span> respectively. These two agree up to the fifth place after the decimal point, but no further. Therefore, we should write this number as</p>
+<p><span class="math display">\[0.00396 \quad \text{or} \quad 3.96 \times 10^{-3}.\]</span></p>
+<p>Alternatively, you could also choose to round this up to <span class="math inline">\(3.97 \times 10^{-3}\)</span> because the sixth place after the decimal point is always 5 or greater.</p>
+</div>
+</div>
 <ol start="2" type="1">
 <li>The 16-bit float given by <code>0x3C10</code></li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Interpreting this number, we find that it is</p>
+<p><span class="math display">\[\left( 1 + \frac{1}{2^{6}} \right) \times 2^{0}\]</span></p>
+<p><span class="math display">\[\frac{65}{64} \times 1 = \frac{8388609}{536870912}\]</span></p>
+<p>In decimal form, this can be written as <code>1.015625000</code>. The gap size in this part of the number line, for 16-bit floats, is <span class="math inline">\(2^{-10} \approx 0.0009765625\)</span>. Half of this number would be <span class="math inline">\(0.00048828125\)</span>.</p>
+<p>We now compare the top and bottom of the range of possible values that this floating-point number is supposed to represent. These are: <span class="math inline">\(1.01611328125\)</span> and <span class="math inline">\(1.0151468\)</span> respectively. These two agree up to the second place after the decimal point, but no further. Therefore, we should write this number as</p>
+<p><span class="math display">\[1.01\]</span> and with no further significant figures.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="the-farmer-was-replaced" class="level1" data-number="4">
@@ -905,6 +1149,26 @@ Tip
 <section id="zero-location" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="zero-location"><span class="header-section-number">4.1</span> Zero location</h2>
 <p>Write a function called <code>zeroloc()</code> that takes the drone back to the bottom-left corner.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> zeroloc():</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  xdist <span class="op">=</span> get_pos_x()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  ydist <span class="op">=</span> get_pos_y()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(xdist):</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    move(West)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ydist):</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    move(South)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="va">None</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
 </section>
 <section id="random-plants" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="random-plants"><span class="header-section-number">4.2</span> Random plants</h2>
@@ -917,16 +1181,33 @@ Tip
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li>You may wish to make use of the <code>random()</code> function, which has been unlocked for you.</li>
-<li>In the game, dividing a given number (say, <code>4.2</code>) by 1 like this: <code>4.2 // 1</code> returns the largest integer less than the given number.</li>
-<li>It is recommended that you till the entire farm for this task. All five crops can be planted on tilled soil.</li>
-<li>Dictionaries and/or Lists should come in handy here.</li>
-</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> positioning <span class="im">import</span> zeroloc</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>zeroloc()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>crops <span class="op">=</span> {</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"p"</span>: Entities.Pumpkin,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"t"</span>: Entities.Tree,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"g"</span>: Entities.Grass,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"c"</span>: Entities.Carrot,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"b"</span>: Entities.Bush</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>possible_crops <span class="op">=</span> [<span class="st">"p"</span>,<span class="st">"t"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>,<span class="st">"g"</span>]</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(get_world_size()):</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">range</span>(get_world_size()):</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> get_ground_type() <span class="op">==</span> Grounds.Grassland:</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>      till()</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> can_harvest():</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>      harvest()</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    ind <span class="op">=</span> random() <span class="op">*</span><span class="bu">len</span>(possible_crops) <span class="op">//</span> <span class="dv">1</span> </span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    plant(crops[possible_crops[ind]])</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    move(East)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  move(North)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -936,8 +1217,8 @@ Tip
 <p>When this function is called with argument <code>Entities.Tree</code>, its behavior should be as shown in the gif below, i.e., it should plant a tree and do flips until the tree has fully grown, and then harvest it.</p>
 <p><img src="tree4.gif" class="img-fluid"></p>
 <p>When this function is used to plant pumpkins, its behavior needs to be different. It should wait to check if the pumpkin grows up to be rotten, and if so, it should start over. As an illustration of this behavior, the following gif shows what your drone should do if you run the following code:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  plant_and_wait(Entites.Pumpkin)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  plant_and_wait(Entites.Pumpkin)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="pumpkin2.gif" class="img-fluid"></p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -950,6 +1231,36 @@ Warning
 </div>
 <div class="callout-body-container callout-body">
 <p>This function should not move the drone. It <strong>should</strong> till the soil if it is grassland (remember that tilling grass turns it into soil, but tilling soil turns it back into grass!)</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plant_and_wait(crop):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> get_ground_type() <span class="op">==</span> Grounds.Grassland:</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    till()</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="kw">not</span> crop <span class="op">==</span> Entities.Pumpkin:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> can_harvest():</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>      harvest()</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    plant(crop)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> can_harvest():</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>      do_a_flip()</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    harvest()</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    plant(crop)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> can_harvest():</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>      do_a_flip()</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> get_entity_type() <span class="op">==</span> Entities.Dead_Pumpkin:</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Death"</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        plant(Entities.Pumpkin)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    harvest()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 

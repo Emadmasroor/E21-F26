@@ -226,7 +226,7 @@
     "href": "Homework/index.html#list-of-assignments",
     "title": "Homework",
     "section": "List of Assignments",
-    "text": "List of Assignments\n\n\n\nNumber\nDue Date\nSubmit link\n\n\n\n\nHW 1\nThu, Sep 10\nGradescope\n\n\nHW 2\nThu, Sep 17\nGradescope code and PDF\n\n\nHW 3\nThu, Sep 24\nGradescope code and PDF\n\n\nHW 4\nThu, Sep 24\nGradescope code and PDF",
+    "text": "List of Assignments\n\n\n\nNumber\nDue Date\nSubmit link\n\n\n\n\nHW 1\nThu, Sep 10\nGradescope\n\n\nHW 2\nThu, Sep 17\nGradescope code and PDF\n\n\nHW 3\nThu, Sep 24\nGradescope code and PDF\n\n\nHW 4\nThu, Oct 01\nGradescope code and PDF\n\n\nHW 5\nThu, Oct 08\nGradescope code and PDF",
     "crumbs": [
       "Homepage",
       "Homework"
@@ -1434,6 +1434,110 @@
       "Homepage",
       "Homework",
       "HW 5"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/solutions.html",
+    "href": "Homework/HW4/solutions.html",
+    "title": "HW 4 Solutions",
+    "section": "",
+    "text": "Due Date\nThu, Oct 01\n\n\nTurn in link\nGradescope code and PDF\n\n\nURL\nemadmasroor.github.io/E21-F26/Homework/HW4\nWhat to turn in\nFor this assignment, you will turn in a PDF file as well as multiple code files. Each entry in the following table should be its own .py file.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4",
+      "HW 4 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/solutions.html#conversion-to-fractional-form",
+    "href": "Homework/HW4/solutions.html#conversion-to-fractional-form",
+    "title": "HW 4 Solutions",
+    "section": "2.1 Conversion to fractional form",
+    "text": "2.1 Conversion to fractional form\nInterpret the following 16-bit floating-point numbers as irreducable fractions. Also write an approximate decimal representation of your fractions.\n\n0b1001110000101110, a.k.a. 0x1C2E\n0b0100110001101010, a.k.a. 0x4C6A\n\n\n\n\n\n\n\nTipSolutions\n\n\n\n\nWe first divide up the 16 bits of 0b1001110000101110 into:\n\nSign bit: 1 — this number is negative\nExponent bits: 00111 — in decimal form, this is 7.\nSignificand bits: 0000101110\n\nUsing this information, we can write this number in the following way: \\[-1.0000101110_2 \\times 2^{7-15}\\] which is equal to \\[- \\left( 1 + 2^{-5} + 2^{-7} + 2^{-8} + 2^{-9} \\right) \\times 2^{-8}\\] We can now write it out as fractions: \\[- \\left( 1 + \\frac{1}{32} + \\frac{1}{128} + \\frac{1}{256} + \\frac{1}{512} \\right) \\times \\frac{1}{256}\\] \\[= - \\left( \\frac{512}{512} + \\frac{16}{512} + \\frac{4}{512} + \\frac{2}{512} + \\frac{1}{512} \\right) \\times \\frac{1}{256}\\] \\[= - \\left( \\frac{535}{512} \\right) \\times \\frac{1}{256} = \\boxed{- \\frac{535}{131072}} \\approx -0.00408\\]\nWe first divide up the 16 bits of 0b0100110001101010 into:\n\nSign bit: 0 — this number is positive\nExponent bits: 10011 — in decimal form, this is 19.\nSignificand bits: 0001101010\n\nUsing this information, we can write this number in the following way: \\[+1.0001101010_2 \\times 2^{19-15}\\] which is equal to \\[\\left( 1 + 2^{-4} + 2^{-5} + 2^{-7} + 2^{-9} \\right) \\times 2^{4}\\] We can now write it out as fractions: \\[\\left( 1 + \\frac{1}{16} + \\frac{1}{32} + \\frac{1}{128} + \\frac{1}{512} \\right) \\times 16\\] \\[= \\left( \\frac{512}{512} + \\frac{32}{512} + \\frac{16}{512} + \\frac{4}{512} + \\frac{1}{512} \\right) \\times 16\\] \\[= \\left( \\frac{565}{512} \\right) \\times 16 = \\boxed{\\frac{565}{32}} \\approx 17.656\\]",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4",
+      "HW 4 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/solutions.html#large-and-small-numbers",
+    "href": "Homework/HW4/solutions.html#large-and-small-numbers",
+    "title": "HW 4 Solutions",
+    "section": "2.2 Large and small Numbers",
+    "text": "2.2 Large and small Numbers\nUse the web app Float Toy to fill the following table. All numbers should be positive, and should be given in scientific notation in decimal form up to the number of significant figures given by the web app or up to 3 significant figures after the decimal point, whichever is smaller.\n\n\n\n\n\n\nTipSolutions\n\n\n\n\n\n\n\n\n\n\n\n\nNumber\n16-bit\n32-bit\n64-bit\n\n\n\n\nSmallest subnormal non-zero number\n\\(5.97 \\times 10^{-8}\\)\n\\(1 \\times 10^{-45}\\)\n\\(5 \\times 10^{-324}\\)\n\n\nSecond smallest subnormal non-zero number\n\\(1.2 \\times 10^{-7}\\)\n\\(2.8 \\times 10^{-45}\\)\n\\(1 \\times 10^{-323}\\)\n\n\nSmallest normal\\(^*\\) non-zero number\n\\(6.104 \\times 10^{-5}\\)\n\\(1.175 \\times 10^{-38}\\)\n\\(2.225 \\times 10^{-308}\\)\n\n\nSecond smallest normal\\(^*\\) non-zero number\n\\(6.11 \\times 10^{-5}\\)\n\\(1.175 \\times 10^{-38}\\)\n\\(2.225 \\times 10^{-308}\\)\n\n\nLargest non-NaN number\n\\(6.550 \\times10^{4}\\)\n\\(3.376 \\times10^{38}\\)\n\\(1.797 \\times 10^{308}\\)\n\n\nSecond largest non-NaN number\n\\(6.547 \\times10^{4}\\)\n\\(3.376 \\times10^{38}\\)\n\\(1.797 \\times 10^{308}\\)\n\n\n\n\\(^*\\) i.e., not subnormal.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4",
+      "HW 4 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/solutions.html#gaps-between-16-bit-floating-point-binary-numbers",
+    "href": "Homework/HW4/solutions.html#gaps-between-16-bit-floating-point-binary-numbers",
+    "title": "HW 4 Solutions",
+    "section": "3.1 Gaps between 16-bit floating-point binary numbers",
+    "text": "3.1 Gaps between 16-bit floating-point binary numbers\nWe would like to tabulate the ‘gap size’, which can also be called the increment size, between floating-point numbers. Two of the values in this table have been filled from the relevant sections of Lecture 8 here and here.\n\n\n\nBetween\nand\nthe gap is\nor equivalently\n\n\n\n\n\\(2^{-14}\\)\n\\(2^{-13}\\)\n…\n\n\n\n\\(2^{-13}\\)\n\\(2^{-12}\\)\n…\n\n\n\n\\(2^{-12}\\)\n\\(2^{-11}\\)\n…\n\n\n\n\\(2^{-11}\\)\n\\(2^{-10}\\)\n…\n\n\n\n\\(2^{-10}\\)\n\\(2^{-9}\\)\n…\n\n\n\n\\(2^{-9}\\)\n\\(2^{-8}\\)\n…\n\n\n\n\\(2^{-8}\\)\n\\(2^{-7}\\)\n…\n\n\n\n\\(2^{-7}\\)\n\\(2^{-6}\\)\n…\n\n\n\n\\(2^{-6}\\)\n\\(2^{-5}\\)\n…\n\n\n\n\\(2^{-5}\\)\n\\(2^{-4}\\)\n…\n\n\n\n\\(2^{-4}\\)\n\\(2^{-3}\\)\n…\n\n\n\n\\(2^{-3}\\)\n\\(2^{-2}\\)\n…\n\n\n\n\\(2^{-2}\\)\n\\(2^{-1}\\)\n…\n\n\n\n\\(2^{-1}\\)\n\\(2^{0}\\)\n…\n\n\n\n\\(2^{0}\\)\n\\(2^{1}\\)\n…\n\n\n\n\\(2^{1}\\)\n\\(2^{2}\\)\n…\n\n\n\n\\(2^{2}\\)\n\\(2^{3}\\)\n…\n\n\n\n\\(2^{3}\\)\n\\(2^{4}\\)\n\\(2^{-7}\\)\n\\(7.812 \\times 10^{-3}\\)\n\n\n\\(2^{4}\\)\n\\(2^{5}\\)\n…\n\n\n\n\\(2^{5}\\)\n\\(2^{6}\\)\n…\n\n\n\n\\(2^{6}\\)\n\\(2^{7}\\)\n…\n\n\n\n\\(2^{7}\\)\n\\(2^{8}\\)\n…\n\n\n\n\\(2^{8}\\)\n\\(2^{9}\\)\n…\n\n\n\n\\(2^{9}\\)\n\\(2^{10}\\)\n…\n\n\n\n\\(2^{10}\\)\n\\(2^{11}\\)\n…\n\n\n\n\\(2^{11}\\)\n\\(2^{12}\\)\n\\(2^{1}\\)\n\\(2\\)\n\n\n\\(2^{12}\\)\n\\(2^{13}\\)\n…\n\n\n\n\\(2^{13}\\)\n\\(2^{14}\\)\n…\n\n\n\n\\(2^{14}\\)\n\\(2^{15}\\)\n…\n\n\n\n\\(2^{15}\\)\n\\(2^{16}\\)\n…\n\n\n\n\n\n\n\n\n\n\n\nTipSolutions\n\n\n\n\n\n\nBetween\nand\nthe gap is\nor equivalently\n\n\n\n\n\\(2^{-14}\\)\n\\(2^{-13}\\)\n\\(2^{-24}\\)\n\\(3.051 \\times 10^{-5}\\)\n\n\n\\(2^{-13}\\)\n\\(2^{-12}\\)\n\\(2^{-23}\\)\n\\(1.192 \\times 10^{-7}\\)\n\n\n\\(2^{-12}\\)\n\\(2^{-11}\\)\n\\(2^{-22}\\)\n\\(2.384 \\times 10^{-7}\\)\n\n\n\\(2^{-11}\\)\n\\(2^{-10}\\)\n\\(2^{-21}\\)\n\\(4.768 \\times 10^{-7}\\)\n\n\n\\(2^{-10}\\)\n\\(2^{-9}\\)\n\\(2^{-20}\\)\n\\(9.536 \\times 10^{-7}\\)\n\n\n\\(2^{-9}\\)\n\\(2^{-8}\\)\n\\(2^{-19}\\)\n\\(1.907 \\times 10^{-6}\\)\n\n\n\\(2^{-8}\\)\n\\(2^{-7}\\)\n\\(2^{-18}\\)\n\\(3.814 \\times 10^{-6}\\)\n\n\n\\(2^{-7}\\)\n\\(2^{-6}\\)\n\\(2^{-17}\\)\n\\(7.629 \\times 10^{-6}\\)\n\n\n\\(2^{-6}\\)\n\\(2^{-5}\\)\n\\(2^{-16}\\)\n\\(1.525 \\times 10^{-5}\\)\n\n\n\\(2^{-5}\\)\n\\(2^{-4}\\)\n\\(2^{-15}\\)\n\\(3.051 \\times 10^{-5}\\)\n\n\n\\(2^{-4}\\)\n\\(2^{-3}\\)\n\\(2^{-14}\\)\n\\(6.103 \\times 10^{-5}\\)\n\n\n\\(2^{-3}\\)\n\\(2^{-2}\\)\n\\(2^{-13}\\)\n\\(1.220 \\times 10^{-4}\\)\n\n\n\\(2^{-2}\\)\n\\(2^{-1}\\)\n\\(2^{-12}\\)\n\\(2.441 \\times 10^{-4}\\)\n\n\n\\(2^{-1}\\)\n\\(2^{0}\\)\n\\(2^{-11}\\)\n\\(4.882 \\times 10^{-4}\\)\n\n\n\\(2^{0}\\)\n\\(2^{1}\\)\n\\(2^{-10}\\)\n\\(9.765 \\times 10^{-4}\\)\n\n\n\\(2^{1}\\)\n\\(2^{2}\\)\n\\(2^{-9}\\)\n\\(1.953 \\times 10^{-3}\\)\n\n\n\\(2^{2}\\)\n\\(2^{3}\\)\n\\(2^{-8}\\)\n\\(3.906 \\times 10^{-3}\\)\n\n\n\\(2^{3}\\)\n\\(2^{4}\\)\n\\(2^{-7}\\)\n\\(7.812 \\times 10^{-3}\\)\n\n\n\\(2^{4}\\)\n\\(2^{5}\\)\n\\(2^{-6}\\)\n\\(1.562 \\times 10^{-2}\\)\n\n\n\\(2^{5}\\)\n\\(2^{6}\\)\n\\(2^{-5}\\)\n\\(3.125 \\times 10^{-2}\\)\n\n\n\\(2^{6}\\)\n\\(2^{7}\\)\n\\(2^{-4}\\)\n\\(6.250 \\times 10^{-2}\\)\n\n\n\\(2^{7}\\)\n\\(2^{8}\\)\n\\(2^{-3}\\)\n\\(0.125\\)\n\n\n\\(2^{8}\\)\n\\(2^{9}\\)\n\\(2^{-2}\\)\n\\(0.25\\)\n\n\n\\(2^{9}\\)\n\\(2^{10}\\)\n\\(2^{-1}\\)\n\\(0.5\\)\n\n\n\\(2^{10}\\)\n\\(2^{11}\\)\n\\(2^{0}\\)\n\\(1\\)\n\n\n\\(2^{11}\\)\n\\(2^{12}\\)\n\\(2^{1}\\)\n\\(2\\)\n\n\n\\(2^{12}\\)\n\\(2^{13}\\)\n\\(2^{2}\\)\n\\(4\\)\n\n\n\\(2^{13}\\)\n\\(2^{14}\\)\n\\(2^{3}\\)\n\\(8\\)\n\n\n\\(2^{14}\\)\n\\(2^{15}\\)\n\\(2^{4}\\)\n\\(16\\)\n\n\n\\(2^{15}\\)\n\\(2^{16}\\)\n\\(2^{5}\\)\n\\(32\\)",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4",
+      "HW 4 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/solutions.html#precision-for-floats",
+    "href": "Homework/HW4/solutions.html#precision-for-floats",
+    "title": "HW 4 Solutions",
+    "section": "3.2 Precision for floats",
+    "text": "3.2 Precision for floats\nThe \\(\\pm\\) symbol is often used to indicate the precision of a known quantity. For floating point numbers, it is appropriate to use \\(x \\pm y\\) to represent a number, where \\(y\\) is half of the gap size in that part of the number line.\nFor example, we saw in lecture 8 that between 8 and 16, 16-bit floating point numbers have a gap size of \\(1/128\\) or \\(0.0078125\\). Half of this number is \\(0.00390625\\). If we now consider the 16-bit floating point number given by 0100100000001100, its value can be found to be equal to \\(259/32 = 8.09375\\). However, it would not be correct to write this number in decimal form with 5 significant figures after the decimal point. To see why, let us write it in \\(\\pm\\) notation as follows.\n\\[8.09375 \\pm 0.00390625\\]\nThus, the 16-bit float 0100100000001100 would be used by a computer to represent any number in the range from \\(8.09375-0.00390625\\) to \\(8.09375+0.00390625\\) shown above. For example,\n\n8.09672\n8.09585\n8.09175\n8.09079\n\nare all within the range shown above. These numbers agree in the first two digits after the decimal point, but in subsequent places, they disagree. Therefore, when representing the floating-point number 0100100000001100 in decimal form, it would not be appropriate to write more significant figures after the second one after the decimal point. Thus, the correct way to express it in decimal form would be \\(\\boxed{8.09}\\), not \\(8.09375\\).\nUsing the discussion above as a template, write the following floating-point numbers in fractional form and then in decimal form using the appropriate number of significant figures after the decimal point.\n\nThe 16-bit float given by 0b0001110000010000\n\n\n\n\n\n\n\nTipSolution\n\n\n\nInterpreting this number, we find that it is\n\\[1.0000010000_2 \\times 2^{7-15} = \\left( 1 + \\frac{1}{2^6} \\right) \\times 2^{-8}\\]\n\\[\\frac{65}{64} \\times \\frac{1}{256} = \\frac{65}{16384}\\]\nIn decimal form, this can be written as 0.00396728515625000. The gap size in this part of the number line, for 16-bit floats, is \\(2^{-18} \\approx 0.000003814697\\). Half of this number would be \\(0.00000190734\\).\nWe now compare the top and bottom of the range of possible values that this floating-point number is supposed to represent. These are: \\(0.00396919249\\) and \\(0.00396537781\\) respectively. These two agree up to the fifth place after the decimal point, but no further. Therefore, we should write this number as\n\\[0.00396 \\quad \\text{or} \\quad 3.96 \\times 10^{-3}.\\]\nAlternatively, you could also choose to round this up to \\(3.97 \\times 10^{-3}\\) because the sixth place after the decimal point is always 5 or greater.\n\n\n\nThe 16-bit float given by 0x3C10\n\n\n\n\n\n\n\nTipSolution\n\n\n\nInterpreting this number, we find that it is\n\\[\\left( 1 + \\frac{1}{2^{6}} \\right) \\times 2^{0}\\]\n\\[\\frac{65}{64} \\times 1 = \\frac{8388609}{536870912}\\]\nIn decimal form, this can be written as 1.015625000. The gap size in this part of the number line, for 16-bit floats, is \\(2^{-10} \\approx 0.0009765625\\). Half of this number would be \\(0.00048828125\\).\nWe now compare the top and bottom of the range of possible values that this floating-point number is supposed to represent. These are: \\(1.01611328125\\) and \\(1.0151468\\) respectively. These two agree up to the second place after the decimal point, but no further. Therefore, we should write this number as\n\\[1.01\\] and with no further significant figures.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4",
+      "HW 4 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/solutions.html#zero-location",
+    "href": "Homework/HW4/solutions.html#zero-location",
+    "title": "HW 4 Solutions",
+    "section": "4.1 Zero location",
+    "text": "4.1 Zero location\nWrite a function called zeroloc() that takes the drone back to the bottom-left corner.\n\n\n\n\n\n\nTipSolution\n\n\n\ndef zeroloc():\n  xdist = get_pos_x()\n  ydist = get_pos_y()\n  for i in range(xdist):\n    move(West)\n  for i in range(ydist):\n    move(South)\n  return None",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4",
+      "HW 4 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/solutions.html#random-plants",
+    "href": "Homework/HW4/solutions.html#random-plants",
+    "title": "HW 4 Solutions",
+    "section": "4.2 Random plants",
+    "text": "4.2 Random plants\nWrite a script that plants a random plant (out of five options: Grass, Tree, Bush, Carrot, and Pumpkin) on each spot of the 6x6 farm. It should only do this once, without repeating.\nYour script should import your zeroloc function from a different file, i.e., the first line of your script should be something like from &lt;file name&gt; import zeroloc.\nThe second line of your script should call the zeroloc function.\n\n\n\n\n\n\nTipSolution\n\n\n\nfrom positioning import zeroloc\nzeroloc()\n\ncrops = {\n  \"p\": Entities.Pumpkin,\n  \"t\": Entities.Tree,\n  \"g\": Entities.Grass,\n  \"c\": Entities.Carrot,\n  \"b\": Entities.Bush\n}\n\npossible_crops = [\"p\",\"t\",\"b\",\"c\",\"g\"]\n\nfor row in range(get_world_size()):\n  for col in range(get_world_size()):\n    if get_ground_type() == Grounds.Grassland:\n      till()\n    if can_harvest():\n      harvest()\n    ind = random() *len(possible_crops) // 1 \n    plant(crops[possible_crops[ind]])\n    move(East)\n  move(North)",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4",
+      "HW 4 Solutions"
+    ]
+  },
+  {
+    "objectID": "Homework/HW4/solutions.html#waiting-for-crops-to-grow",
+    "href": "Homework/HW4/solutions.html#waiting-for-crops-to-grow",
+    "title": "HW 4 Solutions",
+    "section": "4.3 Waiting for crops to grow",
+    "text": "4.3 Waiting for crops to grow\nWrite a function called plant_and_wait that takes as argument a plant ‘object’, such as Entities.Carrot.\nWhen this function is called with argument Entities.Tree, its behavior should be as shown in the gif below, i.e., it should plant a tree and do flips until the tree has fully grown, and then harvest it.\n\nWhen this function is used to plant pumpkins, its behavior needs to be different. It should wait to check if the pumpkin grows up to be rotten, and if so, it should start over. As an illustration of this behavior, the following gif shows what your drone should do if you run the following code:\nwhile True:\n  plant_and_wait(Entites.Pumpkin)\n\n\n\n\n\n\n\nWarning\n\n\n\nThis function should not move the drone. It should till the soil if it is grassland (remember that tilling grass turns it into soil, but tilling soil turns it back into grass!)\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\ndef plant_and_wait(crop):\n  if get_ground_type() == Grounds.Grassland:\n    till()\n  if not crop == Entities.Pumpkin:\n    if can_harvest():\n      harvest()\n    plant(crop)\n    while not can_harvest():\n      do_a_flip()\n    harvest()\n  else:\n    plant(crop)\n    while not can_harvest():\n      do_a_flip()\n      if get_entity_type() == Entities.Dead_Pumpkin:\n        print(\"Death\")\n        plant(Entities.Pumpkin)\n    harvest()",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 4",
+      "HW 4 Solutions"
     ]
   }
 ]

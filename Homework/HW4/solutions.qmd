@@ -1,11 +1,11 @@
 ---
-title: "HW 4"
+title: "HW 4 Solutions"
 order: 40
 date: 10-01-2026
 date-format: long
 topic: "Floating-Point Numbers"
 subtitle: "ENGR 21, Fall 2026."
-solutions: false
+solutions: true
 format:
   html:
     number-sections: true
@@ -13,7 +13,7 @@ format:
     number-sections: true
     geometry:
       - margin=1in
-    output-file: index.pdf
+    output-file: solutions.pdf
     include-in-header: 
       text: |
         \usepackage{scrlayer-scrpage}
