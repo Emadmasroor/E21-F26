@@ -43,7 +43,7 @@ format:
 
 [What to turn in]{.underline}
 
-For this assignment, you will turn in a PDF file as well as multiple code files. Each entry in the following table should be its own `.py` file.
+For this assignment, you will turn in only code files.
 
 | Problem | Format |
 | -- | -------- |
@@ -52,6 +52,11 @@ For this assignment, you will turn in a PDF file as well as multiple code files.
 | 3  | Code: A separate Python file for 3.1 and 3.2 |
 | 4  | Code: A single code file from The Farmer Was Replaced  |
 
+**Changelog**
+
+| Date / Time | Change |
+| -- | -------|
+| Sat. Morning 10/03 | Fixed positioning of colored rectangles in problem 3 |
 
 :::
 
@@ -245,7 +250,7 @@ print(f"The minimum score is {np.min(student_score[:,1]):.2f} points")
 :::
 
 
-## An array with students whose score is in the 80s.
+## An array with students whose score are above 87.
 
 Write a Python program that prints to the screen an Nx2 array consisting of only those students (including student number + that student's score) whose score was greater than 87.
 
@@ -322,7 +327,8 @@ Write code that `reshape`s the given matrix into eight different shapes if possi
 ```{.python}
 >>> y = np.random.random((3,5,6))
 ```
-::: {style="position: relative; width: fit-content; margin-left: auto; margin-right: auto;"}
+:::: {style="position: relative; width: fit-content; margin-left: auto; margin-right: auto;"}
+
 ```{.python}
 array([[[9.22e-01, 7.75e-01, 8.75e-01, 5.01e-01, 9.87e-01, 7.30e-01],
         [3.95e-01, 4.52e-01, 6.85e-01, 3.12e-01, 5.58e-01, 2.00e-01],
@@ -357,6 +363,8 @@ array([[[9.22e-01, 7.75e-01, 8.75e-01, 5.01e-01, 9.87e-01, 7.30e-01],
 
 ::: {style="position: absolute; left: 54%; top: 42%; width: 40%; height: 5%; border: 2px solid orange; pointer-events: none;"}
 :::
+
+::::
 
 
 

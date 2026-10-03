@@ -394,14 +394,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#indexing-and-sorting-etc." id="toc-indexing-and-sorting-etc." class="nav-link" data-scroll-target="#indexing-and-sorting-etc."><span class="header-section-number">2</span> Indexing and sorting etc.</a>
   <ul class="collapse">
   <li><a href="#calculate-the-mean-median-maximum-and-minimum-score" id="toc-calculate-the-mean-median-maximum-and-minimum-score" class="nav-link" data-scroll-target="#calculate-the-mean-median-maximum-and-minimum-score"><span class="header-section-number">2.1</span> Calculate the mean, median, maximum, and minimum score</a></li>
-  <li><a href="#an-array-with-students-whose-score-is-in-the-80s." id="toc-an-array-with-students-whose-score-is-in-the-80s." class="nav-link" data-scroll-target="#an-array-with-students-whose-score-is-in-the-80s."><span class="header-section-number">2.2</span> An array with students whose score is in the 80s.</a></li>
+  <li><a href="#an-array-with-students-whose-score-are-above-87." id="toc-an-array-with-students-whose-score-are-above-87." class="nav-link" data-scroll-target="#an-array-with-students-whose-score-are-above-87."><span class="header-section-number">2.2</span> An array with students whose score are above 87.</a></li>
   <li><a href="#a-sorted-array-of-student-numbers-and-scores" id="toc-a-sorted-array-of-student-numbers-and-scores" class="nav-link" data-scroll-target="#a-sorted-array-of-student-numbers-and-scores"><span class="header-section-number">2.3</span> A sorted array of student numbers and scores</a></li>
   <li><a href="#logical-indexing-with-multiple-conditions" id="toc-logical-indexing-with-multiple-conditions" class="nav-link" data-scroll-target="#logical-indexing-with-multiple-conditions"><span class="header-section-number">2.4</span> Logical Indexing with multiple conditions</a></li>
   </ul></li>
   <li><a href="#manipulating-arrays" id="toc-manipulating-arrays" class="nav-link" data-scroll-target="#manipulating-arrays"><span class="header-section-number">3</span> Manipulating Arrays</a>
   <ul class="collapse">
   <li><a href="#reshape" id="toc-reshape" class="nav-link" data-scroll-target="#reshape"><span class="header-section-number">3.1</span> Reshape</a></li>
+  <li><a href="#d-slicing" id="toc-d-slicing" class="nav-link" data-scroll-target="#d-slicing"><span class="header-section-number">3.2</span> 3D slicing</a></li>
   </ul></li>
+  <li><a href="#the-farmer-was-replaced" id="toc-the-farmer-was-replaced" class="nav-link" data-scroll-target="#the-farmer-was-replaced"><span class="header-section-number">4</span> The Farmer Was Replaced</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -451,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p><u>What to turn in</u></p>
-<p>For this assignment, you will turn in a PDF file as well as multiple code files. Each entry in the following table should be its own <code>.py</code> file.</p>
+<p>For this assignment, you will turn in only code files.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -475,6 +477,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="even">
 <td>4</td>
 <td>Code: A single code file from The Farmer Was Replaced</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Changelog</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Date / Time</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sat. Morning 10/03</td>
+<td>Fixed positioning of colored rectangles in problem 3</td>
 </tr>
 </tbody>
 </table>
@@ -591,8 +612,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Write a Python program that prints out the mean, median, maximum and minimum score values, using print statements such as the following.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The mean score is </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss"> points"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="an-array-with-students-whose-score-is-in-the-80s." class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="an-array-with-students-whose-score-is-in-the-80s."><span class="header-section-number">2.2</span> An array with students whose score is in the 80s.</h2>
+<section id="an-array-with-students-whose-score-are-above-87." class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="an-array-with-students-whose-score-are-above-87."><span class="header-section-number">2.2</span> An array with students whose score are above 87.</h2>
 <p>Write a Python program that prints to the screen an Nx2 array consisting of only those students (including student number + that student’s score) whose score was greater than 87.</p>
 </section>
 <section id="a-sorted-array-of-student-numbers-and-scores" class="level2" data-number="2.3">
@@ -664,6 +685,8 @@ Note
 <div style="position: absolute; left: 54%; top: 42%; width: 40%; height: 5%; border: 2px solid orange; pointer-events: none;">
 
 </div>
+</div>
+</section>
 <section id="d-slicing" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="d-slicing"><span class="header-section-number">3.2</span> 3D slicing</h2>
 <ol type="1">
@@ -673,6 +696,7 @@ Note
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>array([[<span class="fl">0.31</span>, <span class="fl">0.56</span>],</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       [<span class="fl">0.2</span> , <span class="fl">0.1</span> ],</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>       [<span class="fl">0.79</span>, <span class="fl">0.88</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 </section>
 <section id="the-farmer-was-replaced" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> The Farmer Was Replaced</h1>
@@ -726,9 +750,6 @@ Note
 <p><img src="pumpkinsbig.gif" class="img-fluid"></p>
 
 
-</section>
-</div>
-</section>
 </section>
 
 </main> <!-- /main -->

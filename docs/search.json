@@ -332,7 +332,7 @@
     "href": "Homework/HW5/index.html",
     "title": "HW 5",
     "section": "",
-    "text": "Due Date\nThu, Oct 08\n\n\nTurn in link\nGradescope code only\n\n\nURL\nemadmasroor.github.io/E21-F26/Homework/HW5\nWhat to turn in\nFor this assignment, you will turn in a PDF file as well as multiple code files. Each entry in the following table should be its own .py file.",
+    "text": "Due Date\nThu, Oct 08\n\n\nTurn in link\nGradescope code only\n\n\nURL\nemadmasroor.github.io/E21-F26/Homework/HW5\nWhat to turn in\nFor this assignment, you will turn in only code files.\nChangelog",
     "crumbs": [
       "Homepage",
       "Homework",
@@ -416,7 +416,7 @@
     "href": "Homework/HW5/index.html#reshape",
     "title": "HW 5",
     "section": "3.1 Reshape",
-    "text": "3.1 Reshape\nWrite code that reshapes the given matrix into eight different shapes if possible. Each of your answers should result in a different shape.\n&gt;&gt;&gt; y = np.random.random((3,5,6))\n\narray([[[9.22e-01, 7.75e-01, 8.75e-01, 5.01e-01, 9.87e-01, 7.30e-01],\n        [3.95e-01, 4.52e-01, 6.85e-01, 3.12e-01, 5.58e-01, 2.00e-01],\n        [4.04e-01, 3.46e-01, 3.41e-01, 1.24e-01, 9.56e-01, 7.27e-01],\n        [2.16e-01, 8.41e-01, 2.12e-01, 8.09e-01, 9.91e-01, 8.28e-01],\n        [8.99e-01, 6.94e-01, 1.37e-01, 2.06e-01, 8.51e-01, 9.95e-01]],\n\n       [[2.00e-01, 1.34e-01, 4.01e-01, 2.34e-01, 8.29e-01, 5.76e-01],\n        [4.20e-02, 2.89e-02, 5.70e-01, 1.04e-01, 7.85e-01, 8.80e-01],\n        [1.45e-01, 7.66e-01, 5.24e-01, 7.34e-01, 4.43e-01, 7.75e-01],\n        [3.47e-01, 9.07e-01, 4.92e-02, 1.12e-01, 3.68e-02, 4.53e-01],\n        [5.28e-01, 1.69e-04, 8.48e-01, 4.62e-01, 4.59e-02, 7.80e-01]],\n\n       [[6.35e-01, 2.82e-01, 3.60e-01, 1.35e-01, 5.22e-01, 6.88e-01],\n        [8.87e-01, 7.33e-01, 8.14e-01, 6.00e-01, 1.03e-01, 3.29e-01],\n        [1.38e-01, 7.47e-01, 7.43e-03, 8.72e-01, 6.16e-01, 7.64e-01],\n        [1.94e-01, 2.36e-01, 4.48e-02, 6.36e-01, 3.62e-01, 2.51e-01],\n        [1.20e-01, 5.97e-02, 9.59e-01, 7.50e-01, 9.64e-01, 9.39e-02]]])\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3.2 3D slicing\n\nWhat one line of code will gather all red-highlighted values into one array?\nWhat one line of code will gather the orange-highlighted values into one place in the following form:\n\narray([[0.31, 0.56],\n       [0.2 , 0.1 ],\n       [0.79, 0.88]])\n\n\n4 The Farmer Was Replaced\nPumpkins in TFWR show a special kind of behavior — they can get bigger if they are planted next to each other in patterns such as 2x2, 3x3, 4x4, etc, but they are also subject to the vagaries of fate and can spontaneously turn out rotten.\n\n\n\n\n\n\nTip\n\n\n\nDownload a save file for the game here.\n\n\nWrite a program for your drone that plants pumpkins in a formation at least 4x4 large in such a way that it waits until a big pumpkin appears before it harvests healthy pumpkins. The accompanying video shows you only one way to do this; there are lots of ways to accomplish this correctly.\n\n\n\n\n\n\nNote\n\n\n\nIn the video, the drone moves past pumpkins after planting them. Another approach could be to wait and see if a pumpkin will turn out rotten, and to only go ahead if the pumpkin has been determined to not be rotten.\n\n\nYour code should run continuously, planting according to a pre-set pattern inside a while loop and harvesting everything it plants. Ideally, your farm should be self-sustaining, i.e., you should plant a combination of crops that allows you to continue harvesting for ever (yay sustainability).\nIt is recommended that you use dictionaries to determine what crops to plant where. For example, the following dictionary and list-of-list of plants was used here:\n# An example pattern\npattern3 = [[\"t\", \"g\", \"g\", \"g\",\"g\",\"c\",\"t\",\"c\"],\n            [\"g\", \"p\", \"p\", \"p\",\"p\",\"c\",\"t\",\"c\"],\n            [\"g\", \"p\", \"p\", \"p\",\"p\",\"c\",\"g\",\"c\"],\n            [\"g\", \"p\", \"p\", \"p\",\"p\",\"c\",\"g\",\"c\"],\n            [\"g\", \"p\", \"p\", \"p\",\"p\",\"c\",\"t\",\"c\"],\n            [\"c\", \"c\", \"c\", \"c\",\"c\",\"c\",\"g\",\"t\"],\n            [\"t\", \"t\", \"g\", \"g\",\"g\",\"t\",\"c\",\"c\"],\n            [\"c\", \"c\", \"c\", \"c\",\"c\",\"g\",\"c\",\"c\"]]\n\n# The dictionary definition\ncrops = {\n  \"p\": Entities.Pumpkin,\n  \"t\": Entities.Tree,\n  \"g\": Entities.Grass,\n  \"c\": Entities.Carrot\n}",
+    "text": "3.1 Reshape\nWrite code that reshapes the given matrix into eight different shapes if possible. Each of your answers should result in a different shape.\n&gt;&gt;&gt; y = np.random.random((3,5,6))\n\narray([[[9.22e-01, 7.75e-01, 8.75e-01, 5.01e-01, 9.87e-01, 7.30e-01],\n        [3.95e-01, 4.52e-01, 6.85e-01, 3.12e-01, 5.58e-01, 2.00e-01],\n        [4.04e-01, 3.46e-01, 3.41e-01, 1.24e-01, 9.56e-01, 7.27e-01],\n        [2.16e-01, 8.41e-01, 2.12e-01, 8.09e-01, 9.91e-01, 8.28e-01],\n        [8.99e-01, 6.94e-01, 1.37e-01, 2.06e-01, 8.51e-01, 9.95e-01]],\n\n       [[2.00e-01, 1.34e-01, 4.01e-01, 2.34e-01, 8.29e-01, 5.76e-01],\n        [4.20e-02, 2.89e-02, 5.70e-01, 1.04e-01, 7.85e-01, 8.80e-01],\n        [1.45e-01, 7.66e-01, 5.24e-01, 7.34e-01, 4.43e-01, 7.75e-01],\n        [3.47e-01, 9.07e-01, 4.92e-02, 1.12e-01, 3.68e-02, 4.53e-01],\n        [5.28e-01, 1.69e-04, 8.48e-01, 4.62e-01, 4.59e-02, 7.80e-01]],\n\n       [[6.35e-01, 2.82e-01, 3.60e-01, 1.35e-01, 5.22e-01, 6.88e-01],\n        [8.87e-01, 7.33e-01, 8.14e-01, 6.00e-01, 1.03e-01, 3.29e-01],\n        [1.38e-01, 7.47e-01, 7.43e-03, 8.72e-01, 6.16e-01, 7.64e-01],\n        [1.94e-01, 2.36e-01, 4.48e-02, 6.36e-01, 3.62e-01, 2.51e-01],\n        [1.20e-01, 5.97e-02, 9.59e-01, 7.50e-01, 9.64e-01, 9.39e-02]]])",
     "crumbs": [
       "Homepage",
       "Homework",
@@ -1422,6 +1422,18 @@
       "Homepage",
       "Lectures",
       "Lecture 09"
+    ]
+  },
+  {
+    "objectID": "Homework/HW5/index.html#an-array-with-students-whose-score-are-above-87.",
+    "href": "Homework/HW5/index.html#an-array-with-students-whose-score-are-above-87.",
+    "title": "HW 5",
+    "section": "2.2 An array with students whose score are above 87.",
+    "text": "2.2 An array with students whose score are above 87.\nWrite a Python program that prints to the screen an Nx2 array consisting of only those students (including student number + that student’s score) whose score was greater than 87.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 5"
     ]
   }
 ]
