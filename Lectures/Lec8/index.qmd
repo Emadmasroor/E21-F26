@@ -274,7 +274,7 @@ Let's look at three consecutive floating point numbers.
 
 #### Subnormal 16-bit floats
 
-![](subnormal.png)
+![](subnormal2.png)
 :::
 :::
 :::
