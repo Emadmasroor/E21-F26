@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Emad Masroor">
-<meta name="dcterms.date" content="2026-09-17">
+<meta name="dcterms.date" content="2026-10-06">
 
-<title>Lecture 06 – ENGR 21 Computer Engineering Fundamentals</title>
+<title>Lecture 11 – ENGR 21 Computer Engineering Fundamentals</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -197,7 +197,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec6/index.html">Lecture 06</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec11/index.html">Lecture 11</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -285,7 +285,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Lectures/Lec6/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../Lectures/Lec6/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 06</span></a>
   </div>
 </li>
@@ -315,7 +315,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Lectures/Lec11/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec11/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lecture 11</span></a>
   </div>
 </li>
@@ -434,26 +434,26 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
-  <li><a href="#precision-accuracy-of-accelerometer" id="toc-precision-accuracy-of-accelerometer" class="nav-link" data-scroll-target="#precision-accuracy-of-accelerometer">Precision + Accuracy of Accelerometer</a></li>
-  <li><a href="#dictionaries-in-python" id="toc-dictionaries-in-python" class="nav-link" data-scroll-target="#dictionaries-in-python">Dictionaries in Python</a></li>
-  <li><a href="#constructing-dictionaries" id="toc-constructing-dictionaries" class="nav-link" data-scroll-target="#constructing-dictionaries">Constructing dictionaries</a></li>
-  <li><a href="#writing-a-function-to-control-neopixels" id="toc-writing-a-function-to-control-neopixels" class="nav-link" data-scroll-target="#writing-a-function-to-control-neopixels">Writing a function to control NeoPixels</a></li>
-  <li><a href="#debugging-code-using-thonny-code-editor" id="toc-debugging-code-using-thonny-code-editor" class="nav-link" data-scroll-target="#debugging-code-using-thonny-code-editor">Debugging code using Thonny Code Editor</a></li>
-  <li><a href="#more-about-python-lists-tuples" id="toc-more-about-python-lists-tuples" class="nav-link" data-scroll-target="#more-about-python-lists-tuples">More about Python lists + tuples</a></li>
-  <li><a href="#reviewing-lists-vs-tuples" id="toc-reviewing-lists-vs-tuples" class="nav-link" data-scroll-target="#reviewing-lists-vs-tuples">Reviewing lists vs tuples</a></li>
-  <li><a href="#the-nested-for-loop-over-a-list-of-lists" id="toc-the-nested-for-loop-over-a-list-of-lists" class="nav-link" data-scroll-target="#the-nested-for-loop-over-a-list-of-lists">The Nested <code>for</code> loop over a list<span class="math inline">\(^*\)</span> of lists<span class="math inline">\(^*\)</span></a></li>
-  <li><a href="#nested-for-loops-using-indices" id="toc-nested-for-loops-using-indices" class="nav-link" data-scroll-target="#nested-for-loops-using-indices">Nested <code>for</code> loops using <strong>indices</strong></a></li>
-  <li><a href="#two-level-loops-for-raster-scanning-in-tfwr" id="toc-two-level-loops-for-raster-scanning-in-tfwr" class="nav-link" data-scroll-target="#two-level-loops-for-raster-scanning-in-tfwr">Two-level loops for raster scanning in TFWR</a></li>
+  <li><a href="#finite-state-machines" id="toc-finite-state-machines" class="nav-link active" data-scroll-target="#finite-state-machines">Finite State Machines</a></li>
+  <li><a href="#a-simple-finite-state-machine" id="toc-a-simple-finite-state-machine" class="nav-link" data-scroll-target="#a-simple-finite-state-machine">A simple Finite State Machine</a></li>
+  <li><a href="#implementing-a-fsm-on-cpx" id="toc-implementing-a-fsm-on-cpx" class="nav-link" data-scroll-target="#implementing-a-fsm-on-cpx">Implementing a FSM on CPX</a></li>
+  <li><a href="#reading-a-state-transition-diagram" id="toc-reading-a-state-transition-diagram" class="nav-link" data-scroll-target="#reading-a-state-transition-diagram">Reading a State-Transition Diagram</a></li>
+  <li><a href="#interpreting-a-state-transition-diagram" id="toc-interpreting-a-state-transition-diagram" class="nav-link" data-scroll-target="#interpreting-a-state-transition-diagram">Interpreting a State-Transition Diagram</a></li>
+  <li><a href="#another-finite-state-machine" id="toc-another-finite-state-machine" class="nav-link" data-scroll-target="#another-finite-state-machine">Another Finite State Machine</a></li>
+  <li><a href="#state-transition-diagrams-with-no-input" id="toc-state-transition-diagrams-with-no-input" class="nav-link" data-scroll-target="#state-transition-diagrams-with-no-input">State Transition Diagrams with no input</a></li>
+  <li><a href="#finite-state-machine-for-a-counter" id="toc-finite-state-machine-for-a-counter" class="nav-link" data-scroll-target="#finite-state-machine-for-a-counter">Finite State Machine for a counter</a></li>
+  <li><a href="#naming-inputs-and-states-using-binary-bits" id="toc-naming-inputs-and-states-using-binary-bits" class="nav-link" data-scroll-target="#naming-inputs-and-states-using-binary-bits">Naming inputs and states using binary bits</a></li>
+  <li><a href="#requirements-for-a-finite-state-machine-state-transition-diagram" id="toc-requirements-for-a-finite-state-machine-state-transition-diagram" class="nav-link" data-scroll-target="#requirements-for-a-finite-state-machine-state-transition-diagram">Requirements for a Finite State Machine / State-Transition Diagram</a></li>
+  <li><a href="#combination-lock" id="toc-combination-lock" class="nav-link" data-scroll-target="#combination-lock">Combination Lock</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec6/index.html">Lecture 06</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec11/index.html">Lecture 11</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lecture 06</h1>
+<h1 class="title">Lecture 11</h1>
 <p class="subtitle lead">E21 Computer Engineering Fundamentals</p>
 </div>
 
@@ -471,7 +471,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 17, 2026</p>
+      <p class="date">October 6, 2026</p>
     </div>
   </div>
   
@@ -483,240 +483,273 @@ window.Quarto = {
 </header>
 
 
-<section id="announcements" class="level3">
-<h3 class="anchored" data-anchor-id="announcements">Announcements</h3>
+<section id="finite-state-machines" class="level3">
+<h3 class="anchored" data-anchor-id="finite-state-machines">Finite State Machines</h3>
 <ul>
-<li>Test 1 is on Tuesday, Sep 22 8:30 — 8:55 AM in SCI 199
+<li>Finite State Machines (FSM) are an abstraction for computer hardware and software</li>
+<li>A FSM consists of:
 <ul>
-<li>Based on Lectures 1 through 4 and HW 1 and 2</li>
-<li>Handwritten, closed-book, closed-notes</li>
-<li>No calculators allowed (future tests might allow them)</li>
+<li>A set of <strong>states</strong> <span class="math inline">\(\mathcal{Q}\)</span></li>
+<li>A set of <strong>transitions</strong> <span class="math inline">\(\mathcal{T}: q \rightarrow r\)</span>, where <span class="math inline">\(q, r \in \mathcal{Q}\)</span>
+<ul>
+<li>The transitions are sometimes triggered by a set of inputs <span class="math inline">\(\mathcal{P}\)</span></li>
 </ul></li>
-</ul>
-</section>
-<section id="precision-accuracy-of-accelerometer" class="level3">
-<h3 class="anchored" data-anchor-id="precision-accuracy-of-accelerometer">Precision + Accuracy of Accelerometer</h3>
-<p><span class="inclass">Characterize the precision and accuracy of the on-board accelerometer.</span> Find true value <a href="https://physics.nist.gov/cuu/Constants/index.html">here</a>.</p>
-<p>Download <a href="statisticalfunctions.py">statisticalfunctions.py</a> and store on <code>CIRCUITPY</code>.</p>
-<ul>
-<li><p>Use the following skeleton code</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statisticalfunctions <span class="im">import</span> stdev</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> magnitude(a,b,c):</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (a<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> c<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an empty list that will store the readings</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>readings <span class="op">=</span> []</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Time delay between measurements</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>delay <span class="op">=</span> <span class="fl">0.1</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Collect data until button b is pressed</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Your code here</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>true_value <span class="op">=</span> <span class="fl">9.806</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-</ul>
-<p>Your program should print, for example:</p>
-<pre><code>After 99 readings, the accelerometer reports 9.417 m/s^2 with standard deviation 0.254 and a spread of 17.4%</code></pre>
-</section>
-<section id="dictionaries-in-python" class="level3">
-<h3 class="anchored" data-anchor-id="dictionaries-in-python">Dictionaries in Python</h3>
-<ul>
-<li><p>A dictionary is a collection of key-value pairs.</p></li>
-<li><p>For example, we can define a dictionary with RGB values for common colors.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"red"</span>: (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>),</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"green"</span>: (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>),</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"blue"</span>: (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">50</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>To use this dictionary, <img src="dict.png" class="img-fluid"></p></li>
-</ul>
-</section>
-<section id="constructing-dictionaries" class="level3">
-<h3 class="anchored" data-anchor-id="constructing-dictionaries">Constructing dictionaries</h3>
-<p>There are two equivalent approaches:</p>
-<ol type="1">
-<li><p>Curly braces followed by <code>key: value</code> pairs separated by commas:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> {<span class="st">"red"</span>: (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="st">"green"</span>: (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>),<span class="st">"blue"</span>: (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">50</span>)}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>The <code>dict</code> function</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> <span class="bu">dict</span>([(<span class="st">'red'</span>, (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>)), (<span class="st">'green'</span>, (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)), (<span class="st">'blue'</span>, (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">50</span>))])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-</ol>
-<div class="fragment">
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Python allows optional new lines to make code more readable:</p>
-<ul>
-<li><p>Code all in one line:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> <span class="bu">dict</span>([(<span class="st">'red'</span>, (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>)), (<span class="st">'green'</span>, (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)), (<span class="st">'blue'</span>, (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">50</span>))])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Code separated by new lines</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> <span class="bu">dict</span>(</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    [</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'red'</span>, (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>)),</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'green'</span>, (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)),</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'blue'</span>, (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">50</span>))</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    ])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="writing-a-function-to-control-neopixels" class="level3">
-<h3 class="anchored" data-anchor-id="writing-a-function-to-control-neopixels">Writing a function to control NeoPixels</h3>
-<p><span class="inclass">Write a <strong>function</strong> for the Circuit Playground Express that</span>:</p>
-<ul>
-<li>takes three arguments:
-<ul>
-<li><p>a string denoting the color (choose 5 colors from <a href="https://rgbcolorpicker.com/"><code>https://rgbcolorpicker.com/</code></a>)</p></li>
-<li><p>a number from 0 to 9 denoting which pixel to switch on.</p></li>
-<li><p>a number from 0 to 1 denoting the brightness</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cpx.pixels.brightness <span class="op">=</span> <span class="fl">0.5</span> <span class="co"># sets the brightness to half</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul></li>
-<li>makes use of a dictionary</li>
-</ul>
-<div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Color definitions</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>mycolors <span class="op">=</span> {</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"red"</span>:    (<span class="dv">255</span>,<span class="dv">0</span>,<span class="dv">0</span>),</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"green"</span>:  (<span class="dv">0</span>,<span class="dv">255</span>,<span class="dv">0</span>),</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"blue"</span>:   (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">255</span>),</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"orange"</span>: (<span class="dv">255</span>,<span class="dv">160</span>,<span class="dv">0</span>),</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"teal"</span>:   (<span class="dv">0</span>,<span class="dv">255</span>,<span class="dv">236</span>)</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lightup(colorname,pixelnum,b):</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    color_tuple <span class="op">=</span> mycolors[colorname]</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    cpx.pixels[pixelnum] <span class="op">=</span> color_tuple</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    cpx.pixels.brightness<span class="op">=</span>b</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">None</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="debugging-code-using-thonny-code-editor" class="level3">
-<h3 class="anchored" data-anchor-id="debugging-code-using-thonny-code-editor">Debugging code using Thonny Code Editor</h3>
-<p>By pressing the <img src="debug.png" class="img-fluid"> button, Thonny enters debugging mode</p>
-<div class="fragment">
-<p><img src="debugger.png" class="img-fluid"></p>
-</div>
-</section>
-<section id="more-about-python-lists-tuples" class="level3">
-<h3 class="anchored" data-anchor-id="more-about-python-lists-tuples">More about Python lists + tuples</h3>
-<ul>
-<li>A Python iterable, such as a list or tuple, can contain another iterable</li>
-<li>Python allows lists of lists, etc; MATLAB does not.</li>
-</ul>
-<div class="fragment">
-<div class="columns">
-<div class="column" style="width:45%;">
-<p><img src="matlab1.png" class="img-fluid"></p>
-</div><div class="column" style="width:10%;">
-
-</div><div class="column" style="width:45%;">
-<p><img src="python1.png" class="img-fluid"></p>
-</div>
-</div>
-</div>
-<ul>
-<li>Python allows chaining multiple <code>[]</code> commands:</li>
-</ul>
-<div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>[(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)]</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels[<span class="dv">4</span>] <span class="op">=</span> (<span class="dv">45</span>,<span class="dv">50</span>,<span class="dv">2</span>)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>[(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">2</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)]</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> cpx.pixels[<span class="dv">4</span>][<span class="dv">1</span>]</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="dv">50</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="reviewing-lists-vs-tuples" class="level3">
-<h3 class="anchored" data-anchor-id="reviewing-lists-vs-tuples">Reviewing lists vs tuples</h3>
-<p>Why does this work:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cpx.pixels[<span class="dv">6</span>] <span class="op">=</span> (<span class="dv">40</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>But this does not?</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>cpx.pixels[<span class="dv">6</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="dv">40</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="the-nested-for-loop-over-a-list-of-lists" class="level3">
-<h3 class="anchored" data-anchor-id="the-nested-for-loop-over-a-list-of-lists">The Nested <code>for</code> loop over a list<span class="math inline">\(^*\)</span> of lists<span class="math inline">\(^*\)</span></h3>
-<p><span class="math inline">\(^*\)</span> or any iterables (list, range, tuple)</p>
-<ul>
-<li><p>Consider the list of lists:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [[<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>],</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">9</span>],</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">3</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p><span class="inclass">Write a <code>for</code> loop</span> that prints every element in <code>a</code></p></li>
-<li><p><span data-unless-meta="uncover">Solution</span></p>
-<div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> j <span class="kw">in</span> a:</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(j)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div></li>
-<li><p><span class="inclass">Write a pair of nested <code>for</code> loops</span> that print every element inside every element in <code>a</code> with the order: 5, 6, 7, …</p></li>
-<li><p><span data-unless-meta="uncover">Solution</span></p>
-<div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> thing <span class="kw">in</span> a:</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> thing2 <span class="kw">in</span> thing:</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(thing2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div></li>
+<li>An <strong>execution</strong> of a FSM is a <u>sequence of states</u> <span class="math display">\[q_0 \rightarrow q_1 \rightarrow q_2 \rightarrow \dots (\rightarrow q_n)\]</span> <span class="fragment">that may or may not be finite.</span></li>
 </ul>
 </section>
-<section id="nested-for-loops-using-indices" class="level3">
-<h3 class="anchored" data-anchor-id="nested-for-loops-using-indices">Nested <code>for</code> loops using <strong>indices</strong></h3>
-<p>We can print every element in <code>a</code> using</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> j <span class="kw">in</span> a:</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(j)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="a-simple-finite-state-machine" class="level3">
+<h3 class="anchored" data-anchor-id="a-simple-finite-state-machine">A simple Finite State Machine</h3>
 <ul>
-<li><p>Another approach is to use the <strong>index</strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(a[k])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Use the indices to <span class="inclass">print every element inside every element in <code>a</code></span>:</p></li>
-<li><p><span data-unless-meta="uncover">Solution</span></p>
-<div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    element <span class="op">=</span> a[k]</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> m <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(element)):</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        entry <span class="op">=</span> element[m]</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(entry)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div></li>
-<li><p>Print every element inside every element in <code>a</code> <strong>without using indices</strong>, i.e.&nbsp;no <code>[]</code> notation.</p></li>
-<li><p><span data-unless-meta="uncover">Solution</span></p>
-<div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> thing <span class="kw">in</span> a:</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> entry <span class="kw">in</span> thing:</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(entry)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div></li>
+<li>Two states: <span class="math inline">\(S_1\)</span> and <span class="math inline">\(S_2\)</span></li>
+<li>One binary input, <span class="math inline">\(1\)</span> or <span class="math inline">\(0\)</span></li>
+<li>The transitions are shown in the following <span class="emph">state-transition diagram</span></li>
 </ul>
-</section>
-<section id="two-level-loops-for-raster-scanning-in-tfwr" class="level3">
-<h3 class="anchored" data-anchor-id="two-level-loops-for-raster-scanning-in-tfwr">Two-level loops for raster scanning in TFWR</h3>
-<ul>
-<li><p>‘Raster scan’ refers to a systematic ‘sweeping’ of a two-dimensional rectangular area.</p></li>
-<li><p><span class="inclass">Harvest grass with your drone</span> using East-then-North raster scanning in three different ways:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="tfwr1.png" class="fragment img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
+<div id="fig-fsm" class="quarto-float quarto-figure quarto-figure-center anchored" width="60%" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fsm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="FSM1.png" id="fig-fsm" class="bordered fragment img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-fsm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
 </figure>
 </div>
+<ul>
+<li>The arrows are labeled with the inputs</li>
+<li>Circles are the states</li>
+</ul>
+</section>
+<section id="implementing-a-fsm-on-cpx" class="level3">
+<h3 class="anchored" data-anchor-id="implementing-a-fsm-on-cpx">Implementing a FSM on CPX</h3>
+<p><span class="inclass">Modify the code so that it follows the state transition diagram <a href="#fig-fsm" class="quarto-xref">Figure&nbsp;1</a>.</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>state <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define what each state looks like</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> state <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">5</span>] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">50</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> state <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">5</span>] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define transitions</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> state <span class="op">==</span> <span class="dv">1</span> <span class="kw">and</span> cpx.button_a:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        state <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> state <span class="op">==</span> <span class="dv">2</span> <span class="kw">and</span> cpx.button_a:</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        state <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="reading-a-state-transition-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="reading-a-state-transition-diagram">Reading a State-Transition Diagram</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>When state <span class="math inline">\(S_1\)</span> receives input <span class="math inline">\(0\)</span>, the system goes into state <span class="math inline">\(S_2\)</span></li>
+<li>When state <span class="math inline">\(S_2\)</span> receives input <span class="math inline">\(1\)</span>, the system goes into state <span class="math inline">\(S_1\)</span></li>
+<li>Giving input <span class="math inline">\(0\)</span> to state <span class="math inline">\(S_2\)</span> or input <span class="math inline">\(1\)</span> to state <span class="math inline">\(S_1\)</span> does not change the state
+<ul>
+<li>but for completeness we make self-pointing arrows.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="FSM1.png" class="bordered img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="interpreting-a-state-transition-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="interpreting-a-state-transition-diagram">Interpreting a State-Transition Diagram</h3>
+<section id="but-what-does-this-mean" class="level4">
+<h4 class="anchored" data-anchor-id="but-what-does-this-mean">But what does this mean?</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>A Finite State Machine is a ‘mental model’ for a real system</li>
+<li>A simple “power off/on button” for a light bulb. <img src="buttons.png" class="img-fluid" style="width:60.0%"></li>
+<li>States represent whether light is on/off</li>
+<li>Inputs: Button A, Button B</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="FSM2.png" class="bordered fragment img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="another-finite-state-machine" class="level3">
+<h3 class="anchored" data-anchor-id="another-finite-state-machine">Another Finite State Machine</h3>
+<p><span class="inclass">Interpret the following state-transition diagram. What kind of system could it represent?</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="FSM3.png" class="bordered img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="state-transition-diagrams-with-no-input" class="level3">
+<h3 class="anchored" data-anchor-id="state-transition-diagrams-with-no-input">State Transition Diagrams with no input</h3>
+<ul>
+<li><p>Helpful even when there’s no input</p></li>
+<li><p>Traffic lights</p>
+<p><img src="trafficlights1.png" class="img-fluid" style="width:40.0%"></p></li>
+<li><p>FSM for U.S. traffic lights </p>
+<p><img src="FSM4.png" class="img-fluid" style="width:15.0%"> <img src="FSM5.png" class="content-hidden img-fluid" style="width:15.0%" data-unless-meta="uncover"></p></li>
+</ul>
+</section>
+<section id="finite-state-machine-for-a-counter" class="level3">
+<h3 class="anchored" data-anchor-id="finite-state-machine-for-a-counter">Finite State Machine for a counter</h3>
+<ul>
+<li>Keeps count up to <span class="math inline">\(n\)</span> steps.
+<ul>
+<li>State <span class="math inline">\(S_1\)</span> implies we have counted up to <span class="math inline">\(1\)</span>.</li>
+<li>State <span class="math inline">\(S_n\)</span> implies we have counted up to <span class="math inline">\(n\)</span>.</li>
+</ul></li>
+<li>Three possible inputs to the system.
 <ol type="1">
-<li>Without loops</li>
-<li>Using one <code>for</code> loop</li>
-<li>Using two <code>for</code> loops</li>
+<li>Increment</li>
+<li>Decrement</li>
+<li>Reset</li>
 </ol></li>
 </ul>
+<p><img src="FSM6.png" class="content-hidden img-fluid" style="width:90.0%" data-unless-meta="uncover"></p>
+</section>
+<section id="naming-inputs-and-states-using-binary-bits" class="level3">
+<h3 class="anchored" data-anchor-id="naming-inputs-and-states-using-binary-bits">Naming inputs and states using binary bits</h3>
+<ul>
+<li><p>It is customary to use binary bits to label each input</p>
+<ul>
+<li><code>00</code>: Reset</li>
+<li><code>01</code>: Increment</li>
+<li><code>10</code>: Decrement</li>
+</ul></li>
+<li><p>If there are <span class="math inline">\(p\)</span> inputs, need <span class="math inline">\(k\)</span> bits to encode these inputs where <span class="math inline">\(2^k \ge p &gt; 2^{k-1}\)</span></p></li>
+<li><p>It is also customary to use binary bits to label each state</p>
+<ul>
+<li><code>000</code>: <span class="math inline">\(S_0\)</span></li>
+<li><code>001</code>: <span class="math inline">\(S_1\)</span></li>
+<li><code>010</code>: <span class="math inline">\(S_2\)</span></li>
+<li><code>011</code>: <span class="math inline">\(S_3\)</span></li>
+<li><code>100</code>: <span class="math inline">\(S_4\)</span></li>
+<li><code>101</code>: <span class="math inline">\(S_5\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="requirements-for-a-finite-state-machine-state-transition-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="requirements-for-a-finite-state-machine-state-transition-diagram">Requirements for a Finite State Machine / State-Transition Diagram</h3>
+<section id="for-a-state-transition-diagram-to-be-complete" class="level4">
+<h4 class="anchored" data-anchor-id="for-a-state-transition-diagram-to-be-complete">For a State Transition Diagram to be complete:</h4>
+<ul>
+<li>If there are <span class="math inline">\(m\)</span> possible inputs, then there must be <span class="math inline">\(m\)</span> outgoing arrows from <strong>each state</strong>, exactly one for each input.</li>
+<li>There is no corresponding restriction on the number of incoming arrows to each state.</li>
+</ul>
+</section>
+</section>
+<section id="combination-lock" class="level3">
+<h3 class="anchored" data-anchor-id="combination-lock">Combination Lock</h3>
+<p>Run the following code to implement a FSM for a 4-step combination lock on the Circuit Playground Express.</p>
+<p>Press some combination of A and B to unlock your device. All four lights green = unlocked!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>state <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> wait_till_release_A():</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> cpx.button_a:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"release button to complete transition"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> wait_till_release_B():</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> cpx.button_b:</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"release button to complete transition"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.05</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define what each state looks like</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> state <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Locked state</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">4</span>):</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>            cpx.pixels[k] <span class="op">=</span> (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> state <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># One correct entry</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">4</span>):</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>            cpx.pixels[k] <span class="op">=</span> (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">0</span>] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> state <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Two correct entry</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="dv">4</span>):</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>            cpx.pixels[k] <span class="op">=</span> (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">2</span>):</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>            cpx.pixels[k] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> state <span class="op">==</span> <span class="dv">4</span>:</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Three correct entry</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">3</span>] <span class="op">=</span> (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">3</span>):</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>            cpx.pixels[k] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> state <span class="op">==</span> <span class="dv">5</span>:</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Four correct entry -- unlocked !</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">4</span>):</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>            cpx.pixels[k] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> state <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> cpx.button_a:</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button A pressed! moving from state 1 to state 2"</span>)</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>            wait_till_release_A()</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> cpx.button_b:</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button B pressed! moving from state 1 to state 1"</span>)</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>            wait_till_release_B()</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> state <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> cpx.button_a:</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button A pressed! moving from state 1 to state 2"</span>)</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>            wait_till_release_A()</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> cpx.button_b:</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button B pressed! moving from state 1 to state 1"</span>)</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>            wait_till_release_B()</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> state <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> cpx.button_a:</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button A pressed! moving from state 1 to state 2"</span>)</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>            wait_till_release_A()</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> cpx.button_b:</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button B pressed! moving from state 1 to state 1"</span>)</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>            wait_till_release_B()</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> state <span class="op">==</span> <span class="dv">4</span>:</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> cpx.button_a:</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button A pressed! moving from state 1 to state 2"</span>)</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>            wait_till_release_A()</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> cpx.button_b:</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button B pressed! moving from state 1 to state 1"</span>)</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>            wait_till_release_B()</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>        </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="inclass">Draw the state transition diagram for this</span></p>
 
 
 </section>
