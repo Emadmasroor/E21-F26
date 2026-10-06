@@ -445,6 +445,7 @@ window.Quarto = {
   <li><a href="#naming-inputs-and-states-using-binary-bits" id="toc-naming-inputs-and-states-using-binary-bits" class="nav-link" data-scroll-target="#naming-inputs-and-states-using-binary-bits">Naming inputs and states using binary bits</a></li>
   <li><a href="#requirements-for-a-finite-state-machine-state-transition-diagram" id="toc-requirements-for-a-finite-state-machine-state-transition-diagram" class="nav-link" data-scroll-target="#requirements-for-a-finite-state-machine-state-transition-diagram">Requirements for a Finite State Machine / State-Transition Diagram</a></li>
   <li><a href="#combination-lock" id="toc-combination-lock" class="nav-link" data-scroll-target="#combination-lock">Combination Lock</a></li>
+  <li><a href="#state-transition-diagram-for-lock" id="toc-state-transition-diagram-for-lock" class="nav-link" data-scroll-target="#state-transition-diagram-for-lock">State Transition Diagram for lock</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
@@ -595,7 +596,12 @@ Figure&nbsp;1
 <p><span class="inclass">Interpret the following state-transition diagram. What kind of system could it represent?</span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-
+<p><img src="buttons2.png" class="img-fluid" style="width:60.0%"></p>
+<p>Inputs:</p>
+<ul>
+<li><code>1</code>: Power Button Pressed</li>
+<li><code>0</code>: Power Button not pressed</li>
+</ul>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -611,7 +617,7 @@ Figure&nbsp;1
 <li><p>Helpful even when there’s no input</p></li>
 <li><p>Traffic lights</p>
 <p><img src="trafficlights1.png" class="img-fluid" style="width:40.0%"></p></li>
-<li><p>FSM for U.S. traffic lights </p>
+<li><p>FSM for U.S. traffic lights <span data-unless-meta="uncover">and U.K. traffic lights</span></p>
 <p><img src="FSM4.png" class="img-fluid" style="width:15.0%"> <img src="FSM5.png" class="content-hidden img-fluid" style="width:15.0%" data-unless-meta="uncover"></p></li>
 </ul>
 </section>
@@ -625,9 +631,9 @@ Figure&nbsp;1
 </ul></li>
 <li>Three possible inputs to the system.
 <ol type="1">
-<li>Increment</li>
-<li>Decrement</li>
-<li>Reset</li>
+<li>Increment ( follow the <code>01</code> arrows)</li>
+<li>Decrement ( follow the <code>10</code> arrows)</li>
+<li>Reset (follow the <code>00</code>)</li>
 </ol></li>
 </ul>
 <p><img src="FSM6.png" class="content-hidden img-fluid" style="width:90.0%" data-unless-meta="uncover"></p>
@@ -750,6 +756,11 @@ Figure&nbsp;1
 <span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>            wait_till_release_B()</span>
 <span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>        </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><span class="inclass">Draw the state transition diagram for this</span></p>
+</section>
+<section id="state-transition-diagram-for-lock" class="level3">
+<h3 class="anchored" data-anchor-id="state-transition-diagram-for-lock">State Transition Diagram for lock</h3>
+<p><code>ABBA</code> opens the lock.</p>
+<p><img src="lock.png" class="img-fluid"></p>
 
 
 </section>

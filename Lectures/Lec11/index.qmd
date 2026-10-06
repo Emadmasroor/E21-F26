@@ -7,7 +7,7 @@ order: 11
 date: 10-06-2026
 date-format: long
 css: ../../styles.css
-uncover: false
+uncover: true
 footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
 resources: none
 code-line-numbers: false
@@ -133,8 +133,8 @@ while True:
 
 Inputs: 
 
-- 1: Power Button Pressed
-- 2: Power Button not pressed
+- `1`: Power Button Pressed
+- `0`: Power Button not pressed
 
 :::
 :::
@@ -161,9 +161,9 @@ Inputs:
   - State $S_1$ implies we have counted up to $1$.
   - State $S_n$ implies we have counted up to $n$.
 - Three possible inputs to the system.
-  1. Increment
-  2. Decrement
-  3. Reset
+  1. Increment ( follow the `01` arrows)
+  2. Decrement ( follow the `10` arrows)
+  3. Reset (follow the `00`)
 
 ![](FSM6.png){width="90%" .content-hidden unless-meta="uncover"}
 
@@ -285,3 +285,9 @@ while True:
 ```
 
 [Draw the state transition diagram for this]{.inclass}
+
+### State Transition Diagram for lock
+
+`ABBA` opens the lock.
+
+![](lock.png)

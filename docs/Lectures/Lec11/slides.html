@@ -238,7 +238,7 @@ Emad Masroor
 <li class="fragment">One binary input, <span class="math inline">\(1\)</span> or <span class="math inline">\(0\)</span></li>
 <li class="fragment">The transitions are shown in the following <span class="emph">state-transition diagram</span></li>
 </ul>
-<div id="fig-fsm" class="quarto-float quarto-figure quarto-figure-center" width="60%" data-fig-align="center">
+<div id="fig-fsm" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center" width="60%">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-fsm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img data-src="FSM1.png" id="fig-fsm" class="bordered fragment quarto-figure quarto-figure-center" style="width:60.0%">
@@ -324,7 +324,12 @@ Figure&nbsp;1
 <p><span class="inclass">Interpret the following state-transition diagram. What kind of system could it represent?</span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-
+<p><img data-src="buttons2.png" style="width:60.0%"></p>
+<p>Inputs:</p>
+<ul>
+<li class="fragment"><code>1</code>: Power Button Pressed</li>
+<li class="fragment"><code>0</code>: Power Button not pressed</li>
+</ul>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -339,7 +344,7 @@ Figure&nbsp;1
 <li class="fragment"><p>Helpful even when there’s no input</p></li>
 <li class="fragment"><p>Traffic lights</p>
 <p><img data-src="trafficlights1.png" style="width:40.0%"></p></li>
-<li class="fragment"><p>FSM for U.S. traffic lights </p>
+<li class="fragment"><p>FSM for U.S. traffic lights <span data-unless-meta="uncover">and U.K. traffic lights</span></p>
 <p><img data-src="FSM4.png" style="width:15.0%"> <img data-src="FSM5.png" class="content-hidden" style="width:15.0%" data-unless-meta="uncover"></p></li>
 </ul>
 </section>
@@ -353,9 +358,9 @@ Figure&nbsp;1
 </ul></li>
 <li class="fragment">Three possible inputs to the system.
 <ol type="1">
-<li class="fragment">Increment</li>
-<li class="fragment">Decrement</li>
-<li class="fragment">Reset</li>
+<li class="fragment">Increment ( follow the <code>01</code> arrows)</li>
+<li class="fragment">Decrement ( follow the <code>10</code> arrows)</li>
+<li class="fragment">Reset (follow the <code>00</code>)</li>
 </ol></li>
 </ul>
 <p><img data-src="FSM6.png" class="content-hidden" style="width:90.0%" data-unless-meta="uncover"></p>
@@ -476,6 +481,11 @@ Figure&nbsp;1
 <span id="cb2-81"><a aria-hidden="true" tabindex="-1"></a>            wait_till_release_B()</span>
 <span id="cb2-82"><a aria-hidden="true" tabindex="-1"></a>        </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><span class="inclass">Draw the state transition diagram for this</span></p>
+</section>
+<section id="state-transition-diagram-for-lock" class="slide level3">
+<h3>State Transition Diagram for lock</h3>
+<p><code>ABBA</code> opens the lock.</p>
+<p><img data-src="lock.png"></p>
 
 
 </section>
