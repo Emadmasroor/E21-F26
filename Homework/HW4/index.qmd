@@ -283,8 +283,8 @@ $^*$ i.e., not subnormal.
 | Second smallest subnormal non-zero number  | $1.2 \times 10^{-7}$   | $2.8 \times 10^{-45}$   | $1 \times 10^{-323}$     |
 | Smallest normal$^*$ non-zero number        | $6.104 \times 10^{-5}$ | $1.175 \times 10^{-38}$ | $2.225 \times 10^{-308}$ |
 | Second smallest normal$^*$ non-zero number | $6.11 \times 10^{-5}$  | $1.175 \times 10^{-38}$ | $2.225 \times 10^{-308}$ |
-| Largest non-`NaN` number                   | $6.550 \times10^{4}$   | $3.376 \times10^{38}$   | $1.797 \times 10^{308}$  |
-| Second largest non-`NaN` number            | $6.547 \times10^{4}$   | $3.376 \times10^{38}$   | $1.797 \times 10^{308}$  |
+| Largest non-`NaN` number                   | $6.550 \times10^{4}$   | $3.403 \times10^{38}$   | $1.797 \times 10^{308}$  |
+| Second largest non-`NaN` number            | $6.547 \times10^{4}$   | $3.403 \times10^{38}$   | $1.797 \times 10^{308}$  |
 
 
 $^*$ i.e., not subnormal.
