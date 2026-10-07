@@ -47,9 +47,9 @@ For this assignment, you will turn in only code files.
 
 | Problem | Format |
 | -- | -------- |
-| 1  | Code: A separate Python file for 1.1 and 1.2. |
-| 2  | Code: A separate Python file for 2.1, 2.2, 2.3, and 2.4   |
-| 3  | Code: A separate Python file for 3.1 and 3.2 |
+| 1  | Code: A separate Python file for each of 1.1 and 1.2. |
+| 2  | Code: A separate Python file for each of 2.1, 2.2, 2.3, and 2.4   |
+| 3  | Code: A separate Python file for each of 3.1 and 3.2 |
 | 4  | Code: A single code file from The Farmer Was Replaced  |
 
 **Changelog**
