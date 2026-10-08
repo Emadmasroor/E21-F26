@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Emad Masroor">
-<meta name="dcterms.date" content="2026-09-22">
+<meta name="dcterms.date" content="2026-10-08">
 
-<title>Lecture 07 – ENGR 21 Computer Engineering Fundamentals</title>
+<title>Lecture 12 – ENGR 21 Computer Engineering Fundamentals</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,6 +27,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -158,7 +193,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec7/index.html">Lecture 07</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec12/index.html">Lecture 12</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -252,7 +287,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Lectures/Lec7/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../Lectures/Lec7/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 07</span></a>
   </div>
 </li>
@@ -282,7 +317,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Lectures/Lec12/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec12/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lecture 12</span></a>
   </div>
 </li>
@@ -401,27 +436,30 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#test-1-830-855" id="toc-test-1-830-855" class="nav-link active" data-scroll-target="#test-1-830-855">Test 1 8:30 — 8:55</a></li>
-  <li><a href="#how-many-digits-are-needed-to-store-a-large-number" id="toc-how-many-digits-are-needed-to-store-a-large-number" class="nav-link" data-scroll-target="#how-many-digits-are-needed-to-store-a-large-number">How many ‘digits’ are needed to store a large number?</a></li>
-  <li><a href="#range-of-positive-negative-numbers" id="toc-range-of-positive-negative-numbers" class="nav-link" data-scroll-target="#range-of-positive-negative-numbers">Range of positive / negative numbers</a></li>
-  <li><a href="#the-sign-magnitude-representation" id="toc-the-sign-magnitude-representation" class="nav-link" data-scroll-target="#the-sign-magnitude-representation">The Sign-Magnitude Representation</a></li>
-  <li><a href="#fixed-point-representation-of-numbers" id="toc-fixed-point-representation-of-numbers" class="nav-link" data-scroll-target="#fixed-point-representation-of-numbers">Fixed Point Representation of numbers</a></li>
-  <li><a href="#a-rudimentary-floating-point-number-system" id="toc-a-rudimentary-floating-point-number-system" class="nav-link" data-scroll-target="#a-rudimentary-floating-point-number-system">A rudimentary ‘floating point’ number system</a></li>
-  <li><a href="#a-6-digit-decimal-floating-point-representation-needs-to-tell-you" id="toc-a-6-digit-decimal-floating-point-representation-needs-to-tell-you" class="nav-link" data-scroll-target="#a-6-digit-decimal-floating-point-representation-needs-to-tell-you">A 6-digit decimal floating-point representation needs to tell you …</a></li>
-  <li><a href="#instead-use-scientific-notation" id="toc-instead-use-scientific-notation" class="nav-link" data-scroll-target="#instead-use-scientific-notation">Instead … use ‘Scientific Notation’</a></li>
-  <li><a href="#standard-ieee-format-for-16-bit-floating-point-binary-numbers" id="toc-standard-ieee-format-for-16-bit-floating-point-binary-numbers" class="nav-link" data-scroll-target="#standard-ieee-format-for-16-bit-floating-point-binary-numbers">Standard (IEEE) Format for 16-bit floating-point binary numbers</a></li>
-  <li><a href="#place-value-notation-for-numbers-smaller-than-1" id="toc-place-value-notation-for-numbers-smaller-than-1" class="nav-link" data-scroll-target="#place-value-notation-for-numbers-smaller-than-1">Place Value Notation for numbers smaller than 1</a></li>
-  <li><a href="#interpreting-a-16-bit-binary-float" id="toc-interpreting-a-16-bit-binary-float" class="nav-link" data-scroll-target="#interpreting-a-16-bit-binary-float">Interpreting a 16-bit binary float</a></li>
-  <li><a href="#hex-short-form" id="toc-hex-short-form" class="nav-link" data-scroll-target="#hex-short-form">Hex short-form</a></li>
+  <li><a href="#test-2-discussion" id="toc-test-2-discussion" class="nav-link active" data-scroll-target="#test-2-discussion">Test 2 Discussion</a></li>
+  <li><a href="#combination-lock-review" id="toc-combination-lock-review" class="nav-link" data-scroll-target="#combination-lock-review">Combination Lock — Review</a></li>
+  <li><a href="#state-transition-diagram-for-lock" id="toc-state-transition-diagram-for-lock" class="nav-link" data-scroll-target="#state-transition-diagram-for-lock">State Transition Diagram for lock</a></li>
+  <li><a href="#state-transition-tables" id="toc-state-transition-tables" class="nav-link" data-scroll-target="#state-transition-tables">State Transition Tables</a></li>
+  <li><a href="#engineering-specifications-to-finite-state-machines" id="toc-engineering-specifications-to-finite-state-machines" class="nav-link" data-scroll-target="#engineering-specifications-to-finite-state-machines">Engineering Specifications to Finite State Machines</a></li>
+  <li><a href="#modified-lock-fsm" id="toc-modified-lock-fsm" class="nav-link" data-scroll-target="#modified-lock-fsm">Modified Lock FSM</a></li>
+  <li><a href="#truth-tables-for-finite-state-machines" id="toc-truth-tables-for-finite-state-machines" class="nav-link" data-scroll-target="#truth-tables-for-finite-state-machines">Truth Tables for Finite State Machines</a></li>
+  <li><a href="#logic-gates-for-finite-state-machines" id="toc-logic-gates-for-finite-state-machines" class="nav-link" data-scroll-target="#logic-gates-for-finite-state-machines">Logic Gates for Finite State Machines</a></li>
+  <li><a href="#implementing-a-truth-table-using-logic-gates" id="toc-implementing-a-truth-table-using-logic-gates" class="nav-link" data-scroll-target="#implementing-a-truth-table-using-logic-gates">Implementing a Truth Table using Logic Gates</a></li>
+  <li><a href="#truth-tables-for-systems-with-more-than-4-state-input-combinations" id="toc-truth-tables-for-systems-with-more-than-4-state-input-combinations" class="nav-link" data-scroll-target="#truth-tables-for-systems-with-more-than-4-state-input-combinations">Truth Tables for systems with more than 4 state-input combinations</a></li>
+  <li><a href="#truth-table-for-combination-lock-abba" id="toc-truth-table-for-combination-lock-abba" class="nav-link" data-scroll-target="#truth-table-for-combination-lock-abba">Truth Table for combination lock <code>ABBA</code></a></li>
+  <li><a href="#a-simple-finite-state-machine-building-its-state-transition-table" id="toc-a-simple-finite-state-machine-building-its-state-transition-table" class="nav-link" data-scroll-target="#a-simple-finite-state-machine-building-its-state-transition-table">A simple Finite State Machine: Building its State Transition Table</a></li>
+  <li><a href="#a-simple-finite-state-machine-building-its-truth-table" id="toc-a-simple-finite-state-machine-building-its-truth-table" class="nav-link" data-scroll-target="#a-simple-finite-state-machine-building-its-truth-table">A simple Finite State Machine: Building its Truth Table</a></li>
+  <li><a href="#a-simple-finite-state-machine-implementing-it-with-logic-gates" id="toc-a-simple-finite-state-machine-implementing-it-with-logic-gates" class="nav-link" data-scroll-target="#a-simple-finite-state-machine-implementing-it-with-logic-gates">A simple Finite State Machine: Implementing it with Logic Gates</a></li>
+  <li><a href="#practice-with-finite-state-machines" id="toc-practice-with-finite-state-machines" class="nav-link" data-scroll-target="#practice-with-finite-state-machines">Practice with Finite State Machines</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec7/index.html">Lecture 07</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec12/index.html">Lecture 12</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lecture 07</h1>
+<h1 class="title">Lecture 12</h1>
 <p class="subtitle lead">E21 Computer Engineering Fundamentals</p>
 </div>
 
@@ -439,7 +477,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 22, 2026</p>
+      <p class="date">October 8, 2026</p>
     </div>
   </div>
   
@@ -451,397 +489,664 @@ window.Quarto = {
 </header>
 
 
-<section id="test-1-830-855" class="level3">
-<h3 class="anchored" data-anchor-id="test-1-830-855">Test 1 8:30 — 8:55</h3>
-<ul>
-<li>If you are done early you may leave and return by 9:00</li>
-</ul>
+<section id="test-2-discussion" class="level3">
+<h3 class="anchored" data-anchor-id="test-2-discussion">Test 2 Discussion</h3>
 </section>
-<section id="how-many-digits-are-needed-to-store-a-large-number" class="level3">
-<h3 class="anchored" data-anchor-id="how-many-digits-are-needed-to-store-a-large-number">How many ‘digits’ are needed to store a large number?</h3>
-<p><span class="inclass">Determine how many ‘digits’/bits you need</span> to represent the number one billion in:</p>
-<div class="quarto-layout-panel" data-layout="[0.2, 0.5, 0.3]">
-<div class="quarto-layout-row">
-<div class="{#} quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
-<p>Decimal</p>
-<div class="fragment">
-<p><strong>Answer</strong>:</p>
-<p><code>1000000000</code></p>
-<p>10 digits</p>
+<section id="combination-lock-review" class="level3">
+<h3 class="anchored" data-anchor-id="combination-lock-review">Combination Lock — Review</h3>
+<p>Run the following code to implement a FSM for a 4-step combination lock on the Circuit Playground Express.</p>
+<p>Press some combination of A and B to unlock your device. All four lights green = unlocked!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> adafruit_circuitplayground.express <span class="im">import</span> cpx</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>state <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> wait_till_release_A():</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> cpx.button_a:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"release button to complete transition"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> wait_till_release_B():</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> cpx.button_b:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"release button to complete transition"</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.05</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define what each state looks like</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> state <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Locked state</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">4</span>):</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>            cpx.pixels[k] <span class="op">=</span> (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> state <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># One correct entry</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">4</span>):</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>            cpx.pixels[k] <span class="op">=</span> (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">0</span>] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> state <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Two correct entry</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="dv">4</span>):</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>            cpx.pixels[k] <span class="op">=</span> (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">2</span>):</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>            cpx.pixels[k] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> state <span class="op">==</span> <span class="dv">4</span>:</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Three correct entry</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>        cpx.pixels[<span class="dv">3</span>] <span class="op">=</span> (<span class="dv">50</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">3</span>):</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>            cpx.pixels[k] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> state <span class="op">==</span> <span class="dv">5</span>:</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Four correct entry -- unlocked !</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">4</span>):</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>            cpx.pixels[k] <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">0</span>)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> state <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> cpx.button_a:</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button A pressed! moving from state 1 to state 2"</span>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>            wait_till_release_A()</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> cpx.button_b:</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button B pressed! moving from state 1 to state 1"</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>            wait_till_release_B()</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> state <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> cpx.button_a:</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button A pressed! moving from state 1 to state 2"</span>)</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>            wait_till_release_A()</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> cpx.button_b:</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button B pressed! moving from state 1 to state 1"</span>)</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>            wait_till_release_B()</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> state <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> cpx.button_a:</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button A pressed! moving from state 1 to state 2"</span>)</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>            wait_till_release_A()</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> cpx.button_b:</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button B pressed! moving from state 1 to state 1"</span>)</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>            wait_till_release_B()</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> state <span class="op">==</span> <span class="dv">4</span>:</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> cpx.button_a:</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button A pressed! moving from state 1 to state 2"</span>)</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>            wait_till_release_A()</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> cpx.button_b:</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Button B pressed! moving from state 1 to state 1"</span>)</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>            wait_till_release_B()</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>        </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="inclass">Draw the state transition diagram for this</span></p>
+</section>
+<section id="state-transition-diagram-for-lock" class="level3">
+<h3 class="anchored" data-anchor-id="state-transition-diagram-for-lock">State Transition Diagram for lock</h3>
+<p><code>ABBA</code> opens the lock</p>
+<div id="fig-lock" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lock-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="lock.png" id="fig-lock" class="img-fluid figure-img">
 </div>
-</div>
-<div class="{#} quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Binary</p>
-<div class="fragment">
-<p><strong>Answer</strong>:</p>
-<p><code>0b111011100110101100101000000000</code></p>
-<p>30 bits.</p>
-</div>
-</div>
-<div class="{#} quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
-<p>Hexadecimal</p>
-<div class="fragment">
-<p><strong>Answer</strong>:</p>
-<p><code>0x3B9ACA00</code></p>
-<p>8 bits.</p>
-</div>
-</div>
-</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-lock-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
 </div>
 </section>
-<section id="range-of-positive-negative-numbers" class="level3">
-<h3 class="anchored" data-anchor-id="range-of-positive-negative-numbers">Range of positive / negative numbers</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="bits.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<section id="state-transition-tables" class="level3">
+<h3 class="anchored" data-anchor-id="state-transition-tables">State Transition Tables</h3>
+<div id="tbl-table" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1
+</figcaption>
+<div aria-describedby="tbl-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Input:<br>A</th>
+<th>Input:<br>B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Locked</td>
+<td>1 Correct</td>
+<td>Locked</td>
+</tr>
+<tr class="even">
+<td>1 Correct</td>
+<td>Locked</td>
+<td>2 Correct</td>
+</tr>
+<tr class="odd">
+<td>2 Correct</td>
+<td>Locked</td>
+<td>3 Correct</td>
+</tr>
+<tr class="even">
+<td>3 Correct</td>
+<td>Unlocked</td>
+<td>Locked</td>
+</tr>
+<tr class="odd">
+<td>Unlocked</td>
+<td>Unlocked</td>
+<td>Unlocked</td>
+</tr>
+</tbody>
+</table>
+</div>
 </figure>
 </div>
 <ul>
-<li>With 8 bits, how many binary integers can be stored? <span class="fragment"><span class="emph">256</span></span></li>
-<li>Which 256 numbers should we choose?
-<ul>
-<li>If we only care about positive numbers, we could choose
-<ul>
-<li><code>0</code>, <code>1</code>, <code>2</code>, …, <code>255</code></li>
-<li><code>1000</code>, <code>1001</code>, <code>1002</code>, …, <code>1255</code></li>
-</ul></li>
-<li>If we care about positive and negative numbers:
-<ul>
-<li><code>-1</code>, <code>0</code>, <code>1</code>, <code>2</code>, … <code>254</code></li>
-<li><code>-2</code>, <code>-1</code>, <code>0</code>, <code>1</code>, <code>2</code>, … <code>253</code></li>
-<li><code>-10</code>, <code>-9</code>, <code>-8</code>, <code>-7</code>, <code>-6</code>, … <code>245</code></li>
-<li><code>-128</code>, <code>-127</code>, <code>-126</code>, … <code>0</code> … <code>126</code>, <code>127</code></li>
-</ul></li>
-<li>Makes sense to evenly distribute your numbers around zero</li>
-</ul></li>
+<li>State transition <strong>tables</strong> are an alternative to state transition <strong>diagrams</strong> for showing how a Finite State Machine works</li>
+<li>Each row corresponds to a possible current state of the system.</li>
+<li>Each column corresponds to a possible input to the system.</li>
+<li>Each entry corresponds to the new state that results.</li>
 </ul>
 </section>
-<section id="the-sign-magnitude-representation" class="level3">
-<h3 class="anchored" data-anchor-id="the-sign-magnitude-representation">The Sign-Magnitude Representation</h3>
-<p><span class="fragment">The sign-magnitude representation is one way to represent integers in binary.</span></p>
-<p><span class="fragment">The most significant bit is reserved for the sign. <code>1</code> <span class="math inline">\(\implies\)</span> negative.</span></p>
+<section id="engineering-specifications-to-finite-state-machines" class="level3">
+<h3 class="anchored" data-anchor-id="engineering-specifications-to-finite-state-machines">Engineering Specifications to Finite State Machines</h3>
+<ul>
+<li>The combination lock system is described by <a href="#tbl-table" class="quarto-xref">Table&nbsp;1</a>, <a href="#fig-lock" class="quarto-xref">Figure&nbsp;1</a>, <a href="#fig-lock1" class="quarto-xref">Figure&nbsp;2</a></li>
+<li>Implement a <strong>new engineering specification</strong>:
+<ul>
+<li>After unlock, any key should light all four LEDs blue.</li>
+<li>Any further key press should ‘lock’ it again.</li>
+</ul></li>
+<li><span class="inclass">Add new entries to the state-transition table and modify the code</span> to meet this specification.</li>
+</ul>
+<div id="fig-lock1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lock1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fsm-lock-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lock1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Finite State Machine <strong>before</strong> changes applied
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="modified-lock-fsm" class="level3">
+<h3 class="anchored" data-anchor-id="modified-lock-fsm">Modified Lock FSM</h3>
+</section>
+<section id="truth-tables-for-finite-state-machines" class="level3">
+<h3 class="anchored" data-anchor-id="truth-tables-for-finite-state-machines">Truth Tables for Finite State Machines</h3>
+<ul>
+<li>A FSM can also be expressed as a truth table</li>
+<li>Need an encoding of the states and inputs using <code>0</code> and <code>1</code>.</li>
+<li>Let’s use a simply FSM with one binary state variable and one binary input: the <a href="https://www.youtube.com/watch?v=MhVw-MHGv4s">retractable ball point pen</a>.</li>
+<li><strong>States:</strong> Nib out (<code>1</code>), Nib retracted (<code>0</code>)</li>
+<li><strong>Input:</strong> Press button (<code>1</code>), Don’t press button (<code>0</code>)</li>
+</ul>
 <div class="fragment">
-<p>The number <span class="math inline">\(9\)</span></p>
+<div id="tbl-a" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Truth Table for Finite State Machine representing retractable pen
+</figcaption>
+<div aria-describedby="tbl-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Sign</th>
-<th><span class="math inline">\(2^7\)</span></th>
-<th><span class="math inline">\(2^6\)</span></th>
-<th><span class="math inline">\(2^5\)</span></th>
-<th><span class="math inline">\(2^4\)</span></th>
-<th><span class="math inline">\(2^3\)</span></th>
-<th><span class="math inline">\(2^2\)</span></th>
-<th><span class="math inline">\(2^1\)</span></th>
-<th><span class="math inline">\(2^0\)</span></th>
-<th></th>
+<th>State</th>
+<th>Input</th>
+<th>New State</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
-<td><code>0</code></td>
-<td><code>0</code></td>
-<td><code>0</code></td>
-<td><code>0</code></td>
-<td><code>1</code></td>
-<td><code>0</code></td>
-<td><code>0</code></td>
-<td><code>1</code></td>
-<td></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>0</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="fragment">
-<p>The number <span class="math inline">\(-56\)</span></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Sign</th>
-<th><span class="math inline">\(2^7\)</span></th>
-<th><span class="math inline">\(2^6\)</span></th>
-<th><span class="math inline">\(2^5\)</span></th>
-<th><span class="math inline">\(2^4\)</span></th>
-<th><span class="math inline">\(2^3\)</span></th>
-<th><span class="math inline">\(2^2\)</span></th>
-<th><span class="math inline">\(2^1\)</span></th>
-<th><span class="math inline">\(2^0\)</span></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>1</code></td>
-<td><code>0</code></td>
-<td><code>0</code></td>
-<td><code>1</code></td>
-<td><code>1</code></td>
-<td><code>1</code></td>
-<td><code>0</code></td>
-<td><code>0</code></td>
-<td><code>0</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+</figure>
+</div>
 </div>
 </section>
-<section id="fixed-point-representation-of-numbers" class="level3">
-<h3 class="anchored" data-anchor-id="fixed-point-representation-of-numbers">Fixed Point Representation of numbers</h3>
-<p>A <strong>fixed point</strong> number has a ‘decimal point’ located at a fixed position in the place-value scheme.</p>
-<p>Consider two different fixed point decimal representations of the number one hundred, both with 6 decimal digits.</p>
-<div class="quarto-layout-panel" data-layout="[0.5, 0.5]">
-<div class="quarto-layout-row">
-<div class="{#} quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<ol type="A">
-<li>Decimal point fixed at position 3</li>
-</ol>
-<p><span class="fragment"><code>100.000</code></span></p>
-</div>
-<div class="{#} quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<ol start="2" type="A">
-<li>Decimal point fixed at position 2</li>
-</ol>
-<p><span class="fragment"><code>0100.00</code></span></p>
-</div>
-</div>
-</div>
-<p><span class="inclass">Questions to consider:</span></p>
-<ol type="1">
-<li>What is the largest (+) number that can be shown using A and B ? A: <code>999.999</code> B: <code>9999.99</code></li>
-<li>What is the smallest difference between two numbers that can be represented using A and B ? A: <code>0.001</code> B: <code>0.01</code></li>
-</ol>
-</section>
-<section id="a-rudimentary-floating-point-number-system" class="level3">
-<h3 class="anchored" data-anchor-id="a-rudimentary-floating-point-number-system">A rudimentary ‘floating point’ number system</h3>
-<ul>
-<li>With 6 digits and decimal point <strong>fixed</strong> in middle:</li>
-</ul>
-<div class="fragment">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Quantity</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Largest + Number</td>
-<td><code>999.999</code></td>
-</tr>
-<tr class="even">
-<td>Smallest + Number</td>
-<td><code>000.001</code></td>
-</tr>
-<tr class="odd">
-<td>Increment</td>
-<td><code>000.001</code></td>
-</tr>
-<tr class="even">
-<td>Pieces of info to store</td>
-<td>six</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>With 6 digits and decimal point can <strong>float</strong> anywhere:</li>
-</ul>
-<div class="fragment">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Quantity</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Largest + Number</td>
-<td><code>999999.</code></td>
-</tr>
-<tr class="even">
-<td>Smallest + Number</td>
-<td><code>.000001</code></td>
-</tr>
-<tr class="odd">
-<td>Increment</td>
-<td>depends</td>
-</tr>
-<tr class="even">
-<td>Pieces of info to store</td>
-<td>six + one</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="a-6-digit-decimal-floating-point-representation-needs-to-tell-you" class="level3">
-<h3 class="anchored" data-anchor-id="a-6-digit-decimal-floating-point-representation-needs-to-tell-you">A 6-digit decimal floating-point representation needs to tell you …</h3>
-<ol type="1">
-<li>What each of the 6 digits are.
-<ul>
-<li>Possibilities: 0 to 9</li>
-</ul></li>
-<li>Where the decimal point is:
-<ul>
-<li>7 options
-<ul>
-<li><code>000000.</code></li>
-<li><code>00000.0</code></li>
-<li><code>0000.00</code></li>
-<li><code>000.000</code></li>
-<li><code>00.0000</code></li>
-<li><code>0.00000</code></li>
-<li><code>.000000</code></li>
-</ul></li>
-</ul></li>
-</ol>
-</section>
-<section id="instead-use-scientific-notation" class="level3">
-<h3 class="anchored" data-anchor-id="instead-use-scientific-notation">Instead … use ‘Scientific Notation’</h3>
-<p>Recall the scientific notation of numbers: <span class="math display">\[-2.34 \times 10^5\]</span></p>
-<ul>
-<li>This conveys three pieces of information:
-<ul>
-<li>The sign</li>
-<li>3 digits for the number</li>
-<li>1 digit for the exponent</li>
-</ul></li>
-<li>Note that the <span class="math inline">\(a \times 10^{b}\)</span> structure is <strong>assumed</strong> and does not need to be stored every time the computer stores a number.</li>
-</ul>
-</section>
-<section id="standard-ieee-format-for-16-bit-floating-point-binary-numbers" class="level3">
-<h3 class="anchored" data-anchor-id="standard-ieee-format-for-16-bit-floating-point-binary-numbers">Standard (IEEE) Format for 16-bit floating-point binary numbers</h3>
+<section id="logic-gates-for-finite-state-machines" class="level3">
+<h3 class="anchored" data-anchor-id="logic-gates-for-finite-state-machines">Logic Gates for Finite State Machines</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="16bits.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+<p><img src="gates.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:95.0%"></p>
+</figure>
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p><code>A AND B</code> is True <strong>if and only if</strong> <em>both</em> <code>A</code> and <code>B</code> are <code>True</code></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p><code>NOT A</code> is True <strong>if and only if</strong> <code>A</code> is <code>False</code>.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p><code>A OR B</code> is True <strong>if and only if</strong> <em>either</em> <code>A</code> or <code>B</code> (or both) are <code>True</code></p>
+</div>
+</div>
+</div>
+<p><span class="fragment">These three logic gates can be used to implement truth tables, and therefore Finite State Machines</span></p>
+</section>
+<section id="implementing-a-truth-table-using-logic-gates" class="level3">
+<h3 class="anchored" data-anchor-id="implementing-a-truth-table-using-logic-gates">Implementing a Truth Table using Logic Gates</h3>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">State</th>
+<th style="text-align: left;">Input</th>
+<th style="text-align: left;">New State</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="table-1.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="truth-tables-for-systems-with-more-than-4-state-input-combinations" class="level3">
+<h3 class="anchored" data-anchor-id="truth-tables-for-systems-with-more-than-4-state-input-combinations">Truth Tables for systems with more than 4 state-input combinations</h3>
+<p>Let’s return to the 4-step combination lock.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Input:<br>A</th>
+<th>Input:<br>B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Locked</td>
+<td>1 Correct</td>
+<td>Locked</td>
+</tr>
+<tr class="even">
+<td>1 Correct</td>
+<td>Locked</td>
+<td>2 Correct</td>
+</tr>
+<tr class="odd">
+<td>2 Correct</td>
+<td>Locked</td>
+<td>3 Correct</td>
+</tr>
+<tr class="even">
+<td>3 Correct</td>
+<td>Unlocked</td>
+<td>Locked</td>
+</tr>
+<tr class="odd">
+<td>Unlocked</td>
+<td><strong>Ready</strong></td>
+<td><strong>Ready</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Ready</strong></td>
+<td>Locked</td>
+<td>Locked</td>
+</tr>
+</tbody>
+</table>
+<p>To get a truth table for this, we:</p>
+<ul>
+<li>Encode each state as a binary number. Locked: <code>000</code>. 1 Correct: <code>001</code>. 2 Correct: <code>010</code>. 3 Correct: <code>011</code>. Unlocked: <code>100</code>. Ready: <code>101</code>.</li>
+<li>Encode each input as a binary number: A = <code>0</code> and B = <code>1</code></li>
+<li>The choice of encoding is arbitrary, but will determine what the truth table looks like.</li>
+</ul>
+</section>
+<section id="truth-table-for-combination-lock-abba" class="level3">
+<h3 class="anchored" data-anchor-id="truth-table-for-combination-lock-abba">Truth Table for combination lock <code>ABBA</code></h3>
+<div class="columns">
+<div class="column" style="width:40%;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Input</th>
+<th>New State</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>000</code></td>
+<td><code>0</code></td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td><code>000</code></td>
+<td><code>1</code></td>
+<td>?</td>
+</tr>
+<tr class="odd">
+<td><code>001</code></td>
+<td><code>0</code></td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td><code>001</code></td>
+<td><code>1</code></td>
+<td>?</td>
+</tr>
+<tr class="odd">
+<td><code>010</code></td>
+<td><code>0</code></td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td><code>010</code></td>
+<td><code>1</code></td>
+<td>?</td>
+</tr>
+<tr class="odd">
+<td><code>011</code></td>
+<td><code>0</code></td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td><code>011</code></td>
+<td><code>1</code></td>
+<td>?</td>
+</tr>
+<tr class="odd">
+<td><code>100</code></td>
+<td><code>0</code></td>
+<td><code>101</code></td>
+</tr>
+<tr class="even">
+<td><code>100</code></td>
+<td><code>1</code></td>
+<td><code>101</code></td>
+</tr>
+<tr class="odd">
+<td><code>101</code></td>
+<td><code>0</code></td>
+<td><code>000</code></td>
+</tr>
+<tr class="even">
+<td><code>101</code></td>
+<td><code>1</code></td>
+<td><code>000</code></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:20%;">
+
+</div><div class="column" style="width:40%;">
+<div style="font-size:16pt;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Input A <br> <code>0</code></th>
+<th>Input A <br> <code>1</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>◯ ◯ ◯ ◯</td>
+<td>✓ ◯ ◯ ◯</td>
+<td>◯ ◯ ◯ ◯</td>
+</tr>
+<tr class="even">
+<td>✓ ◯ ◯ ◯</td>
+<td>◯ ◯ ◯ ◯</td>
+<td>✓ ✓ ◯ ◯</td>
+</tr>
+<tr class="odd">
+<td>✓ ✓ ◯ ◯</td>
+<td>◯ ◯ ◯ ◯</td>
+<td>✓ ✓ ✓ ◯</td>
+</tr>
+<tr class="even">
+<td>✓ ✓ ✓ ◯</td>
+<td>✓ ✓ ✓ ✓</td>
+<td>◯ ◯ ◯ ◯</td>
+</tr>
+<tr class="odd">
+<td>✓ ✓ ✓ ✓</td>
+<td>Ready</td>
+<td>Ready</td>
+</tr>
+<tr class="even">
+<td>Ready</td>
+<td>◯ ◯ ◯ ◯</td>
+<td>◯ ◯ ◯ ◯</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Definitions:</p>
+<div style="font-size:16pt;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Encoding</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>◯ ◯ ◯ ◯</td>
+<td><code>000</code></td>
+<td>Locked</td>
+</tr>
+<tr class="even">
+<td>✓ ◯ ◯ ◯</td>
+<td><code>001</code></td>
+<td>1 down</td>
+</tr>
+<tr class="odd">
+<td>✓ ✓ ◯ ◯</td>
+<td><code>010</code></td>
+<td>2 down</td>
+</tr>
+<tr class="even">
+<td>✓ ✓ ✓ ◯</td>
+<td><code>011</code></td>
+<td>3 down</td>
+</tr>
+<tr class="odd">
+<td>✓ ✓ ✓ ✓</td>
+<td><code>100</code></td>
+<td>Unlocked</td>
+</tr>
+<tr class="even">
+<td>Ready</td>
+<td><code>101</code></td>
+<td>Ready</td>
+</tr>
+</tbody>
+</table>
+<p><span class="inclass">Fill in the new state column</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="a-simple-finite-state-machine-building-its-state-transition-table" class="level3">
+<h3 class="anchored" data-anchor-id="a-simple-finite-state-machine-building-its-state-transition-table">A simple Finite State Machine: Building its State Transition Table</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="FSM1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
 </figure>
 </div>
 <ul>
-<li>1 bit stores the sign</li>
-<li>10 bits store the number, known as the <em>significand</em>. <span class="math inline">\(1\)</span> is assumed to be the 11th bit, but it is <strong>not stored</strong>.</li>
-<li>5 bits store the exponent.
-<ul>
-<li>Smallest 5-bit binary number <code>00000</code><span class="math inline">\(= 0\)</span> and largest 5-bit binary number <code>11111</code><span class="math inline">\(=\)</span> 31</li>
-<li>To get <strong>negative exponents</strong>, we assume a <span class="emph">bias</span> in the exponent bits.</li>
-<li>Subtract fifteen from the exponent.</li>
-</ul></li>
-<li>The <em>structure</em> of the number is assumed; only the 16-bit <em>content</em> is stored in computer’s memory.</li>
-<li>Need 16 bits of memory to store this number.</li>
+<li>Let’s build the state-transition table for this FSM.</li>
+<li>Naming convention: <span class="math inline">\(S_1\)</span> is <code>0</code>, <span class="math inline">\(S_2\)</span> is <code>1</code>.</li>
 </ul>
-</section>
-<section id="place-value-notation-for-numbers-smaller-than-1" class="level3">
-<h3 class="anchored" data-anchor-id="place-value-notation-for-numbers-smaller-than-1">Place Value Notation for numbers smaller than 1</h3>
-<ul>
-<li>1 is a special number in the place value system.</li>
-<li>A ‘decimal point’ — a more ecumenical name would be ‘fractional point’ — is needed to show any numbers smaller than 1.</li>
-<li>To interpret the number <code>003.0025</code>,</li>
-</ul>
-<div class="fragment">
 <table class="caption-top table">
-<colgroup>
-<col style="width: 7%">
-<col style="width: 9%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 4%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Place</th>
-<th><span class="math inline">\(10^2\)</span></th>
-<th><span class="math inline">\(10^{1}\)</span></th>
-<th><span class="math inline">\(10^{0}\)</span></th>
-<th><span class="math inline">\(.\)</span></th>
-<th><span class="math inline">\(10^{-1}\)</span></th>
-<th><span class="math inline">\(10^{-2}\)</span></th>
-<th><span class="math inline">\(10^{-3}\)</span></th>
-<th><span class="math inline">\(10^{-4}\)</span></th>
+<th>State</th>
+<th>Input <code>0</code></th>
+<th>Input <code>1</code></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Value</td>
 <td><code>0</code></td>
-<td><code>0</code></td>
-<td><code>3</code></td>
-<td><code>.</code></td>
-<td><code>0</code></td>
-<td><code>0</code></td>
-<td><code>2</code></td>
-<td><code>5</code></td>
+<td><span class="fragment"><code>1</code></span></td>
+<td><span class="fragment"><code>0</code></span></td>
 </tr>
 <tr class="even">
-<td></td>
+<td><code>1</code></td>
+<td><span class="fragment"><code>1</code></span></td>
+<td><span class="fragment"><code>0</code></span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a-simple-finite-state-machine-building-its-truth-table" class="level3">
+<h3 class="anchored" data-anchor-id="a-simple-finite-state-machine-building-its-truth-table">A simple Finite State Machine: Building its Truth Table</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="FSM1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<ul>
+<li>Let’s build the truth table for this FSM.</li>
+<li>Naming convention: <span class="math inline">\(S_1\)</span> is <code>0</code>, <span class="math inline">\(S_2\)</span> is <code>1</code>.</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Input</th>
+<th>New State</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
 <td><code>0</code></td>
 <td><code>0</code></td>
-<td><span class="math inline">\(3\times 10^{0}\)</span></td>
-<td></td>
+<td><span class="fragment"><code>1</code></span></td>
+</tr>
+<tr class="even">
 <td><code>0</code></td>
+<td><code>1</code></td>
+<td><span class="fragment"><code>0</code></span></td>
+</tr>
+<tr class="odd">
+<td><code>1</code></td>
 <td><code>0</code></td>
-<td><span class="math inline">\(2 \times 10^{-3}\)</span></td>
-<td><span class="math inline">\(5 \times 10^{-4}\)</span></td>
+<td><span class="fragment"><code>1</code></span></td>
+</tr>
+<tr class="even">
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><span class="fragment"><code>0</code></span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a-simple-finite-state-machine-implementing-it-with-logic-gates" class="level3 scrollable">
+<h3 class="scrollable anchored" data-anchor-id="a-simple-finite-state-machine-implementing-it-with-logic-gates">A simple Finite State Machine: Implementing it with Logic Gates</h3>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="FSM1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">State (A)</th>
+<th style="text-align: left;">Input (B)</th>
+<th style="text-align: left;">New State</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>1</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;"><code>1</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;"><code>0</code></td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
+</div>
+<p><span class="inclass">Draw a logic-gate diagram for this truth table using <code>AND</code> <code>OR</code> and <code>NOT</code></span></p>
 </section>
-<section id="interpreting-a-16-bit-binary-float" class="level3 scrollable">
-<h3 class="scrollable anchored" data-anchor-id="interpreting-a-16-bit-binary-float">Interpreting a 16-bit binary float</h3>
-<p><a href="https://evanw.github.io/float-toy/" class="fragment">Float Toy</a></p>
-<p><span class="fragment">With the IEEE format, the 16 bits</span></p>
-<p><img src="p2.png" class="fragment img-fluid"></p>
-<p><span class="fragment">represent the number</span></p>
-<p><img src="p3.png" class="fragment img-fluid"></p>
-<p><span class="fragment">which, in binary form, should be intepreted as <span class="math display">\[-1.0001000100_2 \times 2^{(10001_2 \text{ minus fifteen})}\]</span></span></p>
-<p><span class="fragment">The exponent is <code>0b10001</code> minus fifteen, i.e., <span class="math inline">\(17 - 15 = 2\)</span></span></p>
-<p><span class="fragment">The significand is <span class="math display">\[- \left( 1 \times 2^{0} + 1 \times 2^{-4} + 1 \times 2^{-8} \right) \]</span></span></p>
-<p><span class="fragment"><span class="math display">\[ = - \left( 1 + \frac{1}{16} + \frac{1}{256} \right)\]</span></span></p>
-<p><span class="fragment"><span class="math display">\[ = - \left( \frac{256}{256} + \frac{16}{256} + \frac{1}{256} \right) = - \frac{273}{256} = -1.066406250\]</span></span></p>
-<p><span class="fragment">So the number is <span class="math inline">\(-1.066406250 \times 2^{2} = \fbox{-4.265625}\)</span></span></p>
-</section>
-<section id="hex-short-form" class="level3">
-<h3 class="anchored" data-anchor-id="hex-short-form">Hex short-form</h3>
-<ul>
-<li>Binary numbers are very long</li>
-<li>Hexadecimal is often used as a short form.</li>
-<li>A 16-bit binary number is a 4-bit hexadecimal number</li>
-</ul>
-<p><img src="binhex.png" class="fragment img-fluid"></p>
-<ul>
-<li>So the number <code>0b1100010001000100</code> is often written as <code>0xC444</code>.</li>
-</ul>
+<section id="practice-with-finite-state-machines" class="level3">
+<h3 class="anchored" data-anchor-id="practice-with-finite-state-machines">Practice with Finite State Machines</h3>
+<div id="fig-fsmnew" class="quarto-float quarto-figure quarto-figure-center anchored" width="50%" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fsmnew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="FSM-new.png" id="fig-fsmnew" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-fsmnew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3
+</figcaption>
+</figure>
+</div>
+<p><span class="inclass">Make a state-transition table, a truth table, a logic diagram and Python code for the Finite State Machine in <a href="#fig-fsmnew" class="quarto-xref">Figure&nbsp;3</a></span></p>
 
 
 </section>
