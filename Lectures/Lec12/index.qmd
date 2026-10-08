@@ -7,7 +7,7 @@ order: 12
 date: 10-08-2026
 date-format: long
 css: ../../styles.css
-uncover: false
+uncover: true
 footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
 resources: none
 code-line-numbers: false
@@ -253,7 +253,7 @@ To accommodate the new specifications:
 
 :::
 
-### Truth Tables for systems with more than 4 state-input combinations
+### Truth Tables for systems with more than 4 state-input combinations 
 
 Let's return to the 4-step combination lock.
 
@@ -279,10 +279,10 @@ To get a truth table for this, we:
 ::: {.column width="40%"}
 | State | Input | New State |
 | ----- | ----- | --------- |
-| `000` | `0`   | ?         |
-| `000` | `1`   | ?         |
-| `001` | `0`   | ?         |
-| `001` | `1`   | ?         |
+| `000` | `0`   | `001`      |
+| `000` | `1`   | `000`      |
+| `001` | `0`   | `000`      |
+| `001` | `1`   | `010`      |
 | `010` | `0`   | ?         |
 | `010` | `1`   | ?         |
 | `011` | `0`   | ?         |
@@ -388,15 +388,14 @@ Strategy:
 
 :::
 
-### Practice with Finite State Machines
+### Summary 
 
-![](FSM-new.png){#fig-fsmnew width="50%" fig-align="center"}
+We have learned four different ways of representing a Finite State Machine:
 
-[Make a state-transition table, a truth table, a logic diagram and Python code for the Finite State Machine in @fig-fsmnew]{.inclass}
-
-
-
-
+1. State transition diagram
+2. State transition table
+3. Truth table
+4. Logic gates diagram
 
 
 

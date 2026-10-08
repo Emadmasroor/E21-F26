@@ -218,6 +218,15 @@ Emad Masroor
 </section>
 <section id="test-2-discussion" class="slide level3">
 <h3>Test 2 Discussion</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="scores.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+<ul>
+<li>Mean: 22.4</li>
+<li>Median: 23</li>
+</ul>
 </section>
 <section id="combination-lock-review" class="slide level3">
 <h3>Combination Lock — Review</h3>
@@ -378,7 +387,7 @@ Table&nbsp;1
 <section id="engineering-specifications-to-finite-state-machines" class="slide level3">
 <h3>Engineering Specifications to Finite State Machines</h3>
 <ul>
-<li class="fragment">The combination lock system is described by <a href="#/tbl-table" class="quarto-xref">Table&nbsp;1</a>, <a href="#/fig-lock" class="quarto-xref">Figure&nbsp;1</a>, <a href="#/fig-lock1" class="quarto-xref">Figure&nbsp;2</a></li>
+<li class="fragment">The combination lock system is described by <a href="#/tbl-table" class="quarto-xref">Table&nbsp;1</a>, <a href="#/fig-lock" class="quarto-xref">Figure&nbsp;1</a>, <a href="#/fig-lock1" class="quarto-xref">Figure&nbsp;3</a></li>
 <li class="fragment">Implement a <strong>new engineering specification</strong>:
 <ul>
 <li class="fragment">After unlock, any key should light all four LEDs blue.</li>
@@ -399,6 +408,63 @@ Figure&nbsp;2: Finite State Machine <strong>before</strong> changes applied
 </section>
 <section id="modified-lock-fsm" class="slide level3">
 <h3>Modified Lock FSM</h3>
+<p>To accommodate the new specifications:</p>
+<ul>
+<li class="fragment"><p>Create a new state and add it to the table</p>
+<div style="font-size: 16pt;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Input:<br>A</th>
+<th>Input:<br>B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Locked</td>
+<td>1 Correct</td>
+<td>Locked</td>
+</tr>
+<tr class="even">
+<td>1 Correct</td>
+<td>Locked</td>
+<td>2 Correct</td>
+</tr>
+<tr class="odd">
+<td>2 Correct</td>
+<td>Locked</td>
+<td>3 Correct</td>
+</tr>
+<tr class="even">
+<td>3 Correct</td>
+<td>Unlocked</td>
+<td>Locked</td>
+</tr>
+<tr class="odd">
+<td>Unlocked</td>
+<td><strong>Ready</strong></td>
+<td><strong>Ready</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Ready</strong></td>
+<td>Locked</td>
+<td>Locked</td>
+</tr>
+</tbody>
+</table>
+</div></li>
+</ul>
+<div id="fig-lock1" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-lock1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="fsm-lock-2.png" class="quarto-figure quarto-figure-center" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lock1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Finite State Machine after changes applied
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="truth-tables-for-finite-state-machines" class="slide level3">
 <h3>Truth Tables for Finite State Machines</h3>
@@ -584,22 +650,22 @@ Table&nbsp;2: Truth Table for Finite State Machine representing retractable pen
 <tr class="odd">
 <td><code>000</code></td>
 <td><code>0</code></td>
-<td>?</td>
+<td><code>001</code></td>
 </tr>
 <tr class="even">
 <td><code>000</code></td>
 <td><code>1</code></td>
-<td>?</td>
+<td><code>000</code></td>
 </tr>
 <tr class="odd">
 <td><code>001</code></td>
 <td><code>0</code></td>
-<td>?</td>
+<td><code>000</code></td>
 </tr>
 <tr class="even">
 <td><code>001</code></td>
 <td><code>1</code></td>
-<td>?</td>
+<td><code>010</code></td>
 </tr>
 <tr class="odd">
 <td><code>010</code></td>
@@ -859,20 +925,25 @@ Table&nbsp;2: Truth Table for Finite State Machine representing retractable pen
 </div>
 </div>
 <p><span class="inclass">Draw a logic-gate diagram for this truth table using <code>AND</code> <code>OR</code> and <code>NOT</code></span></p>
+<p>Strategy:</p>
+<ul>
+<li class="fragment"><p>Look for a combination of <em>and</em>, <em>or</em> and <em>not</em> statements that describe the <strong>new state</strong> column in terms of the other two columns.</p></li>
+<li class="fragment"><p>Write out a boolean statement in words.</p>
+<p><span class="emph">New State is <code>1</code> if <u>State and Input are both <code>0</code></u>, <em>or</em> if <u>State is <code>1</code> and Input is <code>0</code></u>.</span></p></li>
+<li class="fragment"><p>Write down the conditions needed for New State to be <code>1</code>.</p>
+<p>= <code>(not A and not B) or (A and not B)</code>.</p></li>
+<li class="fragment"><p>Otherwise, New State is assumed to be <code>0</code> because of the <strong>law of excluded middle</strong></p></li>
+</ul>
 </section>
-<section id="practice-with-finite-state-machines" class="slide level3">
-<h3>Practice with Finite State Machines</h3>
-<div id="fig-fsmnew" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center" width="50%">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-fsmnew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="FSM-new.png" id="fig-fsmnew" class="quarto-figure quarto-figure-center" style="width:50.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-fsmnew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3
-</figcaption>
-</figure>
-</div>
-<p><span class="inclass">Make a state-transition table, a truth table, a logic diagram and Python code for the Finite State Machine in <a href="#/fig-fsmnew" class="quarto-xref">Figure&nbsp;3</a></span></p>
+<section id="summary" class="slide level3">
+<h3>Summary</h3>
+<p>We have learned four different ways of representing a Finite State Machine:</p>
+<ol type="1">
+<li class="fragment">State transition diagram</li>
+<li class="fragment">State transition table</li>
+<li class="fragment">Truth table</li>
+<li class="fragment">Logic gates diagram</li>
+</ol>
 
 
 </section>

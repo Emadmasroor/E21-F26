@@ -450,7 +450,7 @@ window.Quarto = {
   <li><a href="#a-simple-finite-state-machine-building-its-state-transition-table" id="toc-a-simple-finite-state-machine-building-its-state-transition-table" class="nav-link" data-scroll-target="#a-simple-finite-state-machine-building-its-state-transition-table">A simple Finite State Machine: Building its State Transition Table</a></li>
   <li><a href="#a-simple-finite-state-machine-building-its-truth-table" id="toc-a-simple-finite-state-machine-building-its-truth-table" class="nav-link" data-scroll-target="#a-simple-finite-state-machine-building-its-truth-table">A simple Finite State Machine: Building its Truth Table</a></li>
   <li><a href="#a-simple-finite-state-machine-implementing-it-with-logic-gates" id="toc-a-simple-finite-state-machine-implementing-it-with-logic-gates" class="nav-link" data-scroll-target="#a-simple-finite-state-machine-implementing-it-with-logic-gates">A simple Finite State Machine: Implementing it with Logic Gates</a></li>
-  <li><a href="#practice-with-finite-state-machines" id="toc-practice-with-finite-state-machines" class="nav-link" data-scroll-target="#practice-with-finite-state-machines">Practice with Finite State Machines</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
@@ -491,6 +491,17 @@ window.Quarto = {
 
 <section id="test-2-discussion" class="level3">
 <h3 class="anchored" data-anchor-id="test-2-discussion">Test 2 Discussion</h3>
+<div class="nonincremental">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="scores.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<ul>
+<li>Mean: 22.4</li>
+<li>Median: 23</li>
+</ul>
+</div>
 </section>
 <section id="combination-lock-review" class="level3">
 <h3 class="anchored" data-anchor-id="combination-lock-review">Combination Lock — Review</h3>
@@ -651,7 +662,7 @@ Table&nbsp;1
 <section id="engineering-specifications-to-finite-state-machines" class="level3">
 <h3 class="anchored" data-anchor-id="engineering-specifications-to-finite-state-machines">Engineering Specifications to Finite State Machines</h3>
 <ul>
-<li>The combination lock system is described by <a href="#tbl-table" class="quarto-xref">Table&nbsp;1</a>, <a href="#fig-lock" class="quarto-xref">Figure&nbsp;1</a>, <a href="#fig-lock1" class="quarto-xref">Figure&nbsp;2</a></li>
+<li>The combination lock system is described by <a href="#tbl-table" class="quarto-xref">Table&nbsp;1</a>, <a href="#fig-lock" class="quarto-xref">Figure&nbsp;1</a>, <a href="#fig-lock1" class="quarto-xref">Figure&nbsp;3</a></li>
 <li>Implement a <strong>new engineering specification</strong>:
 <ul>
 <li>After unlock, any key should light all four LEDs blue.</li>
@@ -672,6 +683,63 @@ Figure&nbsp;2: Finite State Machine <strong>before</strong> changes applied
 </section>
 <section id="modified-lock-fsm" class="level3">
 <h3 class="anchored" data-anchor-id="modified-lock-fsm">Modified Lock FSM</h3>
+<p>To accommodate the new specifications:</p>
+<ul>
+<li><p>Create a new state and add it to the table</p>
+<div style="font-size: 16pt;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Input:<br>A</th>
+<th>Input:<br>B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Locked</td>
+<td>1 Correct</td>
+<td>Locked</td>
+</tr>
+<tr class="even">
+<td>1 Correct</td>
+<td>Locked</td>
+<td>2 Correct</td>
+</tr>
+<tr class="odd">
+<td>2 Correct</td>
+<td>Locked</td>
+<td>3 Correct</td>
+</tr>
+<tr class="even">
+<td>3 Correct</td>
+<td>Unlocked</td>
+<td>Locked</td>
+</tr>
+<tr class="odd">
+<td>Unlocked</td>
+<td><strong>Ready</strong></td>
+<td><strong>Ready</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Ready</strong></td>
+<td>Locked</td>
+<td>Locked</td>
+</tr>
+</tbody>
+</table>
+</div></li>
+</ul>
+<div id="fig-lock1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lock1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fsm-lock-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lock1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Finite State Machine after changes applied
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="truth-tables-for-finite-state-machines" class="level3">
 <h3 class="anchored" data-anchor-id="truth-tables-for-finite-state-machines">Truth Tables for Finite State Machines</h3>
@@ -857,22 +925,22 @@ Table&nbsp;2: Truth Table for Finite State Machine representing retractable pen
 <tr class="odd">
 <td><code>000</code></td>
 <td><code>0</code></td>
-<td>?</td>
+<td><code>001</code></td>
 </tr>
 <tr class="even">
 <td><code>000</code></td>
 <td><code>1</code></td>
-<td>?</td>
+<td><code>000</code></td>
 </tr>
 <tr class="odd">
 <td><code>001</code></td>
 <td><code>0</code></td>
-<td>?</td>
+<td><code>000</code></td>
 </tr>
 <tr class="even">
 <td><code>001</code></td>
 <td><code>1</code></td>
-<td>?</td>
+<td><code>010</code></td>
 </tr>
 <tr class="odd">
 <td><code>010</code></td>
@@ -1133,20 +1201,25 @@ Table&nbsp;2: Truth Table for Finite State Machine representing retractable pen
 </div>
 </div>
 <p><span class="inclass">Draw a logic-gate diagram for this truth table using <code>AND</code> <code>OR</code> and <code>NOT</code></span></p>
+<p>Strategy:</p>
+<ul>
+<li><p>Look for a combination of <em>and</em>, <em>or</em> and <em>not</em> statements that describe the <strong>new state</strong> column in terms of the other two columns.</p></li>
+<li><p>Write out a boolean statement in words.</p>
+<p><span class="emph">New State is <code>1</code> if <u>State and Input are both <code>0</code></u>, <em>or</em> if <u>State is <code>1</code> and Input is <code>0</code></u>.</span></p></li>
+<li><p>Write down the conditions needed for New State to be <code>1</code>.</p>
+<p>= <code>(not A and not B) or (A and not B)</code>.</p></li>
+<li><p>Otherwise, New State is assumed to be <code>0</code> because of the <strong>law of excluded middle</strong></p></li>
+</ul>
 </section>
-<section id="practice-with-finite-state-machines" class="level3">
-<h3 class="anchored" data-anchor-id="practice-with-finite-state-machines">Practice with Finite State Machines</h3>
-<div id="fig-fsmnew" class="quarto-float quarto-figure quarto-figure-center anchored" width="50%" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-fsmnew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="FSM-new.png" id="fig-fsmnew" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:50.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-fsmnew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3
-</figcaption>
-</figure>
-</div>
-<p><span class="inclass">Make a state-transition table, a truth table, a logic diagram and Python code for the Finite State Machine in <a href="#fig-fsmnew" class="quarto-xref">Figure&nbsp;3</a></span></p>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<p>We have learned four different ways of representing a Finite State Machine:</p>
+<ol type="1">
+<li>State transition diagram</li>
+<li>State transition table</li>
+<li>Truth table</li>
+<li>Logic gates diagram</li>
+</ol>
 
 
 </section>
