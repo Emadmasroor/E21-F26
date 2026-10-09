@@ -238,7 +238,7 @@
     "href": "Homework/index.html#list-of-assignments",
     "title": "Homework",
     "section": "List of Assignments",
-    "text": "List of Assignments\n\n\n\nNumber\nDue Date\nSubmit link\n\n\n\n\nHW 1\nThu, Sep 10\nGradescope\n\n\nHW 2\nThu, Sep 17\nGradescope code and PDF\n\n\nHW 3\nThu, Sep 24\nGradescope code and PDF\n\n\nHW 4\nThu, Oct 01\nGradescope code and PDF\n\n\nHW 5\nThu, Oct 08\nGradescope code only",
+    "text": "List of Assignments\n\n\n\nNumber\nDue Date\nSubmit link\n\n\n\n\nHW 1\nThu, Sep 10\nGradescope\n\n\nHW 2\nThu, Sep 17\nGradescope code and PDF\n\n\nHW 3\nThu, Sep 24\nGradescope code and PDF\n\n\nHW 4\nThu, Oct 01\nGradescope code and PDF\n\n\nHW 5\nThu, Oct 08\nGradescope code only\n\n\nHW 6\nThu, Oct 22\nGradescope code and PDF",
     "crumbs": [
       "Homepage",
       "Homework"
@@ -1537,6 +1537,78 @@
       "Homepage",
       "Lectures",
       "Lecture 09"
+    ]
+  },
+  {
+    "objectID": "Homework/HW6/index.html",
+    "href": "Homework/HW6/index.html",
+    "title": "HW 6",
+    "section": "",
+    "text": "Due Date\nThu, Oct 22\n\n\nTurn in link\nGradescope PDF and Code\n\n\nURL\nemadmasroor.github.io/E21-F26/Homework/HW6\nWhat to turn in\nCombine all written HW into one PDF file.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 6"
+    ]
+  },
+  {
+    "objectID": "Homework/HW6/index.html#sec-nav",
+    "href": "Homework/HW6/index.html#sec-nav",
+    "title": "HW 6",
+    "section": "1.1 A function to navigate to x,y",
+    "text": "1.1 A function to navigate to x,y\nWrite a function that accepts as argument a tuple of (x,y) values. When this function is called, your drone should navigate to the spot (x,y).",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 6"
+    ]
+  },
+  {
+    "objectID": "Homework/HW6/index.html#a-function-to-plant-companions",
+    "href": "Homework/HW6/index.html#a-function-to-plant-companions",
+    "title": "HW 6",
+    "section": "1.2 A function to plant companions",
+    "text": "1.2 A function to plant companions\nWrite a function that\n\nChecks if a plant has a companion. If not, it doesn’t do anything.\nIf it does have a companion, the drone navigates to the companion’s favored location. You should make use of the function you wrote in Section 1.1.\nOnce it is at the favored location, it plants the desired companion plant at this location.\nThe drone then returns to the location of the first plant.\n\nThe above should work regardless of whether there is currently a plant at that location. Assume that the entire farm is tilled soil, not grassland, for this purpose.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 6"
+    ]
+  },
+  {
+    "objectID": "Homework/HW6/index.html#four-ways-of-representing-a-finite-state-machine",
+    "href": "Homework/HW6/index.html#four-ways-of-representing-a-finite-state-machine",
+    "title": "HW 6",
+    "section": "2.1 Four ways of representing a Finite State Machine",
+    "text": "2.1 Four ways of representing a Finite State Machine\nA coin-operated turnstile, shown in Figure 1, is to be designed using a two-state finite-state machine. It has two states: Locked and Unlocked. There are two possible inputs that it can accept: (1) you can put a coin in it, and (2) you can push through the turnstile.\nThe turnstile operates as follows.\nIf the user enters a coin while the turnstile is locked, the turnstile becomes unlocked. Adding any more coins doesn’t do anything; the turnstile remains locked. If the user pushes through the turnstile while it is unlocked, the turnstile lets him through and the turnstile locks again. If the user tries to push through the turnstile while it is locked, nothing happens and the turnstile stays locked.\nUsing the given states and inputs,\n\nConstruct a state-transition diagram. You are encouraged to make use of the ‘Finite State Machine Designer’ website here to produce professional quality diagrams, but this is not necessary. Label your states and inputs descriptively with words, rather than numbers.\n\n\nMake a state-transition table. Use words, not numbers, to label your states and inputs.\n\n\nMake a truth table using the following values as ‘names’ in binary:\n\n\nthe unlocked state is 0,\nthe locked state is 1,\nadding a coin is encoded by 0\npushing the turnstile is encoded by 1.\n\n\nMake a logic diagram for this truth table using And, Or, and Not gates.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 6"
+    ]
+  },
+  {
+    "objectID": "Homework/HW6/index.html#equivalence-of-boolean-expressions",
+    "href": "Homework/HW6/index.html#equivalence-of-boolean-expressions",
+    "title": "HW 6",
+    "section": "4.1 Equivalence of Boolean expressions",
+    "text": "4.1 Equivalence of Boolean expressions\nYou may wish to consult this trurth table generator for this assignment.\nThe following truth table expresses the relationship between 3 ‘inputs’ a, b and c, and one ‘output’ d (this is why there are \\(2^3=8\\) entries). Here, the word ‘input’ could refer to either a FSM’s input or a FSM’s current state. The word ‘output’, in a FSM context, refers to the next state of the FSM for that combination of inputs and states.\n\n\n\na\nb\nc\nd\n\n\n\n\nF\nF\nF\nF\n\n\nF\nF\nT\nF\n\n\nF\nT\nF\nT\n\n\nF\nT\nT\nF\n\n\nT\nF\nF\nT\n\n\nT\nF\nT\nT\n\n\nT\nT\nF\nT\n\n\nT\nT\nT\nT\n\n\n\nThere are several different ways to express this truth table. For example, the following would work.\n\nd = (a and b and c) or (a and b and not c) or (a and not b and c) or (a and not b and not c) or (not a and b and not c)\n\nThis is an unnecessarily verbose way of describing this truth table. There is a much simpler expression that involves only three boolean operators when written out in English. Find a simpler expression of this truth table using at most three boolean operators.\n\n\n\n\n\n\nNote\n\n\n\nThe expression ‘a and b and c’ is an example of a Boolean expression with two operators. The expression ‘(a and not b) or c’ has three operators.",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 6"
+    ]
+  },
+  {
+    "objectID": "Homework/HW6/index.html#simplifying-truth-tables",
+    "href": "Homework/HW6/index.html#simplifying-truth-tables",
+    "title": "HW 6",
+    "section": "4.2 Simplifying Truth Tables",
+    "text": "4.2 Simplifying Truth Tables\nThe following truth table can be expressed in the following way: c = (not a and not b) or (not a and b). However, there is a much simpler Boolean expression that can be used here instead to relate c, the output, to a and b, the inputs. Find the most simple statement of how c depends on a and b. Then, draw the logic diagram for both the original statement c = (not a and not b) or (not a and b) and for your simplified statement.\n\n\n\na\nb\nc\n\n\n\n\nF\nF\nT\n\n\nF\nT\nT\n\n\nT\nF\nF\n\n\nT\nT\nF",
+    "crumbs": [
+      "Homepage",
+      "Homework",
+      "HW 6"
     ]
   }
 ]

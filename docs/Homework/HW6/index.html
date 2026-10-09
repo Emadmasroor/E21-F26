@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-10-22">
 
-<title>Homework – ENGR 21 Computer Engineering Fundamentals</title>
+<title>HW 6 – ENGR 21 Computer Engineering Fundamentals</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,27 +30,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5a1953863e1f72ef3b996ef827f01ca7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-add7254ae97fa153f8b1a26e02c65245.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-32e3d36c25272d6ff5376a1b833ae0db.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-add7254ae97fa153f8b1a26e02c65245.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5a1953863e1f72ef3b996ef827f01ca7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-add7254ae97fa153f8b1a26e02c65245.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-32e3d36c25272d6ff5376a1b833ae0db.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-add7254ae97fa153f8b1a26e02c65245.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,6 +78,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -87,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ENGR 21 Computer Engineering Fundamentals</span>
     </a>
   </div>
@@ -98,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Homepage</span></a>
   </li>  
 </ul>
@@ -126,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Homework/index.html">Homework</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../Homework/HW6/index.html">HW 6</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -140,13 +170,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../../syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../AcademicSupport/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../AcademicSupport/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Academic Support</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -155,13 +185,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../AcademicSupport/Masroor.html" class="sidebar-item-text sidebar-link">
+  <a href="../../AcademicSupport/Masroor.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instructor Support</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../AcademicSupport/wizards.html" class="sidebar-item-text sidebar-link">
+  <a href="../../AcademicSupport/wizards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wizard Office Hours</span></a>
   </div>
 </li>
@@ -169,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs.html" class="sidebar-item-text sidebar-link">
+  <a href="../../labs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Labs</span></a>
   </div>
 </li>
@@ -184,73 +214,73 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Lectures/Lec1/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec1/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 01</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Lectures/Lec2/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec2/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 02</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Lectures/Lec3/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec3/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 03</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Lectures/Lec4/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec4/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 04</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Lectures/Lec5/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec5/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 05</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Lectures/Lec6/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec6/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 06</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Lectures/Lec7/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec7/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 07</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Lectures/Lec8/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec8/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 08</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Lectures/Lec9/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec9/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 09</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Lectures/Lec10/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec10/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 10</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Lectures/Lec11/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec11/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 11</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Lectures/Lec12/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Lectures/Lec12/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture 12</span></a>
   </div>
 </li>
@@ -258,7 +288,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Homework/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../Homework/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -267,7 +297,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Homework/HW1/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../Homework/HW1/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 1</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -276,7 +306,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Homework/HW1/solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Homework/HW1/solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 1 Solutions</span></a>
   </div>
 </li>
@@ -284,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Homework/HW2/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../Homework/HW2/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 2</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -293,7 +323,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Homework/HW2/solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Homework/HW2/solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 2 Solutions</span></a>
   </div>
 </li>
@@ -301,7 +331,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Homework/HW3/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../Homework/HW3/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 3</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -310,7 +340,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Homework/HW3/solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Homework/HW3/solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 3 Solutions</span></a>
   </div>
 </li>
@@ -318,7 +348,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../Homework/HW4/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../Homework/HW4/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 4</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -327,7 +357,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Homework/HW4/solutions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Homework/HW4/solutions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 4 Solutions</span></a>
   </div>
 </li>
@@ -335,13 +365,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Homework/HW5/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Homework/HW5/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Homework/HW6/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Homework/HW6/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">HW 6</span></a>
   </div>
 </li>
@@ -349,19 +379,19 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../PastProjects/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../PastProjects/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Past E21 Projects</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../syllabus.html#schedule" class="sidebar-item-text sidebar-link">
+  <a href="../../syllabus.html#schedule" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tests.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tests.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tests</span></a>
   </div>
 </li>
@@ -375,17 +405,32 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#list-of-assignments" id="toc-list-of-assignments" class="nav-link active" data-scroll-target="#list-of-assignments">List of Assignments</a></li>
-  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions">Extensions</a></li>
+  <li><a href="#the-farmer-was-replaced" id="toc-the-farmer-was-replaced" class="nav-link active" data-scroll-target="#the-farmer-was-replaced"><span class="header-section-number">1</span> The Farmer Was Replaced</a>
+  <ul class="collapse">
+  <li><a href="#sec-nav" id="toc-sec-nav" class="nav-link" data-scroll-target="#sec-nav"><span class="header-section-number">1.1</span> A function to navigate to x,y</a></li>
+  <li><a href="#a-function-to-plant-companions" id="toc-a-function-to-plant-companions" class="nav-link" data-scroll-target="#a-function-to-plant-companions"><span class="header-section-number">1.2</span> A function to plant companions</a></li>
+  </ul></li>
+  <li><a href="#two-state-fsm" id="toc-two-state-fsm" class="nav-link" data-scroll-target="#two-state-fsm"><span class="header-section-number">2</span> Two-state FSM</a>
+  <ul class="collapse">
+  <li><a href="#four-ways-of-representing-a-finite-state-machine" id="toc-four-ways-of-representing-a-finite-state-machine" class="nav-link" data-scroll-target="#four-ways-of-representing-a-finite-state-machine"><span class="header-section-number">2.1</span> Four ways of representing a Finite State Machine</a></li>
+  </ul></li>
+  <li><a href="#modified-finite-state-machine" id="toc-modified-finite-state-machine" class="nav-link" data-scroll-target="#modified-finite-state-machine"><span class="header-section-number">3</span> Modified Finite State Machine</a></li>
+  <li><a href="#logic-gates-and-boolean-expressions" id="toc-logic-gates-and-boolean-expressions" class="nav-link" data-scroll-target="#logic-gates-and-boolean-expressions"><span class="header-section-number">4</span> Logic Gates and Boolean expressions</a>
+  <ul class="collapse">
+  <li><a href="#equivalence-of-boolean-expressions" id="toc-equivalence-of-boolean-expressions" class="nav-link" data-scroll-target="#equivalence-of-boolean-expressions"><span class="header-section-number">4.1</span> Equivalence of Boolean expressions</a></li>
+  <li><a href="#simplifying-truth-tables" id="toc-simplifying-truth-tables" class="nav-link" data-scroll-target="#simplifying-truth-tables"><span class="header-section-number">4.2</span> Simplifying Truth Tables</a></li>
+  </ul></li>
+  <li><a href="#a-new-combination-lock" id="toc-a-new-combination-lock" class="nav-link" data-scroll-target="#a-new-combination-lock"><span class="header-section-number">5</span> A new combination lock</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../Homework/HW6/index.html">HW 6</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Homework</h1>
+<h1 class="title">HW 6</h1>
+<p class="subtitle lead">ENGR 21, Fall 2026.</p>
 </div>
 
 
@@ -393,6 +438,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 22, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -402,58 +453,255 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Homework assignments will be due on Thursdays at midnight. Submit them on Gradescope at this link.</p>
-<section id="list-of-assignments" class="level2">
-<h2 class="anchored" data-anchor-id="list-of-assignments">List of Assignments</h2>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>Due Date</td>
+<td>Thu, Oct 22</td>
+</tr>
+<tr class="even">
+<td>Turn in link</td>
+<td>Gradescope <a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=834330">PDF</a> and <a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=834329">Code</a></td>
+</tr>
+<tr class="odd">
+<td>URL</td>
+<td><code>emadmasroor.github.io/E21-F26/Homework/HW6</code></td>
+</tr>
+</tbody>
+</table>
+<p><u>What to turn in</u></p>
+<p>Combine all written HW into one PDF file.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Number</th>
-<th>Due Date</th>
-<th>Submit link</th>
+<th>Problem</th>
+<th>Format</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="HW1">HW 1</a></td>
-<td>Thu, Sep 10</td>
-<td><a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=828548">Gradescope</a></td>
+<td>1</td>
+<td>Code: One <code>.py</code> file containing all TFWR code.</td>
 </tr>
 <tr class="even">
-<td><a href="HW2">HW 2</a></td>
-<td>Thu, Sep 17</td>
-<td>Gradescope <a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=829963">code</a> and <a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=829966">PDF</a></td>
+<td>2</td>
+<td>PDF</td>
 </tr>
 <tr class="odd">
-<td><a href="HW3">HW 3</a></td>
-<td>Thu, Sep 24</td>
-<td>Gradescope <a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=831400">code</a> and <a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=831402">PDF</a></td>
+<td>3</td>
+<td>PDF</td>
 </tr>
 <tr class="even">
-<td><a href="HW4">HW 4</a></td>
-<td>Thu, Oct 01</td>
-<td>Gradescope <a href="https://www.gradescope.com/courses/1380463/assignments/8744345/">code</a> and <a href="https://www.gradescope.com/courses/1380463/assignments/8744360/">PDF</a></td>
+<td>4</td>
+<td>PDF</td>
 </tr>
 <tr class="odd">
-<td><a href="HW5">HW 5</a></td>
-<td>Thu, Oct 08</td>
-<td>Gradescope <a href="https://www.gradescope.com/courses/1380463/assignments/8790355/">code only</a></td>
+<td>5</td>
+<td>Code: One <code>.py</code> file</td>
+</tr>
+</tbody>
+</table>
+<section id="the-farmer-was-replaced" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> The Farmer Was Replaced</h1>
+<p>Download <a href="Save-for-HW6.zip">the save file here</a> to ensure that you’ve unlocked all that’s required for this assignment.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="stuff.png" class="img-fluid figure-img"></p>
+<figcaption>Look how much stuff you’ll have!</figcaption>
+</figure>
+</div>
+<p>The Farmer Was Replaced now has ‘Polyculture favorites’. To check if a particular plant has a ‘Polyculture favorite’, use the function <code>get_companion()</code> while your drone is hovering over a cell with a plant growing on it. The function <code>get_companion()</code> returns two outputs. The first output is the type of plant that would be this plant’s ‘Polyculture favorite’, and the second output is a tuple of x-y values that tell you where this companion plant should go.</p>
+<section id="sec-nav" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-nav"><span class="header-section-number">1.1</span> A function to navigate to x,y</h2>
+<p>Write a function that accepts as argument a tuple of <code>(x,y)</code> values. When this function is called, your drone should navigate to the spot <code>(x,y)</code>.</p>
+</section>
+<section id="a-function-to-plant-companions" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="a-function-to-plant-companions"><span class="header-section-number">1.2</span> A function to plant companions</h2>
+<p>Write a function that</p>
+<ol type="1">
+<li>Checks if a plant has a companion. If not, it doesn’t do anything.</li>
+<li>If it does have a companion, the drone navigates to the companion’s favored location. You should make use of the function you wrote in <a href="#sec-nav" class="quarto-xref">Section&nbsp;1.1</a>.</li>
+<li>Once it is at the favored location, it plants the desired companion plant at this location.</li>
+<li>The drone then returns to the location of the first plant.</li>
+</ol>
+<p>The above should work regardless of whether there is currently a plant at that location. Assume that the entire farm is tilled soil, not grassland, for this purpose.</p>
+</section>
+</section>
+<section id="two-state-fsm" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Two-state FSM</h1>
+<div id="fig-coin" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="40%">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="coin.png" id="fig-coin" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-coin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
+<section id="four-ways-of-representing-a-finite-state-machine" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="four-ways-of-representing-a-finite-state-machine"><span class="header-section-number">2.1</span> Four ways of representing a Finite State Machine</h2>
+<p>A coin-operated turnstile, shown in <a href="#fig-coin" class="quarto-xref">Figure&nbsp;1</a>, is to be designed using a two-state finite-state machine. It has two states: Locked and Unlocked. There are two possible inputs that it can accept: (1) you can put a coin in it, and (2) you can push through the turnstile.</p>
+<p>The turnstile operates as follows.</p>
+<p>If the user enters a coin while the turnstile is locked, the turnstile becomes unlocked. Adding any more coins doesn’t do anything; the turnstile remains locked. If the user pushes through the turnstile while it is unlocked, the turnstile lets him through and the turnstile locks again. If the user tries to push through the turnstile while it is locked, nothing happens and the turnstile stays locked.</p>
+<p>Using the given states and inputs,</p>
+<ol type="1">
+<li>Construct a state-transition diagram. You are encouraged to make use of the ‘Finite State Machine Designer’ website <a href="https://madebyevan.com/fsm/">here</a> to produce professional quality diagrams, but this is not necessary. Label your states and inputs descriptively with words, rather than numbers.</li>
+</ol>
+<ol start="2" type="1">
+<li>Make a state-transition table. Use words, not numbers, to label your states and inputs.</li>
+</ol>
+<ol start="3" type="1">
+<li>Make a truth table using the following values as ‘names’ in binary:</li>
+</ol>
+<ul>
+<li>the unlocked state is <code>0</code>,</li>
+<li>the locked state is <code>1</code>,</li>
+<li>adding a coin is encoded by <code>0</code></li>
+<li>pushing the turnstile is encoded by <code>1</code>.</li>
+</ul>
+<ol start="4" type="1">
+<li>Make a logic diagram for this truth table using And, Or, and Not gates.</li>
+</ol>
+</section>
+</section>
+<section id="modified-finite-state-machine" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Modified Finite State Machine</h1>
+<p>You are tasked with designing a new finite state machine that allows up to three people at a time to go through the turnstile at a cost of $0.50 each. The machine only accepts quarters. When two quarters have been entered into the turnstile, one person can pass through before the machine becomes locked again.. If four quarters are entered into the turnstile, two people can pass through before it becomes locked again. Entering more than $1.50 does not have any effect. So, for example, if $2.00 is entered into the machine, it will still only let three people pass, not four.</p>
+<ol type="1">
+<li><p>Draw the state transition diagram for this finite state machine, labeling each state with the number of cents/dollars that have been entered. Assume that the initial state is $0.00.</p></li>
+<li><p>How many rows and columns will the state-transition table for this FSM have? You do not need to write it out.</p></li>
+<li><p>Write out the truth table for this finite state machine. Each state should be labeled by the number of quarters it currently recognizes inside the machine, in binary. Entering a coin should be labeled <code>1</code> and pushing through should be labeled <code>0</code>.</p></li>
+</ol>
+</section>
+<section id="logic-gates-and-boolean-expressions" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Logic Gates and Boolean expressions</h1>
+<section id="equivalence-of-boolean-expressions" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="equivalence-of-boolean-expressions"><span class="header-section-number">4.1</span> Equivalence of Boolean expressions</h2>
+<p>You may wish to consult this <a href="https://web.stanford.edu/class/cs103/tools/truth-table-tool/">trurth table generator</a> for this assignment.</p>
+<p>The following truth table expresses the relationship between 3 ‘inputs’ a, b and c, and one ‘output’ d (this is why there are <span class="math inline">\(2^3=8\)</span> entries). Here, the word ‘input’ could refer to either a FSM’s input or a FSM’s current state. The word ‘output’, in a FSM context, refers to the next state of the FSM for that combination of inputs and states.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>a</th>
+<th>b</th>
+<th>c</th>
+<th>d</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
 </tr>
 <tr class="even">
-<td><a href="HW5">HW 6</a></td>
-<td>Thu, Oct 22</td>
-<td>Gradescope <a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=834329">code</a> and <a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=834330">PDF</a></td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p>There are several different ways to express this truth table. For example, the following would work.</p>
+<ul>
+<li>d = (a and b and c) or (a and b and not c) or (a and not b and c) or (a and not b and not c) or (not a and b and not c)</li>
+</ul>
+<p>This is an unnecessarily verbose way of describing this truth table. There is a much simpler expression that involves only <strong>three</strong> boolean operators when written out in English. Find a simpler expression of this truth table using at most three boolean operators.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The expression ‘a and b and c’ is an example of a Boolean expression with two operators. The expression ‘(a and not b) or c’ has three operators.</p>
+</div>
+</div>
+</section>
+<section id="simplifying-truth-tables" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="simplifying-truth-tables"><span class="header-section-number">4.2</span> Simplifying Truth Tables</h2>
+<p>The following truth table can be expressed in the following way: c = (not a and not b) or (not a and b). However, there is a much simpler Boolean expression that can be used here instead to relate c, the output, to a and b, the inputs. Find the most simple statement of how c depends on a and b. Then, draw the logic diagram for both the original statement c = (not a and not b) or (not a and b) and for your simplified statement.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>a</th>
+<th>b</th>
+<th>c</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="odd">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>T</td>
+<td>F</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="extensions" class="level2">
-<h2 class="anchored" data-anchor-id="extensions">Extensions</h2>
-<p>Refer to the <a href="../syllabus.html">homework submission policies in the syllabus</a> for the kinds of extensions available.</p>
-<p>Request an extension on a HW assignment using the <a href="https://forms.gle/z17LdM8se4ycbMTEA">form</a> below. You must be logged in to your Swarthmore Google account to see it.</p>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSffuhYRJHTaTTKLd09oAHdi7OAnB88DoNBjEbBhVHK5GF5VCg/viewform?embedded=true" width="640" height="640" frameborder="0" marginheight="0" marginwidth="0">
-Loading…
-</iframe>
+</section>
+<section id="a-new-combination-lock" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> A new combination lock</h1>
+<p>Your task in this part of the homework assignment is to create a ‘combination lock’, similar to the one discussed in class, that ‘unlocks’ when the code <code>ABABBABA</code> is entered. The ‘locked’ state is shown with eight consecutive neopixels shown red; each correct entry (A or B) should sequentially turn the neopixels green, one by one. You do not need any states after the fully-unlocked state is reached.</p>
+<ol type="1">
+<li>Draw the State Transition Diagram for this system. Please use <span class="math inline">\(S_1\)</span>, <span class="math inline">\(S_2\)</span>, … for your state names, and A/B for the input names.</li>
+<li>Implement this on the Circuit Playground Express, similar to the code used <a href="../Lec11/#combination-lock">in class</a>.</li>
+</ol>
 
 
 </section>
