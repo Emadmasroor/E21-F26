@@ -51,7 +51,7 @@ Combine all written HW into one PDF file.
 | 2       | PDF                                            |
 | 3       | PDF                                            |
 | 4       | PDF                                            |
-| 5       | Code: One `.py` file                           |
+| 5       | Code: One `.py` file **and** PDF with state transition diagram |
 
 
 :::
