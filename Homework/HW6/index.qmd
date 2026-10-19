@@ -92,7 +92,7 @@ A coin-operated turnstile, shown in @fig-coin, is to be designed using a two-sta
 
 The turnstile operates as follows.
 
-If the user enters a coin while the turnstile is locked, the turnstile becomes unlocked. Adding any more coins doesn't do anything; the turnstile remains locked. If the user pushes through the turnstile while it is unlocked, the turnstile lets him through and the turnstile locks again. If the user tries to push through the turnstile while it is locked, nothing happens and the turnstile stays locked.
+If the user enters a coin while the turnstile is locked, the turnstile becomes unlocked. Adding any more coins doesn't do anything; the turnstile remains unlocked. If the user pushes through the turnstile while it is unlocked, the turnstile lets him through and the turnstile locks again. If the user tries to push through the turnstile while it is locked, nothing happens and the turnstile stays locked.
 
 Using the given states and inputs,
 
