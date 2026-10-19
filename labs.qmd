@@ -4,10 +4,6 @@ title: "Labs"
 
 Homepage for labs.
 
-## About the labs
-
-...
-
 ## Lab Schedule
 
 Labs will be held on Mondays and Thursdays.
@@ -17,8 +13,8 @@ Labs will be held on Mondays and Thursdays.
 | ----------------------- | ----------------------------------- | ----------- |
 | [Lab 1](Labs/lab1.html) | Capacitive touch passcode           | Thu, Sep 10 |
 | [Lab 2](Labs/lab2.html) | Joystick, loops, and functions      | Thu, Sep 24 |
-| Lab 3                   | PPen plotter, IK, and linear motion | Thu, Oct 8  |
-| Lab 4                   | Cubic Spline Interpolation          | Thu, Oct 29 |
-| Lab 5                   | Fourier Series and Superposition    | Thu, Nov 12 |
+| [Lab 3](Labs/lab3.html) | Pen plotter, IK, and linear motion  | Mon, Oct 19 |
+| Lab 4                   | Cubic Spline Interpolation          | Mon, Nov 2  |
+| Lab 5                   | Fourier Series and Superposition    | Mon, Nov 16 |
 |                         | Final Project                       |             |
 

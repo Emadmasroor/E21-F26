@@ -1,10 +1,10 @@
       <meta charset="utf-8" emacsmode="-*- markdown -*-">
          **E21 Lab 3: Pen plotter, IK, and linear motion**
-               **[ENGR 21 - Fall 2025](../index.html#lab3)**
-             **October 6-23, 2025**
+               **[ENGR 21 - Fall 2025](../labs.html)**
+             **October 19-29, 2025**
              **Due on Moodle prior to your next lab meeting**
 
-For this lab, you'll be working with our Swarthmore-made pen plotter robots, shown below.
+For this lab, you'll be working with our homemade pen plotter robots, shown below.
 
 ![Figure [plotter]: our pen plotter robot for this lab.](images/lab3_plotter.jpg width="75%" alt="A 2D robot arm holds a pen above a blank sheet of paper.")
 
@@ -23,7 +23,25 @@ which is in turn based on the commercial [Line-Us robot](https://www.line-us.com
 
 (##) Report Template
 
-Use the provided [lab report template](https://docs.google.com/document/d/1zJ_oSPDUWFf8rJqCmRprCKRK0iTCi09DjZfTaOn3u-U/copy) to answer the questions for this lab. For all E21 labs, please make sure to write up your answers to the questions in each exercise before you move on to the next task. The questions are designed to help you complete the labs efficiently.
+Use the provided [lab report template](https://docs.google.com/document/d/1ZhiGoztP9i9yJpzEc3iwA0GW8O0_79ZfNhunfFrJXsI/copy) to answer the questions for this lab. For all E21 labs, please make sure to write up your answers to the questions in each exercise before you move on to the next task. The questions are designed to help you complete the labs efficiently.
+
+(##) Share folder
+
+Create a share folder on Google drive which will contain your final Python files and the videos you shoot for this lab.
+
+(###) Question
+
+  * **Q1)** What is the URL (beginning with `https://`) for your share
+    folder for this lab? Make sure it is shared with my Swarthmore
+    email address
+    ([mzucker1@swarthmore.edu](mailto:mzucker1@swarthmore.edu)). Please
+    be nice to my inbox and uncheck “Notify people” when you share it.
+    
+    Before you submit, make sure this share folder contains your
+    completed **`lab3_desktop.py`** file, your completed **`code.py`**
+    file, and two clearly labeled videos of the plotter running your
+    code.
+
 
 (##) Lab progress
 
@@ -330,7 +348,7 @@ corresponds to an angle of 180&deg;.
 The module I wrote to control the pen plotter uses the [**`adafruit_motor.servo.Servo`** class](https://docs.circuitpython.org/projects/motor/en/latest/api.html#adafruit_motor.servo.Servo) which in turn wraps
 a [**`pwmio.PWMOut`** object](https://docs.circuitpython.org/en/latest/shared-bindings/pwmio/index.html#pwmio.PWMOut).
 
-For further reading, check out this [basic tutorial on using servos with the CPB](https://learn.adafruit.com/adafruit-circuit-playground-bluefruit/circuitpython-servo).
+For further reading, check out this [basic tutorial on using servos with the CPX](https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-servo).
 
 # Lab Exercises
 
@@ -349,9 +367,9 @@ zero vector, or because $\| S \| > 2 \ell_2$), the
 Otherwise, it should return the vector $P$ that is a distance
 $\ell_2$ from both the origin and the input point $S$.
 
-(###) Questions
+(###) Question
 
-  * **Q1)** Did your code pass all of the tests on the first try? If not, How
+  * **Q2)** Did your code pass all of the tests on the first try? If not, How
     did you have to modify your **`intersect_circles`** function?
 
 ## Exercise 2 (desktop Python): Inverse kinematics
@@ -381,7 +399,7 @@ file. Please look over them before you complete this exercise.
 
 (###) Questions
 
-  * **Q2)** Did your code pass all of the tests on the first try? If
+  * **Q3)** Did your code pass all of the tests on the first try? If
     not, how did you have to modify your **`ik`** function? Did you
     need to revisit your **`intersect_circles`** function to make
     further corrections to it?
@@ -390,7 +408,7 @@ file. Please look over them before you complete this exercise.
 
 (###) Setting up the pen plotter
 
-To hook up your breadboard to your CPB and servos, follow these steps:
+To hook up your breadboard to your CPX and servos, follow these steps:
 
   * Plug the upper arm servo which sets the $\alpha$ angle into the
     breadboard at the topmost pair of red/black wires, closest
@@ -407,7 +425,7 @@ To hook up your breadboard to your CPB and servos, follow these steps:
     the bottom-most pair of red/black wires, furthest from the barrel
     jack. Match colors.
     
-  * **With both the CPB and the barrel jack unplugged**, make the
+  * **With both the CPX and the barrel jack unplugged**, make the
     connections listed in the table below using clip-to-pin leads.
     
 Use a black lead to connect to `GND`, a red lead to connect to
@@ -423,7 +441,7 @@ Use a black lead to connect to `GND`, a red lead to connect to
 
 See the photo below for an illustration:
 
-![Figure [connection]: Connecting the CPB to the pen plotter. Remember not to plug in the USB cable till you have verified all of the other connections.](images/lab3_connecting.jpg alt="The pen plotter and the CPB are both plugged into a solderless breadboard.")
+![Figure [connection]: Connecting the CPX to the pen plotter. Remember not to plug in the USB cable till you have verified all of the other connections.](images/lab3_connecting.jpg alt="The pen plotter and the CPX are both plugged into a solderless breadboard.")
     
 !!! Warning
     It is very important to avoid connecting `GND` directly to
@@ -438,7 +456,7 @@ Once everything is hooked up, you are ready to plug in USB!
     try disconnecting the `VOUT` lead and plug a 5V power supply into the barrel
     connector instead.
     ***IMPORTANT: If you don't disconnect the `VOUT` pin prior to plugging in the
-    barrel connector, you risk damaging your CPB or your laptop!***
+    barrel connector, you risk damaging your CPX or your laptop!***
 
 (###) Running your pen plotter
 
@@ -458,16 +476,16 @@ the pen should be about 2-3 mm above the paper.
    
 (###) Coding
 
-Download this [zip file](lab3/lab3_cpb.zip) and extract the contents
+Download this [zip file](lab3/lab3_cpx.zip) and extract the contents
 to the root directory of your CIRCUITPY drive. When you are done, the
 new `code.py` should land in the root directory, and your `lib`
 directory should contain the new file `jankyplotter.mpy` as well as
 the subdirectory `adafruit_motor`.
 
 !!! Warning
-   **If you already have a `code.py` file on your CPB with valuable
+   **If you already have a `code.py` file on your CPX with valuable
    code in it, beware of overwriting it!** Consider renaming the one
-   on your CPB or backing it up to your computer before copying over
+   on your CPX or backing it up to your computer before copying over
    the starter code.
 
 Your job is to implement the **`move_linear(plotter, new_pos)`** function to smoothly
@@ -526,12 +544,13 @@ while u < 1:
     
 When you have successfully implemented this, the robot should move at
 a steady pace along a square in a loop forever (or at least a shape
-more square than the starter code achieves). Record a video of your robot drawing a square and include
-    the link in your writeup.
+more square than the starter code achieves). 
 
-(###) Questions
+(###) Video
 
-  * **Q3)**  Include a link to the video you recorded for exercise 3. Make sure it is shared with my Swarthmore email address ([wjohnso3@swarthmore.edu](mailto:wjohnso3@swarthmore.edu)). Please be nice to my inbox and **uncheck** "Notify people" when you share it.
+**Record a video of your robot drawing a square and drop it 
+  into your share folder with an appropriate filename (e.g. `square.mp4`).**
+
 
 ## Exercise 4 (CircuitPython): State machine for drawing
 
@@ -568,9 +587,10 @@ the following specifications:
   
      * **`plotter.is_pen_down()`** returns a Boolean.
 
-Record a video of your robot successfully drawing the
-    picture contained in `hello.txt`, and provide a link in your
-    write-up.
+(###) Video
+
+**Record a video of your robot drawing the `hello.txt` input file and drop it
+  into your share folder with an appropriate filename (e.g. `hello.mp4`).**
   
 
 (###) Questions
@@ -580,8 +600,6 @@ Record a video of your robot successfully drawing the
     writeup and explain them to the best of your ability. Skip over
     any lines that are not related to file input or text parsing.
   
-  * **Q5)**  Include a link to the video you recorded for exercise 4. Make sure it is shared with my Swarthmore email address ([wjohnso3@swarthmore.edu](mailto:wjohnso3@swarthmore.edu)). Please be nice to my inbox and **uncheck** "Notify people" when you share it.
-    
 ## Exercise 5 (Desktop): Compare drawings to ground truth
 
 In `lab3_desktop.py`, comment out the call to **`lab3_ex2()`** function
@@ -613,43 +631,36 @@ If you don't set the correct aspect ratio, you'll see something like the image b
 
 (###) Questions
 
-  * **Q6)** Photograph or scan your pen plotter's renderings of
+  * **Q5)** Photograph or scan your pen plotter's renderings of
     `hello.txt`, `spooky1.txt`, and `spooky2.txt`. Include all three
     images in your lab writeup.
     
-  * **Q7)** Have your **`lab3_ex5()`** function produce graphs
+  * **Q6)** Have your **`lab3_ex5()`** function produce graphs
     of each of these three files. Include all three images in your lab writeup.
   
-  * **Q8)** Comment on the mismatches you see between the plotter
+  * **Q7)** Comment on the mismatches you see between the plotter
     output and the ground truth input. What are all of the sources of
     error you can think of?  ***Hint: some may be due to software
     issues, but many are mechanical in nature...***
     
-  * **Q9)** What improvements to the software or hardware do you think
+  * **Q8)** What improvements to the software or hardware do you think
     might help address these errors?
 
 # Lab Report
 
-Prior to your next lab meeting, submit the following on Moodle:
+Prior to your next lab meeting, make sure your share folder contains:
 
   * Your completed `code.py` file.
   
   * Your completed `lab3_desktop.py` file.
-
-  * A PDF writeup using [the provided template](https://docs.google.com/document/d/1zJ_oSPDUWFf8rJqCmRprCKRK0iTCi09DjZfTaOn3u-U/copy) with your names and answers to 
-    all questions **Q1**-**Q9** above as well as **Q10** below:
+  
+  * The videos of your robot drawing a square and the picture
+    contained in **`hello.txt`**. Make sure each one is clearly labeled.
     
-    * **Q10)** Did all group members contribute equally to all tasks?
+On Moodle, submit a PDF writeup using [the provided template](https://docs.google.com/document/d/1ZhiGoztP9i9yJpzEc3iwA0GW8O0_79ZfNhunfFrJXsI/copy) with your full names and answers to all questions **Q1**-**Q8** above as well as **Q9** below:
+    
+    * **Q9)** Did all group members contribute equally to all tasks?
       If not, who did what for each exercise?
-      
-In your PDF, please include the questions verbatim, preserving the
-numbering I have used. Also make sure to format my questions
-differently than your answers (e.g. using boldface, italics, or
-a predefined Heading style).
-      
-!!! Warning
-    **Don't forget to make sure your videos are linked in the PDF writeup
-    and shared with my Swarthmore email address!**
       
 ## Grading
 
@@ -657,7 +668,7 @@ Points will be assigned according to the following breakdown:
 
  | Item | Grade value |
  | :---  | --: |
- | Answers to **Q1**-**Q10** and general writeup quality| 40% |
+ | Answers to **Q1**-**Q9** and general writeup quality| 40% |
  | Code for **`intersect_circles()`** | 10% |
  | Code for **`ik()`** | 10% |
  | Code for **`move_linear()`** | 10% |
