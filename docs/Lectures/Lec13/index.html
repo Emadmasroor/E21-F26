@@ -549,10 +549,6 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="finding-roots-analytically">Finding Roots analytically</h3>
 <p>i.e., using mathematical analysis.</p>
 <p><span class="inclass">Q. Find the root(s) of <span class="math inline">\(f(x) = x^2+x-6\)</span></span></p>
-<p><span class="math inline">\(f(x) = x^2 +3x - 2x - 6\)</span></p>
-<p><span class="math inline">\(= (x + 3)(x-2)\)</span></p>
-<p>This equals zero when <span class="math inline">\(x = -3\)</span> or <span class="math inline">\(x=2\)</span></p>
-<p>The roots of <span class="math inline">\(x^2 + 3x - 2x - 6\)</span> are <span class="math inline">\(\boxed{x=-3}\)</span> and <span class="math inline">\(\boxed{x=2}\)</span>.</p>
 </section>
 <section id="when-analytical-root-finding-fails" class="level3">
 <h3 class="anchored" data-anchor-id="when-analytical-root-finding-fails">When analytical root-finding fails</h3>
@@ -626,16 +622,6 @@ window.Quarto = {
 <li><span class="inclass">Write a Python script to print the value of <span class="math inline">\(f(x)\)</span> for <span class="math inline">\(x=0, 0.1, 0.2, ..., 1.0\)</span></span></li>
 </ul>
 <div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f1(x):</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">10</span><span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">11</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> x:</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"At x = </span><span class="sc">{</span>value<span class="sc">:.3f}</span><span class="ss">, f(x) = </span><span class="sc">{</span>f1(value)<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -659,50 +645,29 @@ window.Quarto = {
 <li>The <code>numpy</code> function <code>argmin</code> finds the <strong>index of</strong> the minimum value of an array.</li>
 <li>Recall that <code>abs()</code> in Python means ‘absolute value of’</li>
 </ul>
-<div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f1(x):</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">10</span><span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Array of x-values 0, 0.1, 0.2, ..., 1.0</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">11</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Array of f(x) values f(0), f(0.1), ..., f(1.0)</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> f1(x)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Index of f(x) closest to zero</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>loczero <span class="op">=</span> np.argmin(<span class="bu">abs</span>(y))</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Locate that value of x</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> x[loczero]</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Our best estimate of the root of f(x) is"</span>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x = </span><span class="sc">{</span>answer<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 </section>
 <section id="a-better-approach" class="level3">
 <h3 class="anchored" data-anchor-id="a-better-approach">A better approach …</h3>
 <p>Let’s look closely at the result of our incremental search.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f1(x):</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">10</span><span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">11</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> x:</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"At x = </span><span class="sc">{</span>value<span class="sc">:.3f}</span><span class="ss">, f(x) = </span><span class="sc">{</span>f1(value)<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-label="1"></a>At x <span class="op">=</span> <span class="fl">0.000</span>, f(x) <span class="op">=</span> <span class="fl">5.000</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-label="2"></a>At x <span class="op">=</span> <span class="fl">0.100</span>, f(x) <span class="op">=</span> <span class="fl">4.901</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-label="3"></a>At x <span class="op">=</span> <span class="fl">0.200</span>, f(x) <span class="op">=</span> <span class="fl">4.608</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-label="4"></a>At x <span class="op">=</span> <span class="fl">0.300</span>, f(x) <span class="op">=</span> <span class="fl">4.127</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-label="5"></a>At x <span class="op">=</span> <span class="fl">0.400</span>, f(x) <span class="op">=</span> <span class="fl">3.464</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-label="6"></a>At x <span class="op">=</span> <span class="fl">0.500</span>, f(x) <span class="op">=</span> <span class="fl">2.625</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-label="7"></a>At x <span class="op">=</span> <span class="fl">0.600</span>, f(x) <span class="op">=</span> <span class="fl">1.616</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-label="8"></a>At x <span class="op">=</span> <span class="fl">0.700</span>, f(x) <span class="op">=</span> <span class="fl">0.443</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-label="9"></a>At x <span class="op">=</span> <span class="fl">0.800</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">0.888</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-label="10"></a>At x <span class="op">=</span> <span class="fl">0.900</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">2.371</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-label="11"></a>At x <span class="op">=</span> <span class="fl">1.000</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">4.000</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f1(x):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">10</span><span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">11</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> x:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"At x = </span><span class="sc">{</span>value<span class="sc">:.3f}</span><span class="ss">, f(x) = </span><span class="sc">{</span>f1(value)<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-label="1"></a>At x <span class="op">=</span> <span class="fl">0.000</span>, f(x) <span class="op">=</span> <span class="fl">5.000</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-label="2"></a>At x <span class="op">=</span> <span class="fl">0.100</span>, f(x) <span class="op">=</span> <span class="fl">4.901</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-label="3"></a>At x <span class="op">=</span> <span class="fl">0.200</span>, f(x) <span class="op">=</span> <span class="fl">4.608</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-label="4"></a>At x <span class="op">=</span> <span class="fl">0.300</span>, f(x) <span class="op">=</span> <span class="fl">4.127</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-label="5"></a>At x <span class="op">=</span> <span class="fl">0.400</span>, f(x) <span class="op">=</span> <span class="fl">3.464</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-label="6"></a>At x <span class="op">=</span> <span class="fl">0.500</span>, f(x) <span class="op">=</span> <span class="fl">2.625</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-label="7"></a>At x <span class="op">=</span> <span class="fl">0.600</span>, f(x) <span class="op">=</span> <span class="fl">1.616</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-label="8"></a>At x <span class="op">=</span> <span class="fl">0.700</span>, f(x) <span class="op">=</span> <span class="fl">0.443</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-label="9"></a>At x <span class="op">=</span> <span class="fl">0.800</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">0.888</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-label="10"></a>At x <span class="op">=</span> <span class="fl">0.900</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">2.371</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-label="11"></a>At x <span class="op">=</span> <span class="fl">1.000</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">4.000</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Idea:</p>
 <ul>
 <li><span class="emph">Sign change in <span class="math inline">\(f(x)\)</span> occurs at root of <span class="math inline">\(f(x)\)</span></span></li>
@@ -713,12 +678,12 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="bisection-algorithm-for-fx-x3---10x2-5">Bisection Algorithm for <span class="math inline">\(f(x) = x^3 - 10x^2 + 5\)</span></h3>
 <p>The bisection algorithm works by successively <strong>bisecting</strong> a search space to determine where a sign change in <span class="math inline">\(f(x)\)</span> occurs.</p>
 <div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-label="1"></a>...</span>
-<span id="cb5-2"><a href="#cb5-2" aria-label="2"></a>At x <span class="op">=</span> <span class="fl">0.600</span>, f(x) <span class="op">=</span> <span class="fl">1.616</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-label="3"></a>At x <span class="op">=</span> <span class="fl">0.700</span>, f(x) <span class="op">=</span> <span class="fl">0.443</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-label="4"></a>At x <span class="op">=</span> <span class="fl">0.800</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">0.888</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-label="5"></a>At x <span class="op">=</span> <span class="fl">0.900</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">2.371</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-label="6"></a>...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-label="1"></a>...</span>
+<span id="cb3-2"><a href="#cb3-2" aria-label="2"></a>At x <span class="op">=</span> <span class="fl">0.600</span>, f(x) <span class="op">=</span> <span class="fl">1.616</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-label="3"></a>At x <span class="op">=</span> <span class="fl">0.700</span>, f(x) <span class="op">=</span> <span class="fl">0.443</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-label="4"></a>At x <span class="op">=</span> <span class="fl">0.800</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">0.888</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-label="5"></a>At x <span class="op">=</span> <span class="fl">0.900</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">2.371</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-label="6"></a>...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><span class="fragment">We know that <span class="math inline">\(f(x) = 0\)</span> occurs for <span class="math inline">\(\boxed{0.7 &lt; x &lt; 0.8}\)</span></span></p>
 <p><span class="inclass fragment">Use Python/Numpy to find out whether the root is in the <strong>left half</strong> of the given interval or its <strong>right half</strong>.</span></p>
@@ -752,10 +717,6 @@ window.Quarto = {
 <section id="an-algorithm-for-bisection" class="level3">
 <h3 class="anchored" data-anchor-id="an-algorithm-for-bisection">An algorithm for bisection</h3>
 <p><span class="inclass">Write a Python program that performs bisection <strong>three</strong> times</span></p>
-<p><span class="fragment">At the end of this process, we know that the root is located somewhere in the interval <span class="math display">\[x \in \boxed{(0.725, 0.7375)}\]</span></span></p>
-<ul>
-<li>We can choose to state this as <span class="math inline">\(x_{\text{root}} = 0.73125 \pm 0.00625\)</span></li>
-</ul>
 </section>
 <section id="convergence-rates" class="level3 scrollable">
 <h3 class="scrollable anchored" data-anchor-id="convergence-rates">Convergence rates</h3>

@@ -7,7 +7,7 @@ order: 13
 date: 10-20-2026
 date-format: long
 css: ../../styles.css
-uncover: true
+uncover: false
 footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
 resources: none
 code-line-numbers: false
