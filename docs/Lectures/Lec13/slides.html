@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
+
+  <meta name="author" content="Emad Masroor">
+  <meta name="dcterms.date" content="2026-10-20">
+  <title>ENGR 21 Computer Engineering Fundamentals – Lecture 13</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-fb9ddeffdffcd7f977cd9d988628815f.css">
+  <link rel="stylesheet" href="../../styles.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Lecture 13</h1>
+  <p class="subtitle">E21 Computer Engineering Fundamentals</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Emad Masroor
+</div>
+</div>
+</div>
+
+  <p class="date">October 20, 2026</p>
+</section>
+<section id="numerical-methods-in-engineering" class="slide level3">
+<h3>Numerical Methods in Engineering</h3>
+<ol type="1">
+<li class="fragment">Turn engineering problems into mathematical problems</li>
+<li class="fragment">Turn mathematical problems into computational problems</li>
+<li class="fragment">Tell a computer how to solve the computational problems</li>
+</ol>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><span class="emph">Using</span> numerical methods</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><span class="emph">Developing</span> numerical methods</p>
+</div>
+</div>
+</div>
+</section>
+<section id="root-finding" class="slide level3">
+<h3>Root-finding</h3>
+<div class="centering">
+<p>Main idea: Solve <span class="math inline">\(f(x)=0\)</span>.</p>
+</div>
+<p>Recall mathematical terminology:</p>
+<ul>
+<li class="fragment">A <strong>root</strong> of a function <span class="math inline">\(f(x)\)</span> is a value of <span class="math inline">\(x\)</span> at which <span class="math inline">\(f(x) = 0\)</span>.</li>
+<li class="fragment">A <strong>function</strong> is a unique mapping (or ‘formula’) that assigns a unique value of <span class="math inline">\(f(x)\)</span> for any given value of <span class="math inline">\(x\)</span>.
+<ul>
+<li class="fragment">The inverse mapping is not necessarily unique; two values of <span class="math inline">\(x\)</span> can have the same value of <span class="math inline">\(f(x)\)</span>.</li>
+</ul></li>
+<li class="fragment">Roots vs.&nbsp;solutions: The <strong>root</strong> of <span class="math inline">\(f(x)\)</span> is the <strong>solution</strong> to the <em>equation</em> <span class="math inline">\(f(x) = 0\)</span></li>
+</ul>
+</section>
+<section id="finding-roots-analytically" class="slide level3">
+<h3>Finding Roots analytically</h3>
+<p>i.e., using mathematical analysis.</p>
+<p><span class="inclass">Q. Find the root(s) of <span class="math inline">\(f(x) = x^2+x-6\)</span></span></p>
+<p><span class="math inline">\(f(x) = x^2 +3x - 2x - 6\)</span></p>
+<p><span class="math inline">\(= (x + 3)(x-2)\)</span></p>
+<p>This equals zero when <span class="math inline">\(x = -3\)</span> or <span class="math inline">\(x=2\)</span></p>
+<p>The roots of <span class="math inline">\(x^2 + 3x - 2x - 6\)</span> are <span class="math inline">\(\boxed{x=-3}\)</span> and <span class="math inline">\(\boxed{x=2}\)</span>.</p>
+</section>
+<section id="when-analytical-root-finding-fails" class="slide level3">
+<h3>When analytical root-finding fails</h3>
+<p><span class="fragment">Mathematical analysis can sometimes fail us engineers, even for very simple equations. For example, the equation</span></p>
+<p><span class="fragment"><span class="math display">\[\frac{x}{2}-1 = \sin x\]</span></span></p>
+<p><span class="fragment">is difficult to solve exactly</span></p>
+</section>
+<section id="graphical-techniques" class="slide level3 nostretch">
+<h3>Graphical Techniques</h3>
+<p>for solving <span class="math inline">\(\sin x = 0.5\)</span></p>
+<div class="r-stack">
+<div class="fragment">
+<img data-src="index_files/mediabag/tikz.8d7c69d2.svg" style="width:6in">
+</div>
+<div class="fragment">
+<img data-src="index_files/mediabag/tikz.fb4845dc.svg" style="width:6in">
+</div>
+<div class="fragment">
+<img data-src="index_files/mediabag/tikz.6e694ede.svg" style="width:6in">
+</div>
+<div class="fragment">
+<img data-src="index_files/mediabag/tikz.32a4da08.svg" style="width:6in">
+</div>
+</div>
+</section>
+<section id="graphical-techniques-for-more-functions" class="slide level3">
+<h3>Graphical Techniques for more functions</h3>
+<p>Find a root of the function <span class="math display">\[f(x) = 4 \sin x - 4 + x\]</span></p>
+<div class="r-stack">
+<div class="fragment">
+<img data-src="index_files/mediabag/tikz.02c3fe33.svg" style="width:6in">
+</div>
+<div class="fragment">
+<img data-src="index_files/mediabag/tikz.afc3faf0.svg" style="width:6in">
+</div>
+<div class="fragment">
+<img data-src="index_files/mediabag/tikz.f51fc1aa.svg" style="width:6in">
+</div>
+<div class="fragment">
+<img data-src="index_files/mediabag/tikz.a81aba6c.svg" style="width:6in">
+</div>
+</div>
+</section>
+<section id="graphical-solution-of-equations" class="slide level3">
+<h3>Graphical Solution of equations</h3>
+<p>Find the solutions to the following equations using the provided paper:</p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(\sin x = 0.7\)</span></li>
+<li class="fragment"><span class="math inline">\(\sin x = 0.72\)</span></li>
+<li class="fragment"><span class="math inline">\(\sin x - 0.7x = 0\)</span></li>
+<li class="fragment"><span class="math inline">\(2 (\sin x + 1) = 0\)</span></li>
+<li class="fragment"><span class="math inline">\(\sin x - x^2 + 1 = 0\)</span></li>
+</ol>
+</section>
+<section id="finding-roots-with-a-computer" class="slide level3">
+<h3>Finding Roots with a computer</h3>
+<p>We want to find a root for <span class="math display">\[f(x) = x^3 - 10x^2 + 5.\]</span></p>
+<p><strong>Options:</strong></p>
+<ol type="1">
+<li class="fragment">Try out many different values of <span class="math inline">\(x\)</span> indiscriminately.</li>
+<li class="fragment">Try out many different values of <span class="math inline">\(x\)</span> <strong>systematically</strong> (in order)</li>
+<li class="fragment">Try out many different values of <span class="math inline">\(x\)</span> <strong>adaptively</strong> — learn from each try</li>
+</ol>
+</section>
+<section id="an-incremental-search-algorithm-for-fx-x3---10x2-5" class="slide level3">
+<h3>An Incremental Search Algorithm for <span class="math inline">\(f(x) = x^3 - 10x^2 + 5\)</span></h3>
+<ul>
+<li class="fragment">Let’s select a <span class="math inline">\(\Delta x\)</span> with which to search for solutions. Say, <span class="math inline">\(\Delta x = 0.1\)</span></li>
+<li class="fragment">Start from <span class="math inline">\(x=0\)</span> and move up in increments of <span class="math inline">\(\Delta x\)</span></li>
+<li class="fragment">The value of <span class="math inline">\(x\)</span> for which <span class="math inline">\(f(x) \approx 0\)</span> will be our root!</li>
+<li class="fragment"><span class="inclass">Write a Python script to print the value of <span class="math inline">\(f(x)\)</span> for <span class="math inline">\(x=0, 0.1, 0.2, ..., 1.0\)</span></span></li>
+</ul>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f1(x):</span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">10</span><span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">11</span>)</span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> x:</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"At x = </span><span class="sc">{</span>value<span class="sc">:.3f}</span><span class="ss">, f(x) = </span><span class="sc">{</span>f1(value)<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Vectorized code</strong></p>
+</div>
+<div class="callout-content">
+<p>To apply the function <code>f1</code> to the array <code>x</code>, we can also do <code>f1(x)</code> directly</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="identifying-the-value-closest-to-zero" class="slide level3">
+<h3>Identifying the value closest to zero</h3>
+<p><code>min</code> vs.&nbsp;<code>argmin</code></p>
+<ul>
+<li class="fragment">The <code>numpy</code> function <code>min</code> finds the minimum value of an array.</li>
+<li class="fragment">The <code>numpy</code> function <code>argmin</code> finds the <strong>index of</strong> the minimum value of an array.</li>
+<li class="fragment">Recall that <code>abs()</code> in Python means ‘absolute value of’</li>
+</ul>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f1(x):</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">10</span><span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Array of x-values 0, 0.1, 0.2, ..., 1.0</span></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">11</span>)</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Array of f(x) values f(0), f(0.1), ..., f(1.0)</span></span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> f1(x)</span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Index of f(x) closest to zero</span></span>
+<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>loczero <span class="op">=</span> np.argmin(<span class="bu">abs</span>(y))</span>
+<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Locate that value of x</span></span>
+<span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> x[loczero]</span>
+<span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Our best estimate of the root of f(x) is"</span>)</span>
+<span id="cb2-19"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x = </span><span class="sc">{</span>answer<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="a-better-approach" class="slide level3">
+<h3>A better approach …</h3>
+<p>Let’s look closely at the result of our incremental search.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f1(x):</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">10</span><span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span></span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">11</span>)</span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> x:</span>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"At x = </span><span class="sc">{</span>value<span class="sc">:.3f}</span><span class="ss">, f(x) = </span><span class="sc">{</span>f1(value)<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-code-line-numbers="8-9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a>At x <span class="op">=</span> <span class="fl">0.000</span>, f(x) <span class="op">=</span> <span class="fl">5.000</span></span>
+<span id="cb4-2"><a aria-label="2"></a>At x <span class="op">=</span> <span class="fl">0.100</span>, f(x) <span class="op">=</span> <span class="fl">4.901</span></span>
+<span id="cb4-3"><a aria-label="3"></a>At x <span class="op">=</span> <span class="fl">0.200</span>, f(x) <span class="op">=</span> <span class="fl">4.608</span></span>
+<span id="cb4-4"><a aria-label="4"></a>At x <span class="op">=</span> <span class="fl">0.300</span>, f(x) <span class="op">=</span> <span class="fl">4.127</span></span>
+<span id="cb4-5"><a aria-label="5"></a>At x <span class="op">=</span> <span class="fl">0.400</span>, f(x) <span class="op">=</span> <span class="fl">3.464</span></span>
+<span id="cb4-6"><a aria-label="6"></a>At x <span class="op">=</span> <span class="fl">0.500</span>, f(x) <span class="op">=</span> <span class="fl">2.625</span></span>
+<span id="cb4-7"><a aria-label="7"></a>At x <span class="op">=</span> <span class="fl">0.600</span>, f(x) <span class="op">=</span> <span class="fl">1.616</span></span>
+<span id="cb4-8"><a aria-label="8"></a>At x <span class="op">=</span> <span class="fl">0.700</span>, f(x) <span class="op">=</span> <span class="fl">0.443</span></span>
+<span id="cb4-9"><a aria-label="9"></a>At x <span class="op">=</span> <span class="fl">0.800</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">0.888</span></span>
+<span id="cb4-10"><a aria-label="10"></a>At x <span class="op">=</span> <span class="fl">0.900</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">2.371</span></span>
+<span id="cb4-11"><a aria-label="11"></a>At x <span class="op">=</span> <span class="fl">1.000</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">4.000</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Idea:</p>
+<ul>
+<li class="fragment"><span class="emph">Sign change in <span class="math inline">\(f(x)\)</span> occurs at root of <span class="math inline">\(f(x)\)</span></span></li>
+<li class="fragment"><code>numpy</code> has a function <code>sign()</code></li>
+</ul>
+</section>
+<section id="bisection-algorithm-for-fx-x3---10x2-5" class="slide level3">
+<h3>Bisection Algorithm for <span class="math inline">\(f(x) = x^3 - 10x^2 + 5\)</span></h3>
+<p>The bisection algorithm works by successively <strong>bisecting</strong> a search space to determine where a sign change in <span class="math inline">\(f(x)\)</span> occurs.</p>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-code-line-numbers="3-4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a>...</span>
+<span id="cb5-2"><a aria-label="2"></a>At x <span class="op">=</span> <span class="fl">0.600</span>, f(x) <span class="op">=</span> <span class="fl">1.616</span></span>
+<span id="cb5-3"><a aria-label="3"></a>At x <span class="op">=</span> <span class="fl">0.700</span>, f(x) <span class="op">=</span> <span class="fl">0.443</span></span>
+<span id="cb5-4"><a aria-label="4"></a>At x <span class="op">=</span> <span class="fl">0.800</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">0.888</span></span>
+<span id="cb5-5"><a aria-label="5"></a>At x <span class="op">=</span> <span class="fl">0.900</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">2.371</span></span>
+<span id="cb5-6"><a aria-label="6"></a>...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><span class="fragment">We know that <span class="math inline">\(f(x) = 0\)</span> occurs for <span class="math inline">\(\boxed{0.7 &lt; x &lt; 0.8}\)</span></span></p>
+<p><span class="inclass fragment">Use Python/Numpy to find out whether the root is in the <strong>left half</strong> of the given interval or its <strong>right half</strong>.</span></p>
+<p><span class="fragment">We have learned that <span class="math inline">\(f(x)\)</span> changes sign between <span class="math inline">\(x = 0.7\)</span> and <span class="math inline">\(x=0.75\)</span>.</span></p>
+<p><span class="fragment">Conclude that the root is located in the range <span class="math inline">\(\boxed{0.7 &lt; x &lt; 0.75}\)</span></span></p>
+<div class="fragment">
+<img data-src="index_files/mediabag/tikz.ff5774ad.svg" style="width:6in">
+</div>
+</section>
+<section id="introducing-the-idea-of-tolerance" class="slide level3 smaller">
+<h3>Introducing the idea of ‘tolerance’</h3>
+<ul>
+<li class="fragment">In numerical methods, the word ‘tolerance’ is used to denote the <strong>window within which you know a desired value</strong>.</li>
+<li class="fragment">We first learned that <span class="math inline">\(f(x)=0\)</span> somewhere in the range <span class="math inline">\(x \in (0.7, 0.8)\)</span>. The root is known with a tolerance of <code>0.1</code>.</li>
+<li class="fragment">Next, we saw that <span class="math inline">\(f(x)=0\)</span> somewhere in the range <span class="math inline">\(x \in (0.7, 0.75)\)</span>. The root is now known with a tolerance of <code>0.05</code>.</li>
+<li class="fragment">The smaller the tolerance, the better your knowledge.</li>
+<li class="fragment">Reducing tolerance
+<ul>
+<li class="fragment">A numerical method usually has a <strong>target</strong> tolerance. “Good enough!”</li>
+<li class="fragment">Cannot reduce tolerance indefinitely — floating-point precision limitations such as machine epsilon / gap size eventually crop up</li>
+<li class="fragment">64-bit floats — good enough for engineering satisfaction but not good enough for mathematical satisfaction.</li>
+</ul></li>
+<li class="fragment">While loops and tolerance
+<ul>
+<li class="fragment">A typical way to write numerical methods is to enclose one’s algorithm within a block such as <code>while something &gt; target_tolerance</code></li>
+<li class="fragment">Keeps running as long as target tolerance is not reached</li>
+<li class="fragment">Terminates once target tolerance is reached.</li>
+</ul></li>
+</ul>
+</section>
+<section id="an-algorithm-for-bisection" class="slide level3">
+<h3>An algorithm for bisection</h3>
+<p><span class="inclass">Write a Python program that performs bisection <strong>three</strong> times</span></p>
+<p><span class="fragment">At the end of this process, we know that the root is located somewhere in the interval <span class="math display">\[x \in \boxed{(0.725, 0.7375)}\]</span></span></p>
+<ul>
+<li class="fragment">We can choose to state this as <span class="math inline">\(x_{\text{root}} = 0.73125 \pm 0.00625\)</span></li>
+</ul>
+</section>
+<section id="convergence-rates" class="slide level3 scrollable">
+<h3>Convergence rates</h3>
+<ul>
+<li class="fragment">At each subsequent bisection step, the bisection window is halved.</li>
+</ul>
+<div class="fragment">
+<img data-src="index_files/mediabag/tikz.6880ac03.svg" style="width:6in">
+</div>
+<div class="fragment">
+<p><img data-src="logscale.png" data-fig-width="6in"></p>
+</div>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>E21 • Fall 2026 • Lecture 13 • October 20, 2026 • <a href="index.html">↩︎</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1024,
+
+        height: 1024,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+              // Handle positioning of the toggle
+          window.addEventListener(
+            "resize",
+            throttle(() => {
+              elRect = undefined;
+              if (selectedAnnoteEl) {
+                selectCodeLines(selectedAnnoteEl);
+              }
+            }, 10)
+          );
+          function throttle(fn, ms) {
+          let throttle = false;
+          let timer;
+            return (...args) => {
+              if(!throttle) { // first call gets through
+                  fn.apply(this, args);
+                  throttle = true;
+              } else { // all the others get throttled
+                  if(timer) clearTimeout(timer); // cancel #2
+                  timer = setTimeout(() => {
+                    fn.apply(this, args);
+                    timer = throttle = false;
+                  }, ms);
+              }
+            };
+          }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
