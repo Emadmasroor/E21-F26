@@ -455,7 +455,7 @@ At x = 0.900, f(x) = -2.371
 
 \draw[red] (-1,-8pt) node[anchor=north] at (-1,0.5) {$f(x_L) > 0$};
 \draw[blue] (-1,-8pt) node[anchor=north] at (1,0.5) {$f(x_R) < 0$};
-\draw[blue] (-1,-8pt) node[anchor=north] at (0,0.5) {$f(x_R) < 0$};
+\draw[blue] (-1,-8pt) node[anchor=north] at (0,0.5) {$f(x_M) < 0$};
 \end{tikzpicture}
 ```
 :::
