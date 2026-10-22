@@ -28,6 +28,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -400,6 +435,12 @@ window.Quarto = {
  <span class="menu-text">HW 6</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW7/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 7</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -586,6 +627,40 @@ window.Quarto = {
 </section>
 <section id="writing-a-program-for-the-secant-method" class="level3">
 <h3 class="anchored" data-anchor-id="writing-a-program-for-the-secant-method">Writing a program for the Secant method</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy <span class="im">import</span> linspace</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span>(x<span class="op">+</span><span class="fl">1.5</span>)<span class="op">*</span>(x<span class="op">+</span><span class="fl">2.5</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> <span class="op">-</span><span class="dv">2</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>fx1 <span class="op">=</span> f(x1)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>fx2 <span class="op">=</span> f(x2)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Find equation of straight line</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># thru (x1,fx1) and (x2,fx2)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> (fx2<span class="op">-</span>fx1)<span class="op">/</span>(x2<span class="op">-</span>x1)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Slope of the line btwn 2 points is </span><span class="sc">{</span>m<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># To find y-intercept, use one of the points</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># y = mx + c</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># fx1 = m*x1 + c</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># c = fx1 - m*x1</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> fx1 <span class="op">-</span> m<span class="op">*</span>x1</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># equation of straight line is y = mx + c</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Now find the point where this line intscts</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># the x-axis</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># y = mx + c</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># 0 = m*x_intercept + c</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># x_intercept = - c/m</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>x_int <span class="op">=</span> <span class="op">-</span>c<span class="op">/</span>m</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The line intersects x-axis at </span><span class="sc">{</span>x_int<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="newtons-method" class="level3">
 <h3 class="anchored" data-anchor-id="newtons-method">Newton’s Method</h3>
@@ -635,10 +710,19 @@ window.Quarto = {
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><span class="inclass">Derive an equation for <span class="math inline">\(x_{n+1}\)</span> given <span class="math inline">\(x_n\)</span></span></p>
+<p><span class="fragment">Equation of the tangent line is <span class="math inline">\(y = mx+c\)</span>,</span></p>
+<p><span class="fragment">where <span class="math inline">\(m = f'(x_n)\)</span>. So we get <span class="math display">\[y = f'(x_n) x + c\]</span></span></p>
+<p><span class="fragment">and <span class="math inline">\(c\)</span> can be found by substituting a known point into the equation:</span></p>
+<p><span class="fragment"><span class="math inline">\(\underbrace{f(x_n)}_{\text{y coordinate}} = f'(x_n) \underbrace{x_n}_{\text{x coordinate}} + c \implies c = f(x_n) - f'(x_n) x_n\)</span>.</span></p>
 </div><div class="column" style="width:45%;">
 <img src="index_files/mediabag/tikz.4c0297aa.svg" class="img-fluid" style="width:6in">
 </div>
 </div>
+<p><span class="fragment">Thus, the equation of the straight line is <span class="math inline">\(\displaystyle{\color{red}{y}} = \overbrace{f'(x_n)}^{m} {\color{red}{x}} + \overbrace{f(x_n) - f'(x_n) x_n}^{c}\)</span></span></p>
+<p><span class="fragment">The intersection of this line with the <span class="math inline">\(x\)</span> axis occurs when <span class="math inline">\(y=0\)</span>, i.e.:</span></p>
+<p><span class="fragment"><span class="math inline">\(0 =f'(x_n) {\color{red}{x}} + f(x_n) - f'(x_n) x_n\)</span></span></p>
+<p><span class="fragment">Recognizing that the unknown <span class="math inline">\({\color{red}{x}}\)</span> is <span class="math inline">\(x_{n+1}\)</span>, we get <span class="math display">\[f'(x_n) x_n - f(x_n)= f'(x_n) {\color{red}{x}} \implies \frac{f'(x_n) x_n - f(x_n)}{f'(x_n)} = {\color{red}{x}}\]</span></span></p>
+<p><span class="fragment"><span class="math display">\[\implies \boxed{x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}}\]</span></span></p>
 </section>
 <section id="writing-a-program-for-newtons-method" class="level3">
 <h3 class="anchored" data-anchor-id="writing-a-program-for-newtons-method">Writing a program for Newton’s method</h3>
