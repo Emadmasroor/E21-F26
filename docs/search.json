@@ -72,6 +72,18 @@
     ]
   },
   {
+    "objectID": "Lectures/Lec14/index.html",
+    "href": "Lectures/Lec14/index.html",
+    "title": "Lecture 14",
+    "section": "",
+    "text": "Bisection Method\n\n\n\nConvergence rates\nAt each subsequent bisection step, the bisection window is halved.\n\n\n\n\nGeneral approach to root-finding\nIn all root-finding approaches, we:\n\nstart with a guess of where the root might be,\nwork iteratively, repeatedly applying the same formula many times\n\nthe number of iterations it takes to arrive at a solution is an important measure of how good an approach is.\nin practice, this is either a while or for loop.\n\nhopefully converge to one root.\n\n\n\nThe Secant Method\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSecant Method — Zoomed in\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSecant Method — Zoomed in again\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummary of Secant Method\n\n\nStart with two estimates of the root.\nEvaluate the function at both \\(x_1\\) and \\(x_2\\)\nDraw a straight line between the two points. This is an estimate of the function’s behavior.\nLocate the point \\((x_3,0)\\) where this line crosses the x-axis. Call this \\(x_3\\).\nLet \\((x_3,f_3)\\) be a new point. Forget about \\((x_1,f_1)\\).\nRepeat the process above, using the points \\((x_2,f_2)\\) and \\((x_3,f_3)\\)\n\n\n    \n\n\n\n\n\nWriting a program for the Secant method\n\n\nNewton’s Method\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummary of Newton’s Method\n\n\nEvaluate the function at your first guess.\nMake a straight line tangent to \\((x_1,f_1)\\)\nFind location where this line intersects x-axis. This is the 2nd guess, call it \\(x_2\\).\nRepeat.\n\n\n   \n\n\n\n\n\nComparing Newton’s method with Secant method\n\nNewton’s method for finding roots of \\(f(x)\\) requires that you know \\(f'(x)\\) already.\nSecant method requires starting with two points instead of one.\nIf two points very close to each other are chosen for the Secant method, the two methods are nearly identical\n\n\n\nEquations for Newton’s method\n\n\nDerive an equation for \\(x_{n+1}\\) given \\(x_n\\)\n\n\n\n\n\n\nWriting a program for Newton’s method\n\n\nPitfalls of Root Finding\nIf a root-finding program does not find a solution, it could be because:\n\nthe equation \\(f(x)=0\\) has no solution\na solution exists but the program wasn’t able to find it\na solution is found but it’s not the desired solution\ntoo many iterations are needed to arrive at the solution\n\nA well-executed numerical method can solve problems 2-4 but cannot solve problem 1.\n\n\nExample — Finding the wrong root\n\n\nSuppose an equation is known to have multiple solutions, but only one of them is physically meaningful. A root-finding program will not necessarily find the solution we care about.\n\n\n\n\n\n\nExample — Stuck in a flat place\n\n\nIn the neighborhood of zero-slope points, these methods run into problems.",
+    "crumbs": [
+      "Homepage",
+      "Lectures",
+      "Lecture 14"
+    ]
+  },
+  {
     "objectID": "syllabus.html",
     "href": "syllabus.html",
     "title": "Syllabus",
@@ -728,7 +740,7 @@
     "href": "index.html",
     "title": "ENGR 21 Computer Engineering Fundamentals",
     "section": "",
-    "text": "This is a Quarto website. To navigate, use the sidebar to the left.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "This is a Quarto website. To navigate, use the sidebar to the left.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\nTesting…"
   },
   {
     "objectID": "AcademicSupport/index.html",
@@ -753,22 +765,11 @@
     ]
   },
   {
-    "objectID": "labs.html#about-the-labs",
-    "href": "labs.html#about-the-labs",
-    "title": "Labs",
-    "section": "About the labs",
-    "text": "About the labs\n…",
-    "crumbs": [
-      "Homepage",
-      "Labs"
-    ]
-  },
-  {
     "objectID": "labs.html#lab-schedule",
     "href": "labs.html#lab-schedule",
     "title": "Labs",
     "section": "Lab Schedule",
-    "text": "Lab Schedule\nLabs will be held on Mondays and Thursdays.\n\n\n\nLab\nTopics\nStarting\n\n\n\n\nLab 1\nCapacitive touch passcode\nThu, Sep 10\n\n\nLab 2\nJoystick, loops, and functions\nThu, Sep 24\n\n\nLab 3\nPPen plotter, IK, and linear motion\nThu, Oct 8\n\n\nLab 4\nCubic Spline Interpolation\nThu, Oct 29\n\n\nLab 5\nFourier Series and Superposition\nThu, Nov 12\n\n\n\nFinal Project",
+    "text": "Lab Schedule\nLabs will be held on Mondays and Thursdays.\n\n\n\nLab\nTopics\nStarting\n\n\n\n\nLab 1\nCapacitive touch passcode\nThu, Sep 10\n\n\nLab 2\nJoystick, loops, and functions\nThu, Sep 24\n\n\nLab 3\nPen plotter, IK, and linear motion\nMon, Oct 19\n\n\nLab 4\nCubic Spline Interpolation\nMon, Nov 2\n\n\nLab 5\nFourier Series and Superposition\nMon, Nov 16\n\n\n\nFinal Project",
     "crumbs": [
       "Homepage",
       "Labs"
@@ -1641,6 +1642,18 @@
     "crumbs": [
       "Homepage",
       "Past E21 Projects"
+    ]
+  },
+  {
+    "objectID": "Lectures/Lec13/index.html",
+    "href": "Lectures/Lec13/index.html",
+    "title": "Lecture 13",
+    "section": "",
+    "text": "Numerical Methods in Engineering\n\nTurn engineering problems into mathematical problems\nTurn mathematical problems into computational problems\nTell a computer how to solve the computational problems\n\n\n\n\nUsing numerical methods\n\n\nDeveloping numerical methods\n\n\n\n\n\nRoot-finding\n\nMain idea: Solve \\(f(x)=0\\).\n\nRecall mathematical terminology:\n\nA root of a function \\(f(x)\\) is a value of \\(x\\) at which \\(f(x) = 0\\).\nA function is a unique mapping (or ‘formula’) that assigns a unique value of \\(f(x)\\) for any given value of \\(x\\).\n\nThe inverse mapping is not necessarily unique; two values of \\(x\\) can have the same value of \\(f(x)\\).\n\nRoots vs. solutions: The root of \\(f(x)\\) is the solution to the equation \\(f(x) = 0\\)\n\n\n\nFinding Roots analytically\ni.e., using mathematical analysis.\nQ. Find the root(s) of \\(f(x) = x^2+x-6\\)\n\\(f(x) = x^2 +3x - 2x - 6\\)\n\\(= (x + 3)(x-2)\\)\nThis equals zero when \\(x = -3\\) or \\(x=2\\)\nThe roots of \\(x^2 + 3x - 2x - 6\\) are \\(\\boxed{x=-3}\\) and \\(\\boxed{x=2}\\).\n\n\nWhen analytical root-finding fails\nMathematical analysis can sometimes fail us engineers, even for very simple equations. For example, the equation\n\\[\\frac{x}{2}-1 = \\sin x\\]\nis difficult to solve exactly\n\n\nGraphical Techniques\nfor solving \\(\\sin x = 0.5\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGraphical Techniques for more functions\nFind a root of the function \\[f(x) = 4 \\sin x - 4 + x\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGraphical Solution of equations\nFind the solutions to the following equations using the provided paper:\n\n\\(\\sin x = 0.7\\)\n\\(\\sin x = 0.72\\)\n\\(\\sin x - 0.7x = 0\\)\n\\(2 (\\sin x + 1) = 0\\)\n\\(\\sin x - x^2 + 1 = 0\\)\n\n\n\nFinding Roots with a computer\nWe want to find a root for \\[f(x) = x^3 - 10x^2 + 5.\\]\nOptions:\n\nTry out many different values of \\(x\\) indiscriminately.\nTry out many different values of \\(x\\) systematically (in order)\nTry out many different values of \\(x\\) adaptively — learn from each try\n\n\n\nAn Incremental Search Algorithm for \\(f(x) = x^3 - 10x^2 + 5\\)\n\nLet’s select a \\(\\Delta x\\) with which to search for solutions. Say, \\(\\Delta x = 0.1\\)\nStart from \\(x=0\\) and move up in increments of \\(\\Delta x\\)\nThe value of \\(x\\) for which \\(f(x) \\approx 0\\) will be our root!\nWrite a Python script to print the value of \\(f(x)\\) for \\(x=0, 0.1, 0.2, ..., 1.0\\)\n\n\nimport numpy as np\n\ndef f1(x):\n    return x**3 - 10* x**2 + 5\n\nx = np.linspace(0,1,11)\nfor value in x:\n    print(f\"At x = {value:.3f}, f(x) = {f1(value):.3f}\")\n\n\n\n\n\n\n\n\nTipVectorized code\n\n\n\nTo apply the function f1 to the array x, we can also do f1(x) directly\n\n\n\n\n\nIdentifying the value closest to zero\nmin vs. argmin\n\nThe numpy function min finds the minimum value of an array.\nThe numpy function argmin finds the index of the minimum value of an array.\nRecall that abs() in Python means ‘absolute value of’\n\n\nimport numpy as np\n\ndef f1(x):\n    return x**3 - 10* x**2 + 5\n\n# Array of x-values 0, 0.1, 0.2, ..., 1.0\nx = np.linspace(0,1,11)\n\n# Array of f(x) values f(0), f(0.1), ..., f(1.0)\ny = f1(x)\n\n# Index of f(x) closest to zero\nloczero = np.argmin(abs(y))\n\n# Locate that value of x\nanswer = x[loczero]\n\nprint(\"Our best estimate of the root of f(x) is\")\nprint(f\"x = {answer:.1f}\")\n\n\n\nA better approach …\nLet’s look closely at the result of our incremental search.\nimport numpy as np\n\ndef f1(x):\n    return x**3 - 10* x**2 + 5\n\nx = np.linspace(0,1,11)\nfor value in x:\n    print(f\"At x = {value:.3f}, f(x) = {f1(value):.3f}\")\nAt x = 0.000, f(x) = 5.000\nAt x = 0.100, f(x) = 4.901\nAt x = 0.200, f(x) = 4.608\nAt x = 0.300, f(x) = 4.127\nAt x = 0.400, f(x) = 3.464\nAt x = 0.500, f(x) = 2.625\nAt x = 0.600, f(x) = 1.616\nAt x = 0.700, f(x) = 0.443\nAt x = 0.800, f(x) = -0.888\nAt x = 0.900, f(x) = -2.371\nAt x = 1.000, f(x) = -4.000\nIdea:\n\nSign change in \\(f(x)\\) occurs at root of \\(f(x)\\)\nnumpy has a function sign()\n\n\n\nBisection Algorithm for \\(f(x) = x^3 - 10x^2 + 5\\)\nThe bisection algorithm works by successively bisecting a search space to determine where a sign change in \\(f(x)\\) occurs.\n\n...\nAt x = 0.600, f(x) = 1.616\nAt x = 0.700, f(x) = 0.443\nAt x = 0.800, f(x) = -0.888\nAt x = 0.900, f(x) = -2.371\n...\n\nWe know that \\(f(x) = 0\\) occurs for \\(\\boxed{0.7 &lt; x &lt; 0.8}\\)\nUse Python/Numpy to find out whether the root is in the left half of the given interval or its right half.\nWe have learned that \\(f(x)\\) changes sign between \\(x = 0.7\\) and \\(x=0.75\\).\nConclude that the root is located in the range \\(\\boxed{0.7 &lt; x &lt; 0.75}\\)\n\n\n\n\n\nIntroducing the idea of ‘tolerance’\n\nIn numerical methods, the word ‘tolerance’ is used to denote the window within which you know a desired value.\nWe first learned that \\(f(x)=0\\) somewhere in the range \\(x \\in (0.7, 0.8)\\). The root is known with a tolerance of 0.1.\nNext, we saw that \\(f(x)=0\\) somewhere in the range \\(x \\in (0.7, 0.75)\\). The root is now known with a tolerance of 0.05.\nThe smaller the tolerance, the better your knowledge.\nReducing tolerance\n\nA numerical method usually has a target tolerance. “Good enough!”\nCannot reduce tolerance indefinitely — floating-point precision limitations such as machine epsilon / gap size eventually crop up\n64-bit floats — good enough for engineering satisfaction but not good enough for mathematical satisfaction.\n\nWhile loops and tolerance\n\nA typical way to write numerical methods is to enclose one’s algorithm within a block such as while something &gt; target_tolerance\nKeeps running as long as target tolerance is not reached\nTerminates once target tolerance is reached.\n\n\n\n\nAn algorithm for bisection\nWrite a Python program that performs bisection three times\nAt the end of this process, we know that the root is located somewhere in the interval \\[x \\in \\boxed{(0.725, 0.7375)}\\]\n\nWe can choose to state this as \\(x_{\\text{root}} = 0.73125 \\pm 0.00625\\)\n\n\n\nConvergence rates\n\nAt each subsequent bisection step, the bisection window is halved.",
+    "crumbs": [
+      "Homepage",
+      "Lectures",
+      "Lecture 13"
     ]
   },
   {

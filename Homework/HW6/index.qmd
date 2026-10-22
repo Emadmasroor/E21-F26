@@ -255,7 +255,7 @@ The desired expression is that c equals `not a`. The truth value of b is irrelev
 Your task in this part of the homework assignment is to create a 'combination lock', similar to the one discussed in class, that 'unlocks' when the code `ABABBABA` is entered. The 'locked' state is shown with eight consecutive neopixels shown red; each correct entry (A or B) should sequentially turn the neopixels green, one by one. You do not need any states after the fully-unlocked state is reached.
 
 1. Draw the State Transition Diagram for this system. Please use $S_1$, $S_2$, ... for your state names, and A/B for the input names.
-2. Implement this on the Circuit Playground Express, similar to the code used [in class](../Lec11/#combination-lock).
+2. Implement this on the Circuit Playground Express, similar to the code used [in class](../../Lectures/Lec11/#combination-lock).
 
 
 ::: {.content-hidden unless-meta="solutions"}

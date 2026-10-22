@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Emad Masroor">
+<meta name="dcterms.date" content="2026-10-20">
+
+<title>Lecture 13 – ENGR 21 Computer Engineering Fundamentals</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5a1953863e1f72ef3b996ef827f01ca7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-add7254ae97fa153f8b1a26e02c65245.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-32e3d36c25272d6ff5376a1b833ae0db.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-add7254ae97fa153f8b1a26e02c65245.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ENGR 21 Computer Engineering Fundamentals</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Homepage</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://moodle.swarthmore.edu/course/view.php?id=30092"> 
+<span class="menu-text">Moodle</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.gradescope.com/courses/1380463"> 
+<span class="menu-text">Gradescope</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://edstem.org/us/courses/104911/discussion"> 
+<span class="menu-text">Ed Discussion</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec13/index.html">Lecture 13</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../AcademicSupport/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Academic Support</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../AcademicSupport/Masroor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../AcademicSupport/wizards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wizard Office Hours</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lectures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec1/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec2/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 02</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec3/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 03</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec4/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 04</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec5/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 05</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec6/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 06</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec7/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 07</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec8/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 08</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec9/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 09</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec10/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec11/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 11</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec12/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 12</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec13/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 13</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec14/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 14</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW1/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW1/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 1 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW2/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW2/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 2 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW3/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW3/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 3 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW4/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW4/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 4 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW5/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 5</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW5/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 5 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW6/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 6</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../PastProjects/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Past E21 Projects</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../syllabus.html#schedule" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tests</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#numerical-methods-in-engineering" id="toc-numerical-methods-in-engineering" class="nav-link active" data-scroll-target="#numerical-methods-in-engineering">Numerical Methods in Engineering</a></li>
+  <li><a href="#root-finding" id="toc-root-finding" class="nav-link" data-scroll-target="#root-finding">Root-finding</a></li>
+  <li><a href="#finding-roots-analytically" id="toc-finding-roots-analytically" class="nav-link" data-scroll-target="#finding-roots-analytically">Finding Roots analytically</a></li>
+  <li><a href="#when-analytical-root-finding-fails" id="toc-when-analytical-root-finding-fails" class="nav-link" data-scroll-target="#when-analytical-root-finding-fails">When analytical root-finding fails</a></li>
+  <li><a href="#graphical-techniques" id="toc-graphical-techniques" class="nav-link" data-scroll-target="#graphical-techniques">Graphical Techniques</a></li>
+  <li><a href="#graphical-techniques-for-more-functions" id="toc-graphical-techniques-for-more-functions" class="nav-link" data-scroll-target="#graphical-techniques-for-more-functions">Graphical Techniques for more functions</a></li>
+  <li><a href="#graphical-solution-of-equations" id="toc-graphical-solution-of-equations" class="nav-link" data-scroll-target="#graphical-solution-of-equations">Graphical Solution of equations</a></li>
+  <li><a href="#finding-roots-with-a-computer" id="toc-finding-roots-with-a-computer" class="nav-link" data-scroll-target="#finding-roots-with-a-computer">Finding Roots with a computer</a></li>
+  <li><a href="#an-incremental-search-algorithm-for-fx-x3---10x2-5" id="toc-an-incremental-search-algorithm-for-fx-x3---10x2-5" class="nav-link" data-scroll-target="#an-incremental-search-algorithm-for-fx-x3---10x2-5">An Incremental Search Algorithm for <span class="math inline">\(f(x) = x^3 - 10x^2 + 5\)</span></a></li>
+  <li><a href="#identifying-the-value-closest-to-zero" id="toc-identifying-the-value-closest-to-zero" class="nav-link" data-scroll-target="#identifying-the-value-closest-to-zero">Identifying the value closest to zero</a></li>
+  <li><a href="#a-better-approach" id="toc-a-better-approach" class="nav-link" data-scroll-target="#a-better-approach">A better approach …</a></li>
+  <li><a href="#bisection-algorithm-for-fx-x3---10x2-5" id="toc-bisection-algorithm-for-fx-x3---10x2-5" class="nav-link" data-scroll-target="#bisection-algorithm-for-fx-x3---10x2-5">Bisection Algorithm for <span class="math inline">\(f(x) = x^3 - 10x^2 + 5\)</span></a></li>
+  <li><a href="#introducing-the-idea-of-tolerance" id="toc-introducing-the-idea-of-tolerance" class="nav-link" data-scroll-target="#introducing-the-idea-of-tolerance">Introducing the idea of ‘tolerance’</a></li>
+  <li><a href="#an-algorithm-for-bisection" id="toc-an-algorithm-for-bisection" class="nav-link" data-scroll-target="#an-algorithm-for-bisection">An algorithm for bisection</a></li>
+  <li><a href="#convergence-rates" id="toc-convergence-rates" class="nav-link" data-scroll-target="#convergence-rates">Convergence rates</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec13/index.html">Lecture 13</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Lecture 13</h1>
+<p class="subtitle lead">E21 Computer Engineering Fundamentals</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Emad Masroor </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 20, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="numerical-methods-in-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="numerical-methods-in-engineering">Numerical Methods in Engineering</h3>
+<ol type="1">
+<li>Turn engineering problems into mathematical problems</li>
+<li>Turn mathematical problems into computational problems</li>
+<li>Tell a computer how to solve the computational problems</li>
+</ol>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><span class="emph">Using</span> numerical methods</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><span class="emph">Developing</span> numerical methods</p>
+</div>
+</div>
+</div>
+</section>
+<section id="root-finding" class="level3">
+<h3 class="anchored" data-anchor-id="root-finding">Root-finding</h3>
+<div class="centering">
+<p>Main idea: Solve <span class="math inline">\(f(x)=0\)</span>.</p>
+</div>
+<p>Recall mathematical terminology:</p>
+<ul>
+<li>A <strong>root</strong> of a function <span class="math inline">\(f(x)\)</span> is a value of <span class="math inline">\(x\)</span> at which <span class="math inline">\(f(x) = 0\)</span>.</li>
+<li>A <strong>function</strong> is a unique mapping (or ‘formula’) that assigns a unique value of <span class="math inline">\(f(x)\)</span> for any given value of <span class="math inline">\(x\)</span>.
+<ul>
+<li>The inverse mapping is not necessarily unique; two values of <span class="math inline">\(x\)</span> can have the same value of <span class="math inline">\(f(x)\)</span>.</li>
+</ul></li>
+<li>Roots vs.&nbsp;solutions: The <strong>root</strong> of <span class="math inline">\(f(x)\)</span> is the <strong>solution</strong> to the <em>equation</em> <span class="math inline">\(f(x) = 0\)</span></li>
+</ul>
+</section>
+<section id="finding-roots-analytically" class="level3">
+<h3 class="anchored" data-anchor-id="finding-roots-analytically">Finding Roots analytically</h3>
+<p>i.e., using mathematical analysis.</p>
+<p><span class="inclass">Q. Find the root(s) of <span class="math inline">\(f(x) = x^2+x-6\)</span></span></p>
+<p><span class="math inline">\(f(x) = x^2 +3x - 2x - 6\)</span></p>
+<p><span class="math inline">\(= (x + 3)(x-2)\)</span></p>
+<p>This equals zero when <span class="math inline">\(x = -3\)</span> or <span class="math inline">\(x=2\)</span></p>
+<p>The roots of <span class="math inline">\(x^2 + 3x - 2x - 6\)</span> are <span class="math inline">\(\boxed{x=-3}\)</span> and <span class="math inline">\(\boxed{x=2}\)</span>.</p>
+</section>
+<section id="when-analytical-root-finding-fails" class="level3">
+<h3 class="anchored" data-anchor-id="when-analytical-root-finding-fails">When analytical root-finding fails</h3>
+<p><span class="fragment">Mathematical analysis can sometimes fail us engineers, even for very simple equations. For example, the equation</span></p>
+<p><span class="fragment"><span class="math display">\[\frac{x}{2}-1 = \sin x\]</span></span></p>
+<p><span class="fragment">is difficult to solve exactly</span></p>
+</section>
+<section id="graphical-techniques" class="level3 nostretch">
+<h3 class="nostretch anchored" data-anchor-id="graphical-techniques">Graphical Techniques</h3>
+<p>for solving <span class="math inline">\(\sin x = 0.5\)</span></p>
+<div class="r-stack">
+<div class="fragment">
+<img src="index_files/mediabag/tikz.8d7c69d2.svg" class="img-fluid" style="width:6in">
+</div>
+<div class="fragment">
+<img src="index_files/mediabag/tikz.fb4845dc.svg" class="img-fluid" style="width:6in">
+</div>
+<div class="fragment">
+<img src="index_files/mediabag/tikz.6e694ede.svg" class="img-fluid" style="width:6in">
+</div>
+<div class="fragment">
+<img src="index_files/mediabag/tikz.32a4da08.svg" class="img-fluid" style="width:6in">
+</div>
+</div>
+</section>
+<section id="graphical-techniques-for-more-functions" class="level3">
+<h3 class="anchored" data-anchor-id="graphical-techniques-for-more-functions">Graphical Techniques for more functions</h3>
+<p>Find a root of the function <span class="math display">\[f(x) = 4 \sin x - 4 + x\]</span></p>
+<div class="r-stack">
+<div class="fragment">
+<img src="index_files/mediabag/tikz.02c3fe33.svg" class="img-fluid" style="width:6in">
+</div>
+<div class="fragment">
+<img src="index_files/mediabag/tikz.afc3faf0.svg" class="img-fluid" style="width:6in">
+</div>
+<div class="fragment">
+<img src="index_files/mediabag/tikz.f51fc1aa.svg" class="img-fluid" style="width:6in">
+</div>
+<div class="fragment">
+<img src="index_files/mediabag/tikz.a81aba6c.svg" class="img-fluid" style="width:6in">
+</div>
+</div>
+</section>
+<section id="graphical-solution-of-equations" class="level3">
+<h3 class="anchored" data-anchor-id="graphical-solution-of-equations">Graphical Solution of equations</h3>
+<p>Find the solutions to the following equations using the provided paper:</p>
+<ol type="1">
+<li><span class="math inline">\(\sin x = 0.7\)</span></li>
+<li><span class="math inline">\(\sin x = 0.72\)</span></li>
+<li><span class="math inline">\(\sin x - 0.7x = 0\)</span></li>
+<li><span class="math inline">\(2 (\sin x + 1) = 0\)</span></li>
+<li><span class="math inline">\(\sin x - x^2 + 1 = 0\)</span></li>
+</ol>
+</section>
+<section id="finding-roots-with-a-computer" class="level3">
+<h3 class="anchored" data-anchor-id="finding-roots-with-a-computer">Finding Roots with a computer</h3>
+<p>We want to find a root for <span class="math display">\[f(x) = x^3 - 10x^2 + 5.\]</span></p>
+<p><strong>Options:</strong></p>
+<ol type="1">
+<li>Try out many different values of <span class="math inline">\(x\)</span> indiscriminately.</li>
+<li>Try out many different values of <span class="math inline">\(x\)</span> <strong>systematically</strong> (in order)</li>
+<li>Try out many different values of <span class="math inline">\(x\)</span> <strong>adaptively</strong> — learn from each try</li>
+</ol>
+</section>
+<section id="an-incremental-search-algorithm-for-fx-x3---10x2-5" class="level3">
+<h3 class="anchored" data-anchor-id="an-incremental-search-algorithm-for-fx-x3---10x2-5">An Incremental Search Algorithm for <span class="math inline">\(f(x) = x^3 - 10x^2 + 5\)</span></h3>
+<ul>
+<li>Let’s select a <span class="math inline">\(\Delta x\)</span> with which to search for solutions. Say, <span class="math inline">\(\Delta x = 0.1\)</span></li>
+<li>Start from <span class="math inline">\(x=0\)</span> and move up in increments of <span class="math inline">\(\Delta x\)</span></li>
+<li>The value of <span class="math inline">\(x\)</span> for which <span class="math inline">\(f(x) \approx 0\)</span> will be our root!</li>
+<li><span class="inclass">Write a Python script to print the value of <span class="math inline">\(f(x)\)</span> for <span class="math inline">\(x=0, 0.1, 0.2, ..., 1.0\)</span></span></li>
+</ul>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f1(x):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">10</span><span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">11</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> x:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"At x = </span><span class="sc">{</span>value<span class="sc">:.3f}</span><span class="ss">, f(x) = </span><span class="sc">{</span>f1(value)<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Vectorized code
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To apply the function <code>f1</code> to the array <code>x</code>, we can also do <code>f1(x)</code> directly</p>
+</div>
+</div>
+</div>
+</section>
+<section id="identifying-the-value-closest-to-zero" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-the-value-closest-to-zero">Identifying the value closest to zero</h3>
+<p><code>min</code> vs.&nbsp;<code>argmin</code></p>
+<ul>
+<li>The <code>numpy</code> function <code>min</code> finds the minimum value of an array.</li>
+<li>The <code>numpy</code> function <code>argmin</code> finds the <strong>index of</strong> the minimum value of an array.</li>
+<li>Recall that <code>abs()</code> in Python means ‘absolute value of’</li>
+</ul>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f1(x):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">10</span><span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Array of x-values 0, 0.1, 0.2, ..., 1.0</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">11</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Array of f(x) values f(0), f(0.1), ..., f(1.0)</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> f1(x)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Index of f(x) closest to zero</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>loczero <span class="op">=</span> np.argmin(<span class="bu">abs</span>(y))</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Locate that value of x</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> x[loczero]</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Our best estimate of the root of f(x) is"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x = </span><span class="sc">{</span>answer<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="a-better-approach" class="level3">
+<h3 class="anchored" data-anchor-id="a-better-approach">A better approach …</h3>
+<p>Let’s look closely at the result of our incremental search.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f1(x):</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">10</span><span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">11</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> x:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"At x = </span><span class="sc">{</span>value<span class="sc">:.3f}</span><span class="ss">, f(x) = </span><span class="sc">{</span>f1(value)<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-label="1"></a>At x <span class="op">=</span> <span class="fl">0.000</span>, f(x) <span class="op">=</span> <span class="fl">5.000</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-label="2"></a>At x <span class="op">=</span> <span class="fl">0.100</span>, f(x) <span class="op">=</span> <span class="fl">4.901</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-label="3"></a>At x <span class="op">=</span> <span class="fl">0.200</span>, f(x) <span class="op">=</span> <span class="fl">4.608</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-label="4"></a>At x <span class="op">=</span> <span class="fl">0.300</span>, f(x) <span class="op">=</span> <span class="fl">4.127</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-label="5"></a>At x <span class="op">=</span> <span class="fl">0.400</span>, f(x) <span class="op">=</span> <span class="fl">3.464</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-label="6"></a>At x <span class="op">=</span> <span class="fl">0.500</span>, f(x) <span class="op">=</span> <span class="fl">2.625</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-label="7"></a>At x <span class="op">=</span> <span class="fl">0.600</span>, f(x) <span class="op">=</span> <span class="fl">1.616</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-label="8"></a>At x <span class="op">=</span> <span class="fl">0.700</span>, f(x) <span class="op">=</span> <span class="fl">0.443</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-label="9"></a>At x <span class="op">=</span> <span class="fl">0.800</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">0.888</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-label="10"></a>At x <span class="op">=</span> <span class="fl">0.900</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">2.371</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-label="11"></a>At x <span class="op">=</span> <span class="fl">1.000</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">4.000</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Idea:</p>
+<ul>
+<li><span class="emph">Sign change in <span class="math inline">\(f(x)\)</span> occurs at root of <span class="math inline">\(f(x)\)</span></span></li>
+<li><code>numpy</code> has a function <code>sign()</code></li>
+</ul>
+</section>
+<section id="bisection-algorithm-for-fx-x3---10x2-5" class="level3">
+<h3 class="anchored" data-anchor-id="bisection-algorithm-for-fx-x3---10x2-5">Bisection Algorithm for <span class="math inline">\(f(x) = x^3 - 10x^2 + 5\)</span></h3>
+<p>The bisection algorithm works by successively <strong>bisecting</strong> a search space to determine where a sign change in <span class="math inline">\(f(x)\)</span> occurs.</p>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-label="1"></a>...</span>
+<span id="cb5-2"><a href="#cb5-2" aria-label="2"></a>At x <span class="op">=</span> <span class="fl">0.600</span>, f(x) <span class="op">=</span> <span class="fl">1.616</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-label="3"></a>At x <span class="op">=</span> <span class="fl">0.700</span>, f(x) <span class="op">=</span> <span class="fl">0.443</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-label="4"></a>At x <span class="op">=</span> <span class="fl">0.800</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">0.888</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-label="5"></a>At x <span class="op">=</span> <span class="fl">0.900</span>, f(x) <span class="op">=</span> <span class="op">-</span><span class="fl">2.371</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-label="6"></a>...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><span class="fragment">We know that <span class="math inline">\(f(x) = 0\)</span> occurs for <span class="math inline">\(\boxed{0.7 &lt; x &lt; 0.8}\)</span></span></p>
+<p><span class="inclass fragment">Use Python/Numpy to find out whether the root is in the <strong>left half</strong> of the given interval or its <strong>right half</strong>.</span></p>
+<p><span class="fragment">We have learned that <span class="math inline">\(f(x)\)</span> changes sign between <span class="math inline">\(x = 0.7\)</span> and <span class="math inline">\(x=0.75\)</span>.</span></p>
+<p><span class="fragment">Conclude that the root is located in the range <span class="math inline">\(\boxed{0.7 &lt; x &lt; 0.75}\)</span></span></p>
+<div class="fragment">
+<img src="index_files/mediabag/tikz.3ec828c1.svg" class="img-fluid" style="width:6in">
+</div>
+</section>
+<section id="introducing-the-idea-of-tolerance" class="level3 smaller">
+<h3 class="smaller anchored" data-anchor-id="introducing-the-idea-of-tolerance">Introducing the idea of ‘tolerance’</h3>
+<ul>
+<li>In numerical methods, the word ‘tolerance’ is used to denote the <strong>window within which you know a desired value</strong>.</li>
+<li>We first learned that <span class="math inline">\(f(x)=0\)</span> somewhere in the range <span class="math inline">\(x \in (0.7, 0.8)\)</span>. The root is known with a tolerance of <code>0.1</code>.</li>
+<li>Next, we saw that <span class="math inline">\(f(x)=0\)</span> somewhere in the range <span class="math inline">\(x \in (0.7, 0.75)\)</span>. The root is now known with a tolerance of <code>0.05</code>.</li>
+<li>The smaller the tolerance, the better your knowledge.</li>
+<li>Reducing tolerance
+<ul>
+<li>A numerical method usually has a <strong>target</strong> tolerance. “Good enough!”</li>
+<li>Cannot reduce tolerance indefinitely — floating-point precision limitations such as machine epsilon / gap size eventually crop up</li>
+<li>64-bit floats — good enough for engineering satisfaction but not good enough for mathematical satisfaction.</li>
+</ul></li>
+<li>While loops and tolerance
+<ul>
+<li>A typical way to write numerical methods is to enclose one’s algorithm within a block such as <code>while something &gt; target_tolerance</code></li>
+<li>Keeps running as long as target tolerance is not reached</li>
+<li>Terminates once target tolerance is reached.</li>
+</ul></li>
+</ul>
+</section>
+<section id="an-algorithm-for-bisection" class="level3">
+<h3 class="anchored" data-anchor-id="an-algorithm-for-bisection">An algorithm for bisection</h3>
+<p><span class="inclass">Write a Python program that performs bisection <strong>three</strong> times</span></p>
+<p><span class="fragment">At the end of this process, we know that the root is located somewhere in the interval <span class="math display">\[x \in \boxed{(0.725, 0.7375)}\]</span></span></p>
+<ul>
+<li>We can choose to state this as <span class="math inline">\(x_{\text{root}} = 0.73125 \pm 0.00625\)</span></li>
+</ul>
+</section>
+<section id="convergence-rates" class="level3 scrollable">
+<h3 class="scrollable anchored" data-anchor-id="convergence-rates">Convergence rates</h3>
+<ul>
+<li>At each subsequent bisection step, the bisection window is halved.</li>
+</ul>
+<div class="fragment">
+<img src="index_files/mediabag/tikz.6880ac03.svg" class="img-fluid" style="width:6in">
+</div>
+<div class="fragment">
+<p><img src="logscale.png" class="img-fluid" style="width:6in"></p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+        for (let i=0; i<annoteTargets.length; i++) {
+          const annoteTarget = annoteTargets[i];
+          const targetCell = annoteTarget.getAttribute("data-target-cell");
+          const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+          const contentFn = () => {
+            const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+            if (content) {
+              const tipContent = content.cloneNode(true);
+              tipContent.classList.add("code-annotation-tip-content");
+              return tipContent.outerHTML;
+            }
+          }
+          const config = {
+            allowHTML: true,
+            content: contentFn,
+            onShow: (instance) => {
+              selectCodeLines(instance.reference);
+              instance.reference.classList.add('code-annotation-active');
+              window.tippy.hideAll();
+            },
+            onHide: (instance) => {
+              unselectCodeLines();
+              instance.reference.classList.remove('code-annotation-active');
+            },
+            maxWidth: 300,
+            delay: [50, 0],
+            duration: [200, 0],
+            offset: [5, 10],
+            arrow: true,
+            appendTo: function(el) {
+              return el.parentElement.parentElement.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'quarto',
+            placement: 'right',
+            popperOptions: {
+              modifiers: [
+              {
+                name: 'flip',
+                options: {
+                  flipVariations: false, // true by default
+                  allowedAutoPlacements: ['right'],
+                  fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+                },
+              },
+              {
+                name: 'preventOverflow',
+                options: {
+                  mainAxis: false,
+                  altAxis: false
+                }
+              }
+              ]        
+            }      
+          };
+          window.tippy(annoteTarget, config); 
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
