@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-10-22">
+<meta name="dcterms.date" content="2026-10-26">
 
 <title>Tests – ENGR 21 Computer Engineering Fundamentals</title>
 <style>
@@ -124,6 +124,34 @@ ul.task-list li input[type="checkbox"] {
 
     window['quarto-listings'] = window['quarto-listings'] || {};
     window['quarto-listings']['listing-test-2'] = new List('listing-test-2', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-test-3 .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-topic',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-test-3'] = new List('listing-test-3', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -451,12 +479,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./Homework/HW6/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 6</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Homework/HW6/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">HW 6</span></a>
+  <a href="./Homework/HW6/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 6 Solutions</span></a>
   </div>
 </li>
+      </ul>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Homework/HW7/index.html" class="sidebar-item-text sidebar-link">
@@ -495,6 +534,7 @@ window.Quarto = {
   <ul>
   <li><a href="#test-1" id="toc-test-1" class="nav-link active" data-scroll-target="#test-1">Test 1</a></li>
   <li><a href="#test-2" id="toc-test-2" class="nav-link" data-scroll-target="#test-2">Test 2</a></li>
+  <li><a href="#test-3" id="toc-test-3" class="nav-link" data-scroll-target="#test-3">Test 3</a></li>
   </ul>
 </nav>
     </div>
@@ -515,7 +555,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 22, 2026</p>
+      <p class="date">October 26, 2026</p>
     </div>
   </div>
   
@@ -856,6 +896,176 @@ topic
 </td>
 <td class="topic">
 Floating-Point Numbers
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="test-3" class="level2">
+<h2 class="anchored" data-anchor-id="test-3">Test 3</h2>
+<div id="listing-test-3" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1790654400000" data-listing-file-modified-sort="1792670603745" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="882">
+<a href="./Lectures/Lec9/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lecture 09
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Sep 29, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+&nbsp;
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-date-sort="1790827200000" data-listing-file-modified-sort="1792670603688" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2231">
+<a href="./Lectures/Lec10/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lecture 10
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Oct 1, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+&nbsp;
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-date-sort="1791259200000" data-listing-file-modified-sort="1792670603697" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1529">
+<a href="./Lectures/Lec11/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lecture 11
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Oct 6, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+&nbsp;
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-date-sort="1791432000000" data-listing-file-modified-sort="1792670603700" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2963">
+<a href="./Lectures/Lec12/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lecture 12
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Oct 8, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+&nbsp;
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-date-sort="1791432000000" data-listing-file-modified-sort="1792670603612" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2864">
+<a href="./Homework/HW5/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+HW 5
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Oct 8, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+&nbsp;
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-date-sort="1792641600000" data-listing-file-modified-sort="1792670603657" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2210">
+<a href="./Homework/HW6/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+HW 6
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Oct 22, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+&nbsp;
 </td>
 </tr>
 

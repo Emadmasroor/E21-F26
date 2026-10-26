@@ -15,6 +15,12 @@ listing:
       - "Homework/HW[3-4]/index.qmd"
     type: grid
     fields: [date, title, topic]
+  - id: test-3
+    contents: 
+      - "Lectures/Lec{9,10,11,12}/index.qmd"
+      - "Homework/HW[5-6]/index.qmd"
+    type: grid
+    fields: [date, title, topic]
 ---
 
 ## Test 1
@@ -25,4 +31,9 @@ listing:
 ## Test 2
 
 :::{#test-2}
+:::
+
+## Test 3
+
+:::{#test-3}
 :::
