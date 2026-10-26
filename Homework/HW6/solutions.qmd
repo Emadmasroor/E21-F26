@@ -51,7 +51,7 @@ Combine all written HW into one PDF file.
 | 2       | PDF                                            |
 | 3       | PDF                                            |
 | 4       | PDF                                            |
-| 5       | Code: One `.py` file **and** PDF with state transition diagram |
+| 5       | Code: One `.py` file                           |
 
 
 :::
@@ -70,6 +70,57 @@ The Farmer Was Replaced now has 'Polyculture favorites'. To check if a particula
 
 Write a function that accepts as argument a tuple of `(x,y)` values. When this function is called, your drone should navigate to the spot `(x,y)`.
 
+::: {.content-hidden unless-meta="solutions"}
+::: {.callout-tip }
+## Solution
+
+To satisfy the requirements of the question, let us begin by defining a function that returns the drone to the 'zero location'.
+
+```{.python}
+def zeroloc():
+  xdist = get_pos_x()
+  ydist = get_pos_y()
+  for i in range(xdist):
+    move(West)
+  for i in range(ydist):
+    move(South)
+  return None
+```
+
+Next, we write a function that navigates to the desired location.
+
+```{.python}
+def navigate_to(tuple):
+  x = tuple[0]
+  y = tuple[1]
+  
+  zeroloc()
+  
+  for i in range(x):
+    move(East)
+    
+  for i in range(y):
+    move(North)
+```
+
+Alternatively, a more efficient way of getting there would be:
+
+```{.python}
+def efficiently_navigate_to(tuple):
+  x_desired = tuple[0]
+  y_desired = tuple[1]
+  x_current = get_pos_x()
+  y_current = get_pos_y()
+  for i in range(x_desired-x_current):
+    move(East)
+    
+  for i in range(y_desired-y_current):
+    move(North)
+```
+
+:::
+:::
+
 ## A function to plant companions
 
 Write a function that 
@@ -81,6 +132,56 @@ Write a function that
 
 The above should work regardless of whether there is currently a plant at that location. Assume that the entire farm is tilled soil, not grassland, for this purpose.
 
+::: {.content-hidden unless-meta="solutions"}
+::: {.callout-tip }
+## Solution
+
+
+The following function achieves this objective. Note that it is desirable, but not necessary, to wait for any currently-existing plant to be done growing.
+
+```{.python}
+def plant_companion():
+  if not get_companion() == None:
+    plant_this,go_here = get_companion()
+    come_back = (get_pos_x(),get_pos_y())
+    print("Companion is ",plant_this)
+    nav(go_here)
+    if not get_entity_type() == None:
+      # there is a plant here
+      while not can_harvest():
+        pass
+      harvest()
+    plant(plant_this)
+    navigate_to(come_back)
+```
+
+To see this function in action, you may wish to call it inside a program that plants a random plant on each spot and then plants its companion, if applicable.
+
+```{.python}
+from positioning import zeroloc
+from f12 import plant_companion
+
+crops = {
+  "t": Entities.Tree,
+  "g": Entities.Grass,
+  "c": Entities.Carrot,
+  "b": Entities.Bush
+}
+
+possible_crops = ["t","b","c","g"]
+zeroloc()
+for row in range(get_world_size()):
+  for col in range(get_world_size()):
+    ind = random() *len(possible_crops) // 1
+    crop = crops[possible_crops[ind]]
+    #plant(crop)
+    plant_companion()
+    move(East)
+  move(North)
+```
+
+:::
+:::
 
 # Two-state FSM
 
@@ -92,7 +193,7 @@ A coin-operated turnstile, shown in @fig-coin, is to be designed using a two-sta
 
 The turnstile operates as follows.
 
-If the user enters a coin while the turnstile is locked, the turnstile becomes unlocked. Adding any more coins doesn't do anything; the turnstile remains unlocked. If the user pushes through the turnstile while it is unlocked, the turnstile lets him through and the turnstile locks again. If the user tries to push through the turnstile while it is locked, nothing happens and the turnstile stays locked.
+If the user enters a coin while the turnstile is locked, the turnstile becomes unlocked. Adding any more coins doesn't do anything; the turnstile remains locked. If the user pushes through the turnstile while it is unlocked, the turnstile lets him through and the turnstile locks again. If the user tries to push through the turnstile while it is locked, nothing happens and the turnstile stays locked.
 
 Using the given states and inputs,
 
@@ -132,8 +233,34 @@ The following state-transition table is an appropriate solution to this problem.
 - adding a coin is encoded by `0`
 - pushing the turnstile is encoded by `1`.
 
+::: {.content-hidden unless-meta="solutions"}
+::: {.callout-tip }
+## Solution
+
+The following truth table is an appropriate solution to this problem.
+
+| Current <br> State | Input | New <br> State |
+| ------------------ | ----- | -------------- |
+| `0`                | `0`   | `0`            |
+| `0`                | `1`   | `1`            |
+| `1`                | `0`   | `0`            |
+| `1`                | `1`   | `1`            |
+
+:::
+:::
+
 4. Make a logic diagram for this truth table using And, Or, and Not gates.
 
+::: {.content-hidden unless-meta="solutions"}
+::: {.callout-tip }
+## Solution
+
+While it is possible to make a logic diagram that uses **only** a Not gate connected to the current state, the question asks you to take the more verbose route of using all three types of gates.
+
+![](logicgates.png){width="50%" fig-align="center"}
+
+:::
+:::
 
 # Modified Finite State Machine
 
@@ -141,7 +268,7 @@ You are tasked with designing a new finite state machine that allows up to three
 
 1. Draw the state transition diagram for this finite state machine, labeling each state with the number of cents/dollars that have been entered. Assume that the initial state is $0.00.
 
-2. How many rows and columns will the state-transition table for this FSM have? You do not need to write it out.
+2. How many rows and columns will the state-transition table for this FSM have? You do not need to write out the table. Do not include the header row and the column containing the list of present states.
 
 3. Write out the truth table for this finite state machine. Each state should be labeled by the number of quarters it currently recognizes inside the machine, in binary. Entering a coin should be labeled `1` and pushing through should be labeled `0`.
 
@@ -262,7 +389,161 @@ Your task in this part of the homework assignment is to create a 'combination lo
 ::: {.callout-tip }
 ## Solution
 
-![](locknew.png){fig-align="center" width="50%"}
+![State transition diagram](locknew.png){fig-align="center" width="50%"}
+
+**Code**
+
+```{.python}
+from adafruit_circuitplayground.express import cpx
+import time
+
+state = 1
+
+def wait_till_release_A():
+    while cpx.button_a:
+        print("release button to complete transition")
+        time.sleep(0.5)
+def wait_till_release_B():
+    while cpx.button_b:
+        print("release button to complete transition")
+        time.sleep(0.5)
+
+while True:
+    time.sleep(0.05)
+    # Define what each state looks like
+    if state == 1:
+        # Locked state
+        for k in range(0,8):
+            cpx.pixels[k] = (50,0,0)
+    elif state == 2:
+        # One correct entry
+        for k in range(1,8):
+            cpx.pixels[k] = (50,0,0)
+        cpx.pixels[0] = (0,50,0)
+    elif state == 3:
+        # Two correct entry
+        for k in range(2,8):
+            cpx.pixels[k] = (50,0,0)
+        for k in range(0,2):
+            cpx.pixels[k] = (0,50,0)
+    elif state == 4:
+        # Three correct entry
+        for k in range(3,8):
+            cpx.pixels[k] = (50,0,0)
+        for k in range(0,3):
+            cpx.pixels[k] = (0,50,0)
+    elif state == 5:
+        # Four correct entry
+        for k in range(4,8):
+            cpx.pixels[k] = (50,0,0)
+        for k in range(0,4):
+            cpx.pixels[k] = (0,50,0)
+    elif state == 6:
+        # Five correct entry
+        for k in range(5,8):
+            cpx.pixels[k] = (50,0,0)
+        for k in range(0,5):
+            cpx.pixels[k] = (0,50,0)
+    elif state == 7:
+        # Six correct entry
+        for k in range(6,8):
+            cpx.pixels[k] = (50,0,0)
+        for k in range(0,6):
+            cpx.pixels[k] = (0,50,0)
+    elif state == 8:
+        # Seven correct entry
+        for k in range(7,8):
+            cpx.pixels[k] = (50,0,0)
+        for k in range(0,7):
+            cpx.pixels[k] = (0,50,0)
+    elif state == 9:
+        # Eight correct entry
+        for k in range(8,8):
+            cpx.pixels[k] = (50,0,0)
+        for k in range(0,8):
+            cpx.pixels[k] = (0,50,0)
+            
+    if state == 1:
+        if cpx.button_a:
+            state = 2
+            print("Correct!")
+            wait_till_release_A()
+        elif cpx.button_b:
+            state = 1
+            print("Incorrect!")
+            wait_till_release_B()
+
+    if state == 2:
+        if cpx.button_a:
+            state = 1
+            print("Incorrect!")
+            wait_till_release_A()
+        elif cpx.button_b:
+            state = 3
+            print("Correct!")
+            wait_till_release_B()
+
+    if state == 3:
+        if cpx.button_a:
+            state = 4
+            print("Correct!")
+            wait_till_release_A()
+        elif cpx.button_b:
+            state = 1
+            print("Incorrect!")
+            wait_till_release_B()
+    
+    if state == 4:
+        if cpx.button_a:
+            state = 1
+            print("Incorrect!")
+            wait_till_release_A()
+        elif cpx.button_b:
+            state = 5
+            print("Correct!")
+            wait_till_release_B()
+    
+    if state == 5:
+        if cpx.button_a:
+            state = 1
+            print("Incorrect!")
+            wait_till_release_A()
+        elif cpx.button_b:
+            state = 6
+            print("Correct!")
+            wait_till_release_B()
+    
+    if state == 6:
+        if cpx.button_a:
+            state = 7
+            print("Correct!")
+            wait_till_release_A()
+        elif cpx.button_b:
+            state = 1
+            print("Incorrect!")
+            wait_till_release_B()
+            
+    if state == 7:
+        if cpx.button_a:
+            state = 1
+            print("Incorrect!")
+            wait_till_release_A()
+        elif cpx.button_b:
+            state = 8
+            print("Correct!")
+            wait_till_release_B()
+            
+    if state == 8:
+        if cpx.button_a:
+            state = 9
+            print("Correct!")
+            wait_till_release_A()
+        elif cpx.button_b:
+            state = 1
+            print("Incorrect!")
+            wait_till_release_B()
+  
+```
 
 :::
 :::
