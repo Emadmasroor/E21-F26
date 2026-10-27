@@ -1,0 +1,32 @@
+format:
+  html:
+    code-annotations: hover
+    code-fold: true
+    highlight-style: github
+
+  revealjs:
+    slide-number: c
+    slide-level: 3
+    code-annotations: none
+    highlight-style: github
+    incremental: true
+    code-fold: true
+    smaller: false
+    theme: white
+    center: false
+    width: 1024
+    height: 1024
+    chalkboard: true
+    output-file: slides.html
+    auto-stretch: false
+    transitions: fade
+
+execute:
+  cache: true
+filters:
+  - tikz
+tikz: 
+  svg-engine: pdftocairo
+  cache: true
+resources: none
+css: ../../styles.css
