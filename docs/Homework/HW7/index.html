@@ -491,12 +491,12 @@ window.Quarto = {
   <li><a href="#sorting-cacti" id="toc-sorting-cacti" class="nav-link" data-scroll-target="#sorting-cacti"><span class="header-section-number">1.1</span> Sorting Cacti</a></li>
   </ul></li>
   <li><a href="#convergence-of-root-finding-methods" id="toc-convergence-of-root-finding-methods" class="nav-link" data-scroll-target="#convergence-of-root-finding-methods"><span class="header-section-number">2</span> Convergence of root-finding methods</a></li>
-  <li><a href="#a-python-program-for-the-secant-method" id="toc-a-python-program-for-the-secant-method" class="nav-link" data-scroll-target="#a-python-program-for-the-secant-method"><span class="header-section-number">3</span> A Python program for the Secant method</a>
+  <li><a href="#sec-secant" id="toc-sec-secant" class="nav-link" data-scroll-target="#sec-secant"><span class="header-section-number">3</span> A Python program for the Secant method</a>
   <ul class="collapse">
   <li><a href="#sec-func" id="toc-sec-func" class="nav-link" data-scroll-target="#sec-func"><span class="header-section-number">3.1</span> Write a function</a></li>
   <li><a href="#use-your-function" id="toc-use-your-function" class="nav-link" data-scroll-target="#use-your-function"><span class="header-section-number">3.2</span> Use your function</a></li>
   </ul></li>
-  <li><a href="#a-python-program-for-newtons-method" id="toc-a-python-program-for-newtons-method" class="nav-link" data-scroll-target="#a-python-program-for-newtons-method"><span class="header-section-number">4</span> A Python program for Newton’s method</a>
+  <li><a href="#sec-newton" id="toc-sec-newton" class="nav-link" data-scroll-target="#sec-newton"><span class="header-section-number">4</span> A Python program for Newton’s method</a>
   <ul class="collapse">
   <li><a href="#write-a-function" id="toc-write-a-function" class="nav-link" data-scroll-target="#write-a-function"><span class="header-section-number">4.1</span> Write a function</a></li>
   <li><a href="#sec-usefunc" id="toc-sec-usefunc" class="nav-link" data-scroll-target="#sec-usefunc"><span class="header-section-number">4.2</span> Use your function</a></li>
@@ -559,6 +559,21 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Changelog
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Added Wednesday, Oct 28 at 9 AM: Naming convention for functions in problem <a href="#sec-newton" class="quarto-xref">Section&nbsp;4</a> and <a href="#sec-secant" class="quarto-xref">Section&nbsp;3</a>. This is important for our grading workflow, but you will not be penalized for it if you submitted your homework before this time.</li>
+</ul>
+</div>
+</div>
 <p><u>What to turn in</u></p>
 <p>Combine all written HW into one PDF file.</p>
 <table class="caption-top table">
@@ -772,7 +787,7 @@ Figure&nbsp;2
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"test.png"</span>)</span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="a-python-program-for-the-secant-method" class="level1" data-number="3">
+<section id="sec-secant" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> A Python program for the Secant method</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -789,7 +804,7 @@ Note
 </div>
 <section id="sec-func" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="sec-func"><span class="header-section-number">3.1</span> Write a function</h2>
-<p>Write a Python function that takes as input the following 4 arguments, in order:</p>
+<p>Write a Python function <strong>named <code>secant_method(...)</code></strong> that takes as input the following 4 arguments, in order:</p>
 <ol type="1">
 <li>A function <code>f</code>, whose root is to be found.</li>
 <li><code>x1</code>, one estimate of the root</li>
@@ -822,11 +837,11 @@ Note
 <p>Use your function to determine a root of the function <span class="math inline">\(\sin e^{x/2}\)</span> starting from <span class="math inline">\(x=1\)</span> and <span class="math inline">\(x=2\)</span> as your initial guesses. For this part, your code should call the function you wrote in <a href="#sec-func" class="quarto-xref">Section&nbsp;3.1</a> and should print a value for the root.</p>
 </section>
 </section>
-<section id="a-python-program-for-newtons-method" class="level1" data-number="4">
+<section id="sec-newton" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> A Python program for Newton’s method</h1>
 <section id="write-a-function" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="write-a-function"><span class="header-section-number">4.1</span> Write a function</h2>
-<p>Write a Python function for Newton’s method that accepts as argument the following four entities:</p>
+<p>Write a Python function <strong>named <code>newtons_method(...)</code></strong> for Newton’s method that accepts as argument the following four entities <strong>in order</strong>:</p>
 <ol type="1">
 <li>The function <span class="math inline">\(f(x)\)</span> whose root is to be found,</li>
 <li>The function <span class="math inline">\(f'(x)\)</span>, its derivative,</li>

@@ -46,6 +46,12 @@ format:
 | URL          | `emadmasroor.github.io/E21-F26/Homework/HW7` |
 
 
+::: {.callout-note}
+## Changelog
+
+- Added Wednesday, Oct 28 at 9 AM: Naming convention for functions in problem @sec-newton and @sec-secant. This is important for our grading workflow, but you will not be penalized for it if you submitted your homework before this time.
+:::
+
 [What to turn in]{.underline}
 
 Combine all written HW into one PDF file.
@@ -408,7 +414,7 @@ The resulting graphs look like this
 :::
 :::
 
-# A Python program for the Secant method
+# A Python program for the Secant method {#sec-secant}
 
 ::: {.callout-note}
 Combine all code for this problem into a single file.
@@ -416,7 +422,7 @@ Combine all code for this problem into a single file.
 
 ## Write a function{#sec-func}
 
-Write a Python function that takes as input the following 4 arguments, in order:
+Write a Python function **named `secant_method(...)`** that takes as input the following 4 arguments, in order:
 
 1. A function `f`, whose root is to be found.
 2. `x1`, one estimate of the root
@@ -475,11 +481,11 @@ print(f"The function sin(exp(x/2)) has a root at x = {secant(f_test,1,2,10):.3f}
 :::
 
 
-# A Python program for Newton's method
+# A Python program for Newton's method {#sec-newton}
 
 ## Write a function
 
-Write a Python function for Newton's method that accepts as argument the following four entities:
+Write a Python function **named `newtons_method(...)`** for Newton's method that accepts as argument the following four entities **in order**:
 
 1. The function $f(x)$ whose root is to be found,
 2. The function $f'(x)$, its derivative,
