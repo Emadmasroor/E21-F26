@@ -422,7 +422,7 @@ Combine all code for this problem into a single file.
 
 ## Write a function{#sec-func}
 
-Write a Python function **named `secant_method(...)`** that takes as input the following 4 arguments, in order:
+Write a Python function **named `secant_method(...)`** that takes as input the following 4 arguments, **in order**:
 
 1. A function `f`, whose root is to be found.
 2. `x1`, one estimate of the root
