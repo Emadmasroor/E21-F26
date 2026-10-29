@@ -458,7 +458,7 @@ $$]{.fragment}
 - The **multiplier** for Row 2 was $\left(c_1/d_1\right)$
 :::
 
-### Comtinued {.smaller}
+### Continued {.smaller}
 
 The $LU$ Decomposition of $A$ is therefore
 
