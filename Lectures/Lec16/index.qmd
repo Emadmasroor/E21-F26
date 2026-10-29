@@ -62,6 +62,10 @@ $$
 
 [Simplify the given problem to row-reduced form]{.inclass}
 
+[Worksheet](GaussianElimination.pdf)
+
+[Solution](GaussianElimination-Solution.pdf)
+
 ::: {.columns}
 ::: {.column width="45%; font-size: 60%;"}
 Solve $Ax = b$ where 
