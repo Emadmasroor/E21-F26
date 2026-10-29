@@ -13,6 +13,25 @@ code-line-numbers: false
 
 ### Algorithm for Gaussian Elimination
 
+::: {.content-visible when-meta="uncover"}
+::: {.fragment}
+
+![](p1.png){width="90%" fig-align="center"}
+
+:::
+:::
+
+### Algorithm for Gaussian Elimination
+
+::: {.content-visible when-meta="uncover"}
+::: {.fragment}
+
+![](p2.png){width="90%" fig-align="center"}
+
+:::
+:::
+
+
 ### Algorithm for backward substitution
 
 ::: {.columns}
