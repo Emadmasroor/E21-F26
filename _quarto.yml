@@ -39,6 +39,8 @@ website:
       - href: syllabus.html#schedule
         text: "Schedule"
       - href: tests.qmd
+      - href: "https://mzucker.github.io/swarthmore/linalg-reintroduction.pdf"
+        text: "Matt Zucker's Intro to Linear Algebra"
 
 
 format:
