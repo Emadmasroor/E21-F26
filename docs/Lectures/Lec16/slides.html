@@ -218,9 +218,23 @@ Emad Masroor
 </section>
 <section id="algorithm-for-gaussian-elimination" class="slide level3">
 <h3>Algorithm for Gaussian Elimination</h3>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="p1.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
 </section>
 <section id="algorithm-for-gaussian-elimination-1" class="slide level3">
 <h3>Algorithm for Gaussian Elimination</h3>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="p2.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
 </section>
 <section id="algorithm-for-backward-substitution" class="slide level3">
 <h3>Algorithm for backward substitution</h3>
@@ -267,6 +281,16 @@ A_{11} &amp; A_{12} &amp; A_{13} &amp; A_{14} &amp; b_1\\
 \right]
 \]</span></p>
 </div></div>
+<div class="fragment">
+<p>The solution is <span class="math display">\[\displaystyle \left[
+\begin{array}{cccc|c}
+{2} &amp; {1} &amp; {-1} &amp; {0} &amp; {1}\\
+{0} &amp; {0.5} &amp; {2.5} &amp; {0} &amp; {-1.5} \\
+{0} &amp; {0} &amp; {-12} &amp; {1} &amp; {8} \\
+{0} &amp; {0} &amp; {0} &amp; {-5/6}&amp; {7/3}
+\end{array}
+\right]\]</span></p>
+</div>
 </section>
 <section id="gaussian-elimination-in-python" class="slide level3">
 <h3>Gaussian Elimination in Python</h3>
@@ -282,9 +306,31 @@ A_{11} &amp; A_{12} &amp; A_{13} &amp; A_{14} &amp; b_1\\
 <span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>              dtype<span class="op">=</span>np.float64)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 <p><span class="inclass">Write one line of code for <strong>each</strong> step of Gaussian elimination</span></p>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="width: 60%;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Line-by-line Gaussian elimination</span></span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>A[<span class="dv">1</span>,:] <span class="op">=</span> A[<span class="dv">1</span>,:] <span class="op">-</span> (A[<span class="dv">1</span>,<span class="dv">0</span>]<span class="op">/</span>A[<span class="dv">0</span>,<span class="dv">0</span>]) <span class="op">*</span> A[<span class="dv">0</span>,:]</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>A[<span class="dv">2</span>,:] <span class="op">=</span> A[<span class="dv">2</span>,:] <span class="op">-</span> (A[<span class="dv">2</span>,<span class="dv">0</span>]<span class="op">/</span>A[<span class="dv">0</span>,<span class="dv">0</span>]) <span class="op">*</span> A[<span class="dv">0</span>,:]</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>A[<span class="dv">3</span>,:] <span class="op">=</span> A[<span class="dv">3</span>,:] <span class="op">-</span> (A[<span class="dv">3</span>,<span class="dv">0</span>]<span class="op">/</span>A[<span class="dv">0</span>,<span class="dv">0</span>]) <span class="op">*</span> A[<span class="dv">0</span>,:]</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>A[<span class="dv">2</span>,:] <span class="op">=</span> A[<span class="dv">2</span>,:] <span class="op">-</span> (A[<span class="dv">2</span>,<span class="dv">1</span>]<span class="op">/</span>A[<span class="dv">1</span>,<span class="dv">1</span>]) <span class="op">*</span> A[<span class="dv">1</span>,:]</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>A[<span class="dv">3</span>,:] <span class="op">=</span> A[<span class="dv">3</span>,:] <span class="op">-</span> (A[<span class="dv">3</span>,<span class="dv">1</span>]<span class="op">/</span>A[<span class="dv">1</span>,<span class="dv">1</span>]) <span class="op">*</span> A[<span class="dv">1</span>,:]</span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>A[<span class="dv">3</span>,:] <span class="op">=</span> A[<span class="dv">3</span>,:] <span class="op">-</span> (A[<span class="dv">3</span>,<span class="dv">2</span>]<span class="op">/</span>A[<span class="dv">2</span>,<span class="dv">2</span>]) <span class="op">*</span> A[<span class="dv">2</span>,:]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="further-look-inside-the-gaussian-elimination-algorithm" class="slide level3">
 <h3>Further look inside the Gaussian Elimination algorithm</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="width: 60%;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Line-by-line Gaussian elimination</span></span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>A[<span class="dv">1</span>,:] <span class="op">=</span> A[<span class="dv">1</span>,:] <span class="op">-</span> (A[<span class="dv">1</span>,<span class="dv">0</span>]<span class="op">/</span>A[<span class="dv">0</span>,<span class="dv">0</span>]) <span class="op">*</span> A[<span class="dv">0</span>,:]</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>A[<span class="dv">2</span>,:] <span class="op">=</span> A[<span class="dv">2</span>,:] <span class="op">-</span> (A[<span class="dv">2</span>,<span class="dv">0</span>]<span class="op">/</span>A[<span class="dv">0</span>,<span class="dv">0</span>]) <span class="op">*</span> A[<span class="dv">0</span>,:]</span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>A[<span class="dv">3</span>,:] <span class="op">=</span> A[<span class="dv">3</span>,:] <span class="op">-</span> (A[<span class="dv">3</span>,<span class="dv">0</span>]<span class="op">/</span>A[<span class="dv">0</span>,<span class="dv">0</span>]) <span class="op">*</span> A[<span class="dv">0</span>,:]</span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>A[<span class="dv">2</span>,:] <span class="op">=</span> A[<span class="dv">2</span>,:] <span class="op">-</span> (A[<span class="dv">2</span>,<span class="dv">1</span>]<span class="op">/</span>A[<span class="dv">1</span>,<span class="dv">1</span>]) <span class="op">*</span> A[<span class="dv">1</span>,:]</span>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a>A[<span class="dv">3</span>,:] <span class="op">=</span> A[<span class="dv">3</span>,:] <span class="op">-</span> (A[<span class="dv">3</span>,<span class="dv">1</span>]<span class="op">/</span>A[<span class="dv">1</span>,<span class="dv">1</span>]) <span class="op">*</span> A[<span class="dv">1</span>,:]</span>
+<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a>A[<span class="dv">3</span>,:] <span class="op">=</span> A[<span class="dv">3</span>,:] <span class="op">-</span> (A[<span class="dv">3</span>,<span class="dv">2</span>]<span class="op">/</span>A[<span class="dv">2</span>,<span class="dv">2</span>]) <span class="op">*</span> A[<span class="dv">2</span>,:]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="r-stack">
 <div class="fragment" style="background-color: white; display: inline-block; padding: 10px;">
 <p>Original Matrix</p>
@@ -529,6 +575,17 @@ e = \begin{bmatrix} e_1 \\ e_2 \\ \vdots \\ e_{n-1} \end{bmatrix}\]</span></p>
 <p><span class="fragment">Gaussian Elimination of second row of <span class="math inline">\(A\)</span>:</span></p>
 <p><span class="fragment"><span class="math display">\[\boxed{\text{Row k} = \text{Row k} - \frac{A_{21}}{A_{11}} \times \text{Row }(k-1)}\]</span></span></p>
 <p><span class="inclass fragment">Write down a formula for <span class="math inline">\(c_1\)</span>, <span class="math inline">\(d_2\)</span> and <span class="math inline">\(e_2\)</span> under one step of Gaussian elimination, in terms of all other <span class="math inline">\(c\)</span>’s, <span class="math inline">\(d\)</span>’s and <span class="math inline">\(e\)</span>’s.</span></p>
+<p><span class="fragment"><span class="math display">\[
+\begin{align}
+\text{New } c_1 &amp;= c_1 - \frac{c_1}{d_1} \times d_1 \implies c_1 = 0 \\
+\text{New } d_2 &amp;= d_2 - \frac{c_1}{d_1} \times e_1 \implies d_2 = d_2 - \frac{c_1}{d_1} e_1 \\
+\text{New } e_2 &amp;= e_2 - \frac{c_1}{d_1} \times 0 \implies e_2 = e_2
+\end{align}
+\]</span></span></p>
+<ul>
+<li class="fragment"><span class="math inline">\(c_1\)</span> is <strong>eliminated</strong>, <span class="math inline">\(d_2\)</span> changes, and <span class="math inline">\(e_2\)</span> doesn’t change.</li>
+<li class="fragment">The <strong>multiplier</strong> for Row 2 was <span class="math inline">\(\left(c_1/d_1\right)\)</span></li>
+</ul>
 </section>
 <section id="comtinued" class="slide level3 smaller">
 <h3>Comtinued</h3>

@@ -6,7 +6,7 @@ topic: "Linear Systems"
 order: 15
 date: 10-27-2026
 date-format: long
-uncover: false
+uncover: true
 footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
 code-line-numbers: false
 ---
@@ -130,6 +130,7 @@ $$
 ::: {.column width="35%"}
 ![](FBD1.png){#fig-FBD1}
 :::
+
 :::::
 
 ### Assembling a matrix-vector equation
@@ -137,7 +138,7 @@ $$
 - The matrix $\boldsymbol{A}$ multiplies a [vector of unknown quantities]{.underline} $\boldsymbol{x}$ and equals a r[ight-hand-side vector]{.underline} $\boldsymbol{b}$
 
 :::: {.columns}
-::: {.column width="60%" style="font-size: 65%;"}
+::: {.column style="font-size: 65%; width: 60%"}
 $$
 \begin{bmatrix}
 1 & 0 & 0 & \cos 30^\circ & 1 & 0 \\
@@ -178,7 +179,7 @@ $$
 ### Motivating Example from E11
 
 :::: {.columns}
-::: {.column width="55%" style="font-size: 100%;"}
+::: {.column style="font-size: 100%; width: 55%;"}
 
 [Find the currents in this circuit.]{.inclass}
 
@@ -269,8 +270,6 @@ $$+6 + 0I_1 - 5I_2 - 3I_3 = 0$$
 :::{.column width="30%" }
 $$\phantom{+}2x_1 + 3x_2 = 4$${#eq-one}
 $$-\phantom{2}x_1 + 2x_2 = 5$${#eq-two}
-:::
-:::{.column width="65%" style="font-size: 50%;"}
 :::
 ::::
 
@@ -403,7 +402,6 @@ $$
 2. Multiply a row by a non-zero constant
 3. Add one row to another
 
-### Algorithm for Gaussian Elimination
 
 
 

@@ -6,7 +6,7 @@ topic: "Linear Systems"
 order: 16
 date: 10-29-2026
 date-format: long
-uncover: false
+uncover: true
 footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
 code-line-numbers: false
 ---

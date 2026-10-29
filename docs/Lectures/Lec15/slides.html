@@ -190,6 +190,35 @@ A_{51}x_1 + A_{52}x_2 + A_{53}x_3 &amp;= b_5
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><span class="inclass">Find the reaction forces <span class="math inline">\(H_2\)</span>, <span class="math inline">\(V_2\)</span> and <span class="math inline">\(V_3\)</span> and all internal forces</span></p>
+<p><span class="fragment"><span class="math inline">\(\sum F_x = 0\)</span> at 1,2,3</span><br>
+<span class="fragment"><span class="math inline">\(\sum F_y = 0\)</span> at 1,2,3</span></p>
+<div class="fragment">
+<img data-src="index_files/mediabag/tikz.62b90f47.svg">
+</div>
+<div class="fragment" style="font-size: 65%;">
+<p>Horizontal force balance for joint 2:</p>
+<p><span class="math display">\[
+\begin{array}{r c r c r c r c r c r c l}
+  1 H_2 &amp; + &amp; 0 V_2 &amp; + &amp; 0 V_3 &amp; + &amp; (\cos 30^\circ) F_{21} &amp; + &amp; 1 F_{23} &amp; + &amp; 0 F_{31} &amp; = &amp; \begin{Bmatrix} \text{external horiz.} \\ \text{force at 2} \end{Bmatrix}
+\end{array}
+\]</span></p>
+</div>
+<div class="fragment" style="font-size: 65%;">
+<p>Vertical force balance for joint 1:</p>
+<p><span class="math display">\[
+\begin{array}{r c r c r c r c r c r c l}
+  0 H_2 &amp; + &amp; 0 V_2 &amp; + &amp; 0 V_3 &amp; + &amp; (\sin 30^\circ) F_{21} &amp; + &amp; 0 F_{23} &amp; + &amp; (\sin 60^\circ) F_{31} &amp; = &amp; \begin{Bmatrix} \text{external vert.} \\ \text{force at 1} \end{Bmatrix}
+\end{array}
+\]</span></p>
+</div>
+<div class="fragment" style="font-size: 65%;">
+<p>Force balance for other joints:</p>
+<p><span class="math display">\[
+\begin{array}{r c r c r c r c r c r c l}
+  \square H_2 &amp; + &amp; \square V_2 &amp; + &amp; \square V_3 &amp; + &amp; \square F_{21} &amp; + &amp; \square F_{23} &amp; + &amp; \square F_{31} &amp; = &amp; \dots \text{External Force}
+\end{array}
+\]</span></p>
+</div>
 </div><div class="column" style="width:35%;">
 <div id="fig-FBD1" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
@@ -209,7 +238,7 @@ Figure&nbsp;1
 <li class="fragment">The matrix <span class="math inline">\(\boldsymbol{A}\)</span> multiplies a <u>vector of unknown quantities</u> <span class="math inline">\(\boldsymbol{x}\)</span> and equals a r<u>ight-hand-side vector</u> <span class="math inline">\(\boldsymbol{b}\)</span></li>
 </ul>
 <div class="columns">
-<div class="column" style="font-size: 65%;">
+<div class="column" style="font-size: 65%; width: 60%">
 <p><span class="math display">\[
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; \cos 30^\circ &amp; 1 &amp; 0 \\
@@ -249,8 +278,23 @@ F_{1,\text{ext}} \\
 <section id="motivating-example-from-e11" class="slide level3">
 <h3>Motivating Example from E11</h3>
 <div class="columns">
-<div class="column" style="font-size: 100%;">
+<div class="column" style="font-size: 100%; width: 55%;">
 <p><span class="inclass">Find the currents in this circuit.</span></p>
+<div class="fragment">
+<ol type="1">
+<li class="fragment">Sum of currents at node A <span class="math display">\[0 + 1I_1 + 1I_2 - 1I_3 = 0\]</span></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li class="fragment">Loop 2: <span class="math display">\[+5 - 4I_1 + 0I_2 - 3I_3 = 0\]</span></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li class="fragment">Loop 3: <span class="math display">\[+6 + 0I_1 - 5I_2 - 3I_3 = 0\]</span></li>
+</ol>
+</div>
 </div><div class="column" style="width:40%;">
 <img data-src="index_files/mediabag/tikz.a161daf7.svg">
 </div></div>
@@ -277,8 +321,6 @@ F_{1,\text{ext}} \\
 <div class="columns">
 <div class="column" style="width:30%;">
 <p><span id="eq-one"><span class="math display">\[\phantom{+}2x_1 + 3x_2 = 4 \tag{1}\]</span></span> <span id="eq-two"><span class="math display">\[-\phantom{2}x_1 + 2x_2 = 5 \tag{2}\]</span></span></p>
-</div><div class="column" style="font-size: 50%;">
-
 </div></div>
 <ul>
 <li class="fragment">Idea: replace (2) with an equation that only has <span class="math inline">\(x_2\)</span>, not <span class="math inline">\(x_1\)</span></li>
@@ -385,9 +427,6 @@ A_{11}^* x_1 + A_{12}^* x_2 + A_{13}^* x_3 &amp;= b^*_1 \\
 <li class="fragment">Multiply a row by a non-zero constant</li>
 <li class="fragment">Add one row to another</li>
 </ol>
-</section>
-<section id="algorithm-for-gaussian-elimination" class="slide level3">
-<h3>Algorithm for Gaussian Elimination</h3>
 
 
 </section>
