@@ -197,118 +197,118 @@
   {
     "objectID": "Homework/HW7/solutions.html#sorting-cacti",
     "href": "Homework/HW7/solutions.html#sorting-cacti",
-    "title": "HW 7",
+    "title": "HW 7 Solutions",
     "section": "1.1 Sorting Cacti",
     "text": "1.1 Sorting Cacti\nCacti grow best when they are sorted. In TFWR, sorted cacti are those which are arranged in order of size relative to their neighboring cacti: the smallest cacti should be on the south and west, and largest cacti should be to the north and east.\nYou can check the size of the cactus underneath your drone using the function measure(), which returns an integer from 1 to 9. If you call measure with an argument, you can also measure the neighboring cacti (without moving your drone). For example, measure(East) measures the cactus to the East of the current location of the drone.\nThe swap(&lt;direction&gt;) function swaps the cactus underneath the dronw for the cactus located &lt;direction&gt; away from the drone. For example, swap(North) swaps the cactus underneath the drone with a cactus to the north of the drone.\n\n\n\n\n\n\nInitially, cacti are randomly sized\n\n\n\n\n\n\n\nAfter sorting, correctly sized\n\n\n\n\n\nWrite a program that plants cacti on the entire farm, then sorts them into the correct order, then harvests them. It need only do this once.\n\n\n\n\n\n\nNoteHint\n\n\n\nYour code should work ‘out of the box’, regardless of whether the farm is tilled or not. You can either\n\nuse clear() and start from an untilled farm, and till each spot\ncheck the soil type and only till() if needed.\n\n\n\nThe precise sorting algorithm you use is not necessarily important. This is not a Computer Science class, so your algorithm does not need to be the most efficient one in the world, as long as it works correctly and accomplishes its objective.\n\n\n\n\n\n\nNoteSuccess\n\n\n\nYou have succeeded when the entire farm of cacti can be harvested in a single ‘poof’, as seen in Figure 1. Also notice that cacti are green when sorted and brown when unsorted.\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\n\n\nNoteAn example algorithm\n\n\n\nOn the class website you can see an example sorting algorithm in action in Figure 2. Here, the drone works hard to sort the farm. It accomplishes its objective by first sorting each row, then sorting the columns.\n\n\n\n\n\n\nFigure 2\n\n\n\nYou can also find this gif in video format hosted at Panopto at the following link. This will allow you to have better control over the playback of the animation in Figure 2.\n\n\n\n\n\n\n\n\nTipSolutions\n\n\n\nThe following code plants pumpkins on the entire field.\ndef zeroloc():\n    xdist = get_pos_x()\n    ydist = get_pos_y()\n    for i in range(xdist):\n        move(West)\n    for i in range(ydist):\n        move(South)\n    return None\n\n# Harvest anything remaining, \n# till if necessary, and plant\n# cacti.\nzeroloc()\nfor j in range(get_world_size()):\n    for k in range(get_world_size()):\n        if can_harvest():\n            harvest()\n        if get_ground_type() == Grounds.Grassland:\n            till()\n        plant(Entities.Cactus)\n        move(East)\n    move(North)\nThe following code sorts the field.\n# Sort horizontally first\nfor j in range(get_world_size()):\n  while True:\n    count_ok = 1\n    for i in range(get_world_size()):\n        move(East)\n        if measure() &lt; measure(West):\n            swap(West)\n        else:\n            count_ok += 1\n\n    if count_ok == get_world_size():\n        break\n  move(North)\n \n# Sort vertically next\nfor j in range(get_world_size()):\n  while True:\n    count_ok = 1\n    for i in range(get_world_size()):\n        move(North)\n        if measure() &lt; measure(South):\n            swap(South)\n        else:\n            count_ok += 1\n\n    if count_ok == get_world_size():\n        break\n  move(East)\nThe following code harvests it all.\n# Should now be done. Harvest the fruits of your labor!\ndo_a_flip()\nprint(\"All cacti sorted!\")\nharvest()",
     "crumbs": [
       "Homepage",
       "Homework",
       "HW 7",
-      "HW 7"
+      "HW 7 Solutions"
     ]
   },
   {
     "objectID": "Homework/HW7/solutions.html#sec-func",
     "href": "Homework/HW7/solutions.html#sec-func",
-    "title": "HW 7",
+    "title": "HW 7 Solutions",
     "section": "3.1 Write a function",
     "text": "3.1 Write a function\nWrite a Python function named secant_method(...) that takes as input the following 4 arguments, in order:\n\nA function f, whose root is to be found.\nx1, one estimate of the root\nx2, another estimate of the root\nn, the number of steps of the secant method that are to be carried out.\n\nIt should output a guess for the root of \\(f(x)\\).\n\n\n\n\n\n\nNoteFunctions as arguments\n\n\n\nA Python function can be an argument to another function. For example, the following function takes as input the independent variable \\(x\\) and the function \\(g\\), and returns \\(g^2(x) = g(x) \\times g(x)\\)\nfrom numpy import sin\n\ndef square(func,xval):\n    return func(xval)*func(xval)\n\nprint(f\"{square(sin,2):.3f}\")",
     "crumbs": [
       "Homepage",
       "Homework",
       "HW 7",
-      "HW 7"
+      "HW 7 Solutions"
     ]
   },
   {
     "objectID": "Homework/HW7/solutions.html#use-your-function",
     "href": "Homework/HW7/solutions.html#use-your-function",
-    "title": "HW 7",
+    "title": "HW 7 Solutions",
     "section": "3.2 Use your function",
     "text": "3.2 Use your function\nUse your function to determine a root of the function \\(\\sin e^{x/2}\\) starting from \\(x=1\\) and \\(x=2\\) as your initial guesses. For this part, your code should call the function you wrote in Section 3.1 and should print a value for the root.",
     "crumbs": [
       "Homepage",
       "Homework",
       "HW 7",
-      "HW 7"
+      "HW 7 Solutions"
     ]
   },
   {
     "objectID": "Homework/HW7/solutions.html#solution",
     "href": "Homework/HW7/solutions.html#solution",
-    "title": "HW 7",
+    "title": "HW 7 Solutions",
     "section": "3.3 Solution",
     "text": "3.3 Solution\n\n\n\n\n\n\nTipSolutions\n\n\n\nThe following code is a satisfactory solution to this problem.\ndef secant(f,x1,x2,n):\n    for i in range(n):\n        m = (f(x2)-f(x1))/(x2-x1)\n        c = f(x1) - m*x1\n        xnew = -c/m\n        x1 = x2\n        x2 = xnew\n    return xnew\n\n# Test it on the desired function\nfrom numpy import sin,exp\ndef f_test(x):\n    return sin(exp(x/2))\n\n# Call the function\nprint(f\"The function sin(exp(x/2)) has a root at x = {secant(f_test,1,2,10):.3f}\")",
     "crumbs": [
       "Homepage",
       "Homework",
       "HW 7",
-      "HW 7"
+      "HW 7 Solutions"
     ]
   },
   {
     "objectID": "Homework/HW7/solutions.html#write-a-function",
     "href": "Homework/HW7/solutions.html#write-a-function",
-    "title": "HW 7",
+    "title": "HW 7 Solutions",
     "section": "4.1 Write a function",
     "text": "4.1 Write a function\nWrite a Python function named newtons_method(...) for Newton’s method that accepts as argument the following four entities in order:\n\nThe function \\(f(x)\\) whose root is to be found,\nThe function \\(f'(x)\\), its derivative,\nA guess \\(x_0\\) from which to start calculations, and\nA tolerance parameter \\(\\varepsilon\\).\n\nGiven a function \\(f\\) and its derivative \\(f'\\), your Python function should apply Newton’s method to find a root of \\(f(x)\\) starting from \\(x=x_0\\). It should continue searching for a root until the following termination criterion has been met. After termination, it should return the latest guess of the root’s value.\n\n\n\n\n\n\nNoteTermination criterion\n\n\n\nTerminate the search for a root when \\[\\frac{|x_{n+1} - x_{n}|}{|x_n|} &lt; \\varepsilon,\\] where \\(\\varepsilon\\) is a tolerance parameter that is generally a small number.\nA smaller \\(\\varepsilon\\) will lead to a more accurate solution.",
     "crumbs": [
       "Homepage",
       "Homework",
       "HW 7",
-      "HW 7"
+      "HW 7 Solutions"
     ]
   },
   {
     "objectID": "Homework/HW7/solutions.html#sec-usefunc",
     "href": "Homework/HW7/solutions.html#sec-usefunc",
-    "title": "HW 7",
+    "title": "HW 7 Solutions",
     "section": "4.2 Use your function",
     "text": "4.2 Use your function\nUse your function to find a root of \\(f(x) = \\sin e^{x/2}\\), starting from (1) \\(x_0=2\\) and (2) \\(x_0 = 1\\). Write print statements to report to a user the results of your calculations.\n\n\n\n\n\n\nTipSolutions\n\n\n\nThe following code is a satisfactory solution to this problem, with the added (unnecessary) feature that it counts the number of iterations it took to find the answer.\ndef newton(f,fp,x0,epsilon):\n    error = 1\n    xold = x0\n    count_iters = 0\n    while error &gt; epsilon:\n        # Calculate the new value of x\n        xnew = xold - f(xold)/fp(xold)\n        # Calculate error\n        error = (abs(xnew-xold))/(abs(xold))\n        # Update memory; forget old value\n        xold = xnew\n        # Count\n        count_iters += 1\n    print(f\"Newton's method terminated after {count_iters} iters.\")\n    return xnew\n\nfrom numpy import sin,exp,cos\n# Define a function whose root will be looked for.\ndef f1(x):\n    return sin(exp(x/2))\n# Need its derivative also\ndef f1p(x):\n    return (1/2) * exp(x/2) * cos(exp(x/2))\n\n# From x = 2\nxval = 2\nprint(f\"Starting from x = {xval}, Newton's method finds the root {newton(f1,f1p,xval,1e-6):.6f}\")\n\n# From x = 1\nxval = 1\nprint(f\"Starting from x = {xval}, Newton's method finds the root {newton(f1,f1p,xval,1e-6):.6f}\")\nWe find the following result:\nNewton's method terminated after 4 iters.\nStarting from x = 2, Newton's method finds the root 2.289460\nNewton's method terminated after 4 iters.\nStarting from x = 1, Newton's method finds the root 16.535193\nThis is because the function in question has many zeros.\nThe following sketch shows that the straight line will only intercept the \\(x\\) axis very far from the initial guess, since it is close to a turning point of \\(f(x)\\).",
     "crumbs": [
       "Homepage",
       "Homework",
       "HW 7",
-      "HW 7"
+      "HW 7 Solutions"
     ]
   },
   {
     "objectID": "Homework/HW7/solutions.html#explain-its-behavior",
     "href": "Homework/HW7/solutions.html#explain-its-behavior",
-    "title": "HW 7",
+    "title": "HW 7 Solutions",
     "section": "4.3 Explain its behavior",
     "text": "4.3 Explain its behavior\nBy using a graph of the function \\(\\sin e^{x/2},\\) explain the results from Section 4.2. Why does the program find the results it does? Sketch a few steps of Newton’s method by hand to aid in your explanation.",
     "crumbs": [
       "Homepage",
       "Homework",
       "HW 7",
-      "HW 7"
+      "HW 7 Solutions"
     ]
   },
   {
     "objectID": "Homework/HW7/solutions.html#bisection-method-for-fx-xpix-pi2x-5",
     "href": "Homework/HW7/solutions.html#bisection-method-for-fx-xpix-pi2x-5",
-    "title": "HW 7",
+    "title": "HW 7 Solutions",
     "section": "5.1 Bisection Method for \\(f(x) = (x+\\pi)(x-\\pi/2)(x-5)\\)",
     "text": "5.1 Bisection Method for \\(f(x) = (x+\\pi)(x-\\pi/2)(x-5)\\)\n\n5.1.1 Bisection Method with numbers\nA root of the function \\(f(x) = (x+\\pi)(x-\\pi/2)(x-5)\\) is to be found using the bisection method starting from the bracket \\([-4,-3]\\). Use the following table to record the results of the bisection method for six steps. Some steps have been done for you.\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n\n\n\n\n\n\\([x_L, \\quad \\qquad \\qquad x_M, \\qquad \\qquad \\quad x_R]\\)\n\\([f(x_L), \\quad f(x_M), \\quad f(x_R)]\\)\nNext bracket\n\n\n\n\n\\([-4.0000000, \\, -3.5000000, \\,-3.0000000]\\)\n\\([-43.0, \\quad -15.4, \\quad +5.18 ]\\)\nright bracket\n\n\n\\([-3.5000000, \\, -3.2500000, \\,-3.0000000]\\)\n\\([-15.4, \\quad -4.31, \\quad +5.18 ]\\)\nright bracket\n\n\n\\([-3.2500000, \\, -3.1250000, \\,-3.0000000]\\)\n\\([-4.31, \\quad +0.63, \\quad +5.18 ]\\)\nleft bracket\n\n\n\\([-3.2500000, \\, -3.1875000, \\,-3.1250000]\\)\n\\([-4.31, \\quad -1.79, \\quad +0.63 ]\\)\nright bracket\n\n\n\\([-3.1875000, \\, -3.1562500, \\,-3.1250000]\\)\n\\([-1.79, \\quad -0.56, \\quad +0.63 ]\\)\nright bracket\n\n\n\\([-3.1562500, \\, -3.1406250, \\,-3.1250000]\\)\n\\([-0.56, \\quad +0.04, \\quad +0.63 ]\\)\nright bracket\n\n\n\\([-3.1562500, \\, -3.1484375, \\,-3.1406250]\\)\n\\([-1.26, \\quad -0.26, \\quad +0.04 ]\\)\nright bracket\n\n\n\n\n\n\n\n5.1.2 Bisection method with pictures\nUsing hand-calculations and a simple calculator, explain how the bisection algorithm will behave when initialized with each of the following brackets. For each case, indicate whether or not it will converge on a solution, and if so, which root it will converge on. Illustrate graphically on the given axes.\n\n\\([-4,-2]\\)\n\\([-4,+2]\\)\n\\([-4,+6]\\)\n\\([0,+4.9]\\)\n\\([+2,+4]\\)\n\nYou may use the following diagram to solve this problem.\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\nYou start with the bracket \\([-4,-2]\\)\n\nThis interval ‘brackets’ the root \\(x = -\\pi\\), and the algorithm will eventually converge on this root.\n\nYou start with the bracket \\([-4,+2]\\)\n\nThis interval cannot work because \\(f(-4)\\) and \\(f(+2)\\) both have the same sign. The algorithm has no way of deciding which half of the interval to proceed with.\n\nYou start with the bracket \\([-4,+6]\\)\n\nThis interval brackets multiple roots, but \\(f(-4)\\) and \\(f(+6)\\) have different signs, so it is a valid initial bracket. The midpoint of this interval is $x = +1, and we note that \\(f(+1)\\) has a positive sign. Thus, the next bracket chosen will be the left-side half, i.e., \\([-4,+1]\\). This brackets the root \\(x = - \\pi\\), and the algorithm will eventually find that root.\n\nYou start with the bracket \\([0,+4.9]\\)\n\nThis interval brackets the root \\(x = \\pi/2\\), and the algorithm will eventually converge on this root.\n\nYou start with the bracket \\([+2,+4]\\) -This interval does not bracket any root, so it is not a valid starting interval. No root will be found.",
     "crumbs": [
       "Homepage",
       "Homework",
       "HW 7",
-      "HW 7"
+      "HW 7 Solutions"
     ]
   },
   {
     "objectID": "Homework/HW7/solutions.html#newtons-method",
     "href": "Homework/HW7/solutions.html#newtons-method",
-    "title": "HW 7",
+    "title": "HW 7 Solutions",
     "section": "5.2 Newton’s Method",
     "text": "5.2 Newton’s Method\nUse Newton’s method to graphically (i.e., with a pencil and straight edge) find the root of the function \\(x^2 - 2x - 4\\), starting from the estimate that the root is at \\(x_0=0\\). Find the next two estimates according to Newton’s method.\n\n\n\n\n\n\n\nTipSolution\n\n\n\nThe following graph adequately solves this problem. The two subsequent guesses are: \\[x_0 = 0, x_1 = -2, x_2 \\approx -1.34\\]",
     "crumbs": [
       "Homepage",
       "Homework",
       "HW 7",
-      "HW 7"
+      "HW 7 Solutions"
     ]
   },
   {

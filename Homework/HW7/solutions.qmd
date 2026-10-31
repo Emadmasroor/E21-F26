@@ -1,5 +1,5 @@
 ---
-title: "HW 7"
+title: "HW 7 Solutions"
 order: 70
 date: 10-29-2026
 date-format: long
