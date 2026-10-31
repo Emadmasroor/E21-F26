@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-11-05">
+
+<title>HW 8 – ENGR 21 Computer Engineering Fundamentals</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5a1953863e1f72ef3b996ef827f01ca7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-add7254ae97fa153f8b1a26e02c65245.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-32e3d36c25272d6ff5376a1b833ae0db.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-add7254ae97fa153f8b1a26e02c65245.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ENGR 21 Computer Engineering Fundamentals</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Homepage</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://moodle.swarthmore.edu/course/view.php?id=30092"> 
+<span class="menu-text">Moodle</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.gradescope.com/courses/1380463"> 
+<span class="menu-text">Gradescope</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://edstem.org/us/courses/104911/discussion"> 
+<span class="menu-text">Ed Discussion</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../Homework/HW8/index.html">HW 8</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../AcademicSupport/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Academic Support</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../AcademicSupport/Masroor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../AcademicSupport/wizards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wizard Office Hours</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lectures</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec1/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec2/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 02</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec3/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 03</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec4/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 04</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec5/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 05</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec6/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 06</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec7/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 07</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec8/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 08</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec9/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 09</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec10/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec11/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 11</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec12/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 12</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec13/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 13</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec14/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 14</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec15/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 15</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec16/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 16</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW1/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW1/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 1 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW2/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW2/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 2 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW3/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW3/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 3 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW4/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW4/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 4 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW5/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 5</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW5/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 5 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW6/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 6</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW6/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 6 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW7/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW8/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">HW 8</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../PastProjects/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Past E21 Projects</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../syllabus.html#schedule" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://mzucker.github.io/swarthmore/linalg-reintroduction.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matt Zucker’s Intro to Linear Algebra</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#counting-calculations" id="toc-counting-calculations" class="nav-link active" data-scroll-target="#counting-calculations"><span class="header-section-number">1</span> Counting Calculations</a>
+  <ul class="collapse">
+  <li><a href="#quantifying-the-computational-cost-of-lu-decomposition" id="toc-quantifying-the-computational-cost-of-lu-decomposition" class="nav-link" data-scroll-target="#quantifying-the-computational-cost-of-lu-decomposition"><span class="header-section-number">1.1</span> Quantifying the computational cost of LU Decomposition</a>
+  <ul class="collapse">
+  <li><a href="#number-of-row-updates" id="toc-number-of-row-updates" class="nav-link" data-scroll-target="#number-of-row-updates"><span class="header-section-number">1.1.1</span> Number of Row Updates</a></li>
+  <li><a href="#sec-terms" id="toc-sec-terms" class="nav-link" data-scroll-target="#sec-terms"><span class="header-section-number">1.1.2</span> Number of nonzero terms updated</a></li>
+  <li><a href="#tridiagonal-matrices-and-tridiagonal-solvers" id="toc-tridiagonal-matrices-and-tridiagonal-solvers" class="nav-link" data-scroll-target="#tridiagonal-matrices-and-tridiagonal-solvers"><span class="header-section-number">1.1.3</span> Tridiagonal Matrices and Tridiagonal solvers</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#sec-gauss" id="toc-sec-gauss" class="nav-link" data-scroll-target="#sec-gauss"><span class="header-section-number">2</span> Gaussian Elimination</a></li>
+  <li><a href="#sec-lu" id="toc-sec-lu" class="nav-link" data-scroll-target="#sec-lu"><span class="header-section-number">3</span> LU Decomposition</a></li>
+  <li><a href="#sec-sol" id="toc-sec-sol" class="nav-link" data-scroll-target="#sec-sol"><span class="header-section-number">4</span> Solution Phase — forward and backward substitutions</a>
+  <ul class="collapse">
+  <li><a href="#backward-substitution" id="toc-backward-substitution" class="nav-link" data-scroll-target="#backward-substitution"><span class="header-section-number">4.1</span> Backward substitution</a></li>
+  <li><a href="#forward-substitution" id="toc-forward-substitution" class="nav-link" data-scroll-target="#forward-substitution"><span class="header-section-number">4.2</span> Forward Substitution</a></li>
+  </ul></li>
+  <li><a href="#solving-systems-of-linear-equations" id="toc-solving-systems-of-linear-equations" class="nav-link" data-scroll-target="#solving-systems-of-linear-equations"><span class="header-section-number">5</span> Solving Systems of Linear Equations</a>
+  <ul class="collapse">
+  <li><a href="#lu-decomposition-of-a-3x3-matrix" id="toc-lu-decomposition-of-a-3x3-matrix" class="nav-link" data-scroll-target="#lu-decomposition-of-a-3x3-matrix"><span class="header-section-number">5.1</span> LU Decomposition of a 3x3 matrix</a>
+  <ul class="collapse">
+  <li><a href="#find-the-matrix-a" id="toc-find-the-matrix-a" class="nav-link" data-scroll-target="#find-the-matrix-a"><span class="header-section-number">5.1.1</span> Find the matrix <span class="math inline">\(A\)</span></a></li>
+  <li><a href="#solve-axb" id="toc-solve-axb" class="nav-link" data-scroll-target="#solve-axb"><span class="header-section-number">5.1.2</span> Solve <span class="math inline">\(Ax=b\)</span></a></li>
+  </ul></li>
+  <li><a href="#compuationally-solving-a-4-x-4-system" id="toc-compuationally-solving-a-4-x-4-system" class="nav-link" data-scroll-target="#compuationally-solving-a-4-x-4-system"><span class="header-section-number">5.2</span> Compuationally solving a 4 x 4 system</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../Homework/HW8/index.html">HW 8</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">HW 8</h1>
+<p class="subtitle lead">ENGR 21, Fall 2026.</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 5, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>Due Date</td>
+<td>Thu, Nov 06</td>
+</tr>
+<tr class="even">
+<td>Turn in link</td>
+<td>Gradescope <a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=836413">PDF</a> and <a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=836412">Code</a></td>
+</tr>
+<tr class="odd">
+<td>URL</td>
+<td><code>emadmasroor.github.io/E21-F26/Homework/HW8</code></td>
+</tr>
+</tbody>
+</table>
+<p><u>What to turn in</u></p>
+<p>Combine all written HW into one PDF file.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Problem</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>PDF</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Python function named <code>gaussian_elimination</code></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Python function named <code>LUdecomp</code></td>
+</tr>
+<tr class="even">
+<td>4.1</td>
+<td>Python function named <code>backward_substitution</code></td>
+</tr>
+<tr class="odd">
+<td>4.2</td>
+<td>Python function named <code>forward_substitution</code></td>
+</tr>
+<tr class="even">
+<td>5.1</td>
+<td>PDF</td>
+</tr>
+<tr class="odd">
+<td>5.2</td>
+<td>Python code</td>
+</tr>
+</tbody>
+</table>
+<section id="counting-calculations" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Counting Calculations</h1>
+<section id="quantifying-the-computational-cost-of-lu-decomposition" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="quantifying-the-computational-cost-of-lu-decomposition"><span class="header-section-number">1.1</span> Quantifying the computational cost of LU Decomposition</h2>
+<p>The <span class="math inline">\(LU\)</span> decomposition of a matrix of size <span class="math inline">\(4 \times 4\)</span> requires us to perform six <strong>row updates</strong> of the kind ‘row x = row x - (multiplier) times row y’, as you did in the worksheet in <a href="../../Lectures/Lec16/GaussianElimination.pdf">Lecture 16</a>.</p>
+<p>In each calculation, an entire row is updated, although some elements of that row may already be known to be zero.</p>
+<section id="number-of-row-updates" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="number-of-row-updates"><span class="header-section-number">1.1.1</span> Number of Row Updates</h3>
+<p>How many row updates are needed for the <span class="math inline">\(LU\)</span> decomposition of a matrix of size <span class="math inline">\(n \times n\)</span> ? Give your answer as a simplified formula in terms of <span class="math inline">\(n\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For the first few values of <span class="math inline">\(n\)</span>, we know that there are:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(n\)</span></th>
+<th>No.&nbsp;of row updates</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>1</td>
+<td>By inspection</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>3</td>
+<td><a href="../../Lectures/Lec16/#algorithm-for-gaussian-elimination">Lecture</a></td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>6</td>
+<td><a href="../../Lectures/Lec16/GaussianElimination.pdf">Worksheet</a></td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>10</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The sum of all numbers from 1 to <span class="math inline">\(n\)</span> can be calculated by finding the shaded area in the diagram below.</p>
+<img src="index_files/mediabag/tikz.cf85a519.svg" class="img-fluid">
+<p>Use this fact to help you derive the needed formula. Then, write down how many row updates are needed for a matrix of size <span class="math inline">\(5 \times 5\)</span>, <span class="math inline">\(10 \times 10\)</span>, <span class="math inline">\(100 \times 100\)</span>, and <span class="math inline">\(10^{6} \times 10^6\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="sec-terms" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="sec-terms"><span class="header-section-number">1.1.2</span> Number of nonzero terms updated</h3>
+<p>Looking more closely at the LU Decomposition process from the <a href="../../Lectures/Lec16/GaussianElimination-Solution.pdf">in-class worksheet</a>, we can see that each time a row update is carried out, the computer needs to calculate several new terms at once.</p>
+<p>For example, in the first row update to eliminate <span class="math inline">\(A_{21}\)</span>, we write:</p>
+<p>Let <span class="math inline">\(\text{row 2}  = \text{row 2} - \left({A_{21}}/{A_{11}}\right) \times \text{ row 1}.\)</span></p>
+<p>This is one row update, which carries out several term updates. Let’s write them out:</p>
+<p><span class="math inline">\(\left[ \underbrace{A_{21} - \frac{A_{21}}{A_{11}} \times A_{11}}_{\text{new value of }A_{21} = 0}, \quad \underbrace{A_{22} - \frac{A_{21}}{A_{11}} \times A_{12}}_{\text{new value of }A_{22} \neq 0}, \quad \underbrace{A_{23} - \frac{A_{21}}{A_{11}} \times A_{13}}_{\text{new value of }A_{23} \neq 0}, \quad \underbrace{A_{24} - \frac{A_{21}}{A_{11}} \times A_{14}}_{\text{new value of }A_{24}\neq 0} \right]\)</span></p>
+<p>We therefore see that the first row update for a 4x4 matrix requires us to <u>update up to 3 terms</u>, ignoring the one that will turn out to be zero by construction.</p>
+<p>As a second example, let us look at the 4th row update. This time, we have</p>
+<p>Let <span class="math inline">\(\text{row 3}  = \text{row 3} - \left({A_{32}}/{A_{22}}\right) \times \text{ row 2}.\)</span></p>
+<p><span class="math inline">\(\left[ \underbrace{\overbrace{A_{31}}^{=0} - \frac{A_{32}}{A_{22}} \times \overbrace{A_{21}}^{=0}}_{\text{new value of }A_{31}=0}, \quad \underbrace{A_{32} - \frac{A_{32}}{A_{22}} \times A_{22}}_{\text{new value of }A_{32} = 0}, \quad \underbrace{A_{33} - \frac{A_{32}}{A_{22}} \times A_{23}}_{\text{new value of }A_{33} \neq 0}, \quad \underbrace{A_{34} - \frac{A_{32}}{A_{22}} \times A_{24}}_{\text{new value of }A_{34}\neq 0} \right]\)</span></p>
+<p>Systematizing this procedure of counting, we can summarize the LU Decomposition / Gaussian Elimination of a matrix of size <span class="math inline">\(n \times n\)</span> as follows.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 37%">
+<col style="width: 12%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step no.</th>
+<th>Row</th>
+<th>Terms Updated (<span class="math inline">\(\cancel{x} \implies x = 0\)</span>)</th>
+<th>No.&nbsp;of nonzero terms</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Row 2</td>
+<td><span class="math inline">\(\cancel{A_{21}}\)</span>, <span class="math inline">\(A_{22}\)</span>, <span class="math inline">\(A_{23}\)</span>, <span class="math inline">\(A_{24}\)</span></td>
+<td>3</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Row 3</td>
+<td><span class="math inline">\(\cancel{A_{31}}\)</span>, <span class="math inline">\(A_{32}\)</span>, <span class="math inline">\(A_{33}\)</span>, <span class="math inline">\(A_{34}\)</span></td>
+<td>3</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Row 4</td>
+<td><span class="math inline">\(\cancel{A_{41}}\)</span>, <span class="math inline">\(A_{42}\)</span>, <span class="math inline">\(A_{43}\)</span>, <span class="math inline">\(A_{44}\)</span></td>
+<td>3</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Row 3</td>
+<td><span class="math inline">\(\cancel{A_{31}}\)</span>, <span class="math inline">\(\cancel{A_{32}}\)</span>, <span class="math inline">\(A_{33}\)</span>, <span class="math inline">\(A_{34}\)</span></td>
+<td>2</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Row 4</td>
+<td><span class="math inline">\(\cancel{A_{41}}\)</span>, <span class="math inline">\(\cancel{A_{42}}\)</span>, <span class="math inline">\(A_{43}\)</span>, <span class="math inline">\(A_{44}\)</span></td>
+<td>2</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Row 4</td>
+<td><span class="math inline">\(\cancel{A_{41}}\)</span>, <span class="math inline">\(\cancel{A_{42}}\)</span>, <span class="math inline">\(\cancel{A_{43}}\)</span>, <span class="math inline">\(A_{44}\)</span></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>14</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>We can use this table to calculate the number of nonzero terms that are updated to Gauss-eliminate a square matrix of size <span class="math inline">\(4 \times 4\)</span>:</p>
+<p><span class="math display">\[
+\begin{align*}
+3 + 3 + 3 &amp;+ \\
+2 + 2 &amp;+ \\
+1 &amp;= 14
+\end{align*}
+\]</span></p>
+<p>Using summation notation (i.e., the symbol <span class="math inline">\(\sum\)</span>), determine a formula for the number of nonzero terms that are updated when Gauss-eliminating a matrix of size <span class="math inline">\(n \times n\)</span>, in terms of <span class="math inline">\(n\)</span>. Write down how many nonzero term updates are needed for a matrix of size <span class="math inline">\(5 \times 5\)</span>, <span class="math inline">\(10 \times 10\)</span>, <span class="math inline">\(100 \times 100\)</span>, and <span class="math inline">\(10^{6} \times 10^6\)</span>.</p>
+</section>
+<section id="tridiagonal-matrices-and-tridiagonal-solvers" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="tridiagonal-matrices-and-tridiagonal-solvers"><span class="header-section-number">1.1.3</span> Tridiagonal Matrices and Tridiagonal solvers</h3>
+<p>When a matrix is banded, a specialized solver exploits this banded structure to dramatically reduce the number of calculations needed to perform <span class="math inline">\(LU\)</span> decomposition on it.</p>
+<ol type="1">
+<li>In terms of <span class="math inline">\(n\)</span>, how many nonzero terms need to be updated when performing <span class="math inline">\(LU\)</span> decomposition of a tridiagonal matrix of size <span class="math inline">\(n \times n\)</span> ?</li>
+<li>A square matrix has size <span class="math inline">\(n\)</span>, and one engineer <span class="math inline">\(LU\)</span>-decomposes it using an algorithm that does not take advantage of the banded structure, while a second engineer uses a specialized algorithm that only updates the necessary terms. Determine the ratio of the number of term updates carried out by the second engineer’s algorithm compared to the first engineer’s algorithm. The answer to <a href="#sec-terms" class="quarto-xref">Section&nbsp;1.1.2</a> will provide the denominator of this fraction.</li>
+<li>In terms of <span class="math inline">\(n\)</span>, what is the maximum number of nonzero terms in a tridiagonal matrix?</li>
+<li>Assume that one byte of memory is used to store one entry in a matrix. What is the percentage saving in space when only the three bands of a tridiagonal <span class="math inline">\(n \times n\)</span> matrix are stored, instead of the full matrix? Give your answer in terms of <span class="math inline">\(n\)</span>.</li>
+<li>Calculate the fraction from 2 and 4 above, for a matrix of size <span class="math inline">\(5 \times 5\)</span>, <span class="math inline">\(10 \times 10\)</span>, <span class="math inline">\(100 \times 100\)</span>, and <span class="math inline">\(10^{6} \times 10^6\)</span>. Write the answers as decimal numbers using scientific notation when necessary.</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="sec-gauss" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Gaussian Elimination</h1>
+<p>Write a Python function named <code>gaussian_elimination</code> that takes as input a 2-dimensional <code>numpy</code> array. This array need not represent a square matrix; in practice, we can use such a function for both square matrices <span class="math inline">\(A\)</span>, which have size <span class="math inline">\(N \times N\)</span>, and ‘augmented matrices’ <span class="math inline">\(\left[ A | b \right]\)</span>, which have size <span class="math inline">\(N \times (N+1)\)</span>.</p>
+<p>Your function should return the row-echelon form of the given matrix, as a <code>numpy</code> array having the same dimensions as the input array. You do not need to account for cases where <span class="math inline">\(Ax=b\)</span> has no solution.</p>
+</section>
+<section id="sec-lu" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> LU Decomposition</h1>
+<p>Write a Python function named <code>LUdecomp</code> that takes as input a square matrix <code>A</code> and outputs two square matrices in a tuple, such as <code>(L,U)</code>. The first element of the tuple should contain a lower triangular matrix, and the second element of the tuple should contain an upper triangular matrix, determined uniquely by Doolittle’s Method.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can re-use the code from <a href="#sec-gauss" class="quarto-xref">Section&nbsp;2</a> by calling <code>gaussian_elimination</code> from inside <code>LUdecomp</code>. If you choose to do so, make sure that the graders will be able to run your code.</p>
+</div>
+</div>
+</section>
+<section id="sec-sol" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Solution Phase — forward and backward substitutions</h1>
+<section id="backward-substitution" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="backward-substitution"><span class="header-section-number">4.1</span> Backward substitution</h2>
+<p>The idea behind <em>backward substitution</em> is that an equation of the form <span class="math inline">\(Ax=c\)</span> where <span class="math inline">\(A\)</span> is an <em>upper triangular matrix</em> can be solved (for the vector <span class="math inline">\(x\)</span>) by starting from the last row and working backward.</p>
+<p>Write a function named <code>backward_substitution</code> that takes as input a matrix (i.e., 2-dimensional <code>numpy</code> array) of size <span class="math inline">\(N \times (N+1)\)</span> and outputs a 1-dimensional <code>numpy</code> array of size <span class="math inline">\(N\)</span>. The input should be assumed to have the form</p>
+<p><span class="math display">\[
+\left[\begin{array}{ccc|c}
+A_{11} &amp; A_{12} &amp; A_{13} &amp; c_1 \\
+0 &amp; A_{22} &amp; A_{23} &amp; c_2 \\
+0 &amp; 0 &amp; A_{33} &amp; c_3
+\end{array}\right]
+\]</span></p>
+<p>and the output should be a solution to the system of equations</p>
+<p><span class="math display">\[
+\begin{aligned}
+A_{11} x_1 + A_{12} x_2 + A_{13} x_3 &amp;= c_1 \\
+\phantom{A_{21}x_1 +} A_{22}x_2 + A_{23}x_3 &amp;= c_2 \\
+\phantom{A_{31}x_1 + A_{32}x_2 +} A_{33} x_3 &amp;= c_3 \\
+\end{aligned}
+\]</span></p>
+<p>Note that a formula for this has been given in <a href="../../Lectures/Lec16/#algorithm-for-backward-substitution">lecture</a>.</p>
+<p>A partial annotated solution is provided below.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-label="1"></a><span class="kw">def</span> backward_substitution(ac):</span>
+<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-label="2"></a>    <span class="co"># ac is an augmented matrix of size n x (n+1)</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-label="3"></a>    c <span class="op">=</span> ac[:,<span class="op">-</span><span class="dv">1</span>]</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-3-4" class="code-annotation-target"><a href="#annotated-cell-3-4" aria-label="4"></a>    a <span class="op">=</span> ac[:,:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5" aria-label="5"></a>    n <span class="op">=</span> <span class="bu">len</span>(c)</span>
+<span id="annotated-cell-3-6"><a href="#annotated-cell-3-6" aria-label="6"></a>    x <span class="op">=</span> np.zeros(n)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-3-7" class="code-annotation-target"><a href="#annotated-cell-3-7" aria-label="7"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>):</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-3-8" class="code-annotation-target"><a href="#annotated-cell-3-8" aria-label="8"></a>        total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="annotated-cell-3-9"><a href="#annotated-cell-3-9" aria-label="9"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(n<span class="op">-</span><span class="dv">1</span>,i,<span class="op">-</span><span class="dv">1</span>):</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-3-10" class="code-annotation-target"><a href="#annotated-cell-3-10" aria-label="10"></a>            total <span class="op">+=</span> <span class="dv">0</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-3-11" class="code-annotation-target"><a href="#annotated-cell-3-11" aria-label="11"></a>        x[i] <span class="op">=</span> (c[i]<span class="op">-</span> total)<span class="op">/</span>a[i,i]</span>
+<span id="annotated-cell-3-12"><a href="#annotated-cell-3-12" aria-label="12"></a>    <span class="cf">return</span> x</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="1">Extract the last column of <code>ac</code> and designate it as <code>c</code>, the right-hand-side vector.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="4" data-code-annotation="2">Designate the first <code>n</code> columns of <code>ac</code> as the system matrix <span class="math inline">\(A\)</span>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="7" data-code-annotation="3">Start from the last index and work backward toward zero.</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="8" data-code-annotation="4">Initialize a variable that will contain the sum <span class="math inline">\(\displaystyle \sum_{k=i+1}^n \left[A_{ik} x_k \right]\)</span></span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="10" data-code-annotation="5">Fix this line</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="11" data-code-annotation="6">Assemble the sum</span>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="forward-substitution" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="forward-substitution"><span class="header-section-number">4.2</span> Forward Substitution</h2>
+<p>The idea behind <em>forward substitution</em> is that an equation of the form <span class="math inline">\(Ax=c\)</span> where <span class="math inline">\(A\)</span> is a <em>lower triangular matrix</em> can be solved (for the vector <span class="math inline">\(x\)</span>) by starting from the first row and working forward.</p>
+<p>Write a function named <code>forward_substitution</code> that takes as input a matrix (i.e., 2-dimensional <code>numpy</code> array) of size <span class="math inline">\(N \times (N+1)\)</span> and outputs a 1-dimensional <code>numpy</code> array of size <span class="math inline">\(N\)</span>. The input should be assumed to have the form</p>
+<p><span class="math display">\[
+\left[\begin{array}{ccc|c}
+A_{11} &amp; 0 &amp; 0 &amp; c_1\\
+A_{21} &amp; A_{22} &amp; 0 &amp; c_2\\
+A_{31} &amp; A_{32} &amp; A_{33} &amp; c_3
+\end{array}\right]
+\]</span></p>
+<p>and the output should be a solution to the system of equations</p>
+<p><span class="math display">\[
+\begin{aligned}
+A_{11} x_1 \phantom{ + A_{12} x_2 + A_{13} x_3} &amp;= c_1 \\
+A_{21} x_1 + A_{22} x_2 \phantom{ + A_{23} x_3 } &amp;= c_2 \\
+A_{31} x_1 + A_{32} x_2 + A_{33} x_3  &amp;= c_2 \\
+\end{aligned}
+\]</span></p>
+</section>
+</section>
+<section id="solving-systems-of-linear-equations" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Solving Systems of Linear Equations</h1>
+<section id="lu-decomposition-of-a-3x3-matrix" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="lu-decomposition-of-a-3x3-matrix"><span class="header-section-number">5.1</span> LU Decomposition of a 3x3 matrix</h2>
+<p>A certain square matrix <span class="math inline">\(A\)</span> can be decomposed using Doolittle’s Decomposition into a product <span class="math inline">\(LU\)</span> of the following matrices,</p>
+<p><span class="math display">\[
+L = \begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+3/2 &amp; 1 &amp; 0 \\
+1/2 &amp; 11/13 &amp; 1
+\end{bmatrix}, \quad
+U = \begin{bmatrix}
+2 &amp; -3 &amp; -1\\
+0 &amp; 13/2 &amp; -7/2 \\
+0 &amp; 0 &amp; 32/13
+\end{bmatrix}.
+\]</span></p>
+<section id="find-the-matrix-a" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="find-the-matrix-a"><span class="header-section-number">5.1.1</span> Find the matrix <span class="math inline">\(A\)</span></h3>
+<p>by multiplying the matrices <span class="math inline">\(LU\)</span> (See page 9 of Matt Zucker’s <a href="https://mzucker.github.io/swarthmore/linalg-reintroduction.pdf">Intro to Linear Algebra</a> if you are not sure how to multiply matrices). Show your work, even if you use a computer/calculator to help you do the computation.</p>
+</section>
+<section id="solve-axb" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="solve-axb"><span class="header-section-number">5.1.2</span> Solve <span class="math inline">\(Ax=b\)</span></h3>
+<ol type="1">
+<li><p>Given <span class="math inline">\(b = \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix},\)</span> solve <span class="math inline">\(Ax=b\)</span> using the following procedure:</p>
+<ul>
+<li>First, find the vector <span class="math inline">\(y\)</span> when <span class="math inline">\(Ly = b\)</span> using <em>forward substitution</em>.</li>
+<li>Then, find the vector <span class="math inline">\(x\)</span> when <span class="math inline">\(Ux = y\)</span> using <em>backward substitution</em>.</li>
+</ul>
+<p>Show your work, even if you use a computer/calculator to help you do the computation.</p></li>
+<li><p>Given <span class="math inline">\(b = \begin{bmatrix} 2 \\ 0 \\ 3 \end{bmatrix},\)</span> solve <span class="math inline">\(Ax=b\)</span> using the same procedure as above.</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use your answers to these questions to check your work in <a href="#sec-gauss" class="quarto-xref">Section&nbsp;2</a>, <a href="#sec-lu" class="quarto-xref">Section&nbsp;3</a>, and <a href="#sec-sol" class="quarto-xref">Section&nbsp;4</a>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="compuationally-solving-a-4-x-4-system" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="compuationally-solving-a-4-x-4-system"><span class="header-section-number">5.2</span> Compuationally solving a 4 x 4 system</h2>
+<p>In this question, you will solve <span class="math inline">\(Ax=b\)</span> for the following <span class="math inline">\(A\)</span> and <span class="math inline">\(b\)</span>, using two different approaches.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-label="1"></a>A <span class="op">=</span> np.array([[ <span class="fl">1.44</span>,<span class="op">-</span><span class="fl">0.36</span>, <span class="fl">5.52</span>, <span class="fl">0.00</span>],</span>
+<span id="cb1-2"><a href="#cb1-2" aria-label="2"></a>              [<span class="op">-</span><span class="fl">0.36</span>,<span class="fl">10.33</span>,<span class="op">-</span><span class="fl">7.78</span>, <span class="fl">0.00</span>],</span>
+<span id="cb1-3"><a href="#cb1-3" aria-label="3"></a>              [ <span class="fl">5.52</span>,<span class="op">-</span><span class="fl">7.78</span>,<span class="fl">28.40</span>, <span class="fl">9.00</span>],</span>
+<span id="cb1-4"><a href="#cb1-4" aria-label="4"></a>              [ <span class="fl">0.00</span>, <span class="fl">0.00</span>, <span class="fl">9.00</span>, <span class="fl">61.00</span>]])</span>
+<span id="cb1-5"><a href="#cb1-5" aria-label="5"></a>b <span class="op">=</span> np.array([[<span class="fl">0.04</span>],</span>
+<span id="cb1-6"><a href="#cb1-6" aria-label="6"></a>              [<span class="op">-</span><span class="fl">2.15</span>],</span>
+<span id="cb1-7"><a href="#cb1-7" aria-label="7"></a>              [<span class="fl">0.00</span>],</span>
+<span id="cb1-8"><a href="#cb1-8" aria-label="8"></a>              [<span class="fl">0.88</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol type="1">
+<li>Use the function <code>gaussian_elimination</code> followed by the function <code>backward_substitution</code>.</li>
+<li>Use the function <code>LUdecomp</code>, followed by <code>forward_substitution</code> and then <code>backward_substitution</code>.</li>
+</ol>
+<p>Your code should print out statements of the form</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-label="1"></a>Answer by Gaussian elimination</span>
+<span id="cb2-2"><a href="#cb2-2" aria-label="2"></a>[ ... ... ... ... ]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-label="3"></a>Answer by LU decomp</span>
+<span id="cb2-4"><a href="#cb2-4" aria-label="4"></a>[ ... ... ... ... ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will need to use <code>hstack</code> in this problem. Because <code>numpy</code> makes a distinction between arrays of the form</p>
+<p><code>b1 = np.array([[0.04],[-2.15],[0.00],[0.88]])</code></p>
+<p>and those of the form</p>
+<p><code>b2 = np.array([0.04,-2.15,0.00,0.88])</code></p>
+<p>you may need to use the <code>reshape</code> function before you are able to properly <code>hstack</code> two arrays. Note that <code>np.reshape(b2,np.shape(b1))</code> will make <code>b2</code> identical to <code>b1</code>, i.e., it will turn <code>b2</code> into a column vector.</p>
+<p>Whether or not this is necessary depends on how you write your functions, so don’t worry if this doesn’t apply to you!</p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
