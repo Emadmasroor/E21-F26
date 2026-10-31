@@ -43,7 +43,7 @@ format:
 
 |              |                                              |
 | ------------ | -------------------------------------------- | 
-| Due Date     | Thu, Nov 06                                  | 
+| Due Date     | Fri, Nov 07                                  | 
 | Turn in link | Gradescope [PDF](https://moodle.swarthmore.edu/mod/lti/view.php?id=836413) and [Code](https://moodle.swarthmore.edu/mod/lti/view.php?id=836412)  | 
 | URL          | `emadmasroor.github.io/E21-F26/Homework/HW8` |
 

@@ -243,7 +243,8 @@ for i in range(N):
     m = (f2(x2)-f2(x1))/(x2-x1)
     c = f2(x1) - m*x1
     xnew = c/m
-    x1 = xnew
+    x1 = x2
+    x2 = xnew
     x_secant[i] = xnew
 
 # Bisection iterations
@@ -467,7 +468,8 @@ def secant(f,x1,x2,n):
         m = (f(x2)-f(x1))/(x2-x1)
         c = f(x1) - m*x1
         xnew = -c/m
-        x1 = xnew
+        x1 = x2
+        x2 = xnew
     return xnew
 
 # Test it on the desired function
