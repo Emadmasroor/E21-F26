@@ -1,7 +1,7 @@
       <meta charset="utf-8" emacsmode="-*- markdown -*-">
          **E21 Lab 4: Cubic spline interpolation**
-               **[ENGR 21 - Fall 2025](../index.html#lab4)**
-             **October 27-November 6, 2025**
+               **[ENGR 21 - Fall 2026](../labs.html)**
+             **November 2-12, 2026**
              **Due on Moodle prior to your next lab meeting.**
 
 Your tasks for this lab will be to apply numpy's built in linear
@@ -20,16 +20,11 @@ By the end of this lab, you will be able to:
   * Apply a special banded matrix solver to a tridiagonal matrix
   * Collaborate using driver/navigator pair programming
 
-(##) Pair Programming
-
-For this lab, I want you to practice a technique callled [driver/navigator pair programming](https://martinfowler.com/articles/on-pair-programming.html#DriverAndNavigator). One team member---the driver---uses the keyboard and mouse to write code, run code, test code, etc. The other team member---the navigator---reviews the code the driver writes, checks for errors in syntax or logic, and thinks ahead about the strategic goals and next steps of the programming task. The driver and navigator are in constant communication, thinking aloud and narrating the code as it is written, even though they have two different roles to focus on. Every so often, the driver and navigator switch roles.
-
-[Pair programming is used in software development for its benefits](https://www.datadoghq.com/knowledge-center/pair-programming/) of producing higher quality and more organized code as well as facilitating knowledge transfer between programmers. For this lab, you will practice the technique. Think of the analogy of actually driving a car where the driver is reacting to immediate tasks and the navigator is reading the map to alert the driver of upcoming tasks. I will remind you **every 20 minutes** to switch drivers.
-
 (##) Report Template
 
-Use the provided [lab report template](https://docs.google.com/document/d/1P7Bz-znjDZCZcbCYl2dlb0fPn8Ll3B4_sdgFmHD8CAs/copy) to answer the questions for this lab. For all E21 labs, please make sure to write up your answers to the questions in each exercise before you move on to the next task. The questions are designed to help you complete the labs efficiently.
-  
+Use the provided [lab report template](https://docs.google.com/document/d/11-kZayyXqV4qwVgu2ggnVgInO5lmvvw-HUf4HHUBXLk/copy) to answer the questions for this lab. For all E21 labs, please make sure to write up your answers to the questions in each exercise before you move on to the next task. The questions are designed to help you complete the labs efficiently.
+
+
 (##) Lab progress
 
 I expect most groups will at least have started Exercise 5 by the end
@@ -168,18 +163,8 @@ points. To do so, you and your partner will have to modify the
 
 (##) Before you begin
 
-Install scipy using the same method you used to install numpy. E.g. if
-you installed numpy using 
-
-~~~none
-pip install numpy
-~~~
-
-then install scipy using
-
-~~~none
-pip install scipy
-~~~
+Install scipy using the same method you used to install numpy. From Thonny,
+you can go to *Tools* -> *Manage packages...* and then search for scipy.
 
 Now look over the starter code, run it, then answer the following questions:
 
@@ -285,7 +270,7 @@ Kiusalaas section 2.4 for more information.)
   * **Q6)** Gaussian Elimination on a full $A$ matrix is particularly
     wasteful when $A$ is tridiagonal. Why? Describe how you could
     speed up the Gaussian Elimination algorithm (e.g. that you are
-    implementing in HW7) if we know $A$ is tridiagonal.
+    implementing in HW8) if we know $A$ is tridiagonal.
 
 ## Exercise 5: Fit a 2D spline
 
@@ -317,19 +302,24 @@ systems using **`numpy.linalg.solve`** or
 
 Prior to your next lab meeting, submit the following on Moodle:
 
-  * Your completed `cubic_splines.py` file.
+  * A PDF writeup using [the provided template](https://docs.google.com/document/d/11-kZayyXqV4qwVgu2ggnVgInO5lmvvw-HUf4HHUBXLk/copy) with your names and answers to all questions **Q1-Q7** above as well as the ones below:
   
-  * A PDF writeup using [the provided template](https://docs.google.com/document/d/1P7Bz-znjDZCZcbCYl2dlb0fPn8Ll3B4_sdgFmHD8CAs/copy) with your names and answers to all questions **Q1-Q7** above as well as the ones below:
+    * **Q8)** Copy your completed `cubic_splines.py` to Google drive
+      and share it with my Swarthmore email address
+      ([mzucker1@swarthmore.edu](mailto:mzucker1@swarthmore.edu)). Please
+      be nice to my inbox and uncheck "Notify people" when you share
+      it. What is the URL (beginning with `https://`) to your completed
+      `cubic_splines.py` file on Google drive?
 
-    * **Q8)** What problems did you run into when completing the tasks,
-      and how did you work together to overcome them? How did you find the experience of pair programming? What are the pros and cons of this approach?
+    * **Q9)** What problems did you run into when completing the tasks,
+      and how did you work together to overcome them? 
 
-    * **Q9)** Choose three **`numpy`** functions that are called in the
+    * **Q10)** Choose three **`numpy`** functions that are called in the
       starter code. For each one, provide a succinct description of
       what the function does, and explain why it is being called by the
       starter code. (One short paragraph per function, please.)
       
-    * **Q10)** Did all group members contribute equally to all tasks?
+    * **Q11)** Did all group members contribute equally to all tasks?
       If not, who did what for each exercise?
 
 ## Grading
