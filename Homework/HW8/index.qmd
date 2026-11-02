@@ -62,7 +62,9 @@ Combine all written HW into one PDF file.
 | 5.1     | PDF                                           |
 | 5.2     | Python code                                   |
 
+**Changelog:**
 
+- Slight modification to requirements of part 2 of 1.1.3, added Monday 4:30 PM.
 
 
 :::
@@ -203,7 +205,7 @@ It is also possible to show --- but not necessary for this assignment --- that t
 | $5$    | $30$                        |
 | $10$   | $285$                       |
 | $100$  | $\approx 3.28 \times 10^5$  |
-| $10^6$ | $\approx 3.33 \times 10^17$ |
+| $10^6$ | $\approx 3.33 \times 10^{17}$ |
 
 
 :::
@@ -214,7 +216,7 @@ It is also possible to show --- but not necessary for this assignment --- that t
 When a matrix is banded, a specialized solver exploits this banded structure to dramatically reduce the number of calculations needed to perform $LU$ decomposition on it. 
 
 1. In terms of $n$, how many nonzero terms need to be updated when performing $LU$ decomposition of a tridiagonal matrix of size $n \times n$ ?
-2. A square matrix has size $n$, and one engineer $LU$-decomposes it using an algorithm that does not take advantage of the banded structure, while a second engineer uses a specialized algorithm that only updates the necessary terms. Determine the ratio of the number of term updates carried out by the second engineer's algorithm compared to the first engineer's algorithm. The answer to @sec-terms will provide the denominator of this fraction.
+2. A square matrix has size $n$, and one engineer $LU$-decomposes it using an algorithm that does not take advantage of the banded structure, while a second engineer uses a specialized algorithm that only updates the necessary terms. Determine the ratio of the number of term updates carried out by the second engineer's algorithm compared to the first engineer's algorithm. **You may leave your answer in an un-simplified form**; you will compute this fraction numerically in question 5 below.
 3. In terms of $n$, what is the maximum number of nonzero terms in a tridiagonal matrix? 
 4. Assume that one byte of memory is used to store one entry in a matrix. What is the percentage saving in space when only the three bands of a tridiagonal $n \times n$ matrix are stored, instead of the full matrix? Give your answer in terms of $n$.
 5. Calculate the fraction from 2 and 4 above, for a matrix of size $5 \times 5$, $10 \times 10$, $100 \times 100$, and $10^{6} \times 10^6$. Write the answers as decimal numbers using scientific notation when necessary.
@@ -224,7 +226,7 @@ When a matrix is banded, a specialized solver exploits this banded structure to 
 ## Solution
 
 1. $\boxed{n-1}$ terms need to be updated when carrying out $LU$ decomposition of a tridiagonal matrix of size $n \times n$.
-2. $\displaystyle \frac{n-1}{\frac{1}{6}(2n-1)n(n+1)} = \frac{6}{n(2n-1)}$
+2. $\dfrac{\cancel{n-1}}{\frac{1}{6}(2n-1)n\cancel{(n-1)}} = \dfrac{6}{n(2n-1)}$. It is also acceptable to give the answer $\dfrac{n-1}{\displaystyle \sum_{i=1}^{n-1} i^2}$
 3. $n-1 + n-1 + n = 3n-2$
 4. $\displaystyle \frac{3n-2}{n^2}$
 5. A table with the answers is shown below.
