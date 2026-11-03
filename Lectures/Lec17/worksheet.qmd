@@ -1,5 +1,5 @@
 ---
-title: "Lecture 17 Worksheet"
+title: "Jacobi Worksheet"
 subtitle: "E21 Computer Engineering Fundamentals"
 topic: "Linear Systems"
 order: 17

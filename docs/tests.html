@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-10-26">
+<meta name="dcterms.date" content="2026-11-03">
 
 <title>Tests – ENGR 21 Computer Engineering Fundamentals</title>
 <style>
@@ -152,6 +152,34 @@ ul.task-list li input[type="checkbox"] {
 
     window['quarto-listings'] = window['quarto-listings'] || {};
     window['quarto-listings']['listing-test-3'] = new List('listing-test-3', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-test-4 .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-topic',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-test-4'] = new List('listing-test-4', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -395,26 +423,43 @@ window.Quarto = {
  <span class="menu-text">Lecture 16</span></a>
   </div>
 </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./Lectures/Lec17/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lectures/Lec17/worksheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jacobi Worksheet</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./Homework/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./Homework/HW1/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">HW 1</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./Homework/HW1/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Homework/HW1/solutions.html" class="sidebar-item-text sidebar-link">
@@ -427,11 +472,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./Homework/HW2/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 2</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Homework/HW2/solutions.html" class="sidebar-item-text sidebar-link">
@@ -444,11 +489,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./Homework/HW3/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 3</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Homework/HW3/solutions.html" class="sidebar-item-text sidebar-link">
@@ -461,11 +506,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./Homework/HW4/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 4</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Homework/HW4/solutions.html" class="sidebar-item-text sidebar-link">
@@ -478,11 +523,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./Homework/HW5/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 5</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Homework/HW5/solutions.html" class="sidebar-item-text sidebar-link">
@@ -495,11 +540,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./Homework/HW6/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 6</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Homework/HW6/solutions.html" class="sidebar-item-text sidebar-link">
@@ -512,15 +557,15 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./Homework/HW7/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 7</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Homework/HW7/solutions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">HW 7</span></a>
+ <span class="menu-text">HW 7 Solutions</span></a>
   </div>
 </li>
       </ul>
@@ -570,6 +615,7 @@ window.Quarto = {
   <li><a href="#test-1" id="toc-test-1" class="nav-link active" data-scroll-target="#test-1">Test 1</a></li>
   <li><a href="#test-2" id="toc-test-2" class="nav-link" data-scroll-target="#test-2">Test 2</a></li>
   <li><a href="#test-3" id="toc-test-3" class="nav-link" data-scroll-target="#test-3">Test 3</a></li>
+  <li><a href="#test-4" id="toc-test-4" class="nav-link" data-scroll-target="#test-4">Test 4</a></li>
   </ul>
 </nav>
     </div>
@@ -590,7 +636,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 26, 2026</p>
+      <p class="date">November 3, 2026</p>
     </div>
   </div>
   
@@ -1091,6 +1137,176 @@ HW 6
 <div class="card-attribution card-text-small end">
 <div class="listing-date">
 Oct 22, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+&nbsp;
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="test-4" class="level2">
+<h2 class="anchored" data-anchor-id="test-4">Test 4</h2>
+<div id="listing-test-4" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1792468800000" data-listing-file-modified-sort="1792670603702" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1665">
+<a href="./Lectures/Lec13/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lecture 13
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Oct 20, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+&nbsp;
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-date-sort="1792641600000" data-listing-file-modified-sort="1792679205143" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="23" data-listing-word-count-sort="4550">
+<a href="./Lectures/Lec14/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lecture 14
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Oct 22, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+Root-finding
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-date-sort="1793073600000" data-listing-file-modified-sort="1793282760497" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1260">
+<a href="./Lectures/Lec15/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lecture 15
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Oct 27, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+Linear Systems
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-date-sort="1793246400000" data-listing-file-modified-sort="1793283669106" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2275">
+<a href="./Lectures/Lec16/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lecture 16
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Oct 29, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+Linear Systems
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-date-sort="1793246400000" data-listing-file-modified-sort="1793410633359" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4738">
+<a href="./Homework/HW7/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+HW 7
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Oct 29, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+&nbsp;
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-date-sort="1793854800000" data-listing-file-modified-sort="1793655277056" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3569">
+<a href="./Homework/HW8/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+HW 8
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Nov 5, 2026
 </div>
 </div>
 <table class="card-other-values">

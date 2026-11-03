@@ -357,7 +357,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../Lectures/Lec17/worksheet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 17 Worksheet</span></a>
+ <span class="menu-text">Jacobi Worksheet</span></a>
   </div>
 </li>
       </ul>
@@ -544,7 +544,6 @@ window.Quarto = {
   <li><a href="#quantifying-closeness-of-two-numbers" id="toc-quantifying-closeness-of-two-numbers" class="nav-link" data-scroll-target="#quantifying-closeness-of-two-numbers">Quantifying closeness of two numbers</a></li>
   <li><a href="#the-residual-vector-and-iterative-methods" id="toc-the-residual-vector-and-iterative-methods" class="nav-link" data-scroll-target="#the-residual-vector-and-iterative-methods">The Residual vector and iterative methods</a></li>
   <li><a href="#divergence-and-convergence" id="toc-divergence-and-convergence" class="nav-link" data-scroll-target="#divergence-and-convergence">Divergence and Convergence</a></li>
-  <li><a href="#history-of-residual-norm" id="toc-history-of-residual-norm" class="nav-link" data-scroll-target="#history-of-residual-norm">History of Residual Norm</a></li>
   <li><a href="#the-gauss-seidel-approach" id="toc-the-gauss-seidel-approach" class="nav-link" data-scroll-target="#the-gauss-seidel-approach">The Gauss-Seidel Approach</a></li>
   <li><a href="#niceness-of-the-matrix-a" id="toc-niceness-of-the-matrix-a" class="nav-link" data-scroll-target="#niceness-of-the-matrix-a">Niceness of the matrix <span class="math inline">\(A\)</span></a></li>
   </ul>
@@ -721,7 +720,7 @@ x_3^{(k+1)}  &amp;= \frac{1}{A_{33}}\left( b_3 - A _{31} x_1^{(k)}  - A_{32} x_2
 <li>The correct way to make this assignment is: <code>xold = xnew.copy()</code></li>
 </ul>
 <div class="fragment">
-<div id="43bd3d56" class="cell" data-execution_count="2">
+<div id="ce61f323" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "Make a copy" then append only to the new one</span></span>
@@ -802,16 +801,16 @@ Copied:               [1, 2, 3, 4, 99]</code></pre>
 <li>How do we define goodness of a candidate solution?
 <ul>
 <li>The equation <span class="math inline">\(A x = b\)</span> can be used to numerically evaluate a candidate solution <span class="math inline">\(x^*\)</span> by evaluating <span class="math inline">\(\boxed{\left| \left| b - A x^* \right| \right|  }\)</span></li>
-<li>This quantity is known as the <strong>residual</strong> corresponding to the candidate solution <span class="math inline">\(x^*\)</span>.</li>
+<li>This quantity is known as the (norm of the) <strong>residual</strong> corresponding to the candidate solution <span class="math inline">\(x^*\)</span>.</li>
 <li>The smaller the (norm of the) residual, the better a candidate solution is.</li>
 </ul></li>
 </ul>
 </section>
-<section id="divergence-and-convergence" class="level3 smaller">
-<h3 class="smaller anchored" data-anchor-id="divergence-and-convergence">Divergence and Convergence</h3>
+<section id="divergence-and-convergence" class="level3 smaller scrollable">
+<h3 class="smaller scrollable anchored" data-anchor-id="divergence-and-convergence">Divergence and Convergence</h3>
 <div class="columns">
 <div class="column" style="width:45%;">
-<div id="ff5fe68b" class="cell" data-execution_count="3">
+<div id="0efa527b" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -824,7 +823,7 @@ Copied:               [1, 2, 3, 4, 99]</code></pre>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>],dtype<span class="op">=</span>np.float64)</span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> np.zeros(<span class="dv">3</span>)</span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">6</span></span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> np.zeros((n_steps<span class="op">+</span><span class="dv">1</span>,<span class="dv">3</span>))</span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>history[<span class="dv">0</span>,:] <span class="op">=</span> x1</span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
@@ -844,12 +843,15 @@ Copied:               [1, 2, 3, 4, 99]</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>[ 4.  -0.4 -2. ]
 [-6.2 -6.4  2.2]
-[-15.8  11.6  20.2]</code></pre>
+[-15.8  11.6  20.2]
+[ 74.2   34.16 -33.8 ]
+[  33.88 -131.44 -101.48]
+[-598.28  -94.    395.32]</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-4-output-2.png" width="573" height="410" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-4-output-2.png" width="580" height="410" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -857,7 +859,7 @@ Copied:               [1, 2, 3, 4, 99]</code></pre>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
-<div id="1e26bdc8" class="cell" data-execution_count="4">
+<div id="d8635fc6" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -870,7 +872,7 @@ Copied:               [1, 2, 3, 4, 99]</code></pre>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>],dtype<span class="op">=</span>np.float64)</span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> np.zeros(<span class="dv">3</span>)</span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">6</span></span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> np.zeros((n_steps<span class="op">+</span><span class="dv">1</span>,<span class="dv">3</span>))</span>
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>history[<span class="dv">0</span>,:] <span class="op">=</span> x1</span>
 <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
@@ -890,7 +892,10 @@ Copied:               [1, 2, 3, 4, 99]</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>[-0.5     0.3333 -0.25  ]
 [0.2917 0.7083 0.0833]
-[ 0.0313  0.6736 -0.1042]</code></pre>
+[ 0.0313  0.6736 -0.1042]
+[ 0.1337  0.724  -0.0868]
+[ 0.1124  0.7323 -0.112 ]
+[ 0.1229  0.7414 -0.1162]</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
@@ -902,10 +907,6 @@ Copied:               [1, 2, 3, 4, 99]</code></pre>
 </div>
 </div>
 </div>
-</section>
-<section id="history-of-residual-norm" class="level3">
-<h3 class="anchored" data-anchor-id="history-of-residual-norm">History of Residual Norm</h3>
-<p><span class="inclass">Plot <span class="math inline">\(\left| \left| b - A x^{{(k)}} \right| \right|\)</span> against <span class="math inline">\(\log k\)</span></span></p>
 </section>
 <section id="the-gauss-seidel-approach" class="level3">
 <h3 class="anchored" data-anchor-id="the-gauss-seidel-approach">The Gauss-Seidel Approach</h3>
