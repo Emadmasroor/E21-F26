@@ -1,0 +1,104 @@
+---
+title: "Lecture 17 Worksheet"
+subtitle: "E21 Computer Engineering Fundamentals"
+topic: "Linear Systems"
+order: 17
+date: 11-03-2026
+date-format: long
+uncover: true
+footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
+code-line-numbers: false
+code-fold: false
+header-includes:
+  - \renewcommand{\maketitle}{}
+
+format: 
+  html: 
+    output-file: worksheet.html
+  revealjs:
+    output-file: worksheet-slides.html
+  pdf:
+    output-file: worksheet.pdf
+    number-sections: false
+    geometry:
+      - margin=1in
+    include-in-header: 
+      text: |
+        \usepackage{scrlayer-scrpage,amsmath,amssymb}
+        \setlength{\footskip}{30pt}   % default is ~20pt
+        \setlength{\headheight}{30pt}   % default is ~20pt
+        \lohead{Worksheet}
+        \rohead{E21 Computer Engineering Fundamentals}
+        \rofoot{Fall 2026}
+        \lofoot{Swarthmore College}
+        \setheadsepline{1pt}   % line below header
+        \setfootsepline{1pt}   % line above footer
+---
+
+The Jacobi update formulas for a $3 \times 3$ matrix are given below.
+
+$$
+\begin{align}
+x_1^{(k+1)} &= \frac{1}{A_{11}}\left( b_1 - A _{12} x_2^{(k)} - A_{13} x_3^{(k)}  \right) \\
+x_2^{(k+1)}  &= \frac{1}{A_{22}}\left( b_2 - A _{21} x_1^{(k)}  - A_{23} x_3^{(k)}  \right) \\
+x_3^{(k+1)}  &= \frac{1}{A_{33}}\left( b_3 - A _{31} x_1^{(k)}  - A_{32} x_2^{(k)}  \right) 
+\end{align}
+$$
+
+### System 1:
+
+Find $\mathbf{x}^{(1)}$, $\mathbf{x}^{(2)}$ and $\mathbf{x}^{(3)}$ by successive application of the update formulas.
+
+$$
+A = \begin{bmatrix} 4 & 1 & 2 \\
+-\cfrac{1}{2} & 3 & \cfrac{3}{2} \\
+0 & 2 & 4 
+\end{bmatrix}, \quad b = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}, \quad \mathbf{x}^{(0)} = \begin{bmatrix} x_1^{(0)} \\ x_2^{(0)} \\ x_3^{(0)} \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}
+$$
+
+\vspace{1in}
+
+After 01 Jacobi iteration, $\displaystyle \mathbf{x}^{(1)} = \begin{bmatrix} x_1^{(1)} \\ x_2^{(1)} \\ x_3^{(1)} \end{bmatrix} = \begin{bmatrix} \phantom{x_1^{(0)}+10} \\ \phantom{x_2^{(0)}} \\ \phantom{x_1^{(0)}} \end{bmatrix}$
+
+\vspace{1in}
+
+After 2 Jacobi iterations, $\displaystyle \mathbf{x}^{(2)} = \begin{bmatrix} x_1^{(2)} \\ x_2^{(2)} \\ x_3^{(2)} \end{bmatrix} = \begin{bmatrix} \phantom{x_1^{(0)}} \\ \phantom{x_2^{(0)}+10} \\ \phantom{x_1^{(0)}} \end{bmatrix}$
+
+\vspace{1in}
+
+After 3 Jacobi iterations, $\displaystyle \mathbf{x}^{(3)} = \begin{bmatrix} x_1^{(3)} \\ x_2^{(3)} \\ x_3^{(3)} \end{bmatrix} = \begin{bmatrix} \phantom{x_1^{(0)}} \\ \phantom{x_2^{(0)}+10} \\ \phantom{x_1^{(0)}} \end{bmatrix}$
+
+{{< pagebreak >}}
+
+The Jacobi update formulas for a $3 \times 3$ matrix are given below.
+
+$$
+\begin{align}
+x_1^{(k+1)} &= \frac{1}{A_{11}}\left( b_1 - A _{12} x_2^{(k)} - A_{13} x_3^{(k)}  \right) \\
+x_2^{(k+1)}  &= \frac{1}{A_{22}}\left( b_2 - A _{21} x_1^{(k)}  - A_{23} x_3^{(k)}  \right) \\
+x_3^{(k+1)}  &= \frac{1}{A_{33}}\left( b_3 - A _{31} x_1^{(k)}  - A_{32} x_2^{(k)}  \right) 
+\end{align}
+$$
+
+### System 2:
+
+Find $\mathbf{x}^{(1)}$, $\mathbf{x}^{(2)}$ and $\mathbf{x}^{(3)}$ by successive application of the update formulas.
+
+$$
+A = \begin{bmatrix} -1 & 3 & 2 \\
+4 & 5/2 & -1 \\
+0 & 3 & 1 
+\end{bmatrix}, \quad b = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}, \quad \mathbf{x}^{(0)} = \begin{bmatrix} x_1^{(0)} \\ x_2^{(0)} \\ x_3^{(0)} \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}
+$$
+
+\vspace{1in}
+
+After 01 Jacobi iteration, $\displaystyle \mathbf{x}^{(1)} = \begin{bmatrix} x_1^{(1)} \\ x_2^{(1)} \\ x_3^{(1)} \end{bmatrix} = \begin{bmatrix} \phantom{x_1^{(0)}+10} \\ \phantom{x_2^{(0)}} \\ \phantom{x_1^{(0)}} \end{bmatrix}$
+
+\vspace{1in}
+
+After 2 Jacobi iterations, $\displaystyle \mathbf{x}^{(2)} = \begin{bmatrix} x_1^{(2)} \\ x_2^{(2)} \\ x_3^{(2)} \end{bmatrix} = \begin{bmatrix} \phantom{x_1^{(0)}} \\ \phantom{x_2^{(0)}+10} \\ \phantom{x_1^{(0)}} \end{bmatrix}$
+
+\vspace{1in}
+
+After 3 Jacobi iterations, $\displaystyle \mathbf{x}^{(3)} = \begin{bmatrix} x_1^{(3)} \\ x_2^{(3)} \\ x_3^{(3)} \end{bmatrix} = \begin{bmatrix} \phantom{x_1^{(0)}} \\ \phantom{x_2^{(0)}+10} \\ \phantom{x_1^{(0)}} \end{bmatrix}$
