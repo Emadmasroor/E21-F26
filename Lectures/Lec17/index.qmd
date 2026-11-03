@@ -198,9 +198,24 @@ xnew = np.zeros(3)
 n_steps = 3
 ```
 
+::: {.content-hidden unless-meta="uncover"}
+```
+for k in range(n_steps):
+    # One for loop to go over each component of x
+    for j in range(len(xold)):
+        total = 0
+        for i in range(len(xold)):
+            if i != j:
+                total += A[j,i] * xold[i]
+        xnew[j] = (1/(A[j,j])) * (b[j] - total)
+    print(xnew)
+    xold = xnew.copy()
+```
+:::
+
 ### The need for `copy`
 
-- We often need a statements of the kind `xold = xnew` at the end of an iteration
+- We often need a statement of the kind `xold = xnew` at the end of an iteration
 - The correct way to make this assignment is: `xold = xnew.copy()`
 
 ::: {.fragment}

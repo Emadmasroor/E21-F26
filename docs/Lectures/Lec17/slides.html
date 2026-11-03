@@ -343,30 +343,40 @@ x_3^{(k+1)}  &amp;= \frac{1}{A_{33}}\left( b_3 - A _{31} x_1^{(k)}  - A_{32} x_2
 <span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>xnew <span class="op">=</span> np.zeros(<span class="dv">3</span>)</span>
 <span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>for k in range(n_steps):
+    # One for loop to go over each component of x
+    for j in range(len(xold)):
+        total = 0
+        for i in range(len(xold)):
+            if i != j:
+                total += A[j,i] * xold[i]
+        xnew[j] = (1/(A[j,j])) * (b[j] - total)
+    print(xnew)
+    xold = xnew.copy()</code></pre>
 </section>
 <section id="the-need-for-copy" class="slide level3">
 <h3>The need for <code>copy</code></h3>
 <ul>
-<li class="fragment">We often need a statements of the kind <code>xold = xnew</code> at the end of an iteration</li>
+<li class="fragment">We often need a statement of the kind <code>xold = xnew</code> at the end of an iteration</li>
 <li class="fragment">The correct way to make this assignment is: <code>xold = xnew.copy()</code></li>
 </ul>
 <div class="fragment">
 <div id="f0fc9363" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># "Make a copy" then append only to the new one</span></span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>assigned <span class="op">=</span> original</span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>assigned.append(<span class="dv">4</span>)</span>
-<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Original (via =):     </span><span class="sc">{</span>original<span class="sc">}</span><span class="ss">"</span>) </span>
-<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Assigned:             </span><span class="sc">{</span>assigned<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Make a copy using .copy() then append only to the new one</span></span>
-<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a>copied <span class="op">=</span> original.copy()</span>
-<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a>copied.append(<span class="dv">99</span>)</span>
-<span id="cb3-13"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Original (via .copy): </span><span class="sc">{</span>original<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-15"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Copied:               </span><span class="sc">{</span>copied<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># "Make a copy" then append only to the new one</span></span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>assigned <span class="op">=</span> original</span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>assigned.append(<span class="dv">4</span>)</span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Original (via =):     </span><span class="sc">{</span>original<span class="sc">}</span><span class="ss">"</span>) </span>
+<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Assigned:             </span><span class="sc">{</span>assigned<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Make a copy using .copy() then append only to the new one</span></span>
+<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a>copied <span class="op">=</span> original.copy()</span>
+<span id="cb4-12"><a aria-hidden="true" tabindex="-1"></a>copied.append(<span class="dv">99</span>)</span>
+<span id="cb4-13"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Original (via .copy): </span><span class="sc">{</span>original<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-15"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Copied:               </span><span class="sc">{</span>copied<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Original (via =):     [1, 2, 3, 4]
 Assigned:             [1, 2, 3, 4]
@@ -390,27 +400,27 @@ Copied:               [1, 2, 3, 4, 99]</code></pre>
 <div class="columns">
 <div class="column" style="width:45%;">
 <p><strong>Overwrite each step</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># First guess</span></span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>xold <span class="op">=</span> np.array([<span class="fl">1.0</span>,<span class="fl">1.0</span>,<span class="fl">3.0</span>])</span>
-<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>xnew <span class="op">=</span> np.zeros(<span class="dv">3</span>)</span>
-<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># Perform one iteration, find xnew</span></span>
-<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a>    xold <span class="op">=</span> xnew.copy()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># First guess</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>xold <span class="op">=</span> np.array([<span class="fl">1.0</span>,<span class="fl">1.0</span>,<span class="fl">3.0</span>])</span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>xnew <span class="op">=</span> np.zeros(<span class="dv">3</span>)</span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># Perform one iteration, find xnew</span></span>
+<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a aria-hidden="true" tabindex="-1"></a>    xold <span class="op">=</span> xnew.copy()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
 <p><strong>Save history</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># First guess</span></span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>xold <span class="op">=</span> np.array([<span class="fl">1.0</span>,<span class="fl">1.0</span>,<span class="fl">3.0</span>])</span>
-<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>xnew <span class="op">=</span> np.zeros(<span class="dv">3</span>)</span>
-<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>xhst <span class="op">=</span> np.zeros((<span class="dv">10</span>,<span class="dv">3</span>))</span>
-<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># Perform one iteration, find xnew</span></span>
-<span id="cb6-8"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a aria-hidden="true" tabindex="-1"></a>    xhst[i,:] <span class="op">=</span> xnew</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># First guess</span></span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>xold <span class="op">=</span> np.array([<span class="fl">1.0</span>,<span class="fl">1.0</span>,<span class="fl">3.0</span>])</span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>xnew <span class="op">=</span> np.zeros(<span class="dv">3</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>xhst <span class="op">=</span> np.zeros((<span class="dv">10</span>,<span class="dv">3</span>))</span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># Perform one iteration, find xnew</span></span>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a aria-hidden="true" tabindex="-1"></a>    xhst[i,:] <span class="op">=</span> xnew</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 </div>
 </section>
