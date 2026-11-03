@@ -199,7 +199,7 @@ n_steps = 3
 ```
 
 ::: {.content-hidden unless-meta="uncover"}
-```
+```{.python}
 for k in range(n_steps):
     # One for loop to go over each component of x
     for j in range(len(xold)):

@@ -343,16 +343,16 @@ x_3^{(k+1)}  &amp;= \frac{1}{A_{33}}\left( b_3 - A _{31} x_1^{(k)}  - A_{32} x_2
 <span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>xnew <span class="op">=</span> np.zeros(<span class="dv">3</span>)</span>
 <span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>for k in range(n_steps):
-    # One for loop to go over each component of x
-    for j in range(len(xold)):
-        total = 0
-        for i in range(len(xold)):
-            if i != j:
-                total += A[j,i] * xold[i]
-        xnew[j] = (1/(A[j,j])) * (b[j] - total)
-    print(xnew)
-    xold = xnew.copy()</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(n_steps):</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># One for loop to go over each component of x</span></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(xold)):</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(xold)):</span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> i <span class="op">!=</span> j:</span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>                total <span class="op">+=</span> A[j,i] <span class="op">*</span> xold[i]</span>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a>        xnew[j] <span class="op">=</span> (<span class="dv">1</span><span class="op">/</span>(A[j,j])) <span class="op">*</span> (b[j] <span class="op">-</span> total)</span>
+<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(xnew)</span>
+<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a>    xold <span class="op">=</span> xnew.copy()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="the-need-for-copy" class="slide level3">
 <h3>The need for <code>copy</code></h3>
