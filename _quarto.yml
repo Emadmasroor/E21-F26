@@ -41,6 +41,8 @@ website:
       - href: tests.qmd
       - href: "https://mzucker.github.io/swarthmore/linalg-reintroduction.pdf"
         text: "Matt Zucker's Intro to Linear Algebra"
+      - href: "kiusalaas_2ed.pdf"
+        text: "Numerical Methods in Engineering with Python"
 
 
 format:
