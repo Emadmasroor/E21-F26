@@ -124,7 +124,8 @@ The following four statements are equivalent, and any one of them implies all th
    - For 2x2 matrices, the determinant of $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ is $\det A = |ad-bc|$
 4. $A$ is invertible, i.e., the matrix $A^{-1}$ exists such that $A A^{-1} = I$
 5. The rows of $A$ are linearly independent
-   - i.e., the indvidual scalar equations in $Ax=b$ are not multiples of each other.
+   - i.e., the indvidual scalar equations in $Ax=b$ are not multiples of each other
+   - and no row is a linear combination of the other rows
 
 ### Pivoting (in direct methods)
 
@@ -146,6 +147,15 @@ B = \begin{bmatrix}
 0 & -1 & 1 
 \end{bmatrix}
 $$
+
+### Pivoting Procedure {.scrollable}
+
+1. Calculate a scale factor for each row: $\displaystyle s_i \equiv \max_{j} |A_{ij}|$
+2. Define the **relative size of an element** $A_{ij}$ as $r_{ij} \equiv \frac{|A_{ij}|}{s_i}.$ This measures how big element $A_{ij}$ is relative to the other elements [in its row]{.underline}. 
+3. In the Gaussian elimination procedure, before you start eliminating the entries of column $k$, check the relative size of all elments in column $k$ below the diagonal, i.e., determine $\displaystyle r_{pk} = \max_j (r_{jk}), \quad j \ge k$
+4. Swap rows $k$ and $p$
+
+![](pivoting.png)
 
 
 ### Well-conditioned and ill-conditioned matrices
@@ -192,8 +202,6 @@ np.float64(3.125)
 A matrix's determinant is very small if 
 $$\det A \ll ||A||$$
 :::
-
-### 
 
 
 

@@ -557,9 +557,9 @@ window.Quarto = {
   <li><a href="#but-does-a-solution-to-axb-even-exist" id="toc-but-does-a-solution-to-axb-even-exist" class="nav-link" data-scroll-target="#but-does-a-solution-to-axb-even-exist">But does a solution to <span class="math inline">\(Ax=b\)</span> even exist?</a></li>
   <li><a href="#four-equivalent-statements-about-solvability-of-axb" id="toc-four-equivalent-statements-about-solvability-of-axb" class="nav-link" data-scroll-target="#four-equivalent-statements-about-solvability-of-axb">Four equivalent statements about solvability of <span class="math inline">\(Ax=b\)</span></a></li>
   <li><a href="#pivoting-in-direct-methods" id="toc-pivoting-in-direct-methods" class="nav-link" data-scroll-target="#pivoting-in-direct-methods">Pivoting (in direct methods)</a></li>
+  <li><a href="#pivoting-procedure" id="toc-pivoting-procedure" class="nav-link" data-scroll-target="#pivoting-procedure">Pivoting Procedure</a></li>
   <li><a href="#well-conditioned-and-ill-conditioned-matrices" id="toc-well-conditioned-and-ill-conditioned-matrices" class="nav-link" data-scroll-target="#well-conditioned-and-ill-conditioned-matrices">Well-conditioned and ill-conditioned matrices</a></li>
   <li><a href="#identifying-ill-conditioned-matrices" id="toc-identifying-ill-conditioned-matrices" class="nav-link" data-scroll-target="#identifying-ill-conditioned-matrices">Identifying Ill-conditioned matrices</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
@@ -748,7 +748,8 @@ Statement 1 does not hold if:
 <li><span class="math inline">\(A\)</span> is invertible, i.e., the matrix <span class="math inline">\(A^{-1}\)</span> exists such that <span class="math inline">\(A A^{-1} = I\)</span></li>
 <li>The rows of <span class="math inline">\(A\)</span> are linearly independent
 <ul>
-<li>i.e., the indvidual scalar equations in <span class="math inline">\(Ax=b\)</span> are not multiples of each other.</li>
+<li>i.e., the indvidual scalar equations in <span class="math inline">\(Ax=b\)</span> are not multiples of each other</li>
+<li>and no row is a linear combination of the other rows</li>
 </ul></li>
 </ol>
 </section>
@@ -773,6 +774,16 @@ B = \begin{bmatrix}
 \end{bmatrix}
 \]</span></li>
 </ul>
+</section>
+<section id="pivoting-procedure" class="level3 scrollable">
+<h3 class="scrollable anchored" data-anchor-id="pivoting-procedure">Pivoting Procedure</h3>
+<ol type="1">
+<li>Calculate a scale factor for each row: <span class="math inline">\(\displaystyle s_i \equiv \max_{j} |A_{ij}|\)</span></li>
+<li>Define the <strong>relative size of an element</strong> <span class="math inline">\(A_{ij}\)</span> as <span class="math inline">\(r_{ij} \equiv \frac{|A_{ij}|}{s_i}.\)</span> This measures how big element <span class="math inline">\(A_{ij}\)</span> is relative to the other elements <u>in its row</u>.</li>
+<li>In the Gaussian elimination procedure, before you start eliminating the entries of column <span class="math inline">\(k\)</span>, check the relative size of all elments in column <span class="math inline">\(k\)</span> below the diagonal, i.e., determine <span class="math inline">\(\displaystyle r_{pk} = \max_j (r_{jk}), \quad j \ge k\)</span></li>
+<li>Swap rows <span class="math inline">\(k\)</span> and <span class="math inline">\(p\)</span></li>
+</ol>
+<p><img src="pivoting.png" class="img-fluid"></p>
 </section>
 <section id="well-conditioned-and-ill-conditioned-matrices" class="level3">
 <h3 class="anchored" data-anchor-id="well-conditioned-and-ill-conditioned-matrices">Well-conditioned and ill-conditioned matrices</h3>
@@ -822,9 +833,6 @@ B = \begin{bmatrix}
 <div class="fragment">
 <p>A matrix’s determinant is very small if <span class="math display">\[\det A \ll ||A||\]</span></p>
 </div>
-</section>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section"></h3>
 
 
 </section>

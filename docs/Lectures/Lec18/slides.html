@@ -307,7 +307,8 @@ Statement 1 does not hold if:
 <li class="fragment"><span class="math inline">\(A\)</span> is invertible, i.e., the matrix <span class="math inline">\(A^{-1}\)</span> exists such that <span class="math inline">\(A A^{-1} = I\)</span></li>
 <li class="fragment">The rows of <span class="math inline">\(A\)</span> are linearly independent
 <ul>
-<li class="fragment">i.e., the indvidual scalar equations in <span class="math inline">\(Ax=b\)</span> are not multiples of each other.</li>
+<li class="fragment">i.e., the indvidual scalar equations in <span class="math inline">\(Ax=b\)</span> are not multiples of each other</li>
+<li class="fragment">and no row is a linear combination of the other rows</li>
 </ul></li>
 </ol>
 </section>
@@ -332,6 +333,16 @@ B = \begin{bmatrix}
 \end{bmatrix}
 \]</span></li>
 </ul>
+</section>
+<section id="pivoting-procedure" class="slide level3 scrollable">
+<h3>Pivoting Procedure</h3>
+<ol type="1">
+<li class="fragment">Calculate a scale factor for each row: <span class="math inline">\(\displaystyle s_i \equiv \max_{j} |A_{ij}|\)</span></li>
+<li class="fragment">Define the <strong>relative size of an element</strong> <span class="math inline">\(A_{ij}\)</span> as <span class="math inline">\(r_{ij} \equiv \frac{|A_{ij}|}{s_i}.\)</span> This measures how big element <span class="math inline">\(A_{ij}\)</span> is relative to the other elements <u>in its row</u>.</li>
+<li class="fragment">In the Gaussian elimination procedure, before you start eliminating the entries of column <span class="math inline">\(k\)</span>, check the relative size of all elments in column <span class="math inline">\(k\)</span> below the diagonal, i.e., determine <span class="math inline">\(\displaystyle r_{pk} = \max_j (r_{jk}), \quad j \ge k\)</span></li>
+<li class="fragment">Swap rows <span class="math inline">\(k\)</span> and <span class="math inline">\(p\)</span></li>
+</ol>
+<p><img data-src="pivoting.png"></p>
 </section>
 <section id="well-conditioned-and-ill-conditioned-matrices" class="slide level3">
 <h3>Well-conditioned and ill-conditioned matrices</h3>
@@ -381,9 +392,6 @@ B = \begin{bmatrix}
 <div class="fragment">
 <p>A matrix’s determinant is very small if <span class="math display">\[\det A \ll ||A||\]</span></p>
 </div>
-</section>
-<section id="section" class="slide level3">
-<h3></h3>
 
 
 </section>
