@@ -1,0 +1,172 @@
+---
+title: "Lec 18 Worksheet"
+subtitle: "E21 Computer Engineering Fundamentals"
+topic: "Linear Systems"
+order: 18
+date: 11-05-2026
+date-format: long
+uncover: true
+footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
+code-line-numbers: false
+code-fold: false
+header-includes:
+  - \renewcommand{\maketitle}{}
+
+format: 
+  html: 
+    output-file: worksheet.html
+  revealjs:
+    output-file: worksheet-slides.html
+  pdf:
+    output-file: worksheet.pdf
+    number-sections: false
+    geometry:
+      - margin=1in
+    include-in-header: 
+      text: |
+        \usepackage{scrlayer-scrpage,amsmath,amssymb}
+        \setlength{\footskip}{30pt}   % default is ~20pt
+        \setlength{\headheight}{30pt}   % default is ~20pt
+        \lohead{Worksheet}
+        \rohead{E21 Computer Engineering Fundamentals}
+        \rofoot{Fall 2026}
+        \lofoot{Swarthmore College}
+        \setheadsepline{1pt}   % line below header
+        \setfootsepline{1pt}   % line above footer
+---
+
+
+Consider the following sets of simultaneous equations.
+
+::: {.columns}
+
+::: {.column width="45%"}
+
+**Set 1**
+
+Solve 
+$$
+\begin{align}
+4x_1 + 2x_2 &= -3 \\
+2x_1 + x_2 &= 2
+\end{align}
+$$
+for $x_1$ and $x_2$.
+
+:::
+::: {.column width="5%"}
+:::
+::: {.column width="45%"}
+
+**Set 2**
+
+Solve 
+$$
+\begin{align}
+4x_1 + 2x_2 &= -3 \\
+2x_1 - x_2 &= 2
+\end{align}
+$$
+for $x_1$ and $x_2$.
+
+:::
+:::
+
+**Classifying Matrices**
+
+In the following, identify:
+
+1. the matrices that are likely to have a unique solution to $Ax=b$
+2. the matrices that represent systems of equations that can be solved using the Jacobi method
+3. the matrices that represent systems of equations that can be solved using $LU$ factorization (after rearranging the rows if necessary)
+
+$$
+B_1 = \begin{bmatrix}
+1 & 2 & 3 \\
+0 & 1 & 4 \\
+5 & 6 & 0
+\end{bmatrix}, \quad 
+B_2 = \begin{bmatrix}
+2 & -1 & 0 \\
+1 & 3 & 2 \\
+0 & -2 & 1
+\end{bmatrix}$$
+
+$$
+B_3 = \begin{bmatrix}
+2 & 1 & -1 & 3 \\
+0 & 3 & 1 & 4 \\
+4 & 2 & -2 & 6 \\
+1 & 0 & 2 & -1
+\end{bmatrix}, \quad
+B_4 = \begin{bmatrix}
+1 & 2 & 0 & 3 \\
+2 & -1 & 4 & 1 \\
+1 & 1 & 2 & 1 \\
+2 & 0 & 2 & 3
+\end{bmatrix}, \quad 
+B_5 = \begin{bmatrix}
+1 & 0 & 2 & 1 \\
+0 & 1 & -1 & 2 \\
+2 & 1 & 0 & 1 \\
+1 & 3 & 1 & 0
+\end{bmatrix}
+$$
+
+
+{{< pagebreak >}}
+
+For each of the following systems of equations,
+
+1. Solve the equations for $x$ and $y$.
+2. Find the determinant of the associated matrix
+3. Calculate the condition number.
+
+::: {.callout-tip}
+
+Note that the matrix $$\begin{bmatrix} a & b \\ c & d \end{bmatrix}$$ has determinant $|ad-bc|$ and its inverse is $$\frac{1}{|ad-bc|} \begin{bmatrix} d & -b  \\ -c & a \end{bmatrix}$$
+:::
+
+
+::: {.columns}
+
+::: {.column width="30%"}
+
+**Set 1**
+
+$$
+\begin{align}
+2x + y &= 3 \\
+2x+1.001y &= 0
+\end{align}
+$$
+
+:::
+
+::: {.column width="30%"}
+
+**Set 2**
+
+$$
+\begin{align}
+2x + y &= 3 \\
+2x+1.002y &= 0
+\end{align}
+$$
+
+:::
+
+::: {.column width="30%"}
+
+**Set 3**
+
+$$
+\begin{align}
+2x + y &= 3 \\
+2x+1.001y &= -0.001
+\end{align}
+$$
+
+:::
+
+:::

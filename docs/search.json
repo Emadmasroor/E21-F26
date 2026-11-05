@@ -36,6 +36,18 @@
     ]
   },
   {
+    "objectID": "Lectures/Lec18/index.html",
+    "href": "Lectures/Lec18/index.html",
+    "title": "Lecture 18",
+    "section": "",
+    "text": "Divergence and Convergence\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.set_printoptions(4)\nA = np.array([[-1 ,3  ,2 ],\n              [4  ,5/2,-1],\n              [0  ,3  ,1 ]],dtype=np.float64)\nb = np.array([1,2,1],dtype=np.float64)\n\nx1 = np.array([1,1,1],dtype=np.float64)\nx2 = np.zeros(3)\n\nn_steps = 6\nhistory = np.zeros((n_steps+1,3))\nhistory[0,:] = x1\n\nfor i in range(n_steps):\n    x2[0] = 1/(A[0,0]) * (b[0] - A[0,1] * x1[1] - A[0,2] * x1[2])\n    x2[1] = 1/(A[1,1]) * (b[1] - A[1,0] * x1[0] - A[1,2] * x1[2])\n    x2[2] = 1/(A[2,2]) * (b[2] - A[2,0] * x1[0] - A[2,1] * x1[1])\n\n    print(x2)\n    x1 = x2.copy()\n    history[i+1,:] = x2\n\nplt.plot(history,'o-',label=['$x_1$','$x_2$','$x_3$'])\nplt.grid(True)\nplt.legend()\nplt.show()\n\n[ 4.  -0.4 -2. ]\n[-6.2 -6.4  2.2]\n[-15.8  11.6  20.2]\n[ 74.2   34.16 -33.8 ]\n[  33.88 -131.44 -101.48]\n[-598.28  -94.    395.32]\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nnp.set_printoptions(4)\nA = np.array([[4   ,1  ,2  ],\n              [-1/2,3  ,3/2],\n              [0   ,2  ,4  ]],dtype=np.float64)\nb = np.array([1,2,1],dtype=np.float64)\n\nx1 = np.array([1,1,1],dtype=np.float64)\nx2 = np.zeros(3)\n\nn_steps = 6\nhistory = np.zeros((n_steps+1,3))\nhistory[0,:] = x1\n\nfor i in range(n_steps):\n    x2[0] = 1/(A[0,0]) * (b[0] - A[0,1] * x1[1] - A[0,2] * x1[2])\n    x2[1] = 1/(A[1,1]) * (b[1] - A[1,0] * x1[0] - A[1,2] * x1[2])\n    x2[2] = 1/(A[2,2]) * (b[2] - A[2,0] * x1[0] - A[2,1] * x1[1])\n\n    print(x2)\n    x1 = x2.copy()\n    history[i+1,:] = x2\n\nplt.plot(history,'o-',label=['$x_1$','$x_2$','$x_3$'])\nplt.grid(True)\nplt.legend()\nplt.show()\n\n[-0.5     0.3333 -0.25  ]\n[0.2917 0.7083 0.0833]\n[ 0.0313  0.6736 -0.1042]\n[ 0.1337  0.724  -0.0868]\n[ 0.1124  0.7323 -0.112 ]\n[ 0.1229  0.7414 -0.1162]\n\n\n\n\n\n\n\n\n\n\n\n\n\nTolerance, Residual, Norm\n\nAn iterative numerical algorithm for \\(Ax=b\\) can be terminated when the sequence \\[x^{(0)} \\rightarrow x^{(1)} \\rightarrow x^{(2)} \\rightarrow ... \\rightarrow x^{(k)}\\] sufficiently converges\nUnder certain conditions, this is guaranteed to happen.\nTypically, we use while loops to implement this:\nPseudo-code:\nwhile norm(residual) &gt; tolerance:\n  carry out 1 iteration of numerical method\n  calculate residual\n\n\n\nConvergence Guarantees\nJacobi and Gauss-Seidel methods are guaranteed to converge to a solution of \\(Ax=b\\) $under either of the following conditions:\n\nThe matrix \\(A\\) is diagonally dominant, or\nThe matrix \\(A\\) is symmetric (\\(A_{ij} = A_{ji}\\) for all \\(i\\) and \\(j\\)) and positive definite (all eigenvalues are positive)\n\n\n\nBut does a solution to \\(Ax=b\\) even exist?\n\nConvergence guarantees are of no use to us if the system of equations \\(Ax=b\\) has no solution.\nWhen does \\(Ax=b\\) have no unique solution? Worksheet\n\n\n\nFour equivalent statements about solvability of \\(Ax=b\\)\nThe following four statements are equivalent, and any one of them implies all the others.\n\nThere is a unique solution \\(x\\) for the equation \\(Ax=b\\)\nStatement 1 does not hold if:\n\nIf more than one different vectors \\(x\\) satisfy the equation \\(Ax=b\\), then statement 1 does not hold.\nIf no vector \\(x\\) satisfies the equation \\(Ax=b\\), then statement 1 does not hold\n\nThe matrix \\(A\\) is not singular\n\nA singular matrix is bad — it represents equations that cannot be solved.\n\nThe determinant of \\(A\\) is not equal to zero\n\nFor 2x2 matrices, the determinant of \\(A = \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}\\) is \\(\\det A = |ad-bc|\\)\n\n\\(A\\) is invertible, i.e., the matrix \\(A^{-1}\\) exists such that \\(A A^{-1} = I\\)\nThe rows of \\(A\\) are linearly independent\n\ni.e., the indvidual scalar equations in \\(Ax=b\\) are not multiples of each other.\n\n\n\n\nPivoting (in direct methods)\n\nPython’s numpy package contains numpy.linalg.solve(A,b) which pretty much always works if a uniques solution to \\(Ax=b\\) exists\nDirect methods with pivoting!\n\nThe need for pivoting\n\nConsider the two matrices \\[\nA = \\begin{bmatrix}\n0 & -1 & 1 \\\\\n-1 & 2 & -1 \\\\\n2 & -1 & 0\n\\end{bmatrix}, \\quad\nB = \\begin{bmatrix}\n2 & -1 & 0  \\\\\n-1 & 2 & -1 \\\\\n0 & -1 & 1\n\\end{bmatrix}\n\\]\n\n\n\nWell-conditioned and ill-conditioned matrices\nThe condition number of a matrix is defined as the product of the norm of the matrix and the norm of its inverse:\n\\[\\text{cond } A = || A || \\cdot || A^{-1}||\\]\nNote: When computing \\(|| A ||\\) for a matrix we will use the Frobenius norm: \\[|| A || \\equiv \\sqrt{\\sum_{i=1}^{N} \\sum_{j=1}^N A_{ij}^2}.\\]\n\n&gt;&gt;&gt; a = np.array([[4,2],[2,-1]])\n&gt;&gt;&gt; np.linalg.norm(a)*np.linalg.norm(np.linalg.inv(a))\nnp.float64(3.125)\n&gt;&gt;&gt; np.linalg.cond(a)\nnp.float64(2.763085794518659)\n&gt;&gt;&gt; np.linalg.cond(a, 'fro')\nnp.float64(3.125)\n\n\nIll-conditioned matrices lead to error accumulation\n\n\n\nIdentifying Ill-conditioned matrices\n\n\n\nDescription\nCriterion\n\n\n\n\nWell conditioned\n\\(\\text{cond}(A) \\approx 1\\)\n\n\nIll conditioned\n\\(\\text{cond}(A) \\gg 1\\)\n\n\nSingular\n\\(\\text{cond}(A) \\rightarrow \\infty\\)\n\n\n\nHeuristic:\nIf a matrix is ill-conditioned, its determinant is very small.\nBut what does ‘small’ mean?\n\nA matrix’s determinant is very small if \\[\\det A \\ll ||A||\\]",
+    "crumbs": [
+      "Homepage",
+      "Lectures",
+      "Lecture 18"
+    ]
+  },
+  {
     "objectID": "Lectures/Lec11/index.html",
     "href": "Lectures/Lec11/index.html",
     "title": "Lecture 11",
@@ -1036,6 +1048,17 @@
     "title": "Tests",
     "section": "Test 3",
     "text": "Test 3\n\n\n\n\n\n\n\nLecture 09\n\n\n\nSep 29, 2026\n\n\n\n\n\n\ntopic\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\nLecture 10\n\n\n\nOct 1, 2026\n\n\n\n\n\n\ntopic\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\nLecture 11\n\n\n\nOct 6, 2026\n\n\n\n\n\n\ntopic\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\nLecture 12\n\n\n\nOct 8, 2026\n\n\n\n\n\n\ntopic\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\nHW 5\n\n\n\nOct 8, 2026\n\n\n\n\n\n\ntopic\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\nHW 6\n\n\n\nOct 22, 2026\n\n\n\n\n\n\ntopic\n\n\n \n\n\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Homepage",
+      "Tests"
+    ]
+  },
+  {
+    "objectID": "tests.html#test-4",
+    "href": "tests.html#test-4",
+    "title": "Tests",
+    "section": "Test 4",
+    "text": "Test 4\n\n\n\n\n\n\n\nLecture 13\n\n\n\nOct 20, 2026\n\n\n\n\n\n\ntopic\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\nLecture 14\n\n\n\nOct 22, 2026\n\n\n\n\n\n\ntopic\n\n\nRoot-finding\n\n\n\n\n\n\n\n\n\n\n\n\nLecture 15\n\n\n\nOct 27, 2026\n\n\n\n\n\n\ntopic\n\n\nLinear Systems\n\n\n\n\n\n\n\n\n\n\n\n\nLecture 16\n\n\n\nOct 29, 2026\n\n\n\n\n\n\ntopic\n\n\nLinear Systems\n\n\n\n\n\n\n\n\n\n\n\n\nHW 7\n\n\n\nOct 29, 2026\n\n\n\n\n\n\ntopic\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\nHW 8\n\n\n\nNov 5, 2026\n\n\n\n\n\n\ntopic\n\n\n \n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Homepage",
       "Tests"
@@ -2127,6 +2150,19 @@
     ]
   },
   {
+    "objectID": "Lectures/Lec18/worksheet.html",
+    "href": "Lectures/Lec18/worksheet.html",
+    "title": "Lec 18 Worksheet",
+    "section": "",
+    "text": "Consider the following sets of simultaneous equations.\n\n\nSet 1\nSolve \\[\n\\begin{align}\n4x_1 + 2x_2 &= -3 \\\\\n2x_1 + x_2 &= 2\n\\end{align}\n\\] for \\(x_1\\) and \\(x_2\\).\n\n\n\nSet 2\nSolve \\[\n\\begin{align}\n4x_1 + 2x_2 &= -3 \\\\\n2x_1 - x_2 &= 2\n\\end{align}\n\\] for \\(x_1\\) and \\(x_2\\).\n\n\nClassifying Matrices\nIn the following, identify:\n\nthe matrices that are likely to have a unique solution to \\(Ax=b\\)\nthe matrices that represent systems of equations that can be solved using the Jacobi method\nthe matrices that represent systems of equations that can be solved using \\(LU\\) factorization (after rearranging the rows if necessary)\n\n\\[\nB_1 = \\begin{bmatrix}\n1 & 2 & 3 \\\\\n0 & 1 & 4 \\\\\n5 & 6 & 0\n\\end{bmatrix}, \\quad\nB_2 = \\begin{bmatrix}\n2 & -1 & 0 \\\\\n1 & 3 & 2 \\\\\n0 & -2 & 1\n\\end{bmatrix}\\]\n\\[\nB_3 = \\begin{bmatrix}\n2 & 1 & -1 & 3 \\\\\n0 & 3 & 1 & 4 \\\\\n4 & 2 & -2 & 6 \\\\\n1 & 0 & 2 & -1\n\\end{bmatrix}, \\quad\nB_4 = \\begin{bmatrix}\n1 & 2 & 0 & 3 \\\\\n2 & -1 & 4 & 1 \\\\\n1 & 1 & 2 & 1 \\\\\n2 & 0 & 2 & 3\n\\end{bmatrix}, \\quad\nB_5 = \\begin{bmatrix}\n1 & 0 & 2 & 1 \\\\\n0 & 1 & -1 & 2 \\\\\n2 & 1 & 0 & 1 \\\\\n1 & 3 & 1 & 0\n\\end{bmatrix}\n\\]\n\nFor each of the following systems of equations,\n\nSolve the equations for \\(x\\) and \\(y\\).\nFind the determinant of the associated matrix\nCalculate the condition number.\n\n\n\n\n\n\n\nTip\n\n\n\nNote that the matrix \\[\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}\\] has determinant \\(|ad-bc|\\) and its inverse is \\[\\frac{1}{|ad-bc|} \\begin{bmatrix} d & -b  \\\\ -c & a \\end{bmatrix}\\]\n\n\n\n\nSet 1\n\\[\n\\begin{align}\n2x + y &= 3 \\\\\n2x+1.001y &= 0\n\\end{align}\n\\]\n\nSet 2\n\\[\n\\begin{align}\n2x + y &= 3 \\\\\n2x+1.002y &= 0\n\\end{align}\n\\]\n\nSet 3\n\\[\n\\begin{align}\n2x + y &= 3 \\\\\n2x+1.001y &= -0.001\n\\end{align}\n\\]",
+    "crumbs": [
+      "Homepage",
+      "Lectures",
+      "Lecture 18",
+      "Lec 18 Worksheet"
+    ]
+  },
+  {
     "objectID": "Lectures/Lec6/index.html",
     "href": "Lectures/Lec6/index.html",
     "title": "Lecture 06",
@@ -2148,17 +2184,6 @@
       "Homepage",
       "Lectures",
       "Lecture 09"
-    ]
-  },
-  {
-    "objectID": "tests.html#test-4",
-    "href": "tests.html#test-4",
-    "title": "Tests",
-    "section": "Test 4",
-    "text": "Test 4\n\n\n\n\n\n\n\nLecture 13\n\n\n\nOct 20, 2026\n\n\n\n\n\n\ntopic\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\nLecture 14\n\n\n\nOct 22, 2026\n\n\n\n\n\n\ntopic\n\n\nRoot-finding\n\n\n\n\n\n\n\n\n\n\n\n\nLecture 15\n\n\n\nOct 27, 2026\n\n\n\n\n\n\ntopic\n\n\nLinear Systems\n\n\n\n\n\n\n\n\n\n\n\n\nLecture 16\n\n\n\nOct 29, 2026\n\n\n\n\n\n\ntopic\n\n\nLinear Systems\n\n\n\n\n\n\n\n\n\n\n\n\nHW 7\n\n\n\nOct 29, 2026\n\n\n\n\n\n\ntopic\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\nHW 8\n\n\n\nNov 5, 2026\n\n\n\n\n\n\ntopic\n\n\n \n\n\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Homepage",
-      "Tests"
     ]
   }
 ]
