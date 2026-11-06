@@ -18,6 +18,7 @@ Homework assignments will be due on Thursdays at midnight. Submit them on Grades
 | [HW 6](HW6)   | Thu, Oct 22 | Gradescope [code](https://moodle.swarthmore.edu/mod/lti/view.php?id=834329) and [PDF](https://moodle.swarthmore.edu/mod/lti/view.php?id=834330) |
 | [HW 7](HW7)   | Thu, Oct 29 | Gradescope [code](https://moodle.swarthmore.edu/mod/lti/view.php?id=835485) and [PDF](https://moodle.swarthmore.edu/mod/lti/view.php?id=835486) |
 | [HW 8](HW8)   | Fri, Nov 06 | Gradescope [code](https://moodle.swarthmore.edu/mod/lti/view.php?id=836412) and [PDF](https://moodle.swarthmore.edu/mod/lti/view.php?id=836413) |
+| [HW 9](HW9)   | Thu, Nov 12 | Gradescope [code](https://www.gradescope.com/courses/1380463/assignments/9012603) and [PDF](https://www.gradescope.com/courses/1380463/assignments/9012629) |
 
 
 
