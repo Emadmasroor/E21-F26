@@ -1,5 +1,5 @@
 ---
-title: "HW 8"
+title: "HW 8 Solutions"
 order: 80
 date: 11-05-2026
 date-format: long
