@@ -194,7 +194,7 @@ np.float64(3.125)
 
 [**Heuristic**:]{.fragment}
 
-[[If a matrix is ill-conditioned, its determinant is very small.]{.emph}]{.fragment}
+[[If a matrix is ill-conditioned, its determinant (or the determinant of its inverse) is very small.]{.emph}]{.fragment}
 
 [But what does 'small' mean?]{.fragment}
 
