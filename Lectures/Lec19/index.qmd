@@ -13,6 +13,19 @@ code-line-numbers: false
 code-fold: false
 ---
 
+### Today
+
+::: {.r-fit-text}
+Test 4
+:::
+
+### Starting Today
+
+::: {.r-fit-text}
+Final Project
+:::
+
+
 ### Polynomial Interpolation with two points
 
 **Goal:** Find the equation of a straight line that passes through two known points
