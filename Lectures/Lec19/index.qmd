@@ -1,0 +1,383 @@
+---
+title: "Lecture 19"
+subtitle: "E21 Computer Engineering Fundamentals"
+author: "Emad Masroor"
+topic: "Linear Systems"
+order: 19
+date: 11-09-2026
+date-format: long
+jupyter: python3
+uncover: false
+footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
+code-line-numbers: false
+code-fold: false
+---
+
+### Polynomial Interpolation with two points
+
+**Goal:** Find the equation of a straight line that passes through two known points
+
+1. The general equation of a polynomial of degree 1:
+
+   $y = a_0 + a_1 x$
+2. 'Plug in' the given points as two equations
+
+   $\begin{aligned} y_0 &= a_0 + a_1 x_0 \\ y_1 &= a_0 + a_1 x_1\end{aligned}$
+
+3. Solve two simultaneous equations for the two unknowns
+   
+   $\begin{bmatrix} 1 & x_0 \\ 1 & x_1 \end{bmatrix} \begin{bmatrix} a_0 \\ a_1 \end{bmatrix} = \begin{bmatrix} y_0 \\ y_1 \end{bmatrix}$
+
+
+[Find a straight line through 2 points $\implies$ polynomial interpolation with degree 1]{.emph .fragment}
+
+### Polynomial Interpolation with three points
+
+**Goal:** Find the equation of a straight line that passes through **three** known points
+
+1. The general equation of a polynomial of degree 1:
+
+   $y = a_0 + a_1 x$
+2. 'Plug in' the given points as three equations
+
+   $\begin{aligned} y_0 &= a_0 + a_1 x_0 \\ y_1 &= a_0 + a_1 x_1 \\ y_2 &= a_0 + a_1 x_2 \end{aligned}$
+
+3. Solve three simultaneous equations for the two unknowns
+   
+   $\begin{bmatrix} 1 & x_0 \\ 1 & x_1 \\ 1 & x_2 \end{bmatrix} \begin{bmatrix} a_0 \\ a_1 \end{bmatrix} = \begin{bmatrix} y_0 \\ y_1 \\ y_2 \end{bmatrix}$
+
+
+[Not possible --- too many equations; system is overdetermined]{.emph .fragment}
+
+### Finding a quadratic curve that goes through all three points
+
+**Goal:** Find the equation of a straight line that passes through **three** known points
+
+1. The general equation of a polynomial of degree 2:
+
+   $y = a_0 + a_1 x + a_2 x^2$
+2. 'Plug in' the given points as three equations
+
+   $\begin{aligned} y_0 &= a_0 + a_1 x_0 + a_2 x_0^2 \\ y_0 &= a_0 + a_1 x_1 + a_2 x_1^2 \\ y_0 &= a_0 + a_1 x_2 + a_2 x_2^2 \end{aligned}$
+
+3. Solve three simultaneous equations for the two unknowns
+   
+   $\begin{bmatrix} 1 & x_0 & x_0^2 \\ 1 & x_1 & x_1^2 \\ 1 & x_2 & x_2^2 \end{bmatrix} \begin{bmatrix} a_0 \\ a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} y_0 \\ y_1 \\ y_2 \end{bmatrix}$
+
+
+[Polynomial interpolation with degree 3]{.emph .fragment}
+
+### Interpolation through $n+1$ points on a plane with a polynomial of order $n$
+
+$$
+\underbrace{\begin{bmatrix}
+x_0^0 & x_0^1 & x_0^2 & \cdots & x_0^n \\
+x_1^0 & x_1^1 & x_1^2 & \cdots & x_1^n \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+x_n^0 & x_n^1 & x_n^2 & \cdots & x_n^n
+\end{bmatrix}}_{A}
+\begin{bmatrix}
+a_0 \\
+a_1 \\
+\vdots \\
+a_n
+\end{bmatrix}
+=
+\begin{bmatrix}
+y_0 \\
+y_1 \\
+\vdots \\
+y_n
+\end{bmatrix}
+$$
+
+[The matrix $A$ is a 'Vandermonde Matrix']{.fragment}
+
+[A system of $n+1$ equations for interpolating a polynomial of degree $n$ through $n+1$ points on the plane]{.emph .fragment}
+
+### Polynomial Interpolation Matrix 
+
+Let's look at some examples of Vandermonde matrices:
+
+[Calculate the Vandermonde matrix for]{.inclass} for the interpolation of a cubic polynomial through the following four points: $\begin{bmatrix} 1.0 \\ -0.1 \end{bmatrix}, \begin{bmatrix} 2.0 \\ -3.4 \end{bmatrix},\begin{bmatrix} 3.0 \\ 5.9 \end{bmatrix}, \begin{bmatrix} 4.0 \\ 11.2 \end{bmatrix}$
+
+::: {.absolute bottom="2%" left="2%" width="30%"}
+::: {.r-fit-text}
+$$
+\begin{bmatrix} a_0 \\ a_1 \\ a_2 \\ a_3 \end{bmatrix} = 
+\begin{bmatrix}
+x_0^0 & x_0^1 & x_0^2 & x_0^3 \\
+x_1^0 & x_1^1 & x_1^2 & x_1^3 \\
+x_2^0 & x_2^1 & x_2^2 & x_2^3 \\
+x_3^0 & x_3^1 & x_3^2 & x_3^3
+\end{bmatrix}^{-1}
+\begin{bmatrix} y_0 \\ y_1 \\ y_2 \\ y_3 \end{bmatrix}
+$$
+:::
+:::
+
+::: {.absolute bottom="2%" left="50%" width="450px"}
+::: {.r-stack}
+::: {.fragment}
+```{.tikz width="6in"}
+%%| additionalPackages: \usepackage{pgfplots}
+
+\begin{tikzpicture}
+  \begin{axis}[
+    xmin=-1, xmax=5,
+    ymin=-6, ymax=14,
+    axis lines=middle,
+    xlabel={$x$},
+    ylabel={$y$},
+    title={\phantom{hello, world}},
+    grid=both,
+    grid style={line width=0.1pt, draw=gray!20},
+    major grid style={line width=0.2pt, draw=gray!40},
+    samples=200,
+    domain=-1:5
+  ]
+    % Polynomial Curve
+    % \addplot[thick, blue] {11.2 + (3.76667 + (3.53333 - 2.76667*(x - 2))*(x - 1))*(x - 4)};
+
+    % Points
+    \addplot[only marks, mark=*, mark size=2.5pt, red] coordinates {
+      (1, -0.1)
+      (2, -3.4)
+      (3, 5.9)
+      (4, 11.2)
+    };
+  \end{axis}
+\end{tikzpicture}
+```
+:::
+::: {.fragment}
+```{.tikz width="6in" .fragment}
+%%| additionalPackages: \usepackage{pgfplots}
+
+\begin{tikzpicture}
+  \begin{axis}[
+    xmin=-1, xmax=5,
+    ymin=-6, ymax=14,
+    axis lines=middle,
+    title={$y = 32.4 - 52.6 x + 22.9 x^2 - 2.7 x^3$},
+    xlabel={$x$},
+    ylabel={$y$},
+    grid=both,
+    grid style={line width=0.1pt, draw=gray!20},
+    major grid style={line width=0.2pt, draw=gray!40},
+    samples=200,
+    domain=-1:5
+  ]
+    % Polynomial Curve
+    \addplot[thick, blue] {11.2 + (3.76667 + (3.53333 - 2.76667*(x - 2))*(x - 1))*(x - 4)};
+
+    % Points
+    \addplot[only marks, mark=*, mark size=2.5pt, red] coordinates {
+      (1, -0.1)
+      (2, -3.4)
+      (3, 5.9)
+      (4, 11.2)
+    };
+  \end{axis}
+\end{tikzpicture}
+```
+:::
+:::
+:::
+
+::: {.fragment}
+::: {.content-visible when-meta="uncover"}
+$$
+\begin{bmatrix}
+x_0^0 & x_0^1 & x_0^2 & x_0^3 \\
+x_1^0 & x_1^1 & x_1^2 & x_1^3 \\
+x_2^0 & x_2^1 & x_2^2 & x_2^3 \\
+x_3^0 & x_3^1 & x_3^2 & x_3^3
+\end{bmatrix} = 
+\begin{bmatrix}
+1 & 1 & 1 & 1 \\
+1 & 2 & 4 & 8 \\
+1 & 3 & 9 & 27 \\
+1 & 4 & 16 & 64 \\
+\end{bmatrix} 
+$$
+:::
+:::
+
+### Condition Number of Vandermonde matrices
+
+Use Python to [find the condition number]{.inclass} ([lecture 18](../Lec18/#well-conditioned-and-ill-conditioned-matrices)) of the Vandermonde matrices for interpolating a polynomial to the following sets of points.
+
+::: {.r-fit-text}
+::: {layout-ncol=2}
+$\overbrace{\begin{bmatrix} 0.03125 \\ 0.5 \end{bmatrix}, \begin{bmatrix} 0.0625 \\ -1.5 \end{bmatrix},\begin{bmatrix} 0.09375 \\ 4.5 \end{bmatrix}, \begin{bmatrix}  0.125 \\ 0 \end{bmatrix}}^{}$
+
+
+$\underbrace{\begin{bmatrix} 0.25 \\ 0.5 \end{bmatrix}, \begin{bmatrix} 0.5 \\ -1.5 \end{bmatrix},\begin{bmatrix} 0.75 \\ 4.5 \end{bmatrix}, \begin{bmatrix}  1.0 \\ 0 \end{bmatrix}}_{}$
+:::
+:::
+
+::: {.content-visible when-meta="uncover"}
+::: {.fragment}
+::: {layout-ncol=2}
+$\boxed{50,373}$
+
+$\boxed{331.35}$
+:::
+:::
+:::
+
+```{.python}
+def vandermonde_matrix(xlist):
+    # Creates a Vandermonde matrix from the x-positions in `xlist`
+    n = len(xlist)
+    A = np.zeros((n,n),dtype=np.float64)
+    for i,el in enumerate(xlist):
+        for j in range(n):
+            A[j,i] = xlist[j]**i
+    return A
+```
+
+
+[The interval over which interpolation is carried out greatly affects condition number]{.emph .fragment}
+
+
+
+### Condition Number versus Interpolation interval {.scrollable}
+
+```{.tikz width="6in" .fragment}
+%%| additionalPackages: \usepackage{pgfplots}
+
+\begin{tikzpicture}
+  \begin{axis}[
+    xmin=0, xmax=0.125+0.03125,
+    axis lines=middle,
+    xlabel={$x$},
+    ylabel={$y$},
+    grid=both,
+    grid style={line width=0.1pt, draw=gray!20},
+    major grid style={line width=0.2pt, draw=gray!40},
+    samples=200,
+    domain=0:0.15625,
+    xtick={0.03125, 0.0625, 0.09375, 0.125},
+    xticklabels={0.03125, 0.0625, 0.09375, 0.125},
+    scaled x ticks=false,
+    xticklabel style={
+      rotate=45,
+      anchor=north east
+    }
+  ]
+    % Polynomial Curve
+    \addplot[thick, blue] {29 - 1533.33 * x + 23040 * x^2 - 101035 * x^3};
+
+    % Points
+    \addplot[only marks, mark=*, mark size=2.5pt, red] coordinates {
+      (0.03125, 0.5)
+      (0.0625, -1.5)
+      (0.09375, 4.5) 
+      (0.125, 0)
+    };
+  \end{axis}
+\end{tikzpicture}
+```
+
+```{.tikz width="6in" .fragment}
+%%| additionalPackages: \usepackage{pgfplots}
+
+\begin{tikzpicture}
+  \begin{axis}[
+    xmin=0, xmax=1+0.25,
+    axis lines=middle,
+    xlabel={$x$},
+    ylabel={$y$},
+    grid=both,
+    grid style={line width=0.1pt, draw=gray!20},
+    major grid style={line width=0.2pt, draw=gray!40},
+    samples=200,
+    domain=0:1.25,
+    xtick={0.25,0.50,0.75,1.0},
+    xticklabels={0.25,0.50,0.75,1.0},
+    scaled x ticks=false,
+    xticklabel style={
+      rotate=45,
+      anchor=north east
+    }
+  ]
+    % Polynomial Curve
+    \addplot[thick, blue] {(-0.666667 + (14.6667 - 197.333*(-0.5 + x))*(-0.25 + x))*(-1. + x)};
+
+    % Points
+    \addplot[only marks, mark=*, mark size=2.5pt, red] coordinates {
+      (0.25, 0.5)
+      (0.50, -1.5)
+      (0.75, 4.5) 
+      (1.00, 0)
+    };
+  \end{axis}
+\end{tikzpicture}
+```
+
+::: {.content-visible when-meta="uncover"}
+```{python}
+#| code-fold: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+def vandermonde_matrix(xlist):
+    # Creates a Vandermonde matrix from the x-positions in `xlist`
+    n = len(xlist)
+    A = np.zeros((n,n),dtype=np.float64)
+    for i,el in enumerate(xlist):
+        for j in range(n):
+            A[j,i] = xlist[j]**i
+    return A
+
+def vandermonde_condition_number(xlist):
+    A = vandermonde_matrix(xlist)
+    cond_A = np.linalg.cond(A,'fro')
+    print(f"For a vandermonde matrix made of {xlist}")
+    print(f"Condition number is {cond_A}")
+    return cond_A
+
+exponents = range(-7,7,1)
+output = np.zeros((len(exponents),2))
+
+for i,el in enumerate(exponents):
+    print(f"With n = {el}")
+    highest_number = 2.0**el
+    step_size = highest_number/4
+    xs = [step_size, 2*step_size, 3*step_size, highest_number]
+    output[i,0] = el
+    output[i,1] = vandermonde_condition_number(xs)
+
+
+plt.bar(output[:,0],output[:,1])
+plt.ylabel("Condition Number")
+plt.xlabel("n")
+plt.yscale("log")
+plt.title("Vandermonde matrix with \n x = [0.25*2^n, 0.5*2^n, 0.75*2^n, 1.0 * 2^n]")
+plt.show()
+```
+:::
+
+### Problems with Polynomial interpolation
+
+- Under certain conditions, an interpolating polynomial is **guaranteed to exist** mathematically.
+  - Restrictions:
+    - Number of points and degree of polynomial must be compatible
+    - No two points can have the same $y$ value
+- Large condition numbers cause problems
+  - Even though the mathematical problem is typically solvable
+  - One solution: use Newton's method (ch.3.2 of textbook) for interpolating a polynomial
+
+
+### Runge's Phenomenon
+
+$$f(x) = \frac{1}{1+25 x^2}$$
+
+[Find an interpolating polynomial that passes through 5 equally spaced points on $f(x)$ from $x=-1$ to $x=+1$]{.inclass}
+
+
+
+
+
