@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Emad Masroor">
-<meta name="dcterms.date" content="2026-11-09">
+<meta name="dcterms.date" content="2026-11-10">
 
 <title>Lecture 19 – ENGR 21 Computer Engineering Fundamentals</title>
 <style>
@@ -570,6 +570,12 @@ window.Quarto = {
  <span class="menu-text">Numerical Methods in Engineering with Python</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://docs.google.com/presentation/d/1wjAhY1-zOz8ymXgxrZd3azuY1CMTaOfHaF108zEodPo/edit?slide=id.p#slide=id.p" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Project</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -617,7 +623,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 9, 2026</p>
+      <p class="date">November 10, 2026</p>
     </div>
   </div>
   
@@ -639,6 +645,12 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="starting-today">Starting Today</h3>
 <div class="r-fit-text">
 <p>Final Project</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://docs.google.com/presentation/d/1wjAhY1-zOz8ymXgxrZd3azuY1CMTaOfHaF108zEodPo/edit?slide=id.p#slide=id.p" class="img-fluid figure-img"></p>
+<figcaption>Slides from Presentation</figcaption>
+</figure>
 </div>
 </section>
 <section id="polynomial-interpolation-with-two-points" class="level3">
@@ -735,7 +747,20 @@ x_3^0 &amp; x_3^1 &amp; x_3^2 &amp; x_3^3
 </div>
 </div>
 <div class="fragment">
-
+<p><span class="math display">\[
+\begin{bmatrix}
+x_0^0 &amp; x_0^1 &amp; x_0^2 &amp; x_0^3 \\
+x_1^0 &amp; x_1^1 &amp; x_1^2 &amp; x_1^3 \\
+x_2^0 &amp; x_2^1 &amp; x_2^2 &amp; x_2^3 \\
+x_3^0 &amp; x_3^1 &amp; x_3^2 &amp; x_3^3
+\end{bmatrix} =
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 2 &amp; 4 &amp; 8 \\
+1 &amp; 3 &amp; 9 &amp; 27 \\
+1 &amp; 4 &amp; 16 &amp; 64 \\
+\end{bmatrix}
+\]</span></p>
 </div>
 </section>
 <section id="condition-number-of-vandermonde-matrices" class="level3">
@@ -749,6 +774,18 @@ x_3^0 &amp; x_3^1 &amp; x_3^2 &amp; x_3^3
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p><span class="math inline">\(\underbrace{\begin{bmatrix} 0.25 \\ 0.5 \end{bmatrix}, \begin{bmatrix} 0.5 \\ -1.5 \end{bmatrix},\begin{bmatrix} 0.75 \\ 4.5 \end{bmatrix}, \begin{bmatrix}  1.0 \\ 0 \end{bmatrix}}_{}\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><span class="math inline">\(\boxed{50,373}\)</span></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><span class="math inline">\(\boxed{331.35}\)</span></p>
 </div>
 </div>
 </div>
@@ -767,6 +804,99 @@ x_3^0 &amp; x_3^1 &amp; x_3^2 &amp; x_3^3
 <h3 class="scrollable anchored" data-anchor-id="condition-number-versus-interpolation-interval">Condition Number versus Interpolation interval</h3>
 <img src="index_files/mediabag/tikz.d8e2f5e0.svg" class="img-fluid" style="width:6in">
 <img src="index_files/mediabag/tikz.3e72e22a.svg" class="img-fluid" style="width:6in">
+<div id="9f1fcc4f" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vandermonde_matrix(xlist):</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Creates a Vandermonde matrix from the x-positions in `xlist`</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(xlist)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    A <span class="op">=</span> np.zeros((n,n),dtype<span class="op">=</span>np.float64)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i,el <span class="kw">in</span> <span class="bu">enumerate</span>(xlist):</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>            A[j,i] <span class="op">=</span> xlist[j]<span class="op">**</span>i</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> A</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vandermonde_condition_number(xlist):</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    A <span class="op">=</span> vandermonde_matrix(xlist)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    cond_A <span class="op">=</span> np.linalg.cond(A,<span class="st">'fro'</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"For a vandermonde matrix made of </span><span class="sc">{</span>xlist<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Condition number is </span><span class="sc">{</span>cond_A<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cond_A</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>exponents <span class="op">=</span> <span class="bu">range</span>(<span class="op">-</span><span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">1</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> np.zeros((<span class="bu">len</span>(exponents),<span class="dv">2</span>))</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,el <span class="kw">in</span> <span class="bu">enumerate</span>(exponents):</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"With n = </span><span class="sc">{</span>el<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    highest_number <span class="op">=</span> <span class="fl">2.0</span><span class="op">**</span>el</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    step_size <span class="op">=</span> highest_number<span class="op">/</span><span class="dv">4</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> [step_size, <span class="dv">2</span><span class="op">*</span>step_size, <span class="dv">3</span><span class="op">*</span>step_size, highest_number]</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    output[i,<span class="dv">0</span>] <span class="op">=</span> el</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    output[i,<span class="dv">1</span>] <span class="op">=</span> vandermonde_condition_number(xs)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.bar(output[:,<span class="dv">0</span>],output[:,<span class="dv">1</span>])</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Condition Number"</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"n"</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>plt.yscale(<span class="st">"log"</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Vandermonde matrix with </span><span class="ch">\n</span><span class="st"> x = [0.25*2^n, 0.5*2^n, 0.75*2^n, 1.0 * 2^n]"</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>With n = -7
+For a vandermonde matrix made of [0.001953125, 0.00390625, 0.005859375, 0.0078125]
+Condition number is 200104475.54951715
+With n = -6
+For a vandermonde matrix made of [0.00390625, 0.0078125, 0.01171875, 0.015625]
+Condition number is 25022246.383165702
+With n = -5
+For a vandermonde matrix made of [0.0078125, 0.015625, 0.0234375, 0.03125]
+Condition number is 3132373.3468269915
+With n = -4
+For a vandermonde matrix made of [0.015625, 0.03125, 0.046875, 0.0625]
+Condition number is 393841.132037466
+With n = -3
+For a vandermonde matrix made of [0.03125, 0.0625, 0.09375, 0.125]
+Condition number is 50373.99224592936
+With n = -2
+For a vandermonde matrix made of [0.0625, 0.125, 0.1875, 0.25]
+Condition number is 6863.662615671886
+With n = -1
+For a vandermonde matrix made of [0.125, 0.25, 0.375, 0.5]
+Condition number is 1141.842454808791
+With n = 0
+For a vandermonde matrix made of [0.25, 0.5, 0.75, 1.0]
+Condition number is 331.35123199279394
+With n = 1
+For a vandermonde matrix made of [0.5, 1.0, 1.5, 2.0]
+Condition number is 371.4719547885741
+With n = 2
+For a vandermonde matrix made of [1.0, 2.0, 3.0, 4.0]
+Condition number is 1176.9374570374491
+With n = 3
+For a vandermonde matrix made of [2.0, 4.0, 6.0, 8.0]
+Condition number is 5956.8876457098895
+With n = 4
+For a vandermonde matrix made of [4.0, 8.0, 12.0, 16.0]
+Condition number is 39921.7781032595
+With n = 5
+For a vandermonde matrix made of [8.0, 16.0, 24.0, 32.0]
+Condition number is 302978.9615841781
+With n = 6
+For a vandermonde matrix made of [16.0, 32.0, 48.0, 64.0]
+Condition number is 2390434.3340785685</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-2-output-2.png" width="591" height="467" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="problems-with-polynomial-interpolation" class="level3">
 <h3 class="anchored" data-anchor-id="problems-with-polynomial-interpolation">Problems with Polynomial interpolation</h3>
@@ -786,10 +916,103 @@ x_3^0 &amp; x_3^1 &amp; x_3^2 &amp; x_3^3
 </ul></li>
 </ul>
 </section>
-<section id="runges-phenomenon" class="level3">
-<h3 class="anchored" data-anchor-id="runges-phenomenon">Runge’s Phenomenon</h3>
+<section id="runges-phenomenon" class="level3 scrollable">
+<h3 class="scrollable anchored" data-anchor-id="runges-phenomenon">Runge’s Phenomenon</h3>
 <p><span class="math display">\[f(x) = \frac{1}{1+25 x^2}\]</span></p>
 <p><span class="inclass">Find an interpolating polynomial that passes through 5 equally spaced points on <span class="math inline">\(f(x)\)</span> from <span class="math inline">\(x=-1\)</span> to <span class="math inline">\(x=+1\)</span></span></p>
+<div id="b9166d94" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vandermonde_matrix(xlist):</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Creates a Vandermonde matrix from the x-positions in `xlist`</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(xlist)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    A <span class="op">=</span> np.zeros((n,n),dtype<span class="op">=</span>np.float64)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i,el <span class="kw">in</span> <span class="bu">enumerate</span>(xlist):</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>            A[j,i] <span class="op">=</span> xlist[j]<span class="op">**</span>i</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> A</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vandermonde_condition_number(xlist):</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    A <span class="op">=</span> vandermonde_matrix(xlist)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    cond_A <span class="op">=</span> np.linalg.cond(A,<span class="st">'fro'</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"For a vandermonde matrix made of </span><span class="sc">{</span>xlist<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Condition number is </span><span class="sc">{</span>cond_A<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cond_A</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>exponents <span class="op">=</span> <span class="bu">range</span>(<span class="op">-</span><span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">1</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> np.zeros((<span class="bu">len</span>(exponents),<span class="dv">2</span>))</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,el <span class="kw">in</span> <span class="bu">enumerate</span>(exponents):</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"With n = </span><span class="sc">{</span>el<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    highest_number <span class="op">=</span> <span class="fl">2.0</span><span class="op">**</span>el</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    step_size <span class="op">=</span> highest_number<span class="op">/</span><span class="dv">4</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> [step_size, <span class="dv">2</span><span class="op">*</span>step_size, <span class="dv">3</span><span class="op">*</span>step_size, highest_number]</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    output[i,<span class="dv">0</span>] <span class="op">=</span> el</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    output[i,<span class="dv">1</span>] <span class="op">=</span> vandermonde_condition_number(xs)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>plt.bar(output[:,<span class="dv">0</span>],output[:,<span class="dv">1</span>])</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Condition Number"</span>)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"n"</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>plt.yscale(<span class="st">"log"</span>)</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Vandermonde matrix with </span><span class="ch">\n</span><span class="st"> x = [0.25*2^n, 0.5*2^n, 0.75*2^n, 1.0 * 2^n]"</span>)</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>With n = -7
+For a vandermonde matrix made of [0.001953125, 0.00390625, 0.005859375, 0.0078125]
+Condition number is 200104475.54951715
+With n = -6
+For a vandermonde matrix made of [0.00390625, 0.0078125, 0.01171875, 0.015625]
+Condition number is 25022246.383165702
+With n = -5
+For a vandermonde matrix made of [0.0078125, 0.015625, 0.0234375, 0.03125]
+Condition number is 3132373.3468269915
+With n = -4
+For a vandermonde matrix made of [0.015625, 0.03125, 0.046875, 0.0625]
+Condition number is 393841.132037466
+With n = -3
+For a vandermonde matrix made of [0.03125, 0.0625, 0.09375, 0.125]
+Condition number is 50373.99224592936
+With n = -2
+For a vandermonde matrix made of [0.0625, 0.125, 0.1875, 0.25]
+Condition number is 6863.662615671886
+With n = -1
+For a vandermonde matrix made of [0.125, 0.25, 0.375, 0.5]
+Condition number is 1141.842454808791
+With n = 0
+For a vandermonde matrix made of [0.25, 0.5, 0.75, 1.0]
+Condition number is 331.35123199279394
+With n = 1
+For a vandermonde matrix made of [0.5, 1.0, 1.5, 2.0]
+Condition number is 371.4719547885741
+With n = 2
+For a vandermonde matrix made of [1.0, 2.0, 3.0, 4.0]
+Condition number is 1176.9374570374491
+With n = 3
+For a vandermonde matrix made of [2.0, 4.0, 6.0, 8.0]
+Condition number is 5956.8876457098895
+With n = 4
+For a vandermonde matrix made of [4.0, 8.0, 12.0, 16.0]
+Condition number is 39921.7781032595
+With n = 5
+For a vandermonde matrix made of [8.0, 16.0, 24.0, 32.0]
+Condition number is 302978.9615841781
+With n = 6
+For a vandermonde matrix made of [16.0, 32.0, 48.0, 64.0]
+Condition number is 2390434.3340785685</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-3-output-2.png" width="591" height="467" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>

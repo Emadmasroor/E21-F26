@@ -43,6 +43,8 @@ website:
         text: "Matt Zucker's Intro to Linear Algebra"
       - href: "kiusalaas_2ed.pdf"
         text: "Numerical Methods in Engineering with Python"
+      - href: "https://docs.google.com/presentation/d/1wjAhY1-zOz8ymXgxrZd3azuY1CMTaOfHaF108zEodPo/edit?slide=id.p#slide=id.p"
+        text: "Final Project"
 
 
 format:

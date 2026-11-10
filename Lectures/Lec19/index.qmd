@@ -4,10 +4,10 @@ subtitle: "E21 Computer Engineering Fundamentals"
 author: "Emad Masroor"
 topic: "Linear Systems"
 order: 19
-date: 11-09-2026
+date: 11-10-2026
 date-format: long
 jupyter: python3
-uncover: false
+uncover: true
 footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
 code-line-numbers: false
 code-fold: false
@@ -24,6 +24,8 @@ Test 4
 ::: {.r-fit-text}
 Final Project
 :::
+
+![Slides from Presentation](https://docs.google.com/presentation/d/1wjAhY1-zOz8ymXgxrZd3azuY1CMTaOfHaF108zEodPo/edit?slide=id.p#slide=id.p)
 
 
 ### Polynomial Interpolation with two points
@@ -384,12 +386,54 @@ plt.show()
   - One solution: use Newton's method (ch.3.2 of textbook) for interpolating a polynomial
 
 
-### Runge's Phenomenon
+### Runge's Phenomenon {.scrollable}
 
 $$f(x) = \frac{1}{1+25 x^2}$$
 
 [Find an interpolating polynomial that passes through 5 equally spaced points on $f(x)$ from $x=-1$ to $x=+1$]{.inclass}
 
+::: {.content-visible when-meta="uncover"}
+```{python}
+#| code-fold: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+def vandermonde_matrix(xlist):
+    # Creates a Vandermonde matrix from the x-positions in `xlist`
+    n = len(xlist)
+    A = np.zeros((n,n),dtype=np.float64)
+    for i,el in enumerate(xlist):
+        for j in range(n):
+            A[j,i] = xlist[j]**i
+    return A
+
+def vandermonde_condition_number(xlist):
+    A = vandermonde_matrix(xlist)
+    cond_A = np.linalg.cond(A,'fro')
+    print(f"For a vandermonde matrix made of {xlist}")
+    print(f"Condition number is {cond_A}")
+    return cond_A
+
+exponents = range(-7,7,1)
+output = np.zeros((len(exponents),2))
+
+for i,el in enumerate(exponents):
+    print(f"With n = {el}")
+    highest_number = 2.0**el
+    step_size = highest_number/4
+    xs = [step_size, 2*step_size, 3*step_size, highest_number]
+    output[i,0] = el
+    output[i,1] = vandermonde_condition_number(xs)
+
+
+plt.bar(output[:,0],output[:,1])
+plt.ylabel("Condition Number")
+plt.xlabel("n")
+plt.yscale("log")
+plt.title("Vandermonde matrix with \n x = [0.25*2^n, 0.5*2^n, 0.75*2^n, 1.0 * 2^n]")
+plt.show()
+```
+:::
 
 
 

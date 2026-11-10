@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Emad Masroor">
-  <meta name="dcterms.date" content="2026-11-09">
+  <meta name="dcterms.date" content="2026-11-10">
   <title>ENGR 21 Computer Engineering Fundamentals – Lecture 19</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -214,7 +214,7 @@ Emad Masroor
 </div>
 </div>
 
-  <p class="date">November 9, 2026</p>
+  <p class="date">November 10, 2026</p>
 </section>
 <section id="today" class="slide level3">
 <h3>Today</h3>
@@ -226,6 +226,12 @@ Emad Masroor
 <h3>Starting Today</h3>
 <div class="r-fit-text">
 <p>Final Project</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://docs.google.com/presentation/d/1wjAhY1-zOz8ymXgxrZd3azuY1CMTaOfHaF108zEodPo/edit?slide=id.p#slide=id.p"></p>
+<figcaption>Slides from Presentation</figcaption>
+</figure>
 </div>
 </section>
 <section id="polynomial-interpolation-with-two-points" class="slide level3">
@@ -322,7 +328,20 @@ x_3^0 &amp; x_3^1 &amp; x_3^2 &amp; x_3^3
 </div>
 </div>
 <div class="fragment">
-
+<p><span class="math display">\[
+\begin{bmatrix}
+x_0^0 &amp; x_0^1 &amp; x_0^2 &amp; x_0^3 \\
+x_1^0 &amp; x_1^1 &amp; x_1^2 &amp; x_1^3 \\
+x_2^0 &amp; x_2^1 &amp; x_2^2 &amp; x_2^3 \\
+x_3^0 &amp; x_3^1 &amp; x_3^2 &amp; x_3^3
+\end{bmatrix} =
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 2 &amp; 4 &amp; 8 \\
+1 &amp; 3 &amp; 9 &amp; 27 \\
+1 &amp; 4 &amp; 16 &amp; 64 \\
+\end{bmatrix}
+\]</span></p>
 </div>
 </section>
 <section id="condition-number-of-vandermonde-matrices" class="slide level3">
@@ -336,6 +355,18 @@ x_3^0 &amp; x_3^1 &amp; x_3^2 &amp; x_3^3
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p><span class="math inline">\(\underbrace{\begin{bmatrix} 0.25 \\ 0.5 \end{bmatrix}, \begin{bmatrix} 0.5 \\ -1.5 \end{bmatrix},\begin{bmatrix} 0.75 \\ 4.5 \end{bmatrix}, \begin{bmatrix}  1.0 \\ 0 \end{bmatrix}}_{}\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><span class="math inline">\(\boxed{50,373}\)</span></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><span class="math inline">\(\boxed{331.35}\)</span></p>
 </div>
 </div>
 </div>
@@ -354,6 +385,59 @@ x_3^0 &amp; x_3^1 &amp; x_3^2 &amp; x_3^3
 <h3>Condition Number versus Interpolation interval</h3>
 <img data-src="index_files/mediabag/tikz.d8e2f5e0.svg" style="width:6in">
 <img data-src="index_files/mediabag/tikz.3e72e22a.svg" style="width:6in">
+<div id="bd7da365" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-stdout">
+<pre><code>With n = -7
+For a vandermonde matrix made of [0.001953125, 0.00390625, 0.005859375, 0.0078125]
+Condition number is 200104475.54951715
+With n = -6
+For a vandermonde matrix made of [0.00390625, 0.0078125, 0.01171875, 0.015625]
+Condition number is 25022246.383165702
+With n = -5
+For a vandermonde matrix made of [0.0078125, 0.015625, 0.0234375, 0.03125]
+Condition number is 3132373.3468269915
+With n = -4
+For a vandermonde matrix made of [0.015625, 0.03125, 0.046875, 0.0625]
+Condition number is 393841.132037466
+With n = -3
+For a vandermonde matrix made of [0.03125, 0.0625, 0.09375, 0.125]
+Condition number is 50373.99224592936
+With n = -2
+For a vandermonde matrix made of [0.0625, 0.125, 0.1875, 0.25]
+Condition number is 6863.662615671886
+With n = -1
+For a vandermonde matrix made of [0.125, 0.25, 0.375, 0.5]
+Condition number is 1141.842454808791
+With n = 0
+For a vandermonde matrix made of [0.25, 0.5, 0.75, 1.0]
+Condition number is 331.35123199279394
+With n = 1
+For a vandermonde matrix made of [0.5, 1.0, 1.5, 2.0]
+Condition number is 371.4719547885741
+With n = 2
+For a vandermonde matrix made of [1.0, 2.0, 3.0, 4.0]
+Condition number is 1176.9374570374491
+With n = 3
+For a vandermonde matrix made of [2.0, 4.0, 6.0, 8.0]
+Condition number is 5956.8876457098895
+With n = 4
+For a vandermonde matrix made of [4.0, 8.0, 12.0, 16.0]
+Condition number is 39921.7781032595
+With n = 5
+For a vandermonde matrix made of [8.0, 16.0, 24.0, 32.0]
+Condition number is 302978.9615841781
+With n = 6
+For a vandermonde matrix made of [16.0, 32.0, 48.0, 64.0]
+Condition number is 2390434.3340785685</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/cell-2-output-2.png" width="814" height="467"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="problems-with-polynomial-interpolation" class="slide level3">
 <h3>Problems with Polynomial interpolation</h3>
@@ -373,17 +457,70 @@ x_3^0 &amp; x_3^1 &amp; x_3^2 &amp; x_3^3
 </ul></li>
 </ul>
 </section>
-<section id="runges-phenomenon" class="slide level3">
+<section id="runges-phenomenon" class="slide level3 scrollable">
 <h3>Runge’s Phenomenon</h3>
 <p><span class="math display">\[f(x) = \frac{1}{1+25 x^2}\]</span></p>
 <p><span class="inclass">Find an interpolating polynomial that passes through 5 equally spaced points on <span class="math inline">\(f(x)\)</span> from <span class="math inline">\(x=-1\)</span> to <span class="math inline">\(x=+1\)</span></span></p>
+<div id="43609315" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-stdout">
+<pre><code>With n = -7
+For a vandermonde matrix made of [0.001953125, 0.00390625, 0.005859375, 0.0078125]
+Condition number is 200104475.54951715
+With n = -6
+For a vandermonde matrix made of [0.00390625, 0.0078125, 0.01171875, 0.015625]
+Condition number is 25022246.383165702
+With n = -5
+For a vandermonde matrix made of [0.0078125, 0.015625, 0.0234375, 0.03125]
+Condition number is 3132373.3468269915
+With n = -4
+For a vandermonde matrix made of [0.015625, 0.03125, 0.046875, 0.0625]
+Condition number is 393841.132037466
+With n = -3
+For a vandermonde matrix made of [0.03125, 0.0625, 0.09375, 0.125]
+Condition number is 50373.99224592936
+With n = -2
+For a vandermonde matrix made of [0.0625, 0.125, 0.1875, 0.25]
+Condition number is 6863.662615671886
+With n = -1
+For a vandermonde matrix made of [0.125, 0.25, 0.375, 0.5]
+Condition number is 1141.842454808791
+With n = 0
+For a vandermonde matrix made of [0.25, 0.5, 0.75, 1.0]
+Condition number is 331.35123199279394
+With n = 1
+For a vandermonde matrix made of [0.5, 1.0, 1.5, 2.0]
+Condition number is 371.4719547885741
+With n = 2
+For a vandermonde matrix made of [1.0, 2.0, 3.0, 4.0]
+Condition number is 1176.9374570374491
+With n = 3
+For a vandermonde matrix made of [2.0, 4.0, 6.0, 8.0]
+Condition number is 5956.8876457098895
+With n = 4
+For a vandermonde matrix made of [4.0, 8.0, 12.0, 16.0]
+Condition number is 39921.7781032595
+With n = 5
+For a vandermonde matrix made of [8.0, 16.0, 24.0, 32.0]
+Condition number is 302978.9615841781
+With n = 6
+For a vandermonde matrix made of [16.0, 32.0, 48.0, 64.0]
+Condition number is 2390434.3340785685</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/cell-3-output-2.png" width="814" height="467"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>E21 • Fall 2026 • Lecture 19 • November 9, 2026 • <a href="index.html">↩︎</a></p>
+<p>E21 • Fall 2026 • Lecture 19 • November 10, 2026 • <a href="index.html">↩︎</a></p>
 </div>
 </div></div>
 
