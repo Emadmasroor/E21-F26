@@ -456,13 +456,13 @@ This table is best viewed online.
 |         |   16     |   Thu,Oct 29    |   HW 7    |   Linear systems (cover Gaussian elimination)  |                         |   Lab 4 starts   |
 |   9     |   17     |   Tue,Nov 3     |           |   Linear systems                               |                         |                  |
 |         |   18     |   Thu,Nov 5     |   HW 8    |   Linear systems                               |                         |                  |
-|   10    |   19     |   Tue,Nov 10    |           |   Optimization / Initial Value Problems        |   Test 4 on HW 7 & 8    |   Intro Project  |
-|         |   20     |   Thu,Nov 12    |   HW 9    |   Optimization / Initial Value Problems        |                         |   Lab 5 starts   |
-|   11    |   21     |   Tue,Nov 17    |           |   Optimization / Initial Value Problems        |                         |                  |
-|         |   22     |   Thu,Nov 19    |   HW 10   |   Optimization / Initial Value Problems        |                         |                  |
-|   12    |   23     |   Tue,Nov 24    |           |   Curve-fitting & interpolation                |   Test 5 on HW 9 & 10   |                  |
+|   10    |   19     |   Tue,Nov 10    |           |   Curve fitting & interpolation                |   Test 4 on HW 7 & 8    |   Intro Project  |
+|         |   20     |   Thu,Nov 12    |   HW 9    |   Curve fitting & interpolation                |                         |   Lab 5 starts   |
+|   11    |   21     |   Tue,Nov 17    |           |   Optimization                                 |                         |                  |
+|         |   22     |   Thu,Nov 19    |   HW 10   |   Optimization                                 |                         |                  |
+|   12    |   23     |   Tue,Nov 24    |           |   TBD                                          |   Test 5 on HW 9 & 10   |                  |
 |         |   0      |   Thanksgiving  |   HW 11   |                                                |                         |   Project        |
-|   13    |   24     |   Tue,Dec 1     |           |   Curve-fitting & interpolation                |                         |                  |
+|   13    |   24     |   Tue,Dec 1     |           |   TBD                                          |                         |                  |
 |         |   25     |   Thu,Dec 3     |   HW 12   |   Work on final project                        |                         |                  |
 |   14    |   26     |   Tue,Dec 8     |           |   Work on final project                        |   Test 6 on HW 11 & 12  |                  |
 :::
