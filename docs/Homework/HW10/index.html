@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-11-19">
+
+<title>HW 10 – ENGR 21 Computer Engineering Fundamentals</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5a1953863e1f72ef3b996ef827f01ca7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-add7254ae97fa153f8b1a26e02c65245.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-32e3d36c25272d6ff5376a1b833ae0db.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-add7254ae97fa153f8b1a26e02c65245.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ENGR 21 Computer Engineering Fundamentals</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Homepage</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://moodle.swarthmore.edu/course/view.php?id=30092"> 
+<span class="menu-text">Moodle</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.gradescope.com/courses/1380463"> 
+<span class="menu-text">Gradescope</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://edstem.org/us/courses/104911/discussion"> 
+<span class="menu-text">Ed Discussion</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../Homework/HW10/index.html">HW 10</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../AcademicSupport/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Academic Support</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../AcademicSupport/Masroor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../AcademicSupport/wizards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wizard Office Hours</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lectures</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec1/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec2/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 02</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec3/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 03</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec4/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 04</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec5/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 05</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec6/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 06</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec7/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 07</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec8/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 08</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec9/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 09</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec10/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec11/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 11</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec12/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 12</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec13/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 13</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec14/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 14</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec15/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 15</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec16/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 16</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Lectures/Lec17/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec17/worksheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jacobi Worksheet</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Lectures/Lec18/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 18</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec18/worksheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lec 18 Worksheet</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec19/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 19</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec20/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 20</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW1/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW1/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 1 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW2/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW2/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 2 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW3/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW3/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 3 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW4/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW4/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 4 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW5/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 5</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW5/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 5 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW6/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 6</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW6/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 6 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW7/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 7</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW7/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 7 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW8/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 8</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW8/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 8 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW9/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 9</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW10/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">HW 10</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../PastProjects/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Past E21 Projects</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../syllabus.html#schedule" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://mzucker.github.io/swarthmore/linalg-reintroduction.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matt Zucker’s Intro to Linear Algebra</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kiusalaas_2ed.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numerical Methods in Engineering with Python</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://docs.google.com/presentation/d/1wjAhY1-zOz8ymXgxrZd3azuY1CMTaOfHaF108zEodPo/edit?slide=id.p#slide=id.p" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Project</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#polynomial-interpolation" id="toc-polynomial-interpolation" class="nav-link active" data-scroll-target="#polynomial-interpolation"><span class="header-section-number">1</span> Polynomial Interpolation</a>
+  <ul class="collapse">
+  <li><a href="#set-up-the-linear-system-of-equations" id="toc-set-up-the-linear-system-of-equations" class="nav-link" data-scroll-target="#set-up-the-linear-system-of-equations"><span class="header-section-number">1.1</span> Set up the linear system of equations</a></li>
+  <li><a href="#solve-the-linear-system-for-the-data-provided" id="toc-solve-the-linear-system-for-the-data-provided" class="nav-link" data-scroll-target="#solve-the-linear-system-for-the-data-provided"><span class="header-section-number">1.2</span> Solve the linear system for the data provided</a></li>
+  <li><a href="#assemble-an-interpolating-function-that-uses-the-coefficients" id="toc-assemble-an-interpolating-function-that-uses-the-coefficients" class="nav-link" data-scroll-target="#assemble-an-interpolating-function-that-uses-the-coefficients"><span class="header-section-number">1.3</span> Assemble an interpolating function that uses the coefficients</a></li>
+  <li><a href="#make-a-plot-showing-the-data-points-and-the-interpolation" id="toc-make-a-plot-showing-the-data-points-and-the-interpolation" class="nav-link" data-scroll-target="#make-a-plot-showing-the-data-points-and-the-interpolation"><span class="header-section-number">1.4</span> Make a plot showing the data points and the interpolation</a></li>
+  </ul></li>
+  <li><a href="#polynomial-curve-fit-using-least-squares" id="toc-polynomial-curve-fit-using-least-squares" class="nav-link" data-scroll-target="#polynomial-curve-fit-using-least-squares"><span class="header-section-number">2</span> Polynomial curve fit using least-squares</a>
+  <ul class="collapse">
+  <li><a href="#a-function-for-generating-the-linear-system" id="toc-a-function-for-generating-the-linear-system" class="nav-link" data-scroll-target="#a-function-for-generating-the-linear-system"><span class="header-section-number">2.1</span> A function for generating the linear system</a></li>
+  <li><a href="#solve-the-linear-system-for-the-data-provided-using-m-2" id="toc-solve-the-linear-system-for-the-data-provided-using-m-2" class="nav-link" data-scroll-target="#solve-the-linear-system-for-the-data-provided-using-m-2"><span class="header-section-number">2.2</span> Solve the linear system for the data provided using <span class="math inline">\(m = 2\)</span></a></li>
+  <li><a href="#assemble-a-curve-fit-function-that-uses-the-coefficients" id="toc-assemble-a-curve-fit-function-that-uses-the-coefficients" class="nav-link" data-scroll-target="#assemble-a-curve-fit-function-that-uses-the-coefficients"><span class="header-section-number">2.3</span> Assemble a curve-fit function that uses the coefficients</a></li>
+  <li><a href="#make-a-plot-showing-the-data-points-with-a-quadratic-curve-fit" id="toc-make-a-plot-showing-the-data-points-with-a-quadratic-curve-fit" class="nav-link" data-scroll-target="#make-a-plot-showing-the-data-points-with-a-quadratic-curve-fit"><span class="header-section-number">2.4</span> Make a plot showing the data points with a quadratic curve fit</a></li>
+  </ul></li>
+  <li><a href="#interpolation-with-non-polynomial-functions" id="toc-interpolation-with-non-polynomial-functions" class="nav-link" data-scroll-target="#interpolation-with-non-polynomial-functions"><span class="header-section-number">3</span> Interpolation with non-polynomial functions</a></li>
+  <li><a href="#evaluating-curve-fits" id="toc-evaluating-curve-fits" class="nav-link" data-scroll-target="#evaluating-curve-fits"><span class="header-section-number">4</span> Evaluating curve fits</a>
+  <ul class="collapse">
+  <li><a href="#data-set-1" id="toc-data-set-1" class="nav-link" data-scroll-target="#data-set-1"><span class="header-section-number">4.1</span> Data set 1</a></li>
+  <li><a href="#data-set-2" id="toc-data-set-2" class="nav-link" data-scroll-target="#data-set-2"><span class="header-section-number">4.2</span> Data set 2</a>
+  <ul class="collapse">
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">4.2.1</span> Discussion</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Homework/index.html">Homework</a></li><li class="breadcrumb-item"><a href="../../Homework/HW10/index.html">HW 10</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">HW 10</h1>
+<p class="subtitle lead">ENGR 21, Fall 2026.</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 19, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>Due Date</td>
+<td>Thu, Nov 19</td>
+</tr>
+<tr class="even">
+<td>Turn in link</td>
+<td>Gradescope <a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=838662">PDF</a> and <a href="https://moodle.swarthmore.edu/mod/lti/view.php?id=838661">Code</a></td>
+</tr>
+<tr class="odd">
+<td>URL</td>
+<td><code>emadmasroor.github.io/E21-F26/Homework/HW9</code></td>
+</tr>
+</tbody>
+</table>
+<p><u>What to turn in</u></p>
+<p>Combine all written HW into one PDF file.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Problem</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>A single Python file named <code>prob1_interpolation.py</code></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>A single Python file named <code>prob2_curvefit.py</code></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>PDF</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>PDF</td>
+</tr>
+</tbody>
+</table>
+<section id="polynomial-interpolation" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Polynomial Interpolation</h1>
+<p>In class, we derived a linear system of equations for finding the coefficients of an order-<span class="math inline">\(n\)</span> polynomial that interpolates between (i.e., passes through) <span class="math inline">\(n+1\)</span> points.</p>
+<p><span class="math display">\[
+{\begin{bmatrix}
+x_0^0 &amp; x_0^1 &amp; x_0^2 &amp; \cdots &amp; x_0^n \\
+x_1^0 &amp; x_1^1 &amp; x_1^2 &amp; \cdots &amp; x_1^n \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+x_n^0 &amp; x_n^1 &amp; x_n^2 &amp; \cdots &amp; x_n^n
+\end{bmatrix}}
+\begin{bmatrix}
+a_0 \\
+a_1 \\
+\vdots \\
+a_n
+\end{bmatrix}
+=
+\begin{bmatrix}
+y_0 \\
+y_1 \\
+\vdots \\
+y_n
+\end{bmatrix}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will submit a single Python file for this problem. Put your import statements and function definitions at the top of the file, and write the rest of your code underneath. The graders should be able to run your file as-is.</p>
+</div>
+</div>
+<section id="set-up-the-linear-system-of-equations" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="set-up-the-linear-system-of-equations"><span class="header-section-number">1.1</span> Set up the linear system of equations</h2>
+<p>Write a Python function that takes as input an array of x-values and an array of y-values, representing ordered pairs <span class="math inline">\((x_i,y_i)\)</span>, and returns (1) the system matrix, and (2) the right-hand-side vector, from the equations shown above.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-label="1"></a><span class="kw">def</span> interpolation_system(x_values,y_values):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-label="2"></a>    <span class="co"># x_values and y_values should be 1-dimensional arrays of the same size.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-label="3"></a>    num <span class="op">=</span> <span class="bu">len</span>(x_values)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-label="4"></a>    A <span class="op">=</span> np.zeros((num,num))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-label="5"></a>    b <span class="op">=</span> np.zeros(num)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-label="6"></a>    <span class="cf">return</span> A,b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="solve-the-linear-system-for-the-data-provided" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="solve-the-linear-system-for-the-data-provided"><span class="header-section-number">1.2</span> Solve the linear system for the data provided</h2>
+<p>Consider the x-y values below.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>interpolate_these.txt</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="interpolate_these.txt"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-label="1"></a>1.00 0.00</span>
+<span id="cb2-2"><a href="#cb2-2" aria-label="2"></a>2.00 1.00</span>
+<span id="cb2-3"><a href="#cb2-3" aria-label="3"></a>2.50 2.00</span>
+<span id="cb2-4"><a href="#cb2-4" aria-label="4"></a>3.00 3.00</span>
+<span id="cb2-5"><a href="#cb2-5" aria-label="5"></a>3.50 3.20</span>
+<span id="cb2-6"><a href="#cb2-6" aria-label="6"></a>4.50 3.50</span>
+<span id="cb2-7"><a href="#cb2-7" aria-label="7"></a>6.00 3.70</span>
+<span id="cb2-8"><a href="#cb2-8" aria-label="8"></a>9.00 5.00</span>
+<span id="cb2-9"><a href="#cb2-9" aria-label="9"></a>9.50 5.60</span>
+<span id="cb2-10"><a href="#cb2-10" aria-label="10"></a>10.00 7.20</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><a href="interpolate_these.txt" class="btn btn-primary" download="interpolate_these.txt">Download file</a></p>
+<p>Write Python code that</p>
+<ol type="1">
+<li>Loads the data from <code>interpolate_these.txt</code> using <code>numpy.loadtxt()</code></li>
+<li>Assigns the columns of the text file to two separate 10-element <code>numpy</code> arrays, named, e.g., <code>x_data</code> and <code>y_data</code></li>
+<li>Calls your function <code>interpolation_system</code> from above and stores the matrix and right-hand side.</li>
+<li>Uses the <code>numpy</code> function <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.solve.html"><code>numpy.linalg.solve</code></a> to solve the system of equations <span class="math inline">\(Ax=b\)</span>, where <span class="math inline">\(A\)</span> is the matrix from <code>interpolation_system</code> and <span class="math inline">\(b\)</span> is the right-hand side from <code>interpolation_system</code>. Here, <span class="math inline">\(x\)</span>, the unknown vector, contains the coefficients of our sought-for polynomial, <span class="math inline">\(\{ a_0, a_1, a_2, ..., a_n \}\)</span>.</li>
+</ol>
+</section>
+<section id="assemble-an-interpolating-function-that-uses-the-coefficients" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="assemble-an-interpolating-function-that-uses-the-coefficients"><span class="header-section-number">1.3</span> Assemble an interpolating function that uses the coefficients</h2>
+<p>Now that you have found coefficients <span class="math inline">\(\{ a_0, a_1, a_2, ..., a_n \}\)</span> that define the <span class="math inline">\(n\)</span>-degree polynomial that interpolates between these points, write a new function that evaluates this polynomial for any <span class="math inline">\(x\)</span>.</p>
+<p>Recall that the mathematical form of this interpolating function is <span class="math display">\[f(x; a_0, a_1, ..., a_n) = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + ...\]</span></p>
+<p>Your task is to write a Python function that evaluates this interpolating function at any value of <span class="math inline">\(x\)</span>, for any given set of coefficients <span class="math inline">\(\{ a_0, a_1, a_2, ..., a_n \}\)</span>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-label="1"></a><span class="kw">def</span> interpolating_polynomial(x,array_a):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-label="2"></a>    <span class="co"># x can be any real number (NOT an array)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-label="3"></a>    <span class="co"># array_a will be an array containing the coefficients</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-label="4"></a>    <span class="co"># of the order-n polynomial: a_0, a_1, a_2, etc.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-label="5"></a>    <span class="co"># the function should return </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-label="6"></a>    <span class="co"># a_0*x^0 + a_1*x^1 + a_2*x^2 + ... a_n*x^m</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-label="7"></a>    <span class="cf">return</span> <span class="fl">0.0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>numpy</code> already contains a function that does essentially this; it’s called <a href="https://numpy.org/doc/stable/reference/generated/numpy.polyval.html"><code>numpy.polyval</code></a>. You may choose to implement this task as a <a href="https://en.wikipedia.org/wiki/Wrapper_function">‘wrapper’</a> around <code>polyval</code>. It should be straightforward to write your own code without using <code>polyval</code>, too.</p>
+</div>
+</div>
+<p><strong>Also Note:</strong> This function will be generic; it won’t contain any information from problem 1.1 or problem 1.2. Later, when you <em>call</em> the function, you’ll provide information about what exactly the coefficients are — and they will be the ones you found in problem 1.2.</p>
+</section>
+<section id="make-a-plot-showing-the-data-points-and-the-interpolation" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="make-a-plot-showing-the-data-points-and-the-interpolation"><span class="header-section-number">1.4</span> Make a plot showing the data points and the interpolation</h2>
+<p>Generate a plot that shows the data points together with the interpolating curve. The following snippets of code will help you with this.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a href="#cb4-2" aria-label="2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a href="#cb4-3" aria-label="3"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-label="4"></a><span class="co"># Assuming x_vals, y_vals contains the coordinates</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-label="5"></a><span class="co"># of the data points:</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-label="6"></a>plt.scatter(x_vals,y_vals)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-label="7"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-label="8"></a><span class="co"># Assuming you have solved 1.2 and you have an array</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-label="9"></a><span class="co"># of coefficients [a_0, a_1, a_2, ..., a_n] called "a" </span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-label="10"></a><span class="co"># found after solving the linear system in problem 1.2:</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-label="11"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-label="12"></a><span class="co"># Generate 100 x-values between the first and last coordinate</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-label="13"></a>x_continuous <span class="op">=</span> np.linspace(x_vals[<span class="dv">0</span>],x_vals[<span class="op">-</span><span class="dv">1</span>],<span class="dv">100</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-label="14"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-label="15"></a><span class="co"># Evaluate your interpolating function at all 100 points</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-label="16"></a>y_continuous <span class="op">=</span> interpolating_polynomial(x_continuous,a)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-label="17"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-label="18"></a><span class="co"># Make a line plot</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-label="19"></a>plt.plot(x_continuous,y_continuous,label<span class="op">=</span><span class="st">'Interpolating func'</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-label="20"></a>plt.legend()</span>
+<span id="cb4-21"><a href="#cb4-21" aria-label="21"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-label="22"></a><span class="co"># Save it</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-label="23"></a>plt.savefig(<span class="st">"interpolation.png"</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-label="24"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-label="25"></a><span class="co"># Show the plot</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-label="26"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Your plot should look substantially similar to the one below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="interpolation_sample.png" class="img-fluid figure-img"></p>
+<figcaption>Sample figure</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="polynomial-curve-fit-using-least-squares" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Polynomial curve fit using least-squares</h1>
+<p>In class, we saw that the linear system for finding a best-fit curve takes the following form:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+\sum x_i^0 &amp; \sum x_i^1 &amp; \sum x_i^2 &amp; \cdots &amp; \sum x_i^m \\
+\sum x_i^1 &amp; \sum x_i^2 &amp; \sum x_i^3 &amp; \cdots &amp; \sum x_i^{m+1} \\
+\sum x_i^2 &amp; \sum x_i^3 &amp; \sum x_i^4 &amp; \cdots &amp; \sum x_i^{m+2} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\sum x_i^m &amp; \sum x_i^{m+1} &amp; \sum x_i^{m+2} &amp; \cdots &amp; \sum x_i^{m+m}
+\end{bmatrix}
+\begin{bmatrix}
+a_0 \\
+a_1 \\
+a_2 \\
+\vdots \\
+a_m
+\end{bmatrix}
+=
+\begin{bmatrix}
+\sum x_i^0 y_i \\
+\sum x_i^1 y_i \\
+\sum x_i^2 y_i \\
+\vdots \\
+\sum x_i^m y_i
+\end{bmatrix}
+\]</span></p>
+<p><strong>Instructions</strong></p>
+<p>You will submit a single Python file for this problem. Put your import statements and function definitions at the top of the file, and write the rest of your code underneath. The graders should be able to run your file as-is.</p>
+<section id="a-function-for-generating-the-linear-system" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="a-function-for-generating-the-linear-system"><span class="header-section-number">2.1</span> A function for generating the linear system</h2>
+<p>Complete the activity from class, i.e., write a Python function that takes as input an array of x values, an array of y values, and an integer <span class="math inline">\(m\)</span>, where <span class="math inline">\(m\)</span> is the order of the polynomial that is to be fit to the data. The function should return a matrix of size <span class="math inline">\((m+1) \times (m+1)\)</span> and an array of size <span class="math inline">\(m+1\)</span>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-label="1"></a><span class="kw">def</span> curvefit_system(x_values,y_values,m):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-label="2"></a>    <span class="co"># x_values and y_values should be 1-dimensional arrays of the same size.</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-label="3"></a>    A <span class="op">=</span> np.zeros((m<span class="op">+</span><span class="dv">1</span>,m<span class="op">+</span><span class="dv">1</span>))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-label="4"></a>    b <span class="op">=</span> np.zeros(m<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-label="5"></a>    <span class="cf">return</span> A,b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="solve-the-linear-system-for-the-data-provided-using-m-2" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="solve-the-linear-system-for-the-data-provided-using-m-2"><span class="header-section-number">2.2</span> Solve the linear system for the data provided using <span class="math inline">\(m = 2\)</span></h2>
+<p><a href="datapoints.txt" class="btn btn-primary" download="datapoints.txt">Download <code>datapoints.txt</code></a></p>
+<ol type="1">
+<li>Loads the data from the given text file using <code>numpy.loadtxt()</code></li>
+<li>Assigns the columns of the text file to two separate 10-element <code>numpy</code> arrays, named, e.g., <code>x_data</code> and <code>y_data</code></li>
+<li>Calls your function <code>curvefit_system</code> from above, with <code>m=2</code>, and stores the matrix and right-hand side.</li>
+<li>Uses the <code>numpy</code> function <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.solve.html"><code>numpy.linalg.solve</code></a> to solve the system of equations <span class="math inline">\(Ax=b\)</span>, where <span class="math inline">\(A\)</span> is the matrix from <code>curvefit_system</code> and <span class="math inline">\(b\)</span> is the right-hand side from <code>curvefit_system</code>. Here, <span class="math inline">\(x\)</span>, the unknown vector, contains the coefficients of our sought-for polynomial, <span class="math inline">\(\{ a_0, a_1, a_2, ..., a_m \}\)</span>.</li>
+</ol>
+</section>
+<section id="assemble-a-curve-fit-function-that-uses-the-coefficients" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="assemble-a-curve-fit-function-that-uses-the-coefficients"><span class="header-section-number">2.3</span> Assemble a curve-fit function that uses the coefficients</h2>
+<p>Now that you have found coefficients <span class="math inline">\(\{ a_0, a_1, a_2, ..., a_m \}\)</span> that define the <span class="math inline">\(m\)</span>-degree polynomial that best fits these points, write a new function that evaluates this polynomial for any <span class="math inline">\(x\)</span>.</p>
+<p>Recall that the mathematical form of this polynomial function is <span class="math display">\[f(x; a_0, a_1, ..., a_m) = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + ...\]</span></p>
+<p>Your task is to write a Python function that evaluates this function at any value of <span class="math inline">\(x\)</span>, for any given set of coefficients <span class="math inline">\(\{ a_0, a_1, a_2, ..., a_m \}\)</span>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-label="1"></a><span class="kw">def</span> curvefit_polynomial(x,array_a):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-label="2"></a>    <span class="co"># x can be any real number (NOT an array)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-label="3"></a>    <span class="co"># array_a will be an array containing the coefficients</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-label="4"></a>    <span class="co"># of the order-m polynomial: a_0, a_1, a_2, etc.</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-label="5"></a>    <span class="co"># the function should return </span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-label="6"></a>    <span class="co"># a_0*x^0 + a_1*x^1 + a_2*x^2 + ... a_m*x^m</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-label="7"></a>    <span class="cf">return</span> <span class="fl">0.0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>numpy</code> already contains a function that does essentially this; it’s called <a href="https://numpy.org/doc/stable/reference/generated/numpy.polyval.html"><code>numpy.polyval</code></a>. You may choose to implement this task as a <a href="https://en.wikipedia.org/wiki/Wrapper_function">‘wrapper’</a> around <code>polyval</code>. It should be straightforward to write your own code without using <code>polyval</code>, too.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This function will be generic; it won’t contain any information from problem 2.1 or problem 2.2. Later, when you <em>call</em> the function, you’ll provide information about what exactly the coefficients are — and they will be the ones you found in problem 2.2.</p>
+</div>
+</div>
+</section>
+<section id="make-a-plot-showing-the-data-points-with-a-quadratic-curve-fit" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="make-a-plot-showing-the-data-points-with-a-quadratic-curve-fit"><span class="header-section-number">2.4</span> Make a plot showing the data points with a quadratic curve fit</h2>
+<p>Generate a plot that shows the data points together with a quadratic best-fit curve. The following snippets of code will help you with this.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-2"><a href="#cb7-2" aria-label="2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-3"><a href="#cb7-3" aria-label="3"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-label="4"></a><span class="co"># Assuming x_vals, y_vals contains the coordinates</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-label="5"></a><span class="co"># of the data points:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-label="6"></a>plt.scatter(x_vals,y_vals)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-label="7"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-label="8"></a><span class="co"># Assuming you have solved 2.2 and you have an array</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-label="9"></a><span class="co"># of coefficients [a_0, a_1, a_2, ..., a_m] called "a" </span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-label="10"></a><span class="co"># found after solving the linear system in problem 2.2:</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-label="11"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-label="12"></a><span class="co"># Generate 100 x-values between the first and last coordinate</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-label="13"></a>x_continuous <span class="op">=</span> np.linspace(x_vals[<span class="dv">0</span>],x_vals[<span class="op">-</span><span class="dv">1</span>],<span class="dv">100</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-label="14"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-label="15"></a><span class="co"># Evaluate your interpolating function at all 100 points</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-label="16"></a>y_continuous <span class="op">=</span> curvefit_polynomial(x_continuous,a)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-label="17"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-label="18"></a><span class="co"># Make a line plot</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-label="19"></a>plt.plot(x_continuous,y_continuous,label<span class="op">=</span><span class="st">'Best Fit'</span>)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-label="20"></a>plt.legend()</span>
+<span id="cb7-21"><a href="#cb7-21" aria-label="21"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-label="22"></a><span class="co"># Save it</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-label="23"></a>plt.savefig(<span class="st">"bestfit.png"</span>)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-label="24"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-label="25"></a><span class="co"># Show the plot</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-label="26"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Your plot should look substantially similar to the one below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="curvefit_sample.png" class="img-fluid figure-img"></p>
+<figcaption>Sample figure</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="interpolation-with-non-polynomial-functions" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Interpolation with non-polynomial functions</h1>
+<p>Find the values of coefficients <span class="math inline">\(\{a,b,c,d\}\)</span> such that the function <span class="math display">\[f(x) = a + b e^{x} + cx^2 + d \sin x\]</span> passes through the points</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>x</th>
+<th>y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.0</td>
+<td>0.2</td>
+</tr>
+<tr class="even">
+<td>1.0</td>
+<td>2.0</td>
+</tr>
+<tr class="odd">
+<td>2.0</td>
+<td>1.2</td>
+</tr>
+<tr class="even">
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+</tbody>
+</table>
+<p>using the following procedure</p>
+<ol type="1">
+<li>Write down the equations that must be solved, in terms of <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> and <span class="math inline">\(d\)</span>.</li>
+<li>Arrange the equations in the form of a linear system <span class="math inline">\(Ax=b\)</span>, where <span class="math inline">\(x\)</span> is a vector containing the unknown parameters <span class="math inline">\([a,b,c,d]\)</span>.</li>
+<li>You should now have a matrix and a right-hand side vector. Use any method you like to find the solution to this linear system. e.g., you can use <code>numpy.linalg.solve</code>, or you can use Gaussian elimination, etc.</li>
+<li>Report the results as numbers, e.g., <span class="math inline">\(a = 1.23, b = 4.56,...\)</span> etc.</li>
+</ol>
+<p>Turn in all of your work as part of the PDF submission for this HW.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can check if your values for <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> and <span class="math inline">\(d\)</span> are correct by plotting <span class="math inline">\(f(x)\)</span> and ensuring it passes through the points given.</p>
+</div>
+</div>
+</section>
+<section id="evaluating-curve-fits" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Evaluating curve fits</h1>
+<p>Download the files <a href="data1.csv"><code>data1.csv</code></a> and <a href="data2.csv"><code>data2.csv</code></a>, as well as the Python files <a href="newtonPoly.py"><code>newtonPoly.py</code></a> and <a href="polyFit.py"><code>polyFit.py</code></a>.</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><a href="data1.csv" class="btn btn-primary" download="data1.csv">Download <code>data1.csv</code></a></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>data1.csv</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-filename="data1.csv"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-label="1"></a>0.000   0.094</span>
+<span id="cb8-2"><a href="#cb8-2" aria-label="2"></a>0.167   0.053</span>
+<span id="cb8-3"><a href="#cb8-3" aria-label="3"></a>0.333   0.135</span>
+<span id="cb8-4"><a href="#cb8-4" aria-label="4"></a>0.500   0.312</span>
+<span id="cb8-5"><a href="#cb8-5" aria-label="5"></a>0.667   0.536</span>
+<span id="cb8-6"><a href="#cb8-6" aria-label="6"></a>0.833   0.847</span>
+<span id="cb8-7"><a href="#cb8-7" aria-label="7"></a>1.000   1.055</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<p><a href="data2.csv" class="btn btn-primary" download="data2.csv">Download <code>data2.cv</code></a></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>data2.csv</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-filename="data2.csv"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-label="1"></a>-5.000  0.000</span>
+<span id="cb9-2"><a href="#cb9-2" aria-label="2"></a>-4.000  0.000</span>
+<span id="cb9-3"><a href="#cb9-3" aria-label="3"></a>-3.000  0.050</span>
+<span id="cb9-4"><a href="#cb9-4" aria-label="4"></a>-2.000  0.250</span>
+<span id="cb9-5"><a href="#cb9-5" aria-label="5"></a>-1.000  0.700</span>
+<span id="cb9-6"><a href="#cb9-6" aria-label="6"></a>0.000   1.000</span>
+<span id="cb9-7"><a href="#cb9-7" aria-label="7"></a>1.000   0.650</span>
+<span id="cb9-8"><a href="#cb9-8" aria-label="8"></a>2.000   0.250</span>
+<span id="cb9-9"><a href="#cb9-9" aria-label="9"></a>3.000   0.050</span>
+<span id="cb9-10"><a href="#cb9-10" aria-label="10"></a>4.000   0.000</span>
+<span id="cb9-11"><a href="#cb9-11" aria-label="11"></a>5.000   0.000</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>newtonPoly.py</code> uses Newton’s polynomial to determine the (unique) interpolating polynomial that connects a set of points together. Newton’s polynomial is a technique for interpolating between points with a polynomial curve. Since polynomial interpolation is typically unique, Newton’s method of finding a polynomial is equivalent to the method that you used in problem 1. You are provided all of the code needed to use Newton’s method for interpolation, so you should not need to write much code for problem 4. You can read about Newton’s polynomial interpolation technique in the Polynomial Interpolation section of the Kiuslaas textbook.</li>
+<li><code>polyFit.py</code> implements a curve-fitting procedure using ap olynomial of a specified degree.</li>
+</ul>
+</div>
+</div>
+<p>Your task is to perform polynomial interpolation as well as polynomial curve-fitting on the two given sets of data.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>No modifications whatsoever are needed in <code>newtonPoly.py</code> or <code>polyFit.py</code>. These functions are provided with the electronic version of the textbook.</p>
+</div>
+</div>
+<section id="data-set-1" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="data-set-1"><span class="header-section-number">4.1</span> Data set 1</h2>
+<p>Make a single plot that contains:</p>
+<ul>
+<li>Scatter plot of the data points</li>
+<li>The (unique) polynomial interpolation between all the points, and</li>
+<li>Three additional curves, representing polynomial curve fits of degree 1, 2 and 3 (linear, quadratic and cubic).</li>
+</ul>
+<p>Use the following code to get started.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-label="1"></a><span class="co"># Import functions. Make sure that your downloaded files are in the present working directory.</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-label="2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb10-3"><a href="#cb10-3" aria-label="3"></a><span class="im">from</span> newtonPoly <span class="im">import</span> coeffts, evalPoly</span>
+<span id="cb10-4"><a href="#cb10-4" aria-label="4"></a><span class="im">from</span> polyFit <span class="im">import</span> polyFit, evalPolyFit</span>
+<span id="cb10-5"><a href="#cb10-5" aria-label="5"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb10-6"><a href="#cb10-6" aria-label="6"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-label="7"></a>x1 <span class="op">=</span> np.loadtxt(<span class="st">'data1.csv'</span>)[:,<span class="dv">0</span>]</span>
+<span id="cb10-8"><a href="#cb10-8" aria-label="8"></a>y1 <span class="op">=</span> np.loadtxt(<span class="st">'data1.csv'</span>)[:,<span class="dv">1</span>]</span>
+<span id="cb10-9"><a href="#cb10-9" aria-label="9"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-label="10"></a><span class="co"># Create x-axis to plot</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-label="11"></a>xs <span class="op">=</span> np.linspace(x1[<span class="dv">0</span>],x1[<span class="op">-</span><span class="dv">1</span>],<span class="dv">100</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-label="12"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-label="13"></a><span class="co"># Find coefficients of Newton's Polynomial (interpolation)</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-label="14"></a>a <span class="op">=</span> coeffts(x1,y1)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-label="15"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-label="16"></a><span class="co"># Evaluate Newton's polynomial at values 'xs'</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-label="17"></a>y_interp <span class="op">=</span> evalPoly(a,x1,xs)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-label="18"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-label="19"></a><span class="co"># Curve fit using polynomials of different degrees.</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-label="20"></a>b1 <span class="op">=</span> polyFit(x1,y1,<span class="dv">1</span>)</span>
+<span id="cb10-21"><a href="#cb10-21" aria-label="21"></a>b2 <span class="op">=</span> polyFit(x1,y1,<span class="dv">2</span>)</span>
+<span id="cb10-22"><a href="#cb10-22" aria-label="22"></a></span>
+<span id="cb10-23"><a href="#cb10-23" aria-label="23"></a></span>
+<span id="cb10-24"><a href="#cb10-24" aria-label="24"></a><span class="co"># Evaluate curve-fit at values 'xs'</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-label="25"></a>y_curvefit1 <span class="op">=</span> evalPolyFit(xs,y1,b1)</span>
+<span id="cb10-26"><a href="#cb10-26" aria-label="26"></a>y_curvefit2 <span class="op">=</span> evalPolyFit(xs,y1,b2)</span>
+<span id="cb10-27"><a href="#cb10-27" aria-label="27"></a></span>
+<span id="cb10-28"><a href="#cb10-28" aria-label="28"></a><span class="co"># Make plot</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-label="29"></a>plt.plot(x1,y1,<span class="st">'o'</span>,label<span class="op">=</span><span class="st">'data'</span>,color<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb10-30"><a href="#cb10-30" aria-label="30"></a>plt.plot(xs,y_interp,<span class="st">'-'</span>,label<span class="op">=</span><span class="st">'Interpolation'</span>,color<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb10-31"><a href="#cb10-31" aria-label="31"></a>plt.plot(xs,y_curvefit1,<span class="st">'r--'</span>,label<span class="op">=</span><span class="st">'Fit, m = 1'</span>)</span>
+<span id="cb10-32"><a href="#cb10-32" aria-label="32"></a>plt.plot(xs,y_curvefit2,<span class="st">'b--'</span>,label<span class="op">=</span><span class="st">'Fit, m = 2'</span>)</span>
+<span id="cb10-33"><a href="#cb10-33" aria-label="33"></a>plt.legend()</span>
+<span id="cb10-34"><a href="#cb10-34" aria-label="34"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Turn in your resulting plot.</p>
+</section>
+<section id="data-set-2" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="data-set-2"><span class="header-section-number">4.2</span> Data set 2</h2>
+<p>Make a single plot that contains:</p>
+<ul>
+<li>Scatter plot of the data points</li>
+<li>The (unique) polynomial interpolation between all the points, and</li>
+<li>Five additional curves, representing polynomial curve fits of degree 1, 2, 3, 4 and 6.</li>
+</ul>
+<p>Use the following code to get started:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-label="1"></a><span class="co"># Import functions. Make sure that your downloaded files are in the present working directory.</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-label="2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-3"><a href="#cb11-3" aria-label="3"></a><span class="im">from</span> newtonPoly <span class="im">import</span> coeffts, evalPoly</span>
+<span id="cb11-4"><a href="#cb11-4" aria-label="4"></a><span class="im">from</span> polyFit <span class="im">import</span> polyFit, evalPolyFit</span>
+<span id="cb11-5"><a href="#cb11-5" aria-label="5"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb11-6"><a href="#cb11-6" aria-label="6"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-label="7"></a>x1 <span class="op">=</span> np.loadtxt(<span class="st">'data2.csv'</span>)[:,<span class="dv">0</span>]</span>
+<span id="cb11-8"><a href="#cb11-8" aria-label="8"></a>y1 <span class="op">=</span> np.loadtxt(<span class="st">'data2.csv'</span>)[:,<span class="dv">1</span>]</span>
+<span id="cb11-9"><a href="#cb11-9" aria-label="9"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-label="10"></a><span class="co"># Create x-axis to plot</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-label="11"></a>xs <span class="op">=</span> np.linspace(x1[<span class="dv">0</span>],x1[<span class="op">-</span><span class="dv">1</span>],<span class="dv">100</span>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-label="12"></a></span>
+<span id="cb11-13"><a href="#cb11-13" aria-label="13"></a><span class="co"># Newton Polynomial (interpolation)</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-label="14"></a>a <span class="op">=</span> coeffts(x1,y1)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-label="15"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-label="16"></a><span class="co"># Evaluate Newton's polynomial at values 'xs'</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-label="17"></a>y_interp <span class="op">=</span> evalPoly(a,x1,xs)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-label="18"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-label="19"></a><span class="co"># Curve fit with order m = 1</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-label="20"></a>b1 <span class="op">=</span> polyFit(x1,y1,<span class="dv">1</span>)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-label="21"></a></span>
+<span id="cb11-22"><a href="#cb11-22" aria-label="22"></a><span class="co"># Evaluate curve-fit at values 'xs'</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-label="23"></a>y_curvefit1 <span class="op">=</span> evalPolyFit(xs,y1,b1)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-label="24"></a></span>
+<span id="cb11-25"><a href="#cb11-25" aria-label="25"></a><span class="co"># Make plot</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-label="26"></a>plt.plot(x1,y1,<span class="st">'o'</span>,label<span class="op">=</span><span class="st">'data'</span>,color<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb11-27"><a href="#cb11-27" aria-label="27"></a>plt.plot(xs,y_interp,<span class="st">'-'</span>,label<span class="op">=</span><span class="st">'Interpolation'</span>,color<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb11-28"><a href="#cb11-28" aria-label="28"></a>plt.plot(xs,y_curvefit1,<span class="st">'r--'</span>,label<span class="op">=</span><span class="st">'Fit, m = 1'</span>)</span>
+<span id="cb11-29"><a href="#cb11-29" aria-label="29"></a>plt.legend()</span>
+<span id="cb11-30"><a href="#cb11-30" aria-label="30"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Turn in your resulting plot.</p>
+<section id="discussion" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="discussion"><span class="header-section-number">4.2.1</span> Discussion</h3>
+<p>Explain which curve fit, out of the ones you have plotted, you would choose to represent each of these datasets. You should write a short paragraph each for data set 1 and data set 2.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
