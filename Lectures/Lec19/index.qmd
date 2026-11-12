@@ -2,7 +2,7 @@
 title: "Lecture 19"
 subtitle: "E21 Computer Engineering Fundamentals"
 author: "Emad Masroor"
-topic: "Linear Systems"
+topic: "Interpolation"
 order: 19
 date: 11-10-2026
 date-format: long
