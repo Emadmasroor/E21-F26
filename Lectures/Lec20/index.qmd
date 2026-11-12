@@ -6,7 +6,7 @@ topic: "Curve Fitting"
 order: 20
 date: 11-12-2026
 date-format: long
-uncover: false
+uncover: true
 footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
 code-line-numbers: false
 code-fold: false
@@ -558,7 +558,6 @@ Function $f(x)$ depends linearly on the parameters $\{ a_0, a_1, a_2, ... \}$
 
 **Nonlinear Least Squares**  
 Function $f(x)$ depends [nonlinearly]{.underline} on **at least one** of the parameters $\{ a_0, a_1, a_2, ... \}$
-hello, world
 :::
 :::
 
@@ -573,19 +572,63 @@ Find the parameters $\{ a_0, a_1, a_2, ..., a_m \}$ that **minimize** the so-cal
 
 [Note: the summation symbol refers to 'sum over all $n$ points']{.fragment}
 
-### Finding parameters $\{ a_0, a_1, a_2, ... ,a_m \}$ that minimize $S$ for polynomial $f(x)$
+[Idea: Take derivatives with respect to $a_0$, $a_1$, etc. and set them all to zero, to find $\{ a_0, a_1, a_2, ... ,a_m \}$]{.emph .fragment}
 
-[Minimize $\displaystyle S = \sum [y_i - f(x_i)]^2$ with respect to $a_0, a_1, a_2, ... a_m$]{.fragment}
 
-[$\displaystyle S=\sum [y_i - a_0 - a_1 x_i - a_2 x_i^2 - ... - a_m x_i^m]^2$]{.fragment}
+### Example: a line of best fit for three points
 
-[Idea: Take derivatives with respect to $a_0$, $a_1$, etc. and set them all to zero]{.emph .fragment}
+::: {.columns}
 
-### Example: Find a quadratic polynomial that best fits $n$ points
+::: {.column width="45%"}
+[Find the equation]{.inclass} of the straight line $y = a_0 + a_1 x$ that passes through the three points shown while minimizing $S$.
+
+Hint: Write down two simultaneous equations for $a_0$ and $a_1$.
+:::
+
+::: {.column width="45%"}
+```{.tikz width="6in"}
+%%| additionalPackages: \usepackage{pgfplots}
+
+\begin{tikzpicture}
+  \begin{axis}[
+    xmin=-0.2, xmax=7.2,
+    ymin=0, ymax=5,
+    axis lines=middle,
+    title={},
+    xlabel={$x$},
+    ylabel={$y$},
+    grid=both,
+    grid style={line width=0.1pt, draw=gray!20},
+    major grid style={line width=0.2pt, draw=gray!40},
+    samples=200,
+    domain=0:7
+  ]
+    % Polynomial Curve
+    \addplot[thick, blue] {(39/38) + (17/38)*x};
+    % Points
+    \addplot[only marks, mark=*, mark size=2pt, black] coordinates {
+      (1,1)
+      (4,4)
+      (6,3)
+    };
+  \end{axis}
+\end{tikzpicture}
+```
+:::
+
+:::
+
+### Solving by hand
+
+![](1.png)
+
+### A quadratic polynomial that best fits $n$ points {.scrollable}
 
 :::: {.columns}
 
 ::: {.column width="50%"}
+[Write down the system of equations]{.inclass} that must be solved to find the coefficients in $y(x) = a_0 + a_1 x + a_2 x^2$.
+
 ::: {.content-visible when-meta=uncover}
 ::: {.fragment}
 ::: {style="font-size: 55%;"}
@@ -649,9 +692,17 @@ $$
 ```
 
 [Take derivatives $\frac{\partial S}{\partial a_0}$, $\frac{\partial S}{\partial a_1}$ and $\frac{\partial S}{\partial a_2}$ and set equal to zero.]{.inclass}
+
+::: {.r-fit-text}
+$\displaystyle S=\sum_{i=1}^n [y_i - a_0 - a_1 x_i - a_2 x_i^2]^2$
+:::
 :::
 
 ::::
+
+####  Derivation
+
+![](2.png)
 
 ### System of equations for fitting a quadratic polynomial (degree $m=2$)
 
@@ -682,6 +733,8 @@ a_2
 \end{bmatrix}
 $$
 
+Note: all sums are carried out over the $n$ data points.
+
 ### System of equations for fitting a polynomial of degree $m$ to a set of $n$ data points
 
 $$
@@ -710,6 +763,19 @@ a_m
 $$
 
 Note: all sums are carried out over the $n$ data points.
+
+### Nonlinear Least Squares
+
+Where $f(x)$ depends nonlinearly on at least one of the parameters $a_0,a_1,...,a_m$
+
+![](3.png)
+
+### Linear Least Squares for functions other than polynomials
+
+Where $f(x)$ is a linear combination of $m$ (possibly nonlinear) basis functions $f_j(x)$
+
+![](4.png)
+
 
 
 

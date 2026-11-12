@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-11-03">
+<meta name="dcterms.date" content="2026-11-12">
 
 <title>Tests – ENGR 21 Computer Engineering Fundamentals</title>
 <style>
@@ -180,6 +180,34 @@ ul.task-list li input[type="checkbox"] {
 
     window['quarto-listings'] = window['quarto-listings'] || {};
     window['quarto-listings']['listing-test-4'] = new List('listing-test-4', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-test-5 .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-topic',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-test-5'] = new List('listing-test-5', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -463,6 +491,12 @@ window.Quarto = {
  <span class="menu-text">Lecture 19</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lectures/Lec20/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 20</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -668,6 +702,7 @@ window.Quarto = {
   <li><a href="#test-2" id="toc-test-2" class="nav-link" data-scroll-target="#test-2">Test 2</a></li>
   <li><a href="#test-3" id="toc-test-3" class="nav-link" data-scroll-target="#test-3">Test 3</a></li>
   <li><a href="#test-4" id="toc-test-4" class="nav-link" data-scroll-target="#test-4">Test 4</a></li>
+  <li><a href="#test-5" id="toc-test-5" class="nav-link" data-scroll-target="#test-5">Test 5</a></li>
   </ul>
 </nav>
     </div>
@@ -688,7 +723,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 3, 2026</p>
+      <p class="date">November 12, 2026</p>
     </div>
   </div>
   
@@ -1359,6 +1394,149 @@ HW 8
 <div class="card-attribution card-text-small end">
 <div class="listing-date">
 Nov 5, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+&nbsp;
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="test-5" class="level2">
+<h2 class="anchored" data-anchor-id="test-5">Test 5</h2>
+<div id="listing-test-5" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1793682000000" data-listing-file-modified-sort="1793721302893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1631">
+<a href="./Lectures/Lec17/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lecture 17
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Nov 3, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+Linear Systems
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-date-sort="1793854800000" data-listing-file-modified-sort="1794290994890" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="891">
+<a href="./Lectures/Lec18/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lecture 18
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Nov 5, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+Linear Systems
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-date-sort="1794286800000" data-listing-file-modified-sort="1794465534525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1805">
+<a href="./Lectures/Lec19/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lecture 19
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Nov 10, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+Interpolation
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-date-sort="1794459600000" data-listing-file-modified-sort="1794496076084" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3386">
+<a href="./Lectures/Lec20/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lecture 20
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Nov 12, 2026
+</div>
+</div>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+topic
+</td>
+<td class="topic">
+Curve Fitting
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-date-sort="1794459600000" data-listing-file-modified-sort="1793925551305" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3301">
+<a href="./Homework/HW9/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+HW 9
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Nov 12, 2026
 </div>
 </div>
 <table class="card-other-values">

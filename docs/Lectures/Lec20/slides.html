@@ -188,6 +188,7 @@ y_n
 </div>
 </div>
 <p><span class="inclass fragment">What’s <em>nonlinear</em> interpolation ?</span></p>
+<p><span class="emph fragment">Nonlinear interpolation is when the interpolating function depends nonlinearly on the looked-for parameters.</span></p>
 </section>
 <section id="an-example-of-nonlinear-interpolation" class="slide level3">
 <h3>An example of nonlinear interpolation</h3>
@@ -326,28 +327,73 @@ d_3
 </section>
 <section id="linear-vs.-nonlinear-least-squares-1" class="slide level3">
 <h3>Linear vs.&nbsp;nonlinear least squares</h3>
+<div class="fragment">
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Linear Least Squares</strong><br>
+Function <span class="math inline">\(f(x)\)</span> depends linearly on the parameters <span class="math inline">\(\{ a_0, a_1, a_2, ... \}\)</span></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Nonlinear Least Squares</strong><br>
+Function <span class="math inline">\(f(x)\)</span> depends <u>nonlinearly</u> on <strong>at least one</strong> of the parameters <span class="math inline">\(\{ a_0, a_1, a_2, ... \}\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">In both cases, <span class="math inline">\(f(x)\)</span> is allowed to be nonlinear in <span class="math inline">\(x\)</span>.</li>
+</ul>
 </section>
 <section id="curve-fitting-n-data-points-to-m-degree-polynomial" class="slide level3">
 <h3>Curve Fitting <span class="math inline">\(n\)</span> data points to <span class="math inline">\(m\)</span>-degree polynomial</h3>
 <p>Find the parameters <span class="math inline">\(\{ a_0, a_1, a_2, ..., a_m \}\)</span> that <strong>minimize</strong> the so-called <u>objective function</u> <span class="math inline">\(\boxed{S = \sum_{i} [y_i - f(x_i)]^2}\)</span>,</p>
 <p><span class="fragment">where <span class="math inline">\(f(x) = a_0 + a_1 x + a_2 x^2 + ... + a_m x^m\)</span></span></p>
 <p><span class="fragment">Note: the summation symbol refers to ‘sum over all <span class="math inline">\(n\)</span> points’</span></p>
+<p><span class="emph fragment">Idea: Take derivatives with respect to <span class="math inline">\(a_0\)</span>, <span class="math inline">\(a_1\)</span>, etc. and set them all to zero, to find <span class="math inline">\(\{ a_0, a_1, a_2, ... ,a_m \}\)</span></span></p>
 </section>
-<section id="finding-parameters-a_0-a_1-a_2-...-a_m-that-minimize-s-for-polynomial-fx" class="slide level3">
-<h3>Finding parameters <span class="math inline">\(\{ a_0, a_1, a_2, ... ,a_m \}\)</span> that minimize <span class="math inline">\(S\)</span> for polynomial <span class="math inline">\(f(x)\)</span></h3>
-<p><span class="fragment">Minimize <span class="math inline">\(\displaystyle S = \sum [y_i - f(x_i)]^2\)</span> with respect to <span class="math inline">\(a_0, a_1, a_2, ... a_m\)</span></span></p>
-<p><span class="fragment"><span class="math inline">\(\displaystyle S=\sum [y_i - a_0 - a_1 x_i - a_2 x_i^2 - ... - a_m x_i^m]^2\)</span></span></p>
-<p><span class="emph fragment">Idea: Take derivatives with respect to <span class="math inline">\(a_0\)</span>, <span class="math inline">\(a_1\)</span>, etc. and set them all to zero</span></p>
+<section id="example-a-line-of-best-fit-for-three-points" class="slide level3">
+<h3>Example: a line of best fit for three points</h3>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><span class="inclass">Find the equation</span> of the straight line <span class="math inline">\(y = a_0 + a_1 x\)</span> that passes through the three points shown while minimizing <span class="math inline">\(S\)</span>.</p>
+<p>Hint: Write down two simultaneous equations for <span class="math inline">\(a_0\)</span> and <span class="math inline">\(a_1\)</span>.</p>
+</div><div class="column" style="width:45%;">
+<img data-src="index_files/mediabag/tikz.556ac8b5.svg" style="width:6in">
+</div></div>
 </section>
-<section id="example-find-a-quadratic-polynomial-that-best-fits-n-points" class="slide level3">
-<h3>Example: Find a quadratic polynomial that best fits <span class="math inline">\(n\)</span> points</h3>
+<section id="solving-by-hand" class="slide level3">
+<h3>Solving by hand</h3>
+<p><img data-src="1.png"></p>
+</section>
+<section id="a-quadratic-polynomial-that-best-fits-n-points" class="slide level3 scrollable">
+<h3>A quadratic polynomial that best fits <span class="math inline">\(n\)</span> points</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
-
+<p><span class="inclass">Write down the system of equations</span> that must be solved to find the coefficients in <span class="math inline">\(y(x) = a_0 + a_1 x + a_2 x^2\)</span>.</p>
+<div class="fragment">
+<div style="font-size: 55%;">
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial S}{\partial a_0} &amp;= -2 \sum_{i} \left[ y_i - a_0 - a_1 x_i - a_2 x_i^2 \right] = 0 \\
+&amp;\implies \sum_{i} \left( a_0 + a_1 x_i + a_2 x_i^2 \right) = \sum_{i} y_i \\[1em]
+\frac{\partial S}{\partial a_1} &amp;= -2 \sum_{i} x_i \left[ y_i - a_0 - a_1 x_i - a_2 x_i^2 \right] = 0 \\
+&amp;\implies \sum_{i} \left( a_0 x_i + a_1 x_i^2 + a_2 x_i^3 \right) = \sum_{i} y_i x_i \\[1em]
+\frac{\partial S}{\partial a_2} &amp;= -2 \sum_{i} x_i^2 \left[ y_i - a_0 - a_1 x_i - a_2 x_i^2 \right] = 0 \\
+&amp;\implies \sum_{i} \left( a_0 x_i^2 + a_1 x_i^3 + a_2 x_i^4 \right) = \sum_{i} y_i x_i^2
+\end{aligned}
+\]</span></p>
+</div>
+</div>
 </div><div class="column" style="width:50%;">
 <img data-src="index_files/mediabag/tikz.50b60289.svg">
 <p><span class="inclass">Take derivatives <span class="math inline">\(\frac{\partial S}{\partial a_0}\)</span>, <span class="math inline">\(\frac{\partial S}{\partial a_1}\)</span> and <span class="math inline">\(\frac{\partial S}{\partial a_2}\)</span> and set equal to zero.</span></p>
+<div class="r-fit-text">
+<p><span class="math inline">\(\displaystyle S=\sum_{i=1}^n [y_i - a_0 - a_1 x_i - a_2 x_i^2]^2\)</span></p>
+</div>
 </div></div>
+<h4 id="derivation">Derivation</h4>
+<p><img data-src="2.png"></p>
 </section>
 <section id="system-of-equations-for-fitting-a-quadratic-polynomial-degree-m2" class="slide level3">
 <h3>System of equations for fitting a quadratic polynomial (degree <span class="math inline">\(m=2\)</span>)</h3>
@@ -376,6 +422,7 @@ a_2
 \sum y_i x_i^2
 \end{bmatrix}
 \]</span></p>
+<p>Note: all sums are carried out over the <span class="math inline">\(n\)</span> data points.</p>
 </section>
 <section id="system-of-equations-for-fitting-a-polynomial-of-degree-m-to-a-set-of-n-data-points" class="slide level3">
 <h3>System of equations for fitting a polynomial of degree <span class="math inline">\(m\)</span> to a set of <span class="math inline">\(n\)</span> data points</h3>
@@ -404,6 +451,16 @@ a_m
 \end{bmatrix}
 \]</span></p>
 <p>Note: all sums are carried out over the <span class="math inline">\(n\)</span> data points.</p>
+</section>
+<section id="nonlinear-least-squares" class="slide level3">
+<h3>Nonlinear Least Squares</h3>
+<p>Where <span class="math inline">\(f(x)\)</span> depends nonlinearly on at least one of the parameters <span class="math inline">\(a_0,a_1,...,a_m\)</span></p>
+<p><img data-src="3.png"></p>
+</section>
+<section id="linear-least-squares-for-functions-other-than-polynomials" class="slide level3">
+<h3>Linear Least Squares for functions other than polynomials</h3>
+<p>Where <span class="math inline">\(f(x)\)</span> is a linear combination of <span class="math inline">\(m\)</span> (possibly nonlinear) basis functions <span class="math inline">\(f_j(x)\)</span></p>
+<p><img data-src="4.png"></p>
 
 
 </section>
