@@ -351,7 +351,7 @@ Instead of an exam, E21 will conclude with a final project. This will be an oppo
     <td class="tg-0pky">19</td>
     <td class="tg-0pky">Tue,Nov 10</td>
     <td class="tg-0pky"></td>
-    <td class="tg-7od5">Optimization / Initial Value Problems</td>
+    <td class="tg-7od5">Curve-fitting and Interpolation</td>
     <td class="tg-90e1">Test 4 on HW 7 &amp; 8</td>
     <td class="tg-0pky">Intro Project</td>
   </tr>
@@ -360,7 +360,7 @@ Instead of an exam, E21 will conclude with a final project. This will be an oppo
     <td class="tg-0pky">20</td>
     <td class="tg-0pky">Thu,Nov 12</td>
     <td class="tg-7od5">HW 9</td>
-    <td class="tg-7od5">Optimization / Initial Value Problems</td>
+    <td class="tg-7od5">Curve-fitting and Interpolation</td>
     <td class="tg-0pky"></td>
     <td class="tg-0pky">Lab 5 starts</td>
   </tr>
@@ -369,7 +369,7 @@ Instead of an exam, E21 will conclude with a final project. This will be an oppo
     <td class="tg-0pky">21</td>
     <td class="tg-0pky">Tue,Nov 17</td>
     <td class="tg-0pky"></td>
-    <td class="tg-ncd7">Optimization / Initial Value Problems</td>
+    <td class="tg-ncd7">Optimization</td>
     <td class="tg-0pky"></td>
     <td class="tg-0pky"></td>
   </tr>
@@ -378,7 +378,7 @@ Instead of an exam, E21 will conclude with a final project. This will be an oppo
     <td class="tg-0pky">22</td>
     <td class="tg-0pky">Thu,Nov 19</td>
     <td class="tg-7od5">HW 10</td>
-    <td class="tg-ncd7">Optimization / Initial Value Problems</td>
+    <td class="tg-ncd7">Optimization</td>
     <td class="tg-0pky"></td>
     <td class="tg-0pky"></td>
   </tr>
@@ -387,7 +387,7 @@ Instead of an exam, E21 will conclude with a final project. This will be an oppo
     <td class="tg-0pky">23</td>
     <td class="tg-0pky">Tue,Nov 24<sup>*</sup></td>
     <td class="tg-0pky"></td>
-    <td class="tg-ncd7">Curve-fitting &amp; interpolation</td>
+    <td class="tg-ncd7">Optimization</td>
     <td class="tg-7od5">Test 5 on HW 9 &amp; 10</td>
     <td class="tg-0pky"></td>
   </tr>
@@ -405,7 +405,7 @@ Instead of an exam, E21 will conclude with a final project. This will be an oppo
     <td class="tg-0pky">24</td>
     <td class="tg-0pky">Tue,Dec 1</td>
     <td class="tg-0pky"></td>
-    <td class="tg-ncd7">Curve-fitting &amp; interpolation</td>
+    <td class="tg-ncd7">TBD</td>
     <td class="tg-0pky"></td>
     <td class="tg-0pky"></td>
   </tr>
@@ -460,9 +460,9 @@ This table is best viewed online.
 |         |   20     |   Thu,Nov 12    |   HW 9    |   Curve fitting & interpolation                |                         |   Lab 5 starts   |
 |   11    |   21     |   Tue,Nov 17    |           |   Optimization                                 |                         |                  |
 |         |   22     |   Thu,Nov 19    |   HW 10   |   Optimization                                 |                         |                  |
-|   12    |   23     |   Tue,Nov 24    |           |   TBD                                          |   Test 5 on HW 9 & 10   |                  |
+|   12    |   23     |   Tue,Nov 24    |           |   Optimization                                 |   Test 5 on HW 9 & 10   |                  |
 |         |   0      |   Thanksgiving  |   HW 11   |                                                |                         |   Project        |
-|   13    |   24     |   Tue,Dec 1     |           |   TBD                                          |                         |                  |
+|   13    |   24     |   Tue,Dec 1     |           |   TBD                        |                         |                  |
 |         |   25     |   Thu,Dec 3     |   HW 12   |   Work on final project                        |                         |                  |
 |   14    |   26     |   Tue,Dec 8     |           |   Work on final project                        |   Test 6 on HW 11 & 12  |                  |
 :::
