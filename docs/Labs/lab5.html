@@ -38,63 +38,6 @@ Starter code for this lab is available [here](lab5.zip).
 I'm assuming you all will be familiar with complex numbers before we
 begin this lab. 
 
-## Durand-Kerner method
-
-The Durand-Kerner method is an iterative root finding technique for
-polynomials. It uses complex arithmetic, and can find both the real
-roots and the complex roots of a given polynomial. You will implement
-this method to find the roots of quadratic and quartic polynomials
-that arise in raytracing (see section below).
-
-Let $f(x)$ be a degree $n$ polynomial with $n + 1$ coefficients. The
-Durand-Kerner method maintains a list of $n$ root estimates $x_1$ to
-$x_n$.  Since it is an iterative method, we will denote the estimate
-for the $k^\text{th}$ root at the $i^\text{th}$ iteration as $x_{k,i}$.
-
-The update rule for Durand-Kerner is given by
-
-$$
-x_{k,i+1} = x_{k,i} - \frac{f(x_{k,i})}{\displaystyle \prod_{j < k}( x_{k,i} - x_{j,i+1} ) \cdot \prod_{j > k}( x_{k,i} - x_{j,i} ) }.
-$$
-
-To provide a concrete example with $n = 3$, we would start with
-initial root estimates $x_{1,1}$, $x_{2,1}$, and $x_{3,1}$, then use the updates
-
-$$
-\begin{align*}
-x_{1,2}  & = x_{1,1} - \frac{f(x_{1,1})}{(x_{1,1} - x_{2,1})(x_{1,1} - x_{3,1})} \\
-\\
-x_{2,2}  & = x_{2,1} - \frac{f(x_{2,1})}{(x_{2,1} - x_{1,2})(x_{2,1} - x_{3,1})} \\
-\\
-x_{3,2}  & = x_{3,1} - \frac{f(x_{3,1})}{(x_{3,1} - x_{1,2})(x_{3,1} - x_{2,2})}.
-\end{align*}
-$$
-
-!!! Tip
-    Given a point $x$ and coefficients $c_k$ in increasing order of exponent (i.e. constant term first), you
-    can evaluate a polynomial using [**`numpy.polynomial.polynomial.polyval`**](https://numpy.org/doc/stable/reference/generated/numpy.polynomial.polynomial.polyval.html).
-    
-Iteration should continue until the approximate relative error $\varepsilon_{k,i}$ for all
-root estimates $x_{k,i}$ is below a specified tolerance. The approximate
-relative error is given by
-
-$$
-\varepsilon_{k,i} = \frac{|x_{k,i} - x_{k,i-1}|}{|x_{k,i}|}.
-$$
-
-For further information, I suggest you check out the 
-[Wikipedia page on Durand-Kerner](https://en.wikipedia.org/wiki/Durand%E2%80%93Kerner_method).
-
-!!! Warning
-    When implementing Durand-Kerner, you do not need to store a 2D
-    array of root estimates (e.g. for all $k$ and $i$) -- a 1D array
-    (over $k$) is sufficient.
-    
-    I suggest you use a pair of nested **`for`** loops that updates
-    each root over each each iteration. You may need to use a
-    temporary variable in the inner loop to store the new root
-    estimate before you compute approximate relative error and then
-    update the array with the new root estimate.
 
 ## Digital representation of images
 
@@ -268,8 +211,63 @@ quartic (fourth-degree) polynomial.
 You will replace the starter code's calls to the numpy solver with your
 own implementation of the Durand-Kerner method.
 
+## Durand-Kerner method
 
+The Durand-Kerner method is an iterative root finding technique for
+polynomials. It uses complex arithmetic, and can find both the real
+roots and the complex roots of a given polynomial. You will implement
+this method to find the roots of quadratic and quartic polynomials
+that arise in raytracing (see section below).
 
+Let $f(x)$ be a degree $n$ polynomial with $n + 1$ coefficients. The
+Durand-Kerner method maintains a list of $n$ root estimates $x_1$ to
+$x_n$.  Since it is an iterative method, we will denote the estimate
+for the $k^\text{th}$ root at the $i^\text{th}$ iteration as $x_{k,i}$.
+
+The update rule for Durand-Kerner is given by
+
+$$
+x_{k,i+1} = x_{k,i} - \frac{f(x_{k,i})}{\displaystyle \prod_{j < k}( x_{k,i} - x_{j,i+1} ) \cdot \prod_{j > k}( x_{k,i} - x_{j,i} ) }.
+$$
+
+To provide a concrete example with $n = 3$, we would start with
+initial root estimates $x_{1,1}$, $x_{2,1}$, and $x_{3,1}$, then use the updates
+
+$$
+\begin{align*}
+x_{1,2}  & = x_{1,1} - \frac{f(x_{1,1})}{(x_{1,1} - x_{2,1})(x_{1,1} - x_{3,1})} \\
+\\
+x_{2,2}  & = x_{2,1} - \frac{f(x_{2,1})}{(x_{2,1} - x_{1,2})(x_{2,1} - x_{3,1})} \\
+\\
+x_{3,2}  & = x_{3,1} - \frac{f(x_{3,1})}{(x_{3,1} - x_{1,2})(x_{3,1} - x_{2,2})}.
+\end{align*}
+$$
+
+!!! Tip
+    Given a point $x$ and coefficients $c_k$ in increasing order of exponent (i.e. constant term first), you
+    can evaluate a polynomial using [**`numpy.polynomial.polynomial.polyval`**](https://numpy.org/doc/stable/reference/generated/numpy.polynomial.polynomial.polyval.html).
+    
+Iteration should continue until the approximate relative error $\varepsilon_{k,i}$ for all
+root estimates $x_{k,i}$ is below a specified tolerance. The approximate
+relative error is given by
+
+$$
+\varepsilon_{k,i} = \frac{|x_{k,i} - x_{k,i-1}|}{|x_{k,i}|}.
+$$
+
+For further information, I suggest you check out the 
+[Wikipedia page on Durand-Kerner](https://en.wikipedia.org/wiki/Durand%E2%80%93Kerner_method).
+
+!!! Warning
+    When implementing Durand-Kerner, you do not need to store a 2D
+    array of root estimates (e.g. for all $k$ and $i$) -- a 1D array
+    (over $k$) is sufficient.
+    
+    I suggest you use a pair of nested **`for`** loops that updates
+    each root over each each iteration. You may need to use a
+    temporary variable in the inner loop to store the new root
+    estimate before you compute approximate relative error and then
+    update the array with the new root estimate.
 
 ## Raymarching
 
