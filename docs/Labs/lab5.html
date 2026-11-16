@@ -263,9 +263,9 @@ For further information, I suggest you check out the
     array of root estimates (e.g. for all $k$ and $i$) -- a 1D array
     (over $k$) is sufficient.
     
-    I suggest you use a pair of nested **`for`** loops that updates
+    I suggest you use a set of nested **`for`** loops that updates
     each root over each each iteration. You may need to use a
-    temporary variable in the inner loop to store the new root
+    temporary variable to store each new root
     estimate before you compute approximate relative error and then
     update the array with the new root estimate.
 
