@@ -407,30 +407,32 @@ def vandermonde_matrix(xlist):
             A[j,i] = xlist[j]**i
     return A
 
-def vandermonde_condition_number(xlist):
-    A = vandermonde_matrix(xlist)
-    cond_A = np.linalg.cond(A,'fro')
-    print(f"For a vandermonde matrix made of {xlist}")
-    print(f"Condition number is {cond_A}")
-    return cond_A
+def Runge_func(x):
+    return 1/(1+25 * x**2)
 
-exponents = range(-7,7,1)
-output = np.zeros((len(exponents),2))
+def get_polynomial_coeffs(xlist,ylist):
+    return np.dot(np.linalg.inv(vandermonde_matrix(xlist)),ylist)
 
-for i,el in enumerate(exponents):
-    print(f"With n = {el}")
-    highest_number = 2.0**el
-    step_size = highest_number/4
-    xs = [step_size, 2*step_size, 3*step_size, highest_number]
-    output[i,0] = el
-    output[i,1] = vandermonde_condition_number(xs)
+def evaluate_polynomial(coeffs,x):
+    total = 0
+    for j in range(len(coeffs)):
+        total += coeffs[j] * x**j
+    return total
 
+# Change "21" below to some other number
+xvals = np.linspace(-1,1,21)
+yvals = Runge_func(xvals)
 
-plt.bar(output[:,0],output[:,1])
-plt.ylabel("Condition Number")
-plt.xlabel("n")
-plt.yscale("log")
-plt.title("Vandermonde matrix with \n x = [0.25*2^n, 0.5*2^n, 0.75*2^n, 1.0 * 2^n]")
+coeffs = get_polynomial_coeffs(xvals,yvals)
+
+x_plot = np.linspace(-1.2,1.2,500)
+y_Runge = Runge_func(x_plot)
+
+plt.plot(x_plot,evaluate_polynomial(coeffs,x_plot),label='Interpolation')
+plt.plot(x_plot,Runge_func(x_plot),label='Runge function')
+plt.ylim([-0.5,2])
+plt.scatter(xvals,yvals)
+plt.legend()
 plt.show()
 ```
 :::
