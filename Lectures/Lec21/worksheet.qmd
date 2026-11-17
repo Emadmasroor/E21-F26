@@ -1,0 +1,75 @@
+---
+title: "Lec 21 Worksheet"
+subtitle: "E21 Computer Engineering Fundamentals"
+topic: "Linear Systems"
+order: 21
+date: 11-17-2026
+date-format: long
+uncover: true
+footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
+code-line-numbers: false
+code-fold: false
+header-includes:
+  - \renewcommand{\maketitle}{}
+
+format: 
+  html: 
+    output-file: worksheet.html
+  revealjs:
+    output-file: worksheet-slides.html
+  pdf:
+    output-file: worksheet.pdf
+    number-sections: false
+    geometry:
+      - margin=1in
+      - landscape
+    include-in-header: 
+      text: |
+        \usepackage{scrlayer-scrpage,amsmath,amssymb}
+        \setlength{\footskip}{30pt}   % default is ~20pt
+        \setlength{\headheight}{30pt}   % default is ~20pt
+        \lohead{Worksheet}
+        \rohead{E21 Computer Engineering Fundamentals}
+        \rofoot{Fall 2026}
+        \lofoot{Swarthmore College}
+        \setheadsepline{1pt}   % line below header
+        \setfootsepline{1pt}   % line above footer
+---
+
+$f(x_1) > f(x_2) \implies \text{ new bracket is } [ a, x_2 ]$
+
+$f(x_2) > f(x_1) \implies \text{ new bracket is } [ x_1, b ]$
+
+$$
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l|c|c|c|c|c|c|}
+Step & $a$ & $x_1 = b - Rh$ & $x_2 = a + Rh$ & $b$ & \begin{tabular}[c]{@{}c@{}}interval\\length $h$\end{tabular} & \begin{tabular}[c]{@{}r@{}}new\\interval\end{tabular} \\ \hline
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\ \hline
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\ \hline
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\ \hline
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\ \hline
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\ \hline
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\
+ & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} & \phantom{1.23423456788765} &  & \\ \hline
+\end{tabular}
+\endgroup
+$$
+
