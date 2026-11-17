@@ -98,13 +98,16 @@ Optimization
    - Increment strategies?
      - Constant increment $0.1, 0.2, 0.3, 0.4, ...$
      - Increasing increment $0.1, 0.2, 0.4, 0.8,...$
+     - Decreasing increment $0.1, 0.2, 0.25, 0.26, ...$
 3. When $f(x_{n}) < f(x_{n-1})$, you have successfully **bracketed** the maximum between $x_{n-1}$ and $x_n$.
 
 ### Python function for bracketing
 
 [Write a program that brackets a **minimum** of the following function]{.inclass}
-$$f(x) = -10x^6 + 12x^5 + 105x^4 - 20x^3 - 180x^2$$
-starting from $x=-4$ in a window $0.1$ wide.
+$$f(x) = -10 x^6 + 12 x^5 + 100 x^4 - 19 x^3 - 300 x$$
+
+- starting from $x=-4$ using positive $0.1$ increments
+- starting from $x=+4$ using negative $0.1$ increments
 
 ### Golden Section Search {.smaller}
 
@@ -282,9 +285,11 @@ If $f(x_1) < f(x_2)$, then discard $[a,x_2]$ and use new bracket ${\color{blue}{
 
 Locate a maximum of the function $$f(x) = \sin 2x$$ in the region $[0,1]$ using steps of the Golden Section Search method.
 
-### Multi-dimensional optimization
+### Multi-dimensional optimization {.smaller}
 
 Find the minimimum of $$f(x,y) = (x-1)^2 + (y+1)^2 + xy$$
 
 - Idea: pick some **direction vectors** in $(x,y)$ space and optimize along each direction
   - Direction vectors should span the entire space, i.e., need as many independent (non-parallel) direction vectors as there are design variables.
+
+![](directions.png)

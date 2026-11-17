@@ -11,7 +11,6 @@ code-line-numbers: false
 code-fold: false
 header-includes:
   - \renewcommand{\maketitle}{}
-
 format: 
   html: 
     output-file: worksheet.html
@@ -36,10 +35,13 @@ format:
         \setfootsepline{1pt}   % line above footer
 ---
 
+Partially filled [here](GoldenSectionSearch-filled.pdf).
+
 $f(x_1) > f(x_2) \implies \text{ new bracket is } [ a, x_2 ]$
 
 $f(x_2) > f(x_1) \implies \text{ new bracket is } [ x_1, b ]$
 
+::: {.content-visible when-format="pdf"}
 $$
 \begingroup
 \setlength{\tabcolsep}{4pt}
@@ -72,4 +74,5 @@ Step & $a$ & $x_1 = b - Rh$ & $x_2 = a + Rh$ & $b$ & \begin{tabular}[c]{@{}c@{}}
 \end{tabular}
 \endgroup
 $$
+:::
 

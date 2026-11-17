@@ -707,6 +707,7 @@ window.Quarto = {
 <ul>
 <li>Constant increment <span class="math inline">\(0.1, 0.2, 0.3, 0.4, ...\)</span></li>
 <li>Increasing increment <span class="math inline">\(0.1, 0.2, 0.4, 0.8,...\)</span></li>
+<li>Decreasing increment <span class="math inline">\(0.1, 0.2, 0.25, 0.26, ...\)</span></li>
 </ul></li>
 </ul></li>
 <li>When <span class="math inline">\(f(x_{n}) &lt; f(x_{n-1})\)</span>, you have successfully <strong>bracketed</strong> the maximum between <span class="math inline">\(x_{n-1}\)</span> and <span class="math inline">\(x_n\)</span>.</li>
@@ -715,7 +716,11 @@ window.Quarto = {
 </section>
 <section id="python-function-for-bracketing" class="level3">
 <h3 class="anchored" data-anchor-id="python-function-for-bracketing">Python function for bracketing</h3>
-<p><span class="inclass">Write a program that brackets a <strong>minimum</strong> of the following function</span> <span class="math display">\[f(x) = -10x^6 + 12x^5 + 105x^4 - 20x^3 - 180x^2\]</span> starting from <span class="math inline">\(x=-4\)</span> in a window <span class="math inline">\(0.1\)</span> wide.</p>
+<p><span class="inclass">Write a program that brackets a <strong>minimum</strong> of the following function</span> <span class="math display">\[f(x) = -10 x^6 + 12 x^5 + 100 x^4 - 19 x^3 - 300 x\]</span></p>
+<ul>
+<li>starting from <span class="math inline">\(x=-4\)</span> using positive <span class="math inline">\(0.1\)</span> increments</li>
+<li>starting from <span class="math inline">\(x=+4\)</span> using negative <span class="math inline">\(0.1\)</span> increments</li>
+</ul>
 </section>
 <section id="golden-section-search" class="level3 smaller">
 <h3 class="smaller anchored" data-anchor-id="golden-section-search">Golden Section Search</h3>
@@ -742,8 +747,8 @@ If <span class="math inline">\(f(x_1) &lt; f(x_2)\)</span>, then discard <span c
 <h3 class="anchored" data-anchor-id="practice-with-golden-section-search">Practice with Golden Section Search</h3>
 <p>Locate a maximum of the function <span class="math display">\[f(x) = \sin 2x\]</span> in the region <span class="math inline">\([0,1]\)</span> using steps of the Golden Section Search method.</p>
 </section>
-<section id="multi-dimensional-optimization" class="level3">
-<h3 class="anchored" data-anchor-id="multi-dimensional-optimization">Multi-dimensional optimization</h3>
+<section id="multi-dimensional-optimization" class="level3 smaller">
+<h3 class="smaller anchored" data-anchor-id="multi-dimensional-optimization">Multi-dimensional optimization</h3>
 <p>Find the minimimum of <span class="math display">\[f(x,y) = (x-1)^2 + (y+1)^2 + xy\]</span></p>
 <ul>
 <li>Idea: pick some <strong>direction vectors</strong> in <span class="math inline">\((x,y)\)</span> space and optimize along each direction
@@ -751,6 +756,7 @@ If <span class="math inline">\(f(x_1) &lt; f(x_2)\)</span>, then discard <span c
 <li>Direction vectors should span the entire space, i.e., need as many independent (non-parallel) direction vectors as there are design variables.</li>
 </ul></li>
 </ul>
+<p><img src="directions.png" class="img-fluid"></p>
 
 
 </section>

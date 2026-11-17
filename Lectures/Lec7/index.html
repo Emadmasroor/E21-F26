@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Emad Masroor">
+<meta name="dcterms.date" content="2026-09-22">
+
+<title>Lecture 07 – ENGR 21 Computer Engineering Fundamentals</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5a1953863e1f72ef3b996ef827f01ca7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-add7254ae97fa153f8b1a26e02c65245.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-32e3d36c25272d6ff5376a1b833ae0db.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-add7254ae97fa153f8b1a26e02c65245.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ENGR 21 Computer Engineering Fundamentals</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Homepage</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://moodle.swarthmore.edu/course/view.php?id=30092"> 
+<span class="menu-text">Moodle</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.gradescope.com/courses/1380463"> 
+<span class="menu-text">Gradescope</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://edstem.org/us/courses/104911/discussion"> 
+<span class="menu-text">Ed Discussion</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec7/index.html">Lecture 07</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../AcademicSupport/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Academic Support</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../AcademicSupport/Masroor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../AcademicSupport/wizards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wizard Office Hours</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../labs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lectures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec1/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec2/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 02</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec3/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 03</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec4/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 04</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec5/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 05</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec6/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 06</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec7/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 07</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec8/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 08</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec9/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 09</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec10/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec11/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 11</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec12/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 12</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec13/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 13</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec14/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 14</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec15/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 15</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec16/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 16</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Lectures/Lec17/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec17/worksheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jacobi Worksheet</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Lectures/Lec18/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 18</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec18/worksheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lec 18 Worksheet</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec19/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 19</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec20/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 20</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Lectures/Lec21/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 21</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Lectures/Lec21/worksheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lec 21 Worksheet</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW1/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW1/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 1 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW2/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW2/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 2 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW3/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW3/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 3 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW4/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW4/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 4 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW5/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 5</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW5/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 5 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW6/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 6</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW6/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 6 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW7/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 7</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW7/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 7 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW8/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 8</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW8/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 8 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../Homework/HW9/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 9</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW9/solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 9 Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Homework/HW10/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW 10</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../PastProjects/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Past E21 Projects</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../syllabus.html#schedule" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://mzucker.github.io/swarthmore/linalg-reintroduction.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matt Zucker’s Intro to Linear Algebra</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kiusalaas_2ed.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numerical Methods in Engineering with Python</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://docs.google.com/presentation/d/1wjAhY1-zOz8ymXgxrZd3azuY1CMTaOfHaF108zEodPo/edit?slide=id.p#slide=id.p" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Project</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#test-1-830-855" id="toc-test-1-830-855" class="nav-link active" data-scroll-target="#test-1-830-855">Test 1 8:30 — 8:55</a></li>
+  <li><a href="#how-many-digits-are-needed-to-store-a-large-number" id="toc-how-many-digits-are-needed-to-store-a-large-number" class="nav-link" data-scroll-target="#how-many-digits-are-needed-to-store-a-large-number">How many ‘digits’ are needed to store a large number?</a></li>
+  <li><a href="#range-of-positive-negative-numbers" id="toc-range-of-positive-negative-numbers" class="nav-link" data-scroll-target="#range-of-positive-negative-numbers">Range of positive / negative numbers</a></li>
+  <li><a href="#the-sign-magnitude-representation" id="toc-the-sign-magnitude-representation" class="nav-link" data-scroll-target="#the-sign-magnitude-representation">The Sign-Magnitude Representation</a></li>
+  <li><a href="#fixed-point-representation-of-numbers" id="toc-fixed-point-representation-of-numbers" class="nav-link" data-scroll-target="#fixed-point-representation-of-numbers">Fixed Point Representation of numbers</a></li>
+  <li><a href="#a-rudimentary-floating-point-number-system" id="toc-a-rudimentary-floating-point-number-system" class="nav-link" data-scroll-target="#a-rudimentary-floating-point-number-system">A rudimentary ‘floating point’ number system</a></li>
+  <li><a href="#a-6-digit-decimal-floating-point-representation-needs-to-tell-you" id="toc-a-6-digit-decimal-floating-point-representation-needs-to-tell-you" class="nav-link" data-scroll-target="#a-6-digit-decimal-floating-point-representation-needs-to-tell-you">A 6-digit decimal floating-point representation needs to tell you …</a></li>
+  <li><a href="#instead-use-scientific-notation" id="toc-instead-use-scientific-notation" class="nav-link" data-scroll-target="#instead-use-scientific-notation">Instead … use ‘Scientific Notation’</a></li>
+  <li><a href="#standard-ieee-format-for-16-bit-floating-point-binary-numbers" id="toc-standard-ieee-format-for-16-bit-floating-point-binary-numbers" class="nav-link" data-scroll-target="#standard-ieee-format-for-16-bit-floating-point-binary-numbers">Standard (IEEE) Format for 16-bit floating-point binary numbers</a></li>
+  <li><a href="#place-value-notation-for-numbers-smaller-than-1" id="toc-place-value-notation-for-numbers-smaller-than-1" class="nav-link" data-scroll-target="#place-value-notation-for-numbers-smaller-than-1">Place Value Notation for numbers smaller than 1</a></li>
+  <li><a href="#interpreting-a-16-bit-binary-float" id="toc-interpreting-a-16-bit-binary-float" class="nav-link" data-scroll-target="#interpreting-a-16-bit-binary-float">Interpreting a 16-bit binary float</a></li>
+  <li><a href="#hex-short-form" id="toc-hex-short-form" class="nav-link" data-scroll-target="#hex-short-form">Hex short-form</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Lectures/Lec1/index.html">Lectures</a></li><li class="breadcrumb-item"><a href="../../Lectures/Lec7/index.html">Lecture 07</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Lecture 07</h1>
+<p class="subtitle lead">E21 Computer Engineering Fundamentals</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Emad Masroor </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 22, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="test-1-830-855" class="level3">
+<h3 class="anchored" data-anchor-id="test-1-830-855">Test 1 8:30 — 8:55</h3>
+<ul>
+<li>If you are done early you may leave and return by 9:00</li>
+</ul>
+</section>
+<section id="how-many-digits-are-needed-to-store-a-large-number" class="level3">
+<h3 class="anchored" data-anchor-id="how-many-digits-are-needed-to-store-a-large-number">How many ‘digits’ are needed to store a large number?</h3>
+<p><span class="inclass">Determine how many ‘digits’/bits you need</span> to represent the number one billion in:</p>
+<div class="quarto-layout-panel" data-layout="[0.2, 0.5, 0.3]">
+<div class="quarto-layout-row">
+<div class="{#} quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<p>Decimal</p>
+<div class="fragment">
+<p><strong>Answer</strong>:</p>
+<p><code>1000000000</code></p>
+<p>10 digits</p>
+</div>
+</div>
+<div class="{#} quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Binary</p>
+<div class="fragment">
+<p><strong>Answer</strong>:</p>
+<p><code>0b111011100110101100101000000000</code></p>
+<p>30 bits.</p>
+</div>
+</div>
+<div class="{#} quarto-layout-cell" style="flex-basis: 30.0%;justify-content: flex-start;">
+<p>Hexadecimal</p>
+<div class="fragment">
+<p><strong>Answer</strong>:</p>
+<p><code>0x3B9ACA00</code></p>
+<p>8 bits.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="range-of-positive-negative-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="range-of-positive-negative-numbers">Range of positive / negative numbers</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="bits.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<ul>
+<li>With 8 bits, how many binary integers can be stored? <span class="fragment"><span class="emph">256</span></span></li>
+<li>Which 256 numbers should we choose?
+<ul>
+<li>If we only care about positive numbers, we could choose
+<ul>
+<li><code>0</code>, <code>1</code>, <code>2</code>, …, <code>255</code></li>
+<li><code>1000</code>, <code>1001</code>, <code>1002</code>, …, <code>1255</code></li>
+</ul></li>
+<li>If we care about positive and negative numbers:
+<ul>
+<li><code>-1</code>, <code>0</code>, <code>1</code>, <code>2</code>, … <code>254</code></li>
+<li><code>-2</code>, <code>-1</code>, <code>0</code>, <code>1</code>, <code>2</code>, … <code>253</code></li>
+<li><code>-10</code>, <code>-9</code>, <code>-8</code>, <code>-7</code>, <code>-6</code>, … <code>245</code></li>
+<li><code>-128</code>, <code>-127</code>, <code>-126</code>, … <code>0</code> … <code>126</code>, <code>127</code></li>
+</ul></li>
+<li>Makes sense to evenly distribute your numbers around zero</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-sign-magnitude-representation" class="level3">
+<h3 class="anchored" data-anchor-id="the-sign-magnitude-representation">The Sign-Magnitude Representation</h3>
+<p><span class="fragment">The sign-magnitude representation is one way to represent integers in binary.</span></p>
+<p><span class="fragment">The most significant bit is reserved for the sign. <code>1</code> <span class="math inline">\(\implies\)</span> negative.</span></p>
+<div class="fragment">
+<p>The number <span class="math inline">\(9\)</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sign</th>
+<th><span class="math inline">\(2^7\)</span></th>
+<th><span class="math inline">\(2^6\)</span></th>
+<th><span class="math inline">\(2^5\)</span></th>
+<th><span class="math inline">\(2^4\)</span></th>
+<th><span class="math inline">\(2^3\)</span></th>
+<th><span class="math inline">\(2^2\)</span></th>
+<th><span class="math inline">\(2^1\)</span></th>
+<th><span class="math inline">\(2^0\)</span></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p>The number <span class="math inline">\(-56\)</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sign</th>
+<th><span class="math inline">\(2^7\)</span></th>
+<th><span class="math inline">\(2^6\)</span></th>
+<th><span class="math inline">\(2^5\)</span></th>
+<th><span class="math inline">\(2^4\)</span></th>
+<th><span class="math inline">\(2^3\)</span></th>
+<th><span class="math inline">\(2^2\)</span></th>
+<th><span class="math inline">\(2^1\)</span></th>
+<th><span class="math inline">\(2^0\)</span></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>1</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="fixed-point-representation-of-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="fixed-point-representation-of-numbers">Fixed Point Representation of numbers</h3>
+<p>A <strong>fixed point</strong> number has a ‘decimal point’ located at a fixed position in the place-value scheme.</p>
+<p>Consider two different fixed point decimal representations of the number one hundred, both with 6 decimal digits.</p>
+<div class="quarto-layout-panel" data-layout="[0.5, 0.5]">
+<div class="quarto-layout-row">
+<div class="{#} quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ol type="A">
+<li>Decimal point fixed at position 3</li>
+</ol>
+<p><span class="fragment"><code>100.000</code></span></p>
+</div>
+<div class="{#} quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ol start="2" type="A">
+<li>Decimal point fixed at position 2</li>
+</ol>
+<p><span class="fragment"><code>0100.00</code></span></p>
+</div>
+</div>
+</div>
+<p><span class="inclass">Questions to consider:</span></p>
+<ol type="1">
+<li>What is the largest (+) number that can be shown using A and B ? A: <code>999.999</code> B: <code>9999.99</code></li>
+<li>What is the smallest difference between two numbers that can be represented using A and B ? A: <code>0.001</code> B: <code>0.01</code></li>
+</ol>
+</section>
+<section id="a-rudimentary-floating-point-number-system" class="level3">
+<h3 class="anchored" data-anchor-id="a-rudimentary-floating-point-number-system">A rudimentary ‘floating point’ number system</h3>
+<ul>
+<li>With 6 digits and decimal point <strong>fixed</strong> in middle:</li>
+</ul>
+<div class="fragment">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Quantity</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Largest + Number</td>
+<td><code>999.999</code></td>
+</tr>
+<tr class="even">
+<td>Smallest + Number</td>
+<td><code>000.001</code></td>
+</tr>
+<tr class="odd">
+<td>Increment</td>
+<td><code>000.001</code></td>
+</tr>
+<tr class="even">
+<td>Pieces of info to store</td>
+<td>six</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>With 6 digits and decimal point can <strong>float</strong> anywhere:</li>
+</ul>
+<div class="fragment">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Quantity</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Largest + Number</td>
+<td><code>999999.</code></td>
+</tr>
+<tr class="even">
+<td>Smallest + Number</td>
+<td><code>.000001</code></td>
+</tr>
+<tr class="odd">
+<td>Increment</td>
+<td>depends</td>
+</tr>
+<tr class="even">
+<td>Pieces of info to store</td>
+<td>six + one</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="a-6-digit-decimal-floating-point-representation-needs-to-tell-you" class="level3">
+<h3 class="anchored" data-anchor-id="a-6-digit-decimal-floating-point-representation-needs-to-tell-you">A 6-digit decimal floating-point representation needs to tell you …</h3>
+<ol type="1">
+<li>What each of the 6 digits are.
+<ul>
+<li>Possibilities: 0 to 9</li>
+</ul></li>
+<li>Where the decimal point is:
+<ul>
+<li>7 options
+<ul>
+<li><code>000000.</code></li>
+<li><code>00000.0</code></li>
+<li><code>0000.00</code></li>
+<li><code>000.000</code></li>
+<li><code>00.0000</code></li>
+<li><code>0.00000</code></li>
+<li><code>.000000</code></li>
+</ul></li>
+</ul></li>
+</ol>
+</section>
+<section id="instead-use-scientific-notation" class="level3">
+<h3 class="anchored" data-anchor-id="instead-use-scientific-notation">Instead … use ‘Scientific Notation’</h3>
+<p>Recall the scientific notation of numbers: <span class="math display">\[-2.34 \times 10^5\]</span></p>
+<ul>
+<li>This conveys three pieces of information:
+<ul>
+<li>The sign</li>
+<li>3 digits for the number</li>
+<li>1 digit for the exponent</li>
+</ul></li>
+<li>Note that the <span class="math inline">\(a \times 10^{b}\)</span> structure is <strong>assumed</strong> and does not need to be stored every time the computer stores a number.</li>
+</ul>
+</section>
+<section id="standard-ieee-format-for-16-bit-floating-point-binary-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="standard-ieee-format-for-16-bit-floating-point-binary-numbers">Standard (IEEE) Format for 16-bit floating-point binary numbers</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="16bits.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<ul>
+<li>1 bit stores the sign</li>
+<li>10 bits store the number, known as the <em>significand</em>. <span class="math inline">\(1\)</span> is assumed to be the 11th bit, but it is <strong>not stored</strong>.</li>
+<li>5 bits store the exponent.
+<ul>
+<li>Smallest 5-bit binary number <code>00000</code><span class="math inline">\(= 0\)</span> and largest 5-bit binary number <code>11111</code><span class="math inline">\(=\)</span> 31</li>
+<li>To get <strong>negative exponents</strong>, we assume a <span class="emph">bias</span> in the exponent bits.</li>
+<li>Subtract fifteen from the exponent.</li>
+</ul></li>
+<li>The <em>structure</em> of the number is assumed; only the 16-bit <em>content</em> is stored in computer’s memory.</li>
+<li>Need 16 bits of memory to store this number.</li>
+</ul>
+</section>
+<section id="place-value-notation-for-numbers-smaller-than-1" class="level3">
+<h3 class="anchored" data-anchor-id="place-value-notation-for-numbers-smaller-than-1">Place Value Notation for numbers smaller than 1</h3>
+<ul>
+<li>1 is a special number in the place value system.</li>
+<li>A ‘decimal point’ — a more ecumenical name would be ‘fractional point’ — is needed to show any numbers smaller than 1.</li>
+<li>To interpret the number <code>003.0025</code>,</li>
+</ul>
+<div class="fragment">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 9%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 4%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Place</th>
+<th><span class="math inline">\(10^2\)</span></th>
+<th><span class="math inline">\(10^{1}\)</span></th>
+<th><span class="math inline">\(10^{0}\)</span></th>
+<th><span class="math inline">\(.\)</span></th>
+<th><span class="math inline">\(10^{-1}\)</span></th>
+<th><span class="math inline">\(10^{-2}\)</span></th>
+<th><span class="math inline">\(10^{-3}\)</span></th>
+<th><span class="math inline">\(10^{-4}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Value</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>3</code></td>
+<td><code>.</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>2</code></td>
+<td><code>5</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><span class="math inline">\(3\times 10^{0}\)</span></td>
+<td></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><span class="math inline">\(2 \times 10^{-3}\)</span></td>
+<td><span class="math inline">\(5 \times 10^{-4}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="interpreting-a-16-bit-binary-float" class="level3 scrollable">
+<h3 class="scrollable anchored" data-anchor-id="interpreting-a-16-bit-binary-float">Interpreting a 16-bit binary float</h3>
+<p><a href="https://evanw.github.io/float-toy/" class="fragment">Float Toy</a></p>
+<p><span class="fragment">With the IEEE format, the 16 bits</span></p>
+<p><img src="p2.png" class="fragment img-fluid"></p>
+<p><span class="fragment">represent the number</span></p>
+<p><img src="p3.png" class="fragment img-fluid"></p>
+<p><span class="fragment">which, in binary form, should be intepreted as <span class="math display">\[-1.0001000100_2 \times 2^{(10001_2 \text{ minus fifteen})}\]</span></span></p>
+<p><span class="fragment">The exponent is <code>0b10001</code> minus fifteen, i.e., <span class="math inline">\(17 - 15 = 2\)</span></span></p>
+<p><span class="fragment">The significand is <span class="math display">\[- \left( 1 \times 2^{0} + 1 \times 2^{-4} + 1 \times 2^{-8} \right) \]</span></span></p>
+<p><span class="fragment"><span class="math display">\[ = - \left( 1 + \frac{1}{16} + \frac{1}{256} \right)\]</span></span></p>
+<p><span class="fragment"><span class="math display">\[ = - \left( \frac{256}{256} + \frac{16}{256} + \frac{1}{256} \right) = - \frac{273}{256} = -1.066406250\]</span></span></p>
+<p><span class="fragment">So the number is <span class="math inline">\(-1.066406250 \times 2^{2} = \fbox{-4.265625}\)</span></span></p>
+</section>
+<section id="hex-short-form" class="level3">
+<h3 class="anchored" data-anchor-id="hex-short-form">Hex short-form</h3>
+<ul>
+<li>Binary numbers are very long</li>
+<li>Hexadecimal is often used as a short form.</li>
+<li>A 16-bit binary number is a 4-bit hexadecimal number</li>
+</ul>
+<p><img src="binhex.png" class="fragment img-fluid"></p>
+<ul>
+<li>So the number <code>0b1100010001000100</code> is often written as <code>0xC444</code>.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+        for (let i=0; i<annoteTargets.length; i++) {
+          const annoteTarget = annoteTargets[i];
+          const targetCell = annoteTarget.getAttribute("data-target-cell");
+          const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+          const contentFn = () => {
+            const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+            if (content) {
+              const tipContent = content.cloneNode(true);
+              tipContent.classList.add("code-annotation-tip-content");
+              return tipContent.outerHTML;
+            }
+          }
+          const config = {
+            allowHTML: true,
+            content: contentFn,
+            onShow: (instance) => {
+              selectCodeLines(instance.reference);
+              instance.reference.classList.add('code-annotation-active');
+              window.tippy.hideAll();
+            },
+            onHide: (instance) => {
+              unselectCodeLines();
+              instance.reference.classList.remove('code-annotation-active');
+            },
+            maxWidth: 300,
+            delay: [50, 0],
+            duration: [200, 0],
+            offset: [5, 10],
+            arrow: true,
+            appendTo: function(el) {
+              return el.parentElement.parentElement.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'quarto',
+            placement: 'right',
+            popperOptions: {
+              modifiers: [
+              {
+                name: 'flip',
+                options: {
+                  flipVariations: false, // true by default
+                  allowedAutoPlacements: ['right'],
+                  fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+                },
+              },
+              {
+                name: 'preventOverflow',
+                options: {
+                  mainAxis: false,
+                  altAxis: false
+                }
+              }
+              ]        
+            }      
+          };
+          window.tippy(annoteTarget, config); 
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
