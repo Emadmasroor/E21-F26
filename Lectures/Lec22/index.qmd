@@ -132,6 +132,8 @@ plt.show()
 
 ### The gradient $\nabla f$
 
+![](gradient.png)
+
 ### $N$-dimensional optimization in Python
 
 - The `scipy` package provides [`scipy.optimize.minimize`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html)

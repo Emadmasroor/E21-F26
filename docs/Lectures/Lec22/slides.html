@@ -282,7 +282,7 @@ starting from an initial guess of <span class="math inline">\(\begin{bmatrix} 1 
 <li class="fragment">Contour plots are generally quite expensive</li>
 </ul>
 <p><span class="inclass">How many times (at least) did <code>f</code> get evaluated to make the plot below?</span></p>
-<div id="3df49f21" class="cell" data-execution_count="1">
+<div id="3df49f21" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize_scalar</span>
@@ -317,7 +317,7 @@ starting from an initial guess of <span class="math inline">\(\begin{bmatrix} 1 
 <section id="contour-plots-and-directions" class="slide level3">
 <h3>Contour plots and directions</h3>
 <p><span class="inclass">Find the best direction vector starting from each of the given points</span></p>
-<div id="a7bf4860" class="cell" data-execution_count="2">
+<div id="a7bf4860" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize_scalar</span>
@@ -353,6 +353,7 @@ starting from an initial guess of <span class="math inline">\(\begin{bmatrix} 1 
 </section>
 <section id="the-gradient-nabla-f" class="slide level3">
 <h3>The gradient <span class="math inline">\(\nabla f\)</span></h3>
+<p><img data-src="gradient.png"></p>
 </section>
 <section id="n-dimensional-optimization-in-python" class="slide level3">
 <h3><span class="math inline">\(N\)</span>-dimensional optimization in Python</h3>
@@ -378,7 +379,7 @@ starting from an initial guess of <span class="math inline">\(\begin{bmatrix} 1 
 <section id="constraint-optimize-on-a-curve" class="slide level3">
 <h3>Constraint: optimize on a curve</h3>
 <p>Minimize <span class="math inline">\(f(x,y) = (x-1)^2 + (y+1)^2 + xy\)</span> subject to the constraint that <span class="math inline">\((x,y)\)</span> satisfy the equation <span class="math inline">\(y =-0.2(x-1)(x+4)\)</span></p>
-<div id="f7f1081a" class="cell" data-execution_count="4">
+<div id="f7f1081a" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -391,7 +392,7 @@ starting from an initial guess of <span class="math inline">\(\begin{bmatrix} 1 
 <section id="constraint-optimize-inside-a-region" class="slide level3">
 <h3>Constraint: optimize inside a region</h3>
 <p>Minimize <span class="math inline">\(f(x,y) = (x-1)^2 + (y+1)^2 + xy\)</span> subject to the constraint that <span class="math inline">\((x,y)\)</span> lie on the half of the plane <span class="math inline">\(x \leq -1\)</span></p>
-<div id="1f48cd0f" class="cell" data-execution_count="5">
+<div id="1f48cd0f" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -458,7 +459,7 @@ f^*(\boldsymbol{x}) \equiv &amp; f(\boldsymbol{x}) +\lambda \left( [g(\boldsymbo
 </section>
 <section id="constrained-optimization-in-python" class="slide level3 scrollable">
 <h3>Constrained optimization in Python</h3>
-<div id="01177696" class="cell" data-execution_count="6">
+<div id="01177696" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
