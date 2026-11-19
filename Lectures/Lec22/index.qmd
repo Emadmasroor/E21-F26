@@ -7,7 +7,7 @@ order: 22
 date: 11-19-2026
 jupyter: python3
 date-format: long
-uncover: false
+uncover: true
 footer: "E21 • Fall 2026 • {{< meta title >}}  • {{< meta date >}} • [↩](index.html)"
 code-line-numbers: false
 code-fold: false
@@ -130,6 +130,25 @@ plt.colorbar()
 plt.show()
 ```
 
+### The gradient $\nabla f$
+
+### $N$-dimensional optimization in Python
+
+- The `scipy` package provides [`scipy.optimize.minimize`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html)
+  - Need to provide the function and an initial guess
+
+```{python}
+from scipy.optimize import minimize
+import numpy as np
+
+def f(xx):
+    x = xx[0]
+    y = xx[1]
+    return (x-1)**2 + (y+1)**2 + x*y
+
+solution = minimize(f,np.array([0.,0.]),method='Powell')
+```
+
 ### Constraints
 
 - An optimization problem is sometimes subject to **constraints**
@@ -143,7 +162,7 @@ plt.show()
 Minimize $f(x,y) = (x-1)^2 + (y+1)^2 + xy$ subject to the constraint that $(x,y)$ satisfy the equation $y =-0.2(x-1)(x+4)$
 
 ```{python}
-#| echo: true
+#| echo: false
 #| code-fold: true
 from scipy.optimize import minimize_scalar
 import matplotlib.pyplot as plt
@@ -177,7 +196,7 @@ plt.show()
 Minimize $f(x,y) = (x-1)^2 + (y+1)^2 + xy$ subject to the constraint that $(x,y)$ lie on the half of the plane $x \leq -1$
 
 ```{python}
-#| echo: true
+#| echo: false
 #| code-fold: true
 from scipy.optimize import minimize_scalar
 import matplotlib.pyplot as plt
@@ -260,6 +279,63 @@ $$
   - The right value of $\lambda$ is often found by trial and error
   - Start with a small value.
   - We can also choose different $\lambda$'s for the different constraints
+
+### Constrained optimization in Python {.scrollable}
+
+```{python}
+from scipy.optimize import minimize_scalar,minimize
+from numpy.linalg import norm
+import numpy as np
+import matplotlib.pyplot as plt
+
+# GLOBAL VARIABLE
+LAMBDA = 2.0
+
+def f(xx):
+    x = xx[0]
+    y = xx[1]
+    return (x-1)**2 + (y+1)**2 + x*y
+
+def constraint(x,y):
+    return (x+1)**2 + (y)**2 - 2
+
+def f_star(x_vector):
+    x = x_vector[0]
+    y = x_vector[1]
+    lam = LAMBDA      # parameter to change
+    return f(x_vector) + lam*(constraint(x,y))**2
+
+solution = minimize(f_star,np.array([0.,0.]),method='Powell')
+
+# The rest of the code is just for plotting.
+x = np.linspace(-3, 3, 100)
+y = np.linspace(-3, 3, 100)
+X, Y = np.meshgrid(x, y)
+
+# Calculate the function values over the grid
+Z = f([X,Y])
+
+# Create a contour plot
+contours = plt.contour(X, Y, Z, levels=20, cmap='viridis')
+
+# plot the constraint
+Z_con = constraint(X,Y)
+plt.contour(X,Y, Z_con, levels=[0], colors='red', linestyles='solid', linewidths=2)
+
+# Add labels and a color bar
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.grid()
+plt.colorbar(contours, label='f(x, y)')
+
+# plot the minimum
+plt.scatter(solution.x[0],solution.x[1],marker='o',color='black',label='found minimum')
+
+# Show the plot
+plt.title(f'Contour Plot of f(x, y) when lambda = {LAMBDA}')
+plt.show()
+
+```
 
 ### Engineering Optimization Problems
 

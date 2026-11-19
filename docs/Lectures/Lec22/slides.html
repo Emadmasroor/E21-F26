@@ -255,6 +255,12 @@ Emad Masroor
 <span class="math inline">\(f(x,y) = (x-1)^2 + (y+1)^2 + xy\)</span><br>
 along the direction <span class="math inline">\(\boldsymbol{v} = \begin{bmatrix} 3 \\ 2 \end{bmatrix}\)</span><br>
 starting from an initial guess of <span class="math inline">\(\begin{bmatrix} 1 \\ 1 \end{bmatrix}\)</span></p>
+<p><span class="math inline">\(f(x,y) = (x-1)^2 + (x-1)^2 + (y+1)^2 + xy\)</span></p>
+<p><span class="fragment"><span class="math inline">\(f(1+3\alpha,1+2\alpha) = (1+3\alpha-1)^2 + (1+2\alpha+1)^2 + (1+3\alpha) \cdot (1+2 \alpha)\)</span></span></p>
+<p><span class="fragment"><span class="math inline">\(= 19\alpha^2 + 13\alpha +5\)</span></span></p>
+<ul>
+<li class="fragment">This is minimzed when <span class="math inline">\(38\alpha +13 = 0 \implies \alpha = - \frac{13}{38}\)</span></li>
+</ul>
 </section>
 <section id="naive-n-dimensional-optimization" class="slide level3">
 <h3>Naive n-dimensional optimization</h3>
@@ -276,7 +282,7 @@ starting from an initial guess of <span class="math inline">\(\begin{bmatrix} 1 
 <li class="fragment">Contour plots are generally quite expensive</li>
 </ul>
 <p><span class="inclass">How many times (at least) did <code>f</code> get evaluated to make the plot below?</span></p>
-<div id="c6408cb7" class="cell" data-execution_count="2">
+<div id="3df49f21" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize_scalar</span>
@@ -311,7 +317,7 @@ starting from an initial guess of <span class="math inline">\(\begin{bmatrix} 1 
 <section id="contour-plots-and-directions" class="slide level3">
 <h3>Contour plots and directions</h3>
 <p><span class="inclass">Find the best direction vector starting from each of the given points</span></p>
-<div id="3db1396f" class="cell" data-execution_count="3">
+<div id="a7bf4860" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize_scalar</span>
@@ -345,6 +351,18 @@ starting from an initial guess of <span class="math inline">\(\begin{bmatrix} 1 
 </div>
 </div>
 </section>
+<section id="the-gradient-nabla-f" class="slide level3">
+<h3>The gradient <span class="math inline">\(\nabla f\)</span></h3>
+</section>
+<section id="n-dimensional-optimization-in-python" class="slide level3">
+<h3><span class="math inline">\(N\)</span>-dimensional optimization in Python</h3>
+<ul>
+<li class="fragment">The <code>scipy</code> package provides <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html"><code>scipy.optimize.minimize</code></a>
+<ul>
+<li class="fragment">Need to provide the function and an initial guess</li>
+</ul></li>
+</ul>
+</section>
 <section id="constraints" class="slide level3">
 <h3>Constraints</h3>
 <ul>
@@ -360,39 +378,11 @@ starting from an initial guess of <span class="math inline">\(\begin{bmatrix} 1 
 <section id="constraint-optimize-on-a-curve" class="slide level3">
 <h3>Constraint: optimize on a curve</h3>
 <p>Minimize <span class="math inline">\(f(x,y) = (x-1)^2 + (y+1)^2 + xy\)</span> subject to the constraint that <span class="math inline">\((x,y)\)</span> satisfy the equation <span class="math inline">\(y =-0.2(x-1)(x+4)\)</span></p>
-<div id="3ec73618" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize_scalar</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x,y):</span>
-<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (x<span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (y<span class="op">+</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> x<span class="op">*</span>y</span>
-<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Create a grid of points:</span></span>
-<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">101</span>)</span>
-<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">101</span>)</span>
-<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a>xx,yy <span class="op">=</span> np.meshgrid(x,y)</span>
-<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Apply f to the grid of points</span></span>
-<span id="cb3-14"><a aria-hidden="true" tabindex="-1"></a>fxy <span class="op">=</span> f(xx,yy)</span>
-<span id="cb3-15"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate parabola</span></span>
-<span id="cb3-17"><a aria-hidden="true" tabindex="-1"></a>y_parabola <span class="op">=</span> <span class="op">-</span><span class="fl">0.2</span><span class="op">*</span>(x<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(x<span class="op">+</span><span class="dv">4</span>)</span>
-<span id="cb3-18"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-19"><a aria-hidden="true" tabindex="-1"></a>plt.contourf(xx,yy,fxy)</span>
-<span id="cb3-20"><a aria-hidden="true" tabindex="-1"></a>plt.plot(x,y_parabola,color<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb3-21"><a aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>])</span>
-<span id="cb3-22"><a aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>])</span>
-<span id="cb3-23"><a aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"f(x,y) = (x-1)**2 + (y+1)**2 + x*y"</span>)</span>
-<span id="cb3-24"><a aria-hidden="true" tabindex="-1"></a>plt.colorbar()</span>
-<span id="cb3-25"><a aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div id="f7f1081a" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="index_files/figure-revealjs/cell-4-output-1.png" width="736" height="431"></p>
+<p><img data-src="index_files/figure-revealjs/cell-5-output-1.png" width="736" height="431"></p>
 </figure>
 </div>
 </div>
@@ -401,39 +391,11 @@ starting from an initial guess of <span class="math inline">\(\begin{bmatrix} 1 
 <section id="constraint-optimize-inside-a-region" class="slide level3">
 <h3>Constraint: optimize inside a region</h3>
 <p>Minimize <span class="math inline">\(f(x,y) = (x-1)^2 + (y+1)^2 + xy\)</span> subject to the constraint that <span class="math inline">\((x,y)\)</span> lie on the half of the plane <span class="math inline">\(x \leq -1\)</span></p>
-<div id="673938e4" class="cell" data-execution_count="5">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize_scalar</span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x,y):</span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (x<span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (y<span class="op">+</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> x<span class="op">*</span>y</span>
-<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Create a grid of points:</span></span>
-<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">101</span>)</span>
-<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">101</span>)</span>
-<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a>xx,yy <span class="op">=</span> np.meshgrid(x,y)</span>
-<span id="cb4-12"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Apply f to the grid of points</span></span>
-<span id="cb4-14"><a aria-hidden="true" tabindex="-1"></a>fxy <span class="op">=</span> f(xx,yy)</span>
-<span id="cb4-15"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate parabola</span></span>
-<span id="cb4-17"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a aria-hidden="true" tabindex="-1"></a>plt.contourf(xx,yy,fxy)</span>
-<span id="cb4-20"><a aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=-</span><span class="dv">1</span>,color<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb4-21"><a aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>])</span>
-<span id="cb4-22"><a aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>])</span>
-<span id="cb4-23"><a aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"f(x,y) = (x-1)**2 + (y+1)**2 + x*y"</span>)</span>
-<span id="cb4-24"><a aria-hidden="true" tabindex="-1"></a>plt.colorbar()</span>
-<span id="cb4-25"><a aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div id="1f48cd0f" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="index_files/figure-revealjs/cell-5-output-1.png" width="736" height="431"></p>
+<p><img data-src="index_files/figure-revealjs/cell-6-output-1.png" width="736" height="431"></p>
 </figure>
 </div>
 </div>
@@ -447,6 +409,12 @@ starting from an initial guess of <span class="math inline">\(\begin{bmatrix} 1 
 <li class="fragment"><span class="math inline">\((x,y)\)</span> must lie on the parabola <span class="math inline">\(y = x^2 +2x - 3\)</span>, find <span class="math inline">\(g(\boldsymbol{x})\)</span></li>
 <li class="fragment"><span class="math inline">\((x,y)\)</span> must lie on the edge of a circle centered at <span class="math inline">\((2,1)\)</span> and having a radius of <span class="math inline">\(1.5\)</span></li>
 </ol>
+<p><strong>Answers</strong>:</p>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(g(x,y) = y - x^2 - 2x + 3\)</span></li>
+<li class="fragment"><span class="math inline">\(g(x,y) = (x-2)^2 + (y-1)^2 - 1.5^2\)</span><br>
+</li>
+</ol>
 </section>
 <section id="mathematical-statement-of-constraints-2" class="slide level3 scrollable">
 <h3>Mathematical statement of constraints 2</h3>
@@ -455,6 +423,14 @@ starting from an initial guess of <span class="math inline">\(\begin{bmatrix} 1 
 <ol type="1">
 <li class="fragment"><span class="math inline">\((x,y)\)</span> must lie to the left of <span class="math inline">\(x=-1\)</span></li>
 <li class="fragment"><span class="math inline">\((x,y)\)</span> must lie inside a circle centered at <span class="math inline">\((2,1)\)</span> and having a radius of <span class="math inline">\(1.5\)</span></li>
+</ol>
+<p><strong>Answers</strong>:</p>
+<ol type="1">
+<li class="fragment">In this case, <span class="math inline">\(x \leq -1\)</span> so <span class="math inline">\(h(x,y) = x+1\)</span> because <span class="math inline">\(h \leq 0 \iff x \leq -1\)</span></li>
+<li class="fragment">To lie inside a circle centered at <span class="math inline">\(x_0,y_0\)</span>, of radius <span class="math inline">\(r\)</span>, we need the following inequality to be true: <span class="math display">\[(x-x_0)^2 + (y-y_0)^2 \leq r^2\]</span>
+<ul>
+<li class="fragment">If we define <span class="math inline">\(h(x,y) = (x-2)^2 + (y-1)^2 - 1.5^2\)</span>, <span class="math inline">\(h \leq 0\)</span> is equivalent to satisfying <span class="math inline">\((x-x_0)^2 + (y-y_0)^2 \leq r^2\)</span></li>
+</ul></li>
 </ol>
 </section>
 <section id="satisfying-constraints-with-lagrange-multipliers" class="slide level3">
@@ -479,6 +455,18 @@ f^*(\boldsymbol{x}) \equiv &amp; f(\boldsymbol{x}) +\lambda \left( [g(\boldsymbo
 <li class="fragment">We can also choose different <span class="math inline">\(\lambda\)</span>’s for the different constraints</li>
 </ul></li>
 </ul>
+</section>
+<section id="constrained-optimization-in-python" class="slide level3 scrollable">
+<h3>Constrained optimization in Python</h3>
+<div id="01177696" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/cell-7-output-1.png" width="775" height="449"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="engineering-optimization-problems" class="slide level3">
 <h3>Engineering Optimization Problems</h3>
