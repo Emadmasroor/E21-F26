@@ -51,6 +51,10 @@ format:
 
 [What to turn in]{.underline}
 
+**Changelog**
+
+- Changed at 1:30 PM on Friday, Nov 20: Problem 1.2 now only asks you to find a maximum; you do not need to account for finding a minimum.
+
 Combine all written HW into one PDF file.
 
 | Problem | Format                                  |
@@ -153,13 +157,13 @@ $$
 
 ## With Python
 
-Write a Python function that uses the Golden Section Search algorithm to find either a maximum or a minimum of the function $f(x)$. Your function should accept, as one of its arguments, the string `max` or `min`, and should correspondingly try to maximize or minimize $f(x)$.
+Write a Python function that uses the Golden Section Search algorithm to find a maximum of the function $f(x)$.
 
 Your function should accept the following arguments:
+
 - a function, which is to be optimized
 - Two real numbers `a` and `b`, corresponding to the left-ward and right-ward edges of the region which is to be searched for an optimum,
 - a parameter `tol`, which in practice will be a small number such as `1e-6` or similar.
-- a string, which --- if the program is used correctly --- should either be `max` or `min`.
 
 The output returned by your function should be a single numerical value of the latest estimate of the turning point of the given function. The program should conclude when the size of the bracket has successfully been brought down to less than `tol`.
 

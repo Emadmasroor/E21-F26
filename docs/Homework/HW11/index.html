@@ -711,6 +711,10 @@ window.Quarto = {
 </tbody>
 </table>
 <p><u>What to turn in</u></p>
+<p><strong>Changelog</strong></p>
+<ul>
+<li>Changed at 1:30 PM on Friday, Nov 20: Problem 1.2 now only asks you to find a maximum; you do not need to account for finding a minimum.</li>
+</ul>
 <p>Combine all written HW into one PDF file.</p>
 <table class="caption-top table">
 <thead>
@@ -783,8 +787,13 @@ Step &amp; $a$ &amp; $x_1 = b - Rh$ &amp; $x_2 = a + Rh$ &amp; b &amp; $h$ &amp;
 </section>
 <section id="with-python" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="with-python"><span class="header-section-number">1.2</span> With Python</h2>
-<p>Write a Python function that uses the Golden Section Search algorithm to find either a maximum or a minimum of the function <span class="math inline">\(f(x)\)</span>. Your function should accept, as one of its arguments, the string <code>max</code> or <code>min</code>, and should correspondingly try to maximize or minimize <span class="math inline">\(f(x)\)</span>.</p>
-<p>Your function should accept the following arguments: - a function, which is to be optimized - Two real numbers <code>a</code> and <code>b</code>, corresponding to the left-ward and right-ward edges of the region which is to be searched for an optimum, - a parameter <code>tol</code>, which in practice will be a small number such as <code>1e-6</code> or similar. - a string, which — if the program is used correctly — should either be <code>max</code> or <code>min</code>.</p>
+<p>Write a Python function that uses the Golden Section Search algorithm to find a maximum of the function <span class="math inline">\(f(x)\)</span>.</p>
+<p>Your function should accept the following arguments:</p>
+<ul>
+<li>a function, which is to be optimized</li>
+<li>Two real numbers <code>a</code> and <code>b</code>, corresponding to the left-ward and right-ward edges of the region which is to be searched for an optimum,</li>
+<li>a parameter <code>tol</code>, which in practice will be a small number such as <code>1e-6</code> or similar.</li>
+</ul>
 <p>The output returned by your function should be a single numerical value of the latest estimate of the turning point of the given function. The program should conclude when the size of the bracket has successfully been brought down to less than <code>tol</code>.</p>
 <p>Test your function by finding two different maxima of the following function. Illustrate that you have done this correctly by generating a plot of the function together with points indicating the minima and maxima that you find.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>

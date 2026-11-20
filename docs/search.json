@@ -2326,7 +2326,7 @@
     "href": "Homework/HW11/index.html",
     "title": "HW 11",
     "section": "",
-    "text": "Due Date\nThu, Dec 03\n\n\nTurn in link\nGradescope PDF and Code\n\n\nURL\nemadmasroor.github.io/E21-F26/Homework/HW11\nWhat to turn in\nCombine all written HW into one PDF file.",
+    "text": "Due Date\nThu, Dec 03\n\n\nTurn in link\nGradescope PDF and Code\n\n\nURL\nemadmasroor.github.io/E21-F26/Homework/HW11\nWhat to turn in\nChangelog\nCombine all written HW into one PDF file.",
     "crumbs": [
       "Homepage",
       "Homework",
@@ -2350,7 +2350,7 @@
     "href": "Homework/HW11/index.html#with-python",
     "title": "HW 11",
     "section": "1.2 With Python",
-    "text": "1.2 With Python\nWrite a Python function that uses the Golden Section Search algorithm to find either a maximum or a minimum of the function \\(f(x)\\). Your function should accept, as one of its arguments, the string max or min, and should correspondingly try to maximize or minimize \\(f(x)\\).\nYour function should accept the following arguments: - a function, which is to be optimized - Two real numbers a and b, corresponding to the left-ward and right-ward edges of the region which is to be searched for an optimum, - a parameter tol, which in practice will be a small number such as 1e-6 or similar. - a string, which — if the program is used correctly — should either be max or min.\nThe output returned by your function should be a single numerical value of the latest estimate of the turning point of the given function. The program should conclude when the size of the bracket has successfully been brought down to less than tol.\nTest your function by finding two different maxima of the following function. Illustrate that you have done this correctly by generating a plot of the function together with points indicating the minima and maxima that you find.\nimport numpy as np\n\ndef f1(x): return np.exp(-0.5*x)*np.sin(x))",
+    "text": "1.2 With Python\nWrite a Python function that uses the Golden Section Search algorithm to find a maximum of the function \\(f(x)\\).\nYour function should accept the following arguments:\n\na function, which is to be optimized\nTwo real numbers a and b, corresponding to the left-ward and right-ward edges of the region which is to be searched for an optimum,\na parameter tol, which in practice will be a small number such as 1e-6 or similar.\n\nThe output returned by your function should be a single numerical value of the latest estimate of the turning point of the given function. The program should conclude when the size of the bracket has successfully been brought down to less than tol.\nTest your function by finding two different maxima of the following function. Illustrate that you have done this correctly by generating a plot of the function together with points indicating the minima and maxima that you find.\nimport numpy as np\n\ndef f1(x): return np.exp(-0.5*x)*np.sin(x))",
     "crumbs": [
       "Homepage",
       "Homework",
